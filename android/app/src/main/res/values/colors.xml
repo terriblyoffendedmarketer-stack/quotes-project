@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="paper">#F4F5F2</color>
+    <color name="sheet">#FFFFFF</color>
+    <color name="ink">#1B1D22</color>
+    <color name="ink_soft">#565A63</color>
+    <color name="rule">#DCDFE0</color>
+    <color name="marker">#F5E36A</color>
+    <color name="marker_ink">#1B1D22</color>
+    <color name="icon_bg">#F4F5F2</color>
+    <!-- The widget follows the phone's light or dark mode. -->
+    <color name="widget_bg">#F4F5F2</color>
+    <color name="widget_text">#14161B</color>
+    <color name="widget_soft">#4A4E57</color>
+</resources>

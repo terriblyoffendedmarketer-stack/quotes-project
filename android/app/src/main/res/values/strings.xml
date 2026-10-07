@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Marginalia</string>
+    <string name="widget_label">Today\'s line</string>
+    <string name="widget_description">One line a day from a great writer. Tap the right side for the next slide.</string>
+    <string name="today">TODAY</string>
+    <string name="back_to_today">BACK TO TODAY</string>
+    <string name="count">%1$d / %2$d</string>
+    <string name="previous">← Previous</string>
+    <string name="next">Next →</string>
+    <string name="hide_steal">Hide “Steal it”</string>
+    <string name="show_steal">Show “Steal it”</string>
+    <string name="open">Open ↗</string>
+    <string name="progress">%1$d/%2$d · %3$s</string>
+    <string name="preview_job">HOW TO MAKE THE IMPOSSIBLE BELIEVABLE</string>
+    <string name="preview_line">“As Gregor Samsa awoke one morning from uneasy dreams he found himself transformed in his bed into a gigantic insect.”</string>
+    <string name="preview_author">Franz Kafka, The Metamorphosis</string>
+</resources>

@@ -1,0 +1,190 @@
+<title>Marginalia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one phone-width reading column. A card is a horizontal stack of slides; the highlighter is the only colour. */
+:root {
+  --paper: #f4f5f2;
+  --sheet: #ffffff;
+  --ink: #1b1d22;
+  --ink-soft: #565a63;
+  --rule: #dcdfe0;
+  --marker: #f5e36a;
+  --marker-ink: #1b1d22;
+  --font-line: "Literata", Georgia, "Times New Roman", serif;
+  --font-note: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-tag: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111317; --sheet: #1a1d22; --ink: #e9e8e3; --ink-soft: #a2a5ab;
+    --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111317; --sheet: #1a1d22; --ink: #e9e8e3; --ink-soft: #a2a5ab;
+  --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font-note); font-size: 16px; line-height: 1.55;
+  padding-inline: 16px; padding-block: 16px 24px;
+}
+.wrap { max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+
+.top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-family: var(--font-tag); font-size: 12px; color: var(--ink-soft); letter-spacing: .04em; }
+.top b { color: var(--ink); font-weight: 500; }
+
+.deck { background: var(--sheet); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; }
+.track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+.track::-webkit-scrollbar { display: none; }
+.slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; padding: 26px 22px 22px; min-height: 480px; display: flex; flex-direction: column; gap: 16px; }
+
+.job { font-family: var(--font-tag); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.line { white-space: pre-line; font-family: var(--font-line); font-size: 1.45rem; line-height: 1.42; text-wrap: pretty; margin: auto 0; }
+.line.long { font-size: 1.2rem; }
+.who { font-size: 14px; color: var(--ink-soft); }
+.who cite { font-style: italic; color: var(--ink); }
+
+.kicker { font-family: var(--font-tag); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.mini { white-space: pre-line; font-family: var(--font-line); font-size: 1rem; line-height: 1.5; color: var(--ink-soft); border-left: 2px solid var(--rule); padding-left: 12px; }
+mark { background: linear-gradient(transparent 12%, var(--marker) 12%, var(--marker) 88%, transparent 88%); color: var(--marker-ink); padding: 0 2px; }
+.note { font-size: 1.02rem; text-wrap: pretty; }
+.note p { margin: 0; }
+.steal { border-top: 1px dashed var(--rule); padding-top: 14px; }
+
+.dots { display: flex; justify-content: center; gap: 6px; padding: 0 0 16px; }
+.dots button { font: 500 11px/1 var(--font-tag); letter-spacing: .04em; color: var(--ink-soft); background: none; border: 1px solid var(--rule); border-radius: 99px; padding: 6px 10px; cursor: pointer; }
+.dots button[aria-current="true"] { color: var(--ink); border-color: var(--ink); }
+
+.nav { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.nav button, .toggle { font: 500 14px/1 var(--font-note); color: var(--ink); background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; padding: 10px 14px; cursor: pointer; }
+.nav button:disabled { opacity: .4; cursor: default; }
+.count { font-family: var(--font-tag); font-size: 12px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+.widget-wrap { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.widget { background: var(--ink); color: var(--paper); border-radius: 24px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; cursor: pointer; border: 0; text-align: left; font: inherit; }
+.widget .job { color: var(--paper); opacity: .7; }
+.widget .wl { font-family: var(--font-line); font-size: 1rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.widget .wa { font-size: 12px; opacity: .7; }
+.caption { font-size: 13px; color: var(--ink-soft); }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+@media (prefers-reduced-motion: reduce) { .track { scroll-behavior: auto; } }
+</style>
+
+<div class="wrap">
+  <div class="top"><span>MARGINALIA</span><span id="day"></span></div>
+
+  <section class="deck" aria-label="Today's card">
+    <div class="track" id="track"></div>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <div class="nav">
+    <button id="prev" type="button">← Previous</button>
+    <span class="count" id="count"></span>
+    <button id="next" type="button">Next →</button>
+  </div>
+
+  <div class="row">
+    <span class="caption">Swipe the card sideways. Each slide is one step deeper.</span>
+    <button class="toggle" id="stealToggle" type="button"></button>
+  </div>
+
+  <div class="widget-wrap">
+    <span class="kicker">On your home screen</span>
+    <button class="widget" id="widget" type="button" aria-label="Widget preview, opens the card">
+      <span class="job" id="wJob"></span>
+      <span class="wl" id="wLine"></span>
+      <span class="wa" id="wAuthor"></span>
+    </button>
+    <span class="caption">This is roughly how the Android widget would look. On your phone you can flick through every slide inside the widget.</span>
+  </div>
+</div>
+
+<script>
+const CARDS = /*CARDS*/[];
+
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+};
+
+const dayNumber = Math.floor(Date.now() / 86400000);
+const todayIndex = dayNumber % CARDS.length;
+let index = todayIndex;
+let showSteal = store.get("showSteal", true);
+
+const $ = id => document.getElementById(id);
+const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+// Titles are marked with *asterisks* in the card text and shown in italics.
+const md = s => esc(s).replace(/\*([^*]+)\*/g, "<em>$1</em>");
+
+function marked(card) {
+  let html = esc(card.quote);
+  for (const h of card.highlights) {
+    const e = esc(h);
+    const i = html.indexOf(e);
+    if (i >= 0) html = html.slice(0, i) + "<mark>" + e + "</mark>" + html.slice(i + e.length);
+  }
+  return html;
+}
+
+function credit(card) {
+  return `${esc(card.author)}, <cite>${esc(card.work)}</cite>${card.translator ? ` · trans. ${esc(card.translator)}` : ""}`;
+}
+
+function render() {
+  const c = CARDS[index];
+  const slides = [
+    { tab: "Line", html: `
+      <div class="job">${esc(c.job)}</div>
+      <p class="line${c.quote.length > 180 ? " long" : ""}">“${esc(c.quote)}”</p>
+      <div class="who">${credit(c)}</div>` },
+    { tab: "Look closer", html: `
+      <div class="kicker">Look closer</div>
+      <p class="mini">${marked(c)}</p>
+      <div class="note"><p>${md(c.lookCloser)}</p></div>` }
+  ];
+  if (showSteal) slides.push({ tab: "Steal it", html: `
+      <div class="kicker">Steal it</div>
+      <div class="note"><p>${md(c.stealIt)}</p></div>
+      <div class="steal who">The move: ${esc(c.job.replace(/^How to /, "").replace(/^./, m => m.toUpperCase()))}.</div>` });
+  slides.push({ tab: "Around it", html: `
+      <div class="kicker">Around it</div>
+      <div class="note"><p>${md(c.aroundIt)}</p></div>
+      <div class="who" style="margin-top:auto">${credit(c)} · ${c.year}</div>` });
+
+  $("track").innerHTML = slides.map((s, i) => `<article class="slide" aria-label="${s.tab}">${s.html}</article>`).join("");
+  $("dots").innerHTML = slides.map((s, i) => `<button type="button" data-i="${i}" aria-current="${i === 0}">${s.tab}</button>`).join("");
+  $("track").scrollLeft = 0;
+
+  $("day").innerHTML = index === todayIndex ? "<b>TODAY</b>" : `CARD ${String(index + 1).padStart(2, "0")}`;
+  $("count").textContent = `${index + 1} / ${CARDS.length}`;
+  $("stealToggle").textContent = showSteal ? "Hide “Steal it”" : "Show “Steal it”";
+  $("wJob").textContent = c.job;
+  $("wLine").textContent = `“${c.quote}”`;
+  $("wAuthor").textContent = `${c.author}, ${c.work}`;
+}
+
+$("dots").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  const t = $("track");
+  t.scrollTo({ left: t.clientWidth * Number(b.dataset.i), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+});
+$("track").addEventListener("scroll", () => {
+  const t = $("track");
+  const i = Math.round(t.scrollLeft / t.clientWidth);
+  [...$("dots").children].forEach((b, j) => b.setAttribute("aria-current", String(j === i)));
+}, { passive: true });
+$("prev").addEventListener("click", () => { index = (index - 1 + CARDS.length) % CARDS.length; render(); });
+$("next").addEventListener("click", () => { index = (index + 1) % CARDS.length; render(); });
+$("stealToggle").addEventListener("click", () => { showSteal = !showSteal; store.set("showSteal", showSteal); render(); });
+$("widget").addEventListener("click", () => { $("track").scrollLeft = 0; window.scrollTo({ top: 0, behavior: "smooth" }); });
+
+render();
+</script>

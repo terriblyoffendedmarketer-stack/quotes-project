@@ -1,0 +1,52 @@
+name: Build app
+
+on:
+  push:
+    branches: [main]
+    paths: ["android/**", ".github/workflows/apk.yml"]
+  pull_request:
+    paths: ["android/**", "content/**", "tools/**", ".github/workflows/apk.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Check the cards
+        run: |
+          python3 tools/build_prototype.py
+          python3 tools/lint_cards.py
+
+      # GitHub's Ubuntu runners ship with the Android SDK, and Gradle fetches any missing platform.
+      - name: Build
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease --no-daemon
+          cp app/build/outputs/apk/release/app-release.apk marginalia.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: marginalia-apk
+          path: android/marginalia.apk
+
+      # App changes on main refresh one release, so the download link never changes.
+      # Card changes don't need this: the installed app downloads content/cards.json by itself.
+      - name: Publish to the "latest" release
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Marginalia (latest)
+          body: Open this page on your Android phone and tap marginalia.apk to install or update. You only need this when the app itself changes. New cards arrive on their own.
+          files: android/marginalia.apk

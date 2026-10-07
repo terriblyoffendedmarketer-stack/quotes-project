@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="paper">#111317</color>
+    <color name="sheet">#1A1D22</color>
+    <color name="ink">#E9E8E3</color>
+    <color name="ink_soft">#A2A5AB</color>
+    <color name="rule">#2C3036</color>
+    <color name="marker">#B9A63A</color>
+    <color name="marker_ink">#111317</color>
+    <color name="widget_bg">#15171B</color>
+    <color name="widget_text">#F6F5F0</color>
+    <color name="widget_soft">#B4B7BD</color>
+</resources>
