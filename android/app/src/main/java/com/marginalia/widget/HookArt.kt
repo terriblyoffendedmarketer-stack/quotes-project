@@ -1,8 +1,6 @@
 package com.marginalia.widget
 
-import android.appwidget.AppWidgetManager
 import android.content.Context
-import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.text.Layout
@@ -21,23 +19,16 @@ import kotlin.math.roundToInt
 object HookArt {
 
     // Space the rest of the hook slide takes up, in dp: side padding, then the pill,
-    // the hint and the footer above and below the title.
+    // the hint (left out on small widgets) and the footer above and below the title.
     private const val SIDE_DP = 40
     private const val CHROME_DP = 136
+    private const val HINT_DP = 23
 
-    fun draw(context: Context, widgetId: Int, text: String): Bitmap {
+    fun draw(context: Context, size: WidgetFit.Size, text: String): Bitmap {
         val metrics = context.resources.displayMetrics
-        val options = AppWidgetManager.getInstance(context).getAppWidgetOptions(widgetId)
-        val portrait = context.resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE
-        val widthDp = options.getInt(
-            if (portrait) AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH else AppWidgetManager.OPTION_APPWIDGET_MAX_WIDTH, 0,
-        ).takeIf { it > 0 } ?: 320
-        val heightDp = options.getInt(
-            if (portrait) AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT else AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT, 0,
-        ).takeIf { it > 0 } ?: 300
-
-        val width = ((widthDp - SIDE_DP) * metrics.density).roundToInt().coerceAtLeast(100)
-        val height = ((heightDp - CHROME_DP) * metrics.density).roundToInt().coerceAtLeast(60)
+        val chrome = if (size.compact) CHROME_DP - HINT_DP else CHROME_DP
+        val width = ((size.widthDp - SIDE_DP) * metrics.density).roundToInt().coerceAtLeast(100)
+        val height = ((size.heightDp - chrome) * metrics.density).roundToInt().coerceAtLeast(60)
 
         val paint = TextPaint(TextPaint.ANTI_ALIAS_FLAG).apply {
             typeface = ResourcesCompat.getFont(context, R.font.fraunces_black)

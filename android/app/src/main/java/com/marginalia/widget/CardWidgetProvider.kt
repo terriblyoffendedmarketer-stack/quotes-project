@@ -7,7 +7,9 @@ import android.appwidget.AppWidgetProvider
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.TextPaint
 import android.view.View
 import android.widget.RemoteViews
 import androidx.core.content.ContextCompat
@@ -101,6 +103,7 @@ class CardWidgetProvider : AppWidgetProvider() {
             val slide = slides[position]
             val isHook = slide == Slide.HOOK
             val isLine = slide == Slide.LINE
+            val size = WidgetFit.size(context, id)
 
             return RemoteViews(context.packageName, R.layout.widget_card).apply {
                 setInt(R.id.widget_root, "setBackgroundResource", slide.widgetBg)
@@ -108,23 +111,28 @@ class CardWidgetProvider : AppWidgetProvider() {
                 setViewVisibility(R.id.content, if (isHook) View.GONE else View.VISIBLE)
                 if (isHook) {
                     setViewVisibility(R.id.hook_pill, if (Slide.hasHowTo(card)) View.VISIBLE else View.GONE)
-                    val title = Slide.hookTitle(card)
-                    setImageViewBitmap(R.id.hook_title, HookArt.draw(context, id, title))
+                    setViewVisibility(R.id.hook_hint, if (size.compact) View.GONE else View.VISIBLE)
+                    setImageViewBitmap(R.id.hook_title, HookArt.draw(context, size, Slide.hookTitle(card)))
                     setContentDescription(R.id.hook_title, card.job)
                 } else {
+                    val credit = Markup.credit(card)
                     setTextViewText(R.id.slide_kicker, slide.label.uppercase())
+                    // On a small widget the footer already names the slide, so the kicker makes room.
+                    setViewVisibility(R.id.slide_kicker, if (size.compact) View.GONE else View.VISIBLE)
                     setViewVisibility(R.id.slide_line, if (isLine) View.VISIBLE else View.GONE)
                     setViewVisibility(R.id.slide_note, if (isLine) View.GONE else View.VISIBLE)
                     setViewVisibility(R.id.slide_credit, if (isLine) View.VISIBLE else View.GONE)
+                    setViewVisibility(R.id.slide_job, if (size.compact) View.GONE else View.VISIBLE)
+                    val body = fitted(context, size, slide.body(context, card), isLine, if (isLine) credit else null)
                     if (isLine) {
-                        setTextViewText(R.id.slide_line, slide.body(context, card))
-                        setTextViewText(R.id.slide_credit, Markup.credit(card))
+                        setTextViewText(R.id.slide_line, body)
+                        setTextViewText(R.id.slide_credit, credit)
                     } else {
-                        setTextViewText(R.id.slide_note, slide.body(context, card))
+                        setTextViewText(R.id.slide_note, body)
                     }
                     setTextViewText(R.id.slide_job, card.job)
                 }
-                // The footer takes the hook's ink on the tangerine slide.
+                // The footer takes the hook's ink on the cobalt slide.
                 val ink = ContextCompat.getColor(context, if (isHook) R.color.hook_ink else R.color.widget_text)
                 val soft = ContextCompat.getColor(context, if (isHook) R.color.hook_soft else R.color.widget_soft)
                 setTextColor(R.id.widget_progress, soft)
@@ -147,6 +155,35 @@ class CardWidgetProvider : AppWidgetProvider() {
                 )
             }
         }
+
+        /**
+         * The slide's text, shortened with "…" if even the smallest comfortable size won't fit it
+         * in the space this widget has. The text view then sizes it up from there to fill the space.
+         */
+        private fun fitted(context: Context, size: WidgetFit.Size, text: CharSequence, isLine: Boolean, credit: CharSequence?): CharSequence {
+            val width = WidgetFit.dp(context, size.widthDp - 40f).toInt()
+            val paint = TextPaint(TextPaint.ANTI_ALIAS_FLAG).apply {
+                typeface = if (isLine) Typeface.create(Typeface.SERIF, Typeface.BOLD) else Typeface.DEFAULT
+                textSize = WidgetFit.sp(context, if (isLine) LINE_FIT_SP else NOTE_FIT_SP)
+            }
+            // Everything on a text slide besides the text: padding, the kicker (not on small widgets)
+            // and the footer, then the credit (as many lines as it takes) and the fine print.
+            var reserved = WidgetFit.dp(context, if (size.compact) 78f else 94f)
+            if (credit != null) {
+                val creditPaint = TextPaint(TextPaint.ANTI_ALIAS_FLAG).apply { textSize = WidgetFit.sp(context, 13f) }
+                val lines = WidgetFit.layout(credit, creditPaint, width, 1f).lineCount.coerceIn(1, 2)
+                reserved += WidgetFit.dp(context, 8f) + lines * WidgetFit.sp(context, 17f)
+            }
+            if (!size.compact) reserved += WidgetFit.dp(context, 8f) + WidgetFit.sp(context, 15f)
+            val height = ((WidgetFit.dp(context, size.heightDp.toFloat()) - reserved) * 0.95f).toInt().coerceAtLeast(1)
+            val spacing = if (isLine) 1.15f else 1.25f
+            return WidgetFit.fit(text, paint, width, height, spacing, closing = if (isLine) "”" else "")
+        }
+
+        // The sizes text is fitted at before it's shortened. The views can still go a little
+        // smaller (see widget_card.xml), which covers any slack in the space worked out above.
+        private const val LINE_FIT_SP = 14f
+        private const val NOTE_FIT_SP = 12f
 
         private fun stepIntent(context: Context, id: Int, direction: Int): PendingIntent {
             val intent = Intent(context, CardWidgetProvider::class.java)
