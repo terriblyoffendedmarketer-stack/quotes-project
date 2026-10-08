@@ -11,8 +11,9 @@
     <string name="hide_steal">Hide “Steal it”</string>
     <string name="show_steal">Show “Steal it”</string>
     <string name="open">Open ↗</string>
+    <string name="hook_pill">HOW TO</string>
+    <string name="hook_hint">The line that does it →</string>
     <string name="progress">%1$d/%2$d · %3$s</string>
-    <string name="preview_job">HOW TO MAKE THE IMPOSSIBLE BELIEVABLE</string>
-    <string name="preview_line">“As Gregor Samsa awoke one morning from uneasy dreams he found himself transformed in his bed into a gigantic insect.”</string>
-    <string name="preview_author">Franz Kafka, The Metamorphosis</string>
+    <string name="preview_hook">make the impossible believable</string>
+    <string name="preview_author">Franz Kafka</string>
 </resources>

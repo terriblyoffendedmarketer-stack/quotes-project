@@ -7,19 +7,26 @@ import android.appwidget.AppWidgetProvider
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.graphics.Typeface
+import android.os.Build
+import android.os.Bundle
+import android.text.TextPaint
 import android.view.View
 import android.widget.RemoteViews
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
 import com.marginalia.Cards
 import com.marginalia.ContentSync
 import com.marginalia.MainActivity
 import com.marginalia.Markup
+import com.marginalia.Palette
 import com.marginalia.R
 import com.marginalia.Slide
 import java.time.LocalDate
 import java.time.ZoneId
 
 /**
- * Home-screen widget showing today's card one slide at a time, like stories:
+ * Home-screen widget showing today's card one slide at a time, like stories, each slide in its own colour:
  * tap the right side for the next slide and the left side to go back.
  *
  * Every slide is drawn straight into the widget's views, with no list adapter or service,
@@ -46,6 +53,11 @@ class CardWidgetProvider : AppWidgetProvider() {
         }
     }
 
+    /** Redraw at the new size when the widget is resized, so the hook still fills it. */
+    override fun onAppWidgetOptionsChanged(context: Context, manager: AppWidgetManager, id: Int, options: Bundle) {
+        manager.updateAppWidget(id, render(context, id))
+    }
+
     override fun onDeleted(context: Context, ids: IntArray) {
         val prefs = state(context).edit()
         ids.forEach { prefs.remove(slideKey(it)).remove(dayKey(it)) }
@@ -68,7 +80,7 @@ class CardWidgetProvider : AppWidgetProvider() {
         private fun slideKey(id: Int) = "slide_$id"
         private fun dayKey(id: Int) = "day_$id"
 
-        /** Which slide this widget is on. Starts again from the line each new day. */
+        /** Which slide this widget is on. Starts again from the hook each new day. */
         private fun currentSlide(context: Context, id: Int): Int {
             val prefs = state(context)
             val today = LocalDate.now().toEpochDay()
@@ -92,19 +104,49 @@ class CardWidgetProvider : AppWidgetProvider() {
             val card = Cards.all(context)[index]
             val position = currentSlide(context, id)
             val slide = slides[position]
+            val isHook = slide == Slide.HOOK
             val isLine = slide == Slide.LINE
+            val size = WidgetFit.size(context, id)
 
             return RemoteViews(context.packageName, R.layout.widget_card).apply {
-                setTextViewText(R.id.slide_kicker, slide.kicker(card).uppercase())
-                setViewVisibility(R.id.slide_line, if (isLine) View.VISIBLE else View.GONE)
-                setViewVisibility(R.id.slide_note, if (isLine) View.GONE else View.VISIBLE)
-                setViewVisibility(R.id.slide_credit, if (isLine) View.VISIBLE else View.GONE)
-                if (isLine) {
-                    setTextViewText(R.id.slide_line, slide.body(context, card))
-                    setTextViewText(R.id.slide_credit, Markup.credit(card))
+                // Today's colour for this slide. From Android 12 the widget carries both the light and
+                // dark versions and switches by itself; before that it uses the current mode.
+                val colors = Palette.today()
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                    setColorInt(R.id.widget_bg, "setColorFilter", colors.light(slide), colors.dark(slide))
                 } else {
-                    setTextViewText(R.id.slide_note, slide.body(context, card))
+                    setInt(R.id.widget_bg, "setColorFilter", colors.color(context, slide))
                 }
+                setViewVisibility(R.id.hook, if (isHook) View.VISIBLE else View.GONE)
+                setViewVisibility(R.id.content, if (isHook) View.GONE else View.VISIBLE)
+                if (isHook) {
+                    setViewVisibility(R.id.hook_pill, if (Slide.hasHowTo(card)) View.VISIBLE else View.GONE)
+                    setTextColor(R.id.hook_pill, colors.hook)
+                    setTextViewText(R.id.hook_author, card.author)
+                    setViewVisibility(R.id.hook_hint, if (size.compact) View.GONE else View.VISIBLE)
+                    setImageViewBitmap(R.id.hook_title, HookArt.draw(context, size, Slide.hookTitle(card)))
+                    setContentDescription(R.id.hook_title, card.job)
+                } else {
+                    val credit = Markup.credit(card)
+                    setTextViewText(R.id.slide_kicker, slide.label.uppercase())
+                    // On a small widget the footer already names the slide, so the kicker makes room.
+                    setViewVisibility(R.id.slide_kicker, if (size.compact) View.GONE else View.VISIBLE)
+                    setViewVisibility(R.id.slide_line, if (isLine) View.VISIBLE else View.GONE)
+                    setViewVisibility(R.id.slide_note, if (isLine) View.GONE else View.VISIBLE)
+                    setViewVisibility(R.id.slide_credit, if (isLine) View.VISIBLE else View.GONE)
+                    setViewVisibility(R.id.slide_job, if (size.compact) View.GONE else View.VISIBLE)
+                    val body = fitted(context, size, slide.body(context, card), isLine, if (isLine) credit else null)
+                    if (isLine) {
+                        setTextViewText(R.id.slide_line, body)
+                        setTextViewText(R.id.slide_credit, credit)
+                    } else {
+                        setTextViewText(R.id.slide_note, body)
+                    }
+                    setTextViewText(R.id.slide_job, card.job)
+                }
+                // The footer takes the hook's cream on the hook slide.
+                textColor(context, R.id.widget_progress, if (isHook) R.color.hook_soft else R.color.widget_soft)
+                textColor(context, R.id.widget_open, if (isHook) R.color.hook_ink else R.color.widget_text)
                 setTextViewText(
                     R.id.widget_progress,
                     context.getString(R.string.progress, position + 1, slides.size, slide.label),
@@ -123,6 +165,44 @@ class CardWidgetProvider : AppWidgetProvider() {
                 )
             }
         }
+
+        /** Sets a text colour that keeps following light and dark mode, like the colours set in XML. */
+        private fun RemoteViews.textColor(context: Context, view: Int, @ColorRes color: Int) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                setColorStateList(view, "setTextColor", color)
+            } else {
+                setTextColor(view, ContextCompat.getColor(context, color))
+            }
+        }
+
+        /**
+         * The slide's text, shortened with "…" if even the smallest comfortable size won't fit it
+         * in the space this widget has. The text view then sizes it up from there to fill the space.
+         */
+        private fun fitted(context: Context, size: WidgetFit.Size, text: CharSequence, isLine: Boolean, credit: CharSequence?): CharSequence {
+            val width = WidgetFit.dp(context, size.widthDp - 40f).toInt()
+            val paint = TextPaint(TextPaint.ANTI_ALIAS_FLAG).apply {
+                typeface = if (isLine) Typeface.create(Typeface.SERIF, Typeface.BOLD) else Typeface.DEFAULT
+                textSize = WidgetFit.sp(context, if (isLine) LINE_FIT_SP else NOTE_FIT_SP)
+            }
+            // Everything on a text slide besides the text: padding, the kicker (not on small widgets)
+            // and the footer, then the credit (as many lines as it takes) and the fine print.
+            var reserved = WidgetFit.dp(context, if (size.compact) 78f else 94f)
+            if (credit != null) {
+                val creditPaint = TextPaint(TextPaint.ANTI_ALIAS_FLAG).apply { textSize = WidgetFit.sp(context, 13f) }
+                val lines = WidgetFit.layout(credit, creditPaint, width, 1f).lineCount.coerceIn(1, 2)
+                reserved += WidgetFit.dp(context, 8f) + lines * WidgetFit.sp(context, 17f)
+            }
+            if (!size.compact) reserved += WidgetFit.dp(context, 8f) + WidgetFit.sp(context, 15f)
+            val height = ((WidgetFit.dp(context, size.heightDp.toFloat()) - reserved) * 0.95f).toInt().coerceAtLeast(1)
+            val spacing = if (isLine) 1.15f else 1.25f
+            return WidgetFit.fit(text, paint, width, height, spacing, closing = if (isLine) "”" else "")
+        }
+
+        // The sizes text is fitted at before it's shortened. The views can still go a little
+        // smaller (see widget_card.xml), which covers any slack in the space worked out above.
+        private const val LINE_FIT_SP = 14f
+        private const val NOTE_FIT_SP = 12f
 
         private fun stepIntent(context: Context, id: Int, direction: Int): PendingIntent {
             val intent = Intent(context, CardWidgetProvider::class.java)

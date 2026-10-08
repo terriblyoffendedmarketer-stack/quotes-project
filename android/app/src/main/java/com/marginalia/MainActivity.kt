@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.marginalia.widget.CardWidgetProvider
+import java.time.LocalDate
 
 class MainActivity : Activity() {
 
@@ -32,6 +33,8 @@ class MainActivity : Activity() {
         count = findViewById(R.id.count)
         stealToggle = findViewById(R.id.steal_toggle)
 
+        // Slides carry their own colours, so clip them to the deck's rounded corners.
+        findViewById<View>(R.id.deck).clipToOutline = true
         pager.adapter = adapter
         pager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) = markTab(position)
@@ -95,7 +98,9 @@ class MainActivity : Activity() {
     private fun render(slide: Int) {
         val cards = Cards.all(this)
         slides = Cards.slides(this)
-        adapter.show(cards[index], slides)
+        // Each card in the colours of the day it's shown on, so browsing looks like the days do.
+        val day = LocalDate.now().toEpochDay() + index - Cards.todayIndex(this)
+        adapter.show(cards[index], slides, Palette.forDay(day))
 
         val today = index == Cards.todayIndex(this)
         dayLabel.text = if (today) getString(R.string.today) else getString(R.string.back_to_today)

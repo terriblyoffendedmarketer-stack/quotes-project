@@ -1,129 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Drawn directly, with no list adapter, so the launcher can show it instantly. -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/widget_bg"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <FrameLayout
+    <!-- The card itself, tinted to the day's colour for the slide that's showing. -->
+    <ImageView
+        android:id="@+id/widget_bg"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="fitXY"
+        android:src="@drawable/widget_shape"
+        android:tint="@color/slide_hook" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- Slide 1, the hook: “How to” in a pill, then the rest of the job as large as it fits. -->
+            <LinearLayout
+                android:id="@+id/hook"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="4dp">
+
+                <TextView
+                    android:id="@+id/hook_pill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hook_pill"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.1"
+                    android:paddingStart="14dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="6dp"
+                    android:text="@string/hook_pill"
+                    android:textColor="@color/hook_pill_ink"
+                    android:textSize="15sp" />
+
+                <!-- The rest of the job, drawn as a picture so it can use the display font at full size. -->
+                <ImageView
+                    android:id="@+id/hook_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:importantForAccessibility="yes"
+                    android:scaleType="fitStart" />
+
+                <!-- Who wrote it, small, with the nudge to the next slide beside it. -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:baselineAligned="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/hook_author"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:textColor="@color/hook_soft"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/hook_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:text="@string/hook_hint"
+                        android:textColor="@color/hook_soft"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingTop="18dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="4dp">
+
+                <TextView
+                    android:id="@+id/slide_kicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.05"
+                    android:maxLines="2"
+                    android:textColor="@color/widget_soft"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/slide_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="40sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="1sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="serif"
+                    android:gravity="center_vertical"
+                    android:lineSpacingMultiplier="1.15"
+                    android:textColor="@color/widget_text"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/slide_note"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="22sp"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeStepGranularity="0.5sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="top"
+                    android:lineSpacingMultiplier="1.25"
+                    android:textColor="@color/widget_text"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/slide_credit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="@color/widget_soft"
+                    android:textSize="13sp" />
+
+                <!-- Fine print on every slide after the hook: the job this card is about. -->
+                <TextView
+                    android:id="@+id/slide_job"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/widget_soft"
+                    android:textSize="11sp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <!-- Tap zones: left third goes back, the rest goes forward. -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/tap_back"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:id="@+id/tap_next"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" />
+            </LinearLayout>
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingStart="20dp"
-            android:paddingTop="18dp"
-            android:paddingEnd="20dp"
-            android:paddingBottom="4dp">
+            android:paddingEnd="8dp"
+            android:paddingBottom="6dp">
 
             <TextView
-                android:id="@+id/slide_kicker"
-                android:layout_width="match_parent"
+                android:id="@+id/widget_progress"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:ellipsize="end"
                 android:fontFamily="sans-serif-medium"
-                android:letterSpacing="0.05"
-                android:maxLines="2"
+                android:maxLines="1"
                 android:textColor="@color/widget_soft"
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/slide_line"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:autoSizeMaxTextSize="40sp"
-                android:autoSizeMinTextSize="12sp"
-                android:autoSizeStepGranularity="1sp"
-                android:autoSizeTextType="uniform"
-                android:fontFamily="serif"
-                android:gravity="center_vertical"
-                android:lineSpacingMultiplier="1.15"
-                android:textColor="@color/widget_text"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/slide_note"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:autoSizeMaxTextSize="22sp"
-                android:autoSizeMinTextSize="11sp"
-                android:autoSizeStepGranularity="0.5sp"
-                android:autoSizeTextType="uniform"
-                android:gravity="top"
-                android:lineSpacingMultiplier="1.25"
-                android:textColor="@color/widget_text"
-                android:visibility="gone" />
-
-            <TextView
-                android:id="@+id/slide_credit"
-                android:layout_width="match_parent"
+                android:id="@+id/widget_open"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:textColor="@color/widget_soft"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:minHeight="40dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/open"
+                android:textColor="@color/widget_text"
                 android:textSize="13sp" />
         </LinearLayout>
-
-        <!-- Tap zones: left third goes back, the rest goes forward. -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <FrameLayout
-                android:id="@+id/tap_back"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-            <FrameLayout
-                android:id="@+id/tap_next"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2" />
-        </LinearLayout>
-    </FrameLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingStart="20dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="6dp">
-
-        <TextView
-            android:id="@+id/widget_progress"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ellipsize="end"
-            android:fontFamily="sans-serif-medium"
-            android:maxLines="1"
-            android:textColor="@color/widget_soft"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/widget_open"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:minHeight="40dp"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:text="@string/open"
-            android:textColor="@color/widget_text"
-            android:textSize="13sp" />
     </LinearLayout>
-</LinearLayout>
+</FrameLayout>

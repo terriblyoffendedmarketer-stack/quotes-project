@@ -1,36 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- What the widget picker shows: the hook slide, as the widget looks first thing each day. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/widget_bg"
+    android:background="@drawable/widget_bg_hook"
     android:orientation="vertical"
     android:padding="20dp">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:letterSpacing="0.05"
-        android:text="@string/preview_job"
-        android:textColor="@color/widget_soft"
-        android:textSize="12sp" />
+        android:background="@drawable/hook_pill"
+        android:fontFamily="sans-serif-black"
+        android:letterSpacing="0.1"
+        android:paddingStart="14dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="6dp"
+        android:text="@string/hook_pill"
+        android:textColor="@color/hook_pill_ink"
+        android:textSize="15sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_weight="1"
         android:fontFamily="serif"
         android:gravity="center_vertical"
-        android:text="@string/preview_line"
-        android:textColor="@color/widget_text"
-        android:textSize="20sp"
+        android:letterSpacing="-0.02"
+        android:lineSpacingMultiplier="0.95"
+        android:text="@string/preview_hook"
+        android:textColor="@color/hook_ink"
+        android:textSize="40sp"
         android:textStyle="bold" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/preview_author"
-        android:textColor="@color/widget_soft"
-        android:textSize="13sp" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:text="@string/preview_author"
+            android:textColor="@color/hook_soft"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/hook_hint"
+            android:textColor="@color/hook_soft"
+            android:textSize="13sp" />
+    </LinearLayout>
 </LinearLayout>

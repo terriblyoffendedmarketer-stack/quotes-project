@@ -8,7 +8,7 @@ This is Marginalia, a personal daily-writing-example app for its owner, a B2B Sa
 - **Widget behaviour.** One slide at a time, filling whatever size the widget is. Tap the right side for the next slide and the left side to go back. Slides are drawn directly into the widget's views. Don't reintroduce a StackView, a list adapter or a RemoteViewsService. The StackView warped at large sizes, and the adapter left the widget blank for a second or two when returning to the home screen.
 - **Typography.** The quote is big and bold, while explanations are regular weight. The widget follows the phone's light or dark mode.
 - **Content updates without reinstalling.** The app fetches `content/cards.json` from this public repo (`ContentSync.kt`). Keep the JSON format backwards compatible. Adding fields is fine; renaming or removing them breaks installed apps.
-- **Slide order:** The line, Look closer, Steal it (can be hidden), Around it (last, a nice-to-have).
+- **Slide order:** How to (the hook: just the job, as large as it fits), The line, Look closer, Steal it (can be hidden), Around it (last, a nice-to-have). The hook also shows the author's name, small. Slides after the hook show the job in fine print. Slide colours change every day (`Palette.kt`).
 - **Formatting in card text.** Wrap titles of books, magazines and newspapers in `*asterisks*` in lookCloser, aroundIt and stealIt; the app and prototype render them as italics. Story, essay, poem and speech titles go in “curly quotes”. Line breaks in a quote (`\n`) are kept, as for poems.
 
 ## Content rules (the most important part)
