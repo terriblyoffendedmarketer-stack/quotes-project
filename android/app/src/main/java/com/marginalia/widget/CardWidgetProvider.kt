@@ -8,15 +8,18 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.graphics.Typeface
+import android.os.Build
 import android.os.Bundle
 import android.text.TextPaint
 import android.view.View
 import android.widget.RemoteViews
+import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import com.marginalia.Cards
 import com.marginalia.ContentSync
 import com.marginalia.MainActivity
 import com.marginalia.Markup
+import com.marginalia.Palette
 import com.marginalia.R
 import com.marginalia.Slide
 import java.time.LocalDate
@@ -106,11 +109,20 @@ class CardWidgetProvider : AppWidgetProvider() {
             val size = WidgetFit.size(context, id)
 
             return RemoteViews(context.packageName, R.layout.widget_card).apply {
-                setInt(R.id.widget_root, "setBackgroundResource", slide.widgetBg)
+                // Today's colour for this slide. From Android 12 the widget carries both the light and
+                // dark versions and switches by itself; before that it uses the current mode.
+                val colors = Palette.today()
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                    setColorInt(R.id.widget_bg, "setColorFilter", colors.light(slide), colors.dark(slide))
+                } else {
+                    setInt(R.id.widget_bg, "setColorFilter", colors.color(context, slide))
+                }
                 setViewVisibility(R.id.hook, if (isHook) View.VISIBLE else View.GONE)
                 setViewVisibility(R.id.content, if (isHook) View.GONE else View.VISIBLE)
                 if (isHook) {
                     setViewVisibility(R.id.hook_pill, if (Slide.hasHowTo(card)) View.VISIBLE else View.GONE)
+                    setTextColor(R.id.hook_pill, colors.hook)
+                    setTextViewText(R.id.hook_author, card.author)
                     setViewVisibility(R.id.hook_hint, if (size.compact) View.GONE else View.VISIBLE)
                     setImageViewBitmap(R.id.hook_title, HookArt.draw(context, size, Slide.hookTitle(card)))
                     setContentDescription(R.id.hook_title, card.job)
@@ -132,11 +144,9 @@ class CardWidgetProvider : AppWidgetProvider() {
                     }
                     setTextViewText(R.id.slide_job, card.job)
                 }
-                // The footer takes the hook's ink on the cobalt slide.
-                val ink = ContextCompat.getColor(context, if (isHook) R.color.hook_ink else R.color.widget_text)
-                val soft = ContextCompat.getColor(context, if (isHook) R.color.hook_soft else R.color.widget_soft)
-                setTextColor(R.id.widget_progress, soft)
-                setTextColor(R.id.widget_open, ink)
+                // The footer takes the hook's cream on the hook slide.
+                textColor(context, R.id.widget_progress, if (isHook) R.color.hook_soft else R.color.widget_soft)
+                textColor(context, R.id.widget_open, if (isHook) R.color.hook_ink else R.color.widget_text)
                 setTextViewText(
                     R.id.widget_progress,
                     context.getString(R.string.progress, position + 1, slides.size, slide.label),
@@ -153,6 +163,15 @@ class CardWidgetProvider : AppWidgetProvider() {
                         PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
                     ),
                 )
+            }
+        }
+
+        /** Sets a text colour that keeps following light and dark mode, like the colours set in XML. */
+        private fun RemoteViews.textColor(context: Context, view: Int, @ColorRes color: Int) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                setColorStateList(view, "setTextColor", color)
+            } else {
+                setTextColor(view, ContextCompat.getColor(context, color))
             }
         }
 

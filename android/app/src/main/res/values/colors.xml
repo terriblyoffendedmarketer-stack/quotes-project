@@ -12,14 +12,10 @@
     <color name="widget_bg">#F4F5F2</color>
     <color name="widget_text">#14161B</color>
     <color name="widget_soft">#4A4E57</color>
-    <!-- Each slide has its own colour: a cobalt hook, then butter, bubblegum, lime and lilac. -->
+    <!-- The hook's default colour (the widget picker preview). Day-to-day colours live in Palette.kt. -->
     <color name="slide_hook">#2D3BE8</color>
-    <color name="slide_line">#FFE9A8</color>
-    <color name="slide_look">#FFD0E1</color>
-    <color name="slide_steal">#D2F3B0</color>
-    <color name="slide_around">#DCD0FF</color>
     <color name="hook_ink">#FFF4DF</color>
-    <color name="hook_soft">#C9CEFF</color>
-    <color name="hook_pill">#FF9CC8</color>
-    <color name="hook_pill_ink">#14161B</color>
+    <color name="hook_soft">#CCFFF4DF</color>
+    <color name="hook_pill">#FFF4DF</color>
+    <color name="hook_pill_ink">#2D3BE8</color>
 </resources>

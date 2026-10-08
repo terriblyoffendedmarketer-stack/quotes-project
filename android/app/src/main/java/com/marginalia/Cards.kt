@@ -1,8 +1,6 @@
 package com.marginalia
 
 import android.content.Context
-import androidx.annotation.ColorRes
-import androidx.annotation.DrawableRes
 import org.json.JSONArray
 import java.io.File
 import java.time.LocalDate
@@ -24,14 +22,14 @@ data class Card(
 /**
  * The slides of a card, in reading order. The hook is just the job, set as large as it will go,
  * so the first thing you see is something to do. "Around it" is the optional extra at the end.
- * Each slide has its own colour, in the app and the widget.
+ * Each slide has its own colour, which changes every day (see [Palette]).
  */
-enum class Slide(val label: String, @ColorRes val color: Int, @DrawableRes val widgetBg: Int) {
-    HOOK("How to", R.color.slide_hook, R.drawable.widget_bg_hook),
-    LINE("The line", R.color.slide_line, R.drawable.widget_bg_line),
-    LOOK("Look closer", R.color.slide_look, R.drawable.widget_bg_look),
-    STEAL("Steal it", R.color.slide_steal, R.drawable.widget_bg_steal),
-    AROUND("Around it", R.color.slide_around, R.drawable.widget_bg_around);
+enum class Slide(val label: String) {
+    HOOK("How to"),
+    LINE("The line"),
+    LOOK("Look closer"),
+    STEAL("Steal it"),
+    AROUND("Around it");
 
     fun body(context: Context, card: Card): CharSequence = when (this) {
         HOOK -> hookTitle(card)

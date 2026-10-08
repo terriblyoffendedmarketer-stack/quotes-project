@@ -10,14 +10,4 @@
     <color name="widget_bg">#15171B</color>
     <color name="widget_text">#F6F5F0</color>
     <color name="widget_soft">#B4B7BD</color>
-    <!-- Dark mode keeps the cobalt hook and deepens the rest: ochre, berry, forest and indigo. -->
-    <color name="slide_hook">#2D3BE8</color>
-    <color name="slide_line">#5E460C</color>
-    <color name="slide_look">#571F3B</color>
-    <color name="slide_steal">#1F4527</color>
-    <color name="slide_around">#2E2870</color>
-    <color name="hook_ink">#FFF4DF</color>
-    <color name="hook_soft">#C9CEFF</color>
-    <color name="hook_pill">#FF9CC8</color>
-    <color name="hook_pill_ink">#14161B</color>
 </resources>

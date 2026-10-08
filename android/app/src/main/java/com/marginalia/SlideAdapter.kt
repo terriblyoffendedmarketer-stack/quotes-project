@@ -15,10 +15,12 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
 
     private var card: Card? = null
     private var slides: List<Slide> = emptyList()
+    private var colors: Palette.Day = Palette.today()
 
-    fun show(card: Card, slides: List<Slide>) {
+    fun show(card: Card, slides: List<Slide>, colors: Palette.Day) {
         this.card = card
         this.slides = slides
+        this.colors = colors
         notifyDataSetChanged()
     }
 
@@ -28,12 +30,13 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
         Holder(LayoutInflater.from(parent.context).inflate(R.layout.item_slide, parent, false))
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.bind(card ?: return, slides[position])
+        holder.bind(card ?: return, slides[position], colors)
     }
 
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
         private val hookPill: TextView = view.findViewById(R.id.hook_pill)
         private val hookTitle: TextView = view.findViewById(R.id.hook_title)
+        private val hookAuthor: TextView = view.findViewById(R.id.hook_author)
         private val kicker: TextView = view.findViewById(R.id.slide_kicker)
         private val mini: TextView = view.findViewById(R.id.slide_mini_quote)
         private val body: TextView = view.findViewById(R.id.slide_body)
@@ -43,12 +46,15 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
         private val spacerTop: View = view.findViewById(R.id.spacer_top)
         private val spacerBottom: View = view.findViewById(R.id.spacer_bottom)
 
-        fun bind(card: Card, slide: Slide) {
+        fun bind(card: Card, slide: Slide, colors: Palette.Day) {
             val isHook = slide == Slide.HOOK
             val isLine = slide == Slide.LINE
-            itemView.setBackgroundColor(ContextCompat.getColor(itemView.context, slide.color))
+            itemView.setBackgroundColor(colors.color(itemView.context, slide))
+            hookPill.setTextColor(colors.hook)
             hookPill.visibility = if (isHook && Slide.hasHowTo(card)) View.VISIBLE else View.GONE
             hookTitle.visibility = if (isHook) View.VISIBLE else View.GONE
+            hookAuthor.visibility = hookTitle.visibility
+            hookAuthor.text = card.author
             kicker.visibility = if (isHook) View.GONE else View.VISIBLE
             line.visibility = if (isLine) View.VISIBLE else View.GONE
             body.visibility = if (isHook || isLine) View.GONE else View.VISIBLE

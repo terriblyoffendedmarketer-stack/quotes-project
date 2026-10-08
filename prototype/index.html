@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@48,700,100,0&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: one phone-width reading column. A card is a horizontal stack of slides, each in its own colour: a cobalt hook, then butter, bubblegum, lime and lilac. */
+/* Layout: one phone-width reading column. A card is a horizontal stack of slides, each in its own colour, which changes every day (palette() below). */
 :root {
   --paper: #f4f5f2;
   --sheet: #ffffff;
@@ -12,8 +12,8 @@
   --rule: #dcdfe0;
   --marker: #f5e36a;
   --marker-ink: #1b1d22;
-  --s-hook: #2d3be8; --s-line: #ffe9a8; --s-look: #ffd0e1; --s-steal: #d2f3b0; --s-around: #dcd0ff;
-  --hook-ink: #fff4df; --hook-soft: #c9ceff; --hook-pill: #ff9cc8; --hook-pill-ink: #14161b;
+  --s-hook: #2d3be8; --s-line: var(--l-line); --s-look: var(--l-look); --s-steal: var(--l-steal); --s-around: var(--l-around);
+  --hook-ink: #fff4df; --hook-soft: rgba(255, 244, 223, .8); --hook-pill: #fff4df;
   --font-hook: "Fraunces", Georgia, serif;
   --font-line: "Literata", Georgia, "Times New Roman", serif;
   --font-note: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -23,13 +23,13 @@
   :root:not([data-theme="light"]) {
     --paper: #111317; --sheet: #1a1d22; --ink: #e9e8e3; --ink-soft: #a2a5ab;
     --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; color-scheme: dark;
-    --s-line: #5e460c; --s-look: #571f3b; --s-steal: #1f4527; --s-around: #2e2870;
+    --s-line: var(--d-line); --s-look: var(--d-look); --s-steal: var(--d-steal); --s-around: var(--d-around);
   }
 }
 :root[data-theme="dark"] {
   --paper: #111317; --sheet: #1a1d22; --ink: #e9e8e3; --ink-soft: #a2a5ab;
   --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; color-scheme: dark;
-  --s-line: #5e460c; --s-look: #571f3b; --s-steal: #1f4527; --s-around: #2e2870;
+  --s-line: var(--d-line); --s-look: var(--d-look); --s-steal: var(--d-steal); --s-around: var(--d-around);
 }
 *, *::before, *::after { box-sizing: border-box; }
 html, body { height: 100%; }
@@ -53,9 +53,11 @@ body {
 .slide.look { background: var(--s-look); }
 .slide.steal-s { background: var(--s-steal); }
 .slide.around { background: var(--s-around); }
-.pill { align-self: flex-start; font: 700 15px/1 var(--font-note); letter-spacing: .1em; text-transform: uppercase; background: var(--hook-pill); color: var(--hook-pill-ink); border-radius: 99px; padding: 8px 15px; }
+.pill { align-self: flex-start; font: 700 15px/1 var(--font-note); letter-spacing: .1em; text-transform: uppercase; background: var(--hook-pill); color: var(--s-hook); border-radius: 99px; padding: 8px 15px; }
 .hook-title { font-family: var(--font-hook); font-weight: 700; font-variation-settings: "opsz" 48, "SOFT" 100, "WONK" 0; font-size: clamp(2.6rem, 13vw, 3.5rem); line-height: 1.02; letter-spacing: -.01em; text-wrap: balance; margin: auto 0; }
-.hook-hint { align-self: flex-end; font: 500 14px/1 var(--font-note); color: var(--hook-soft); }
+.hook-foot { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font: 500 14px/1.2 var(--font-note); color: var(--hook-soft); }
+.hook-foot span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hook-foot span:last-child { flex: none; }
 .fine { font-size: 12px; font-style: italic; color: var(--ink-soft); margin-top: -10px; }
 .job { font-family: var(--font-tag); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
 .line { white-space: pre-line; font-family: var(--font-line); font-size: 1.45rem; line-height: 1.42; text-wrap: pretty; margin: auto 0; }
@@ -84,7 +86,6 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .widget-wrap { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
 .widget { background: var(--s-hook); color: var(--hook-ink); border-radius: 24px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; cursor: pointer; border: 0; text-align: left; font: inherit; }
 .widget .wl { font-family: var(--font-hook); font-weight: 700; font-variation-settings: "opsz" 48, "SOFT" 100, "WONK" 0; font-size: 2rem; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance; }
-.widget .wa { align-self: flex-end; font-size: 13px; color: var(--hook-soft); }
 .caption { font-size: 13px; color: var(--ink-soft); }
 .row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
 @media (prefers-reduced-motion: reduce) { .track { scroll-behavior: auto; } }
@@ -114,7 +115,7 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
     <button class="widget" id="widget" type="button" aria-label="Widget preview, opens the card">
       <span class="pill" id="wPill">How to</span>
       <span class="wl" id="wLine"></span>
-      <span class="wa">The line that does it →</span>
+      <span class="hook-foot" style="font-size:13px"><span id="wAuthor"></span><span>The line that does it →</span></span>
     </button>
     <span class="caption">This is roughly how the Android widget would look. On your phone you can flick through every slide inside the widget.</span>
   </div>
@@ -129,6 +130,22 @@ const store = {
 };
 
 const dayNumber = Math.floor(Date.now() / 86400000);
+
+// Each day's colours: a bold hook and four slide colours, light and dark. Same colours and rules
+// as Palette.kt, though the random pick for a given day won't match the app's.
+const HOOKS = ["#2d3be8", "#d9402a", "#1f6b45", "#7a2a7a", "#0f6e74", "#bf4a17", "#c21f6e", "#5b2bd9", "#14161b"];
+const LIGHT = ["#ffe9a8", "#ffd0e1", "#d2f3b0", "#dcd0ff", "#ffd6bf", "#cde7ff", "#c4f0e0", "#f2e3c6", "#ffc2b8"];
+const DARK = ["#5e460c", "#571f3b", "#1f4527", "#2e2870", "#6a2e14", "#173a5e", "#0f4a44", "#4a3524", "#6b1f2a"];
+const seeded = seed => () => { seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+const shuffled = (n, rand) => { const a = [...Array(n).keys()]; for (let i = n - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+function palette(day) {
+  const order = shuffled(HOOKS.length, seeded(Math.floor(day / HOOKS.length) * 7919 + 17));
+  const picks = shuffled(LIGHT.length, seeded(day * 104729 + 3)).slice(0, 4);
+  if (picks[1] === 0) [picks[0], picks[1]] = [picks[1], picks[0]]; // butter is too close to the highlighter
+  const root = document.documentElement.style;
+  root.setProperty("--s-hook", HOOKS[order[((day % HOOKS.length) + HOOKS.length) % HOOKS.length]]);
+  ["line", "look", "steal", "around"].forEach((k, i) => { root.setProperty(`--l-${k}`, LIGHT[picks[i]]); root.setProperty(`--d-${k}`, DARK[picks[i]]); });
+}
 const todayIndex = dayNumber % CARDS.length;
 let index = todayIndex;
 let showSteal = store.get("showSteal", true);
@@ -162,13 +179,14 @@ function credit(card) {
 function render() {
   const c = CARDS[index];
   const howTo = c.job.startsWith("How to ");
+  palette(dayNumber + index - todayIndex);
   // Every slide after the hook carries the job in fine print at the bottom.
   const fine = `<div class="fine">${esc(c.job)}</div>`;
   const slides = [
     { tab: "How to", cls: "hook", html: `
       ${howTo ? '<span class="pill">How to</span>' : ""}
       <h2 class="hook-title">${esc(howTo ? c.job.slice(7) : c.job)}</h2>
-      <span class="hook-hint">The line that does it →</span>` },
+      <div class="hook-foot"><span>${esc(c.author)}</span><span>The line that does it →</span></div>` },
     { tab: "The line", cls: "line-s", html: `
       <div class="kicker">The line</div>
       <p class="line${c.quote.length > 180 ? " long" : ""}">“${esc(c.quote)}”</p>
@@ -196,6 +214,7 @@ function render() {
   $("count").textContent = `${index + 1} / ${CARDS.length}`;
   $("stealToggle").textContent = showSteal ? "Hide “Steal it”" : "Show “Steal it”";
   $("wPill").hidden = !howTo;
+  $("wAuthor").textContent = c.author;
   $("wLine").textContent = howTo ? c.job.slice(7) : c.job;
 }
 
