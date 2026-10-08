@@ -19,15 +19,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/hook_pill"
-            android:fontFamily="sans-serif-medium"
-            android:letterSpacing="0.08"
-            android:paddingStart="14dp"
-            android:paddingTop="6dp"
-            android:paddingEnd="14dp"
-            android:paddingBottom="6dp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.1"
+            android:paddingStart="16dp"
+            android:paddingTop="7dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="7dp"
             android:text="@string/hook_pill"
             android:textColor="@color/hook_pill_ink"
-            android:textSize="14sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/slide_kicker"
@@ -46,12 +46,11 @@
             android:id="@+id/hook_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/literata"
+            android:fontFamily="@font/fraunces_black"
             android:letterSpacing="-0.02"
-            android:lineSpacingMultiplier="1.0"
+            android:lineSpacingMultiplier="0.95"
             android:textColor="@color/hook_ink"
-            android:textSize="48sp"
-            android:textStyle="bold" />
+            android:textSize="54sp" />
 
         <TextView
             android:id="@+id/slide_line"

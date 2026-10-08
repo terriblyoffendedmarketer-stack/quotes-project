@@ -1,9 +1,9 @@
 <title>Marginalia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@144,900&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: one phone-width reading column. A card is a horizontal stack of slides, each in its own colour: a tangerine hook, then oat, lavender, mint and sky. */
+/* Layout: one phone-width reading column. A card is a horizontal stack of slides, each in its own colour: a cobalt hook, then butter, bubblegum, lime and lilac. */
 :root {
   --paper: #f4f5f2;
   --sheet: #ffffff;
@@ -12,8 +12,9 @@
   --rule: #dcdfe0;
   --marker: #f5e36a;
   --marker-ink: #1b1d22;
-  --s-hook: #ff7a45; --s-line: #f3e9d6; --s-look: #e5def7; --s-steal: #d4eedc; --s-around: #d6e7f7;
-  --hook-ink: #1a1410; --hook-soft: #4a2614; --hook-pill: #1a1410; --hook-pill-ink: #ffe7d6;
+  --s-hook: #2d3be8; --s-line: #ffe9a8; --s-look: #ffd0e1; --s-steal: #d2f3b0; --s-around: #dcd0ff;
+  --hook-ink: #fff4df; --hook-soft: #c9ceff; --hook-pill: #ff9cc8; --hook-pill-ink: #14161b;
+  --font-hook: "Fraunces", Georgia, serif;
   --font-line: "Literata", Georgia, "Times New Roman", serif;
   --font-note: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-tag: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
@@ -22,15 +23,13 @@
   :root:not([data-theme="light"]) {
     --paper: #111317; --sheet: #1a1d22; --ink: #e9e8e3; --ink-soft: #a2a5ab;
     --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; color-scheme: dark;
-    --s-hook: #2b1910; --s-line: #28241c; --s-look: #242036; --s-steal: #1b2b21; --s-around: #1a2533;
-    --hook-ink: #ff8b5c; --hook-soft: #e0a88c; --hook-pill: #ff7a45; --hook-pill-ink: #1a1410;
+    --s-line: #5e460c; --s-look: #571f3b; --s-steal: #1f4527; --s-around: #2e2870;
   }
 }
 :root[data-theme="dark"] {
   --paper: #111317; --sheet: #1a1d22; --ink: #e9e8e3; --ink-soft: #a2a5ab;
   --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; color-scheme: dark;
-  --s-hook: #2b1910; --s-line: #28241c; --s-look: #242036; --s-steal: #1b2b21; --s-around: #1a2533;
-  --hook-ink: #ff8b5c; --hook-soft: #e0a88c; --hook-pill: #ff7a45; --hook-pill-ink: #1a1410;
+  --s-line: #5e460c; --s-look: #571f3b; --s-steal: #1f4527; --s-around: #2e2870;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html, body { height: 100%; }
@@ -54,8 +53,8 @@ body {
 .slide.look { background: var(--s-look); }
 .slide.steal-s { background: var(--s-steal); }
 .slide.around { background: var(--s-around); }
-.pill { align-self: flex-start; font: 600 13px/1 var(--font-note); letter-spacing: .08em; text-transform: uppercase; background: var(--hook-pill); color: var(--hook-pill-ink); border-radius: 99px; padding: 7px 13px; }
-.hook-title { font-family: var(--font-line); font-weight: 700; font-size: clamp(2.6rem, 13vw, 3.4rem); line-height: 1.02; letter-spacing: -.02em; text-wrap: balance; margin: auto 0; }
+.pill { align-self: flex-start; font: 700 15px/1 var(--font-note); letter-spacing: .1em; text-transform: uppercase; background: var(--hook-pill); color: var(--hook-pill-ink); border-radius: 99px; padding: 8px 15px; }
+.hook-title { font-family: var(--font-hook); font-weight: 900; font-size: clamp(2.8rem, 14vw, 3.8rem); line-height: .98; letter-spacing: -.02em; text-wrap: balance; margin: auto 0; }
 .hook-hint { align-self: flex-end; font: 500 14px/1 var(--font-note); color: var(--hook-soft); }
 .fine { font-size: 12px; font-style: italic; color: var(--ink-soft); margin-top: -10px; }
 .job { font-family: var(--font-tag); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
@@ -84,7 +83,7 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
 .widget-wrap { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
 .widget { background: var(--s-hook); color: var(--hook-ink); border-radius: 24px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; cursor: pointer; border: 0; text-align: left; font: inherit; }
-.widget .wl { font-family: var(--font-line); font-weight: 700; font-size: 2rem; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance; }
+.widget .wl { font-family: var(--font-hook); font-weight: 900; font-size: 2rem; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance; }
 .widget .wa { align-self: flex-end; font-size: 13px; color: var(--hook-soft); }
 .caption { font-size: 13px; color: var(--ink-soft); }
 .row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }

@@ -7,6 +7,7 @@ import android.appwidget.AppWidgetProvider
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.view.View
 import android.widget.RemoteViews
 import androidx.core.content.ContextCompat
@@ -45,6 +46,11 @@ class CardWidgetProvider : AppWidgetProvider() {
             ACTION_MIDNIGHT, Intent.ACTION_TIME_CHANGED, Intent.ACTION_TIMEZONE_CHANGED -> refreshAll(context)
             else -> super.onReceive(context, intent)
         }
+    }
+
+    /** Redraw at the new size when the widget is resized, so the hook still fills it. */
+    override fun onAppWidgetOptionsChanged(context: Context, manager: AppWidgetManager, id: Int, options: Bundle) {
+        manager.updateAppWidget(id, render(context, id))
     }
 
     override fun onDeleted(context: Context, ids: IntArray) {
@@ -102,7 +108,9 @@ class CardWidgetProvider : AppWidgetProvider() {
                 setViewVisibility(R.id.content, if (isHook) View.GONE else View.VISIBLE)
                 if (isHook) {
                     setViewVisibility(R.id.hook_pill, if (Slide.hasHowTo(card)) View.VISIBLE else View.GONE)
-                    setTextViewText(R.id.hook_title, Slide.hookTitle(card))
+                    val title = Slide.hookTitle(card)
+                    setImageViewBitmap(R.id.hook_title, HookArt.draw(context, id, title))
+                    setContentDescription(R.id.hook_title, card.job)
                 } else {
                     setTextViewText(R.id.slide_kicker, slide.label.uppercase())
                     setViewVisibility(R.id.slide_line, if (isLine) View.VISIBLE else View.GONE)

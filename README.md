@@ -4,13 +4,13 @@ One great piece of writing a day, on your Android home screen. Each card takes a
 
 ## How a card works
 
-1. **How to.** Just the job, like “How to make the impossible believable”, set as large as it fits on a tangerine slide. It's the hook.
+1. **How to.** Just the job, like “How to make the impossible believable”, set big and bold in Fraunces on a cobalt slide. It's the hook.
 2. **The line.** The quote. Some are punchy lines and some are short working passages, because some jobs need a paragraph.
 3. **Look closer.** What the writing is doing that you wouldn't spot on your own.
 4. **Steal it.** One small exercise for your own writing, often marketing copy. You can hide this slide.
 5. **Around it.** A nice-to-have extra: true facts about the book and its author, ending on an open loop.
 
-Every slide after the hook repeats the job in fine print at the bottom. Each slide has its own colour: tangerine, oat, lavender, mint and sky, with darker versions in dark mode.
+Every slide after the hook repeats the job in fine print at the bottom. Each slide has its own colour: cobalt, butter, bubblegum, lime and lilac. In dark mode the hook stays cobalt and the rest turn ochre, berry, forest and indigo.
 
 ## The library
 
