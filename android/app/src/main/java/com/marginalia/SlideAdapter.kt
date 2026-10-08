@@ -32,31 +32,44 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
     }
 
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
+        private val hookPill: TextView = view.findViewById(R.id.hook_pill)
+        private val hookTitle: TextView = view.findViewById(R.id.hook_title)
         private val kicker: TextView = view.findViewById(R.id.slide_kicker)
         private val mini: TextView = view.findViewById(R.id.slide_mini_quote)
         private val body: TextView = view.findViewById(R.id.slide_body)
         private val line: TextView = view.findViewById(R.id.slide_line)
         private val footer: TextView = view.findViewById(R.id.slide_footer)
+        private val job: TextView = view.findViewById(R.id.slide_job)
         private val spacerTop: View = view.findViewById(R.id.spacer_top)
         private val spacerBottom: View = view.findViewById(R.id.spacer_bottom)
 
         fun bind(card: Card, slide: Slide) {
+            val isHook = slide == Slide.HOOK
             val isLine = slide == Slide.LINE
-            kicker.text = slide.kicker(card)
+            itemView.setBackgroundColor(ContextCompat.getColor(itemView.context, slide.color))
+            hookPill.visibility = if (isHook && Slide.hasHowTo(card)) View.VISIBLE else View.GONE
+            hookTitle.visibility = if (isHook) View.VISIBLE else View.GONE
+            kicker.visibility = if (isHook) View.GONE else View.VISIBLE
             line.visibility = if (isLine) View.VISIBLE else View.GONE
-            body.visibility = if (isLine) View.GONE else View.VISIBLE
-            spacerTop.visibility = if (isLine) View.VISIBLE else View.GONE
+            body.visibility = if (isHook || isLine) View.GONE else View.VISIBLE
+            spacerTop.visibility = if (isHook || isLine) View.VISIBLE else View.GONE
             spacerBottom.visibility = spacerTop.visibility
             mini.visibility = if (slide == Slide.LOOK) View.VISIBLE else View.GONE
+            footer.visibility = if (isHook) View.GONE else View.VISIBLE
+            job.visibility = footer.visibility
 
-            if (isLine) {
-                line.text = slide.body(itemView.context, card)
-                line.textSize = if (card.quote.length > 220) 21f else 27f
-            } else {
-                body.text = slide.body(itemView.context, card)
+            kicker.text = slide.label
+            when {
+                isHook -> hookTitle.text = slide.body(itemView.context, card)
+                isLine -> {
+                    line.text = slide.body(itemView.context, card)
+                    line.textSize = if (card.quote.length > 220) 21f else 27f
+                }
+                else -> body.text = slide.body(itemView.context, card)
             }
             if (slide == Slide.LOOK) mini.text = highlighted(card)
             footer.text = Markup.credit(card, withYear = slide == Slide.AROUND)
+            job.text = card.job
         }
 
         private fun highlighted(card: Card): CharSequence {

@@ -13,6 +13,22 @@
         android:paddingEnd="22dp"
         android:paddingBottom="18dp">
 
+        <!-- Slide 1, the hook: “How to” in a pill, then the rest of the job as big as it goes. -->
+        <TextView
+            android:id="@+id/hook_pill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/hook_pill"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.08"
+            android:paddingStart="14dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="6dp"
+            android:text="@string/hook_pill"
+            android:textColor="@color/hook_pill_ink"
+            android:textSize="14sp" />
+
         <TextView
             android:id="@+id/slide_kicker"
             style="@style/Kicker"
@@ -25,6 +41,17 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:minHeight="24dp" />
+
+        <TextView
+            android:id="@+id/hook_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/literata"
+            android:letterSpacing="-0.02"
+            android:lineSpacingMultiplier="1.0"
+            android:textColor="@color/hook_ink"
+            android:textSize="48sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/slide_line"
@@ -71,5 +98,15 @@
             android:layout_marginTop="20dp"
             android:textColor="@color/ink_soft"
             android:textSize="14sp" />
+
+        <!-- Fine print on every slide after the hook: the job this card is about. -->
+        <TextView
+            android:id="@+id/slide_job"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/ink_soft"
+            android:textSize="12sp"
+            android:textStyle="italic" />
     </LinearLayout>
 </ScrollView>

@@ -12,4 +12,14 @@
     <color name="widget_bg">#F4F5F2</color>
     <color name="widget_text">#14161B</color>
     <color name="widget_soft">#4A4E57</color>
+    <!-- Each slide has its own colour: a loud tangerine hook, then oat, lavender, mint and sky. -->
+    <color name="slide_hook">#FF7A45</color>
+    <color name="slide_line">#F3E9D6</color>
+    <color name="slide_look">#E5DEF7</color>
+    <color name="slide_steal">#D4EEDC</color>
+    <color name="slide_around">#D6E7F7</color>
+    <color name="hook_ink">#1A1410</color>
+    <color name="hook_soft">#4A2614</color>
+    <color name="hook_pill">#1A1410</color>
+    <color name="hook_pill_ink">#FFE7D6</color>
 </resources>

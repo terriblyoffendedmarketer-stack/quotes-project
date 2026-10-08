@@ -3,7 +3,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/widget_bg"
+    android:id="@+id/widget_root"
+    android:background="@drawable/widget_bg_hook"
     android:orientation="vertical">
 
     <FrameLayout
@@ -11,7 +12,63 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
+        <!-- Slide 1, the hook: “How to” in a pill, then the rest of the job as large as it fits. -->
         <LinearLayout
+            android:id="@+id/hook"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:id="@+id/hook_pill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hook_pill"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.08"
+                android:paddingStart="12dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="5dp"
+                android:text="@string/hook_pill"
+                android:textColor="@color/hook_pill_ink"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hook_title"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="96sp"
+                android:autoSizeMinTextSize="18sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="serif"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.02"
+                android:lineSpacingMultiplier="0.95"
+                android:textColor="@color/hook_ink"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/hook_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="end"
+                android:text="@string/hook_hint"
+                android:textColor="@color/hook_soft"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -71,6 +128,18 @@
                 android:maxLines="2"
                 android:textColor="@color/widget_soft"
                 android:textSize="13sp" />
+
+            <!-- Fine print on every slide after the hook: the job this card is about. -->
+            <TextView
+                android:id="@+id/slide_job"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/widget_soft"
+                android:textSize="11sp"
+                android:textStyle="italic" />
         </LinearLayout>
 
         <!-- Tap zones: left third goes back, the rest goes forward. -->

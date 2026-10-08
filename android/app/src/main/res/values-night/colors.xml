@@ -10,4 +10,13 @@
     <color name="widget_bg">#15171B</color>
     <color name="widget_text">#F6F5F0</color>
     <color name="widget_soft">#B4B7BD</color>
+    <color name="slide_hook">#2B1910</color>
+    <color name="slide_line">#28241C</color>
+    <color name="slide_look">#242036</color>
+    <color name="slide_steal">#1B2B21</color>
+    <color name="slide_around">#1A2533</color>
+    <color name="hook_ink">#FF8B5C</color>
+    <color name="hook_soft">#E0A88C</color>
+    <color name="hook_pill">#FF7A45</color>
+    <color name="hook_pill_ink">#1A1410</color>
 </resources>

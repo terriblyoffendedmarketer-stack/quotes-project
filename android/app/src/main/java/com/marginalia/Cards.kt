@@ -1,6 +1,8 @@
 package com.marginalia
 
 import android.content.Context
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
 import org.json.JSONArray
 import java.io.File
 import java.time.LocalDate
@@ -19,20 +21,34 @@ data class Card(
     val stealIt: String,
 )
 
-/** The slides of a card, in reading order. "Around it" is the optional extra at the end. */
-enum class Slide(val label: String) {
-    LINE("The line"),
-    LOOK("Look closer"),
-    STEAL("Steal it"),
-    AROUND("Around it");
-
-    fun kicker(card: Card) = if (this == LINE) card.job else label
+/**
+ * The slides of a card, in reading order. The hook is just the job, set as large as it will go,
+ * so the first thing you see is something to do. "Around it" is the optional extra at the end.
+ * Each slide has its own colour, in the app and the widget.
+ */
+enum class Slide(val label: String, @ColorRes val color: Int, @DrawableRes val widgetBg: Int) {
+    HOOK("How to", R.color.slide_hook, R.drawable.widget_bg_hook),
+    LINE("The line", R.color.slide_line, R.drawable.widget_bg_line),
+    LOOK("Look closer", R.color.slide_look, R.drawable.widget_bg_look),
+    STEAL("Steal it", R.color.slide_steal, R.drawable.widget_bg_steal),
+    AROUND("Around it", R.color.slide_around, R.drawable.widget_bg_around);
 
     fun body(context: Context, card: Card): CharSequence = when (this) {
+        HOOK -> hookTitle(card)
         LINE -> "“${card.quote}”"
         LOOK -> Markup.note(context, card.lookCloser)
         STEAL -> Markup.note(context, card.stealIt)
         AROUND -> Markup.note(context, card.aroundIt)
+    }
+
+    companion object {
+        /** “How to make the impossible believable” → “make the impossible believable”; the “How to” sits above it. */
+        fun hookTitle(card: Card): String = card.job.removePrefix(HOW_TO).trim()
+
+        /** Whether the job starts with “How to”, so the hook can show it in its pill. */
+        fun hasHowTo(card: Card) = card.job.startsWith(HOW_TO)
+
+        private const val HOW_TO = "How to "
     }
 }
 

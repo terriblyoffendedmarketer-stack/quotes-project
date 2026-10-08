@@ -9,6 +9,7 @@ import android.content.Context
 import android.content.Intent
 import android.view.View
 import android.widget.RemoteViews
+import androidx.core.content.ContextCompat
 import com.marginalia.Cards
 import com.marginalia.ContentSync
 import com.marginalia.MainActivity
@@ -19,7 +20,7 @@ import java.time.LocalDate
 import java.time.ZoneId
 
 /**
- * Home-screen widget showing today's card one slide at a time, like stories:
+ * Home-screen widget showing today's card one slide at a time, like stories, each slide in its own colour:
  * tap the right side for the next slide and the left side to go back.
  *
  * Every slide is drawn straight into the widget's views, with no list adapter or service,
@@ -68,7 +69,7 @@ class CardWidgetProvider : AppWidgetProvider() {
         private fun slideKey(id: Int) = "slide_$id"
         private fun dayKey(id: Int) = "day_$id"
 
-        /** Which slide this widget is on. Starts again from the line each new day. */
+        /** Which slide this widget is on. Starts again from the hook each new day. */
         private fun currentSlide(context: Context, id: Int): Int {
             val prefs = state(context)
             val today = LocalDate.now().toEpochDay()
@@ -92,19 +93,34 @@ class CardWidgetProvider : AppWidgetProvider() {
             val card = Cards.all(context)[index]
             val position = currentSlide(context, id)
             val slide = slides[position]
+            val isHook = slide == Slide.HOOK
             val isLine = slide == Slide.LINE
 
             return RemoteViews(context.packageName, R.layout.widget_card).apply {
-                setTextViewText(R.id.slide_kicker, slide.kicker(card).uppercase())
-                setViewVisibility(R.id.slide_line, if (isLine) View.VISIBLE else View.GONE)
-                setViewVisibility(R.id.slide_note, if (isLine) View.GONE else View.VISIBLE)
-                setViewVisibility(R.id.slide_credit, if (isLine) View.VISIBLE else View.GONE)
-                if (isLine) {
-                    setTextViewText(R.id.slide_line, slide.body(context, card))
-                    setTextViewText(R.id.slide_credit, Markup.credit(card))
+                setInt(R.id.widget_root, "setBackgroundResource", slide.widgetBg)
+                setViewVisibility(R.id.hook, if (isHook) View.VISIBLE else View.GONE)
+                setViewVisibility(R.id.content, if (isHook) View.GONE else View.VISIBLE)
+                if (isHook) {
+                    setViewVisibility(R.id.hook_pill, if (Slide.hasHowTo(card)) View.VISIBLE else View.GONE)
+                    setTextViewText(R.id.hook_title, Slide.hookTitle(card))
                 } else {
-                    setTextViewText(R.id.slide_note, slide.body(context, card))
+                    setTextViewText(R.id.slide_kicker, slide.label.uppercase())
+                    setViewVisibility(R.id.slide_line, if (isLine) View.VISIBLE else View.GONE)
+                    setViewVisibility(R.id.slide_note, if (isLine) View.GONE else View.VISIBLE)
+                    setViewVisibility(R.id.slide_credit, if (isLine) View.VISIBLE else View.GONE)
+                    if (isLine) {
+                        setTextViewText(R.id.slide_line, slide.body(context, card))
+                        setTextViewText(R.id.slide_credit, Markup.credit(card))
+                    } else {
+                        setTextViewText(R.id.slide_note, slide.body(context, card))
+                    }
+                    setTextViewText(R.id.slide_job, card.job)
                 }
+                // The footer takes the hook's ink on the tangerine slide.
+                val ink = ContextCompat.getColor(context, if (isHook) R.color.hook_ink else R.color.widget_text)
+                val soft = ContextCompat.getColor(context, if (isHook) R.color.hook_soft else R.color.widget_soft)
+                setTextColor(R.id.widget_progress, soft)
+                setTextColor(R.id.widget_open, ink)
                 setTextViewText(
                     R.id.widget_progress,
                     context.getString(R.string.progress, position + 1, slides.size, slide.label),

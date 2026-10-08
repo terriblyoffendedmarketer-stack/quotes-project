@@ -32,6 +32,8 @@ class MainActivity : Activity() {
         count = findViewById(R.id.count)
         stealToggle = findViewById(R.id.steal_toggle)
 
+        // Slides carry their own colours, so clip them to the deck's rounded corners.
+        findViewById<View>(R.id.deck).clipToOutline = true
         pager.adapter = adapter
         pager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) = markTab(position)

@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: one phone-width reading column. A card is a horizontal stack of slides; the highlighter is the only colour. */
+/* Layout: one phone-width reading column. A card is a horizontal stack of slides, each in its own colour: a tangerine hook, then oat, lavender, mint and sky. */
 :root {
   --paper: #f4f5f2;
   --sheet: #ffffff;
@@ -12,6 +12,8 @@
   --rule: #dcdfe0;
   --marker: #f5e36a;
   --marker-ink: #1b1d22;
+  --s-hook: #ff7a45; --s-line: #f3e9d6; --s-look: #e5def7; --s-steal: #d4eedc; --s-around: #d6e7f7;
+  --hook-ink: #1a1410; --hook-soft: #4a2614; --hook-pill: #1a1410; --hook-pill-ink: #ffe7d6;
   --font-line: "Literata", Georgia, "Times New Roman", serif;
   --font-note: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-tag: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
@@ -20,11 +22,15 @@
   :root:not([data-theme="light"]) {
     --paper: #111317; --sheet: #1a1d22; --ink: #e9e8e3; --ink-soft: #a2a5ab;
     --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; color-scheme: dark;
+    --s-hook: #2b1910; --s-line: #28241c; --s-look: #242036; --s-steal: #1b2b21; --s-around: #1a2533;
+    --hook-ink: #ff8b5c; --hook-soft: #e0a88c; --hook-pill: #ff7a45; --hook-pill-ink: #1a1410;
   }
 }
 :root[data-theme="dark"] {
   --paper: #111317; --sheet: #1a1d22; --ink: #e9e8e3; --ink-soft: #a2a5ab;
   --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; color-scheme: dark;
+  --s-hook: #2b1910; --s-line: #28241c; --s-look: #242036; --s-steal: #1b2b21; --s-around: #1a2533;
+  --hook-ink: #ff8b5c; --hook-soft: #e0a88c; --hook-pill: #ff7a45; --hook-pill-ink: #1a1410;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html, body { height: 100%; }
@@ -38,11 +44,20 @@ body {
 .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-family: var(--font-tag); font-size: 12px; color: var(--ink-soft); letter-spacing: .04em; }
 .top b { color: var(--ink); font-weight: 500; }
 
-.deck { background: var(--sheet); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; }
+.deck { min-width: 0; background: var(--sheet); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; }
 .track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
 .track::-webkit-scrollbar { display: none; }
 .slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; padding: 26px 22px 22px; min-height: 480px; display: flex; flex-direction: column; gap: 16px; }
 
+.slide.hook { background: var(--s-hook); color: var(--hook-ink); }
+.slide.line-s { background: var(--s-line); }
+.slide.look { background: var(--s-look); }
+.slide.steal-s { background: var(--s-steal); }
+.slide.around { background: var(--s-around); }
+.pill { align-self: flex-start; font: 600 13px/1 var(--font-note); letter-spacing: .08em; text-transform: uppercase; background: var(--hook-pill); color: var(--hook-pill-ink); border-radius: 99px; padding: 7px 13px; }
+.hook-title { font-family: var(--font-line); font-weight: 700; font-size: clamp(2.6rem, 13vw, 3.4rem); line-height: 1.02; letter-spacing: -.02em; text-wrap: balance; margin: auto 0; }
+.hook-hint { align-self: flex-end; font: 500 14px/1 var(--font-note); color: var(--hook-soft); }
+.fine { font-size: 12px; font-style: italic; color: var(--ink-soft); margin-top: -10px; }
 .job { font-family: var(--font-tag); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
 .line { white-space: pre-line; font-family: var(--font-line); font-size: 1.45rem; line-height: 1.42; text-wrap: pretty; margin: auto 0; }
 .line.long { font-size: 1.2rem; }
@@ -56,10 +71,9 @@ mark { background: linear-gradient(transparent 12%, var(--marker) 12%, var(--mar
 .note p { margin: 0; }
 .note strong { font-weight: 600; }
 mark.q { font-family: var(--font-line); font-style: italic; }
-.steal { border-top: 1px dashed var(--rule); padding-top: 14px; }
 
-.dots { display: flex; justify-content: center; gap: 6px; padding: 0 0 16px; }
-.dots button { font: 500 11px/1 var(--font-tag); letter-spacing: .04em; color: var(--ink-soft); background: none; border: 1px solid var(--rule); border-radius: 99px; padding: 6px 10px; cursor: pointer; }
+.dots { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 12px 12px 14px; }
+.dots button { font: 500 11px/1 var(--font-tag); letter-spacing: .04em; color: var(--ink-soft); background: none; border: 1px solid var(--rule); border-radius: 99px; padding: 6px 9px; white-space: nowrap; cursor: pointer; }
 .dots button[aria-current="true"] { color: var(--ink); border-color: var(--ink); }
 
 .nav { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
@@ -69,10 +83,9 @@ mark.q { font-family: var(--font-line); font-style: italic; }
 button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
 .widget-wrap { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
-.widget { background: var(--ink); color: var(--paper); border-radius: 24px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; cursor: pointer; border: 0; text-align: left; font: inherit; }
-.widget .job { color: var(--paper); opacity: .7; }
-.widget .wl { font-family: var(--font-line); font-size: 1rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
-.widget .wa { font-size: 12px; opacity: .7; }
+.widget { background: var(--s-hook); color: var(--hook-ink); border-radius: 24px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; cursor: pointer; border: 0; text-align: left; font: inherit; }
+.widget .wl { font-family: var(--font-line); font-weight: 700; font-size: 2rem; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance; }
+.widget .wa { align-self: flex-end; font-size: 13px; color: var(--hook-soft); }
 .caption { font-size: 13px; color: var(--ink-soft); }
 .row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
 @media (prefers-reduced-motion: reduce) { .track { scroll-behavior: auto; } }
@@ -100,9 +113,9 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   <div class="widget-wrap">
     <span class="kicker">On your home screen</span>
     <button class="widget" id="widget" type="button" aria-label="Widget preview, opens the card">
-      <span class="job" id="wJob"></span>
+      <span class="pill" id="wPill">How to</span>
       <span class="wl" id="wLine"></span>
-      <span class="wa" id="wAuthor"></span>
+      <span class="wa">The line that does it →</span>
     </button>
     <span class="caption">This is roughly how the Android widget would look. On your phone you can flick through every slide inside the widget.</span>
   </div>
@@ -149,35 +162,42 @@ function credit(card) {
 
 function render() {
   const c = CARDS[index];
+  const howTo = c.job.startsWith("How to ");
+  // Every slide after the hook carries the job in fine print at the bottom.
+  const fine = `<div class="fine">${esc(c.job)}</div>`;
   const slides = [
-    { tab: "Line", html: `
-      <div class="job">${esc(c.job)}</div>
+    { tab: "How to", cls: "hook", html: `
+      ${howTo ? '<span class="pill">How to</span>' : ""}
+      <h2 class="hook-title">${esc(howTo ? c.job.slice(7) : c.job)}</h2>
+      <span class="hook-hint">The line that does it →</span>` },
+    { tab: "The line", cls: "line-s", html: `
+      <div class="kicker">The line</div>
       <p class="line${c.quote.length > 180 ? " long" : ""}">“${esc(c.quote)}”</p>
-      <div class="who">${credit(c)}</div>` },
-    { tab: "Look closer", html: `
+      <div class="who">${credit(c)}</div>${fine}` },
+    { tab: "Look closer", cls: "look", html: `
       <div class="kicker">Look closer</div>
       <p class="mini">${marked(c)}</p>
-      <div class="note"><p>${note(c.lookCloser)}</p></div>` }
+      <div class="note"><p>${note(c.lookCloser)}</p></div>
+      <div class="who" style="margin-top:auto">${credit(c)}</div>${fine}` }
   ];
-  if (showSteal) slides.push({ tab: "Steal it", html: `
+  if (showSteal) slides.push({ tab: "Steal it", cls: "steal-s", html: `
       <div class="kicker">Steal it</div>
       <div class="note"><p>${note(c.stealIt)}</p></div>
-      <div class="steal who">The move: ${esc(c.job.replace(/^How to /, "").replace(/^./, m => m.toUpperCase()))}.</div>` });
-  slides.push({ tab: "Around it", html: `
+      <div class="who" style="margin-top:auto">${credit(c)}</div>${fine}` });
+  slides.push({ tab: "Around it", cls: "around", html: `
       <div class="kicker">Around it</div>
       <div class="note"><p>${note(c.aroundIt)}</p></div>
-      <div class="who" style="margin-top:auto">${credit(c)} · ${c.year}</div>` });
+      <div class="who" style="margin-top:auto">${credit(c)} · ${c.year}</div>${fine}` });
 
-  $("track").innerHTML = slides.map((s, i) => `<article class="slide" aria-label="${s.tab}">${s.html}</article>`).join("");
+  $("track").innerHTML = slides.map((s, i) => `<article class="slide ${s.cls}" aria-label="${s.tab}">${s.html}</article>`).join("");
   $("dots").innerHTML = slides.map((s, i) => `<button type="button" data-i="${i}" aria-current="${i === 0}">${s.tab}</button>`).join("");
   $("track").scrollLeft = 0;
 
   $("day").innerHTML = index === todayIndex ? "<b>TODAY</b>" : `CARD ${String(index + 1).padStart(2, "0")}`;
   $("count").textContent = `${index + 1} / ${CARDS.length}`;
   $("stealToggle").textContent = showSteal ? "Hide “Steal it”" : "Show “Steal it”";
-  $("wJob").textContent = c.job;
-  $("wLine").textContent = `“${c.quote}”`;
-  $("wAuthor").textContent = `${c.author}, ${c.work}`;
+  $("wPill").hidden = !howTo;
+  $("wLine").textContent = howTo ? c.job.slice(7) : c.job;
 }
 
 $("dots").addEventListener("click", e => {
