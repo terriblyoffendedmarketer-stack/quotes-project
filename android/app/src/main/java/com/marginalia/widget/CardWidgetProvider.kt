@@ -100,10 +100,10 @@ class CardWidgetProvider : AppWidgetProvider() {
                 setViewVisibility(R.id.slide_note, if (isLine) View.GONE else View.VISIBLE)
                 setViewVisibility(R.id.slide_credit, if (isLine) View.VISIBLE else View.GONE)
                 if (isLine) {
-                    setTextViewText(R.id.slide_line, slide.body(card))
+                    setTextViewText(R.id.slide_line, slide.body(context, card))
                     setTextViewText(R.id.slide_credit, Markup.credit(card))
                 } else {
-                    setTextViewText(R.id.slide_note, slide.body(card))
+                    setTextViewText(R.id.slide_note, slide.body(context, card))
                 }
                 setTextViewText(
                     R.id.widget_progress,

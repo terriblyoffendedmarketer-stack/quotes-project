@@ -28,11 +28,11 @@ enum class Slide(val label: String) {
 
     fun kicker(card: Card) = if (this == LINE) card.job else label
 
-    fun body(card: Card): CharSequence = when (this) {
+    fun body(context: Context, card: Card): CharSequence = when (this) {
         LINE -> "“${card.quote}”"
-        LOOK -> Markup.render(card.lookCloser)
-        STEAL -> Markup.render(card.stealIt)
-        AROUND -> Markup.render(card.aroundIt)
+        LOOK -> Markup.note(context, card.lookCloser)
+        STEAL -> Markup.note(context, card.stealIt)
+        AROUND -> Markup.note(context, card.aroundIt)
     }
 }
 

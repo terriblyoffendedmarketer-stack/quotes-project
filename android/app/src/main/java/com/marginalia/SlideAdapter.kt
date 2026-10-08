@@ -50,10 +50,10 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             mini.visibility = if (slide == Slide.LOOK) View.VISIBLE else View.GONE
 
             if (isLine) {
-                line.text = slide.body(card)
+                line.text = slide.body(itemView.context, card)
                 line.textSize = if (card.quote.length > 220) 21f else 27f
             } else {
-                body.text = slide.body(card)
+                body.text = slide.body(itemView.context, card)
             }
             if (slide == Slide.LOOK) mini.text = highlighted(card)
             footer.text = Markup.credit(card, withYear = slide == Slide.AROUND)

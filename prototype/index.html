@@ -54,6 +54,8 @@ body {
 mark { background: linear-gradient(transparent 12%, var(--marker) 12%, var(--marker) 88%, transparent 88%); color: var(--marker-ink); padding: 0 2px; }
 .note { font-size: 1.02rem; text-wrap: pretty; }
 .note p { margin: 0; }
+.note strong { font-weight: 600; }
+mark.q { font-family: var(--font-line); font-style: italic; }
 .steal { border-top: 1px dashed var(--rule); padding-top: 14px; }
 
 .dots { display: flex; justify-content: center; gap: 6px; padding: 0 0 16px; }
@@ -123,6 +125,13 @@ const $ = id => document.getElementById(id);
 const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 // Titles are marked with *asterisks* in the card text and shown in italics.
 const md = s => esc(s).replace(/\*([^*]+)\*/g, "<em>$1</em>");
+// Explanation slides: bold opening sentence, quoted phrases set like the marked words on the quote.
+const note = s => {
+  let h = md(s);
+  const m = h.slice(12).search(/[.!?]”?\s/);
+  if (m >= 0) { const end = 12 + m + (h[12 + m + 1] === "”" ? 2 : 1); h = "<strong>" + h.slice(0, end) + "</strong>" + h.slice(end); }
+  return h.replace(/“([^”]{1,80})”/g, '<mark class="q">“$1”</mark>');
+};
 
 function marked(card) {
   let html = esc(card.quote);
@@ -148,15 +157,15 @@ function render() {
     { tab: "Look closer", html: `
       <div class="kicker">Look closer</div>
       <p class="mini">${marked(c)}</p>
-      <div class="note"><p>${md(c.lookCloser)}</p></div>` }
+      <div class="note"><p>${note(c.lookCloser)}</p></div>` }
   ];
   if (showSteal) slides.push({ tab: "Steal it", html: `
       <div class="kicker">Steal it</div>
-      <div class="note"><p>${md(c.stealIt)}</p></div>
+      <div class="note"><p>${note(c.stealIt)}</p></div>
       <div class="steal who">The move: ${esc(c.job.replace(/^How to /, "").replace(/^./, m => m.toUpperCase()))}.</div>` });
   slides.push({ tab: "Around it", html: `
       <div class="kicker">Around it</div>
-      <div class="note"><p>${md(c.aroundIt)}</p></div>
+      <div class="note"><p>${note(c.aroundIt)}</p></div>
       <div class="who" style="margin-top:auto">${credit(c)} · ${c.year}</div>` });
 
   $("track").innerHTML = slides.map((s, i) => `<article class="slide" aria-label="${s.tab}">${s.html}</article>`).join("");
