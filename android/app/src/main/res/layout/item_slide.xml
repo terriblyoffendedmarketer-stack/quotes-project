@@ -46,9 +46,9 @@
             android:id="@+id/hook_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/fraunces_black"
-            android:letterSpacing="-0.02"
-            android:lineSpacingMultiplier="0.95"
+            android:fontFamily="@font/fraunces_soft_bold"
+            android:letterSpacing="-0.01"
+            android:lineSpacingMultiplier="1.0"
             android:textColor="@color/hook_ink"
             android:textSize="54sp" />
 

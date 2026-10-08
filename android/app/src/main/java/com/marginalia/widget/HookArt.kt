@@ -31,9 +31,9 @@ object HookArt {
         val height = ((size.heightDp - chrome) * metrics.density).roundToInt().coerceAtLeast(60)
 
         val paint = TextPaint(TextPaint.ANTI_ALIAS_FLAG).apply {
-            typeface = ResourcesCompat.getFont(context, R.font.fraunces_black)
+            typeface = ResourcesCompat.getFont(context, R.font.fraunces_soft_bold)
             color = ContextCompat.getColor(context, R.color.hook_ink)
-            letterSpacing = -0.02f
+            letterSpacing = -0.01f
         }
 
         // The largest size where the text fits the height and no single word has to break.
@@ -67,7 +67,7 @@ object HookArt {
     private fun layout(text: String, paint: TextPaint, width: Int): StaticLayout =
         StaticLayout.Builder.obtain(text, 0, text.length, paint, width)
             .setAlignment(Layout.Alignment.ALIGN_NORMAL)
-            .setLineSpacing(0f, 0.95f)
+            .setLineSpacing(0f, 1.0f)
             .setIncludePad(false)
             .setBreakStrategy(Layout.BREAK_STRATEGY_BALANCED)
             .build()

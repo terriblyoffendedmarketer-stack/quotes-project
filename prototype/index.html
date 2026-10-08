@@ -1,7 +1,7 @@
 <title>Marginalia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@144,900&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@48,700,100,0&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: one phone-width reading column. A card is a horizontal stack of slides, each in its own colour: a cobalt hook, then butter, bubblegum, lime and lilac. */
 :root {
@@ -54,7 +54,7 @@ body {
 .slide.steal-s { background: var(--s-steal); }
 .slide.around { background: var(--s-around); }
 .pill { align-self: flex-start; font: 700 15px/1 var(--font-note); letter-spacing: .1em; text-transform: uppercase; background: var(--hook-pill); color: var(--hook-pill-ink); border-radius: 99px; padding: 8px 15px; }
-.hook-title { font-family: var(--font-hook); font-weight: 900; font-size: clamp(2.8rem, 14vw, 3.8rem); line-height: .98; letter-spacing: -.02em; text-wrap: balance; margin: auto 0; }
+.hook-title { font-family: var(--font-hook); font-weight: 700; font-variation-settings: "opsz" 48, "SOFT" 100, "WONK" 0; font-size: clamp(2.6rem, 13vw, 3.5rem); line-height: 1.02; letter-spacing: -.01em; text-wrap: balance; margin: auto 0; }
 .hook-hint { align-self: flex-end; font: 500 14px/1 var(--font-note); color: var(--hook-soft); }
 .fine { font-size: 12px; font-style: italic; color: var(--ink-soft); margin-top: -10px; }
 .job { font-family: var(--font-tag); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
@@ -83,7 +83,7 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
 .widget-wrap { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
 .widget { background: var(--s-hook); color: var(--hook-ink); border-radius: 24px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; cursor: pointer; border: 0; text-align: left; font: inherit; }
-.widget .wl { font-family: var(--font-hook); font-weight: 900; font-size: 2rem; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance; }
+.widget .wl { font-family: var(--font-hook); font-weight: 700; font-variation-settings: "opsz" 48, "SOFT" 100, "WONK" 0; font-size: 2rem; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance; }
 .widget .wa { align-self: flex-end; font-size: 13px; color: var(--hook-soft); }
 .caption { font-size: 13px; color: var(--ink-soft); }
 .row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }

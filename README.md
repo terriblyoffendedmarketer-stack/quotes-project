@@ -4,7 +4,7 @@ One great piece of writing a day, on your Android home screen. Each card takes a
 
 ## How a card works
 
-1. **How to.** Just the job, like “How to make the impossible believable”, set big and bold in Fraunces on a cobalt slide. It's the hook.
+1. **How to.** Just the job, like “How to make the impossible believable”, set big and bold in Fraunces (soft, bold) on a cobalt slide. It's the hook.
 2. **The line.** The quote. Some are punchy lines and some are short working passages, because some jobs need a paragraph.
 3. **Look closer.** What the writing is doing that you wouldn't spot on your own.
 4. **Steal it.** One small exercise for your own writing, often marketing copy. You can hide this slide.
