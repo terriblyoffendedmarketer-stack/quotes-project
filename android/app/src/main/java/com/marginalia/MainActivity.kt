@@ -74,6 +74,15 @@ class MainActivity : Activity() {
         }
     }
 
+    /** Leaving the app on another card makes it today's card, on the widget too. */
+    override fun onPause() {
+        super.onPause()
+        if (index != Cards.todayIndex(this)) {
+            Cards.startFrom(this, index)
+            CardWidgetProvider.refreshAll(this)
+        }
+    }
+
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt(KEY_INDEX, index)

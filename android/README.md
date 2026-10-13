@@ -11,7 +11,7 @@ New and edited cards arrive by themselves. The app checks this repository for a 
 ## Using it
 
 - **Widget:** tap the right side for the next slide and the left side to go back. **Open ↗** opens the slide full screen. A new card appears just after midnight.
-- **App:** swipe sideways through the slides. Previous and Next browse other cards, and the top-right label takes you back to today. You can hide the “Steal it” slide, which also hides it in the widget.
+- **App:** swipe sideways through the slides. Previous and Next browse other cards, and the top-right label takes you back to today. If you leave the app on a different card, that card becomes today's on the widget, and the next day carries on from it. You can hide the “Steal it” slide, which also hides it in the widget.
 
 ## Build it yourself
 

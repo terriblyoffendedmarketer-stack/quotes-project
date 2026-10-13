@@ -86,10 +86,22 @@ object Cards {
         return cards
     }
 
-    /** The same card all day, a new one each day, cycling through the whole set. */
+    /**
+     * The same card all day, a new one each day, cycling through the whole set. If you left the
+     * app on a different card, that card is today's and the days carry on from it.
+     */
     fun todayIndex(context: Context): Int {
-        val n = all(context).size
-        return Math.floorMod(LocalDate.now().toEpochDay(), n.toLong()).toInt()
+        val cards = all(context)
+        val today = LocalDate.now().toEpochDay()
+        val start = Prefs.startCard(context)?.let { (id, day) ->
+            cards.indexOfFirst { it.id == id }.takeIf { it >= 0 }?.let { it - day }
+        } ?: 0L
+        return Math.floorMod(start + today, cards.size.toLong()).toInt()
+    }
+
+    /** Makes [index] today's card, so the widget shows it now and moves on from it each day. */
+    fun startFrom(context: Context, index: Int) {
+        Prefs.setStartCard(context, all(context)[index].id, LocalDate.now().toEpochDay())
     }
 
     fun slides(context: Context): List<Slide> =
@@ -114,5 +126,20 @@ object Prefs {
 
     fun setShowSteal(context: Context, value: Boolean) {
         context.getSharedPreferences(FILE, Context.MODE_PRIVATE).edit().putBoolean(SHOW_STEAL, value).apply()
+    }
+
+    private const val START_CARD = "start_card"
+    private const val START_DAY = "start_day"
+
+    /** The card you last left the app on, by id, and the day you left it there. */
+    fun startCard(context: Context): Pair<String, Long>? {
+        val prefs = context.getSharedPreferences(FILE, Context.MODE_PRIVATE)
+        val id = prefs.getString(START_CARD, null) ?: return null
+        return id to prefs.getLong(START_DAY, 0)
+    }
+
+    fun setStartCard(context: Context, id: String, day: Long) {
+        context.getSharedPreferences(FILE, Context.MODE_PRIVATE).edit()
+            .putString(START_CARD, id).putLong(START_DAY, day).apply()
     }
 }
