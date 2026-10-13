@@ -60,7 +60,7 @@ class CardWidgetProvider : AppWidgetProvider() {
 
     override fun onDeleted(context: Context, ids: IntArray) {
         val prefs = state(context).edit()
-        ids.forEach { prefs.remove(slideKey(it)).remove(dayKey(it)) }
+        ids.forEach { prefs.remove(slideKey(it)).remove(dayKey(it)).remove(cardKey(it)) }
         prefs.apply()
     }
 
@@ -79,13 +79,16 @@ class CardWidgetProvider : AppWidgetProvider() {
         private fun state(context: Context) = context.getSharedPreferences("widget_state", Context.MODE_PRIVATE)
         private fun slideKey(id: Int) = "slide_$id"
         private fun dayKey(id: Int) = "day_$id"
+        private fun cardKey(id: Int) = "card_$id"
+        private fun cardId(context: Context) = Cards.all(context)[Cards.todayIndex(context)].id
 
-        /** Which slide this widget is on. Starts again from the hook each new day. */
+        /** Which slide this widget is on. Starts again from the hook each new day or new card. */
         private fun currentSlide(context: Context, id: Int): Int {
             val prefs = state(context)
             val today = LocalDate.now().toEpochDay()
-            if (prefs.getLong(dayKey(id), -1) != today) {
-                prefs.edit().putLong(dayKey(id), today).putInt(slideKey(id), 0).apply()
+            val card = cardId(context)
+            if (prefs.getLong(dayKey(id), -1) != today || prefs.getString(cardKey(id), null) != card) {
+                prefs.edit().putLong(dayKey(id), today).putString(cardKey(id), card).putInt(slideKey(id), 0).apply()
                 return 0
             }
             return prefs.getInt(slideKey(id), 0).coerceIn(0, Cards.slides(context).lastIndex)
@@ -94,7 +97,8 @@ class CardWidgetProvider : AppWidgetProvider() {
         private fun step(context: Context, id: Int, direction: Int) {
             val count = Cards.slides(context).size
             val next = Math.floorMod(currentSlide(context, id) + direction, count)
-            state(context).edit().putInt(slideKey(id), next).putLong(dayKey(id), LocalDate.now().toEpochDay()).apply()
+            state(context).edit().putInt(slideKey(id), next).putLong(dayKey(id), LocalDate.now().toEpochDay())
+                .putString(cardKey(id), cardId(context)).apply()
             AppWidgetManager.getInstance(context).updateAppWidget(id, render(context, id))
         }
 
