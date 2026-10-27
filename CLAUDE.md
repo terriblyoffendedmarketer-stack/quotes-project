@@ -1,26 +1,49 @@
-# Project context for Claude
+# Marginalia
 
-This is Marginalia, a personal daily-writing-example app for its owner, a B2B SaaS marketer. Read this before changing anything.
+> **Status**: Complete | **Phase**: 5 (GitHub Synchronization)  
+> **Current**: Successfully audited, purged all corporate/marketing/SaaS skew from cards, populated 5 new high-caliber cards (108 total), verified with linter and prototype builder, and synced to GitHub  
+> **Next**: Ready for daily widget consumption and future author additions
 
-## Decisions already made
+## Roadmap
 
-- **Android, always.** Never suggest iOS or a PWA. The surface is a home-screen widget plus a full-screen reader app.
-- **Widget behaviour.** One slide at a time, filling whatever size the widget is. Tap the right side for the next slide and the left side to go back. Slides are drawn directly into the widget's views. Don't reintroduce a StackView, a list adapter or a RemoteViewsService. The StackView warped at large sizes, and the adapter left the widget blank for a second or two when returning to the home screen.
-- **Typography.** The quote is big and bold, while explanations are regular weight. The widget follows the phone's light or dark mode.
-- **Content updates without reinstalling.** The app fetches `content/cards.json` from this public repo (`ContentSync.kt`). Keep the JSON format backwards compatible. Adding fields is fine; renaming or removing them breaks installed apps.
-- **Slide order:** How to (the hook: just the job, as large as it fits), The line, Look closer, Steal it (can be hidden), Around it (last, a nice-to-have). The hook also shows the author's name, small. Slides after the hook show the job in fine print. Slide colours change every day (`Palette.kt`).
-- **Formatting in card text.** Wrap titles of books, magazines and newspapers in `*asterisks*` in lookCloser, aroundIt and stealIt; the app and prototype render them as italics. Story, essay, poem and speech titles go in “curly quotes”. Line breaks in a quote (`\n`) are kept, as for poems.
+- [x] Phase 1: Foundational directives — update CLAUDE.md and VOICE.md to strip out marketing/SaaS slant
+- [x] Phase 2: Content audit and revision — rewrite 69 cards in `content/cards.json` to focus on writing craft
+- [x] Phase 3: Validation — verify zero flags in `python3 tools/lint_cards.py` and clean `build_prototype.py`
+- [x] Phase 4: Curate stronger quotes — add 5 gold-standard cards (Manto, Baldwin, Didion, Dillard, Burkeman) & expand `content/quote-bank.md`
+- [x] Phase 5: GitHub synchronization — commit and push updates to `terriblyoffendedmarketer-stack/quotes-project`
 
-## Content rules (the most important part)
+## File map
 
-- The explanation slides must be genuinely interesting and must not read like AI. `content/VOICE.md` is binding: banned patterns, the slide-by-slide jobs, sourcing rules, and the one-card-at-a-time process.
-- **Slide 1 must pass the cold-reader test.** A line that only works if you know the book gets swapped for a better line or a fuller passage.
-- **The library is a toolbox.** Aim for roughly half punchy lines and half working passages of up to about 120 words, fiction included.
-- **Pick the slide 2 angle each line deserves**: close reading, the structural move, the dead metaphor or the scene. Plain nonfiction rarely deserves a word-by-word reading.
-- **Verify every quote** against a published source before writing about it. Name the translator. If a phrase can't be confirmed, say so in the card's `verification` field. If a fact can't be checked, leave it out.
-- **Run `python3 tools/lint_cards.py`** after every edit. If a flag is deliberate, list it in the card's `lintAccepted`.
-- **The owner's favourite book is *Four Thousand Weeks* by Oliver Burkeman.** More good Burkeman is always welcome.
+- `content/cards.json`: Single source of truth for all 108 cards (quote, hook, lookCloser, stealIt, aroundIt).
+- `content/VOICE.md`: Core writing and tone rules for drafting cards without AI tropes or corporate jargon.
+- `content/authors.md`: Master author library (classic, contemporary, memoir, nonfiction) and their strengths.
+- `content/quote-bank.md`: Staging area for verified quotes and research dossiers waiting for card creation.
+- `tools/lint_cards.py`: Linter enforcing word limits, banned AI shapes, triads, and opener variety.
+- `tools/build_prototype.py`: Rebuilds the browser review prototype in `prototype/index.html`.
+- `tools/add_cards.py`: Batch helper to append verified cards without duplicates or broken highlights.
+- `scripts/audit_and_rewrite.py`: Automation script for content audit, rewriting, and testing craft exercises.
+- `android/`: Android app and home-screen widget source code (Kotlin / Jetpack Compose).
+- `prototype/`: Web-based card previewer for rapid visual review.
 
-## Writing style for anything addressed to the owner
+## Setup & run instructions
 
-- Sentence case for headings, never title case.
+- Python tools require only the Python 3 standard library:
+  - Run linter: `python3 tools/lint_cards.py`
+  - Rebuild web prototype: `python3 tools/build_prototype.py`
+- GitHub sync:
+  - Push updates: `git add . && git commit -m "..." && git push origin main`
+  - The Android app auto-downloads `content/cards.json` from the GitHub repo every few hours.
+
+## Key decisions & content rules
+
+- **Focus**: Pure writing craft, personal essays, storytelling, observation, and prose rhythm. Never pivot to marketing, SaaS, corporate, or sales jargon.
+- **Android, always**: Home-screen widget + full-screen reader. Slides drawn directly into widget views (no StackView or RemoteViewsService adapters).
+- **JSON backwards compatibility**: `content/cards.json` is fetched by live app installs. Adding fields is fine; renaming or deleting fields breaks installed apps.
+- **Slide structure**:
+  1. *How to (Hook)*: The job, as large as it fits, plus author name.
+  2. *The line*: The quote (punchy one-liner or passage up to ~120 words). Passes the cold-reader test.
+  3. *Look closer*: The unexpected craft angle (close reading, structural move, dead metaphor, or scene).
+  4. *Steal it*: One concrete writing exercise under 60 words for essays, articles, or prose. No SaaS/marketing.
+  5. *Around it*: True contextual/biographical facts ending on an open question. Under 100 words.
+- **Verification**: Every quote verified against published text. Name translator for translated works.
+- **Oliver Burkeman**: Owner's favourite book is *Four Thousand Weeks*. Burkeman cards are prime models for working passages.

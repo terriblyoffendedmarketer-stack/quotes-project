@@ -29,7 +29,7 @@ This is the reading list the cards will draw from. Each author can supply many c
 | Vladimir Nabokov ★ | Lolita, Pnin, Speak, Memory | Sound, seductive narrators, precise detail |
 | Sylvia Plath ★ | The Bell Jar, journals | Private and public dread in the same breath |
 | R. K. Narayan | Swami and Friends, The Guide, Malgudi Days | Gentle comedy, a whole town in a paragraph |
-| Saadat Hasan Manto | Toba Tek Singh, Thanda Gosht (in translation) | The short story as a gut punch, Partition |
+| Saadat Hasan Manto ★ | Toba Tek Singh, Thanda Gosht (in translation) | The short story as a gut punch, Partition |
 | Truman Capote ★ | In Cold Blood, Breakfast at Tiffany's | Nonfiction told like a novel, the scene before the crime |
 | Raymond Carver ★ | What We Talk About When We Talk About Love, Cathedral | Saying less, endings that stop rather than finish |
 | E. B. White ★ | Here Is New York, Once More to the Lake, Charlotte's Web | Clean essays, a place at a moment in time |
