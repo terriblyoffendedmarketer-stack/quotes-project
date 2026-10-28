@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Mined and curated 75 high-caliber quotes across 23 books (*Men Without Women*, *A Short Stay in Hell*, *What I Talk About...*, *Cat's Cradle*, *The Invention of Solitude*, *Meditations for Mortals*, *The Left Hand of Darkness*, *Stories of Your Life and Others*, *Piranesi*, *Roadside Picnic*, *Solaris*, *The Myth of Sisyphus*, *Heaven*, *Convenience Store Woman*, *Letters to Milena*, *The Death of Ivan Ilych*, *Train to Pakistan*, *The Best of Satyajit Ray*, *One Part Woman*, *Topi Shukla*, *Gunahon Ka Devta*). Cluster 5 currently mining locally via Ollama.  
-> **Next**: Process Cluster 5 (Anne Lamott, William Zinsser, Kurt Vonnegut craft, Chuck Palahniuk craft, Byung-Chul Han) followed by Cluster 6 (Fahrenheit 451, 1984, Mockingbird, Canticle for Leibowitz, The Machine Stops).
+> **Current**: Mined and curated 89 high-caliber quotes across 27 books (*Men Without Women*, *A Short Stay in Hell*, *What I Talk About...*, *Cat's Cradle*, *The Invention of Solitude*, *Meditations for Mortals*, *The Left Hand of Darkness*, *Stories of Your Life and Others*, *Piranesi*, *Roadside Picnic*, *Solaris*, *The Myth of Sisyphus*, *Heaven*, *Convenience Store Woman*, *Letters to Milena*, *The Death of Ivan Ilych*, *Train to Pakistan*, *The Best of Satyajit Ray*, *One Part Woman*, *Topi Shukla*, *Gunahon Ka Devta*, *Bird by Bird*, *Pity the Reader*, *Consider This*, *The Burnout Society*). Cluster 6 currently mining locally via Ollama.  
+> **Next**: Process Cluster 6 (*Fahrenheit 451*, *1984*, *Mockingbird*, *Canticle for Leibowitz*, *The Machine Stops*) followed by Cluster 7 (*East of Eden*, *The Bell Jar*, *The Fire Next Time*, *The Goldfinch*, *The Old Man and the Sea*).
 
 ## Roadmap
 
