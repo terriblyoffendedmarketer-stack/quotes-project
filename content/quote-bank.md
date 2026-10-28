@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 474 | **Total Books Represented:** 107
+**Total Vetted Quotes:** 494 | **Total Books Represented:** 110
 
 ---
 
@@ -666,6 +666,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “You can’t call your life your own: and in return you have safety—if it’s worth having at the price you pay.” | How to expose the Faustian bargain of totalitarian security. | syntax, moral-weight, philosophy, freedom |
 | ““A jury of animals you shall have,” said Prince Rainbow. “A jury of elil, El-ahrairah. For a jury of rabbits would refuse to convict you, in spite of the evidence.”” | How to construct mythological law through tribal solidarity. | mythology, dialogue-craft, worldbuilding, voice |
 | “The ground became soft and damp. They could smell sedge and water.” | How to signal sanctuary through immediate tactile shifts. | sensory-detail, economy, pacing, setting |
+| “‘Like trees in November,’ he said, ‘they were standing still, but they weren’t dead.’” | How to convey trauma-induced paralysis through autumnal landscape imagery. | imagery, simile, trauma, nature |
+| “All the world will be your enemy, Prince with a Thousand Enemies, and whenever they catch you, they will kill you. But first they must catch you.” | How to forge mythic defiance from total physical vulnerability. | myth, courage, rhythm, resilience |
+| “‘Risk is risk. Don’t you want to get out and come and live on the high downs with us? Think of it!’” | How to strip subterranean safety of its moral virtue through the appeal of wind and sky. | freedom, voice, courage, dialogue |
+| “Animals don't behave like men. If they have to fight, they fight; and if they have to kill, they kill. But they don't sit down and set their wits to work to invent ways of ruining other creatures' lives.” | How to indict human malice by contrasting it with instinctive creaturely survival. | candor, satire, instinct, philosophy |
 
 ---
 
@@ -839,6 +843,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “‘If you want something from someone and you look him firmly in both eyes and he doesn’t become ill at ease, give up. You don’t have a chance, ever!’” | How to formulate an ironclad diagnostic of interpersonal resolve. | character-voice, aphorism, power, directness |
 | “‘Fire worship was by no means the most foolish thing ever invented,’ he murmured to himself at one point.” | How to rehabilitate ancient primal rites through quiet musing. | understatement, mythology, philosophy, voice |
 | “‘It is true of Moses and Buddha, of Napoleon and Bismarck. What particular movement one serves and what pole one is directed from are matters outside one's own choice.’” | How to decouple historical agency from individual intent. | cadence, fate, history, perspective |
+| “Nothing in the world is more distasteful to a man than to take the path that leads to himself.” | How to expose the universal terror of genuine psychological individuation. | psychology, candor, individuation, clarity |
+| “Clever talk is absolutely worthless. All you do in the process is lose yourself. And to lose yourself is a sin.” | How to strip verbal cleverness of its social prestige in three short strokes. | brevity, candor, discipline, authenticity |
+| “They know exactly how many ounces of powder it takes to kill a man, but they don't know how to pray to God, they don't even know how to be happy for a single contented hour.” | How to contrast ballistic industrial precision with spiritual bankruptcy. | antithesis, critique, rhythm, morality |
+| “The bird fights its way out of the egg. The egg is the world. Who would be born must first destroy a world.” | How to dramatize spiritual emergence as a cosmic catastrophe. | metaphor, myth, rebirth, transformation |
 
 ---
 
@@ -1263,5 +1271,39 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “If I am to save him, I must know all there is to know—even if it should seem to make the case against him blacker than before.” | How to raise investigative stakes by demanding self-incriminating truth. | tension, deduction, paradox, candor |
 | “‘Use your little grey cells,’ he said. ‘There is always a reason behind my actions.’” | How to turn a character catchphrase into a rule of narrative deduction. | characterization, voice, wit, craft |
 | “There is only one way out—and that way does not lead to freedom.” | How to close off narrative escape through an ominous syntactic dash. | brevity, tension, antithesis, syntax |
+
+---
+
+## Sohn Won-pyung, Almond (2017)
+*Trans. Sandy Joosun Lee*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Books don't get angry. They don't shout or change their minds depending on their mood. They just wait quietly for you to open them.” | How to contrast interpersonal volatility against the serene constancy of print. | books, solitude, contrast, sensory |
+| “They had been my whole universe. But now that they were gone, I began to learn that there were others in this world.” | How to measure the painful expansion of consciousness after catastrophic loss. | grief, perspective, growth, understatement |
+| “My grandmother called me a monster. But she said it while holding me so tightly my ribs hurt.” | How to juxtapose linguistic severity against protective physical devotion. | contradiction, sensory, dialogue, pathos |
+| “‘He could die,’ I said, fiddling with one of the chewy caramel packs neatly lined up on the display stand.” | How to depict cognitive detachment by juxtaposing mortality with banal candy packaging. | understatement, sensory, characterization, interiority |
+
+---
+
+## N. K. Jemisin, The Fifth Season (2015)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “You are lightning, dangerous unless captured in wires.” | How to dehumanize marginalized power as an elemental industrial utility. | brevity, metaphor, power, oppression |
+| “‘You think that matters?’ He jerks his head toward the body of the abused, murdered child. ‘The only reason they don’t do this to all of us is because we’re more versatile, more useful, if we control ourselves.’” | How to strip an oppressive truce of its humanitarian illusions. | candor, dialogue, power, cynicism |
+| “‘It’s safe to love you. You won’t fail me. You won’t die. And I know the price up front.’” | How to negotiate emotional safety through transactional defense mechanisms. | dialogue, trauma, vulnerability, pathos |
+| “Let's start with the end of the world, why don't we? Get it over with and move on to more interesting things.” | How to bypass apocalyptic spectacle with weary, second-person flippancy. | voice, opening, subversion, irony |
+
+---
+
+## Joseph Campbell, The Power of Myth (1988)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “If your private myth, your dream, happens to coincide with that of the society, you are in good accord with your group. If it isn't, you've got an adventure in the dark forest ahead of you.” | How to reframe social estrangement as an archetypal heroic journey. | myth, individuation, solitude, perspective |
+| “Love thine enemies because they are the instruments of your destiny.” | How to elevate adversaries into the unwitting architects of character. | philosophy, adversity, insight, brevity |
+| “Religion is a defense against the experience of God.” | How to indict clerical dogma as a shield against authentic revelation. | paradox, brevity, religion, candor |
+| “Desire is the bait, death is the hook. Adam and Eve were moved; the Buddha was not.” | How to compress the entire mythological history of temptation into two parallel clauses. | metaphor, contrast, rhythm, myth |
 
 ---

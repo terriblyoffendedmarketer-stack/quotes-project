@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: 474 high-caliber quotes curated across 107 books (incorporating Cluster 25: *Steering the Craft*, *Meditations for Mortals*, *The Trees*, *The Old Man and the Sea*, *The Murder of Roger Ackroyd* alongside previous clusters). Cluster 26 currently mining locally via Ollama.  
-> **Next**: Complete Cluster 26 (*Almond*, *Watership Down*, *Demian*, *The Fifth Season*, *The Power of Myth*) followed by Cluster 27 (*Understanding Media*, *Tiny Beautiful Things*, *Solaris*, *The 7½ Deaths of Evelyn Hardcastle*, *Dark Matter*).
+> **Current**: 494 high-caliber quotes curated across 110 books (incorporating Cluster 26: *Almond*, *Watership Down*, *Demian*, *The Fifth Season*, *The Power of Myth* alongside previous clusters). Cluster 27 currently mining locally via Ollama.  
+> **Next**: Complete Cluster 27 (*Understanding Media*, *Tiny Beautiful Things*, *Solaris*, *The 7½ Deaths of Evelyn Hardcastle*, *Dark Matter*) followed by Cluster 28 (*The Dispossessed*, *Frankenstein*, *Man's Search for Meaning*, *Bloodlands*, *Thinking in Systems*).
 
 ## Roadmap
 
