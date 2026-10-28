@@ -1,0 +1,47 @@
+{
+  "name": "Cluster 42: Passion, Pungent Irony & Architectural Enigma",
+  "output_file": "content/cluster_42_epistolary_satire_spatial_raw.json",
+  "books": [
+    {
+      "remote_file": "The Love Letters of Abelard and Heloise.epub",
+      "author": "Peter Abelard and Heloise",
+      "work": "The Letters of Abelard and Heloise",
+      "year": 1132,
+      "translator": "Betty Radice",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Paradise_and_Other_Stories_-_Khushwant_Singh.epub",
+      "author": "Khushwant Singh",
+      "work": "Paradise and Other Stories",
+      "year": 2004,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Harishankar Parsai - Nithalle Ki Diary.epub",
+      "author": "Harishankar Parsai",
+      "work": "Nithalle Ki Diary",
+      "year": 1968,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Isaac Asimov - Asimov's Mysteries.epub",
+      "author": "Isaac Asimov",
+      "work": "Asimov's Mysteries",
+      "year": 1968,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Strange_Houses_-_Uketsu.epub",
+      "author": "Uketsu",
+      "work": "The Floor Plan (Strange Houses)",
+      "year": 2021,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

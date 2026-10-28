@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 734 | **Total Books Represented:** 147
+**Total Vetted Quotes:** 754 | **Total Books Represented:** 152
 
 ---
 
@@ -1813,5 +1813,62 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Not surprisingly, the rhymes in these lines also shape the rhythm, with a pattern of stress carrying over from phrase to phrase.” | How to let rhyme dictate metric momentum | meter, sound-craft, sentence-mechanics |
 | “It may be of great interest to discover how accurately a poem reflects its author’s experience, attitudes, or beliefs; but this is a question that belongs to biography not to criticism.” | How to separate literary form from personal confession | criticism, craft, clarity |
 | “In hip hop—and inside the broken histories of black men in America—respect is the ultimate medium of exchange. And that is to say, in battling, the rapper is gambling with the most valuable commodity available: one’s rep and the respect that flows from it.” | How to establish cultural currency as life-or-death stakes | cultural-craft, persuasive-prose, scale |
+
+---
+
+## Liu Cixin, The Wandering Earth (2000)
+*Trans. Ken Liu*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “People call it ‘God’s Blowtorch,’ she said.” | How to baptize planetary machinery in folk myth | metaphor, scale, brevity |
+| “There is nothing we can do about it, children. The surface will soon become a very, very terrible place. It will be so bad, that your spit won't even make it to the ground.” | How to measure planetary apocalypse with a bodily drop | sensory-detail, contrast, scale |
+| “It was as if humanity's spirits were caught in a cosmic swing. Or perhaps it would be better to say that we were playing a cosmic game of Russian Roulette; the journey to the aphelion and back to the perihelion was like the turning of the chamber, and passing the perihelion was just like pulling the trigger!” | How to map orbital mechanics onto terminal anxiety | metaphor, existential-craft, pacing |
+| ““The dark has fallen,” Kayoko said then, stricken with grief. “The longest night,” I replied.” | How to exchange ritual grief at planetary scale | dialogue, understatement, prose-rhythm |
+
+---
+
+## Neal Stephenson, Seveneves (2015)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| ““You think she’s in some kind of trouble?” “I think we’re all in some kind of trouble,” Ivy said, “it’s just a matter of degree.”” | How to dissolve private crisis into universal catastrophe | dialogue, understatement, perspective |
+| “It was always bullshit,” he said.” | How to wipe away institutional mythology in five words | brevity, candor, punchline |
+| “The details, the sudden distractions and improvisations, piled up and thickened in a way that made Dinah think of a sonic boom on Old Earth: the onrushing stream of air thickening and solidifying in the path of the airplane, turning into a barrier that must be broken through or succumbed to.” | How to physicalize cognitive panic as fluid resistance | analogy, pacing, precision |
+| “‘Coupling,’ said the voice, unnecessarily since she could hear the mechanical connection being made and then feel the acceleration as the flivver was slapped sideways and then jerked forward by the momentum of the whip. ‘Brace for stabilization.’ A polite way of saying that the situation in the whip was a little chaotic in the aftermath of the snap-around.” | How to satirize synthetic calm against violent acceleration | irony, sensory-detail, contrast |
+
+---
+
+## qntm, Valuable Humans in Transit and Other Stories (2020)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It is estimated that copies of MMAcevedo have lived a combined total of more than 152,000,000,000 subjective years in emulation. If illicit, modified copies of MMAcevedo are counted, this figure increases by an order of magnitude.” | How to construct cosmic horror from dry server accounting | cold-irony, scale, speculative-craft |
+| “That era’s supercomputer would fit in today’s breast pocket. In fact, check your pocket now.” | How to break the fourth wall through technological acceleration | second-person, brevity, direct-address |
+| “The algorithm is startlingly good at imitating my writing style for updates at first but it wanders way off topic and starts repeating itself because, you know, it's a bot. Like how predictive text challenges always get locked in a loop.” | How to capture the digital uncanny valley without mysticism | voice, observation, contemporary-craft |
+| “It appears that many vital pages of diagrams and data have been omitted, possibly intentionally, and what’s left assumes the existence of numerous technologies not yet invented.” | How to build narrative dread through redacted documentation | mystery, precision, understatement |
+
+---
+
+## Exurb1a, Geometry for Ocelots (2020)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The only noble desire is for the end of desire. Few are brave enough to admit this.” | How to deliver ascetic fatalism as an uncompromising axiom | aphorism, philosophical-depth, brevity |
+| “Almost everything in the universe was not him, and yet nonetheless, he was universe.” | How to balance cosmic insignificance with constitutive identity | paradox, sentence-mechanics, scale |
+| “A map is not the territory. A blueprint is not the house.” | How to expose representation as an empty surrogate | parallelism, aphorism, brevity |
+| “Ignorance. Brave, honest admission of one’s ignorance, and living with that ignorance in a kind, compassionate manner, treating each other well even if we know we eventually all go to dust and never happen again.” | How to anchor human gentleness in cosmic nihilism | moral-clarity, existential-craft, cadence |
+
+---
+
+## Haruki Murakami, Men Without Women (2014)
+*Trans. Philip Gabriel and Ted Goossen*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Once you really get into a role, it’s hard to find the right moment to stop. No matter how it preys on your emotions, you have to go with the flow until the performance has taken its shape, the point where its true meaning becomes clear.” | How to diagnose emotional entrapment as theatrical discipline | metaphor, psychology, craft |
+| “Dreams are the kind of things you can—when you need to—borrow and lend out.” | How to treat nocturnal fantasy as circulating currency | surrealism, understatement, voice |
+| “Lampreys think very lamprey-like thoughts. About lamprey-like topics in a context that’s very lamprey-like. There are no words for those thoughts.” | How to delineate alien consciousness through linguistic refusal | deadpan, defamiliarization, style |
+| “Don’t look away, look right at it.” | How to command unflinching attention in seven monosyllables | brevity, imperative, candor |
 
 ---
