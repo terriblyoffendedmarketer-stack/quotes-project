@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 106 | **Total Books Represented:** 32
+**Total Vetted Quotes:** 124 | **Total Books Represented:** 37
 
 ---
 
@@ -348,5 +348,58 @@ A personal anthology of memorable lines, working passages, and craft moments min
 |---|---|---|
 | “‘O Machine! O Machine!’ and raised the volume to her lips. Thrice she kissed it, thrice inclined her head, thrice she felt the delirium of acquiescence.” | How to depict technological worship through ritual incantation | Ritual, Rhythm, Prophecy, Sensory Detail |
 | “Humanity seemed naked, and all these tubes and buttons and machineries neither came into the world with us, nor will they follow us out, nor do they matter supremely while we are here.” | How to dissolve technological apparatus through mortal perspective | Philosophy, Rhythm, Cadence, Aphorism |
+
+---
+
+## John Steinbeck, East of Eden (1952)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “That says the way is open. It might be the most important word in the world. That throws it right back on a man. For if 'Thou mayest'—it is also true that 'Thou mayest not.'” | How to distill moral free will into a single grammatical choice | Philosophy, Theology, Moral Clarity, Subtext |
+| “You can boast about anything if it’s all you have. Maybe the less you have, the more you are required to boast.” | How to expose defensive posturing with psychological precision | Aphorism, Human Nature, Character, Observation |
+| “It is one of the triumphs of the human that he can know a thing and still not believe it.” | How to define self-delusion as a paradoxical triumph | Irony, Psychology, Aphorism, Voice |
+| “They say man lived in trees one time. Somebody had to get dissatisfied with a high limb or your feet would not be touching flat ground now.” | How to frame human evolution through homely domestic grumbling | Voice, Humor, Dialogue, Perspective |
+
+---
+
+## Sylvia Plath, The Bell Jar (1963)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “For weeks afterwards, the cadaver's head—or what there was left of it—floated up behind my eggs and bacon at breakfast and behind the face of Buddy Willard... like some black, noseless balloon stinking of vinegar.” | How to contaminate domestic routine with macabre physical memory | Sensory Detail, Metaphor, Macabre, Domesticity |
+| “I felt very still and very empty, the way the eye of a tornado must feel, moving dully along in the middle of the surrounding hullabaloo.” | How to depict emotional dissociation in meteorological stillness | Simile, Interiority, Depression, Atmosphere |
+| “TB is like living with a bomb in your lung. You just lie around very quietly hoping it won’t go off.” | How to render chronic illness as explosive paralysis | Simile, Suspense, Physicality, Brevity |
+| “The blood gathered darkly, like fruit, and rolled down my ankle into the cup of my black patent leather shoe.” | How to aestheticize bodily trauma with tactile elegance | Sensory Detail, Simile, Physicality, Image |
+
+---
+
+## James Baldwin, The Fire Next Time (1963)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “There’s no way not to suffer. But you try all kinds of ways to keep from drowning in it.” | How to state existential struggle without decorative pity | Aphorism, Suffering, Resilience, Cadence |
+| “The transfiguring power of the Holy Ghost ended when the service ended, and salvation stopped at the church door.” | How to mark the geographical boundary of religious ecstasy | Irony, Rhythm, Moral Clarity, Cultural Critique |
+| “Time catches up with kingdoms and crushes them, gets its teeth into doctrines and rends them; time reveals the foundations on which any kingdom rests, and eats at those foundations, and it destroys doctrines by proving them to be untrue.” | How to build biblical majesty through predatory verbs | Cadence, Biblical Style, History, Power |
+| “I left the church twenty years ago and I haven’t joined anything since.” | How to deliver radical independence in an offhand reply | Voice, Dialogue, Independence, Understatement |
+
+---
+
+## Donna Tartt, The Goldfinch (2013)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The room itself, in its bleak, drafty, sunscrubbed beauty, gave a keen sense of Northern Europe, a model of the Netherlands in miniature: whitewash and Protestant probity, co-mingled with deep-dyed luxury brought in merchant ships from the East.” | How to compress national art history into an interior description | Setting, Sensory Detail, Atmosphere, Texture |
+| “Plenty of people on the street would kill you for that much cash.” | How to inject cold economic reality into high-stakes suspense | Dialogue, Suspense, Brevity, Understatement |
+| “My glasses—blood-smeared, unbroken—lay on the ground by my foot.” | How to capture survival through an intact personal lens | Physicality, Precision, Trauma, Detail |
+
+---
+
+## Ernest Hemingway, The Old Man and the Sea (1952)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘I wish the boy was here,’ he said aloud and settled himself against the rounded planks of the bow and felt the strength of the great fish through the line he held across his shoulders moving steadily toward whatever he had chosen.” | How to bind private loneliness to the physical tension of a fishing line | Solitude, Sensory Detail, Physicality, Dialogue |
+| “‘I told the boy I was a strange old man,’ he said. ‘Now is when I must prove it.’” | How to state a private covenant of identity | Dialogue, Simplicity, Character, Discipline |
+| “‘Unless sharks come,’ he said aloud. ‘If sharks come, God pity him and me.’” | How to anticipate catastrophe with fatalistic pity | Dialogue, Foreshadowing, Compassion, Understatement |
 
 ---
