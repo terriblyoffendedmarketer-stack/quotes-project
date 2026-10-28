@@ -1,0 +1,46 @@
+{
+  "name": "cluster_08_satire_absurd",
+  "theme": "Satire, Absurdism & The Inner Journey",
+  "books": [
+    {
+      "remote_file": "Slaughterhouse-Five_-_Kurt_Vonnegut_Jr.epub",
+      "author": "Kurt Vonnegut",
+      "title": "Slaughterhouse-Five",
+      "year": 1969,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Mikhail Bulgakov - The Master and Margarita.epub",
+      "author": "Mikhail Bulgakov",
+      "title": "The Master and Margarita",
+      "year": 1967,
+      "translator": "Richard Pevear & Larissa Volokhonsky",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Etgar Keret - The Seven Good Years.epub",
+      "author": "Etgar Keret",
+      "title": "The Seven Good Years",
+      "year": 2015,
+      "translator": "Miriam Shlesinger & Sondra Silverston",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Herman Hesse - Siddhartha.epub",
+      "author": "Hermann Hesse",
+      "title": "Siddhartha",
+      "year": 1922,
+      "translator": "Hilda Rosner",
+      "chunks": 6
+    },
+    {
+      "remote_file": "Dead_Souls_-_Nikolai_Gogol.epub",
+      "author": "Nikolai Gogol",
+      "title": "Dead Souls",
+      "year": 1842,
+      "translator": "Richard Pevear & Larissa Volokhonsky",
+      "chunks": 8
+    }
+  ]
+}

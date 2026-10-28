@@ -1,0 +1,46 @@
+{
+  "name": "cluster_06_dystopia",
+  "theme": "Dystopian Classic, Machine Age & Human Memory",
+  "books": [
+    {
+      "remote_file": "Ray Bradbury - Fahrenheit 451.epub",
+      "author": "Ray Bradbury",
+      "title": "Fahrenheit 451",
+      "year": 1953,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "George orwell - 1984.epub",
+      "author": "George Orwell",
+      "title": "1984",
+      "year": 1949,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Walter Tevis - Mockingbird.epub",
+      "author": "Walter Tevis",
+      "title": "Mockingbird",
+      "year": 1980,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "A Canticle For Leibowitz.epub",
+      "author": "Walter M. Miller Jr.",
+      "title": "A Canticle for Leibowitz",
+      "year": 1959,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "The_Machine_Stops_-_E_M_Forster.epub",
+      "author": "E. M. Forster",
+      "title": "The Machine Stops",
+      "year": 1909,
+      "translator": null,
+      "chunks": 6
+    }
+  ]
+}

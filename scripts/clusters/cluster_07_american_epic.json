@@ -1,0 +1,46 @@
+{
+  "name": "cluster_07_american_epic",
+  "theme": "American Epic, Consciousness & Solitude",
+  "books": [
+    {
+      "remote_file": "John Steinbeck - East of Eden.epub",
+      "author": "John Steinbeck",
+      "title": "East of Eden",
+      "year": 1952,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Sylvia Plath - The Bell Jar.epub",
+      "author": "Sylvia Plath",
+      "title": "The Bell Jar",
+      "year": 1963,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "The Fire Next Time - James Baldwin.epub",
+      "author": "James Baldwin",
+      "title": "The Fire Next Time",
+      "year": 1963,
+      "translator": null,
+      "chunks": 6
+    },
+    {
+      "remote_file": "Donna Tartt - The Goldfinch.epub",
+      "author": "Donna Tartt",
+      "title": "The Goldfinch",
+      "year": 2013,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "The_Old_Man_and_the_Sea.epub",
+      "author": "Ernest Hemingway",
+      "title": "The Old Man and the Sea",
+      "year": 1952,
+      "translator": null,
+      "chunks": 6
+    }
+  ]
+}
