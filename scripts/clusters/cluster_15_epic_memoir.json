@@ -1,0 +1,46 @@
+{
+  "name": "cluster_15_epic_memoir",
+  "theme": "Epic Fiction, Groundbreaking Memoir & Creative Practice",
+  "books": [
+    {
+      "remote_file": "Kavalier and Clay - Michael Chabon.epub",
+      "author": "Michael Chabon",
+      "title": "The Amazing Adventures of Kavalier & Clay",
+      "year": 2000,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Know My Name_ A memoir.epub",
+      "author": "Chanel Miller",
+      "title": "Know My Name: A Memoir",
+      "year": 2019,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Fyodor Dostoyevsky/Crime and Punishment - Fyodor Dostoevsky.epub",
+      "author": "Fyodor Dostoevsky",
+      "title": "Crime and Punishment",
+      "year": 1866,
+      "translator": "Constance Garnett",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Neal Stephenson, - Snow Crash.epub",
+      "author": "Neal Stephenson",
+      "title": "Snow Crash",
+      "year": 1992,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Rick Rubin - The Creative Act_ A Way of Being.epub",
+      "author": "Rick Rubin",
+      "title": "The Creative Act: A Way of Being",
+      "year": 2023,
+      "translator": null,
+      "chunks": 8
+    }
+  ]
+}

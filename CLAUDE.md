@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Mined and curated 201 high-caliber quotes across 57 books (incorporating Cluster 11: *The Book Thief*, *Watership Down*, *The Dispossessed*, *Frankenstein*, *The Picture of Dorian Gray* alongside previous clusters). Cluster 12 currently mining locally via Ollama.  
-> **Next**: Process Cluster 12 (*Nithalle Ki Diary*, *Vaishnav Ki Phislan*, *Six Walks in the Fictional Woods*, *Feline Philosophy*, *Infinite Jest*) followed by Cluster 13 (*Cloud Atlas*, *Man's Search for Meaning*, *Letters on Ethics*, *The Trees*, *Chaos*).
+> **Current**: Mined and curated 221 high-caliber quotes across 62 books (incorporating Cluster 12: *Nithalle Ki Diary*, *Vaishnav Ki Phislan*, *Six Walks in the Fictional Woods*, *Feline Philosophy*, *Infinite Jest* alongside previous clusters). Cluster 13 currently mining locally via Ollama.  
+> **Next**: Complete Cluster 13 (*Cloud Atlas*, *Man's Search for Meaning*, *Letters on Ethics*, *The Trees*, *Chaos*) and advance to Cluster 14 (*Memories, Dreams, Reflections*, *Demian*, *The Prince of Tides*, *The Facts Behind the Helsinki Roccamatios*, *Kurukshetra*).
 
 ## Roadmap
 

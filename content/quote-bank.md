@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 201 | **Total Books Represented:** 57
+**Total Vetted Quotes:** 221 | **Total Books Represented:** 62
 
 ---
 
@@ -627,5 +627,60 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Nothing can cure the soul but the senses, just as nothing can cure the senses but the soul.” | How to craft a chiasmus that locks two opposites in mutual dependency. | chiasmus, syntax, aphorism, sensory-detail |
 | “When one is in love, one always begins by deceiving one’s self, and one always ends by deceiving others. That is what the world calls a romance.” | How to trace the trajectory of romantic deceit with cynical precision. | wit, cynicism, syntax, satire |
 | “A cigarette is the perfect type of a perfect pleasure. It is exquisite, and it leaves one unsatisfied. What more can one want?” | How to redefine desire around intentional insufficiency. | paradox, wit, hedonism, voice |
+
+---
+
+## Harishankar Parsai, Nithalle Ki Diary (1968)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘अरे यार, जब जिन्दगी बरबाद ही होनी है, तो उसे प्रमोशन पर बरबाद क्यों न किया जाए।’  ('My friend, when life has to be wasted anyway, why not waste it on a promotion?')” | How to capture existential resignation through bureaucratic irony. | satire, irony, existentialism, bureaucracy |
+| “‘चमचा ज्यों-ज्यों परिपक्व होता जाता है, त्यों-त्यों नेता बनता जाता है।’  ('As a sycophant ripens, he turns into a leader.')” | How to craft a biological aphorism on institutional sycophancy. | aphorism, political-satire, subversion, cynicism |
+| “देखो, हुआ ऐसा कि उसके पड़ोसी ने सुबह अखबार में उसकी तारीफ पढ़ी। वह शिवशंकर के पास गया और बोला— शिवशंकर बाबू, आज अखबार में आपके बारे में छपा है। यह सुनते ही शिवशंकर घबराकर चिल्लाया, 'अरे बाप रे! छप गया!' और वहीं गिर पड़ा।  ('His neighbor read praise of him in the morning paper. He rushed to Shivshankar and said, "Shivshankar Babu, something about you is printed in today\'s paper!" Hearing this, Shivshankar panicked and screamed, "Oh my god! It got printed!" and collapsed right on the spot.')” | How to expose civic terror through an innocent celebration. | comic-timing, absurdism, character-voice, irony |
+| “‘बात यह है कि सरकारी दल बहुत चतुर है। वह कुछ ऐसे सदस्य ले आया है जिन्हें यहाँ पैर रखते ही नींद आने लगती है। वे दस्तखत करके सो जाते हैं, तो शाम को ही उठते हैं।’  ('The fact is, the ruling party is exceedingly clever. It brought in members who start feeling drowsy the moment they step into the chamber. They sign the roll, fall asleep, and wake up only in the evening.')” | How to satirize legislative complicity as deliberate slumber. | satire, political-voice, understatement, humor |
+
+---
+
+## Harishankar Parsai, Vaishnav Ki Phislan (1972)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “शव-यात्रा का तौलिया तैयार रखते हैं। किसी के मरने की खबर मिली नहीं कि इतने प्रसन्न होते हैं, जैसे किसी की शादी हो रही है।  ('They keep a funeral towel folded and ready. The moment news of a death arrives, they are overjoyed, as though someone is getting married.')” | How to expose morbid opportunism through a single domestic prop. | social-satire, contrast, prop, hypocrisy |
+| “‘हनुमानभक्त’ मेरा एक मित्र कहता है, “अब आदमी पर भरोसा नहीं रहा। कुछ निश्चित नहीं है। अब तो हनुमानजी से प्रार्थना करते हैं कि अब के जब राम के काम से गन्धमादन जाओ तो हमारे लिए भी पेचिश की दवा लेते आना।”  ('A devotee friend of mine says: "I no longer trust mankind. Nothing is certain anymore. Now I only pray to Lord Hanuman: next time you fly across Mount Gandhamadana on Ram\'s errand, pick up some dysentery medicine for us as well."')” | How to deflate epic mythology with mundane bodily affliction. | deflation, satire, contrast, mythology |
+| “‘सरकारें खुद चाहती हैं कि कुछ लेखक उनका विरोध करें। वे उन्हें पहचान लें और जो चाहिए, दे-दिवा दें।’  ('Governments themselves want some writers to oppose them, so they can identify them and give them whatever payoffs they need.')” | How to expose co-opted political dissent. | cynicism, political-satire, power, insight |
+| “इतना बड़ा भक्त, उतनी ही मैली चादर। शायद कबीरदास की तरह ‘जतन’ से ओढ़कर चदरिया को ‘जस की तस’ धर देते हैं।  ('The greater the devotee, the filthier the shroud. Perhaps, like Kabir, they drape the sheet with careful devotion only to return it untransformed.')” | How to invert mystical verse to indict moral decay. | allusion, subversion, irony, spiritual-hypocrisy |
+
+---
+
+## Umberto Eco, Six Walks in the Fictional Woods (1994)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Every text, after all (as I have already written), is a lazy machine asking the reader to do some of its work.” | How to define literary mechanics through mechanical metaphor. | metaphor, literary-craft, metafiction, aphorism |
+| “When trying to assess a film that contains sexually explicit scenes, you should check to see whether, when a character gets into an elevator or a car, the discourse time coincides with the story time.” | How to expose narrative stalling through chronological pacing. | pacing, craft-rule, wit, observation |
+| “It is true that in Sylvie we know without a doubt that Adrienne died in 1832 (whereas we are not equally sure that Napoleon died in 1821—since he could have been secretly rescued from Saint Helena by Julien Sorel, leaving a double there in his place, and may subsequently have lived under the name of Père Dodu in Loisy, where he encountered the narrator in 1830).” | How to prove that fictional certainty outlasts historical fact. | paradox, metafiction, narrative-theory, wit |
+| “It is the quantity of pages devoted to the effort of recollecting these hours, without actually reconstructing their actual sequence, it is the disproportion between the time of recollection and the time recollected...” | How to stretch subjective memory against chronological story time. | time, narrative-structure, craft-analysis, memory |
+
+---
+
+## John Gray, Feline Philosophy: Cats and the Meaning of Life (2020)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “A good life is one they have felt and smelt, not a dim sighting of something far away.” | How to ground existential contentment in sensory immediacy. | sensory-detail, philosophy, simplicity, contrast |
+| “Sleep for the joy of sleeping. Sleeping so that you can work harder when you wake up is a miserable way to live. Sleep for pleasure, not profit.” | How to liberate restorative rest from utilitarian productivity. | cadence, counter-intuitive, polemic, aphorism |
+| “Reasoning makes the modern neurosis worse: the characteristics the modern mind prides itself on are precisely those of madness.” | How to indict instrumental rationality as an anxiety amplifier. | paradox, inversion, cultural-critique, intellect |
+| “The myth-ritual complex is a social form for the channelling of obsessions … It automatically engineers safety and banishes despair by keeping people focussed on the noses in front of their faces.” | How to diagnose human ritual as an insulation against existential dread. | sociology, detachment, existentialism, insight |
+
+---
+
+## David Foster Wallace, Infinite Jest (1996)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It’s a kind of emotional novocaine, this form of depression, and while it’s not overtly painful its deadness is disconcerting and . .. well, depressing.” | How to register clinical anhedonia through chemical numbness. | interiority, vernacular-rhythm, psychology, honesty |
+| “The needle makes a kind of thud and squeak when it goes in the cloth. It’s not much like the soundless pop and slide of a real cook-and-shoot.” | How to use micro-acoustic detail to establish somatic addiction. | sound-design, sensory-detail, realism, contrast |
+| “And so a series of personal interviews with the spiritually necrotic brother took place, Barry having to station himself on the other side of the playing-cards’ wastebasket so as even to get the older brother’s attention, trying to talk the brother down from the misanthropic spiritual ledge he was on.” | How to capture existential intervention through bureaucratic absurdity. | maximalism, contrast, irony, syntax |
+| “the A.C.D.C. campaign, brilliantly orchestrated by Boston MA's Viney and Veals Advertising, was pummelling the Big Four in the fiscal thorax with its ubiquitous anti-passivity slogan 'Don't Sit Still for Anything Less'” | How to parody commercial aggression through hyper-technical anatomical metaphor. | satire, maximalism, metaphor, dissonance |
 
 ---

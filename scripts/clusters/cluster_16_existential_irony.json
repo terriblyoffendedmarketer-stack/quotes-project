@@ -1,0 +1,46 @@
+{
+  "name": "cluster_16_existential_irony",
+  "theme": "Mythic Realism, Pastoral Irony & Classical Stoicism",
+  "books": [
+    {
+      "remote_file": "Neil Gaiman - American Gods.epub",
+      "author": "Neil Gaiman",
+      "title": "American Gods",
+      "year": 2001,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Poonachi_-_Perumal_Murugan.epub",
+      "author": "Perumal Murugan",
+      "title": "Poonachi, or the Story of a Black Goat",
+      "year": 2016,
+      "translator": "N. Kalyan Raman",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Breakfast_of_Champions_-_Kurt_Vonnegut_Jr.epub",
+      "author": "Kurt Vonnegut Jr.",
+      "title": "Breakfast of Champions",
+      "year": 1973,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Fyodor Dostoyevsky/White_nights - Fyodor Dostoyevsky.epub",
+      "author": "Fyodor Dostoevsky",
+      "title": "White Nights",
+      "year": 1848,
+      "translator": "Constance Garnett",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Meditations - Marcus Aurelius - Gregory Hays translation.epub",
+      "author": "Marcus Aurelius",
+      "title": "Meditations",
+      "year": 180,
+      "translator": "Gregory Hays",
+      "chunks": 8
+    }
+  ]
+}
