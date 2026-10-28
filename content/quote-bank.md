@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 674 | **Total Books Represented:** 133
+**Total Vetted Quotes:** 694 | **Total Books Represented:** 138
 
 ---
 
@@ -1652,5 +1652,61 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Most documentation fails in giving too little overview. The trees are described, the bark and leaves are commented, but there is no map of the forest.” | How to diagnose structural explanation failure through ecological scale. | craft, clarity, explanation, metaphor |
 | “The hardest part of the software task is arriving at a complete and consistent specification, and much of the essence of building a program is in fact the debugging of the specification.” | How to reframe engineering difficulty as linguistic articulation. | clarity, thinking, specification, architecture |
 | “The higher the level at which one thinks, the more numerous the primitive thought-elements one has to deal with.” | How to identify the deceptive trap of high-level abstraction. | abstraction, philosophy, systems, intellect |
+
+---
+
+## Perumal Murugan, Poonachi: Or the Story of a Black Goat (2016)
+*Trans. N. Kalyan Raman*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “If he was in possession of a kid whose ears were not pierced, he might be an enemy of the regime.” | How to reveal totalitarian paranoia through animal livestock regulation. | satire, fable, totalitarianism, state |
+| “They had no other wish than to pass the remainder of their lives as serenely as they had done all these years.” | How to sketch pastoral vulnerability through modest domestic desire. | understatement, vulnerability, pastoral, peace |
+| “It was beyond her understanding. Did the joy of mating amount to no more than this?” | How to question biological instinct through innocent animal perspective. | fable, disillusion, innocence, nature |
+| “There has been no rainfall anywhere in the world of the Asuras.” | How to summon mythological drought in eleven words. | myth, drought, landscape, brevity |
+
+---
+
+## Kurt Vonnegut, Breakfast of Champions (1973)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Some people say there is no such thing as progress. The fact that human beings are now the only animals left in the world represents, I admit, a confusing sort of victory.” | How to dismantle ecological dominion through bitter ironical triumph. | satire, irony, ecology, humor |
+| “I shrank the universe down to a ball with a diameter of exactly one light year. I blew it up.” | How to execute a cosmic demolition in two sentences. | metafiction, voice, cosmic, absurdity |
+| “All molecules stopped functioning for a moment, and each of them sought to gain distance between itself and its neighbors.” | How to describe nervous breakdown at the atomic scale. | breakdown, science, metaphor, wit |
+| “Life was an experiment by which the Creator of the Universe intended to test a new creature He planned to introduce into the universe. It was a creature that had the ability to make choices.” | How to frame human free will as an unpredictable cosmic field test. | free will, parable, philosophy, cosmic |
+
+---
+
+## Malala Yousafzai, I Am Malala (2013)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “No Pashtun leaves his land of his own sweet will.” | How to convey ancestral displacement through cultural proverb. | exile, homeland, proverb, brevity |
+| “They can stop us going to school but they can’t stop us learning.” | How to sever institutional education from autonomous intellectual will. | courage, learning, defiance, truth |
+| “Education is neither Eastern nor Western, it is human.” | How to rescue universal knowledge from geopolitical tribalism. | clarity, education, humanism, truth |
+| “If the men cannot win the battle, then the women will come forth and win you an honour.” | How to overthrow patriarchal martial vanity through ancient battle cry. | defiance, history, voice, courage |
+
+---
+
+## Kurt Vonnegut, The Sirens of Titan (1959)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “There is no reason why good cannot triumph as often as evil. The triumph of anything is a matter of organization.” | How to demystify moral triumph into bureaucratic logistics. | morality, satire, organization, cynicism |
+| “He doesn’t care what happens to you. He didn’t go to any trouble to get you here safe and sound, any more than He would go to the trouble to kill you.” | How to deliver cosmic indifference with chilling theological economy. | theology, cosmic, satire, truth |
+| “Things fly this way and that, my boy, with or without messages. It’s chaos, and no mistake, for the Universe is just being born.” | How to comfort existential vertigo through cosmic infancy. | chaos, cosmic, humor, wisdom |
+| “There is nowhere else for you to go, nothing else for you to do. By putting one foot in front of the other, while we watch in silence, you will make of yourself the most memorable, magnificent, and meaningful human being of modern times.” | How to craft a hollow heroic prophecy wrapped in fatalistic mockery. | irony, heroism, satire, fatalism |
+
+---
+
+## Virginia Woolf and Vita Sackville-West, Love Letters: Virginia Woolf and Vita Sackville-West (2021)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “There is a difference between being very sorry and sorry-to-matter.” | How to dissect emotional sincerity across twelve syllables. | nuance, emotion, truth, brevity |
+| “I contrast my illiterate writing with your scholarly one, and am ashamed. So dull, I am; dull outwardly, at least; all oafish and muddy; but not dull inside.” | How to defend inner incandescent vitality beneath self-deprecating mud. | epistolary, vulnerability, voice, contrast |
+| “She is utterly unaffected: there is no outward adornments – she dresses quite atrociously.” | How to sketch character charm through sartorial carelessness. | character, portrait, wit, fashion |
+| “I try to romanticise Berlin by thinking that Russia lies over there to the east. But the only tangible reminder of Russia is the piercing east wind which comes to us straight off the steppes.” | How to replace poetic nostalgia with harsh physical meteorology. | geography, weather, atmosphere, romanticism |
 
 ---
