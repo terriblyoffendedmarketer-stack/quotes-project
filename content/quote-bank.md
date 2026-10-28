@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 281 | **Total Books Represented:** 77
+**Total Vetted Quotes:** 301 | **Total Books Represented:** 82
 
 ---
 
@@ -852,5 +852,63 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “If you’re picking colors based on a Pantone book, you’re limited to a certain number of choices. If you step out in nature, the palette is infinite.” | How to expose artificial limits through concrete contrast | analogy, observation, contrast, artistic-vision |
 | “Collecting seeds typically doesn’t involve a tremendous amount of effort. It’s more a receiving of a transmission.” | How to redefine ideation as quiet reception | metaphor, receptivity, creative-process, simplicity |
 | “We are interpretation machines, and this process of labeling and detaching is efficient but not accurate.” | How to warn against premature intellectual categorization | perception, aphorism, critique, craft-insight |
+
+---
+
+## Neil Gaiman, American Gods (2001)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “One blow, is all it takes, one blow. That is the art.” | How to distill slaughter into a craftsman's pride | repetition, craft-rule, brevity, chilling-tone |
+| “Soon they will fall and the star people will meet the earth people. There will be heroes among them, and men who will slay monsters and bring knowledge, but none of them will be gods. This is a poor place for gods.” | How to evoke mythological obsolescence through simple nouns | mythology, cadence, understatement, worldbuilding |
+| “The week before Christmas is often a quiet one in a funeral parlor.” | How to open a scene through calendar irony | juxtaposition, opening, tonal-contrast, restraint |
+| ““It will be a mighty battle,” it told him, in a glutinous voice. “It’s not going to be a battle. All we’re facing here is a fucking paradigm shift. It’s a shakedown. Modalities like battle are so fucking Lao Tzu.”” | How to pit corporate jargon against ancient epic register | dialogue, satire, tonal-clash, modernity |
+
+---
+
+## Perumal Murugan, Poonachi, or the Story of a Black Goat (2016)
+*Trans. N. Kalyan Raman*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| ““The unfortunate lesson that I’ve learnt from my experience of living all these years is that people are not that good or straight.”” | How to state a lifelong disillusionment without bitterness | fable, voice, disillusionment, peasant-wisdom |
+| ““Let him taste that pleasure at least once in this life. Just the memory will be enough for him,” the old man laughed.” | How to justify indulgence through the permanence of memory | dialogue, tenderness, poverty, memory |
+| ““No matter how much you give to this heart, it will never be enough.”” | How to state insatiable affection in one breath | aphorism, emotion, simplicity, vulnerability |
+| ““Do you think a house will keep without people in it?”” | How to define domestic shelter through human presence | domesticity, interrogation, brevity, observation |
+
+---
+
+## Kurt Vonnegut Jr., Breakfast of Champions (1973)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “They lived in ugly places where there were only ugly things to do. They didn’t have a nickel to their names, so they couldn’t pretty up their surroundings. So they did their best to pretty up their insides instead.” | How to portray resilience against squalor without sentimental pity | irony, compassion, cadence, repetition |
+| “Your father was programmed to run out of the house and slam the door. That made your mother automatically into a crying machine.” | How to diagnose domestic trauma through industrial mechanics | mechanistic-metaphor, satire, family-dynamics, absurdism |
+| “She believed what so many Americans believed then: that the nation would be happy and just and rational when prosperity came.” | How to unmask national delusion with a chronological hinge | social-satire, historical-irony, triad, understatement |
+| ““I hate this, Bill,” he said as he murdered mushrooms. “Mushrooms have as much right to live as I do. They know what they want, Bill. I’ll be damned if I know what I want anymore.”” | How to pivot from botanical absurdity to existential collapse | dark-comedy, existential-dread, dialogue, inversion |
+
+---
+
+## Fyodor Dostoevsky, White Nights (1848)
+*Trans. Constance Garnett*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| ““Give me your hand,” I said to my unknown girl, “and he won’t dare bother us anymore.”” | How to claim intimacy through protective bravado | dialogue, romanticism, delusion, threshold |
+| ““It’s always the old days with Grandmother! She was younger in the old days, and the sun was warmer in the old days, and cream didn’t go sour so quickly in the old days—it’s always the old days!”” | How to mock nostalgia through escalating domestic grievances | repetition, comedy, dialogue, rhythm |
+| ““You see, now we’ll always be together, isn’t that so?”” | How to expose wishful thinking in a single fragile tag question | vulnerability, dialogue, delusion, brevity |
+| ““Oh, if only he were you!” flashed through my mind. I remembered your words, Nastenka!” | How to dramatize the cruelty of becoming a romantic surrogate | interiority, heartbreak, unrequited-love, dramatic-irony |
+
+---
+
+## Marcus Aurelius, Meditations (180)
+*Trans. Gregory Hays*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Just that you do the right thing. The rest doesn’t matter.” | How to sever moral duty from external consequence | stoicism, aphorism, moral-clarity, brevity |
+| “Disgust at what things are made of: Liquid, dust, bones, filth. Or marble as hardened dirt, gold and silver as residues, clothes as hair, purple dye as shellfish blood.” | How to cure vanity through material demystification | cataloging, sensory-detail, demystification, stoic-practice |
+| “It doesn’t matter how good a life you’ve led. There’ll still be people standing around the bed who will welcome the sad event.” | How to puncture the illusion of universal posthumous love | realism, candor, mortality, perspective |
+| “Death: something like birth, a natural mystery, elements that split and recombine. Not an embarrassing thing. Not an offense to reason, or our nature.” | How to domesticate mortality through biological symmetry | stoicism, cadence, understatement, philosophical-prose |
 
 ---

@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Mined and curated 281 high-caliber quotes across 77 books (incorporating Cluster 15: *The Amazing Adventures of Kavalier & Clay*, *Know My Name*, *Crime and Punishment*, *Snow Crash*, *The Creative Act* alongside previous clusters). Cluster 16 currently mining locally via Ollama.  
-> **Next**: Complete Cluster 16 (*American Gods*, *Poonachi*, *Breakfast of Champions*, *White Nights*, *Meditations*) followed by Cluster 17 (*The Goldfinch*, *Snow Falling on Cedars*, *Elena Knows*, *The Invention of Solitude*, *A Short Stay in Hell*).
+> **Current**: Mined and curated 301 high-caliber quotes across 82 books (incorporating Cluster 16: *American Gods*, *Poonachi*, *Breakfast of Champions*, *White Nights*, *Meditations* alongside previous clusters). Cluster 17 currently mining locally via Ollama.  
+> **Next**: Complete Cluster 17 (*The Goldfinch*, *Snow Falling on Cedars*, *Elena Knows*, *The Invention of Solitude*, *A Short Stay in Hell*) followed by Cluster 18 (*Dead Souls*, *The Seven Good Years*, *A Canticle for Leibowitz*, *Amusing Ourselves to Death*, *The Best of Satyajit Ray*).
 
 ## Roadmap
 
