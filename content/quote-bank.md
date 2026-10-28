@@ -1,44 +1,71 @@
-# Quote bank
+# Master Quote Bank
 
-Lines waiting for a card. A line moves into `cards.json` only after it has a research dossier and passes the process in `VOICE.md`.
+A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-## Oliver Burkeman, Four Thousand Weeks (2021)
+---
 
-Already carded: the opening paragraph, "The day will never arrive…", "Your experience of being alive…", "Productivity is a trap", "Results aren't everything", "We've been granted the mental capacities…", and "Once you truly understand that you're guaranteed to miss out…".
+## Haruki Murakami, Men Without Women (2014)
+*Trans. Philip Gabriel & Ted Goossen*
 
-| Line | Possible job | Checked |
+| Line | Craft Job | Tags |
 |---|---|---|
-| "What you pay attention to will define, for you, what reality is." | How to say something huge in plain words | Published excerpts |
-| "The person who refuses to settle until they find their soulmate, or the dream job, is operating from the illusion that they have infinite time in which to search." | How to expose the fantasy of infinite options | Published excerpts |
+| “Suddenly one day you become Men Without Women. That day comes to you completely out of the blue, without the faintest of warnings or hints beforehand... Once you round that bend, that world only you can possibly inhabit. In that world you are called ‘Men Without Women.’ Always a relentlessly frigid plural.” | How to turn sudden loss into an unbending grammatical category | loss, loneliness, language |
+| “There’s something inside her, something important, that I must have missed. If I saw it, perhaps I failed to recognize it for what it really was.” | How to build a sentence around the confession of blindness | relationships, mystery, regret |
+| “I still play squash, but after Dr. Tokai died I moved and, as a result, changed gyms. I’ve hardly used the racket Dr. Tokai left me. It’s a bit too light. And when I feel how light it is, I can’t help but picture his emaciated figure.” | How to weigh an entire tragedy in an ordinary object | grief, physical-detail, memory |
+| “Mr. Kino, you’re not the type who would willingly do something wrong. I know that very well. But there are times in this world when it’s not enough just not to do the wrong thing. Some people use that blank space as a kind of loophole.” | How to expose the danger of passive harmlessness | morality, action, subtext |
 
-## George Saunders, A Swim in a Pond in the Rain (2021)
+---
 
-| Line | Possible job | Checked |
+## Haruki Murakami, What I Talk About When I Talk About Running (2007)
+*Trans. Philip Gabriel*
+
+| Line | Craft Job | Tags |
 |---|---|---|
-| "A story is a linear run of increasing efficiency. Each sentence should perform a little work, propelling us into the next, which does a little work, and so on, until the door closes behind us." | How to define narrative momentum as a trapdoor | Checked against 2021 Random House edition |
-| "We might think of a story as a room in which the author has placed certain objects, every one of which is destined to go off." | How to describe Chekhov's gun without cliches | Checked against text |
+| “Pain is inevitable. Suffering is optional. Say you’re running and you start to think, ‘Man this hurts, I can’t take it anymore.’ The hurt part is an unavoidable reality, but whether or not you can stand any more is up to the runner himself.” | How to divide physical reality from mental endurance | discipline, endurance, mindset |
+| “Once Halloween is over, winter, like some capable tax collector, sets in, concisely and silently.” | How to turn a season into a relentless official | metaphor, seasons, rhythm |
+| “It felt like a car trying to go up a slope with the parking brake on.” | How to describe friction with mechanical clarity | metaphor, physical-detail, struggle |
+| “I realized all of a sudden that even physical pain had all but vanished. Or maybe it was shoved into some unseen corner, like some ugly furniture you can’t get rid of.” | How to domesticate extreme physical trauma | pain, domesticity, endurance |
 
-## Cormac McCarthy, All the Pretty Horses (1992)
+---
 
-| Line | Possible job | Checked |
+## Kurt Vonnegut, Cat's Cradle (1963)
+
+| Line | Craft Job | Tags |
 |---|---|---|
-| "What is constant in history is greed and anger and love of power and yet there is another thing that is more constant and that is the fact that there is no constancy in things at all." | How to balance eternal human appetites against flux | Checked against Knopf first edition |
-| "Scars are the design of life upon the soul." | How to elevate physical wounds to spiritual architecture | Checked against text |
+| “All of the true things I am about to tell you are shameless lies.” | How to disarm the reader on page one | irony, truth, openings |
+| “Pay no attention to Caesar. Caesar doesn’t have the slightest idea what’s really going on.” | How to deflate authority in two short sentences | power, irony, humor |
+| “That’s what Corporal McCabe did, of course,” said Castle. “He named his major-domo as his successor, then he shot himself.” | How to deliver disaster in an offhand cadence | rhythm, dark-humor, deadpan |
+| “Only way we can go is down. This here’s the top. You ask me to go up and wouldn’t be a thing I could do for you.” | How to turn simple topography into existential finality | dialogue, limits, understatement |
 
-## Italo Calvino, Invisible Cities (1972)
+---
 
-| Line | Possible job | Checked |
+## Paul Auster, The Invention of Solitude (1982)
+
+| Line | Craft Job | Tags |
 |---|---|---|
-| "You take delight not in a city's seven or seventy wonders, but in the answer it gives to a question of yours." | How to redefine travel as self-inquiry | Checked against William Weaver translation |
+| “For this is the function of the story: to make a man see the thing before his eyes by holding up another thing to view.” | How to define an abstract art through an optical gesture | storytelling, art, perception |
+| “Work was the name of the country he lived in, and he was one of its greatest patriots.” | How to compress an entire biography into a metaphor of citizenship | biography, metaphor, character |
+| “It was. It will never be again. Remember.” | How to build rhythm out of three tense shifts | grief, memory, cadence |
+| “It was not blindness so much as a failure of imagination.” | How to cut through an excuse with an exact distinction | empathy, perception, precision |
 
-## Ursula K. Le Guin, Steering the Craft (1998)
+---
 
-| Line | Possible job | Checked |
+## Oliver Burkeman, Meditations for Mortals (2024)
+
+| Line | Craft Job | Tags |
 |---|---|---|
-| "Sound is the flesh of language. Narrative is its bones." | How to define prose rhythm in physical anatomy | Checked against 1998 Eighth Mountain Press edition |
+| “Every book makes a mark, even if it doesn’t stay in your conscious memory.” | How to liberate reading from the anxiety of retention | reading, memory, time |
+| “The truth, as one spiritual teacher puts it, is that reality doesn’t need me to help operate it. It carries on fine regardless.” | How to relieve anxiety by puncturing self-importance | control, perspective, humor |
+| “If following a list was all it took, we’d have solved the challenge of human happiness long ago.” | How to dismantle an optimization cult in one sentence | optimization, happiness, skepticism |
+| “Maybe you’ll get what you wanted, or maybe you won’t – and sometimes, not getting what you wanted will leave life immeasurably better.” | How to find gratitude in unmet ambition | ambition, fate, acceptance |
 
-## R. K. Narayan, The Guide (1958)
+---
 
-| Line | Possible job | Checked |
+## Steven L. Peck, A Short Stay in Hell (2012)
+
+| Line | Craft Job | Tags |
 |---|---|---|
-| "A man must save his money for his old age, but he must live in his youth." | How to capture gentle folk wisdom in plain cadence | Checked against Viking Press edition |
+| “The argument took on special meaning to me because it had been almost 160 billion years since I had found such a long string of coherent text.” | How to use geological time to shock the reader with isolation | time, eternity, reading |
+| “It was hard to start a sexual relationship in circumstances of such bizarre uncertainty, especially for an active Mormon and a good Christian, both lost in a Zoroastrian Hell.” | How to deliver straight-faced theological comedy in one sentence | humor, theology, irony |
+| “It’s two sentences that are grammatically correct! They make sense. This is the most amazing thing I’ve ever seen. It’s poetry.” | How to make bare grammar feel like a miracle | language, meaning, hope |
+| “When I was looking at these, I was thinking about a lifetime spent reading great works of literature. Now I get it—this is Hell; an eternity surrounded by books, but they’re all nonsense.” | How to shatter expectations with ironic horror | books, hell, irony |
