@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Reached 714 high-caliber craft quotes curated across 142 books (crossing the 700-quote milestone with Cluster 37: *Love Is a Dog from Hell*, *Timequake*, *The School of Life*, *Welcome to the Monkey House*, *Red Rising*). Cluster 38 (*On Literature*, *The Library Book*, *Style: An Anti-Textbook*, *Poems from the Book of Hours*, *Book of Rhymes*) currently mining locally via Ollama.  
-> **Next**: Complete Cluster 38 curation to reach 734 quotes, followed immediately by Cluster 39 (*The Wandering Earth*, *Seveneves*, *Valuable Humans in Transit*, *Geometry for Ocelots*, *Men Without Women*) to reach 754 quotes.
+> **Current**: Reached 734 high-caliber craft quotes curated across 147 books (incorporating Cluster 38: *On Literature*, *The Library Book*, *Style: An Anti-Textbook*, *Poems from the Book of Hours*, *Book of Rhymes*). Cluster 39 (*The Wandering Earth*, *Seveneves*, *Valuable Humans in Transit*, *Geometry for Ocelots*, *Men Without Women*) currently mining locally via Ollama.  
+> **Next**: Complete Cluster 39 curation to reach 754 quotes, followed immediately by Cluster 40 (*Coin Locker Babies*, *Scene: 75*, *Vikalang Shraddha Ka Daur*, *The Complete Adventures of Feluda*, *Indica*) to reach 774 quotes.
 
 ## Roadmap
 

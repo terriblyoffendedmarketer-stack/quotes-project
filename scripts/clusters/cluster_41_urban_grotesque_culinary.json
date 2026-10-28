@@ -1,0 +1,47 @@
+{
+  "name": "Cluster 41: Beast, Grotesque & Culinary Senses",
+  "output_file": "content/cluster_41_urban_grotesque_culinary_raw.json",
+  "books": [
+    {
+      "remote_file": "Susan Orlean - On Animals.epub",
+      "author": "Susan Orlean",
+      "work": "On Animals",
+      "year": 2021,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Audition - Ryu Murakami.epub",
+      "author": "Ryu Murakami",
+      "work": "Audition",
+      "year": 1997,
+      "translator": "Ralph McCarthy",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Harishankar Parsai - Vaishnav Ki Phislan.epub",
+      "author": "Harishankar Parsai",
+      "work": "Vaishnav Ki Phislan",
+      "year": 1976,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Chuck Palahniuk - Stranger than fiction.epub",
+      "author": "Chuck Palahniuk",
+      "work": "Stranger Than Fiction: True Stories",
+      "year": 2004,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The Flavour of Spice - Marryam H. Reshii.epub",
+      "author": "Marryam H. Reshii",
+      "work": "The Flavour of Spice",
+      "year": 2017,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

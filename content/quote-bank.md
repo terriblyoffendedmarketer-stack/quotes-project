@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 714 | **Total Books Represented:** 142
+**Total Vetted Quotes:** 734 | **Total Books Represented:** 147
 
 ---
 
@@ -1756,5 +1756,62 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “They’ll preach caution. As if caution has ever helped them. We haven’t won a Laurel in ages.” | How to capture youthful defiance in clipped cadence | cadence, voice, pacing |
 | “The toughest ant is yet but an ant.” | How to crush individual distinction with scale | brevity, metaphor, candor |
 | “We have to leave the castle to get it, Sir Numbnuts. A real siege? We’d last five days without replenishing our water. Seven if we drank the animals’ blood before the salt jacks us up.” | How to puncture military romanticism with grim logistics | dialogue, realism, candor |
+
+---
+
+## Umberto Eco, On Literature (2002)
+*Trans. Martin McLaughlin*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “You can die on Saint Helena without being Napoléon.” | How to crush inflated ambition with dry geographic fatalism | irony, brevity, aphorism |
+| “For in order to name everything in the universe men would need a dictionary made up entirely of things, and the size of this dictionary would match the extent of the entire cosmos.” | How to dramatize the impossible frontier of taxonomy | metaphor, scale, craft |
+| “Whoever knows about chlorophyll and photosynthesis will for the rest of his life be insensitive to the beauty of a leaf, that whoever knows anything about the circulation of the blood will never be able to make his heart palpitate with love.” | How to satirize reductionist pedantry through false causality | satire, intellectual-craft, irony |
+| “Every Poetics that proposes ideal structures, and chooses to ignore the particularities specific to individual works, is always in the end a theory of the works that the theorist judges to be best.” | How to unmask aesthetic dogma as personal prejudice | criticism, candor, craft |
+
+---
+
+## Susan Orlean, The Library Book (2018)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The architect of this building may have been a great architect, but he didn’t know his fanny from a hot rock when it came to fire protection.” | How to puncture architectural majesty with vernacular contempt | vernacular, voice, candor |
+| “It’s the moment when a fire in a room is transformed into a room on fire.” | How to define catastrophic tipping points with chiasmus | chiasmus, sentence-mechanics, precision |
+| “The pages burned so fast they barely crackled; the sound was soft, like a sizzle, or like the crinkly light sound of water spraying out of a shower.” | How to evoke physical destruction through paradoxical sensory comparison | sensory-detail, metaphor, understatement |
+| “Like all creative art, it is disturbing: it leaves an impression that is satisfying yet mystifying.” | How to capture the uneasy aftermath of aesthetic encounter | craft, paradox, brevity |
+
+---
+
+## Richard A. Lanham, Style: An Anti-Textbook (1974)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “I couldn’t do this job for the same reason I couldn’t sing the soprano lead in La Traviata: because I’m tone deaf.” | How to diagnose stylistic incompetence as a physical defect | analogy, voice, humor |
+| “What arcana they share! What bright chaps they must be to share them!” | How to dismantle academic jargon through sarcastic celebration | satire, irony, voice |
+| “Students of meter often refer to the tension between natural word stress and the stress pattern that meter imposes. In prose rhythm an analogous tension waits there for the exploiting.” | How to locate the dynamic engine of prose rhythm | prose-rhythm, craft, sentence-mechanics |
+| “No synonymity is ever exactly synonymous. Each new variation can be read not as an opaque variation on an already determined reality but as a transparent glimpse into a new reality.” | How to treat word choice as an act of world-building | diction, craft, philosophical-depth |
+
+---
+
+## Rainer Maria Rilke, Poems from the Book of Hours (1905)
+*Trans. Babette Deutsch*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “God is the child in the manger, the culprit on the gallows.” | How to unite innocence and condemned agony in a single breath | antithesis, brevity, sacred-craft |
+| “They will say ‘mine’ as one will sometimes call the prince his friend in speech with villagers, this prince being very great — and far away.” | How to expose human possessiveness as village boasting | metaphor, parable, irony |
+| “God is the neighbor we hear breathing in the night. He is the gift, the lost or unfound wholeness of being.” | How to bring the cosmic into acoustic proximity | sensory-detail, intimacy, metaphor |
+| “He must be wooed into being, refined into purity, he must ripen in deep peace and silence towards the future, like a wine that unperturbed, grows ever sweeter and all its own.” | How to make spiritual emergence tangible through slow cellar craft | metaphor, craft, lyricism |
+
+---
+
+## Adam Bradley, Book of Rhymes: The Poetics of Hip Hop (2009)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “What you find with a lot of rappers is they work out their flow—the rhythm to their words—and the better they get, the more tidy the flow becomes, until everything has to fit in, the same way it would with a poem.” | How to diagnose when technical mastery threatens spontaneity | craft, rhythm, observation |
+| “Not surprisingly, the rhymes in these lines also shape the rhythm, with a pattern of stress carrying over from phrase to phrase.” | How to let rhyme dictate metric momentum | meter, sound-craft, sentence-mechanics |
+| “It may be of great interest to discover how accurately a poem reflects its author’s experience, attitudes, or beliefs; but this is a question that belongs to biography not to criticism.” | How to separate literary form from personal confession | criticism, craft, clarity |
+| “In hip hop—and inside the broken histories of black men in America—respect is the ultimate medium of exchange. And that is to say, in battling, the rapper is gambling with the most valuable commodity available: one’s rep and the respect that flows from it.” | How to establish cultural currency as life-or-death stakes | cultural-craft, persuasive-prose, scale |
 
 ---
