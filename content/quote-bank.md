@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 341 | **Total Books Represented:** 86
+**Total Vetted Quotes:** 354 | **Total Books Represented:** 88
 
 ---
 
@@ -173,6 +173,8 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “It was like being a piece of furniture in a room that nobody uses.” | How to describe total social invisibility | isolation, domesticity, alienation |
 | “Nobody does anything because they have the right. They do it because they want to.” | How to strip moral pretense from cruelty | power, cruelty, truth |
 | “I wasn’t crying because I was sad. I guess I was crying because we had nowhere else to go, no choice but to go on living in this world.” | How to separate tears from ordinary sadness | grief, endurance, resignation |
+| ““We should be friends.” That’s all it said.” | How to charge a mundane elementary overture with quiet, suffocating suspense. | brevity, tension, understatement, dialogue |
+| “Maybe it looks like they’re doing everything while we sit there doing nothing, but that’s not true. What we’re doing has meaning.” | How to formulate an ethics of passive endurance against overwhelming cruelty. | voice, endurance, defiance, philosophy |
 
 ---
 
@@ -253,7 +255,7 @@ A personal anthology of memorable lines, working passages, and craft moments min
 
 ---
 
-## Dharamvir Bharati, Gunahon Ka Devta (Chander & Sudha) (1949)
+## Dharamvir Bharati, Gunahon Ka Devta (1949)
 *Trans. Poonam Saxena*
 
 | Line | Craft Job | Tags |
@@ -463,6 +465,9 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “This man, this Buddha was truthful down to the gesture of his last finger.” | How to anchor spiritual authority in microscopic somatic gesture | Sensory Detail, Physicality, Character, Precision |
 | “The river is everywhere at once, at the source and at the mouth, at the waterfall, at the ferry, at the rapids, in the sea, in the mountains, everywhere at once, and there is only the present time for it, not the shadow of the past, not the shadow of the future.” | How to explain non-linear time through fluid geography | Philosophy, Metaphor, Rhythm, Cadence |
 | “Walking the rosy paths of the fig tree garden, sitting in the bluish shade of the grove of contemplation, washing his limbs daily in the bath of repentance... he still lacked all joy in his heart.” | How to reveal spiritual despair through lush aesthetic abundance | Sensory Detail, Contrast, Interiority, Rhythm |
+| “It was the self, the purpose and essence of which I sought to learn. It was the self, I wanted to free myself from, which I sought to overcome. But I was not able to overcome it, could only deceive it, could only flee from it, only hide from it.” | How to map the recursive trap of ego through parallel clauses and escalating verbs. | syntax, parallelism, paradox, introspection |
+| “Never before, it had become so strangely clear to Siddhartha, how closely lust was akin to death.” | How to link sensual intoxication to mortality in an unadorned declarative cadence. | theme, clarity, mortality, desire |
+| “Wisdom cannot be passed on. Wisdom which a wise man tries to pass on to someone always sounds like foolishness.” | How to state the fundamental limitation of language and instruction in two plain strokes. | aphorism, paradox, philosophy, simplicity |
 
 ---
 
@@ -514,6 +519,9 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “It was in vain that he explained to anybody who would listen that ‘it would be contradictory to the order of the Reichsführer S.S. and illogical if at this stage other authorities again were to handle the Jewish problem.’” | How to expose genocide reduced to jurisdictional etiquette | Irony, Bureaucracy, History, Understatement |
 | “He began by stating emphatically that he was a Gottgläubiger... He then proceeded: ‘After a short while, gentlemen, we shall all meet again. Such is the fate of all men. Long live Germany, long live Argentina, long live Austria. I shall not forget them.’” | How to capture the grotesque comedy of unrepentant cliché | Banality of Evil, Dialogue, Irony, Cliché |
 | “Justice demands that the accused be prosecuted, defended, and judged, and that all the other questions of seemingly greater import – of ‘How could it happen?’ and ‘Why did it happen?’ – must wait.” | How to enforce judicial austerity against theatrical spectacle | Justice, Law, Moral Clarity, Discipline |
+| “They are so obviously three good and honest men that one is not surprised that none of them yields to the greatest temptation to playact in this setting – that of pretending that they, all three born and educated in Germany, must wait for the Hebrew translation.” | How to capture bureaucratic absurdity and judicial decorum in a single observational stroke. | irony, forensic, bureaucracy, observation |
+| “I could not; I had to disappear.” | How to distill absolute moral cowardice into seven monosyllabic words. | voice, understatement, confession, brevity |
+| “The question was whether Eichmann had lied when he said: ‘I never killed a Jew or, for that matter, I never killed a non-Jew… . I never gave an order to kill a Jew nor an order to kill a non-Jew.’” | How to isolate administrative detachment in its barest legal syntax. | syntax, forensic, denial, responsibility |
 
 ---
 
@@ -981,5 +989,24 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | ““It is not clearly understood why human beings should laugh. Great philosophers have racked their brains to find out why; but have not succeeded.”” | How to introduce a surreal premise with mock philosophical gravity | philosophical-parody, mystery, fable, voice |
 | ““Those fiendish mosquitoes are singing in my ears again. So that’s how the son of a mighty empire has to meet his end—at the hands of a tiny insect.”” | How to reduce imperial hubris to a mosquito bite | colonial-satire, bathos, irony, mortality |
 | ““Actually, it was an illness I used to suffer from. I mean, I am not really a thief. There is a medical term for it which escapes me at the moment.”” | How to disguise petty larceny in evasive clinical jargon | dialogue, character-revelation, irony, comedy |
+
+---
+
+## Dharamvir Bharati, Gunahon Ka Devta (1949)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “बड़ी फीकी, बड़ी बेजार, बड़ी बनावटी लगती हैं ये कविताएँ, मन के दर्द के आगे सभी फीकी हैं।” | How to strip aesthetic sentimentality bare in the face of actual suffering. | repetition, disillusionment, hindi-literature, candor |
+
+---
+
+## Bhagat Singh, Why I Am An Atheist (1930)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Whether it is such an undue pride that has led me to atheism or whether it is after very careful study of the subject and after much consideration that I have come to disbelieve in God is a question that I intend to discuss here.” | How to disarm an opponent's psychological accusation by accepting it as an open inquiry. | rhetoric, candor, inquiry, opening |
+| “British rule is here not because God wills it but because they possess power and we do not dare to oppose them.” | How to puncture theological justification with cold material reality. | political-thought, clarity, antithesis, power |
+| “It takes a loud voice to make the deaf hear.” | How to justify extreme action through a razor-sharp acoustic metaphor. | metaphor, motto, sensory, rhetoric |
+| “It was perhaps Upton Sinclair that wrote at some place that just make a man a believer in immortality and then rob him of all his riches and possessions. He shall help you even in that ungrudgingly.” | How to expose religious exploitation through a biting, transactional scenario. | satire, argument, materialism, irony |
 
 ---

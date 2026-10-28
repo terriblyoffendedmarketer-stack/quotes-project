@@ -1141,7 +1141,7 @@
   {
     "quote": "ऐसा लगता है कि इस शहर की बनावट, गठन, जिंदगी और रहन-सहन में कोई बँधे-बँधाये नियम नहीं, कहीं कोई कसाव नहीं, हर जगह एक स्वच्छन्द खुलाव, एक बिखरी हुई-सी अनियमितता।\n\n(It seemed as if the structure, texture, life, and living habits of this city followed no fixed rules; nowhere was there any tightness, everywhere an easy openness, a scattered kind of irregularity.)",
     "author": "Dharamvir Bharati",
-    "work": "Gunahon Ka Devta (Chander & Sudha)",
+    "work": "Gunahon Ka Devta",
     "year": 1949,
     "translator": "Poonam Saxena",
     "hook": "How to capture urban character through sensory looseness",
@@ -1156,7 +1156,7 @@
   {
     "quote": "जैसे-तैसे उसकी थोड़ी-सी आँख लगी... किसी ने सहसा जगा दिया। पलक बन्द करने में जितना दर्द हुआ था उतना ही पलकें खोलने में।\n\n(Somehow she drifted into sleep... only to be abruptly awakened. Closing her eyelids had been painful; opening them hurt just as much.)",
     "author": "Dharamvir Bharati",
-    "work": "Gunahon Ka Devta (Chander & Sudha)",
+    "work": "Gunahon Ka Devta",
     "year": 1949,
     "translator": "Poonam Saxena",
     "hook": "How to render grief through bodily mechanics",
@@ -1171,7 +1171,7 @@
   {
     "quote": "यह देवत्व की मूर्ति-सी पथरीली सुधा! यह चन्दर की सुधा तो नहीं!\n\n(This stony Sudha, like a statue of divinity! This could not be Chander's Sudha!)",
     "author": "Dharamvir Bharati",
-    "work": "Gunahon Ka Devta (Chander & Sudha)",
+    "work": "Gunahon Ka Devta",
     "year": 1949,
     "translator": "Poonam Saxena",
     "hook": "How to expose the cruelty of deifying someone you love",
@@ -5169,6 +5169,201 @@
       "intellectual-standard",
       "critique",
       "triad"
+    ]
+  },
+  {
+    "quote": "They are so obviously three good and honest men that one is not surprised that none of them yields to the greatest temptation to playact in this setting – that of pretending that they, all three born and educated in Germany, must wait for the Hebrew translation.",
+    "author": "Hannah Arendt",
+    "work": "Eichmann in Jerusalem: A Report on the Banality of Evil",
+    "year": 1963,
+    "translator": null,
+    "hook": "How to capture bureaucratic absurdity and judicial decorum in a single observational stroke.",
+    "why_it_lands": "Arendt exposes the courtroom's polite theatricality not with indignation, but with a dry, forensic appraisal of how educated men perform formal justice while ignoring the shared language of the accused.",
+    "tags": [
+      "irony",
+      "forensic",
+      "bureaucracy",
+      "observation"
+    ]
+  },
+  {
+    "quote": "I could not; I had to disappear.",
+    "author": "Hannah Arendt",
+    "work": "Eichmann in Jerusalem: A Report on the Banality of Evil",
+    "year": 1963,
+    "translator": null,
+    "hook": "How to distill absolute moral cowardice into seven monosyllabic words.",
+    "why_it_lands": "Stripped of bureaucratic euphemisms, Eichmann's excuse reveals the core mechanism of administrative evil: the instinctive retreat of the ego into total erasure to evade complicity.",
+    "tags": [
+      "voice",
+      "understatement",
+      "confession",
+      "brevity"
+    ]
+  },
+  {
+    "quote": "The question was whether Eichmann had lied when he said: ‘I never killed a Jew or, for that matter, I never killed a non-Jew… . I never gave an order to kill a Jew nor an order to kill a non-Jew.’",
+    "author": "Hannah Arendt",
+    "work": "Eichmann in Jerusalem: A Report on the Banality of Evil",
+    "year": 1963,
+    "translator": null,
+    "hook": "How to isolate administrative detachment in its barest legal syntax.",
+    "why_it_lands": "Arendt isolates how bureaucratic syntax severs individual agency from industrialized slaughter, exposing how procedural innocence becomes the ultimate mask for systemic murder.",
+    "tags": [
+      "syntax",
+      "forensic",
+      "denial",
+      "responsibility"
+    ]
+  },
+  {
+    "quote": "बड़ी फीकी, बड़ी बेजार, बड़ी बनावटी लगती हैं ये कविताएँ, मन के दर्द के आगे सभी फीकी हैं।",
+    "author": "Dharamvir Bharati",
+    "work": "Gunahon Ka Devta",
+    "year": 1949,
+    "translator": null,
+    "hook": "How to strip aesthetic sentimentality bare in the face of actual suffering.",
+    "why_it_lands": "The rhythmic cadence of the adjectives ('फीकी... बेजार... बनावटी') strips romantic poetry to the bone, establishing an unbridgeable gulf between aesthetic decoration and raw human grief.",
+    "tags": [
+      "repetition",
+      "disillusionment",
+      "hindi-literature",
+      "candor"
+    ]
+  },
+  {
+    "quote": "“We should be friends.” That’s all it said.",
+    "author": "Mieko Kawakami",
+    "work": "Heaven",
+    "year": 2009,
+    "translator": "Sam Bett & David Boyd",
+    "hook": "How to charge a mundane elementary overture with quiet, suffocating suspense.",
+    "why_it_lands": "Kawakami isolates the blunt four-word note against the brutal reality of schoolyard torment, where sudden solidarity feels just as dangerous and destabilizing as violence.",
+    "tags": [
+      "brevity",
+      "tension",
+      "understatement",
+      "dialogue"
+    ]
+  },
+  {
+    "quote": "Maybe it looks like they’re doing everything while we sit there doing nothing, but that’s not true. What we’re doing has meaning.",
+    "author": "Mieko Kawakami",
+    "work": "Heaven",
+    "year": 2009,
+    "translator": "Sam Bett & David Boyd",
+    "hook": "How to formulate an ethics of passive endurance against overwhelming cruelty.",
+    "why_it_lands": "Kojima's quiet assertion inverts conventional power dynamics, transforming forced physical immobility and silence from a sign of surrender into an intentional, stubborn defiance.",
+    "tags": [
+      "voice",
+      "endurance",
+      "defiance",
+      "philosophy"
+    ]
+  },
+  {
+    "quote": "It was the self, the purpose and essence of which I sought to learn. It was the self, I wanted to free myself from, which I sought to overcome. But I was not able to overcome it, could only deceive it, could only flee from it, only hide from it.",
+    "author": "Hermann Hesse",
+    "work": "Siddhartha",
+    "year": 1922,
+    "translator": "Hilda Rosner",
+    "hook": "How to map the recursive trap of ego through parallel clauses and escalating verbs.",
+    "why_it_lands": "The triadic structure ('deceive it... flee from it... hide from it') captures the psychological cul-de-sac of ascetic striving, showing that the harder one fights the ego, the more entangled one becomes.",
+    "tags": [
+      "syntax",
+      "parallelism",
+      "paradox",
+      "introspection"
+    ]
+  },
+  {
+    "quote": "Never before, it had become so strangely clear to Siddhartha, how closely lust was akin to death.",
+    "author": "Hermann Hesse",
+    "work": "Siddhartha",
+    "year": 1922,
+    "translator": "Hilda Rosner",
+    "hook": "How to link sensual intoxication to mortality in an unadorned declarative cadence.",
+    "why_it_lands": "Hesse connects two primal human currents with quiet, unhurried certainty, making the profound existential realization feel ancient and inevitable rather than dramatic.",
+    "tags": [
+      "theme",
+      "clarity",
+      "mortality",
+      "desire"
+    ]
+  },
+  {
+    "quote": "Wisdom cannot be passed on. Wisdom which a wise man tries to pass on to someone always sounds like foolishness.",
+    "author": "Hermann Hesse",
+    "work": "Siddhartha",
+    "year": 1922,
+    "translator": "Hilda Rosner",
+    "hook": "How to state the fundamental limitation of language and instruction in two plain strokes.",
+    "why_it_lands": "The aphorism cuts cleanly through millennia of didactic tradition, highlighting the inevitable decay that occurs whenever lived understanding is compressed into pedagogical speech.",
+    "tags": [
+      "aphorism",
+      "paradox",
+      "philosophy",
+      "simplicity"
+    ]
+  },
+  {
+    "quote": "Whether it is such an undue pride that has led me to atheism or whether it is after very careful study of the subject and after much consideration that I have come to disbelieve in God is a question that I intend to discuss here.",
+    "author": "Bhagat Singh",
+    "work": "Why I Am An Atheist",
+    "year": 1930,
+    "translator": null,
+    "hook": "How to disarm an opponent's psychological accusation by accepting it as an open inquiry.",
+    "why_it_lands": "Writing from a colonial condemned cell, Singh rejects emotional defensiveness, opening his essay with judicial detachment and converting a personal smear into a calm intellectual examination.",
+    "tags": [
+      "rhetoric",
+      "candor",
+      "inquiry",
+      "opening"
+    ]
+  },
+  {
+    "quote": "British rule is here not because God wills it but because they possess power and we do not dare to oppose them.",
+    "author": "Bhagat Singh",
+    "work": "Why I Am An Atheist",
+    "year": 1930,
+    "translator": null,
+    "hook": "How to puncture theological justification with cold material reality.",
+    "why_it_lands": "Singh collapses divine providence into raw violence and collective hesitation in twenty-one words, refusing the consolation of fatalism in exchange for clear political accountability.",
+    "tags": [
+      "political-thought",
+      "clarity",
+      "antithesis",
+      "power"
+    ]
+  },
+  {
+    "quote": "It takes a loud voice to make the deaf hear.",
+    "author": "Bhagat Singh",
+    "work": "Why I Am An Atheist",
+    "year": 1930,
+    "translator": null,
+    "hook": "How to justify extreme action through a razor-sharp acoustic metaphor.",
+    "why_it_lands": "Quoting the French anarchist martyr Auguste Vaillant, Singh re-frames political provocation not as arbitrary violence, but as a severe acoustical necessity demanded by institutional indifference.",
+    "tags": [
+      "metaphor",
+      "motto",
+      "sensory",
+      "rhetoric"
+    ]
+  },
+  {
+    "quote": "It was perhaps Upton Sinclair that wrote at some place that just make a man a believer in immortality and then rob him of all his riches and possessions. He shall help you even in that ungrudgingly.",
+    "author": "Bhagat Singh",
+    "work": "Why I Am An Atheist",
+    "year": 1930,
+    "translator": null,
+    "hook": "How to expose religious exploitation through a biting, transactional scenario.",
+    "why_it_lands": "Singh illustrates how otherworldly promises serve as ideological sedation, allowing earthly exploitation to unfold with the smiling cooperation of the victim.",
+    "tags": [
+      "satire",
+      "argument",
+      "materialism",
+      "irony"
     ]
   }
 ]
