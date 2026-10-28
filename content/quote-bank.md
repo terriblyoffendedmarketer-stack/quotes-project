@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 414 | **Total Books Represented:** 97
+**Total Vetted Quotes:** 434 | **Total Books Represented:** 100
 
 ---
 
@@ -166,6 +166,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “The worm is in man’s heart. That is where it must be sought.” | How to locate the origin of despair in two short strokes | despair, metaphor, brevity |
 | “It is, at the extreme limit of the condemned man’s last thought, that shoelace that despite everything he sees a few yards away, on the very brink of his dizzying fall.” | How to ground mortal terror in an absurd everyday object | mortality, detail, absurdity |
 | “There always comes a time when one must choose between contemplation and action. This is called becoming a man.” | How to draw a line between thinking and living | action, maturity, courage |
+| “The absurd is born of this confrontation between the human need and the unreasonable silence of the world.” | How to define the absurd through a stark acoustic confrontation. | definition, existentialism, philosophy, clarity |
+| “Living, naturally, is never easy. You continue making the gestures commanded by existence for many reasons, the first of which is habit.” | How to expose human survival as a series of mechanical physical reflexes. | candor, habit, understatement, psychology |
+| “It is not to be built up, but to be burned up.” | How to contrast monumental accumulation with incandescent vitality in eleven words. | antithesis, verbs, vitality, brevity |
+| “There is only one really serious philosophical problem, and that is suicide. Deciding whether or not life is worth living is to answer the fundamental question in philosophy. All other questions follow.” | How to open a philosophical treatise with maximum existential stakes. | opening, stakes, clarity, philosophy |
 
 ---
 
@@ -249,6 +253,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Seeking a life, we have pawned our lives.” | How to compress tragic paradox into chiasmus | Aphorism, Paradox, Subtext, Brevity |
 | “The plant that we plant grows; the seed that we sow blooms; is it only me who is the wasted land here?” | How to turn agrarian routine into psychological agony | Voice, Metaphor, Grief, Internal Monologue |
 | “Anything sowed in a dry land will go waste, no matter who helps in carrying the seeds.” | How to state inevitable defeat using peasant metaphor | Metaphor, Dialogue, Resignation, Sensory Detail |
+| “Kali’s hands are like large, rugged sieves. When they touch my cheek, my love pours forth despite the roughness of their touch.” | How to depict rural intimacy through agrarian tactile imagery. | simile, sensory, tenderness, setting |
+| “Should I put a child on her lap the month after the wedding? I can only drop a grinding stone into her lap. Can’t she be patient for a year or two? We are young.” | How to dramatize societal fertility pressure with a crushing domestic weapon. | rhetorical-question, domestic-imagery, pressure, dialogue |
+| “‘Come to me with a new face, one I am not familiar with,’ she prayed.” | How to charge a religious prayer with terrifying psychological dread. | prayer, dread, interiority, brevity |
+| “We don’t expect our children to take care of us when we are old. We only ask that there be someone to perform the last rites when we are gone.” | How to reveal the subterranean terror behind parental obsession. | candor, culture, mortality, lineage |
 
 ---
 
@@ -1132,5 +1140,38 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “I was being a good sport and wanted to appear impressive but once out to sea, just when I was chug-a-lugging a beer and intoning a chorus of ‘Heave ho, blow the man down,’ I turned chartreuse and dropped to the deck, groaning and begging to be euthanized.” | How to puncture masculine bravado through escalating physical humiliation. | humor, sensory, self-deprecation, cadence |
 | “So it is that my life is ruined, spoiled, by the knowledge that the alarm will be going off one day and I must go, and this knowledge kills my peace of mind and makes me toss and turn through all the days of my existence waiting for the hour to strike.” | How to depict existential dread as an inescapable morning alarm. | metaphor, anxiety, mortality, voice |
 | “But I wasn’t any simpleton. I was a simpleton extraordinaire, in love with the apotheosis of my dreams and wading through the debris.” | How to elevate romantic delusion to grandiose mock-heroic stature. | irony, self-deprecation, voice, diction |
+
+---
+
+## Oliver Burkeman, The Antidote (2012)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘Inspiration is for amateurs,’ the artist Chuck Close once memorably observed. ‘The rest of us just show up and get to work.’” | How to strip creative output of mystical romance through working-class pragmatism. | work-ethic, candor, discipline, craft |
+| “You’re never going to erase the groundlessness. You’re never going to have a neat, sweet little picture with no messiness.” | How to puncture perfectionist control through parallel negative assertions. | candor, stoicism, acceptance, clarity |
+| “‘Failure is the distinguishing feature of corporate life,’ writes the economist Paul Ormerod, at the start of his book Why Most Things Fail, but in this sense corporate life is merely a microcosm of the whole of life.” | How to normalize systemic failure as the baseline condition of reality. | perspective, stoicism, realism, philosophy |
+| “Death was in the air, and all was well.” | How to reconcile mortality with serene equanimity in eight words. | brevity, mortality, paradox, equanimity |
+
+---
+
+## William Zinsser, On Writing Well (1976)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Clutter is the disease of American writing. We are a society strangling in unnecessary words, circular constructions, pompous frills and meaningless jargon.” | How to diagnose verbal excess as a cultural epidemic. | editing, clarity, jargon, craft |
+| “Writing is hard work. A clear sentence is no accident. Very few sentences come out right the first time, or even the third time. Remember this in moments of despair. If you find that writing is hard, it’s because it is hard.” | How to console the struggling writer with unvarnished candor. | encouragement, revision, candor, craft |
+| “The secret of good writing is to strip every sentence to its cleanest components. Every word that serves no function, every long word that could be a short word, every adverb that carries the same meaning that’s already in the verb, every passive construction that leaves the reader uncertain of who is doing what—these are the thousand and one adulterants that weaken the strength of a sentence.” | How to catalogue prose adulterants through relentless parallel clauses. | subtraction, revision, syntax, catalogue |
+| “Look for the lead in your writing. If it’s buried in the fourth paragraph, dig it out and put it where it belongs: right at the beginning.” | How to rescue buried substance with excavation mechanics. | openings, editing, structure, clarity |
+
+---
+
+## Oscar Wilde, Only Dull People Are Brilliant at Breakfast (1894)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “All bad art is the result of good intentions.” | How to invert moral virtue into aesthetic malpractice in nine words. | aphorism, inversion, aestheticism, craft |
+| “A sentimentalist is simply a man who desires to have the luxury of an emotion without paying for it.” | How to diagnose emotional sentimentality through a financial transaction metaphor. | metaphor, wit, candor, satire |
+| “Life is much too important a thing ever to talk seriously about it.” | How to deflect heavy moral earnestness with an elegant epigrammatic paradox. | paradox, wit, epigram, philosophy |
+| “Life imitates Art far more than Art imitates Life. Life holds the mirror up to Art, and either reproduces some strange type imagined by painter or sculptor, or realizes in fact what has been dreamed in fiction.” | How to overturn classical mimesis through rhetorical chiasmus. | chiasmus, art-theory, aestheticism, vision |
 
 ---
