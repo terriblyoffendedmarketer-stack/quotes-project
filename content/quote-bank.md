@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 301 | **Total Books Represented:** 82
+**Total Vetted Quotes:** 321 | **Total Books Represented:** 84
 
 ---
 
@@ -54,6 +54,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “It was hard to start a sexual relationship in circumstances of such bizarre uncertainty, especially for an active Mormon and a good Christian, both lost in a Zoroastrian Hell.” | How to deliver straight-faced theological comedy in one sentence | humor, theology, irony |
 | “It’s two sentences that are grammatically correct! They make sense. This is the most amazing thing I’ve ever seen. It’s poetry.” | How to make bare grammar feel like a miracle | language, meaning, hope |
 | “When I was looking at these, I was thinking about a lifetime spent reading great works of literature. Now I get it—this is Hell; an eternity surrounded by books, but they’re all nonsense.” | How to shatter expectations with ironic horror | books, hell, irony |
+| ““It’s two sentences that are grammatically correct! They make sense. This is the most amazing thing I’ve ever seen. It’s poetry.”” | How to frame basic syntax as miraculous grace | dialogue, meta-fiction, reverence, syntax |
+| “What I would have given even to see a cockroach in this place.” | How to evoke barren sterility through repulsive vermin | understatement, isolation, bathos, sensory-longing |
+| “I think I am in Hell, therefore I am.” | How to adapt Descartes into an infernal axiom | allusion, aphorism, dark-comedy, epistemology |
+| “To murder a sinner in the morning is the start of a blessed day.” | How to invert pious devotion into sanctified atrocity | satire, fanaticism, theology, irony |
 
 ---
 
@@ -76,6 +80,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Work was the name of the country he lived in, and he was one of its greatest patriots.” | How to compress an entire biography into a metaphor of citizenship | biography, metaphor, character |
 | “It was. It will never be again. Remember.” | How to build rhythm out of three tense shifts | grief, memory, cadence |
 | “It was not blindness so much as a failure of imagination.” | How to cut through an excuse with an exact distinction | empathy, perception, precision |
+| “My grandmother murdered my grandfather. On January 23, 1919, precisely sixty years before my father died, his mother shot and killed his father in the kitchen of their house on Fremont Avenue in Kenosha, Wisconsin.” | How to detonate a family secret with journalistic neutrality | opening, forensic-precision, family-trauma, directness |
+| “The world ends at that barricaded door.” | How to draw the boundary of isolation in seven words | solitude, aphorism, spatial-metaphor, brevity |
+| “Permanent solutions never interested him. He went on patching and patching, a little piece here, a little piece there, never allowing his boat to sink, but never giving it a chance to float either.” | How to portray chronic indecision through maritime maintenance | characterization, metaphor, repetition, rhythm |
+| “It is almost like the drawing a child makes when he is troubled by some inexpressible fear: the most important thing is always the biggest thing.” | How to explain emotional distortion through naive proportions | psychology, analogy, perspective, craft-rule |
 
 ---
 
@@ -391,6 +399,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “The room itself, in its bleak, drafty, sunscrubbed beauty, gave a keen sense of Northern Europe, a model of the Netherlands in miniature: whitewash and Protestant probity, co-mingled with deep-dyed luxury brought in merchant ships from the East.” | How to compress national art history into an interior description | Setting, Sensory Detail, Atmosphere, Texture |
 | “Plenty of people on the street would kill you for that much cash.” | How to inject cold economic reality into high-stakes suspense | Dialogue, Suspense, Brevity, Understatement |
 | “My glasses—blood-smeared, unbroken—lay on the ground by my foot.” | How to capture survival through an intact personal lens | Physicality, Precision, Trauma, Detail |
+| “It was my first time in Amsterdam; I’d seen almost nothing of the city and yet the room itself, in its bleak, drafty, sunscrubbed beauty, gave a keen sense of Northern Europe, a model of the Netherlands in miniature: whitewash and Protestant probity, co-mingled with deep-dyed luxury brought in merchant ships from the East.” | How to evoke national character through room architecture | atmosphere, architecture, sensory-detail, cultural-contrast |
+| “It was as if I’d signed on as a cabin boy on the Marie Céleste.” | How to establish vulnerability through maritime ghost-lore | metaphor, allusion, vulnerability, brevity |
+| ““You’re a liar,” he said pleasantly. “You may think you can bluff your way out of this, but you can’t.”” | How to deliver lethal confrontation with pleasant manners | dialogue, tonal-contrast, conflict, menace |
+| “Miami, Hamburg, even the place names made me burst into an incredulous huff of laughter.” | How to render hysterics through foreign geography | shock, absurdism, laughter, interiority |
 
 ---
 
@@ -910,5 +922,28 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Disgust at what things are made of: Liquid, dust, bones, filth. Or marble as hardened dirt, gold and silver as residues, clothes as hair, purple dye as shellfish blood.” | How to cure vanity through material demystification | cataloging, sensory-detail, demystification, stoic-practice |
 | “It doesn’t matter how good a life you’ve led. There’ll still be people standing around the bed who will welcome the sad event.” | How to puncture the illusion of universal posthumous love | realism, candor, mortality, perspective |
 | “Death: something like birth, a natural mystery, elements that split and recombine. Not an embarrassing thing. Not an offense to reason, or our nature.” | How to domesticate mortality through biological symmetry | stoicism, cadence, understatement, philosophical-prose |
+
+---
+
+## David Guterson, Snow Falling on Cedars (1994)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “She sat across from him at the kitchen table at three o’clock in the morning, while he stared in silence or talked or wept, and she took when she could a piece of his sorrow and stored it for him in her own heart.” | How to render emotional devotion through quiet nocturnal action | intimacy, rhythm, grief, tenderness |
+| “They walked barefoot; they kept their faces down. All of them wore woven straw pickers’ hats.” | How to portray collective labor through three austere strokes | visual-craft, understatement, social-realism, brevity |
+| ““War stinks,” he added. “But they started it. They bombed Hawaii on a Sunday morning. On a Sunday morning, of all things.”” | How to reveal domestic outrage outraged by calendar transgression | dialogue, vernacular, repetition, historical-voice |
+| “He did not like to explain or elaborate, and there was a part of him she couldn’t get to.” | How to sketch emotional opacity in two coordinates | characterization, interiority, relationships, restraint |
+
+---
+
+## Claudia Piñeiro, Elena Knows (2007)
+*Trans. Frances Riddle*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Litter has accumulated below the platform opposite them, some of it will disintegrate with time, some of it will outlive her.” | How to measure terminal illness against platform trash | mortality, contrast, imagery, understatement |
+| ““She didn’t laugh much. When had she ever laughed much?”” | How to question a memory of joy in two steps | grief, interiority, interrogation, brevity |
+| “That’s why she’s sitting on this train, so that this other body, the body of a woman she hasn’t seen for twenty years, may help her uncover the truth that her body refuses her.” | How to dramatize physical incapacity borrowing another’s limbs | somatic-detail, cadence, illness, suspense |
+| ““People confuse thinking with knowing, they let themselves confuse the two.”” | How to distinguish speculation from visceral conviction | aphorism, epistemology, brevity, voice |
 
 ---
