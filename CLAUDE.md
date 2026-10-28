@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Mined and curated 394 high-caliber quotes across 94 books (incorporating Cluster 21: *East of Eden*, *The Master and Margarita*, *The Left Hand of Darkness*, *Junkie*, *Love Is a Dog from Hell* alongside previous clusters). Cluster 22 currently mining locally via Ollama.  
-> **Next**: Complete Cluster 22 (*Letters to Milena*, *Love Letters: Vita and Virginia*, *The Death of Ivan Ilyich*, *1984*, *Apropos of Nothing*) followed by Cluster 23 (*The Antidote*, *On Writing Well*, *The Myth of Sisyphus*, *One Part Woman*, *Only Dull People Are Brilliant at Breakfast*).
+> **Current**: Mined and curated 414 high-caliber quotes across 97 books (incorporating Cluster 22: *Letters to Milena*, *Love Letters: Vita and Virginia*, *The Death of Ivan Ilyich*, *1984*, *Apropos of Nothing* alongside previous clusters). Cluster 23 currently mining locally via Ollama.  
+> **Next**: Complete Cluster 23 (*The Antidote*, *On Writing Well*, *The Myth of Sisyphus*, *One Part Woman*, *Only Dull People Are Brilliant at Breakfast*) followed by Cluster 24 (*Memories, Dreams, Reflections*, *Cryptonomicon*, *On Cats*, *Help!*, *Ender's Game*).
 
 ## Roadmap
 
