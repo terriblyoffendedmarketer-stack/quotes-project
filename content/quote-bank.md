@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 261 | **Total Books Represented:** 72
+**Total Vetted Quotes:** 281 | **Total Books Represented:** 77
 
 ---
 
@@ -796,5 +796,61 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “‘पर शिराएँ जिस महीरुह की अतल में हैं गड़ी, वह नहीं भयभीत होता क्रूर झंझावात से।’  ('The tree whose roots are buried in the deep abyss does not tremble before the cruel tempest.')” | How to anchor internal resilience in deep roots. | metaphor, resilience, poetry, nature |
 | “‘बताना उसे दर्शन की भ्रान्ति है। शोषण की श्रृंखला के हेतु बनती जो शान्ति, युद्ध है, यथार्थ में वो भीषण अशान्ति है;’  ('To call it peace is a philosophical delusion. The peace that is forged merely to preserve the chains of exploitation is, in truth, an ongoing, terrible war.')” | How to unmask institutional peace as concealed violence. | political-satire, philosophy, justice, polemic |
 | “‘अन्त नहीं नर-पंथ का, कुरुक्षेत्र की धूल, आँसू बरसें, तो यहीं खिले शान्ति का फूल।’  ('The dust of Kurukshetra is not the end of the human path; when tears rain down, it is right here that the flower of true peace will bloom.')” | How to transform a battlefield into ground for moral rebirth. | poetry, redemption, hope, metaphor |
+
+---
+
+## Michael Chabon, The Amazing Adventures of Kavalier & Clay (2000)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| ““The Escapist.” It sounded magnificent to his unschooled ear—someone trustworthy and useful and strong.” | How to name a persona through an uncorrupted ear | naming, characterization, mythology, adjective-triad |
+| “Without the witty, potent dialogue and the puzzling shape of the story, the movie would have been merely an American version of the kind of brooding, shadow-filled Ufa-style expressionist stuff that Joe had grown up watching in Prague. Without the brooding shadows and bold adventurings of the camera, without the theatrical lighting and queasy angles, it would have been merely a clever movie about a rich bastard.” | How to dissect art through balanced negative clauses | sentence-architecture, parallelism, aesthetic-critique, rhythm |
+| “The thought was banal, and yet somehow, as happened every now and then, it took him by surprise and profoundly disappointed him.” | How to register the sting of a commonplace truth | interiority, subordination, emotional-register, restraint |
+| ““You have no right to any part of her. You boys came up with her as employees of Empire Comics, on our payroll. She’s ours.”” | How to render corporate predation in three blunt strokes | dialogue, cadence, conflict, power-dynamics |
+
+---
+
+## Chanel Miller, Know My Name: A Memoir (2019)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “These were not pill-swallowing, bridge-jumping, arm-slicing suicides, for those at least carried a sliver of a chance you’d survive. These were certain deaths.” | How to distinguish degrees of desperation through compound modifiers | memoir, compound-modifiers, cataloging, contrast |
+| “I knew I would show up again at work the next morning, the same way tires bumped over the tracks, the same way that after learning about a death, you’d take out your textbook and carry on with the lesson.” | How to depict dissociation through mechanical routine | dissociation, metaphor, parallelism, grief |
+| “Women are raised to work with dexterity, to keep their nimble fingers ready, their minds alert. It is her job to know how to handle the stream of bombs, how to kindly decline giving her number, how to move a hand from the button of her jeans, to turn down a drink.” | How to expose vigilance by cataloging mundane deflections | social-commentary, infinitive-phrasing, pacing, visceral-detail |
+| “They looked and acted nothing alike; how were we expected to recognize one in the other? How do laced-up white sneakers become black heels snuffing out cigarette butts?” | How to dramatize legal distortion through footwear | sensory-contrast, interrogation, imagery, subtext |
+
+---
+
+## Fyodor Dostoevsky, Crime and Punishment (1866)
+*Trans. Constance Garnett*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Trifles, trifles are what matter! Why, it’s just such trifles that always ruin everything.” | How to expose an obsessive mind through frantic repetition | repetition, psychological-monologue, paranoia, dramatization |
+| ““It all cuts both ways, now it all cuts both ways,” repeated Raskolnikov, and he went out more confident than ever.” | How to pair manic delusion with physical momentum | interiority, idiom, psychological-realism, pacing |
+| ““It’s simply a fantasy to amuse myself; a plaything!”” | How to show self-deception disguising murder as a game | denial, psychology, irony, dialogue |
+| ““You don’t believe she used it? But do you know I managed the estate quite decently, they know me in the neighbourhood. I ordered books, too.”” | How to reveal moral rot through suburban respectability | character-revelation, dialogue, deflection, moral-irony |
+
+---
+
+## Neal Stephenson, Snow Crash (1992)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Condense fact from the vapor of nuance.” | How to coin an intellectual imperative with physical metaphor | aphorism, metaphor, precision, imperative |
+| “The edge is only a single molecule wide. Doctors use them for eye surgery—they can cut your cornea and not leave a scar.” | How to describe lethality through clinical delicacy | hyper-detail, sci-fi-craft, clinical-tone, contrast |
+| ““Hiro Protagonist,” the gargoyle says as Hiro finally tracks him down in the darkness beside a shanty. “CIC stringer for eleven months. Specializing in the Industry. Former hacker, security guard, pizza deliverer, concert promoter.”” | How to build cyber-noir character resumes out of absurd fragments | characterization, listing, worldbuilding, staccato |
+| ““Your information, sir,” the Librarian says. “Are you smart enough to tie that information into YOU ARE HERE?”” | How to challenge passive knowledge through algorithmic dialogue | dialogue, epistemology, cyberpunk, philosophical-fiction |
+
+---
+
+## Rick Rubin, The Creative Act: A Way of Being (2023)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Creativity is not a rare ability. It is not difficult to access. Creativity is a fundamental aspect of being human. It’s our birthright. And it’s for all of us.” | How to dismantle elitism through rhythmic short sentences | staccato, craft-philosophy, declarative, rhythm |
+| “If you’re picking colors based on a Pantone book, you’re limited to a certain number of choices. If you step out in nature, the palette is infinite.” | How to expose artificial limits through concrete contrast | analogy, observation, contrast, artistic-vision |
+| “Collecting seeds typically doesn’t involve a tremendous amount of effort. It’s more a receiving of a transmission.” | How to redefine ideation as quiet reception | metaphor, receptivity, creative-process, simplicity |
+| “We are interpretation machines, and this process of labeling and detaching is efficient but not accurate.” | How to warn against premature intellectual categorization | perception, aphorism, critique, craft-insight |
 
 ---
