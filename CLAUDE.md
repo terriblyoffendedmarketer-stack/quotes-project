@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Reached 654 high-caliber craft quotes curated across 133 books (incorporating Cluster 34: *What I Talk About When I Talk About Running*, *Cat's Cradle*, *Chronicles of a Liquid Society*, *A Monster Calls*, *The Mythical Man-Month*). Cluster 35 currently mining locally via Ollama.  
-> **Next**: Complete Cluster 35 (*Topi Shukla*, *Gunahon Ka Devta*, *The Best of Satyajit Ray*, *Elena Knows*, *Feline Philosophy*) followed by Cluster 36 (*Poonachi*, *Breakfast of Champions*, *I Am Malala*, *The Sirens of Titan*, *Love Letters: Woolf and Sackville-West*).
+> **Current**: Reached 674 high-caliber craft quotes curated across 133 books (incorporating Cluster 35: *Topi Shukla*, *Gunahon Ka Devta*, *The Best of Satyajit Ray*, *Elena Knows*, *Feline Philosophy*). Cluster 36 currently mining locally via Ollama.  
+> **Next**: Complete Cluster 36 (*Poonachi*, *Breakfast of Champions*, *I Am Malala*, *The Sirens of Titan*, *Love Letters: Woolf and Sackville-West*) followed by Cluster 37 (*Love Is a Dog from Hell*, *Timequake*, *The School of Life*, *Welcome to the Monkey House*, *Red Rising*).
 
 ## Roadmap
 

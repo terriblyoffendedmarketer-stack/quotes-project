@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 654 | **Total Books Represented:** 133
+**Total Vetted Quotes:** 674 | **Total Books Represented:** 133
 
 ---
 
@@ -263,6 +263,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “It is not clearly understood why human beings should laugh. Great philosophers have racked their brains to find out why; but have not succeeded.” | How to open an absurd premise with clinical seriousness | Deadpan, Voice, Philosophy, Understatement |
 | “Those fiendish mosquitoes are singing in my ears again. So that’s how the son of a mighty empire has to meet his end—at the hands of a tiny insect.” | How to puncture imperial grandiosity with domestic nuisance | Irony, Humor, Dialogue, Contrast |
 | “He would spend the rest of his days in exactly the same way he had done so far. What could be better? It had started to rain again.” | How to reveal emotional paralysis through quiet comfort | Character, Interiority, Understatement, Pacing |
+| “You’re pretty much on your own, like me, he had said.” | How to forge a lonely kinship across nine words. | solitude, dialogue, brevity, character |
+| “You have been to Ranchi, but due to some unknown reason, the entire episode has slipped out of your mind.” | How to open a detective mystery by diagnosing amnesia. | mystery, memory, suspense, clarity |
+| “This object is certainly worth keeping in my collection, but I cannot bear its effect on me. My temperature keeps shooting higher, and a most unpleasant scene rises before my eyes.” | How to summon macabre obsession through physiological distress. | horror, objects, suspense, body |
+| “I will not have to chase ghosts again, Sitesh Babu. Never. I have finished with them.” | How to deliver a definitive goodbye to the supernatural with cold finality. | ghosts, resolution, dialogue, finality |
 
 ---
 
@@ -291,6 +295,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “वह अपनी निगेटिव था और शायद अपने प्रिंट की राह देख रहा था।  (He was his own negative, perhaps waiting for his print.)” | How to capture identity alienation through photographic metaphor | Metaphor, Identity, Character, Brevity |
 | “तो मैं (यानी यह जीवनीकार) यह जानता हूँ कि टोपी शुक्ला ने सोचे-समझे बिना कभी कोई काम ही नहीं किया। यही बाद में उसके जीवन की ट्रेजिडी साबित हुई।  (So I, this biographer, know that Topi Shukla never did a single thing without deliberate thought. That precisely turned out to be the tragedy of his life.)” | How to subvert conventional wisdom about intention | Irony, Voice, Tragedy, Point of View |
 | “बात यह है कि वाजिद खुद अपनी कहानी का आरम्भ नहीं बल्कि अन्त है।  (The truth is that Wajid himself is not the beginning of his own story, but its end.)” | How to frame a character as the terminal point of an era | Subtext, Philosophy, Aphorism, Historical Fiction |
+| “यह तो बिलकुल ही ग़लत ट्रान्स्लेशन हुआ। यह अनुवाद किसी प्रोफ़ेसर, या किसी महा उपाध्याय या किसी समसुलउलमा ने नहीं किया था। साधारण लोगों ने किया था।” | How to locate linguistic revolution in common folk vernacular. | language, vernacular, satire, translation |
+| “वह साहित्य का रसिया था। वामिक जौनपुरी, साहिर लुधियानवी, अली सरदार जाफ़री और दूसरे कवियों की कविताओं और कृश्नचन्दर, अब्बास और दूसरे कथाकारों की कहानियों ने उससे कहा कि इस आज़ादी में कोई घपला है।” | How to use literary appetite as political awakening. | literature, politics, poetry, awakening |
+| “अगर ये सारे मुसलमान पाकिस्तान भेज दिए जाएँ तो जो नौकरियाँ इन्हें मिलती हैं वह भी हिन्दुओं ही को मिल जाएँगी। नौकरी ! यह कैसा घिनौना शब्द है!” | How to skewer sectarian hatred with economic disgust. | critique, irony, prejudice, economy |
+| “मैं पाकिस्तान कैसे जा सकता हूँ! मोहर्रम में इमाम हुसैन हिन्दुस्तान आते हैं। इस साल उनसे मुलाक़ात करके पूछूँगा कि सच बोलने की सज़ा आदमी को कब तक मिलती रहेगी।” | How to blend tragic folklore with desperate childhood defiance. | faith, innocence, tragedy, dialogue |
 
 ---
 
@@ -302,6 +310,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “ऐसा लगता है कि इस शहर की बनावट, गठन, जिंदगी और रहन-सहन में कोई बँधे-बँधाये नियम नहीं, कहीं कोई कसाव नहीं, हर जगह एक स्वच्छन्द खुलाव, एक बिखरी हुई-सी अनियमितता।  (It seemed as if the structure, texture, life, and living habits of this city followed no fixed rules; nowhere was there any tightness, everywhere an easy openness, a scattered kind of irregularity.)” | How to capture urban character through sensory looseness | Setting, Atmosphere, Sensory Detail, Rhythm |
 | “जैसे-तैसे उसकी थोड़ी-सी आँख लगी... किसी ने सहसा जगा दिया। पलक बन्द करने में जितना दर्द हुआ था उतना ही पलकें खोलने में।  (Somehow she drifted into sleep... only to be abruptly awakened. Closing her eyelids had been painful; opening them hurt just as much.)” | How to render grief through bodily mechanics | Sensory Detail, Physicality, Grief, Precision |
 | “यह देवत्व की मूर्ति-सी पथरीली सुधा! यह चन्दर की सुधा तो नहीं!  (This stony Sudha, like a statue of divinity! This could not be Chander's Sudha!)” | How to expose the cruelty of deifying someone you love | Subtext, Character, Irony, Dialogue |
+| “ऐसा लगता है कि इस शहर की बनावट, गठन, जिंदगी और रहन-सहन में कोई बँधे-बँधाये नियम नहीं, कहीं कोई कसाव नहीं, हर जगह एक स्वच्छन्द खुलाव, एक बिखरी हुई-सी अनियमितता।” | How to sketch an ancient river city through deliberate structural looseness. | setting, city, atmosphere, rhythm |
+| “देखो, ऐसी अरसौहीं अँगड़ाई न लिया करो, इससे लोग समझ जाते हैं कि अब बचपन करवट बदल रहा है।” | How to mark the arrival of adulthood in a single bodily stretch. | adolescence, observation, body, innocence |
+| “जैसे-तैसे उसकी थोड़ी-सी आँख लगी... किसी ने सहसा जगा दिया। पलक बन्द करने में जितना दर्द हुआ था उतना ही पलकें खोलने में।” | How to render physical grief through symmetric muscular strain. | grief, pain, sensory, symmetry |
+| “लेकिन वह नशा टूट चुका था, वह साँस धीमी पड़ गयी थी...अपनी हर कोशिश के बावजूद वह पम्मी को उदास होने से बचा न पाता था।” | How to evoke the irreversible fading of passionate illusion. | melancholy, passion, loss, realism |
 
 ---
 
@@ -802,6 +814,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Sleep for the joy of sleeping. Sleeping so that you can work harder when you wake up is a miserable way to live. Sleep for pleasure, not profit.” | How to liberate restorative rest from utilitarian productivity. | cadence, counter-intuitive, polemic, aphorism |
 | “Reasoning makes the modern neurosis worse: the characteristics the modern mind prides itself on are precisely those of madness.” | How to indict instrumental rationality as an anxiety amplifier. | paradox, inversion, cultural-critique, intellect |
 | “The myth-ritual complex is a social form for the channelling of obsessions … It automatically engineers safety and banishes despair by keeping people focussed on the noses in front of their faces.” | How to diagnose human ritual as an insulation against existential dread. | sociology, detachment, existentialism, insight |
+| “Thinking of happiness as a project, they look for fulfilment at some future time. The present slips by, and anxiety creeps in.” | How to diagnose modern neurosis as future-oriented teleology. | philosophy, time, anxiety, critique |
+| “Cats decide to die. They creep into a cool place somewhere, because of the heat of their blood, crouch down, and wait to die.” | How to describe mortal acceptance through animal instinct. | death, nature, instinct, calm |
+| “Knowing only life until they are on the brink of dying, cats are not ruled by death.” | How to liberate consciousness from the terror of non-existence. | mortality, paradox, clarity, stoicism |
+| “Unlike dogs, cats have not become part-human.” | How to celebrate radical alterity in eight words. | brevity, animals, autonomy, truth |
 
 ---
 
@@ -1080,6 +1096,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | ““She didn’t laugh much. When had she ever laughed much?”” | How to question a memory of joy in two steps | grief, interiority, interrogation, brevity |
 | “That’s why she’s sitting on this train, so that this other body, the body of a woman she hasn’t seen for twenty years, may help her uncover the truth that her body refuses her.” | How to dramatize physical incapacity borrowing another’s limbs | somatic-detail, cadence, illness, suspense |
 | ““People confuse thinking with knowing, they let themselves confuse the two.”” | How to distinguish speculation from visceral conviction | aphorism, epistemology, brevity, voice |
+| “Are you your brain, which keeps sending out orders that won’t be followed? Or are you the thought itself, something that can’t be seen or touched beyond that furrowed organ guarded inside the cranium like a trove?” | How to question bodily consciousness through neurological rebellion. | consciousness, body, illness, philosophy |
+| “The plastic bottles, polystyrene cups, the chunks of concrete. Litter has accumulated below the platform opposite them, some of it will disintegrate with time, some of it will outlive her.” | How to contrast human mortality against industrial synthetic waste. | mortality, objects, realism, time |
+| “The problem isn’t how you look but who has to look at you.” | How to expose the cruelty of aesthetic shame in caretaking. | disability, truth, society, brevity |
+| “It’s not the smell of the perfume or deodorant the person wore or the laundry soap it was washed with when there was still someone to stain it. It’s the smell of the dead person when they were alive. The smell of Rita.” | How to anchor sensory haunting in biological odor. | grief, scent, memory, sensory |
 
 ---
 
