@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Crossed 600-Quote Milestone: 614 high-caliber quotes curated across 130 books (incorporating Cluster 32: *Bird by Bird*, *The Art of Communicating*, *Quiet*, *The Diary of a Young Girl*, *Blind Willow, Sleeping Woman* alongside previous clusters). Cluster 33 currently mining locally via Ollama.  
-> **Next**: Complete Cluster 33 (*The Paper Menagerie*, *Trick Mirror*, *One Part Woman*, *Train to Pakistan*, *The Consolations of Philosophy*) followed by Cluster 34 (*What I Talk About When I Talk About Running*, *Cat's Cradle*, *Chronicles of a Liquid Society*, *A Monster Calls*, *The Mythical Man-Month*).
+> **Current**: Reached 634 high-caliber craft quotes curated across 131 books (incorporating Cluster 33: *The Paper Menagerie*, *Trick Mirror*, *One Part Woman*, *Train to Pakistan*, *The Consolations of Philosophy*). Cluster 34 currently mining locally via Ollama.  
+> **Next**: Complete Cluster 34 (*What I Talk About When I Talk About Running*, *Cat's Cradle*, *Chronicles of a Liquid Society*, *A Monster Calls*, *The Mythical Man-Month*) followed by Cluster 35 (*Topi Shukla*, *Gunahon Ka Devta*, *The Best of Satyajit Ray*, *Elena Knows*, *Feline Philosophy*).
 
 ## Roadmap
 

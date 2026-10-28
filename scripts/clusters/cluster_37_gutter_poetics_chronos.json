@@ -1,0 +1,46 @@
+{
+  "name": "Cluster 37: Gutter Poetics, Chronos & Moral Resilience",
+  "output_file": "content/cluster_37_gutter_poetics_chronos_raw.json",
+  "books": [
+    {
+      "remote_file": "Love_Is_a_Dog_from_Hell_-_Charles_Bukowski.epub",
+      "author": "Charles Bukowski",
+      "work": "Love Is a Dog from Hell",
+      "year": 1977,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Timequake_-_Kurt_Vonnegut_Jr.epub",
+      "author": "Kurt Vonnegut",
+      "work": "Timequake",
+      "year": 1997,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The_School_of_Life_-_Alain_De_Botton.epub",
+      "author": "Alain de Botton",
+      "work": "The School of Life: An Emotional Education",
+      "year": 2019,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Welcome_to_the_Monkey_House_-_Kurt_Vonnegut_Jr.epub",
+      "author": "Kurt Vonnegut",
+      "work": "Welcome to the Monkey House",
+      "year": 1968,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Red Rising - Pierce Brown.epub",
+      "author": "Pierce Brown",
+      "work": "Red Rising",
+      "year": 2014,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

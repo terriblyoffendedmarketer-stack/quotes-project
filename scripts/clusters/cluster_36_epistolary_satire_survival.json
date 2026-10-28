@@ -1,0 +1,47 @@
+{
+  "name": "Cluster 36: Epistolary Intimacy, Surreal Satire & Fearless Will",
+  "output_file": "content/cluster_36_epistolary_satire_survival_raw.json",
+  "books": [
+    {
+      "remote_file": "Poonachi_-_Perumal_Murugan.epub",
+      "author": "Perumal Murugan",
+      "work": "Poonachi: Or the Story of a Black Goat",
+      "year": 2016,
+      "translator": "N. Kalyan Raman",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Breakfast_of_Champions_-_Kurt_Vonnegut_Jr.epub",
+      "author": "Kurt Vonnegut",
+      "work": "Breakfast of Champions",
+      "year": 1973,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "I_Am_Malala_-_Malala_Yousafzai.epub",
+      "author": "Malala Yousafzai",
+      "work": "I Am Malala",
+      "year": 2013,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The_Sirens_of_Titan_-_Kurt_Vonnegut_Jr.epub",
+      "author": "Kurt Vonnegut",
+      "work": "The Sirens of Titan",
+      "year": 1959,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Love Letters - Virginia Woolf and Vita Sackville West.epub",
+      "author": "Virginia Woolf and Vita Sackville-West",
+      "work": "Love Letters: Virginia Woolf and Vita Sackville-West",
+      "year": 2021,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}
