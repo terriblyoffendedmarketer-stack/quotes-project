@@ -1,0 +1,48 @@
+{
+  "name": "Cluster 38: Literary Poetics, Archives & Prose Style",
+  "output_file": "content/cluster_38_poetics_archives_style_raw.json",
+  "books": [
+    {
+      "remote_file": "Umberto Eco - On Literature.epub",
+      "author": "Umberto Eco",
+      "work": "On Literature",
+      "year": 2002,
+      "translator": "Martin McLaughlin",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Susan Orlean - The Library Book.epub",
+      "author": "Susan Orlean",
+      "work": "The Library Book",
+      "year": 2018,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Style_ An Anti-Textbook Richard Lanham.epub",
+      "author": "Richard A. Lanham",
+      "work": "Style: An Anti-Textbook",
+      "year": 1974,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Rilke - Poems from the Book of Hours.epub",
+      "author": "Rainer Maria Rilke",
+      "work": "Poems from the Book of Hours",
+      "year": 1905,
+      "translator": "Babette Deutsch",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Book of Rhymes - Adam Bradley.epub",
+      "author": "Adam Bradley",
+      "work": "Book of Rhymes: The Poetics of Hip Hop",
+      "year": 2009,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

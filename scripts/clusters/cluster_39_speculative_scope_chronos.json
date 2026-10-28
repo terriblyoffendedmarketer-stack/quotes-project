@@ -1,0 +1,48 @@
+{
+  "name": "Cluster 39: Speculative Scope, Deep Time & Stellar Drift",
+  "output_file": "content/cluster_39_speculative_scope_chronos_raw.json",
+  "books": [
+    {
+      "remote_file": "Cixin, Liu - The Wandering Earth.epub",
+      "author": "Liu Cixin",
+      "work": "The Wandering Earth",
+      "year": 2000,
+      "translator": "Ken Liu",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Neal Stephenson - Seveneves.epub",
+      "author": "Neal Stephenson",
+      "work": "Seveneves",
+      "year": 2015,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "qntm - Valuable Humans in Transit and Other Stories.epub",
+      "author": "qntm",
+      "work": "Valuable Humans in Transit and Other Stories",
+      "year": 2020,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Exurb1a - Geometry for Ocelots.epub",
+      "author": "Exurb1a",
+      "work": "Geometry for Ocelots",
+      "year": 2020,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Men Without Women - Haruki Murakami.epub",
+      "author": "Haruki Murakami",
+      "work": "Men Without Women",
+      "year": 2014,
+      "translator": "Philip Gabriel and Ted Goossen",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

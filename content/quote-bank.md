@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 634 | **Total Books Represented:** 131
+**Total Vetted Quotes:** 654 | **Total Books Represented:** 133
 
 ---
 
@@ -43,6 +43,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Once Halloween is over, winter, like some capable tax collector, sets in, concisely and silently.” | How to turn a season into a relentless official | metaphor, seasons, rhythm |
 | “It felt like a car trying to go up a slope with the parking brake on.” | How to describe friction with mechanical clarity | metaphor, physical-detail, struggle |
 | “I realized all of a sudden that even physical pain had all but vanished. Or maybe it was shoved into some unseen corner, like some ugly furniture you can’t get rid of.” | How to domesticate extreme physical trauma | pain, domesticity, endurance |
+| “Muscles are like work animals that are quick on the uptake. If you carefully increase the load, step by step, they learn to take it.” | How to conceptualize physical discipline as patient animal domestication. | discipline, body, habit, metaphor |
+| “Not enough training. Not enough training. And not enough training. That’s it in a word.” | How to strip away rationalization through blunt rhythmic repetition. | repetition, rhythm, honesty, brevity |
+| “The surface of the water changes from day to day: the color, the shape of the waves, the speed of the current.” | How to record environmental flux through quiet sensory cataloging. | observation, nature, cadence, detail |
+| “They’re too busy eating grass to care about all these whimsical people and their nonsensical activities.” | How to humble human vanity against pastoral indifference. | humor, perspective, nature, irony |
 
 ---
 
@@ -69,6 +73,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Pay no attention to Caesar. Caesar doesn’t have the slightest idea what’s really going on.” | How to deflate authority in two short sentences | power, irony, humor |
 | “That’s what Corporal McCabe did, of course,” said Castle. “He named his major-domo as his successor, then he shot himself.” | How to deliver disaster in an offhand cadence | rhythm, dark-humor, deadpan |
 | “Only way we can go is down. This here’s the top. You ask me to go up and wouldn’t be a thing I could do for you.” | How to turn simple topography into existential finality | dialogue, limits, understatement |
+| “The hand that stocks the drug stores rules the world.” | How to summarize modern empire through commercial retail distribution. | satire, power, irony, brevity |
+| “I couldn’t think of anything to say that would interest anybody reading a book. I could have made up something about that day, but I didn’t think you’d want that.” | How to build narrative intimacy through candid authorial embarrassment. | metafiction, voice, candor, irony |
+| “Mona has the simplicity of the all.” | How to elevate character beauty into cosmic abstraction in seven words. | brevity, character, paradox, poetics |
+| “The luxurious pleasure craft was going down, and my meaningless life with it.” | How to synchronize physical shipwreck with existential despair. | satire, dark humor, fate, irony |
 
 ---
 
@@ -1159,6 +1167,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “‘There’s a lot of pain,’ she said. ‘More than there should be.’” | How to convey terminal agony through quiet, unadorned dialogue. | dialogue, understatement, grief, restraint |
 | “There are worse things than being invisible, it said.” | How to pivot a childhood fear into an existential warning. | brevity, dialogue, parable, truth |
 | “‘Things are going a little faster than I’d hoped, sweetheart,’ she said, and her voice was thick, thick in a way that made Conor’s stomach twist even harder.” | How to anchor a devastating diagnosis in acoustic and somatic sensory detail. | sensory, repetition, somatic, pathos |
+| “Stories are wild creatures, when you let them loose, who knows what havoc they might wreak?” | How to define narrative as an untamed biological hazard. | storytelling, metaphor, power, danger |
+| “You be as angry as you need to be. Don’t let anyone tell you otherwise. Not your grandma, not your dad, no one. And if you need to break things, then by God, you break them good and hard.” | How to grant unconditional permission for catastrophic grief. | grief, voice, permission, dialogue |
+| “It was like the time Conor and his mum had stayed in a bed and breakfast one summer in Cornwall. Except cleaner. And bossier.” | How to sketch domestic tension through childhood vacation comparison. | character, humor, childhood, contrast |
+| “So come and get me then, he said.” | How to deliver exhausted emotional defiance in seven monosyllables. | brevity, courage, dialogue, defiance |
 
 ---
 
@@ -1597,5 +1609,28 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Those who are unfriendly with themselves find it hard to imagine that the cake seller is shouting in order to sell cakes.” | How to diagnose self-hatred through everyday street paranoia. | wit, psychology, humor, observation |
 | “The essence of art is that its one case applies to thousands.” | How to define artistic universality through solitary singularity. | art, universality, craft, definition |
 | “The man who alleges that he is not yet ready for philosophy or that the time for it has passed him by, is like the man who says that he is either too young or too old for happiness.” | How to demolish intellectual hesitation with an Epicurean analogy. | philosophy, analogy, clarity, epicurean |
+
+---
+
+## Umberto Eco, Chronicles of a Liquid Society (2016)
+*Trans. Richard Dixon*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Such indignation knows what it doesn’t want, but not what it does.” | How to diagnose reactive political outrage through structural negation. | critique, clarity, politics, truth |
+| “A book as object can tell a good story even when it’s been around for only fifty years.” | How to defend the material dignity of contemporary print. | books, objects, materiality, reading |
+| “Seers see what they know.” | How to dismantle mystical prophecy into perceptual bias in five words. | epistemology, brevity, wit, truth |
+| “Thrusting a cell phone into someone’s mouth is like a kick in the testicles: the cell phone is the most intimate and personal thing he possesses, the natural complement to his ear, his eye, and also of his penis.” | How to expose technological intimacy through grotesque sensory comparison. | satire, modernity, grotesque, technology |
+
+---
+
+## Frederick P. Brooks Jr., The Mythical Man-Month (1975)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Adding manpower to a late software project makes it later.” | How to formulate an ironclad organizational paradox in nine words. | systems, paradox, brevity, truth |
+| “Most documentation fails in giving too little overview. The trees are described, the bark and leaves are commented, but there is no map of the forest.” | How to diagnose structural explanation failure through ecological scale. | craft, clarity, explanation, metaphor |
+| “The hardest part of the software task is arriving at a complete and consistent specification, and much of the essence of building a program is in fact the debugging of the specification.” | How to reframe engineering difficulty as linguistic articulation. | clarity, thinking, specification, architecture |
+| “The higher the level at which one thinks, the more numerous the primitive thought-elements one has to deal with.” | How to identify the deceptive trap of high-level abstraction. | abstraction, philosophy, systems, intellect |
 
 ---
