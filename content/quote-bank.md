@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 75 | **Total Books Represented:** 23
+**Total Vetted Quotes:** 89 | **Total Books Represented:** 27
 
 ---
 
@@ -253,5 +253,48 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “ऐसा लगता है कि इस शहर की बनावट, गठन, जिंदगी और रहन-सहन में कोई बँधे-बँधाये नियम नहीं, कहीं कोई कसाव नहीं, हर जगह एक स्वच्छन्द खुलाव, एक बिखरी हुई-सी अनियमितता।  (It seemed as if the structure, texture, life, and living habits of this city followed no fixed rules; nowhere was there any tightness, everywhere an easy openness, a scattered kind of irregularity.)” | How to capture urban character through sensory looseness | Setting, Atmosphere, Sensory Detail, Rhythm |
 | “जैसे-तैसे उसकी थोड़ी-सी आँख लगी... किसी ने सहसा जगा दिया। पलक बन्द करने में जितना दर्द हुआ था उतना ही पलकें खोलने में।  (Somehow she drifted into sleep... only to be abruptly awakened. Closing her eyelids had been painful; opening them hurt just as much.)” | How to render grief through bodily mechanics | Sensory Detail, Physicality, Grief, Precision |
 | “यह देवत्व की मूर्ति-सी पथरीली सुधा! यह चन्दर की सुधा तो नहीं!  (This stony Sudha, like a statue of divinity! This could not be Chander's Sudha!)” | How to expose the cruelty of deifying someone you love | Subtext, Character, Irony, Dialogue |
+
+---
+
+## Anne Lamott, Bird by Bird (1994)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “A writer paradoxically seeks the truth and tells lies every step of the way. It’s a lie if you make something up. But you make it up in the name of the truth, and then you give your heart to expressing it clearly.” | How to reconcile invented plot with emotional truth | Truth, Craft, Paradox, Writing Process |
+| “If your wife locks you out of the house, you don’t have a problem with your door. The word block suggests that you are constipated or stuck, when the truth is that you’re empty.” | How to diagnose writer's block through domestic metaphor | Metaphor, Writing Advice, Humor, Discipline |
+| “If you’re lost in the forest, let the horse find the way home. You have to stop directing, because you will only get in the way.” | How to let unconscious narrative instinct lead | Intuition, Metaphor, Pacing, Subtext |
+| “Being a writer guarantees that you will spend too much time alone—and that as a result, your mind will begin to warp.” | How to confess the occupational hazard of creative isolation | Voice, Honesty, Solitude, Self-Reflection |
+
+---
+
+## Kurt Vonnegut, Pity the Reader: On Writing with Style (2019)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Do you realize that all great literature is all about what a bummer it is to be a human being? (Isn’t it such a relief to have somebody say that?)” | How to puncture literary pretension with conversational release | Voice, Humor, Philosophy, Tone |
+| “It’s like a mousetrap. You build the trap, you cock it, you trip it, and then bang!” | How to structure narrative momentum as mechanical release | Structure, Pacing, Simplicity, Metaphor |
+| “People will continue to write novels, or maybe short stories, because they discover that they are treating their own neuroses.” | How to define fiction's survival function without sentimentality | Honesty, Aphorism, Psychology, Motivation |
+
+---
+
+## Chuck Palahniuk, Consider This: Moments in My Writing Life (2020)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “To repeat: Your body is a recording device more effective than your mind.” | How to ground narrative authority in physiological sensation | Physicality, Sensory Detail, Craft, Precision |
+| “That’s using what I call 'cultural precedent'—moving the reader from a common experience, through several intermediary, escalating examples, and ultimately arriving at an extreme the reader could’ve and would’ve never accepted if you’d presented it from the start.” | How to boil the reader slowly through escalation | Suspense, Pacing, Technique, Audience |
+| “If you were my student I’d allow you to start out using space breaks to imply the passage of time. But don’t get comfortable. Those training wheels are going to come off sooner rather than later.” | How to challenge typographic shortcuts for narrative transitions | Transitions, Discipline, Craft, Direct Address |
+
+---
+
+## Byung-Chul Han, The Burnout Society (2010)
+*Trans. Erik Butler*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “They are not infections, but infarctions; they do not follow from the negativity of what is immunologically foreign, but from an excess of positivity.” | How to overturn medical metaphor to diagnose modern exhaustion | Philosophy, Metaphor, Cultural Critique, Aphorism |
+| “Unlimited Can is the positive modal verb of achievement society.” | How to expose systemic coercion disguised as empowerment | Language, Power, Aphorism, Precision |
+| “Every characteristic absence of spirituality, every piece of common vulgarity, is due to an inability to resist a stimulus.” | How to locate cultural decline in attention mechanics | Attention, Moral Clarity, Philosophy, Stillness |
+| “Depression is melancholia plus equality, the perfect disorder of the democratic human being.” | How to formulate a startling sociological equation | Aphorism, Sociology, Psychology, Paradox |
 
 ---

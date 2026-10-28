@@ -1182,5 +1182,215 @@
       "Irony",
       "Dialogue"
     ]
+  },
+  {
+    "quote": "A writer paradoxically seeks the truth and tells lies every step of the way. It’s a lie if you make something up. But you make it up in the name of the truth, and then you give your heart to expressing it clearly.",
+    "author": "Anne Lamott",
+    "work": "Bird by Bird",
+    "year": 1994,
+    "translator": null,
+    "hook": "How to reconcile invented plot with emotional truth",
+    "why_it_lands": "Lamott dismantles the guilt of fabrication by establishing the writer's paradox: literal invention is the only vehicle capable of carrying emotional veracity across the page.",
+    "tags": [
+      "Truth",
+      "Craft",
+      "Paradox",
+      "Writing Process"
+    ]
+  },
+  {
+    "quote": "If your wife locks you out of the house, you don’t have a problem with your door. The word block suggests that you are constipated or stuck, when the truth is that you’re empty.",
+    "author": "Anne Lamott",
+    "work": "Bird by Bird",
+    "year": 1994,
+    "translator": null,
+    "hook": "How to diagnose writer's block through domestic metaphor",
+    "why_it_lands": "Lamott uses a domestic lockout to puncture the romanticized pathology of 'writer's block'. Stoppage is not a mechanical failure of the door or pencil; it is an empty tank needing living observation to refill it.",
+    "tags": [
+      "Metaphor",
+      "Writing Advice",
+      "Humor",
+      "Discipline"
+    ]
+  },
+  {
+    "quote": "If you’re lost in the forest, let the horse find the way home. You have to stop directing, because you will only get in the way.",
+    "author": "Anne Lamott",
+    "work": "Bird by Bird",
+    "year": 1994,
+    "translator": null,
+    "hook": "How to let unconscious narrative instinct lead",
+    "why_it_lands": "By comparing narrative intuition to an animal with homing senses, Lamott warns against micro-managing prose. Conscious control creates stiff, predictable plotlines; instinctive rhythm finds the clearing.",
+    "tags": [
+      "Intuition",
+      "Metaphor",
+      "Pacing",
+      "Subtext"
+    ]
+  },
+  {
+    "quote": "Being a writer guarantees that you will spend too much time alone—and that as a result, your mind will begin to warp.",
+    "author": "Anne Lamott",
+    "work": "Bird by Bird",
+    "year": 1994,
+    "translator": null,
+    "hook": "How to confess the occupational hazard of creative isolation",
+    "why_it_lands": "Delivered with Lamott's characteristic cheerful fatalism, the line names the peculiar psychic distortion of the writing desk—where self-scrutiny and private rumination inevitably bend perspective.",
+    "tags": [
+      "Voice",
+      "Honesty",
+      "Solitude",
+      "Self-Reflection"
+    ]
+  },
+  {
+    "quote": "Do you realize that all great literature is all about what a bummer it is to be a human being? (Isn’t it such a relief to have somebody say that?)",
+    "author": "Kurt Vonnegut",
+    "work": "Pity the Reader: On Writing with Style",
+    "year": 2019,
+    "translator": null,
+    "hook": "How to puncture literary pretension with conversational release",
+    "why_it_lands": "Vonnegut deflates centuries of academic posturing by substituting 'bummer' for tragedy. The parenthetical aside invites the reader into immediate intimacy, turning existential dread into comic relief.",
+    "tags": [
+      "Voice",
+      "Humor",
+      "Philosophy",
+      "Tone"
+    ]
+  },
+  {
+    "quote": "It’s like a mousetrap. You build the trap, you cock it, you trip it, and then bang!",
+    "author": "Kurt Vonnegut",
+    "work": "Pity the Reader: On Writing with Style",
+    "year": 2019,
+    "translator": null,
+    "hook": "How to structure narrative momentum as mechanical release",
+    "why_it_lands": "Four staccato monosyllabic actions map the essential arc of suspense. Vonnegut strips away theoretical fluff: narrative propulsion is pure kinetic engineering.",
+    "tags": [
+      "Structure",
+      "Pacing",
+      "Simplicity",
+      "Metaphor"
+    ]
+  },
+  {
+    "quote": "People will continue to write novels, or maybe short stories, because they discover that they are treating their own neuroses.",
+    "author": "Kurt Vonnegut",
+    "work": "Pity the Reader: On Writing with Style",
+    "year": 2019,
+    "translator": null,
+    "hook": "How to define fiction's survival function without sentimentality",
+    "why_it_lands": "Rather than elevating fiction to high moral civic duty, Vonnegut roots storytelling in personal therapeutic necessity. People write to survive their own minds, which is why literature will never die.",
+    "tags": [
+      "Honesty",
+      "Aphorism",
+      "Psychology",
+      "Motivation"
+    ]
+  },
+  {
+    "quote": "To repeat: Your body is a recording device more effective than your mind.",
+    "author": "Chuck Palahniuk",
+    "work": "Consider This: Moments in My Writing Life",
+    "year": 2020,
+    "translator": null,
+    "hook": "How to ground narrative authority in physiological sensation",
+    "why_it_lands": "Palahniuk rejects abstract intellectual rumination in favor of raw somatic data. Effective prose does not think through a scene; it transcribes muscle tension, gut knots, and temperature shifts.",
+    "tags": [
+      "Physicality",
+      "Sensory Detail",
+      "Craft",
+      "Precision"
+    ]
+  },
+  {
+    "quote": "That’s using what I call 'cultural precedent'—moving the reader from a common experience, through several intermediary, escalating examples, and ultimately arriving at an extreme the reader could’ve and would’ve never accepted if you’d presented it from the start.",
+    "author": "Chuck Palahniuk",
+    "work": "Consider This: Moments in My Writing Life",
+    "year": 2020,
+    "translator": null,
+    "hook": "How to boil the reader slowly through escalation",
+    "why_it_lands": "Palahniuk breaks down the engineering of shock. By establishing consensus on a familiar, harmless baseline before climbing three distinct notches, the writer leads the reader into territory they would otherwise reject.",
+    "tags": [
+      "Suspense",
+      "Pacing",
+      "Technique",
+      "Audience"
+    ]
+  },
+  {
+    "quote": "If you were my student I’d allow you to start out using space breaks to imply the passage of time. But don’t get comfortable. Those training wheels are going to come off sooner rather than later.",
+    "author": "Chuck Palahniuk",
+    "work": "Consider This: Moments in My Writing Life",
+    "year": 2020,
+    "translator": null,
+    "hook": "How to challenge typographic shortcuts for narrative transitions",
+    "why_it_lands": "Palahniuk treats the white-space paragraph break as an amateur crutch. True craft forces the writer to engineer transitions through sensory cues, shifts in light, or rhythmic dialogue rather than blank paper.",
+    "tags": [
+      "Transitions",
+      "Discipline",
+      "Craft",
+      "Direct Address"
+    ]
+  },
+  {
+    "quote": "They are not infections, but infarctions; they do not follow from the negativity of what is immunologically foreign, but from an excess of positivity.",
+    "author": "Byung-Chul Han",
+    "work": "The Burnout Society",
+    "year": 2010,
+    "translator": "Erik Butler",
+    "hook": "How to overturn medical metaphor to diagnose modern exhaustion",
+    "why_it_lands": "Han pairs assonance ('infections / infarctions') to pivot cultural diagnosis 180 degrees. The twenty-first century crisis is not an alien virus attacking from outside; it is a vascular clogging caused by our own frantic affirmative productivity.",
+    "tags": [
+      "Philosophy",
+      "Metaphor",
+      "Cultural Critique",
+      "Aphorism"
+    ]
+  },
+  {
+    "quote": "Unlimited Can is the positive modal verb of achievement society.",
+    "author": "Byung-Chul Han",
+    "work": "The Burnout Society",
+    "year": 2010,
+    "translator": "Erik Butler",
+    "hook": "How to expose systemic coercion disguised as empowerment",
+    "why_it_lands": "In nine words, Han isolates the linguistic engine of contemporary overwork. By replacing external prohibition ('thou shalt not') with internal compulsion ('you can do it'), power becomes invisible and self-inflicted.",
+    "tags": [
+      "Language",
+      "Power",
+      "Aphorism",
+      "Precision"
+    ]
+  },
+  {
+    "quote": "Every characteristic absence of spirituality, every piece of common vulgarity, is due to an inability to resist a stimulus.",
+    "author": "Byung-Chul Han",
+    "work": "The Burnout Society",
+    "year": 2010,
+    "translator": "Erik Butler",
+    "hook": "How to locate cultural decline in attention mechanics",
+    "why_it_lands": "Han strips vulgarity of moralistic dogma and redefines it as neurological reactivity. Spiritual depth requires the negative potency of pause—the refusal to react immediately to every incoming ping.",
+    "tags": [
+      "Attention",
+      "Moral Clarity",
+      "Philosophy",
+      "Stillness"
+    ]
+  },
+  {
+    "quote": "Depression is melancholia plus equality, the perfect disorder of the democratic human being.",
+    "author": "Byung-Chul Han",
+    "work": "The Burnout Society",
+    "year": 2010,
+    "translator": "Erik Butler",
+    "hook": "How to formulate a startling sociological equation",
+    "why_it_lands": "Han employs an algebraic aphorism to shock the reader into seeing that when external social hierarchies collapse and every individual is crowned sovereign, failure can no longer be blamed on fate—only on oneself.",
+    "tags": [
+      "Aphorism",
+      "Sociology",
+      "Psychology",
+      "Paradox"
+    ]
   }
 ]
