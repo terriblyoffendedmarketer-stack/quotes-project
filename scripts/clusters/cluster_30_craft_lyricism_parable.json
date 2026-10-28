@@ -1,0 +1,41 @@
+{
+  "cluster_name": "Cluster 30: Craft Mastery, Lyrical Grief & Flash Parable",
+  "output_file": "content/cluster_30_craft_lyricism_raw.json",
+  "books": [
+    {
+      "title": "Pity the Reader: On Writing with Style",
+      "author": "Kurt Vonnegut",
+      "drive_path": "Pity_the_Reader_-_Kurt_Vonnegut.epub",
+      "year": 2019,
+      "sample_chunks": 10
+    },
+    {
+      "title": "Sin and Syntax: How to Craft Wicked Good Prose",
+      "author": "Constance Hale",
+      "drive_path": "Constance Hale - Sin and Syntax.epub",
+      "year": 1999,
+      "sample_chunks": 10
+    },
+    {
+      "title": "The Bell Jar",
+      "author": "Sylvia Plath",
+      "drive_path": "Sylvia Plath - The Bell Jar.epub",
+      "year": 1963,
+      "sample_chunks": 10
+    },
+    {
+      "title": "The Book Thief",
+      "author": "Markus Zusak",
+      "drive_path": "The Book Thief - Markus Zusak .epub",
+      "year": 2005,
+      "sample_chunks": 10
+    },
+    {
+      "title": "The Bus Driver Who Wanted to Be God",
+      "author": "Etgar Keret",
+      "drive_path": "Etgar Keret - The Bus Driver Who Wanted to Be God.epub",
+      "year": 2004,
+      "sample_chunks": 8
+    }
+  ]
+}

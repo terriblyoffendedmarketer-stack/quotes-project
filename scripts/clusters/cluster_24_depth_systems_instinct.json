@@ -1,0 +1,47 @@
+{
+  "name": "Cluster 24: Depth Psychology, Systems, Instinct & Game Theory",
+  "output_file": "content/cluster_24_depth_systems_raw.json",
+  "books": [
+    {
+      "remote_file": "Carl Jung - Memories, Dreams, Reflections.epub",
+      "author": "Carl G. Jung",
+      "work": "Memories, Dreams, Reflections",
+      "year": 1961,
+      "translator": "Richard & Clara Winston",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Neal Stephenson - Cryptonomicon.epub",
+      "author": "Neal Stephenson",
+      "work": "Cryptonomicon",
+      "year": 1999,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "On_Cats_-_Charles_Bukowski.epub",
+      "author": "Charles Bukowski",
+      "work": "On Cats",
+      "year": 2015,
+      "sample_chunks": 8,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Oliver Burkeman - Help! (2011, Canongate Books Ltd) - libgen.li.epub",
+      "author": "Oliver Burkeman",
+      "work": "Help! How to Become Slightly Happier and Get a Bit More Done",
+      "year": 2011,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Orson Scott Card - Ender's Game.epub",
+      "author": "Orson Scott Card",
+      "work": "Ender's Game",
+      "year": 1985,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

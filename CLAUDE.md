@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Reached major milestone: 434 high-caliber quotes curated across 100 books (incorporating Cluster 23: *The Antidote*, *On Writing Well*, *The Myth of Sisyphus*, *One Part Woman*, *Only Dull People Are Brilliant at Breakfast* alongside previous clusters). Cluster 24 currently mining locally via Ollama.  
-> **Next**: Complete Cluster 24 (*Memories, Dreams, Reflections*, *Cryptonomicon*, *On Cats*, *Help!*, *Ender's Game*) followed by Cluster 25 (*Steering the Craft*, *Meditations for Mortals*, *The Trees*, *The Old Man and the Sea*, *The Murder of Roger Ackroyd*).
+> **Current**: 454 high-caliber quotes curated across 105 books (incorporating Cluster 24: *Memories, Dreams, Reflections*, *Cryptonomicon*, *On Cats*, *Help!*, *Ender's Game* alongside previous clusters). Cluster 25 currently mining locally via Ollama.  
+> **Next**: Complete Cluster 25 (*Steering the Craft*, *Meditations for Mortals*, *The Trees*, *The Old Man and the Sea*, *The Murder of Roger Ackroyd*) followed by Cluster 26 (*Almond*, *Watership Down*, *Demian*, *The Fifth Season*, *The Power of Myth*).
 
 ## Roadmap
 

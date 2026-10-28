@@ -1,0 +1,46 @@
+{
+  "name": "Cluster 25: Steering the Craft, Mortality, Satire & Epic Verse",
+  "output_file": "content/cluster_25_steering_mortality_raw.json",
+  "books": [
+    {
+      "remote_file": "Steering the craft - Ursula K Le Guin .EPUB",
+      "author": "Ursula K. Le Guin",
+      "work": "Steering the Craft: A Twenty-First-Century Guide to Sailing the Sea of Story",
+      "year": 1998,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Meditations for Mortals_ Four Weeks to Embrace Your Limitations and Make Time for What Counts{Oliver Burkeman}(2024, Farrar, Straus and Giroux){107217730} libgen.li.epub",
+      "author": "Oliver Burkeman",
+      "work": "Meditations for Mortals: Four Weeks to Embrace Your Limitations and Make Time for What Counts",
+      "year": 2024,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Percival Everett - The Trees.epub",
+      "author": "Percival Everett",
+      "work": "The Trees",
+      "year": 2021,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The_Old_Man_and_the_Sea.epub",
+      "author": "Ernest Hemingway",
+      "work": "The Old Man and the Sea",
+      "year": 1952,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The Agatha Christie - The murder of Roger Ackroyd.epub",
+      "author": "Agatha Christie",
+      "work": "The Murder of Roger Ackroyd",
+      "year": 1926,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

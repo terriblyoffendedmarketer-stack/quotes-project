@@ -1,0 +1,47 @@
+{
+  "name": "Cluster 28: Systems, Dispossession & Ultimate Meaning",
+  "output_file": "content/cluster_28_systems_dispossession_raw.json",
+  "books": [
+    {
+      "remote_file": "The Dispossessed - Ursula K Le Guin.epub",
+      "author": "Ursula K. Le Guin",
+      "work": "The Dispossessed",
+      "year": 1974,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Frankenstein.epub",
+      "author": "Mary Shelley",
+      "work": "Frankenstein",
+      "year": 1818,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Man's Search for Meaning - Victor Frankl.epub",
+      "author": "Viktor E. Frankl",
+      "work": "Man's Search for Meaning",
+      "year": 1946,
+      "translator": "Ilse Lasch",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Timothy Snyder - Bloodlands Europe Btwn Hitler Stalin.epub",
+      "author": "Timothy Snyder",
+      "work": "Bloodlands: Europe Between Hitler and Stalin",
+      "year": 2010,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Thinking_in_Systems_A_Primer_by_Donella_H_Meadows.epub",
+      "author": "Donella H. Meadows",
+      "work": "Thinking in Systems: A Primer",
+      "year": 2008,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

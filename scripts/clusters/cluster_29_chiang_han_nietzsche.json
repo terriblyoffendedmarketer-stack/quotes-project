@@ -1,0 +1,47 @@
+{
+  "name": "Cluster 29: Linguistic Determinism, Burnout & Incandescent Will",
+  "output_file": "content/cluster_29_chiang_han_nietzsche_raw.json",
+  "books": [
+    {
+      "remote_file": "Ted Chiang - The Story Of Your Life.epub",
+      "author": "Ted Chiang",
+      "work": "Story of Your Life",
+      "year": 1998,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The Burnout Society - Byung chul Han.epub",
+      "author": "Byung-Chul Han",
+      "work": "The Burnout Society",
+      "year": 2010,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Picture of Dorian Gray.epub",
+      "author": "Oscar Wilde",
+      "work": "The Picture of Dorian Gray",
+      "year": 1890,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The Genealogy of Morals by Friedrich Nietzsche.epub",
+      "author": "Friedrich Nietzsche",
+      "work": "On the Genealogy of Morals",
+      "year": 1887,
+      "translator": "Walter Kaufmann",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "James Gleick - Chaos_ Making a New Science.epub",
+      "author": "James Gleick",
+      "work": "Chaos: Making a New Science",
+      "year": 1987,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

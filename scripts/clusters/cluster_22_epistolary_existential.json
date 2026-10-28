@@ -1,0 +1,48 @@
+{
+  "name": "Cluster 22: Epistolary Intimacy, Dread & Confession",
+  "output_file": "content/cluster_22_epistolary_raw.json",
+  "books": [
+    {
+      "remote_file": "Letters to Milena Franz Kafka.epub",
+      "author": "Franz Kafka",
+      "work": "Letters to Milena",
+      "year": 1952,
+      "translator": "Philip Boehm",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Love Letters - Virginia Woolf and Vita Sackville West.epub",
+      "author": "Virginia Woolf & Vita Sackville-West",
+      "work": "Love Letters: Vita and Virginia",
+      "year": 2021,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Leo Tolstoy - Death of Ivan Ilych.epub",
+      "author": "Leo Tolstoy",
+      "work": "The Death of Ivan Ilyich",
+      "year": 1886,
+      "translator": "Louise & Aylmer Maude",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "George orwell - 1984.epub",
+      "author": "George Orwell",
+      "work": "1984",
+      "year": 1949,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Apropos_of_Nothing_-_Woody_Allen.epub",
+      "author": "Woody Allen",
+      "work": "Apropos of Nothing",
+      "year": 2020,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

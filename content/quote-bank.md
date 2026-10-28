@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 434 | **Total Books Represented:** 100
+**Total Vetted Quotes:** 454 | **Total Books Represented:** 105
 
 ---
 
@@ -1173,5 +1173,61 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “A sentimentalist is simply a man who desires to have the luxury of an emotion without paying for it.” | How to diagnose emotional sentimentality through a financial transaction metaphor. | metaphor, wit, candor, satire |
 | “Life is much too important a thing ever to talk seriously about it.” | How to deflect heavy moral earnestness with an elegant epigrammatic paradox. | paradox, wit, epigram, philosophy |
 | “Life imitates Art far more than Art imitates Life. Life holds the mirror up to Art, and either reproduces some strange type imagined by painter or sculptor, or realizes in fact what has been dreamed in fiction.” | How to overturn classical mimesis through rhetorical chiasmus. | chiasmus, art-theory, aestheticism, vision |
+
+---
+
+## Carl G. Jung, Memories, Dreams, Reflections (1961)
+*Trans. Richard & Clara Winston*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “There is no linear evolution; there is only a circumambulation of the self.” | How to conceptualize psychological growth as an orbit rather than an ascent. | philosophy, metaphor, geometry, psychology |
+| “The more uncertain I have felt about myself, the more there has grown up in me a feeling of kinship with all things.” | How to invert epistemological doubt into expansive relational empathy. | vulnerability, syntax, interiority, perspective |
+| “To my mind, therapy only really begins after the investigation of that wholly personal story. It is the patient's secret, the rock against which he is shattered.” | How to elevate biographical idiosyncrasy into the decisive somatic battlefield. | metaphor, candor, narrative, psychology |
+| “As far as we can discern, the sole purpose of human existence is to kindle a light in the darkness of being.” | How to distill human purpose into a single primeval sensory image. | existential, imagery, contrast, rhythm |
+
+---
+
+## Neal Stephenson, Cryptonomicon (1999)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The boundary between Randy and his environment has been annihilated.” | How to signal total cognitive immersion through total passive finality. | brevity, immersion, focus, clarity |
+| “A good programmer should be able to sit down and write a complete operating system from scratch in three weeks, in hex, using a soldering iron, if necessary.” | How to construct a technical mythos through cascading hyperbolic specifics. | hyperbole, voice, craft, satire |
+| “It is a game, a cryptographic chess match between Waterhouse and his German counterpart, translated into action by gung-ho Shaftoe and his forces.” | How to bridge abstract mathematical theory and chaotic physical combat. | contrast, pacing, structure, metaphor |
+| “The idea of the Internet as a highly distributed, redundant global communications system is a myth; it is an archipelago of fragile chokepoints and physical wires laid across muddy seabeds.” | How to puncture digital immateriality with industrial physical geography. | realism, antithesis, imagery, cynicism |
+
+---
+
+## Charles Bukowski, On Cats (2015)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| ““Shake hands!” I said to the cat. The cat just sat there.” | How to expose human pretension against non-human indifference in eleven words. | brevity, understatement, humor, candor |
+| “I put the phone down and the cat-sides of the room come in upon me and I would scream, but they have places for people who scream.” | How to compress domestic dread into streetwise, vernacular restraint. | voice, candor, claustrophobia, rhythm |
+| “Late at night when I drink and type they are about—like say one on the back of my chair and the other down there nibbling at my toes.” | How to capture the solitary writing ritual through casual domestic friction. | rhythm, voice, craft, sensory |
+| “Having a bunch of cats around is good. If you're feeling bad, you just look at the cats, you'll feel better, because they know that everything is, just as it is. There's nothing to get excited about.” | How to prescribe creaturely indifference as the cure for existential panic. | stoicism, clarity, voice, candor |
+
+---
+
+## Oliver Burkeman, Help! How to Become Slightly Happier and Get a Bit More Done (2011)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Books on ‘getting motivated’, and hyper-energetic motivational speakers, ironically compound the problem by reinforcing the idea that you need to feel positive about doing something before you begin it. Motivation follows action.” | How to invert the emotional prerequisite of creative work. | action, candor, psychology, discipline |
+| “Our brains are so easy to fool that it’s borderline embarrassing; you might as well salvage some self-respect by exploiting that fact.” | How to turn neurological susceptibility into a pragmatic habit tool. | irony, pragmatism, wit, voice |
+| “What we seek is ‘pragmatic accuracy’—we don’t base friendships on what we learn about people; we decide what to learn about people, and what to ignore, based on having decided to be friends.” | How to unmask interpersonal affection as deliberate cognitive bias. | psychology, candor, relationships, insight |
+| “Passion may not be worth getting too excited about. The obsession with finding your passion assumes that fulfilling work must feel like constant ecstasy rather than quiet absorption.” | How to puncture vocational romanticism with the reality of quiet absorption. | craft, clarity, work-ethic, realism |
+
+---
+
+## Orson Scott Card, Ender's Game (1985)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “In the moment when I truly understand my enemy, understand him well enough to defeat him, then in that very moment I also love him.” | How to bind tactical supremacy to devastating emotional empathy. | paradox, empathy, conflict, pathos |
+| “They love you. The question is whether they want you here. Your presence in this house is a constant disruption. A source of tension. Do you understand?” | How to surgically detach familial affection from familial tolerance. | dialogue, tension, brevity, pathos |
+| “Home was merely a dull ache in the back of his memory. A tiredness in his eyes.” | How to somatize homesickness into physiological exhaustion. | sensory, understatement, pathos, characterization |
+| “There is no teacher but the enemy. No one but the enemy will tell you what you are doing wrong, and no one else will make you suffer the consequences.” | How to elevate opposition into the singular engine of true education. | adversity, discipline, candor, philosophy |
 
 ---

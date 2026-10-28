@@ -1,0 +1,46 @@
+{
+  "name": "Cluster 32: Craft Discipline, Mindful Presence & Unflinching Intimacy",
+  "output_file": "content/cluster_32_craft_stillness_raw.json",
+  "books": [
+    {
+      "remote_file": "391062 Bird by Bird_ Some Instructions on Writing and Life.epub",
+      "author": "Anne Lamott",
+      "work": "Bird by Bird: Some Instructions on Writing and Life",
+      "year": 1994,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "3526518 The Art of Communicating - Thich Nhat Hanh.epub",
+      "author": "Thích Nhất Hạnh",
+      "work": "The Art of Communicating",
+      "year": 2013,
+      "sample_chunks": 8,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "457919 Quiet - Susan Cain.epub",
+      "author": "Susan Cain",
+      "work": "Quiet: The Power of Introverts in a World That Can't Stop Talking",
+      "year": 2012,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "434366 The_Diary_of_a_Young_Girl_Anne_Frank.epub",
+      "author": "Anne Frank",
+      "work": "The Diary of a Young Girl",
+      "year": 1947,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "392381 Blind_Willow_Sleeping_Woman_-_Haruki_Murakami.epub",
+      "author": "Haruki Murakami",
+      "work": "Blind Willow, Sleeping Woman",
+      "year": 2006,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

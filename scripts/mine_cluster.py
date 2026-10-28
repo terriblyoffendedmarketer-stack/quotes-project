@@ -48,7 +48,7 @@ def process_cluster(cluster_file: Path):
 
     all_quotes = []
     for b in books:
-        r_file = b["remote_file"]
+        r_file = b.get("remote_file") or b.get("drive_path")
         title = b.get("title") or b.get("work")
         author = b.get("author")
         chunks = b.get("chunks") or b.get("sample_chunks", 8)

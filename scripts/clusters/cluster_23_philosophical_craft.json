@@ -1,0 +1,48 @@
+{
+  "name": "Cluster 23: Philosophical Rigor, Wit & Rural Friction",
+  "output_file": "content/cluster_23_philosophical_craft_raw.json",
+  "books": [
+    {
+      "remote_file": "Oliver Burkeman - The Antidote_ Happiness for People Who Can't Stand Positive Thinking (2012, The Text Publishing Company_Faber & Faber) - libgen.li.epub",
+      "author": "Oliver Burkeman",
+      "work": "The Antidote",
+      "year": 2012,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "On Writing Well, The Classic Guide to Writing Nonfiction.epub",
+      "author": "William Zinsser",
+      "work": "On Writing Well",
+      "year": 1976,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Myth of Sisyphus and Other Essays, The - Albert Camus.epub",
+      "author": "Albert Camus",
+      "work": "The Myth of Sisyphus",
+      "year": 1942,
+      "translator": "Justin O'Brien",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "One_Part_Woman_-_Perumal_Murugan.epub",
+      "author": "Perumal Murugan",
+      "work": "One Part Woman",
+      "year": 2010,
+      "translator": "Aniruddhan Vasudevan",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Oscar Wilde - Only Dull People Are Brilliant at Breakfast.epub",
+      "author": "Oscar Wilde",
+      "work": "Only Dull People Are Brilliant at Breakfast",
+      "year": 1894,
+      "sample_chunks": 8,
+      "max_candidates": 10
+    }
+  ]
+}

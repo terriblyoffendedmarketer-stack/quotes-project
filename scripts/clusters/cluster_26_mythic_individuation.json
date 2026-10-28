@@ -1,0 +1,48 @@
+{
+  "name": "Cluster 26: Mythic Individuation, Emotion & Broken Earths",
+  "output_file": "content/cluster_26_mythic_individuation_raw.json",
+  "books": [
+    {
+      "remote_file": "Won-pyung-Sohn-Almond.epub",
+      "author": "Sohn Won-pyung",
+      "work": "Almond",
+      "year": 2017,
+      "translator": "Sandy Joosun Lee",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Richard Adams - Watership Down.epub",
+      "author": "Richard Adams",
+      "work": "Watership Down",
+      "year": 1972,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Demian - Herman Hesse.epub",
+      "author": "Hermann Hesse",
+      "work": "Demian",
+      "year": 1919,
+      "translator": "Michael Roloff & Michael Lebeck",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The Fifth Season  [The Broken Earth 1 ] NK Jemisin.epub",
+      "author": "N. K. Jemisin",
+      "work": "The Fifth Season",
+      "year": 2015,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The Power of Myth - Joseph Campbell.epub",
+      "author": "Joseph Campbell",
+      "work": "The Power of Myth",
+      "year": 1988,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

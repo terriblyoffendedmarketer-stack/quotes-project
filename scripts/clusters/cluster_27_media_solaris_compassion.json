@@ -1,0 +1,47 @@
+{
+  "name": "Cluster 27: Media Ecology, Solaris & Radical Compassion",
+  "output_file": "content/cluster_27_media_solaris_raw.json",
+  "books": [
+    {
+      "remote_file": "Understanding Media - The Extensions of Man - Marshall McLuhan.epub",
+      "author": "Marshall McLuhan",
+      "work": "Understanding Media: The Extensions of Man",
+      "year": 1964,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Tiny Beautiful Things.epub",
+      "author": "Cheryl Strayed",
+      "work": "Tiny Beautiful Things: Advice on Love and Life from Dear Sugar",
+      "year": 2012,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Solaris - Stanislaw Lem.epub",
+      "author": "Stanislaw Lem",
+      "work": "Solaris",
+      "year": 1961,
+      "translator": "Bill Johnston",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The Seven Deaths of Evelyn Hardcastle.epub",
+      "author": "Stuart Turton",
+      "work": "The 7½ Deaths of Evelyn Hardcastle",
+      "year": 2018,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Blake Crouch - Dark Matter.epub",
+      "author": "Blake Crouch",
+      "work": "Dark Matter",
+      "year": 2016,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

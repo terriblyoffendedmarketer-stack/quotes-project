@@ -1,0 +1,46 @@
+{
+  "name": "Cluster 31: Underground Spite, Default Settings & Soul Transit",
+  "output_file": "content/cluster_31_underground_water_raw.json",
+  "books": [
+    {
+      "remote_file": "Fyodor Dostoyevsky/Notes from Underground & The Double - Fyodor Dostoevsky.epub",
+      "author": "Fyodor Dostoevsky",
+      "work": "Notes from Underground",
+      "year": 1864,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "37589 This is Water - David Foster Wallace.epub",
+      "author": "David Foster Wallace",
+      "work": "This Is Water",
+      "year": 2005,
+      "sample_chunks": 8,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The_Machine_Stops_-_E_M_Forster.epub",
+      "author": "E.M. Forster",
+      "work": "The Machine Stops",
+      "year": 1909,
+      "sample_chunks": 8,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "James Hollis - The middle passage_ from misery to meaning in midlife (1993, Inner City Books) - libgen.li.epub",
+      "author": "James Hollis",
+      "work": "The Middle Passage: From Misery to Meaning in Midlife",
+      "year": 1993,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "436158 40 Rules of love - Elif Shafak.epub",
+      "author": "Elif Shafak",
+      "work": "The Forty Rules of Love",
+      "year": 2009,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}
