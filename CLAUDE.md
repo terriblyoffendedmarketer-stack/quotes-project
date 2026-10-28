@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Mined and curated 42 high-caliber quotes across 11 books (*Men Without Women*, *A Short Stay in Hell*, *What I Talk About...*, *Cat's Cradle*, *The Invention of Solitude*, *Meditations for Mortals*, *The Left Hand of Darkness*, *Stories of Your Life and Others*, *Piranesi*, *Roadside Picnic*, *Solaris*). Built Quote Bank dual-mode (Serendipity Shuffle & Bookshelf) in web prototype. Cluster 3 actively running locally via Ollama.  
-> **Next**: Process Cluster 3 (Camus, Kawakami, Murata, Kafka, Tolstoy) and Cluster 4 (Khushwant Singh, Satyajit Ray, Perumal Murugan, Rahi Masoom Raza, Dharamvir Bharati).
+> **Current**: Mined and curated 59 high-caliber quotes across 16 books (*Men Without Women*, *A Short Stay in Hell*, *What I Talk About...*, *Cat's Cradle*, *The Invention of Solitude*, *Meditations for Mortals*, *The Left Hand of Darkness*, *Stories of Your Life and Others*, *Piranesi*, *Roadside Picnic*, *Solaris*, *The Myth of Sisyphus*, *Heaven*, *Convenience Store Woman*, *Letters to Milena*, *The Death of Ivan Ilych*). Cluster 4 actively running locally via Ollama.  
+> **Next**: Process Cluster 4 (Khushwant Singh, Satyajit Ray, Perumal Murugan, Rahi Masoom Raza, Dharamvir Bharati) and Cluster 5 (Anne Lamott, William Zinsser, Kurt Vonnegut craft, Chuck Palahniuk craft, Byung-Chul Han).
 
 ## Roadmap
 

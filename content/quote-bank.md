@@ -125,3 +125,61 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “They’re wandering around in a library of books written in an unknown language, and just looking at the colors of the spines.” | How to indict scientific arrogance with an architectural metaphor | science, knowledge, metaphor |
 | “It wasn’t worth it. It really wasn’t.” | How to end cosmic ambition on four flat words | disillusion, brevity, exhaustion |
 | “It doesn’t matter. I mean, you do recognize my voice?” | How to dismantle certainty through a desperate check on sanity | haunting, identity, grief |
+
+
+---
+
+## Albert Camus, The Myth of Sisyphus (1942)
+*Trans. Justin O'Brien*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “You continue making the gestures commanded by existence for many reasons, the first of which is habit.” | How to diagnose daily life as physical reflex | habit, routine, existentialism |
+| “The worm is in man’s heart. That is where it must be sought.” | How to locate the origin of despair in two short strokes | despair, metaphor, brevity |
+| “It is, at the extreme limit of the condemned man’s last thought, that shoelace that despite everything he sees a few yards away, on the very brink of his dizzying fall.” | How to ground mortal terror in an absurd everyday object | mortality, detail, absurdity |
+| “There always comes a time when one must choose between contemplation and action. This is called becoming a man.” | How to draw a line between thinking and living | action, maturity, courage |
+
+---
+
+## Mieko Kawakami, Heaven (2009)
+*Trans. Sam Bett & David Boyd*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It was like being a piece of furniture in a room that nobody uses.” | How to describe total social invisibility | isolation, domesticity, alienation |
+| “Nobody does anything because they have the right. They do it because they want to.” | How to strip moral pretense from cruelty | power, cruelty, truth |
+| “I wasn’t crying because I was sad. I guess I was crying because we had nowhere else to go, no choice but to go on living in this world.” | How to separate tears from ordinary sadness | grief, endurance, resignation |
+
+---
+
+## Sayaka Murata, Convenience Store Woman (2016)
+*Trans. Ginny Tapley Takemori*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “People who are considered normal enjoy putting those who aren’t on trial, you know.” | How to expose society's secret courtroom | conformity, society, judgment |
+| “You can just give a vague answer to a personal question, and they’ll come to their own conclusions.” | How to turn conversational ambiguity into an invisibility shield | survival, dialogue, deflection |
+| “I hear the faint rattle of a new plastic bottle rolling into place as a customer takes one out of the refrigerator, and look up instantly.” | How to show belonging through mechanical conditioning | modernity, vocation, routine |
+
+---
+
+## Franz Kafka, Letters to Milena (1952)
+*Trans. Philip Boehm*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “I do not know its inner laws, only its hand on my throat – and that really is the most terrible thing I have ever experienced or could experience.” | How to give psychological dread physical hands | anxiety, fear, visceral |
+| “I am dirty, Milena, infinitely dirty, this is why I scream so much about purity.” | How to confess hypocrisy with ruthless honesty | guilt, purity, confession |
+| “I’m too heavy for myself and too light for you.” | How to measure love through incompatible scales | love, balance, neurosis |
+| “It seems to me I’ve never had such a beautiful apartment, I’m also sure I’ll soon lose it—it is too beautiful for me.” | How to poison joy with the certainty of punishment | joy, paranoia, irony |
+
+---
+
+## Leo Tolstoy, The Death of Ivan Ilych (1886)
+*Trans. Louise and Aylmer Maude*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It is he who is dead and not I.” | How to voice the secret relief of the survivor | death, honesty, selfishness |
+| “‘It’s God’s will. We shall all come to it some day,’ said Gerasim, displaying his teeth—the even white teeth of a healthy peasant.” | How to contrast mortality against vital animal health | vitality, death, contrast |
+| “His aim was to free himself more and more from those unpleasantnesses and to give them a semblance of harmlessness and propriety.” | How to diagnose an entire bourgeois life as cowardice | bourgeoisie, facade, avoidance |
