@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Mined and curated 161 high-caliber quotes across 47 books (*Men Without Women*, *A Short Stay in Hell*, *What I Talk About...*, *Cat's Cradle*, *The Invention of Solitude*, *Meditations for Mortals*, *The Left Hand of Darkness*, *Stories of Your Life and Others*, *Piranesi*, *Roadside Picnic*, *Solaris*, *The Myth of Sisyphus*, *Heaven*, *Convenience Store Woman*, *Letters to Milena*, *The Death of Ivan Ilych*, *Train to Pakistan*, *The Best of Satyajit Ray*, *One Part Woman*, *Topi Shukla*, *Gunahon Ka Devta*, *Bird by Bird*, *Pity the Reader*, *Consider This*, *The Burnout Society*, *Fahrenheit 451*, *1984*, *Mockingbird*, *A Canticle for Leibowitz*, *The Machine Stops*, *East of Eden*, *The Bell Jar*, *The Fire Next Time*, *The Goldfinch*, *The Old Man and the Sea*, *Slaughterhouse-Five*, *The Master and Margarita*, *The Seven Good Years*, *Siddhartha*, *Dead Souls*, *Amusing Ourselves to Death*, *Trick Mirror*, *Eichmann in Jerusalem*, *The Work of Art in the Age of Mechanical Reproduction*, *This is Water*). Cluster 10 currently mining locally via Ollama.  
-> **Next**: Process Cluster 10 (*Almond*, *The Paper Menagerie*, *The Ten Loves of Nishino*, *Blind Willow, Sleeping Woman*, *Hunger*) followed by Cluster 11 (*The Book Thief*, *Watership Down*, *The Dispossessed*, *Frankenstein*, *The Picture of Dorian Gray*).
+> **Current**: Mined and curated 181 high-caliber quotes across 52 books (incorporating Cluster 10: *Almond*, *The Paper Menagerie*, *The Ten Loves of Nishino*, *Blind Willow, Sleeping Woman*, *Hunger* alongside previous clusters). Cluster 11 currently mining locally via Ollama.  
+> **Next**: Process Cluster 11 (*The Book Thief*, *Watership Down*, *The Dispossessed*, *Frankenstein*, *The Picture of Dorian Gray*) followed by Cluster 12 (*Nithalle Ki Diary*, *Vaishnav Ki Phislan*, *Six Walks in the Fictional Woods*, *Feline Philosophy*, *Infinite Jest*).
 
 ## Roadmap
 

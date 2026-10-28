@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 161 | **Total Books Represented:** 47
+**Total Vetted Quotes:** 181 | **Total Books Represented:** 52
 
 ---
 
@@ -513,5 +513,64 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “The capital-T Truth is about life before death. It is about making it to thirty, or maybe even fifty, without wanting to shoot yourself in the head.” | How to redefine ultimate truth as day-to-day psychic survival | Honesty, Aphorism, Psychology, Moral Clarity |
 | “In this traffic, all these vehicles stuck and idling in my way: It’s not impossible that some of these people in SUVs have been in horrible auto accidents in the past and now find driving so traumatic that their therapist has all but ordered them to get a huge, heavy SUV... or that the Hummer that just cut me off is maybe being driven by a father whose little child is hurt or sick in the seat next to him... it is actually I who am in his way.” | How to dismantle default self-centeredness through active imaginative empathy | Empathy, Interiority, Perspective, Narrative Strategy |
 | “If your complete freedom of choice regarding what to think about seems too obvious to waste time talking about, I’d ask you to think about fish and water.” | How to expose unconscious blind spots through a fable | Parable, Philosophy, Understatement, Openings |
+
+---
+
+## Won-pyung Sohn, Almond (2017)
+*Trans. Sandy Joosun Lee*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| ““He could die,” I said, fiddling with one of the chewy caramel packs neatly lined up on the display stand.” | How to anchor indifference through a sensory domestic detail. | tone, juxtaposition, understatement, character-voice |
+| “Darkness in winter settled quickly. One moment you noticed it gathering, the next moment everything turned inky black.” | How to capture sudden threshold changes in two clean beats. | pacing, setting, observation, rhythm |
+| “There is no such person who can’t be saved. There are only people who give up on trying to save others.” | How to reverse moral agency through a balanced syntactic shift. | moral-weight, syntax, reversal, philosophy |
+| “Every little thing around you might feel like sharp weapons. A subtle expression or a few words could sting you.” | How to turn social nuance into physical peril. | metaphor, interiority, vulnerability |
+
+---
+
+## Ken Liu, The Paper Menagerie and Other Stories (2016)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It is simultaneously a score and recording. A speech sounds like a speech, a lament a lament, and a story re-creates perfectly the teller’s breathless excitement.” | How to define an impossible art form through cadence and tripartite rhythm. | rhythm, definition, worldbuilding, voice |
+| “Each mind grows from a seed inherited through the millennia, and every thought leaves a mark that can be read and seen.” | How to materialize memory across deep time. | memory, imagery, metaphor, philosophy |
+| “It is also a trace, something directly stenciled off the real; it is also a footprint or a death mask.” | How to escalate a definition toward physical finality. | syntax, escalation, imagery, mortality |
+| ““We are all now exploiters of the dead,” he said, as if explaining a fundamental law of physics.” | How to deliver moral horror with thermodynamic calm. | dialogue-craft, tone, understatement, cynicism |
+
+---
+
+## Hiromi Kawakami, The Ten Loves of Nishino (2003)
+*Trans. Allison Markin Powell*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “People have the right to fall in love, but not the right to be loved.” | How to split an emotional entitlement down its asymmetric seam. | aphorism, syntax, desire, clarity |
+| “Young ladies like me, we tend to think of things in abstraction, much more than most people realize. Inside the shop, there were tanks of tropical fish and goldfish lined up.” | How to ground intellectual pretension against a mundane physical backdrop. | juxtaposition, interiority, irony, setting |
+| “There may not have been much advantage in loving Nishino, but there were good times to be had, weren’t there. It was hard work, worth doing.” | How to evaluate passion with the plain vocabulary of labor. | understatement, tone, craft-of-living, voice |
+| ““If only I could want all of Nishino,” I murmured.” | How to isolate the tragic insufficiency of partial affection. | interiority, longing, understatement |
+
+---
+
+## Haruki Murakami, Blind Willow, Sleeping Woman (2006)
+*Trans. Philip Gabriel & Jay Rubin*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It’s not like the total physical and mental commitment you have to make for the year or two it takes to compose a novel. You merely enter a room, finish your work, and exit. That’s it.” | How to strip artistic practice of romantic mystique. | craft-of-writing, simplicity, pacing, understatement |
+| “It’s like we fell off a high fence, on the outside. Painlessly, without a sound.” | How to render profound estrangement through weightless kinetic imagery. | metaphor, estrangement, sensory-detail, mood |
+| “Everything was out of order, and would never get back to the way it was.” | How to state irreversible catastrophe with flat monosyllables. | cadence, grief, finality, simplicity |
+| ““Your work should be an act of love, not a marriage of convenience.”” | How to set an uncompromised standard for creative labor. | aphorism, craft, conviction, metaphor |
+
+---
+
+## Choi Jin-young, Hunger (2014)
+*Trans. Soje*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Human beings are up for sale. They kill and eat anything. They lie and cheat. They have the power to ruin or save a life.” | How to open with a staccato litany of human brutality. | staccato, rhythm, cynicism, pacing |
+| “Turns out even dying’s expensive. But you’ll have to keep it on the down-low, or else the fuckers will sell off my corpse.” | How to lace fatal vulnerability with street-corner insolence. | voice, black-humor, survival, vernacular |
+| “I wanted to be the only person who knew everything there was to know about Gu. The idea of him feeling something I couldn’t understand, of not occupying his thoughts for a single second, was unbearable and simply unacceptable.” | How to articulate the claustrophobia of absolute romantic possession. | interiority, obsession, candor, psychology |
+| “You and I will be together until the day we die. And even when we’re not, we’ll be together.” | How to bend temporal logic to affirm impossible permanence. | paradox, devotion, syntax, lyricism |
 
 ---
