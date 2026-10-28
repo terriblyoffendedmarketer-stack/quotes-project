@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 774 | **Total Books Represented:** 157
+**Total Vetted Quotes:** 794 | **Total Books Represented:** 162
 
 ---
 
@@ -1928,5 +1928,61 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Of all known liquids water is probably the most studied and least understood.” | How to establish mystery in the most ubiquitous element | paradox, brevity, scientific-wonder |
 | “The signature of the volcanic flow is its basalt rocks which, over 5 million years of volcanic activity, piled up to form a plateau more than 3350 metres high covering much of central and western India.” | How to convey continental scale through basalt accumulation | deep-time, scale, precision |
 | “The transformation of the fierce wolf-like ancestors of sheep into giant whales and gentle dolphins is the Cinderella story of the animal world.” | How to illuminate evolutionary drift through fairy tale subversion | metaphor, wonder, evolutionary-craft |
+
+---
+
+## Susan Orlean, On Animals (2021)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “He was cheerful, affectionate, eager to please—the sort of killer whale who, if you were in the water with him, might decide to give you a hug, which would break every bone in your body.” | How to contrast domestic affection with lethal physical reality | irony, sensory detail, characterization |
+| “I just took two black bears and bleached one of them. I think I used Clairol Basic bleach, left it on for two hours. It smelled awful, like someone's bad hair appointment, but it came out looking pretty good.” | How to anchor bizarre subcultures in mundane commercial details | humor, sensory detail, subculture |
+| “The virus’s ability to survive and spread is uncanny. It can persist on dry cloth with no organic material for more than three months; it survives freezing, and it can withstand temperatures of up to a hundred and twenty degrees for an hour.” | How to build dread through unadorned physical endurance | pacing, clarity, nonfiction craft |
+| “It is a sign of some special and strange quality of my life that the first question people ask me when I return from an assignment is usually, 'Did you get to pet it?'” | How to establish authorial premise through a recurring dialogue hook | voice, understatement, opening |
+
+---
+
+## Ryu Murakami, Audition (1997)
+*Trans. Ralph McCarthy*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Her fingertips were like ice, and then again like molten lava.” | How to convey sensory dread through violent tactile contradiction | sensory detail, psychological truth, foreshadowing |
+| “Every little sound was amplified, and when Yamasaki Asami peered into his face and said 'Aoyama-san?' in a whisper that was almost a hiss, the blood rushed through his temples with a roar.” | How to escalate claustrophobia through acoustic amplification | suspense, sensory detail, internal monologue |
+| “It wasn’t quite like anything he’d ever known before – a sense of having done something that could never be undone, of having crossed an invisible line into a dark territory where ordinary laws no longer applied.” | How to render the irreversible vertigo of moral transgression | dread, psychological truth, suspense |
+| “The faces of the ladies in their gaudy clothing and the boys with their thick make-up and dyed hair seemed to float above the crowd like paper lanterns on a murky canal.” | How to turn a nocturnal crowd into an eerie floating panorama | metaphor, imagery, atmosphere |
+
+---
+
+## Harishankar Parsai, Vaishnav Ki Phislan (1976)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “नाक उनकी काफी लम्बी थी। मेरा खयाल है, नाक की हिफाजत सबसे ज्यादा इसी देश में होती है। और या तो नाक बहुत नर्म होती है या छुरा तेज, जिससे छोटी-सी बात से भी नाक कट जाती है।” | How to literalize a cultural idiom to dismantle fragile social pride | satire, cultural critique, irony |
+| “मेरी इच्छा है, आप खूब खुशी के साथ अकाल-उत्सव मनाएँ। हम घोर संकट में भी प्रसन्न रहते हैं।” | How to expose political callousness through grotesque festive inversion | satire, paradox, irony |
+| “पचपन करोड़ के हाथों में एक-एक रूमाल दे दिया गया है कि लो, एक दूसरे के स्वराज्य के आँसू पोंछो।” | How to reduce bureaucratic democracy to an absurd physical gesture | metaphor, political critique, imagery |
+| “शव-यात्रा का तौलिया तैयार रखते हैं। किसी के मरने की खबर मिली नहीं कि इतने प्रसन्न होते हैं, जैसे किसी की शादी हो रही है।” | How to satirize performative grief through grotesque enthusiasm | satire, characterization, humor |
+
+---
+
+## Chuck Palahniuk, Stranger Than Fiction: True Stories (2004)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “When the problem looks too big, when we’re shown too much reality, we tend to shut down. We become resigned. We fail to take any action because disaster seems so inevitable. We're trapped.” | How to map the psychological paralysis induced by monolithic scale | rhythm, psychological truth, syntax |
+| “After we’re miserable enough—like the narrator in his Fight Club condo, or the narrator isolated by her own beautiful face in Invisible Monsters—we destroy our lovely nest and force ourselves back into the larger world.” | How to articulate self-destruction as a desperate bid for re-entry into life | voice, philosophy, story structure |
+| “It would hurt, chopping off my fat, purple finger, but it would be better than the weeks of letting it rot.” | How to choose acute violent shock over prolonged decay | sensory detail, visceral voice, understatement |
+| “You become so close with a workout partner that they're like your own blood, and if they go out and lose a match, lose a big match, then you’ve just had your heart torn out.” | How to capture athletic intimacy through vicarious devastation | dialogue, emotion, rhythm |
+
+---
+
+## Marryam H. Reshii, The Flavour of Spice (2017)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Only thing, it doesn’t have any spices. Because we are in mourning.” | How to convey immense grief through sensory deprivation | understatement, sensory detail, cultural critique |
+| “It is pounded in our mortar and pestle along with black cardamom, shallots and fennel over which the minced meat is added and whole lot is hammered till the mince becomes silky and the spices are amalgamated into its very fibre.” | How to build physical kinetic momentum in culinary prose | sensory detail, kinetic prose, rhythm |
+| “Every single dish, from main courses like the Dogri khatta meat to desserts like payasam and halwa, is bathed in a medley of spice, to the extent that it is the spice that defines a dish rather than the main ingredient.” | How to invert culinary hierarchy through sensory primacy | clarity, nonfiction craft, voice |
+| “It’s another matter entirely that today, you could claim to have never heard of Tidore or Run and not elicit gasps of astonishment but try telling your colleagues you’ve not heard of Manhattan!” | How to expose historical amnesia through geographical juxtaposition | irony, history, voice |
 
 ---

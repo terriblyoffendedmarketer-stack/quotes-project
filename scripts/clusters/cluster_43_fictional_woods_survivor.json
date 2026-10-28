@@ -1,0 +1,47 @@
+{
+  "name": "Cluster 43: Fictional Woods, Mob Danger & Lucid Conviction",
+  "output_file": "content/cluster_43_fictional_woods_survivor_raw.json",
+  "books": [
+    {
+      "remote_file": "Blind_Willow_Sleeping_Woman_-_Haruki_Murakami.epub",
+      "author": "Haruki Murakami",
+      "work": "Blind Willow, Sleeping Woman",
+      "year": 2006,
+      "translator": "Philip Gabriel and Jay Rubin",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Harishankar Parsai - Awara Bheed Ke Khatare.epub",
+      "author": "Harishankar Parsai",
+      "work": "Awara Bheed Ke Khatare",
+      "year": 1983,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Umberto Eco - Six Walks in the Fictional Woods.epub",
+      "author": "Umberto Eco",
+      "work": "Six Walks in the Fictional Woods",
+      "year": 1994,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Chuck Palahniuk - Survivor.epub",
+      "author": "Chuck Palahniuk",
+      "work": "Survivor",
+      "year": 1999,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Bhagat Singh Why I Am An Atheist.epub",
+      "author": "Bhagat Singh",
+      "work": "Why I Am an Atheist",
+      "year": 1930,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Cluster 44: Bodily Realism, Grotesque Purity & Parable Irony",
+  "output_file": "content/cluster_44_visceral_grimdark_fable_raw.json",
+  "books": [
+    {
+      "remote_file": "Joe Abercrombie - The Blade Itself .epub",
+      "author": "Joe Abercrombie",
+      "work": "The Blade Itself",
+      "year": 2006,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Chuck Palahniuk - Invisible Monsters.epub",
+      "author": "Chuck Palahniuk",
+      "work": "Invisible Monsters",
+      "year": 1999,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Michael Crichton - Sphere.epub",
+      "author": "Michael Crichton",
+      "work": "Sphere",
+      "year": 1987,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Exurb1a - The Fifth Science.epub",
+      "author": "Exurb1a",
+      "work": "The Fifth Science",
+      "year": 2018,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Animal_Farm_by_George_Orwell.epub",
+      "author": "George Orwell",
+      "work": "Animal Farm",
+      "year": 1945,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

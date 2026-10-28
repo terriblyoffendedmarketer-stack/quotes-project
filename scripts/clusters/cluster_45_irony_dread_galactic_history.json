@@ -1,0 +1,46 @@
+{
+  "name": "Cluster 45: Grim Irony, Spectral Dread & Psychohistoric Scale",
+  "output_file": "content/cluster_45_irony_dread_galactic_history_raw.json",
+  "books": [
+    {
+      "remote_file": "Joe Abercrombie - Before They Are Hanged .epub",
+      "author": "Joe Abercrombie",
+      "work": "Before They Are Hanged",
+      "year": 2007,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Joe Hill - 20th Century Ghosts.epub",
+      "author": "Joe Hill",
+      "work": "20th Century Ghosts",
+      "year": 2005,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "John Dies at the End.epub",
+      "author": "David Wong",
+      "work": "John Dies at the End",
+      "year": 2007,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Michael Crichton - Congo.epub",
+      "author": "Michael Crichton",
+      "work": "Congo",
+      "year": 1980,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Issac Asimov - Foundation.epub",
+      "author": "Isaac Asimov",
+      "work": "Foundation",
+      "year": 1951,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}
