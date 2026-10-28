@@ -1,0 +1,46 @@
+{
+  "name": "cluster_20_craft_parable",
+  "theme": "Craft Mechanics, Satirical Essay & Parable",
+  "books": [
+    {
+      "remote_file": "It Was the Best of Sentences, It Was the Worst of Sentences - June Casagrande.epub",
+      "author": "June Casagrande",
+      "title": "It Was the Best of Sentences, It Was the Worst of Sentences",
+      "year": 2010,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Chuck Palahniuk - Consider this (on writing).epub",
+      "author": "Chuck Palahniuk",
+      "title": "Consider This: Moments in My Writing Life",
+      "year": 2020,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Harishankar Parsai - Awara Bheed Ke Khatare.epub",
+      "author": "Harishankar Parsai",
+      "title": "Awara Bheed Ke Khatare",
+      "year": 1998,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "George Orwell - Selected Essays.epub",
+      "author": "George Orwell",
+      "title": "Selected Essays",
+      "year": 1946,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "A_Monster_Calls_-_Patrick_Ness.epub",
+      "author": "Patrick Ness",
+      "title": "A Monster Calls",
+      "year": 2011,
+      "translator": null,
+      "chunks": 8
+    }
+  ]
+}

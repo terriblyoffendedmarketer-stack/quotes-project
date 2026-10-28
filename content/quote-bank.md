@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 221 | **Total Books Represented:** 62
+**Total Vetted Quotes:** 241 | **Total Books Represented:** 67
 
 ---
 
@@ -682,5 +682,62 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “The needle makes a kind of thud and squeak when it goes in the cloth. It’s not much like the soundless pop and slide of a real cook-and-shoot.” | How to use micro-acoustic detail to establish somatic addiction. | sound-design, sensory-detail, realism, contrast |
 | “And so a series of personal interviews with the spiritually necrotic brother took place, Barry having to station himself on the other side of the playing-cards’ wastebasket so as even to get the older brother’s attention, trying to talk the brother down from the misanthropic spiritual ledge he was on.” | How to capture existential intervention through bureaucratic absurdity. | maximalism, contrast, irony, syntax |
 | “the A.C.D.C. campaign, brilliantly orchestrated by Boston MA's Viney and Veals Advertising, was pummelling the Big Four in the fiscal thorax with its ubiquitous anti-passivity slogan 'Don't Sit Still for Anything Less'” | How to parody commercial aggression through hyper-technical anatomical metaphor. | satire, maximalism, metaphor, dissonance |
+
+---
+
+## David Mitchell, Cloud Atlas (2004)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “A time is one’s own, Eva, when oneself and one’s peers take the same things for granted, without thinking about it. Likewise, a man is ruined when the times change but he does not.” | How to define historical obsolescence as a failure of shared assumptions. | time, sociology, syntax, loss |
+| “‘You are welcome here, most welcome,’ she told me, ‘but you must understand that the world is not built for such things as kindness.’” | How to strip benevolence of sentimental protection. | dialogue, contrast, worldbuilding, voice |
+| “‘I ain’t got no right to ask you for favors, I ain’t been a good host, nay I been a pisspoor bad un, but … I’d ran out o’ words.’” | How to express rural vulnerability through verbal depletion. | vernacular, vulnerability, character-voice, honesty |
+| “Houses like these secrete some dark sorcery that transforms their owners into fruitcakes.” | How to personify gothic architecture as an active corrupting agent. | verb-choice, humor, personification, setting |
+
+---
+
+## Viktor E. Frankl, Man's Search for Meaning (1946)
+*Trans. Ilse Lasch*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Freedom is only part of the story and half of the truth. Freedom is but the negative aspect of the whole phenomenon whose positive aspect is responsibleness.” | How to counterbalance liberty with ethical weight. | philosophy, balance, moral-weight, aphorism |
+| “The organism digested its own protein, and the muscles disappeared. Then the body had no powers of resistance left.” | How to chronicle starvation through clinical biological detachment. | restraint, physicality, precision, understatement |
+| “Standing on tiptoe and looking past the others' heads through the bars of the window, I caught an eerie glimpse of my native town.” | How to anchor profound dispossession in a physical posture. | sensory-detail, posture, exile, interiority |
+| “‘He who has a why to live can bear with almost any how.’” | How to anchor psychological endurance in teleological purpose. | aphorism, endurance, rhythm, stoicism |
+
+---
+
+## Seneca, Letters on Ethics (Letters to Lucilius) (65)
+*Trans. Margaret Graver & A.A. Long*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “As we live, so do we speak.” | How to diagnose ethical character through prose rhythm. | aphorism, concision, craft-rule, style |
+| “Decadence in language is a sure sign of widespread self-indulgence if it is not found in just one or two but meets with general approval.” | How to treat linguistic corruption as a symptom of civic decay. | cultural-critique, clarity, style, insight |
+| “Life, Lucilius, is a campaign. That is why those who endure the trials, march uphill and down through rough country, and put themselves into the most dangerous sorties are the heroes and leaders of the camp.” | How to frame human endurance as military topography. | metaphor, stoicism, cadence, action |
+| “‘Prosperity is a restless thing; it drives itself to distraction.’” | How to expose the kinetic agitation of worldly success. | paradox, psychology, inversion, ambition |
+
+---
+
+## Percival Everett, The Trees (2021)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “I ain’t got no watch, but it was early. The ground was still dew wet. My boot toes was dark.” | How to calibrate time through sensory ground contact. | sensory-detail, time, vernacular, rhythm |
+| “That’s simple. It’s because we ain’t had us an election since I was elected.” | How to deliver deadpan authoritarian satire in a single line. | deadpan, satire, political-voice, dialogue |
+| “There’s got to be some perk for everybody hating you.” | How to balance isolation with grim operational humor. | irony, character-voice, humor, resilience |
+| “They’s right, That Obamacare don’t work worth a hill of puppy shit. We done bought in, causin’ we had to, and I ain’t lost nary a pound.” | How to reveal ideological absurdity through physical misunderstanding. | satire, colloquialism, comic-timing, dialogue |
+
+---
+
+## James Gleick, Chaos: Making a New Science (1987)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The behavior actually had an exquisite fine structure, yet any piece of it seemed indistinguishable from noise.” | How to define hidden order within apparent turbulence. | paradox, science-writing, clarity, contrast |
+| “The numbers were converging geometrically, the way a line of identical telephone poles converges toward the horizon in a perspective drawing.” | How to translate abstract mathematical convergence into physical perspective. | metaphor, visualization, science-writing, simplicity |
+| “Wherever two colors try to come together, the third always inserts itself, with a series of new, self-similar intrusions.” | How to describe fractal geometry through persistent physical intrusion. | animation, imagery, precision, clarity |
+| “It was as if a marble, caught between the conflicting tugs of two nearby valleys, would end up in the third and most distant valley instead.” | How to explain nonlinear dynamics through gravitational surprise. | analogy, didactic-craft, surprise, clarity |
 
 ---

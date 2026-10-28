@@ -1,0 +1,46 @@
+{
+  "name": "cluster_21_twentieth_century_titans",
+  "theme": "20th-Century Titans, Magic Realism & Radical Realism",
+  "books": [
+    {
+      "remote_file": "John Steinbeck - East of Eden.epub",
+      "author": "John Steinbeck",
+      "title": "East of Eden",
+      "year": 1952,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Mikhail Bulgakov - The Master and Margarita.epub",
+      "author": "Mikhail Bulgakov",
+      "title": "The Master and Margarita",
+      "year": 1967,
+      "translator": "Diana Burgin & Katherine Tiernan O'Connor",
+      "chunks": 8
+    },
+    {
+      "remote_file": "LG Ursula K - The Left Hand of Darkness.epub",
+      "author": "Ursula K. Le Guin",
+      "title": "The Left Hand of Darkness",
+      "year": 1969,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Junkie - William S Burroughs.epub",
+      "author": "William S. Burroughs",
+      "title": "Junkie",
+      "year": 1953,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Love_Is_a_Dog_from_Hell_-_Charles_Bukowski.epub",
+      "author": "Charles Bukowski",
+      "title": "Love Is a Dog from Hell",
+      "year": 1977,
+      "translator": null,
+      "chunks": 8
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "cluster_19_moral_clarity",
+  "theme": "Moral Clarity, Banality & Existential Longing",
+  "books": [
+    {
+      "remote_file": "Hannah Arendt - Eichmann in Jerusalem_ A Report on the Banality of Evil.epub",
+      "author": "Hannah Arendt",
+      "title": "Eichmann in Jerusalem: A Report on the Banality of Evil",
+      "year": 1963,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Gunahon_Ka_Devta_-_Dharmaveer_Bharti.epub",
+      "author": "Dharamvir Bharati",
+      "title": "Gunahon Ka Devta",
+      "year": 1949,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Heaven_-_Meiko_kawakami.epub",
+      "author": "Mieko Kawakami",
+      "title": "Heaven",
+      "year": 2009,
+      "translator": "Sam Bett & David Boyd",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Herman Hesse - Siddhartha.epub",
+      "author": "Hermann Hesse",
+      "title": "Siddhartha",
+      "year": 1922,
+      "translator": "Hilda Rosner",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Bhagat Singh Why I Am An Atheist.epub",
+      "author": "Bhagat Singh",
+      "title": "Why I Am An Atheist",
+      "year": 1930,
+      "translator": null,
+      "chunks": 8
+    }
+  ]
+}

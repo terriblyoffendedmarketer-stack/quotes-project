@@ -1,0 +1,46 @@
+{
+  "name": "cluster_17_solitude_memory",
+  "theme": "Solitude, Loss & Forensic Grief",
+  "books": [
+    {
+      "remote_file": "Donna Tartt - The Goldfinch.epub",
+      "author": "Donna Tartt",
+      "title": "The Goldfinch",
+      "year": 2013,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "David Guterson - Snow Falling on Cedars.epub",
+      "author": "David Guterson",
+      "title": "Snow Falling on Cedars",
+      "year": 1994,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Elena_Knows - Claudia_Pineiro.epub",
+      "author": "Claudia Piñeiro",
+      "title": "Elena Knows",
+      "year": 2007,
+      "translator": "Frances Riddle",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Auster, Paul - The Invention of Solitude (2007, Penguin (Non-Classics)) - libgen.li.epub",
+      "author": "Paul Auster",
+      "title": "The Invention of Solitude",
+      "year": 1982,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "A Short Stay in Hell - Steven L Peck.epub",
+      "author": "Steven L. Peck",
+      "title": "A Short Stay in Hell",
+      "year": 2012,
+      "translator": null,
+      "chunks": 8
+    }
+  ]
+}

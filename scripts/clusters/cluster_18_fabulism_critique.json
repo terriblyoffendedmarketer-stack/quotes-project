@@ -1,0 +1,46 @@
+{
+  "name": "cluster_18_fabulism_critique",
+  "theme": "Satirical Fabulism & Cultural Dissection",
+  "books": [
+    {
+      "remote_file": "Dead_Souls_-_Nikolai_Gogol.epub",
+      "author": "Nikolai Gogol",
+      "title": "Dead Souls",
+      "year": 1842,
+      "translator": "Richard Pevear & Larissa Volokhonsky",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Etgar Keret - The Seven Good Years.epub",
+      "author": "Etgar Keret",
+      "title": "The Seven Good Years",
+      "year": 2015,
+      "translator": "Sondra Silverston, Miriam Shlesinger & Arun Budman",
+      "chunks": 8
+    },
+    {
+      "remote_file": "A Canticle For Leibowitz.epub",
+      "author": "Walter M. Miller Jr.",
+      "title": "A Canticle for Leibowitz",
+      "year": 1959,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Amusing Ourselves to Death - Neil Postman.epub",
+      "author": "Neil Postman",
+      "title": "Amusing Ourselves to Death",
+      "year": 1985,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Best_Of_Satyajit_Ray_-_Satyajit_Ray.epub",
+      "author": "Satyajit Ray",
+      "title": "The Best of Satyajit Ray",
+      "year": 2001,
+      "translator": "Gopa Majumdar",
+      "chunks": 8
+    }
+  ]
+}
