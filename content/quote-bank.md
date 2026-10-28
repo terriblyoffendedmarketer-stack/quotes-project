@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 89 | **Total Books Represented:** 27
+**Total Vetted Quotes:** 106 | **Total Books Represented:** 32
 
 ---
 
@@ -296,5 +296,57 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Unlimited Can is the positive modal verb of achievement society.” | How to expose systemic coercion disguised as empowerment | Language, Power, Aphorism, Precision |
 | “Every characteristic absence of spirituality, every piece of common vulgarity, is due to an inability to resist a stimulus.” | How to locate cultural decline in attention mechanics | Attention, Moral Clarity, Philosophy, Stillness |
 | “Depression is melancholia plus equality, the perfect disorder of the democratic human being.” | How to formulate a startling sociological equation | Aphorism, Sociology, Psychology, Paradox |
+
+---
+
+## Ray Bradbury, Fahrenheit 451 (1953)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It was a pleasure to burn.” | How to drop the reader into moral inversion on page one | First Lines, Brevity, Irony, Cadence |
+| “Kerosene is nothing but perfume to me.” | How to reveal normalized pathology through sensory inversion | Sensory Detail, Dialogue, Character, Metaphor |
+| “It doesn't like or dislike. It just functions. It’s like a lesson in ballistics. It has a trajectory we decide for it. It follows through. It targets itself, homes itself, and cuts off. It’s only copper wire, storage batteries, and electricity.” | How to terrify through mechanical indifference | Rhythm, Precision, Technology, Dread |
+| “Those who don’t build must burn. It’s as old as history and juvenile delinquents.” | How to compress civilizational resentment into a folk axiom | Aphorism, Voice, Philosophy, Understatement |
+
+---
+
+## George Orwell, 1984 (1949)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Never show dismay! Never show resentment! A single flicker of the eyes could give you away.” | How to build claustrophobia through micro-physical control | Interiority, Sensory Detail, Paranoia, Rhythm |
+| “It might very well be that literally every word in the history books, even the ones that one accepted without question, was pure fantasy.” | How to express the vertigo of lost historical reality | Philosophy, Memory, Point of View, Truth |
+| “Times beyond number, at Party rallies and spontaneous demonstrations, she had shouted at the top of her voice for the execution of people whose names she had never heard and in whose supposed crimes she had not the faintest belief.” | How to expose mass political ecstasy as detached performance | Irony, Cadence, Mass Psychology, Character |
+| “Goods must be produced, but they must not be distributed. And in practice the only way of achieving this was by continuous warfare.” | How to expose institutional madness with chilling bureaucratic logic | Understatement, Logic, Political Satire, Tone |
+
+---
+
+## Walter Tevis, Mockingbird (1980)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “They must have been filled with all the right drugs, because there was no sign of pain on any of their faces—only a kind of smiling—as the flame, pale in the sunlight, began first to redden them, then to make them black.” | How to describe public self-destruction with horrifying pastoral calm | Sensory Detail, Atmosphere, Pacing, Understatement |
+| “My life is light, waiting for the death wind, Like a feather on the back of my hand.” | How to capture suicidal mechanical fatigue in delicate lyricism | Metaphor, Lyricism, Interiority, Voice |
+| “There was St. Paul and Einstein and Shakespeare . . . But now it’s all robots. Robots and the pleasure principle. Everybody’s head is a cheap movie show.” | How to deflate technological utopia with a carnivalesque slur | Contrast, Metaphor, Dialogue, Cultural Critique |
+| “I could visualize them then, the men who had decided sometime in the distant past what the purpose of human life on earth really was and had set up dormitories and Population Control and the Rules of Privacy and the dozens of inflexible, solipsistic Edicts and Mistakes and Rules that the rest of mankind would live by until we all died out and left the world to the dogs and cats and birds.” | How to build a cumulative sentence that chronicles species extinction | Rhythm, Cumulative Sentence, Voice, Irony |
+
+---
+
+## Walter M. Miller Jr., A Canticle for Leibowitz (1959)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Ignorance has been our king. Since the death of empire, he sits unchallenged on the throne of Man.” | How to personify a dark age as a sovereign ruler | Personification, History, Atmosphere, Cadence |
+| “Pain’s the only evil I know about. It’s the only one I can fight.” | How to reduce theological ethics to immediate physical battle | Dialogue, Simplicity, Moral Clarity, Subtext |
+| “Again it is necessary to set before you a cross to be borne, old friend and shepherd of myopic bookworms.” | How to lace solemn spiritual duty with affectionate irony | Tone, Humor, Dialogue, Character |
+
+---
+
+## E. M. Forster, The Machine Stops (1909)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘O Machine! O Machine!’ and raised the volume to her lips. Thrice she kissed it, thrice inclined her head, thrice she felt the delirium of acquiescence.” | How to depict technological worship through ritual incantation | Ritual, Rhythm, Prophecy, Sensory Detail |
+| “Humanity seemed naked, and all these tubes and buttons and machineries neither came into the world with us, nor will they follow us out, nor do they matter supremely while we are here.” | How to dissolve technological apparatus through mortal perspective | Philosophy, Rhythm, Cadence, Aphorism |
 
 ---
