@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Mined and curated 181 high-caliber quotes across 52 books (incorporating Cluster 10: *Almond*, *The Paper Menagerie*, *The Ten Loves of Nishino*, *Blind Willow, Sleeping Woman*, *Hunger* alongside previous clusters). Cluster 11 currently mining locally via Ollama.  
-> **Next**: Process Cluster 11 (*The Book Thief*, *Watership Down*, *The Dispossessed*, *Frankenstein*, *The Picture of Dorian Gray*) followed by Cluster 12 (*Nithalle Ki Diary*, *Vaishnav Ki Phislan*, *Six Walks in the Fictional Woods*, *Feline Philosophy*, *Infinite Jest*).
+> **Current**: Mined and curated 201 high-caliber quotes across 57 books (incorporating Cluster 11: *The Book Thief*, *Watership Down*, *The Dispossessed*, *Frankenstein*, *The Picture of Dorian Gray* alongside previous clusters). Cluster 12 currently mining locally via Ollama.  
+> **Next**: Process Cluster 12 (*Nithalle Ki Diary*, *Vaishnav Ki Phislan*, *Six Walks in the Fictional Woods*, *Feline Philosophy*, *Infinite Jest*) followed by Cluster 13 (*Cloud Atlas*, *Man's Search for Meaning*, *Letters on Ethics*, *The Trees*, *Chaos*).
 
 ## Roadmap
 

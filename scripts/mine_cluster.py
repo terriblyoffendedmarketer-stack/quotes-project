@@ -12,6 +12,10 @@ from pathlib import Path
 import subprocess
 import sys
 
+# Ensure stdout flushes immediately for background tasks
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(line_buffering=True)
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from mine_quote_bank import mine_epub
 

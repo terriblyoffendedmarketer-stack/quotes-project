@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 181 | **Total Books Represented:** 52
+**Total Vetted Quotes:** 201 | **Total Books Represented:** 57
 
 ---
 
@@ -572,5 +572,60 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Turns out even dying’s expensive. But you’ll have to keep it on the down-low, or else the fuckers will sell off my corpse.” | How to lace fatal vulnerability with street-corner insolence. | voice, black-humor, survival, vernacular |
 | “I wanted to be the only person who knew everything there was to know about Gu. The idea of him feeling something I couldn’t understand, of not occupying his thoughts for a single second, was unbearable and simply unacceptable.” | How to articulate the claustrophobia of absolute romantic possession. | interiority, obsession, candor, psychology |
 | “You and I will be together until the day we die. And even when we’re not, we’ll be together.” | How to bend temporal logic to affirm impossible permanence. | paradox, devotion, syntax, lyricism |
+
+---
+
+## Markus Zusak, The Book Thief (2005)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “With a smile like that, you don’t need eyes.” | How to displace sight with an overpowering domestic expression. | imagery, subversion, tenderness, character-voice |
+| “She said it out loud, the words distributed into a room that was full of cold air and books.” | How to give spoken breath physical volume in a room. | sensory-detail, setting, verb-choice, interiority |
+| “Better that we leave the paint behind, than ever forget the music.” | How to weigh disposable materials against enduring sensory truth. | cadence, contrast, moral-weight, simplicity |
+| “Suffering had most definitely come, and if they could blame the Jews as a warning or prologue, they should have blamed the Führer and his quest for Russia as the actual cause.” | How to strip away collective scapegoating with syntactic lucidity. | syntax, clarity, moral-weight, indictment |
+
+---
+
+## Richard Adams, Watership Down (1972)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Like trees in November, they were standing still, but they were not dead.” | How to capture stunned survival through autumnal stillness. | simile, pacing, setting, understatement |
+| “You can’t call your life your own: and in return you have safety—if it’s worth having at the price you pay.” | How to expose the Faustian bargain of totalitarian security. | syntax, moral-weight, philosophy, freedom |
+| ““A jury of animals you shall have,” said Prince Rainbow. “A jury of elil, El-ahrairah. For a jury of rabbits would refuse to convict you, in spite of the evidence.”” | How to construct mythological law through tribal solidarity. | mythology, dialogue-craft, worldbuilding, voice |
+| “The ground became soft and damp. They could smell sedge and water.” | How to signal sanctuary through immediate tactile shifts. | sensory-detail, economy, pacing, setting |
+
+---
+
+## Ursula K. Le Guin, The Dispossessed (1974)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “To break a promise is to deny the reality of the past; therefore it is to deny the hope of a real future.” | How to tie ethical integrity to the mechanics of time. | philosophy, ethics, time, aphorism |
+| “Death was in him, under him; the earth itself was uncertain, unreliable. The enduring, the reliable, is a promise made by the human mind.” | How to ground human permanence against geophysical indifference. | contrast, cadence, philosophy, existentialism |
+| “Grain grows best in shit, as we say in Northsetting.” | How to cut intellectual pretension with agrarian earthiness. | proverb, voice, vernacular, candor |
+| “He lived about two hours. He couldn’t have been saved; there was no reason for him to live that long, no justification for those two hours.” | How to stare at meaningless biological suffering without consolation. | understatement, grief, staccato, candor |
+
+---
+
+## Mary Shelley, Frankenstein (1818)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Alas! why does man boast of sensibilities superior to those apparent in the brute; it only renders them more necessary beings.” | How to turn intellectual superiority into an instrument of torment. | reversal, philosophy, irony, Enlightenment |
+| “He appeared at one time a mere scion of the evil principle, and at another as all that can be conceived of noble and godlike.” | How to balance dual extremes across a single rhythmic sentence. | antithesis, syntax, character-voice, dualism |
+| “It is well. I go; but remember, I shall be with you on your wedding-night.” | How to deliver lethal menace in ten monosyllabic beats. | dialogue-craft, understatement, foreshadowing, chilling |
+| “Life is obstinate, and clings closest where it is most hated.” | How to personify vitality as an unwelcome parasite. | personification, aphorism, grief, irony |
+
+---
+
+## Oscar Wilde, The Picture of Dorian Gray (1890)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Books are well written, or badly written. That is all.” | How to demolish moral censorship with an eight-word verdict. | craft-of-writing, aphorism, economy, clarity |
+| “Nothing can cure the soul but the senses, just as nothing can cure the senses but the soul.” | How to craft a chiasmus that locks two opposites in mutual dependency. | chiasmus, syntax, aphorism, sensory-detail |
+| “When one is in love, one always begins by deceiving one’s self, and one always ends by deceiving others. That is what the world calls a romance.” | How to trace the trajectory of romantic deceit with cynical precision. | wit, cynicism, syntax, satire |
+| “A cigarette is the perfect type of a perfect pleasure. It is exquisite, and it leaves one unsatisfied. What more can one want?” | How to redefine desire around intentional insufficiency. | paradox, wit, hedonism, voice |
 
 ---

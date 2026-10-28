@@ -153,6 +153,7 @@ def mine_epub(epub_path, author, title, year=None, translator=None, max_chunks=8
                     "why_it_lands": c.get("why_it_lands", ""),
                 }
             )
+        print(f"  Chunk {i+1}/{len(sampled_chunks)} evaluated — total candidates: {len(mined_quotes)}", flush=True)
 
     return mined_quotes
 
