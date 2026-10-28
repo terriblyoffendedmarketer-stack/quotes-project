@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 454 | **Total Books Represented:** 105
+**Total Vetted Quotes:** 474 | **Total Books Represented:** 107
 
 ---
 
@@ -95,6 +95,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “The truth, as one spiritual teacher puts it, is that reality doesn’t need me to help operate it. It carries on fine regardless.” | How to relieve anxiety by puncturing self-importance | control, perspective, humor |
 | “If following a list was all it took, we’d have solved the challenge of human happiness long ago.” | How to dismantle an optimization cult in one sentence | optimization, happiness, skepticism |
 | “Maybe you’ll get what you wanted, or maybe you won’t – and sometimes, not getting what you wanted will leave life immeasurably better.” | How to find gratitude in unmet ambition | ambition, fate, acceptance |
+| “This portion of your limited time, the part before you’ve managed to get on top of everything, or dealt with your procrastination problem, or graduated or found a partner or retired; and before the survival of democracy or the climate have been secured: this part matters just as much as any other and arguably even more than any other, since the past is gone and the future hasn’t occurred yet, so right now is the only time that really exists.” | How to demolish provisional living in a single sweeping periodic sentence. | existential, perspective, time, candor |
+| “The good thing about everything being so fucked up is that no matter where you look, there is great work to be done.” | How to find radical vocational purpose in total civilizational disrepair. | courage, pragmatism, purpose, voice |
+| “He can be a charming sort of person to be around, until one day he very much isn’t, and he’s suddenly the dubious fifty-something in a bar full of 25-year-olds, having frittered his real future away on fantasies of an unlimited one.” | How to dramatize the tragedy of non-commitment as a grotesque aging archetype. | characterization, time, candor, pathos |
+| “You don't need to feel like doing something in order to do it. The feeling of resistance isn’t a stop sign; it’s just what it feels like to confront the limits of your control.” | How to demote internal resistance from an obstacle to an operating baseline. | discipline, pragmatism, action, clarity |
 
 ---
 
@@ -447,6 +451,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “‘I wish the boy was here,’ he said aloud and settled himself against the rounded planks of the bow and felt the strength of the great fish through the line he held across his shoulders moving steadily toward whatever he had chosen.” | How to bind private loneliness to the physical tension of a fishing line | Solitude, Sensory Detail, Physicality, Dialogue |
 | “‘I told the boy I was a strange old man,’ he said. ‘Now is when I must prove it.’” | How to state a private covenant of identity | Dialogue, Simplicity, Character, Discipline |
 | “‘Unless sharks come,’ he said aloud. ‘If sharks come, God pity him and me.’” | How to anticipate catastrophe with fatalistic pity | Dialogue, Foreshadowing, Compassion, Understatement |
+| “He always thought of the sea as feminine and as something that gave or withheld great favours, and if she did wild or wicked things it was because she could not help them.” | How to anthropomorphize nature without domesticating its danger. | rhythm, imagery, characterization, metaphor |
+| “I am sorry that I went too far out. I ruined us both.” | How to compress tragic hubris into eleven monosyllables. | brevity, pathos, candor, hubris |
+| “Now is no time to think of what you do not have. Think of what you can do with what there is.” | How to banish paralyzing regret through radical situational pragmatism. | pragmatism, courage, clarity, stoicism |
+| “No man is alone on the sea.” | How to invert maritime isolation into cosmic fraternity in seven words. | brevity, solitude, perspective, philosophy |
 
 ---
 
@@ -792,6 +800,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “That’s simple. It’s because we ain’t had us an election since I was elected.” | How to deliver deadpan authoritarian satire in a single line. | deadpan, satire, political-voice, dialogue |
 | “There’s got to be some perk for everybody hating you.” | How to balance isolation with grim operational humor. | irony, character-voice, humor, resilience |
 | “They’s right, That Obamacare don’t work worth a hill of puppy shit. We done bought in, causin’ we had to, and I ain’t lost nary a pound.” | How to reveal ideological absurdity through physical misunderstanding. | satire, colloquialism, comic-timing, dialogue |
+| “‘We use these because they are cliché,’ Hind said. ‘We’re the FBI. We are walking clichés.’” | How to subvert bureaucratic authority through deadpan meta-irony. | satire, dialogue, wit, voice |
+| “They’re dead! Dead. Dead. Dead. Sacrilegious? Ain’t no souls down there, just arms and legs, hands, heads and elbows, tongues, testicles and nipples, ears and eyeballs.” | How to dismantle sentimental mourning through a rhythmic anatomical inventory. | rhythm, grief, candor, satire |
+| “‘Don’t speak for the dead,’ Jim said. ‘The dead don’t need an interpreter. They need a scorekeeper.’” | How to replace sentimental mourning with cold moral accounting. | justice, dialogue, candor, contrast |
+| “‘Some things don’t add up,’ Jim said. ‘And when they don’t add up, you have to look at who is doing the arithmetic.’” | How to interrogate official authority through an arithmetic metaphor. | dialogue, satire, power, wit |
 
 ---
 
@@ -1229,5 +1241,27 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “They love you. The question is whether they want you here. Your presence in this house is a constant disruption. A source of tension. Do you understand?” | How to surgically detach familial affection from familial tolerance. | dialogue, tension, brevity, pathos |
 | “Home was merely a dull ache in the back of his memory. A tiredness in his eyes.” | How to somatize homesickness into physiological exhaustion. | sensory, understatement, pathos, characterization |
 | “There is no teacher but the enemy. No one but the enemy will tell you what you are doing wrong, and no one else will make you suffer the consequences.” | How to elevate opposition into the singular engine of true education. | adversity, discipline, candor, philosophy |
+
+---
+
+## Ursula K. Le Guin, Steering the Craft (1998)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “A sentence has to hang together. Incoherent, straggling, patched-together sentences can’t lead seamlessly to the next sentence, because they can’t even hold themselves together.” | How to diagnose sentence instability as architectural structural failure. | craft, syntax, clarity, editing |
+| “An awareness of what your own writing sounds like is an essential skill for a writer. If you don't hear it as you write it, or as you read it over, how can you expect your reader to hear it?” | How to establish prose rhythm through internal acoustic playback. | sound, rhythm, voice, craft |
+| “Present-tense narration persuades people that it’s ‘more real’ because it sounds like eyewitness narration. But the past tense is the natural, traditional tense of storytelling in English: it gives narrative distance, perspective, and resonance.” | How to deconstruct the illusory immediacy of the present tense. | perspective, tenses, craft, narrative |
+| “Pacing is not a matter of speed, but of movement. You can go very slowly and still be moving forward; you can go very fast and run in circles.” | How to detach narrative progression from mere physical velocity. | pacing, movement, craft, structure |
+
+---
+
+## Agatha Christie, The Murder of Roger Ackroyd (1926)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘Everyone has something to hide,’ I quoted, smiling. ‘Exactly.’” | How to hide a confession in plain sight under conversational cliché. | irony, dialogue, subversion, deception |
+| “If I am to save him, I must know all there is to know—even if it should seem to make the case against him blacker than before.” | How to raise investigative stakes by demanding self-incriminating truth. | tension, deduction, paradox, candor |
+| “‘Use your little grey cells,’ he said. ‘There is always a reason behind my actions.’” | How to turn a character catchphrase into a rule of narrative deduction. | characterization, voice, wit, craft |
+| “There is only one way out—and that way does not lead to freedom.” | How to close off narrative escape through an ominous syntactic dash. | brevity, tension, antithesis, syntax |
 
 ---
