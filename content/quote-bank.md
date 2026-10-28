@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 574 | **Total Books Represented:** 120
+**Total Vetted Quotes:** 594 | **Total Books Represented:** 125
 
 ---
 
@@ -1457,5 +1457,61 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “The first human being to use a club wasn’t the strongest person in his tribe or the smartest. It’s just that the others didn’t need a club, while he did.” | How to subvert evolutionary mythology through human deficiency. | philosophy, insight, humor, history |
 | “You know how they say suicides always happen in threes? Well, there’s something to it. People around you start dying, and you begin to ask yourself what the hell makes you different, and what’s keeping you alive anyway.” | How to confront contagious despair with conversational bluntness. | voice, existential, psychology, honesty |
 | “Kneller said it was a good sign, because Jan got lost last time too, and to celebrate, he took out this bong, and him and Jan each took four hits, till they were totally wasted.” | How to defuse the solemnity of the afterlife with slacker nonchalance. | afterlife, satire, surrealism, dialogue |
+
+---
+
+## Fyodor Dostoevsky, Notes from Underground (1864)
+*Trans. Richard Pevear and Larissa Volokhonsky*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Come on, gentlemen, why shouldn’t we get rid of all this calm reasonableness with one kick, just so as to send all these logarithms to the devil and be able to live our own lives at our own sweet will?” | How to unleash irrational human will against utilitarian logic. | rebellion, philosophy, freedom, voice |
+| “To be overly conscious is a sickness, a real, thorough sickness. For human everyday life, ordinary human consciousness would be more than enough.” | How to diagnose excessive self-awareness as a debilitating disease. | psychology, consciousness, existential, paradox |
+| “Everything always ended happily, however, with a lazy and entrancing transition to art; that is, to beautiful ready-made images of life, forcibly wrenched from poets and novelists and adapted to every possible kind of service and requirement.” | How to satirize romantic escapism as intellectual self-sedation. | satire, irony, literature, vanity |
+| “You give yourself and your own will up completely. And afterwards, if you want to break those chains, it will be too late; the shackles will get stronger and stronger.” | How to chart the silent compounding of voluntary servitude. | will, warning, insight, restraint |
+
+---
+
+## David Foster Wallace, This Is Water (2005)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “There are these two young fish swimming along and they happen to meet an older fish swimming the other way, who nods at them and says 'Morning, boys. How's the water?' And the two young fish swim on for a bit, and then eventually one of them looks over at the other and goes 'What the hell is water?'” | How to expose invisible default realities through a brief comic parable. | parable, humor, attention, opening |
+| “The really significant education in thinking that we’re supposed to get in a place like this isn’t really about the capacity to think, but rather about the choice of what to think about.” | How to redefine intellectual maturity through attentional sovereignty. | mind, attention, education, clarity |
+| “The point is that petty, frustrating crap like this is exactly where the work of choosing comes in.” | How to locate existential labor within mundane domestic irritation. | voice, reality, mind, everyday |
+| “The really important kind of freedom involves attention, and awareness, and discipline, and effort, and being able truly to care about other people and to sacrifice for them, over and over, in myriad petty little unsexy ways, every day.” | How to build rhythmic accumulative cadence toward ordinary moral heroism. | cadence, rhythm, love, discipline |
+
+---
+
+## E.M. Forster, The Machine Stops (1909)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Cannot you see, cannot all you lecturers see, that it is we that are dying, and that down here the only thing that really lives is the Machine?” | How to confront institutional delusion with urgent rhetorical despair. | dystopia, dialogue, technology, voice |
+| “The Machine develops - but not on our lies. The Machine proceeds - but not to our goal.” | How to articulate algorithmic divergence through antithetical parallelism. | parallelism, technology, brevity, systems |
+| “‘Beware of first-hand ideas!’ exclaimed one of the most advanced of them. ‘First-hand ideas do not really exist. They are but the physical impressions produced by love and fear, and on this gross foundation who could erect a philosophy?’” | How to satirize intellectual detachment through inverted epistemic virtue. | satire, philosophy, irony, ideas |
+| “The Machine feeds us and clothes us and houses us; through it we speak to one another, through it we see one another, in it we have our being. The Machine is the friend of ideas and the enemy of superstition: the Machine is omnipotent, eternal; blessed is the Machine.” | How to mimic liturgical rhythm to expose technological idolatry. | rhythm, satire, technology, dystopia |
+
+---
+
+## James Hollis, The Middle Passage: From Misery to Meaning in Midlife (1993)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “When we discover that we have been living what constitutes a false self, that we have been enacting a provisional adulthood, driven by unrealistic expectations, then we open the possibility for the second adulthood, our true personhood.” | How to reframe midlife crisis as an overdue birth of true personhood. | psychology, growth, identity, insight |
+| “Few at the altar are conscious of the enormity of their expectations. No one would speak aloud the immense hopes: 'I am counting on you to make my life meaningful. I am counting on you to always be there for me. I am counting on you to read my mind and anticipate all my needs. I am counting on you to bind my wounds and fulfill the deficits of my life.'” | How to unmask romantic fantasy by voicing unconscious projections. | relationships, psychology, honesty, truth |
+| “By midlife the injury and neglect to the soul may be such that parts of the psyche strenuously resist further insult. This resistance manifests in symptoms.” | How to reinterpret psychological symptoms as self-protective psychic rebellions. | healing, psychology, mind, perspective |
+| “Our vocation is seldom a straight path, but a series of unfolding tackings and turnings.” | How to describe vocation through maritime nautical metaphor. | metaphor, calling, brevity, reassurance |
+
+---
+
+## Elif Shafak, The Forty Rules of Love (2009)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “When a true lover of God goes into a tavern, the tavern becomes his chamber of prayer, but when a wine bibber goes into the same chamber, it becomes his tavern. In everything we do, it is our hearts that make the difference, not our outer appearances.” | How to demolish puritanical sanctimony through inverted sacred space. | parable, sufism, insight, spirituality |
+| “One man’s pain will hurt us all. One man’s joy will make everyone smile.” | How to affirm universal interconnection through balanced symmetrical phrasing. | compassion, brevity, parallelism, wisdom |
+| “If you want to strengthen your faith, you will need to soften inside. For your faith to be rock solid, your heart needs to be as soft as a feather.” | How to reconcile spiritual strength with emotional softness. | paradox, faith, contrast, softness |
+| “Whatever we received from the skies, we passed on to the earth, from God to people. Each and every one of us became a link connecting the Lover to the Beloved.” | How to evoke the devotional whirling dance as a conduit between heaven and earth. | dance, sufism, rhythm, transcendence |
 
 ---
