@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 321 | **Total Books Represented:** 84
+**Total Vetted Quotes:** 341 | **Total Books Represented:** 86
 
 ---
 
@@ -347,6 +347,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Ignorance has been our king. Since the death of empire, he sits unchallenged on the throne of Man.” | How to personify a dark age as a sovereign ruler | Personification, History, Atmosphere, Cadence |
 | “Pain’s the only evil I know about. It’s the only one I can fight.” | How to reduce theological ethics to immediate physical battle | Dialogue, Simplicity, Moral Clarity, Subtext |
 | “Again it is necessary to set before you a cross to be borne, old friend and shepherd of myopic bookworms.” | How to lace solemn spiritual duty with affectionate irony | Tone, Humor, Dialogue, Character |
+| “Hellbound. Unblessed. Unshrived. Under our very noses.” | How to stack theological condemnations into rhythmic staccato | staccato, theology, rhythm, brevity |
+| ““Pain’s the only evil I know about. It’s the only one I can fight.”” | How to reduce secular ethics to somatic suffering | dialogue, ethics, pragmatism, conflict |
+| ““Holy Leibowitz! Did we labor for this?”” | How to deflate centuries of sacred labor in five words | bathos, dialogue, irony, brevity |
+| ““Insult me,” he said in mocking tones, “rail at me, bait me, persecute me—but do you know what I’ll say?”” | How to invite hostility to assert moral invulnerability | dialogue, imperatives, defiance, rhythm |
 
 ---
 
@@ -470,6 +474,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “‘See that? There’s a wheel for you! What do you say, would that wheel make it as far as Moscow, if it so happened, or wouldn’t it?’” | How to open an epic satire with arbitrary provincial dispute | Dialogue, Opening, Humor, Subtext |
 | “What is our life? A vale wherein grief dwells. What is this world? A crowd of people who do not feel.” | How to balance rhetorical lament against societal numbness | Aphorism, Philosophy, Moral Clarity, Cadence |
 | “Nothing escaped my fresh, keen attention, and, poking my nose out of my traveling cart, I gazed at the never-before-seen cut of some frock coat, and at the wooden boxes of nails, of sulphur yellowing from afar, of raisins and soap, flashing by in the doorway of a grocer’s shop together with jars of stale Moscow candy.” | How to capture youthful curiosity through an inventory of provincial junk | Sensory Detail, Inventory, Voice, Pacing |
+| ““See that? There’s a wheel for you! What do you say, would that wheel make it as far as Moscow, if it so happened, or wouldn’t it?”” | How to anchor epic satire in provincial small-talk | opening, dialogue, satire, vernacular |
+| ““What is our life? A vale wherein grief dwells. What is this world? A crowd of people who do not feel.”” | How to pair romantic lament with biting social contempt | rhetorical-question, melancholy, satire, symmetry |
+| ““You’re both drunkards, you’re ruining the master, you bottomless barrels! You think the master doesn’t know it? There he is, and he can hear you.”” | How to orchestrate domestic shouting with third-person menace | comedy, vernacular, pacing, dialogue |
+| ““You’ll obey that first good impulse and forget your accounting.”” | How to treat generosity as a fatal financial defect | cynicism, moral-irony, brevity, character-voice |
 
 ---
 
@@ -481,6 +489,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “The men were less concerned with giving arguments than with ‘giving off’ impressions, which is what television does best.” | How to pivot from political rhetoric to visual theater | Media Ecology, Cultural Critique, Television, Precision |
 | “Silence will be more acceptable to me in the discussion of these questions than applause.” | How to demand intellectual sobriety over crowd performance | History, Rhetoric, Stillness, Moral Clarity |
 | “People will eat, talk, go to the bathroom, do push-ups or any of the things they are accustomed to doing in the presence of an animated television screen.” | How to desacralize a medium through domestic vulgarity | Sensory Detail, Domesticity, Satire, Media Ecology |
+| ““Silence will be more acceptable to me in the discussion of these questions than applause.”” | How to silence an audience to demand cognitive rigor | rhetoric, candor, seriousness, dialogue |
+| “The men were less concerned with giving arguments than with “giving off” impressions, which is what television does best.” | How to dissect modern politics with a single prepositional shift | wordplay, media-critique, precision, satire |
+| ““Sesame Street” encourages children to love television. Just as reading a book—any kind of book—promotes a particular orientation toward learning, watching a television show does the same.” | How to challenge progressive consensus through medium analysis | cultural-critique, provocation, pedagogy, insight |
+| “The value of telegraphy is undermined by applying the tests of permanence, continuity or coherence.” | How to evaluate rapid communication against classical standards | media-theory, intellectual-standard, critique, triad |
 
 ---
 
@@ -945,5 +957,29 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | ““She didn’t laugh much. When had she ever laughed much?”” | How to question a memory of joy in two steps | grief, interiority, interrogation, brevity |
 | “That’s why she’s sitting on this train, so that this other body, the body of a woman she hasn’t seen for twenty years, may help her uncover the truth that her body refuses her.” | How to dramatize physical incapacity borrowing another’s limbs | somatic-detail, cadence, illness, suspense |
 | ““People confuse thinking with knowing, they let themselves confuse the two.”” | How to distinguish speculation from visceral conviction | aphorism, epistemology, brevity, voice |
+
+---
+
+## Etgar Keret, The Seven Good Years (2015)
+*Trans. Sondra Silverston, Miriam Shlesinger & Arun Budman*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| ““It’s not the emergencies,” the thin one insists. “I have no problem with accidents and things. It’s the terrorist attacks, I’m telling you. They put a damper on everything.”” | How to deploy bureaucratic understatement in wartime | understatement, satire, absurdism, dialogue |
+| ““A lot of unlucky people are going to die in this damn war,” Avraham said, trying to calm the frightened woman, “but I won’t be one of them.”” | How to comfort someone through audacious personal arrogance | dialogue, irony, survival, black-humor |
+| “Destroying buildings and killing things. It’s so much fun.” | How to voice destructive impulse with childlike simplicity | candor, dark-comedy, brevity, visceral-drive |
+| ““It’s actually an educational game that teaches you not to steal.”” | How to rebrand punitive discipline as moral pedagogy | satire, pedagogy, rationalization, dialogue |
+
+---
+
+## Satyajit Ray, The Best of Satyajit Ray (2001)
+*Trans. Gopa Majumdar*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Growing up amidst people from various parts of the country, she learnt to communicate with those who did not speak her language, and whose language she could not understand.” | How to define polyglot empathy beyond vocabulary | observation, empathy, language, cadence |
+| ““It is not clearly understood why human beings should laugh. Great philosophers have racked their brains to find out why; but have not succeeded.”” | How to introduce a surreal premise with mock philosophical gravity | philosophical-parody, mystery, fable, voice |
+| ““Those fiendish mosquitoes are singing in my ears again. So that’s how the son of a mighty empire has to meet his end—at the hands of a tiny insect.”” | How to reduce imperial hubris to a mosquito bite | colonial-satire, bathos, irony, mortality |
+| ““Actually, it was an illness I used to suffer from. I mean, I am not really a thief. There is a medical term for it which escapes me at the moment.”” | How to disguise petty larceny in evasive clinical jargon | dialogue, character-revelation, irony, comedy |
 
 ---

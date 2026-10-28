@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Mined and curated 321 high-caliber quotes across 84 books (incorporating Cluster 17: *The Goldfinch*, *Snow Falling on Cedars*, *Elena Knows*, *The Invention of Solitude*, *A Short Stay in Hell* alongside previous clusters). Cluster 18 currently mining locally via Ollama.  
-> **Next**: Complete Cluster 18 (*Dead Souls*, *The Seven Good Years*, *A Canticle for Leibowitz*, *Amusing Ourselves to Death*, *The Best of Satyajit Ray*) followed by Cluster 19 (*Eichmann in Jerusalem*, *Gunahon Ka Devta*, *Heaven*, *Siddhartha*, *Why I Am An Atheist*).
+> **Current**: Mined and curated 341 high-caliber quotes across 86 books (incorporating Cluster 18: *Dead Souls*, *The Seven Good Years*, *A Canticle for Leibowitz*, *Amusing Ourselves to Death*, *The Best of Satyajit Ray* alongside previous clusters). Cluster 19 currently mining locally via Ollama.  
+> **Next**: Complete Cluster 19 (*Eichmann in Jerusalem*, *Gunahon Ka Devta*, *Heaven*, *Siddhartha*, *Why I Am An Atheist*) followed by Cluster 20 (*It Was the Best of Sentences...*, *Consider This*, *Awara Bheed Ke Khatare*, *Selected Essays*, *A Monster Calls*).
 
 ## Roadmap
 
