@@ -1,0 +1,46 @@
+{
+  "name": "cluster_13_time_meaning",
+  "theme": "Time, Meaning & Polyphonic Fiction",
+  "books": [
+    {
+      "remote_file": "Cloud Atlas.epub",
+      "author": "David Mitchell",
+      "title": "Cloud Atlas",
+      "year": 2004,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Man's Search for Meaning - Victor Frankl.epub",
+      "author": "Viktor E. Frankl",
+      "title": "Man's Search for Meaning",
+      "year": 1946,
+      "translator": "Ilse Lasch",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Seneca - Letters on Ethics (Letters to a stoic).epub",
+      "author": "Seneca",
+      "title": "Letters on Ethics (Letters to Lucilius)",
+      "year": 65,
+      "translator": "Margaret Graver & A.A. Long",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Percival Everett - The Trees.epub",
+      "author": "Percival Everett",
+      "title": "The Trees",
+      "year": 2021,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "James Gleick - Chaos_ Making a New Science.epub",
+      "author": "James Gleick",
+      "title": "Chaos: Making a New Science",
+      "year": 1987,
+      "translator": null,
+      "chunks": 8
+    }
+  ]
+}

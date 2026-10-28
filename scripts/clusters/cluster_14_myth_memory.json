@@ -1,0 +1,46 @@
+{
+  "name": "cluster_14_myth_memory",
+  "theme": "Myth, Memory & The Shadow Self",
+  "books": [
+    {
+      "remote_file": "Carl Jung - Memories, Dreams, Reflections.epub",
+      "author": "C. G. Jung",
+      "title": "Memories, Dreams, Reflections",
+      "year": 1961,
+      "translator": "Richard & Clara Winston",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Demian - Herman Hesse.epub",
+      "author": "Hermann Hesse",
+      "title": "Demian",
+      "year": 1919,
+      "translator": "Michael Roloff & Michael Lebeck",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Pat Conroy - The Prince of Tides.epub",
+      "author": "Pat Conroy",
+      "title": "The Prince of Tides",
+      "year": 1986,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Yann Martel - The Facts Behind the Helsinki Roccamatios.epub",
+      "author": "Yann Martel",
+      "title": "The Facts Behind the Helsinki Roccamatios",
+      "year": 1993,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Kurukshetra - Dinkar.epub",
+      "author": "Ramdhari Singh Dinkar",
+      "title": "Kurukshetra",
+      "year": 1946,
+      "translator": null,
+      "chunks": 8
+    }
+  ]
+}
