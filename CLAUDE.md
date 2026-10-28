@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: 594 high-caliber quotes curated across 125 books (incorporating Cluster 31: *Notes from Underground*, *This Is Water*, *The Machine Stops*, *The Middle Passage*, *The Forty Rules of Love* alongside previous clusters). Cluster 32 currently mining locally via Ollama.  
-> **Next**: Complete Cluster 32 (*Bird by Bird*, *The Art of Communicating*, *Quiet*, *The Diary of a Young Girl*, *Blind Willow, Sleeping Woman*) to cross 600 quotes, followed by Cluster 33 (*The Paper Menagerie*, *Trick Mirror*, *One Part Woman*, *Train to Pakistan*, *The Consolations of Philosophy*).
+> **Current**: Crossed 600-Quote Milestone: 614 high-caliber quotes curated across 130 books (incorporating Cluster 32: *Bird by Bird*, *The Art of Communicating*, *Quiet*, *The Diary of a Young Girl*, *Blind Willow, Sleeping Woman* alongside previous clusters). Cluster 33 currently mining locally via Ollama.  
+> **Next**: Complete Cluster 33 (*The Paper Menagerie*, *Trick Mirror*, *One Part Woman*, *Train to Pakistan*, *The Consolations of Philosophy*) followed by Cluster 34 (*What I Talk About When I Talk About Running*, *Cat's Cradle*, *Chronicles of a Liquid Society*, *A Monster Calls*, *The Mythical Man-Month*).
 
 ## Roadmap
 

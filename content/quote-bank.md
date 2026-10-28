@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 594 | **Total Books Represented:** 125
+**Total Vetted Quotes:** 614 | **Total Books Represented:** 130
 
 ---
 
@@ -1513,5 +1513,62 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “One man’s pain will hurt us all. One man’s joy will make everyone smile.” | How to affirm universal interconnection through balanced symmetrical phrasing. | compassion, brevity, parallelism, wisdom |
 | “If you want to strengthen your faith, you will need to soften inside. For your faith to be rock solid, your heart needs to be as soft as a feather.” | How to reconcile spiritual strength with emotional softness. | paradox, faith, contrast, softness |
 | “Whatever we received from the skies, we passed on to the earth, from God to people. Each and every one of us became a link connecting the Lover to the Beloved.” | How to evoke the devotional whirling dance as a conduit between heaven and earth. | dance, sufism, rhythm, transcendence |
+
+---
+
+## Anne Lamott, Bird by Bird: Some Instructions on Writing and Life (1994)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Thirty years ago my older brother, who was ten years old at the time, was trying to get a report on birds written that he’d had three months to write. It was due the next day. We were out at our family cabin in Bolinas, and he was at the kitchen table close to tears, surrounded by binder paper and pencils and unopened books on birds, immobilized by the hugeness of the task ahead. Then my father sat down beside him, put his arm around my brother’s shoulder, and said, 'Bird by bird, buddy. Just take it bird by bird.'” | How to conquer overwhelming creative paralysis through incremental narrative scale. | craft, storytelling, wisdom, paralysis |
+| “Perfectionism is the voice of the oppressor, the enemy of the people. It will keep you cramped and insane your whole life, and it is the main obstacle between you and a shitty first draft.” | How to declare war on self-censorship through hyper-politicized rhetoric. | writing, voice, humor, courage |
+| “You have to stop directing, because you will only get in the way. If you try to control every move your characters make, they will never have the chance to surprise you.” | How to relinquish narrative control to let characters breathe. | characters, craft, fiction, humility |
+| “We’re still pretty far apart. I’m looking for a six-figure advance, and they’re refusing to read the manuscript.” | How to deflate professional vanity through deadpan asymmetric negotiation. | wit, publishing, irony, brevity |
+
+---
+
+## Thích Nhất Hạnh, The Art of Communicating (2013)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The conversations going on around us, and those we participate in, are also food. When we consume unwholesome speech, we are consuming toxins that pollute our consciousness.” | How to redefine daily conversation as metabolic nutritional intake. | mindfulness, metaphor, presence, insight |
+| “Mindfulness is our skin. Without mindfulness, we may take in things that are toxic to our body and mind.” | How to conceptualize mental presence as a physical protective organ. | metaphor, calm, body, brevity |
+| “If you want to make someone happy, you should ask yourself the question 'Do I understand him enough?' Because without understanding, you cannot truly love.” | How to tether emotional affection to rigorous perceptual understanding. | love, compassion, clarity, relationships |
+| “Every time we communicate, we either produce more compassion, love, and harmony or we produce more suffering and violence.” | How to elevate everyday speech into an absolute moral binary. | responsibility, speech, clarity, philosophy |
+
+---
+
+## Susan Cain, Quiet: The Power of Introverts in a World That Can't Stop Talking (2012)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “There's zero correlation between being the best talker and having the best ideas.” | How to dismantle extrovert bias in a single declarative punch. | introversion, clarity, brevity, insight |
+| “Solitude matters, and for some people, it's the air they breathe. Most of the major advances in science, art, and philosophy were conceived by people working alone in quiet rooms.” | How to defend solitary intellectual work against compulsory collaboration. | solitude, thinking, culture, creativity |
+| “What makes someone really good at selling or consulting—the number-one thing is they’ve got to really listen well.” | How to reframe commercial persuasion around empathetic reception. | listening, influence, observation, truth |
+| “Western cultural traditions include a conception of individual variability which appears to be old, widespread, and persistent: the familiar notion of the man of action, practical man, or realist as opposed to the thinker, dreamer, idealist, or shy individual.” | How to historicize temperament through dual archetypes. | history, culture, temperament, perspective |
+
+---
+
+## Anne Frank, The Diary of a Young Girl (1947)
+*Trans. Susan Massotty*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Paper has more patience than people. I thought of this saying on one of those days when I was feeling a little depressed and was sitting at home with my chin in my hands, bored and listless, wondering whether to stay in or go out.” | How to personify the blank page as an unjudging confidante. | writing, solitude, opening, honesty |
+| “I don’t think we can ever really be happy; we can only be content.” | How to distinguish contentment from euphoric happiness under duress. | philosophy, resilience, brevity, wisdom |
+| “It’s a beautiful day outside, nice and hot, and in spite of everything, we make the most of the weather by lounging on the folding bed in the attic.” | How to capture defiant joy through confined sensory detail. | light, resilience, sensory, contrast |
+| “I always hold my breath while I go, since it clatters into the can like a brook down a mountainside.” | How to convey mortal terror through intimate bodily acoustic detail. | simile, tension, vulnerability, sound |
+
+---
+
+## Haruki Murakami, Blind Willow, Sleeping Woman (2006)
+*Trans. Philip Gabriel and Jay Rubin*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Short stories are like guideposts to my heart, and it makes me happy as a writer to be able to share these intimate feelings with my readers.” | How to describe the personal topography of shorter fiction. | craft, writing, intimacy, metaphor |
+| “It’s like being in an elevator when it breaks down and you’re trapped inside with strangers: you realize how fragile the boundary is between normal life and the void.” | How to dramatize existential dread through mechanical breakdown. | simile, modernity, uncanny, tension |
+| “It wasn’t like there was some obvious change. Actually, the problem was more a lack of change.” | How to identify decay through deadening stasis rather than overt crisis. | stasis, observation, brevity, relationships |
+| “I wanted something to remember his performance by. If things ended like this, all I’d take home would be lukewarm memories.” | How to register artistic hunger against lukewarm experience. | art, memory, hunger, perspective |
 
 ---
