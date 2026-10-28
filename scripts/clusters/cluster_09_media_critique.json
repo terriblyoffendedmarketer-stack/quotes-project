@@ -1,0 +1,46 @@
+{
+  "name": "cluster_09_media_critique",
+  "theme": "Media Ecology, Attention & Moral Clarity",
+  "books": [
+    {
+      "remote_file": "Amusing Ourselves to Death - Neil Postman.epub",
+      "author": "Neil Postman",
+      "title": "Amusing Ourselves to Death",
+      "year": 1985,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Trick_Mirror_-_Jia_Tolentino.epub",
+      "author": "Jia Tolentino",
+      "title": "Trick Mirror: Reflections on Self-Delusion",
+      "year": 2019,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Hannah Arendt - Eichmann in Jerusalem_ A Report on the Banality of Evil.epub",
+      "author": "Hannah Arendt",
+      "title": "Eichmann in Jerusalem: A Report on the Banality of Evil",
+      "year": 1963,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Walter Benjamin - The Work of Art in the Age of Mechanical Reproduction.epub",
+      "author": "Walter Benjamin",
+      "title": "The Work of Art in the Age of Mechanical Reproduction",
+      "year": 1935,
+      "translator": "Harry Zohn",
+      "chunks": 6
+    },
+    {
+      "remote_file": "This is Water - David Foster Wallace.epub",
+      "author": "David Foster Wallace",
+      "title": "This is Water",
+      "year": 2009,
+      "translator": null,
+      "chunks": 6
+    }
+  ]
+}

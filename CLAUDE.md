@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Mined and curated 59 high-caliber quotes across 16 books (*Men Without Women*, *A Short Stay in Hell*, *What I Talk About...*, *Cat's Cradle*, *The Invention of Solitude*, *Meditations for Mortals*, *The Left Hand of Darkness*, *Stories of Your Life and Others*, *Piranesi*, *Roadside Picnic*, *Solaris*, *The Myth of Sisyphus*, *Heaven*, *Convenience Store Woman*, *Letters to Milena*, *The Death of Ivan Ilych*). Cluster 4 actively running locally via Ollama.  
-> **Next**: Process Cluster 4 (Khushwant Singh, Satyajit Ray, Perumal Murugan, Rahi Masoom Raza, Dharamvir Bharati) and Cluster 5 (Anne Lamott, William Zinsser, Kurt Vonnegut craft, Chuck Palahniuk craft, Byung-Chul Han).
+> **Current**: Mined and curated 75 high-caliber quotes across 23 books (*Men Without Women*, *A Short Stay in Hell*, *What I Talk About...*, *Cat's Cradle*, *The Invention of Solitude*, *Meditations for Mortals*, *The Left Hand of Darkness*, *Stories of Your Life and Others*, *Piranesi*, *Roadside Picnic*, *Solaris*, *The Myth of Sisyphus*, *Heaven*, *Convenience Store Woman*, *Letters to Milena*, *The Death of Ivan Ilych*, *Train to Pakistan*, *The Best of Satyajit Ray*, *One Part Woman*, *Topi Shukla*, *Gunahon Ka Devta*). Cluster 5 currently mining locally via Ollama.  
+> **Next**: Process Cluster 5 (Anne Lamott, William Zinsser, Kurt Vonnegut craft, Chuck Palahniuk craft, Byung-Chul Han) followed by Cluster 6 (Fahrenheit 451, 1984, Mockingbird, Canticle for Leibowitz, The Machine Stops).
 
 ## Roadmap
 
@@ -25,6 +25,7 @@
 - `scripts/run_batch.py`: Batch orchestrator to mine clusters of books and output candidate JSON.
 - `tools/lint_cards.py`: Linter enforcing word limits, banned AI shapes, triads, and opener variety.
 - `tools/build_prototype.py`: Rebuilds the browser review prototype in `prototype/index.html`.
+- `tools/sync_quote_bank_md.py`: Synchronizes `content/quote-bank.md` from `content/quote-bank.json`.
 - `tools/add_cards.py`: Batch helper to append verified cards without duplicates or broken highlights.
 - `scripts/audit_and_rewrite.py`: Automation script for content audit, rewriting, and testing craft exercises.
 - `android/`: Android app and home-screen widget source code (Kotlin / Jetpack Compose).

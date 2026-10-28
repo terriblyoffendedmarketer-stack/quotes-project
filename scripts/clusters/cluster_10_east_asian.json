@@ -1,0 +1,46 @@
+{
+  "name": "cluster_10_east_asian",
+  "theme": "Contemporary East Asian Voices & Intimacy",
+  "books": [
+    {
+      "remote_file": "Won-pyung-Sohn-Almond.epub",
+      "author": "Won-pyung Sohn",
+      "title": "Almond",
+      "year": 2017,
+      "translator": "Sandy Joosun Lee",
+      "chunks": 8
+    },
+    {
+      "remote_file": "The_Paper_Menagerie_and_Other_Stories_-_Ken_Liu.epub",
+      "author": "Ken Liu",
+      "title": "The Paper Menagerie and Other Stories",
+      "year": 2016,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "The Ten Loves of Nishino - Hiromi Kawakami.epub",
+      "author": "Hiromi Kawakami",
+      "title": "The Ten Loves of Nishino",
+      "year": 2003,
+      "translator": "Allison Markin Powell",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Blind_Willow_Sleeping_Woman_-_Haruki_Murakami.epub",
+      "author": "Haruki Murakami",
+      "title": "Blind Willow, Sleeping Woman",
+      "year": 2006,
+      "translator": "Philip Gabriel & Jay Rubin",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Hunger_-_Choi_Jin-young.epub",
+      "author": "Choi Jin-young",
+      "title": "Hunger",
+      "year": 2014,
+      "translator": null,
+      "chunks": 8
+    }
+  ]
+}
