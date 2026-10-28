@@ -69,3 +69,59 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “It was hard to start a sexual relationship in circumstances of such bizarre uncertainty, especially for an active Mormon and a good Christian, both lost in a Zoroastrian Hell.” | How to deliver straight-faced theological comedy in one sentence | humor, theology, irony |
 | “It’s two sentences that are grammatically correct! They make sense. This is the most amazing thing I’ve ever seen. It’s poetry.” | How to make bare grammar feel like a miracle | language, meaning, hope |
 | “When I was looking at these, I was thinking about a lifetime spent reading great works of literature. Now I get it—this is Hell; an eternity surrounded by books, but they’re all nonsense.” | How to shatter expectations with ironic horror | books, hell, irony |
+
+
+---
+
+## Ursula K. Le Guin, The Left Hand of Darkness (1969)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The only truth I can understand or express is, logically defined, a lie.” | How to begin with the paradox of storytelling | truth, paradox, storytelling |
+| “They do not kill people on their Farms: they let hunger and winter and despair do their murders for them.” | How to unmask institutional cruelty without raising your voice | power, injustice, understatement |
+| “It is hard, I found, to be called traitor. Strange how hard it is, for it’s an easy name to call another man; a name that sticks, that fits, that convinces.” | How to weigh the asymmetrical weight of an accusation | language, betrayal, reputation |
+| “I was named, known, recognized; I existed. It was an intense relief.” | How to build a climax out of simple recognition | identity, relief, connection |
+
+---
+
+## Ted Chiang, Stories of Your Life and Others (2002)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Freedom isn’t an illusion; it’s perfectly real in the context of sequential consciousness.” | How to reconcile free will with fatalism | time, free-will, philosophy |
+| “He altered the selling patterns of the stock of five unrelated corporations, for the sake of a word.” | How to demonstrate terrifying power through trivial motive | power, scale, irony |
+| “The water rose, and bore them up, until Hillalum could reach up with his hands and touch the ceiling.” | How to invert the universe through physical touch | wonder, cosmology, physical-detail |
+| “The problem with the universe is that it is not only vast but also indifferent. It does not care whether you live or die, whether you are happy or sad, whether you succeed or fail.” | How to state existential neutrality without despair | cosmos, indifference, clarity |
+
+---
+
+## Susanna Clarke, Piranesi (2020)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The afternoon had been stormy, and the lights of the cars were pixelated by rain; the pavements collaged with wet black leaves.” | How to describe our modern world through the innocent eyes of an exile | observation, sensory, wonder |
+| “The sea sweeps through the house. Sometimes it swept over me, but always I was saved.” | How to establish mythic innocence in two plain sentences | trust, myth, atmosphere |
+| “Worse still, at the very point at which the Other has declared he will kill me if I become mad, I have discovered that I am mad already!” | How to turn existential terror into sudden dark comedy | madness, irony, suspense |
+| “What should I do? I knew that as long as the message existed I would experience a strong urge to read it.” | How to pin down the irresistible gravity of written words | curiosity, reading, temptation |
+
+---
+
+## Arkady and Boris Strugatsky, Roadside Picnic (1972)
+*Trans. Olena Bormashenko*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It was no longer stiff and bristly, but soft and crumbly—it was falling apart under their shoes, like flakes of soot.” | How to describe alien contamination through decaying texture | horror, texture, uncanny |
+| “They haven’t laid the phone lines to where he is tonight. Let’s go.” | How to euphemize death with technological understatement | death, dialogue, understatement |
+| “It was as though nothing had happened here.” | How to make normalcy the most terrifying detail | calm, dread, memory |
+
+---
+
+## Stanislaw Lem, Solaris (1961)
+*Trans. Bill Johnston*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “They’re wandering around in a library of books written in an unknown language, and just looking at the colors of the spines.” | How to indict scientific arrogance with an architectural metaphor | science, knowledge, metaphor |
+| “It wasn’t worth it. It really wasn’t.” | How to end cosmic ambition on four flat words | disillusion, brevity, exhaustion |
+| “It doesn’t matter. I mean, you do recognize my voice?” | How to dismantle certainty through a desperate check on sanity | haunting, identity, grief |

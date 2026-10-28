@@ -1,0 +1,46 @@
+{
+  "name": "cluster_02_speculative",
+  "theme": "Philosophical Speculative Fiction & Mind Benders",
+  "books": [
+    {
+      "remote_file": "LG Ursula K - The Left Hand of Darkness.epub",
+      "author": "Ursula K. Le Guin",
+      "title": "The Left Hand of Darkness",
+      "year": 1969,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Stories_of_Your_Life_and_Others_-_Ted_Chiang.epub",
+      "author": "Ted Chiang",
+      "title": "Stories of Your Life and Others",
+      "year": 2002,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Piranesi  - Susanna Clarke.epub",
+      "author": "Susanna Clarke",
+      "title": "Piranesi",
+      "year": 2020,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Roadside Picnic - Arkady and Boris.epub",
+      "author": "Arkady and Boris Strugatsky",
+      "title": "Roadside Picnic",
+      "year": 1972,
+      "translator": "Olena Bormashenko",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Solaris - Stanislaw Lem.epub",
+      "author": "Stanislaw Lem",
+      "title": "Solaris",
+      "year": 1961,
+      "translator": "Bill Johnston",
+      "chunks": 8
+    }
+  ]
+}

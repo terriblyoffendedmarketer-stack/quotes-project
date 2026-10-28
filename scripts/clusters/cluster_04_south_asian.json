@@ -1,0 +1,46 @@
+{
+  "name": "cluster_04_south_asian",
+  "theme": "South Asian Classics & Narrative Realism",
+  "books": [
+    {
+      "remote_file": "Train_To_Pakistan_-_Khushwant_Singh.epub",
+      "author": "Khushwant Singh",
+      "title": "Train to Pakistan",
+      "year": 1956,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Best_Of_Satyajit_Ray_-_Satyajit_Ray.epub",
+      "author": "Satyajit Ray",
+      "title": "The Best of Satyajit Ray",
+      "year": 2001,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "One_Part_Woman_-_Perumal_Murugan.epub",
+      "author": "Perumal Murugan",
+      "title": "One Part Woman",
+      "year": 2010,
+      "translator": "Aniruddhan Vasudevan",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Topi_Shukla_-_Rahi_masoom_raza.epub",
+      "author": "Rahi Masoom Raza",
+      "title": "Topi Shukla",
+      "year": 1969,
+      "translator": "Meenakshi Shivram",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Gunahon_Ka_Devta_-_Dharmaveer_Bharti.epub",
+      "author": "Dharamvir Bharati",
+      "title": "Chander & Sudha (Gunahon Ka Devta)",
+      "year": 1949,
+      "translator": "Poonam Saxena",
+      "chunks": 8
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "cluster_05_craft_essays",
+  "theme": "Craft of Writing & Modern Cultural Essays",
+  "books": [
+    {
+      "remote_file": "Bird by Bird_ Some Instructions on Writing and Life.epub",
+      "author": "Anne Lamott",
+      "title": "Bird by Bird",
+      "year": 1994,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "On Writing Well, The Classic Guide to Writing Nonfiction.epub",
+      "author": "William Zinsser",
+      "title": "On Writing Well",
+      "year": 1976,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Pity_the_Reader_-_Kurt_Vonnegut.epub",
+      "author": "Kurt Vonnegut",
+      "title": "Pity the Reader: On Writing with Style",
+      "year": 2019,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Chuck Palahniuk - Consider this (on writing).epub",
+      "author": "Chuck Palahniuk",
+      "title": "Consider This: Moments in My Writing Life",
+      "year": 2020,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "The Burnout Society - Byung chul Han.epub",
+      "author": "Byung-Chul Han",
+      "title": "The Burnout Society",
+      "year": 2010,
+      "translator": "Erik Butler",
+      "chunks": 8
+    }
+  ]
+}

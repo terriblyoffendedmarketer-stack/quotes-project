@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Mined and curated 24 high-caliber literary quotes across 6 books (*Men Without Women*, *A Short Stay in Hell*, *What I Talk About When I Talk About Running*, *Cat's Cradle*, *The Invention of Solitude*, *Meditations for Mortals*). Pipeline running locally via Ollama (`gemma3:4b`).  
-> **Next**: Mine Cluster 2 from Google Drive library; connect Quote Bank shuffle and bookshelf view into prototype.
+> **Current**: Mined and curated 42 high-caliber quotes across 11 books (*Men Without Women*, *A Short Stay in Hell*, *What I Talk About...*, *Cat's Cradle*, *The Invention of Solitude*, *Meditations for Mortals*, *The Left Hand of Darkness*, *Stories of Your Life and Others*, *Piranesi*, *Roadside Picnic*, *Solaris*). Built Quote Bank dual-mode (Serendipity Shuffle & Bookshelf) in web prototype. Cluster 3 actively running locally via Ollama.  
+> **Next**: Process Cluster 3 (Camus, Kawakami, Murata, Kafka, Tolstoy) and Cluster 4 (Khushwant Singh, Satyajit Ray, Perumal Murugan, Rahi Masoom Raza, Dharamvir Bharati).
 
 ## Roadmap
 

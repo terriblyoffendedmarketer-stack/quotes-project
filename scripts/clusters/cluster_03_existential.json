@@ -1,0 +1,46 @@
+{
+  "name": "cluster_03_existential",
+  "theme": "Existentialism, Alienation & Modern Japanese Masters",
+  "books": [
+    {
+      "remote_file": "Myth of Sisyphus and Other Essays, The - Albert Camus.epub",
+      "author": "Albert Camus",
+      "title": "The Myth of Sisyphus",
+      "year": 1942,
+      "translator": "Justin O'Brien",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Heaven_-_Meiko_kawakami.epub",
+      "author": "Mieko Kawakami",
+      "title": "Heaven",
+      "year": 2009,
+      "translator": "Sam Bett & David Boyd",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Sayaka Murata - Convenience Store Woman.epub",
+      "author": "Sayaka Murata",
+      "title": "Convenience Store Woman",
+      "year": 2016,
+      "translator": "Ginny Tapley Takemori",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Letters to Milena Franz Kafka.epub",
+      "author": "Franz Kafka",
+      "title": "Letters to Milena",
+      "year": 1952,
+      "translator": "Philip Boehm",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Leo Tolstoy - Death of Ivan Ilych.epub",
+      "author": "Leo Tolstoy",
+      "title": "The Death of Ivan Ilych",
+      "year": 1886,
+      "translator": "Louise and Aylmer Maude",
+      "chunks": 8
+    }
+  ]
+}
