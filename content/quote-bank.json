@@ -2187,5 +2187,290 @@
       "Voice",
       "Pacing"
     ]
+  },
+  {
+    "quote": "The written word endures, the spoken word disappears; and that is why writing is closer to the truth than speaking.",
+    "author": "Neil Postman",
+    "work": "Amusing Ourselves to Death",
+    "year": 1985,
+    "translator": null,
+    "hook": "How to claim cognitive authority for print over speech",
+    "why_it_lands": "Postman balances two parallel independent clauses across a semicolon. By linking durability directly to veracity, he elevates the printed page into an ethical discipline rather than just a storage technology.",
+    "tags": [
+      "Print Culture",
+      "Philosophy",
+      "Aphorism",
+      "Language"
+    ]
+  },
+  {
+    "quote": "The men were less concerned with giving arguments than with ‘giving off’ impressions, which is what television does best.",
+    "author": "Neil Postman",
+    "work": "Amusing Ourselves to Death",
+    "year": 1985,
+    "translator": null,
+    "hook": "How to pivot from political rhetoric to visual theater",
+    "why_it_lands": "Postman plays on the prepositional shift: 'giving' vs. 'giving off'. Arguments require logic and syntax; 'giving off' impressions belongs to body language and cosmetics. Television replaces thought with radiance.",
+    "tags": [
+      "Media Ecology",
+      "Cultural Critique",
+      "Television",
+      "Precision"
+    ]
+  },
+  {
+    "quote": "Silence will be more acceptable to me in the discussion of these questions than applause.",
+    "author": "Neil Postman",
+    "work": "Amusing Ourselves to Death",
+    "year": 1985,
+    "translator": null,
+    "hook": "How to demand intellectual sobriety over crowd performance",
+    "why_it_lands": "Quoting the 1858 Lincoln-Douglas debates, Postman contrasts nineteenth-century acoustic discipline with modern media entertainment. Real political inquiry requires quiet digestion, not immediate applause.",
+    "tags": [
+      "History",
+      "Rhetoric",
+      "Stillness",
+      "Moral Clarity"
+    ]
+  },
+  {
+    "quote": "People will eat, talk, go to the bathroom, do push-ups or any of the things they are accustomed to doing in the presence of an animated television screen.",
+    "author": "Neil Postman",
+    "work": "Amusing Ourselves to Death",
+    "year": 1985,
+    "translator": null,
+    "hook": "How to desacralize a medium through domestic vulgarity",
+    "why_it_lands": "Postman catalogs mundane living-room bodily habits—eating, talking, bathroom trips, push-ups. By juxtaposing holy or political speeches with calisthenics, he proves that the physical domestic context degrades all message content into ambient wallpaper.",
+    "tags": [
+      "Sensory Detail",
+      "Domesticity",
+      "Satire",
+      "Media Ecology"
+    ]
+  },
+  {
+    "quote": "The internet is a mirror, which is to say that it reflects back whatever you throw at it. But mirrors don’t just reflect; they distort. They make you look younger, or older, or funnier, or more interesting than you actually are.",
+    "author": "Jia Tolentino",
+    "work": "Trick Mirror: Reflections on Self-Delusion",
+    "year": 2019,
+    "translator": null,
+    "hook": "How to complicate a familiar optical metaphor",
+    "why_it_lands": "Tolentino establishes a common metaphor only to weaponize it with a pivot ('But mirrors don't just reflect'). The catalog of comparative adjectives ('younger... older... funnier... more interesting') lays bare the psychic vanity machine.",
+    "tags": [
+      "Metaphor",
+      "Digital Culture",
+      "Identity",
+      "Cadence"
+    ]
+  },
+  {
+    "quote": "It’s because of the hashtag, the retweet, and the profile that solidarity on the internet gets inextricably tangled up with visibility, identity, and self-promotion.",
+    "author": "Jia Tolentino",
+    "work": "Trick Mirror: Reflections on Self-Delusion",
+    "year": 2019,
+    "translator": null,
+    "hook": "How to map software architecture to moral corruption",
+    "why_it_lands": "Tolentino tracks how three technical interface features (hashtags, retweets, profile pages) inevitably pollute genuine political solidarity with personal brand promotion. Syntax mimics the entanglement.",
+    "tags": [
+      "Technology",
+      "Cultural Critique",
+      "Precision",
+      "Tone"
+    ]
+  },
+  {
+    "quote": "She is equally interested in whatever the market offers her—in the tools that will allow her to look more appealing, to be even more endlessly presentable, to wring as much value out of her particular position as she can.",
+    "author": "Jia Tolentino",
+    "work": "Trick Mirror: Reflections on Self-Delusion",
+    "year": 2019,
+    "translator": null,
+    "hook": "How to dissect self-commodification with ruthless precision",
+    "why_it_lands": "Tolentino employs cold market terminology ('tools', 'value', 'position') to describe female grooming and personal presentation. The verb 'wring' exposes the exhausting labor behind modern self-optimization.",
+    "tags": [
+      "Capitalism",
+      "Identity",
+      "Observation",
+      "Voice"
+    ]
+  },
+  {
+    "quote": "To grasp the meaning of the Final Solution is to grasp it as a call to think through from the beginning our most treasured belief: That we speak as individuals when we give an account of what we are doing.",
+    "author": "Hannah Arendt",
+    "work": "Eichmann in Jerusalem: A Report on the Banality of Evil",
+    "year": 1963,
+    "translator": null,
+    "hook": "How to locate the moral abyss in linguistic unthinking",
+    "why_it_lands": "Arendt identifies totalitarian catastrophe not in monstrous psychopathy, but in the collapse of first-person moral witness. Bureaucracy relieves the speaker of responsibility by replacing the human voice with procedural scripts.",
+    "tags": [
+      "Moral Clarity",
+      "Philosophy",
+      "Responsibility",
+      "Language"
+    ]
+  },
+  {
+    "quote": "It was in vain that he explained to anybody who would listen that ‘it would be contradictory to the order of the Reichsführer S.S. and illogical if at this stage other authorities again were to handle the Jewish problem.’",
+    "author": "Hannah Arendt",
+    "work": "Eichmann in Jerusalem: A Report on the Banality of Evil",
+    "year": 1963,
+    "translator": null,
+    "hook": "How to expose genocide reduced to jurisdictional etiquette",
+    "why_it_lands": "Arendt quotes Eichmann's obsessive appeal to 'order' and 'logic'. The banality of evil lands through bureaucratic jargon—mass murder is discussed as a routing problem between administrative departments.",
+    "tags": [
+      "Irony",
+      "Bureaucracy",
+      "History",
+      "Understatement"
+    ]
+  },
+  {
+    "quote": "He began by stating emphatically that he was a Gottgläubiger... He then proceeded: ‘After a short while, gentlemen, we shall all meet again. Such is the fate of all men. Long live Germany, long live Argentina, long live Austria. I shall not forget them.’",
+    "author": "Hannah Arendt",
+    "work": "Eichmann in Jerusalem: A Report on the Banality of Evil",
+    "year": 1963,
+    "translator": null,
+    "hook": "How to capture the grotesque comedy of unrepentant cliché",
+    "why_it_lands": "Even on the gallows, Eichmann cannot speak a single authentic human word; he strings together funeral oration clichés and nationalist cheers. Arendt shows that total evil is fundamentally devoid of tragic grandeur—it is pure linguistic farce.",
+    "tags": [
+      "Banality of Evil",
+      "Dialogue",
+      "Irony",
+      "Cliché"
+    ]
+  },
+  {
+    "quote": "Justice demands that the accused be prosecuted, defended, and judged, and that all the other questions of seemingly greater import – of ‘How could it happen?’ and ‘Why did it happen?’ – must wait.",
+    "author": "Hannah Arendt",
+    "work": "Eichmann in Jerusalem: A Report on the Banality of Evil",
+    "year": 1963,
+    "translator": null,
+    "hook": "How to enforce judicial austerity against theatrical spectacle",
+    "why_it_lands": "Arendt defends the strict modesty of the courtroom against geopolitical theater. The three verbs ('prosecuted, defended, judged') act as an unbending barrier against using a criminal trial as historical melodrama.",
+    "tags": [
+      "Justice",
+      "Law",
+      "Moral Clarity",
+      "Discipline"
+    ]
+  },
+  {
+    "quote": "The whole sphere of authenticity is outside technical – and, of course, not only technical – reproducibility.",
+    "author": "Walter Benjamin",
+    "work": "The Work of Art in the Age of Mechanical Reproduction",
+    "year": 1935,
+    "translator": "Harry Zohn",
+    "hook": "How to define aura through what machines cannot duplicate",
+    "why_it_lands": "Benjamin isolates the 'aura' of an artwork by negative definition. Mechanical copies can capture pixels, brushstrokes, and measurements, but the historical presence and physical testimony of the original remain beyond replication.",
+    "tags": [
+      "Aesthetic Theory",
+      "Technology",
+      "Art",
+      "Aphorism"
+    ]
+  },
+  {
+    "quote": "The painting invites the spectator to contemplation; before it the spectator can abandon himself to his associations. Before the movie frame he cannot do so.",
+    "author": "Walter Benjamin",
+    "work": "The Work of Art in the Age of Mechanical Reproduction",
+    "year": 1935,
+    "translator": "Harry Zohn",
+    "hook": "How to contrast meditative absorption with perceptual disruption",
+    "why_it_lands": "Benjamin structures two balanced movements: the stationary painting yields space for private thought, whereas the moving film frame constantly replaces the viewer's mental image before it can settle.",
+    "tags": [
+      "Attention",
+      "Film Theory",
+      "Contrast",
+      "Perception"
+    ]
+  },
+  {
+    "quote": "It is easier to exhibit a portrait bust that can be sent here and there than to exhibit the statue of a divinity that has its fixed place in the interior of a temple.",
+    "author": "Walter Benjamin",
+    "work": "The Work of Art in the Age of Mechanical Reproduction",
+    "year": 1935,
+    "translator": "Harry Zohn",
+    "hook": "How to chart cultural secularization through exhibition mobility",
+    "why_it_lands": "Benjamin tracks the shift from ritual cult value to modern exhibition value through physical portability. An idol belongs to sacred geography; a portrait bust is packaged cargo designed to circulate.",
+    "tags": [
+      "History",
+      "Metaphor",
+      "Art",
+      "Observation"
+    ]
+  },
+  {
+    "quote": "The projector will play with his shadow before the public, and he himself must be content to play before the camera.",
+    "author": "Walter Benjamin",
+    "work": "The Work of Art in the Age of Mechanical Reproduction",
+    "year": 1935,
+    "translator": "Harry Zohn",
+    "hook": "How to articulate the alienation of cinematic performance",
+    "why_it_lands": "Benjamin divides the performer into two severed halves: the living human body performing for mechanical apparatus, and the light shadow projected thousands of miles away before strangers.",
+    "tags": [
+      "Alienation",
+      "Technology",
+      "Performance",
+      "Poetics"
+    ]
+  },
+  {
+    "quote": "It means being conscious and aware enough to choose what you pay attention to and to choose how you construct meaning from experience. Because if you cannot or will not exercise this kind of choice in adult life, you will be totally hosed.",
+    "author": "David Foster Wallace",
+    "work": "This is Water",
+    "year": 2009,
+    "translator": null,
+    "hook": "How to drop from philosophical gravitas to colloquial bluntness",
+    "why_it_lands": "Wallace constructs a rigorous, balanced sentence on epistemological consciousness, then detonates the academic register with four devastating words: 'you will be totally hosed'. The sudden drop to slang ensures the lesson punches through smugness.",
+    "tags": [
+      "Attention",
+      "Consciousness",
+      "Colloquialism",
+      "Tone Shift"
+    ]
+  },
+  {
+    "quote": "The capital-T Truth is about life before death. It is about making it to thirty, or maybe even fifty, without wanting to shoot yourself in the head.",
+    "author": "David Foster Wallace",
+    "work": "This is Water",
+    "year": 2009,
+    "translator": null,
+    "hook": "How to redefine ultimate truth as day-to-day psychic survival",
+    "why_it_lands": "Wallace rejects mystical afterlife promises. 'Capital-T Truth' is stripped of metaphysical decoration and recast as the grueling domestic discipline of keeping oneself from despair in adult routines.",
+    "tags": [
+      "Honesty",
+      "Aphorism",
+      "Psychology",
+      "Moral Clarity"
+    ]
+  },
+  {
+    "quote": "In this traffic, all these vehicles stuck and idling in my way: It’s not impossible that some of these people in SUVs have been in horrible auto accidents in the past and now find driving so traumatic that their therapist has all but ordered them to get a huge, heavy SUV... or that the Hummer that just cut me off is maybe being driven by a father whose little child is hurt or sick in the seat next to him... it is actually I who am in his way.",
+    "author": "David Foster Wallace",
+    "work": "This is Water",
+    "year": 2009,
+    "translator": null,
+    "hook": "How to dismantle default self-centeredness through active imaginative empathy",
+    "why_it_lands": "Wallace demonstrates the cognitive labor of empathy. By inventing plausible emergency backstories for obnoxious drivers, he forces the default ego—which assumes it is the righteous center of the universe—to surrender primacy.",
+    "tags": [
+      "Empathy",
+      "Interiority",
+      "Perspective",
+      "Narrative Strategy"
+    ]
+  },
+  {
+    "quote": "If your complete freedom of choice regarding what to think about seems too obvious to waste time talking about, I’d ask you to think about fish and water.",
+    "author": "David Foster Wallace",
+    "work": "This is Water",
+    "year": 2009,
+    "translator": null,
+    "hook": "How to expose unconscious blind spots through a fable",
+    "why_it_lands": "Wallace disarms intellectual cynicism with the simplest parable. The most vital, all-encompassing realities are often the hardest to see precisely because we swim inside them every second.",
+    "tags": [
+      "Parable",
+      "Philosophy",
+      "Understatement",
+      "Openings"
+    ]
   }
 ]

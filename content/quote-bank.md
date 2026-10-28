@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 142 | **Total Books Represented:** 42
+**Total Vetted Quotes:** 161 | **Total Books Represented:** 47
 
 ---
 
@@ -458,5 +458,60 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “‘See that? There’s a wheel for you! What do you say, would that wheel make it as far as Moscow, if it so happened, or wouldn’t it?’” | How to open an epic satire with arbitrary provincial dispute | Dialogue, Opening, Humor, Subtext |
 | “What is our life? A vale wherein grief dwells. What is this world? A crowd of people who do not feel.” | How to balance rhetorical lament against societal numbness | Aphorism, Philosophy, Moral Clarity, Cadence |
 | “Nothing escaped my fresh, keen attention, and, poking my nose out of my traveling cart, I gazed at the never-before-seen cut of some frock coat, and at the wooden boxes of nails, of sulphur yellowing from afar, of raisins and soap, flashing by in the doorway of a grocer’s shop together with jars of stale Moscow candy.” | How to capture youthful curiosity through an inventory of provincial junk | Sensory Detail, Inventory, Voice, Pacing |
+
+---
+
+## Neil Postman, Amusing Ourselves to Death (1985)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The written word endures, the spoken word disappears; and that is why writing is closer to the truth than speaking.” | How to claim cognitive authority for print over speech | Print Culture, Philosophy, Aphorism, Language |
+| “The men were less concerned with giving arguments than with ‘giving off’ impressions, which is what television does best.” | How to pivot from political rhetoric to visual theater | Media Ecology, Cultural Critique, Television, Precision |
+| “Silence will be more acceptable to me in the discussion of these questions than applause.” | How to demand intellectual sobriety over crowd performance | History, Rhetoric, Stillness, Moral Clarity |
+| “People will eat, talk, go to the bathroom, do push-ups or any of the things they are accustomed to doing in the presence of an animated television screen.” | How to desacralize a medium through domestic vulgarity | Sensory Detail, Domesticity, Satire, Media Ecology |
+
+---
+
+## Jia Tolentino, Trick Mirror: Reflections on Self-Delusion (2019)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The internet is a mirror, which is to say that it reflects back whatever you throw at it. But mirrors don’t just reflect; they distort. They make you look younger, or older, or funnier, or more interesting than you actually are.” | How to complicate a familiar optical metaphor | Metaphor, Digital Culture, Identity, Cadence |
+| “It’s because of the hashtag, the retweet, and the profile that solidarity on the internet gets inextricably tangled up with visibility, identity, and self-promotion.” | How to map software architecture to moral corruption | Technology, Cultural Critique, Precision, Tone |
+| “She is equally interested in whatever the market offers her—in the tools that will allow her to look more appealing, to be even more endlessly presentable, to wring as much value out of her particular position as she can.” | How to dissect self-commodification with ruthless precision | Capitalism, Identity, Observation, Voice |
+
+---
+
+## Hannah Arendt, Eichmann in Jerusalem: A Report on the Banality of Evil (1963)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “To grasp the meaning of the Final Solution is to grasp it as a call to think through from the beginning our most treasured belief: That we speak as individuals when we give an account of what we are doing.” | How to locate the moral abyss in linguistic unthinking | Moral Clarity, Philosophy, Responsibility, Language |
+| “It was in vain that he explained to anybody who would listen that ‘it would be contradictory to the order of the Reichsführer S.S. and illogical if at this stage other authorities again were to handle the Jewish problem.’” | How to expose genocide reduced to jurisdictional etiquette | Irony, Bureaucracy, History, Understatement |
+| “He began by stating emphatically that he was a Gottgläubiger... He then proceeded: ‘After a short while, gentlemen, we shall all meet again. Such is the fate of all men. Long live Germany, long live Argentina, long live Austria. I shall not forget them.’” | How to capture the grotesque comedy of unrepentant cliché | Banality of Evil, Dialogue, Irony, Cliché |
+| “Justice demands that the accused be prosecuted, defended, and judged, and that all the other questions of seemingly greater import – of ‘How could it happen?’ and ‘Why did it happen?’ – must wait.” | How to enforce judicial austerity against theatrical spectacle | Justice, Law, Moral Clarity, Discipline |
+
+---
+
+## Walter Benjamin, The Work of Art in the Age of Mechanical Reproduction (1935)
+*Trans. Harry Zohn*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The whole sphere of authenticity is outside technical – and, of course, not only technical – reproducibility.” | How to define aura through what machines cannot duplicate | Aesthetic Theory, Technology, Art, Aphorism |
+| “The painting invites the spectator to contemplation; before it the spectator can abandon himself to his associations. Before the movie frame he cannot do so.” | How to contrast meditative absorption with perceptual disruption | Attention, Film Theory, Contrast, Perception |
+| “It is easier to exhibit a portrait bust that can be sent here and there than to exhibit the statue of a divinity that has its fixed place in the interior of a temple.” | How to chart cultural secularization through exhibition mobility | History, Metaphor, Art, Observation |
+| “The projector will play with his shadow before the public, and he himself must be content to play before the camera.” | How to articulate the alienation of cinematic performance | Alienation, Technology, Performance, Poetics |
+
+---
+
+## David Foster Wallace, This is Water (2009)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It means being conscious and aware enough to choose what you pay attention to and to choose how you construct meaning from experience. Because if you cannot or will not exercise this kind of choice in adult life, you will be totally hosed.” | How to drop from philosophical gravitas to colloquial bluntness | Attention, Consciousness, Colloquialism, Tone Shift |
+| “The capital-T Truth is about life before death. It is about making it to thirty, or maybe even fifty, without wanting to shoot yourself in the head.” | How to redefine ultimate truth as day-to-day psychic survival | Honesty, Aphorism, Psychology, Moral Clarity |
+| “In this traffic, all these vehicles stuck and idling in my way: It’s not impossible that some of these people in SUVs have been in horrible auto accidents in the past and now find driving so traumatic that their therapist has all but ordered them to get a huge, heavy SUV... or that the Hummer that just cut me off is maybe being driven by a father whose little child is hurt or sick in the seat next to him... it is actually I who am in his way.” | How to dismantle default self-centeredness through active imaginative empathy | Empathy, Interiority, Perspective, Narrative Strategy |
+| “If your complete freedom of choice regarding what to think about seems too obvious to waste time talking about, I’d ask you to think about fish and water.” | How to expose unconscious blind spots through a fable | Parable, Philosophy, Understatement, Openings |
 
 ---
