@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 534 | **Total Books Represented:** 116
+**Total Vetted Quotes:** 554 | **Total Books Represented:** 118
 
 ---
 
@@ -334,6 +334,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Unlimited Can is the positive modal verb of achievement society.” | How to expose systemic coercion disguised as empowerment | Language, Power, Aphorism, Precision |
 | “Every characteristic absence of spirituality, every piece of common vulgarity, is due to an inability to resist a stimulus.” | How to locate cultural decline in attention mechanics | Attention, Moral Clarity, Philosophy, Stillness |
 | “Depression is melancholia plus equality, the perfect disorder of the democratic human being.” | How to formulate a startling sociological equation | Aphorism, Sociology, Psychology, Paradox |
+| “Harm does not come from negativity alone, but also from positivity—not just from the Other or the foreign, but also from the Same.” | How to overturn immunological assumptions through structural paradox. | philosophy, culture, insight, paradox |
+| “The violence of positivity does not presume or require hostility. It unfolds specifically in a permissive and pacified society.” | How to identify predatory coercion beneath institutional gentleness. | society, clarity, politics, modernity |
+| “Boredom is a warm gray fabric on the inside, with the most lustrous and colorful silks; in this fabric we wrap ourselves when we dream.” | How to elevate boredom into a rich sensory sanctuary. | imagery, stillness, metaphor, rest |
+| “Already the two were irresistibly recoiling, each into a private tiredness, not ours, but mine over here and yours over there.” | How to capture the alienating, divisive nature of modern fatigue. | isolation, psychology, rhythm, society |
 
 ---
 
@@ -715,6 +719,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Nothing can cure the soul but the senses, just as nothing can cure the senses but the soul.” | How to craft a chiasmus that locks two opposites in mutual dependency. | chiasmus, syntax, aphorism, sensory-detail |
 | “When one is in love, one always begins by deceiving one’s self, and one always ends by deceiving others. That is what the world calls a romance.” | How to trace the trajectory of romantic deceit with cynical precision. | wit, cynicism, syntax, satire |
 | “A cigarette is the perfect type of a perfect pleasure. It is exquisite, and it leaves one unsatisfied. What more can one want?” | How to redefine desire around intentional insufficiency. | paradox, wit, hedonism, voice |
+| “It was a poisonous book. The heavy odour of incense seemed to cling about its pages and to trouble the brain.” | How to dramatize intellectual seduction as atmospheric intoxication. | sensory, gothic, imagery, reading |
+| “Things that he had dimly dreamed of were suddenly made real to him. Things of which he had never dreamed were gradually revealed.” | How to structure psychological awakening across parallel antithetical clauses. | parallelism, craft, rhythm, psychology |
+| “‘You ask me why Berwick leaves a room when I enter it. It is because I know everything about his life, not because he knows anything about mine.’” | How to expose asymmetric social power through conversational retort. | dialogue, power, wit, irony |
+| “To get back one’s youth, one has merely to repeat one’s follies.” | How to deliver biting social satire in a single paradoxical maxim. | epigram, wit, paradox, brevity |
 
 ---
 
@@ -835,6 +843,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “The numbers were converging geometrically, the way a line of identical telephone poles converges toward the horizon in a perspective drawing.” | How to translate abstract mathematical convergence into physical perspective. | metaphor, visualization, science-writing, simplicity |
 | “Wherever two colors try to come together, the third always inserts itself, with a series of new, self-similar intrusions.” | How to describe fractal geometry through persistent physical intrusion. | animation, imagery, precision, clarity |
 | “It was as if a marble, caught between the conflicting tugs of two nearby valleys, would end up in the third and most distant valley instead.” | How to explain nonlinear dynamics through gravitational surprise. | analogy, didactic-craft, surprise, clarity |
+| “It is hard to break the habit of thinking of things in terms of how big they are and how long they last.” | How to challenge spatial and temporal scale with direct colloquial simplicity. | perspective, science, brevity, clarity |
+| “By the time 1,000 orbits have been drawn, the attractor has become an impenetrably tangled skein.” | How to visualize complex mathematics through textile imagery. | metaphor, visualization, craft, science |
+| “The more random a data stream, the more information would be conveyed by each new bit.” | How to distill information theory into an arresting scientific paradox. | information, paradox, brevity, clarity |
+| “‘When you reach an equilibrium in biology you’re dead,’ he said.” | How to deflate scientific reverence for equilibrium through mortal finality. | biology, aphorism, truth, science |
 
 ---
 
@@ -1387,5 +1399,28 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “The information delivered by a feedback loop can only affect future behavior; it can’t deliver the information, and so can’t have an impact fast enough to correct behavior that drove the current feedback.” | How to articulate systemic latency with rigorous structural logic. | clarity, systems, time, insight |
 | “The trouble is that the states created by interventions don’t last. The intoxication wears off. The subsidy is spent. The fertilizer is consumed or washed away.” | How to demonstrate the fragility of artificial fixes through rhythmic staccato syntax. | rhythm, brevity, parallelism, systems |
 | “Any new policy, especially if it’s effective, just pulls the system state farther from the goals of other actors and produces additional resistance, with a result that no one likes, but that everyone expends considerable effort in maintaining.” | How to diagnose policy resistance and exhausted equilibria. | systems, society, insight, paradox |
+
+---
+
+## Ted Chiang, Story of Your Life (1998)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It was strange trying to learn a language that had no spoken form. Instead of practicing my pronunciation, I had taken to squeezing my eyes shut and trying to paint semagrams on the insides of my eyelids.” | How to ground alien semiotics in intimate physical effort. | language, sensory, imagination, craft |
+| “We can’t simply cut their sentences into individual words and recombine them; we’ll have to learn the rules of their script before we can write anything legible.” | How to expose linear narrative bias through non-linear syntax. | writing, mind, language, structure |
+| “The physical universe was a language with a perfectly ambiguous grammar. Every physical event was an utterance that could be parsed in two entirely different ways, one causal and the other teleological, both valid, neither disqualifying the other.” | How to harmonize scientific determinism and human agency through linguistic ambiguity. | philosophy, physics, perspective, metaphor |
+| “From the beginning I knew my destination, and I chose my route accordingly. But am I working toward an extreme of joy, or of pain? Will I achieve a minimum, or a maximum?” | How to infuse variational physics with emotional resonance. | physics, emotion, time, reflection |
+
+---
+
+## Friedrich Nietzsche, On the Genealogy of Morals (1887)
+*Trans. Walter Kaufmann*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “We are unknown, we knowers, ourselves to ourselves: this has its own good reason.” | How to open philosophical inquiry with an ironic epistemological paradox. | opening, philosophy, insight, epistemology |
+| “The artist is after all merely the presupposition of his work, the womb, the soil, in certain cases the dung and manure, on which and out of which it grows—and consequently, in most cases, something that must be forgotten if the work itself is to be enjoyed.” | How to separate artistic majesty from human vanity through agricultural metaphor. | metaphor, art, craft, truth |
+| “The man who is truthful in that daring and extreme fashion, which is the presupposition of the faith in science, asserts thereby a different world from that of life, nature, and history; and in so far as he asserts the existence of that different world, come, must he not similarly repudiate its counterpart, this world, our world?” | How to interrogate scientific objectivity as a covert metaphysical longing. | philosophy, science, argument, depth |
+| “What if this belief becomes more and more incredible, what if nothing proves itself to be divine, unless it be error, blindness, lies—what if God Himself proved Himself to be our oldest lie?” | How to escalate existential stakes through relentless hypothetical questioning. | voice, intensity, philosophy, rhetoric |
 
 ---

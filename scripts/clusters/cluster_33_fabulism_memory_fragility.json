@@ -1,0 +1,47 @@
+{
+  "name": "Cluster 33: Fabulism, Delusion & Shared Fractures",
+  "output_file": "content/cluster_33_fabulism_delusion_raw.json",
+  "books": [
+    {
+      "remote_file": "The_Paper_Menagerie_and_Other_Stories_-_Ken_Liu.epub",
+      "author": "Ken Liu",
+      "work": "The Paper Menagerie and Other Stories",
+      "year": 2016,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Trick_Mirror_-_Jia_Tolentino.epub",
+      "author": "Jia Tolentino",
+      "work": "Trick Mirror: Reflections on Self-Delusion",
+      "year": 2019,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "One_Part_Woman_-_Perumal_Murugan.epub",
+      "author": "Perumal Murugan",
+      "work": "One Part Woman",
+      "year": 2010,
+      "translator": "Aniruddhan Vasudevan",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Train_To_Pakistan_-_Khushwant_Singh.epub",
+      "author": "Khushwant Singh",
+      "work": "Train to Pakistan",
+      "year": 1956,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The_Consolations_of_Philosophy_-_Alain_De_Botton.epub",
+      "author": "Alain de Botton",
+      "work": "The Consolations of Philosophy",
+      "year": 2000,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

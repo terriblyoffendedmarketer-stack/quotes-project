@@ -1,41 +1,46 @@
 {
-  "cluster_name": "Cluster 30: Craft Mastery, Lyrical Grief & Flash Parable",
+  "name": "Cluster 30: Craft Mastery, Lyrical Grief & Flash Parable",
   "output_file": "content/cluster_30_craft_lyricism_raw.json",
   "books": [
     {
-      "title": "Pity the Reader: On Writing with Style",
+      "remote_file": "Pity_the_Reader_-_Kurt_Vonnegut.epub",
       "author": "Kurt Vonnegut",
-      "drive_path": "Pity_the_Reader_-_Kurt_Vonnegut.epub",
+      "work": "Pity the Reader: On Writing with Style",
       "year": 2019,
-      "sample_chunks": 10
+      "sample_chunks": 10,
+      "max_candidates": 10
     },
     {
-      "title": "Sin and Syntax: How to Craft Wicked Good Prose",
+      "remote_file": "Constance Hale - Sin and Syntax.epub",
       "author": "Constance Hale",
-      "drive_path": "Constance Hale - Sin and Syntax.epub",
+      "work": "Sin and Syntax: How to Craft Wicked Good Prose",
       "year": 1999,
-      "sample_chunks": 10
+      "sample_chunks": 10,
+      "max_candidates": 10
     },
     {
-      "title": "The Bell Jar",
+      "remote_file": "Sylvia Plath - The Bell Jar.epub",
       "author": "Sylvia Plath",
-      "drive_path": "Sylvia Plath - The Bell Jar.epub",
+      "work": "The Bell Jar",
       "year": 1963,
-      "sample_chunks": 10
+      "sample_chunks": 10,
+      "max_candidates": 10
     },
     {
-      "title": "The Book Thief",
+      "remote_file": "The Book Thief - Markus Zusak .epub",
       "author": "Markus Zusak",
-      "drive_path": "The Book Thief - Markus Zusak .epub",
+      "work": "The Book Thief",
       "year": 2005,
-      "sample_chunks": 10
+      "sample_chunks": 10,
+      "max_candidates": 10
     },
     {
-      "title": "The Bus Driver Who Wanted to Be God",
+      "remote_file": "Etgar Keret - The Bus Driver Who Wanted to Be God.epub",
       "author": "Etgar Keret",
-      "drive_path": "Etgar Keret - The Bus Driver Who Wanted to Be God.epub",
+      "work": "The Bus Driver Who Wanted to Be God",
       "year": 2004,
-      "sample_chunks": 8
+      "sample_chunks": 8,
+      "max_candidates": 10
     }
   ]
 }
