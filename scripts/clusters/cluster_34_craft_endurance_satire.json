@@ -1,0 +1,48 @@
+{
+  "name": "Cluster 34: Physical Discipline, Doomsday Satire & Grief",
+  "output_file": "content/cluster_34_craft_endurance_satire_raw.json",
+  "books": [
+    {
+      "remote_file": "What_I_Talk_About_When_I_Talk_About_Running_-_Haruki_Murakami.epub",
+      "author": "Haruki Murakami",
+      "work": "What I Talk About When I Talk About Running",
+      "year": 2007,
+      "translator": "Philip Gabriel",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Cats_Cradle_-_Kurt_Vonnegut_Jr.epub",
+      "author": "Kurt Vonnegut",
+      "work": "Cat's Cradle",
+      "year": 1963,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Umberto Eco - Chronicles of a Liquid Society.epub",
+      "author": "Umberto Eco",
+      "work": "Chronicles of a Liquid Society",
+      "year": 2016,
+      "translator": "Richard Dixon",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "A_Monster_Calls_-_Patrick_Ness.epub",
+      "author": "Patrick Ness",
+      "work": "A Monster Calls",
+      "year": 2011,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The Mythical Man-Month - Frederick Brooks.epub",
+      "author": "Frederick P. Brooks Jr.",
+      "work": "The Mythical Man-Month",
+      "year": 1975,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

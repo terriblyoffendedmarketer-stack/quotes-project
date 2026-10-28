@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: 554 high-caliber quotes curated across 118 books (incorporating Cluster 29: *Story of Your Life*, *The Burnout Society*, *The Picture of Dorian Gray*, *On the Genealogy of Morals*, *Chaos* alongside previous clusters). Cluster 30 currently mining locally via Ollama.  
-> **Next**: Complete Cluster 30 (*Pity the Reader*, *Sin and Syntax*, *The Bell Jar*, *The Book Thief*, *The Bus Driver Who Wanted to Be God*) followed by Cluster 31 (*Notes from Underground*, *This Is Water*, *The Machine Stops*, *The Middle Passage*, *The Forty Rules of Love*).
+> **Current**: 574 high-caliber quotes curated across 120 books (incorporating Cluster 30: *Pity the Reader*, *Sin and Syntax*, *The Bell Jar*, *The Book Thief*, *The Bus Driver Who Wanted to Be God* alongside previous clusters). Cluster 31 currently mining locally via Ollama.  
+> **Next**: Complete Cluster 31 (*Notes from Underground*, *This Is Water*, *The Machine Stops*, *The Middle Passage*, *The Forty Rules of Love*) followed by Cluster 32 (*Bird by Bird*, *The Art of Communicating*, *Quiet*, *The Diary of a Young Girl*, *Blind Willow, Sleeping Woman*).
 
 ## Roadmap
 

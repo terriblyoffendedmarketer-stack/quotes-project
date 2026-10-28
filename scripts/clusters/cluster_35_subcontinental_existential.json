@@ -1,0 +1,49 @@
+{
+  "name": "Cluster 35: Partition Grief, Domestic Moralism & Feline Calm",
+  "output_file": "content/cluster_35_subcontinental_existential_raw.json",
+  "books": [
+    {
+      "remote_file": "Topi_Shukla_-_Rahi_masoom_raza.epub",
+      "author": "Rahi Masoom Raza",
+      "work": "Topi Shukla",
+      "year": 1969,
+      "translator": "Meenakshi Shivram",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Gunahon_Ka_Devta_-_Dharmaveer_Bharti.epub",
+      "author": "Dharamvir Bharati",
+      "work": "Gunahon Ka Devta",
+      "year": 1949,
+      "translator": "Poonam Saxena",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Best_Of_Satyajit_Ray_-_Satyajit_Ray.epub",
+      "author": "Satyajit Ray",
+      "work": "The Best of Satyajit Ray",
+      "year": 2001,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Elena_Knows - Claudia_Pineiro.epub",
+      "author": "Claudia Piñeiro",
+      "work": "Elena Knows",
+      "year": 2007,
+      "translator": "Frances Riddle",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Feline-Philosophy-John-Gray.epub",
+      "author": "John Gray",
+      "work": "Feline Philosophy: Cats and the Meaning of Life",
+      "year": 2020,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}
