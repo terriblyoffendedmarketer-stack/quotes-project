@@ -41,7 +41,10 @@ def process_cluster(cluster_file: Path):
     cluster = json.loads(cluster_file.read_text())
     cluster_name = cluster.get("name", "cluster")
     books = cluster.get("books", [])
-    out_file = Path(__file__).resolve().parent.parent / "content" / f"{cluster_name}_raw.json"
+    if cluster.get("output_file"):
+        out_file = Path(__file__).resolve().parent.parent / cluster["output_file"]
+    else:
+        out_file = Path(__file__).resolve().parent.parent / "content" / f"{cluster_name}_raw.json"
 
     all_quotes = []
     for b in books:

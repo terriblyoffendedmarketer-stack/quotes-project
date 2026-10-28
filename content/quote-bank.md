@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 374 | **Total Books Represented:** 92
+**Total Vetted Quotes:** 394 | **Total Books Represented:** 94
 
 ---
 
@@ -106,6 +106,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “They do not kill people on their Farms: they let hunger and winter and despair do their murders for them.” | How to unmask institutional cruelty without raising your voice | power, injustice, understatement |
 | “It is hard, I found, to be called traitor. Strange how hard it is, for it’s an easy name to call another man; a name that sticks, that fits, that convinces.” | How to weigh the asymmetrical weight of an accusation | language, betrayal, reputation |
 | “I was named, known, recognized; I existed. It was an intense relief.” | How to build a climax out of simple recognition | identity, relief, connection |
+| “‘Praise then darkness and Creation unfinished,’ he said, and there was darkness.” | How to sanctify incompletion through a liturgical inversion of Genesis. | inversion, mythic, shadow, philosophy |
+| “‘Sometimes you must go against the wheel’s turn,’ he said. He was as steady as ever, but in his walk, his voice, his bearing, vigor had been replaced by patience, and certainty by stubborn resolve.” | How to register character maturation through physical and tonal substitution. | characterization, subtlety, endurance, rhythm |
+| “‘We none of us choose,’ he said.” | How to distill existential determinism into six monosyllabic words. | brevity, fatalism, dialogue, candor |
+| “It’s words that make the trouble and confusion.” | How to challenge semantic confidence with an alien aphorism. | aphorism, language, theme, clarity |
 
 ---
 
@@ -377,6 +381,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “You can boast about anything if it’s all you have. Maybe the less you have, the more you are required to boast.” | How to expose defensive posturing with psychological precision | Aphorism, Human Nature, Character, Observation |
 | “It is one of the triumphs of the human that he can know a thing and still not believe it.” | How to define self-delusion as a paradoxical triumph | Irony, Psychology, Aphorism, Voice |
 | “They say man lived in trees one time. Somebody had to get dissatisfied with a high limb or your feet would not be touching flat ground now.” | How to frame human evolution through homely domestic grumbling | Voice, Humor, Dialogue, Perspective |
+| “He fought the quiet hateful brain down and it slipped aside and went about its work.” | How to personify self-destructive impulse as an autonomous domestic operative. | psychology, verbs, characterization, interiority |
+| “My father always told it at the last: No child ever had such care as I. The whole camp became my mother.” | How to invert collective desolation into maternal sanctuary. | pathos, voice, memory, paradox |
+| “He was regarded as thick-skinned and insensitive—even cruel. But this was only his skin. Underneath he was more vulnerable than most.” | How to invert an exterior character appraisal through somatic antithesis. | characterization, interiority, contrast, vulnerability |
+| “‘You take most kids,’ he said, ‘if they know the answer, why, they’re tickled to death to tell it. But Cal doesn’t say anything until you make him.’” | How to reveal character reserve through childhood contrast. | dialogue, contrast, characterization, voice |
 
 ---
 
@@ -446,6 +454,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “It seemed to me, especially as I was falling asleep, that some very cold and pliant octopus was stealing with its tentacles immediately and directly towards my heart.” | How to render neurotic dread as an aquatic creature | Sensory Detail, Metaphor, Dread, Interiority |
 | “‘Passport!’ barked the cat, holding out a plump paw.” | How to satirize totalitarian checkpoint culture in six words | Surrealism, Satire, Dialogue, Humor |
 | “The thing is ... that I was personally present at it all. I was on Pontius Pilate’s balcony, and in the garden when he talked with Kaifa, and on the platform, only secretly, incognito, so to speak...” | How to collapse biblical history into conversational gossip | Voice, Dialogue, Historical Fiction, Mystery |
+| “Gods, my gods! How sad the evening earth! How mysterious the mists over the bogs! He who has wandered in these mists, he who has suffered much before death, he who has flown over this earth bearing a burden beyond his strength knows it.” | How to open a narrative departure with sweeping liturgical sorrow. | lyricism, lament, atmosphere, voice |
+| “‘Excuse me, but I don’t believe you,’ Woland replied. ‘That cannot be: manuscripts don’t burn.’” | How to deliver an indestructible artistic creed in three words. | aphorism, theme, defiance, immortality |
+| “‘Oh, for pity’s sake,’ replied Azazello, ‘is it you I hear talking? Your friend calls you a master, you can think, so how can you be dead?’” | How to dismantle defeatism with sharp demonic pragmatism. | dialogue, satire, irony, defiance |
+| “And at night, by moonlight, I have no peace... Why am I being tormented? Surely I did everything to save him?” | How to render bureaucratic guilt as lunar insomnia. | guilt, interiority, theme, history |
 
 ---
 
@@ -1056,5 +1068,27 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “‘There’s a lot of pain,’ she said. ‘More than there should be.’” | How to convey terminal agony through quiet, unadorned dialogue. | dialogue, understatement, grief, restraint |
 | “There are worse things than being invisible, it said.” | How to pivot a childhood fear into an existential warning. | brevity, dialogue, parable, truth |
 | “‘Things are going a little faster than I’d hoped, sweetheart,’ she said, and her voice was thick, thick in a way that made Conor’s stomach twist even harder.” | How to anchor a devastating diagnosis in acoustic and somatic sensory detail. | sensory, repetition, somatic, pathos |
+
+---
+
+## William S. Burroughs, Junkie (1953)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “I was afraid some day the dream would still be there when I woke up.” | How to articulate chronic paranoia in a plain declarative sentence. | paranoia, interiority, brevity, understatement |
+| “‘No time for finesse,’ he remarked. The wallet was empty.” | How to puncture criminal calculation with a deadpan anti-climax. | dialogue, deadpan, understatement, anti-climax |
+| “Well, I guess he’ll die soon.” | How to register terminal decline with clinical, street-level detachment. | candor, fatalism, brevity, voice |
+| “Always build a John up. If he has any sort of body at all say, ‘Oh, don’t ever hurt me.’ A John is different from a sucker. When you’re with a sucker you’re on the alert all the time. You give him nothing. A sucker is just to be taken.” | How to codify transactional psychology into field-guide rules. | taxonomy, cynicism, dialogue, psychology |
+
+---
+
+## Charles Bukowski, Love Is a Dog from Hell (1977)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “we know God is dead, they’ve told us, but listening to you I wasn’t sure.” | How to challenge philosophical dogma with an offhand personal aside. | candor, voice, satire, philosophy |
+| “hey, my God, here’s a TWENTY! God, here’s a TWENTY I never knew I had! I’m RICH!” | How to capture instant destitution relief through frantic repetition. | dialogue, repetition, poverty, humor |
+| “he said, ‘I’m just going to read 3 more poems and then I’m going to step down and let Bukowski read.’” | How to build anticipation by highlighting the dread of an impending performance. | dialogue, deadpan, understatement, metafiction |
+| “I use acrylics, paint right out of the tube. I do the left side of the painting first with my left hand and then finish the right side with my right hand.” | How to demystify creative technique through deadpan manual procedure. | process, deadpan, candor, simplicity |
 
 ---
