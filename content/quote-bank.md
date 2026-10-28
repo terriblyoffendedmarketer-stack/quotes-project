@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 494 | **Total Books Represented:** 110
+**Total Vetted Quotes:** 514 | **Total Books Represented:** 114
 
 ---
 
@@ -158,6 +158,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “They’re wandering around in a library of books written in an unknown language, and just looking at the colors of the spines.” | How to indict scientific arrogance with an architectural metaphor | science, knowledge, metaphor |
 | “It wasn’t worth it. It really wasn’t.” | How to end cosmic ambition on four flat words | disillusion, brevity, exhaustion |
 | “It doesn’t matter. I mean, you do recognize my voice?” | How to dismantle certainty through a desperate check on sanity | haunting, identity, grief |
+| “We have no need of other worlds. We need mirrors. We don't know what to do with other worlds. A single world, our own, suffices us; but we can't accept it for what it is.” | How to demolish interstellar exploration as cosmic narcissistic projection. | cynicism, philosophy, space, existential |
+| “It wasn’t by accident that the ocean had been classed as a Metamorpha. Its undulating surface was capable of giving rise to the most diverse formations that bore no resemblance to anything terrestrial, on top of which the purpose—adaptive, cognitive, or whatever—of those often violent eruptions of plasmic ‘creativity’ remained a total mystery.” | How to depict non-human intelligence through incomprehensible plasmic architecture. | worldbuilding, sci-fi, alien, mystery |
+| “It simply doesn’t notice them, just as an elephant fails to see the ants crawling across its back.” | How to deflate human scientific hubris to microscopic insect scale. | brevity, simile, perspective, satire |
+| “Man has gone out to explore other worlds and other civilizations without having explored his own labyrinth of dark passages and secret chambers, and without finding what lies behind doorways that he himself has sealed.” | How to contrast interstellar expansion with psychological cowardice. | metaphor, interiority, psychology, contrast |
 
 ---
 
@@ -1305,5 +1309,49 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Love thine enemies because they are the instruments of your destiny.” | How to elevate adversaries into the unwitting architects of character. | philosophy, adversity, insight, brevity |
 | “Religion is a defense against the experience of God.” | How to indict clerical dogma as a shield against authentic revelation. | paradox, brevity, religion, candor |
 | “Desire is the bait, death is the hook. Adam and Eve were moved; the Buddha was not.” | How to compress the entire mythological history of temptation into two parallel clauses. | metaphor, contrast, rhythm, myth |
+
+---
+
+## Marshall McLuhan, Understanding Media: The Extensions of Man (1964)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The medium is the message. This is merely to say that the personal and social consequences of any medium—that is, of any extension of ourselves—result from the new scale that is introduced into our affairs by each extension of ourselves, or by any new technology.” | How to displace surface content to reveal structural media impact. | philosophy, technology, culture, perspective |
+| “All electric forms whatsoever have a decentralizing effect, cutting across the older mechanical patterns like a bagpipe in a symphony.” | How to illustrate institutional disruption with an auditory musical simile. | simile, sound, satire, technology |
+| “The instant character of electric information movement does not enlarge, but involves, the family of man in the cohesive state of village living.” | How to redefine global telecommunications through the intimacy of tribal village life. | paradox, culture, society, insight |
+| “We look at the present through a rear-view mirror. We march backwards into the future.” | How to dramatize historical disorientation through an automotive spatial metaphor. | brevity, metaphor, time, clarity |
+
+---
+
+## Cheryl Strayed, Tiny Beautiful Things: Advice on Love and Life from Dear Sugar (2012)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Love doesn’t make a mean drunk not a mean drunk or a narcissist not a narcissist or a jackass not a jackass.” | How to strip romantic idealism of its curative pretensions through rhythmic repetition. | candor, rhythm, relationships, clarity |
+| “You know that woman you mentioned who recently got the book deal—the one you describe as among your best friends? She knows you’re not truly happy for her. She knows it even if she’s convinced herself that she doesn’t know it; even if she’s tried to explain away whatever weird vibe you emitted when you pretended to be happy for her about her good news.” | How to unmask counterfeit friendship through microscopic emotional forensics. | candor, relationships, voice, insight |
+| “That question does not apply ‘to everything every day.’ If it does, you’re wasting your life. If it does, you’re a lazy coward, and you are not a lazy coward. Ask better questions, sweet pea.” | How to pierce performative self-pity with affectionate maternal ferocity. | voice, courage, dialogue, discipline |
+| “Be brave enough to break your own heart. You won't die of it; you will only die of pretending you aren't already bleeding.” | How to reframe voluntary emotional surrender as heroic survival. | vulnerability, courage, candor, pathos |
+
+---
+
+## Stuart Turton, The 7½ Deaths of Evelyn Hardcastle (2018)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘You’re a soul stripped bare, Doctor. No regrets, no wounds, none of the lies we tell ourselves so we can look in the mirror each morning. You’re honest.’” | How to define honesty as the absence of protective biographical scar tissue. | characterization, interiority, candor, dialogue |
+| “‘You don’t like the man you were, very well, be somebody else. There’s nothing stopping you, not any more.’” | How to present identity transformation as cold pragmatic reinvention. | dialogue, action, identity, clarity |
+| “‘Dance,’ I murmur. A peculiar name for such a joyless man.” | How to sketch character dissonance through ironic onomastics. | brevity, characterization, irony, wit |
+| “How terrible it is to love something death can touch. We are all the architects of our own torment, endlessly constructing cages from our own regrets.” | How to bind mortal attachment to self-inflicted psychological captivity. | metaphor, grief, pathos, mortality |
+
+---
+
+## Blake Crouch, Dark Matter (2016)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘There’s no proximity alert, no indication that you’re standing on the precipice.’” | How to convey life-altering catastrophe through the chilling silence of its approach. | tension, suspense, understatement, brevity |
+| “Everything that can happen will happen. Everything. Somewhere along this corridor, there’s a version of you and me that never made it into the box. And now we’re being tortured or already dead.” | How to translate quantum physics into visceral, somatic horror. | sci-fi, tension, terror, voice |
+| “I think sometimes she woke up in the night wondering if the path she took was the right one. Afraid it wasn’t. Wondering what a life with me might have been like.” | How to evoke the nocturnal haunting of alternate life paths. | pathos, regret, interiority, time |
+| “‘Are you happy with your life?’ Those are the last words I hear before the masked man knocks me unconscious.” | How to weaponize a philosophical self-help cliché into physical violence. | hook, opening, irony, tension |
 
 ---
