@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 354 | **Total Books Represented:** 88
+**Total Vetted Quotes:** 374 | **Total Books Represented:** 92
 
 ---
 
@@ -294,6 +294,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “To repeat: Your body is a recording device more effective than your mind.” | How to ground narrative authority in physiological sensation | Physicality, Sensory Detail, Craft, Precision |
 | “That’s using what I call 'cultural precedent'—moving the reader from a common experience, through several intermediary, escalating examples, and ultimately arriving at an extreme the reader could’ve and would’ve never accepted if you’d presented it from the start.” | How to boil the reader slowly through escalation | Suspense, Pacing, Technique, Audience |
 | “If you were my student I’d allow you to start out using space breaks to imply the passage of time. But don’t get comfortable. Those training wheels are going to come off sooner rather than later.” | How to challenge typographic shortcuts for narrative transitions | Transitions, Discipline, Craft, Direct Address |
+| “That’s using what I call ‘cultural precedent’ and moving the reader from a common experience, through several intermediary, escalating examples, and ultimately arriving at an extreme the reader could’ve and would’ve never accepted if you’d presented it from the start.” | How to escort the reader into taboo territory through escalating cultural precedents. | transgressive, escalation, structure, craft |
+| “Whether it was Channing Tatum or Jenna Jameson, you’d feel cheated. As readers or exotic dance enthusiasts, we want tension. We want a gradual discovery process.” | How to maintain reader appetite through disciplined withholding. | tension, pacing, curiosity, metaphor |
+| “The author photo is the ‘reality’ that underscores the magic of the fictional work. It’s as if an adult version of our annual school photos, this posed, stylized us, will convince readers that writing is a real job.” | How to expose authorial marketing as psychological theatre. | satire, metafiction, author-persona, candor |
+| “If you can identify the archetype your story depicts, you can more effectively fulfill the unconscious expectations of the reader.” | How to harness mythic archetypes to satisfy subliminal narrative appetite. | archetype, myth, psychology, craft |
 
 ---
 
@@ -1008,5 +1012,49 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “British rule is here not because God wills it but because they possess power and we do not dare to oppose them.” | How to puncture theological justification with cold material reality. | political-thought, clarity, antithesis, power |
 | “It takes a loud voice to make the deaf hear.” | How to justify extreme action through a razor-sharp acoustic metaphor. | metaphor, motto, sensory, rhetoric |
 | “It was perhaps Upton Sinclair that wrote at some place that just make a man a believer in immortality and then rob him of all his riches and possessions. He shall help you even in that ungrudgingly.” | How to expose religious exploitation through a biting, transactional scenario. | satire, argument, materialism, irony |
+
+---
+
+## June Casagrande, It Was the Best of Sentences, It Was the Worst of Sentences (2010)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It’s all good, clear, straightforward information that, unfortunately, has been shoved into the writer's mental Cuisinart.” | How to diagnose sentence congestion before it reaches the page. | metaphor, clarity, editing, syntax |
+| “Often, the simplest solution is to just drop all the conjunctions and fillers and parentheses and other connecting devices and make simple sentences out of what's left.” | How to untangle complex syntax by stripping connective tissue. | syntax, revision, concision, craft |
+| “It's the height of writer-serving writing and the root of my prejudice against semicolons.” | How to distinguish reader-serving prose from writer-serving vanity. | punctuation, candor, reader-first, craft |
+| “The Reader's needs should dictate which information you subordinate. If you subordinate the information about a ten-million-dollar gift, it should be a choice—a result of the power you wield over words.” | How to use grammatical subordination as an instrument of deliberate emphasis. | subordination, grammar, emphasis, syntax |
+
+---
+
+## Harishankar Parsai, Awara Bheed Ke Khatare (1998)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “गांधीजी से सब डरते हैं, सबसे अधिक वे डरते हैं, जो उनके विरोधी हैं।” | How to invert an adversary's rhetoric into involuntary veneration. | irony, satire, hindi-literature, politics |
+| “जो करोड़ खर्च करेगा, वह पाँच करोड़ कहीं से निकालेगा ही। इस तरह जनसेवकों का व्यापार और लूट एक साथ होगी।” | How to expose democratic corruption with mathematical inevitability. | satire, clarity, hindi-literature, corruption |
+| “तुम इन लोगों की परवाह मत करो. ये उस रूमाल को उठाने योग्य भी नहीं हैं, जो तुम्हारे हाथ से गिर गया हो।” | How to deliver a devastating dismissal through an aristocratic domestic prop. | dialogue, satire, hindi-literature, class |
+| “जातियों के संगठन हैं खास राजनेता के पीछे। जातियों की सशस्त्र फौजें हैं। राजनेता जाति के नाम पर अपनी पार्टी के लिए समर्थन माँगते हैं। मत माँगते हैं।” | How to trace the militarization of identity politics in clipped, staccato clauses. | staccato, political-thought, hindi-literature, candor |
+
+---
+
+## George Orwell, Selected Essays (1946)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Writing a book is a horrible, exhausting struggle, like a long bout of some painful illness. One would never undertake such a thing if one were not driven on by some demon whom one can neither resist nor understand.” | How to depict the agonizing compulsion of authorship through a somatic simile. | simile, candor, writing-process, confession |
+| “A duke who has served a prison sentence is still a duke, whereas a mere man about town, if once disgraced, ceases to be ‘about town’ for evermore.” | How to expose class asymmetry in a balanced antithetical clause. | antithesis, class, social-commentary, syntax |
+| “If a man cannot enjoy the return of spring, why should he be happy in a labour-saving Utopia?” | How to challenge technocratic utopianism with an elemental sensory test. | rhetorical-question, humanism, clarity, philosophy |
+| “All one can say is that, while civilization remains such that one needs distraction from time to time, ‘light’ literature has its appointed place; also that there is such a thing as sheer skill, or native grace, which may have more survival value than erudition or intellectual power.” | How to defend narrative craft against intellectual snobbery. | craft, readability, criticism, pragmatism |
+
+---
+
+## Patrick Ness, A Monster Calls (2011)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The yew tree is the most important of all the healing trees, it said. It lives for thousands of years. Its berries, its bark, its leaves, its sap, its pulp, its wood, they all thrum and burn and twist with life.” | How to animate an ancient botanical symbol with escalating polysyndetic verbs. | sensory, verbs, symbolism, mythic |
+| “‘There’s a lot of pain,’ she said. ‘More than there should be.’” | How to convey terminal agony through quiet, unadorned dialogue. | dialogue, understatement, grief, restraint |
+| “There are worse things than being invisible, it said.” | How to pivot a childhood fear into an existential warning. | brevity, dialogue, parable, truth |
+| “‘Things are going a little faster than I’d hoped, sweetheart,’ she said, and her voice was thick, thick in a way that made Conor’s stomach twist even harder.” | How to anchor a devastating diagnosis in acoustic and somatic sensory detail. | sensory, repetition, somatic, pathos |
 
 ---

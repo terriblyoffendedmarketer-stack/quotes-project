@@ -46,29 +46,32 @@ def process_cluster(cluster_file: Path):
     all_quotes = []
     for b in books:
         r_file = b["remote_file"]
+        title = b.get("title") or b.get("work")
+        author = b.get("author")
+        chunks = b.get("chunks") or b.get("sample_chunks", 8)
         local_epub = download_from_gdrive(r_file)
         if not local_epub or not local_epub.exists():
             print(f"Failed to fetch {r_file}, skipping.")
             continue
 
         print(f"\n==========================================")
-        print(f"Mining: {b['title']} by {b['author']}")
+        print(f"Mining: {title} by {author}")
         print(f"==========================================")
         try:
             quotes = mine_epub(
                 str(local_epub),
-                b["author"],
-                b["title"],
+                author,
+                title,
                 b.get("year"),
                 b.get("translator"),
-                max_chunks=b.get("chunks", 8)
+                max_chunks=chunks
             )
-            print(f"Mined {len(quotes)} candidate quotes from {b['title']}")
+            print(f"Mined {len(quotes)} candidate quotes from {title}")
             for q in quotes:
                 q["remote_file"] = r_file
             all_quotes.extend(quotes)
         except Exception as e:
-            print(f"Error mining {b['title']}: {e}")
+            print(f"Error mining {title}: {e}")
         finally:
             # Delete local EPUB immediately to preserve disk space
             if local_epub.exists():
