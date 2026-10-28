@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 241 | **Total Books Represented:** 67
+**Total Vetted Quotes:** 261 | **Total Books Represented:** 72
 
 ---
 
@@ -739,5 +739,62 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “The numbers were converging geometrically, the way a line of identical telephone poles converges toward the horizon in a perspective drawing.” | How to translate abstract mathematical convergence into physical perspective. | metaphor, visualization, science-writing, simplicity |
 | “Wherever two colors try to come together, the third always inserts itself, with a series of new, self-similar intrusions.” | How to describe fractal geometry through persistent physical intrusion. | animation, imagery, precision, clarity |
 | “It was as if a marble, caught between the conflicting tugs of two nearby valleys, would end up in the third and most distant valley instead.” | How to explain nonlinear dynamics through gravitational surprise. | analogy, didactic-craft, surprise, clarity |
+
+---
+
+## C. G. Jung, Memories, Dreams, Reflections (1961)
+*Trans. Richard & Clara Winston*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Something within me has been touched. A gradient has formed, and I must write.” | How to articulate creative compulsion through physical topography. | metaphor, creativity, interiority, craft-rule |
+| “I felt positively relieved when I had actually done something wrong. Then at least I knew what my guilty conscience was for.” | How to invert neurotic guilt with psychological relief. | paradox, psychology, inversion, insight |
+| “‘Anyone who takes the sure road is as good as dead. Then nothing happens any longer at any rate, not the right things.’” | How to warn against certainty as spiritual atrophy. | aphorism, urgency, stoicism, boldness |
+| “‘They say that they think with their heads,’ he replied. ‘Why of course. What do you think with?’ I asked him in surprise. ‘We think here,’ he said, indicating his heart.” | How to dramatize epistemological divergence in dialogue. | dialogue, contrast, mythology, perspective |
+
+---
+
+## Hermann Hesse, Demian (1919)
+*Trans. Michael Roloff & Michael Lebeck*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “I was glad when my father took me to task for my muddy boots. It diverted his attention by sidestepping the real issue and placed me in a position to endure reproaches that I could secretly transfer to the other, the more serious offense.” | How to endure minor domestic punishment as cover for deeper guilt. | psychology, interiority, childhood, deception |
+| “‘If you want something from someone and you look him firmly in both eyes and he doesn’t become ill at ease, give up. You don’t have a chance, ever!’” | How to formulate an ironclad diagnostic of interpersonal resolve. | character-voice, aphorism, power, directness |
+| “‘Fire worship was by no means the most foolish thing ever invented,’ he murmured to himself at one point.” | How to rehabilitate ancient primal rites through quiet musing. | understatement, mythology, philosophy, voice |
+| “‘It is true of Moses and Buddha, of Napoleon and Bismarck. What particular movement one serves and what pole one is directed from are matters outside one's own choice.’” | How to decouple historical agency from individual intent. | cadence, fate, history, perspective |
+
+---
+
+## Pat Conroy, The Prince of Tides (1986)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “My wound is geography. It is also my anchorage, my port of call.” | How to establish origin as both trauma and identity. | metaphor, opening, geography, cadence |
+| “‘I pray to him to make you die,’ the priest explained. ‘Then I feel much shame. And I pray for you to live. A priest should only pray for life. It is a great sin.’” | How to dramatize spiritual conflict through forbidden confession. | dialogue, vulnerability, confession, contrast |
+| “He’s a greatly misunderstood man, Mom,” she said. “I think he’s very well understood, Mom,” I said.” | How to expose familial denial through symmetrical dialogue. | dialogue, symmetry, family, subversion |
+| “In my family there were no clear lines between love and hate, cruelty and compassion.” | How to capture domestic ambivalence through paired opposites. | contrast, family, simplicity, cadence |
+
+---
+
+## Yann Martel, The Facts Behind the Helsinki Roccamatios (1993)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘The emotion in question is not the point; be it love, envy or apathy, so long as it is conveyed in a convincing manner, then the story will come alive.’” | How to locate narrative vitality in conviction rather than sentiment. | craft-rule, storytelling, conviction, insight |
+| “Time is on your side.” Fuck.” | How to puncture comforting platitudes with a single obscenity. | contrast, brevity, grief, defiance |
+| “It’s strangely moving. The earth yields to a great wedge on whose black marble walls the names of the war dead are inscribed.” | How to describe memorial architecture as an incision into the earth. | imagery, architecture, memorial, precision |
+| “‘It was about a young man who falls in love with a door. When a friend finds out, he destroys the door.’” | How to craft a surreal micro-parable on jealousy. | micro-fiction, parable, surrealism, brevity |
+
+---
+
+## Ramdhari Singh Dinkar, Kurukshetra (1946)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘और यह मृतक शरीर जो बचा है शेष, चुप-चुप, मानो, पूछता है मुझसे पुकार- विजय का एक उपहार मैं बचा हूँ, बोलो, जीत किसकी है और किसकी हुई है हार?’  ('And this corpse that remains behind, silent yet crying out: I am what remains as the prize of victory—tell me, whose is the triumph, and who has been defeated?')” | How to question the legitimacy of victory through a silent corpse. | poetry, moral-weight, war, interrogation |
+| “‘पर शिराएँ जिस महीरुह की अतल में हैं गड़ी, वह नहीं भयभीत होता क्रूर झंझावात से।’  ('The tree whose roots are buried in the deep abyss does not tremble before the cruel tempest.')” | How to anchor internal resilience in deep roots. | metaphor, resilience, poetry, nature |
+| “‘बताना उसे दर्शन की भ्रान्ति है। शोषण की श्रृंखला के हेतु बनती जो शान्ति, युद्ध है, यथार्थ में वो भीषण अशान्ति है;’  ('To call it peace is a philosophical delusion. The peace that is forged merely to preserve the chains of exploitation is, in truth, an ongoing, terrible war.')” | How to unmask institutional peace as concealed violence. | political-satire, philosophy, justice, polemic |
+| “‘अन्त नहीं नर-पंथ का, कुरुक्षेत्र की धूल, आँसू बरसें, तो यहीं खिले शान्ति का फूल।’  ('The dust of Kurukshetra is not the end of the human path; when tears rain down, it is right here that the flower of true peace will bloom.')” | How to transform a battlefield into ground for moral rebirth. | poetry, redemption, hope, metaphor |
 
 ---

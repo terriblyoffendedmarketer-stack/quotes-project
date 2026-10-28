@@ -1,0 +1,46 @@
+{
+  "name": "cluster_23_antidote_craft",
+  "theme": "Negative Capability, Nonfiction Craft & Irony",
+  "books": [
+    {
+      "remote_file": "Oliver Burkeman - The Antidote_ Happiness for People Who Can't Stand Positive Thinking (2012, The Text Publishing Company_Faber & Faber) - libgen.li.epub",
+      "author": "Oliver Burkeman",
+      "title": "The Antidote: Happiness for People Who Can't Stand Positive Thinking",
+      "year": 2012,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "On Writing Well, The Classic Guide to Writing Nonfiction.epub",
+      "author": "William Zinsser",
+      "title": "On Writing Well",
+      "year": 1976,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Myth of Sisyphus and Other Essays, The - Albert Camus.epub",
+      "author": "Albert Camus",
+      "title": "The Myth of Sisyphus and Other Essays",
+      "year": 1942,
+      "translator": "Justin O'Brien",
+      "chunks": 8
+    },
+    {
+      "remote_file": "One_Part_Woman_-_Perumal_Murugan.epub",
+      "author": "Perumal Murugan",
+      "title": "One Part Woman",
+      "year": 2010,
+      "translator": "Aniruddhan Vasudevan",
+      "chunks": 8
+    },
+    {
+      "remote_file": "Oscar Wilde - Only Dull People Are Brilliant at Breakfast.epub",
+      "author": "Oscar Wilde",
+      "title": "Only Dull People Are Brilliant at Breakfast",
+      "year": 2016,
+      "translator": null,
+      "chunks": 8
+    }
+  ]
+}

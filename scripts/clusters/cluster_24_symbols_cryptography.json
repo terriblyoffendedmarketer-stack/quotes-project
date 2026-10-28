@@ -1,0 +1,46 @@
+{
+  "name": "cluster_24_symbols_cryptography",
+  "theme": "Archetypes, Cryptography & Feline Observation",
+  "books": [
+    {
+      "remote_file": "Carl Jung - Man and His Symbols.epub",
+      "author": "C. G. Jung",
+      "title": "Man and His Symbols",
+      "year": 1964,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Neal Stephenson - Cryptonomicon.epub",
+      "author": "Neal Stephenson",
+      "title": "Cryptonomicon",
+      "year": 1999,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "On_Cats_-_Charles_Bukowski.epub",
+      "author": "Charles Bukowski",
+      "title": "On Cats",
+      "year": 2015,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Oliver Burkeman - Help! (2011, Canongate Books Ltd) - libgen.li.epub",
+      "author": "Oliver Burkeman",
+      "title": "Help! How to Become Slightly Happier and Get a Bit More Done",
+      "year": 2011,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Orson Scott Card - Ender's Game.epub",
+      "author": "Orson Scott Card",
+      "title": "Ender's Game",
+      "year": 1985,
+      "translator": null,
+      "chunks": 8
+    }
+  ]
+}
