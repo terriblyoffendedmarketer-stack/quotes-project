@@ -1,0 +1,46 @@
+{
+  "name": "cluster_11_modern_classics",
+  "theme": "Modern Classics & Philosophical Allegory",
+  "books": [
+    {
+      "remote_file": "The Book Thief - Markus Zusak .epub",
+      "author": "Markus Zusak",
+      "title": "The Book Thief",
+      "year": 2005,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Richard Adams - Watership Down.epub",
+      "author": "Richard Adams",
+      "title": "Watership Down",
+      "year": 1972,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "The Dispossessed - Ursula K Le Guin.epub",
+      "author": "Ursula K. Le Guin",
+      "title": "The Dispossessed",
+      "year": 1974,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Frankenstein.epub",
+      "author": "Mary Shelley",
+      "title": "Frankenstein",
+      "year": 1818,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Picture of Dorian Gray.epub",
+      "author": "Oscar Wilde",
+      "title": "The Picture of Dorian Gray",
+      "year": 1890,
+      "translator": null,
+      "chunks": 8
+    }
+  ]
+}

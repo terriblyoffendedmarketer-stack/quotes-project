@@ -1,0 +1,46 @@
+{
+  "name": "cluster_12_satire_subversion",
+  "theme": "Hindi Satire & Philosophical Subversion",
+  "books": [
+    {
+      "remote_file": "Harishankar Parsai - Nithalle Ki Diary.epub",
+      "author": "Harishankar Parsai",
+      "title": "Nithalle Ki Diary",
+      "year": 1968,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Harishankar Parsai - Vaishnav Ki Phislan.epub",
+      "author": "Harishankar Parsai",
+      "title": "Vaishnav Ki Phislan",
+      "year": 1978,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Umberto Eco - Six Walks in the Fictional Woods.epub",
+      "author": "Umberto Eco",
+      "title": "Six Walks in the Fictional Woods",
+      "year": 1994,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "Feline-Philosophy-John-Gray.epub",
+      "author": "John Gray",
+      "title": "Feline Philosophy: Cats and the Meaning of Life",
+      "year": 2020,
+      "translator": null,
+      "chunks": 8
+    },
+    {
+      "remote_file": "David Foster Wallace - Infinite Jest.epub",
+      "author": "David Foster Wallace",
+      "title": "Infinite Jest",
+      "year": 1996,
+      "translator": null,
+      "chunks": 8
+    }
+  ]
+}
