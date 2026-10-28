@@ -1,0 +1,46 @@
+{
+  "name": "Cluster 46: Solitude, Trade Winds, Fungal Gothic & Patient Vengeance",
+  "output_file": "content/cluster_46_solitude_trade_gothic_revenge_raw.json",
+  "books": [
+    {
+      "remote_file": "Paul Auster - The Invention of Solitude.epub",
+      "author": "Paul Auster",
+      "work": "The Invention of Solitude",
+      "year": 1982,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Peter Frankopan - The Silk Roads.epub",
+      "author": "Peter Frankopan",
+      "work": "The Silk Roads: A New History of the World",
+      "year": 2015,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Salt, Fat, Acid, Heat - Samin Nosrat.epub",
+      "author": "Samin Nosrat",
+      "work": "Salt, Fat, Acid, Heat",
+      "year": 2017,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "T. Kingfisher - What Moves the Dead (2022, Tom Doherty Associates) - libgen.li.epub",
+      "author": "T. Kingfisher",
+      "work": "What Moves the Dead",
+      "year": 2022,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "The Count of Monte Cristo - Alexander Dumas.epub",
+      "author": "Alexandre Dumas",
+      "work": "The Count of Monte Cristo",
+      "year": 1844,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

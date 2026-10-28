@@ -1,0 +1,46 @@
+{
+  "name": "Cluster 47: Lyrical Myth, Continental Scope, Salmon Parody & Zombie Epistolary",
+  "output_file": "content/cluster_47_narrative_scale_parody_psychosis_raw.json",
+  "books": [
+    {
+      "remote_file": "The_Name_of_the_Wind.epub",
+      "author": "Patrick Rothfuss",
+      "work": "The Name of the Wind",
+      "year": 2007,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "War and Peace - Leo Tolstoy.epub",
+      "author": "Leo Tolstoy",
+      "work": "War and Peace",
+      "year": 1869,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Umberto Eco - How to travel with a salmon & other essays.epub",
+      "author": "Umberto Eco",
+      "work": "How to Travel with a Salmon & Other Essays",
+      "year": 1992,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "World war z - Brooks Max .epub",
+      "author": "Max Brooks",
+      "work": "World War Z",
+      "year": 2006,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Victorian Psycho - Virginia Feito.epub",
+      "author": "Virginia Feito",
+      "work": "Victorian Psycho",
+      "year": 2024,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 794 | **Total Books Represented:** 162
+**Total Vetted Quotes:** 814 | **Total Books Represented:** 166
 
 ---
 
@@ -781,6 +781,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “‘चमचा ज्यों-ज्यों परिपक्व होता जाता है, त्यों-त्यों नेता बनता जाता है।’  ('As a sycophant ripens, he turns into a leader.')” | How to craft a biological aphorism on institutional sycophancy. | aphorism, political-satire, subversion, cynicism |
 | “देखो, हुआ ऐसा कि उसके पड़ोसी ने सुबह अखबार में उसकी तारीफ पढ़ी। वह शिवशंकर के पास गया और बोला— शिवशंकर बाबू, आज अखबार में आपके बारे में छपा है। यह सुनते ही शिवशंकर घबराकर चिल्लाया, 'अरे बाप रे! छप गया!' और वहीं गिर पड़ा।  ('His neighbor read praise of him in the morning paper. He rushed to Shivshankar and said, "Shivshankar Babu, something about you is printed in today\'s paper!" Hearing this, Shivshankar panicked and screamed, "Oh my god! It got printed!" and collapsed right on the spot.')” | How to expose civic terror through an innocent celebration. | comic-timing, absurdism, character-voice, irony |
 | “‘बात यह है कि सरकारी दल बहुत चतुर है। वह कुछ ऐसे सदस्य ले आया है जिन्हें यहाँ पैर रखते ही नींद आने लगती है। वे दस्तखत करके सो जाते हैं, तो शाम को ही उठते हैं।’  ('The fact is, the ruling party is exceedingly clever. It brought in members who start feeling drowsy the moment they step into the chamber. They sign the roll, fall asleep, and wake up only in the evening.')” | How to satirize legislative complicity as deliberate slumber. | satire, political-voice, understatement, humor |
+| “कोई ‘प्राइवेसी’ नहीं—जिसका अपना मकान नहीं, उसकी भी क्या ‘प्राइवेसी’ !” | How to expose property hierarchy through an imported bourgeois buzzword | satire, cultural critique, economy |
+| “मेरे भगवान ने ऐसे ‘केस’ में पहले भी मदद की है? यानी ऐसे मामले को ‘डील’ करने का उन्हें अनुभव है या नहीं?” | How to treat divine providence like a junior bureaucratic clerk | satire, irony, humor |
+| “सजा उसके भले के लिए दिलवाओ, उससे कहो कि वह आज से लगातार तीन दिन साहब के बँगले के सामने खड़ा होकर उन्हें गालियाँ दे। जब साहब उसे डाटने आएँ, तब अपना नाम और पद बता दे।” | How to weaponize administrative absurdity as revenge advice | satire, dialogue, bureaucracy |
+| “‘कर्मण्येवाधिकारस्ते मा फलेषु कदाचन्’—तुम्हारे अधिकार में सिर्फ काम करना है; तुम फल की इच्छा मत करो।” | How to expose scripture being weaponized against labor rights | satire, scripture subversion, irony |
 
 ---
 
@@ -1984,5 +1988,51 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “It is pounded in our mortar and pestle along with black cardamom, shallots and fennel over which the minced meat is added and whole lot is hammered till the mince becomes silky and the spices are amalgamated into its very fibre.” | How to build physical kinetic momentum in culinary prose | sensory detail, kinetic prose, rhythm |
 | “Every single dish, from main courses like the Dogri khatta meat to desserts like payasam and halwa, is bathed in a medley of spice, to the extent that it is the spice that defines a dish rather than the main ingredient.” | How to invert culinary hierarchy through sensory primacy | clarity, nonfiction craft, voice |
 | “It’s another matter entirely that today, you could claim to have never heard of Tidore or Run and not elicit gasps of astonishment but try telling your colleagues you’ve not heard of Manhattan!” | How to expose historical amnesia through geographical juxtaposition | irony, history, voice |
+
+---
+
+## Peter Abelard and Heloise, The Letters of Abelard and Heloise (1132)
+*Trans. Betty Radice*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “I have armed my hands against myself; I have exhausted my strength in constant exercises; I comment upon St. Paul; I contend with Aristotle: in short, I do all I used to do before I loved you, but all in vain; nothing can be successful that opposes you.” | How to show intellectual discipline collapsing before emotional memory | passion, syntax, rhetoric |
+| “But though I am no longer deceived by love, I am not cured.” | How to sever intellectual clarity from emotional healing in a single sentence | aphorism, understatement, psychological truth |
+| “Alas! I am humbled under love, and not under the Cross.” | How to expose spiritual despair through rival allegiances | spiritual crisis, contrast, paradox |
+| “My passions there are in rebellion; I preside over others but cannot rule myself.” | How to dramatize the hypocrisy of institutional authority | irony, characterization, voice |
+
+---
+
+## Khushwant Singh, Paradise and Other Stories (2004)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The trouble with India is that it’s a country where everyone is trying to be something they are not.” | How to open with an uncompromising national diagnosis | voice, opening, social critique |
+| “She had laid out her sari, petticoat and blouse on the bed. By way of greeting she said, 'Saara chippak-chippak—sticky all over—belly, thighs, all chippak-chippak.'” | How to puncture decorum through raw domestic vernacular | sensory detail, dialogue, realism |
+| “Take no notice of what that foul-mouthed fellow says; it’s just envy. See where he is today, close to retirement and only an executive engineer.” | How to capture middle-class resentment through bureaucratic hierarchy | satire, characterization, subcontinental realism |
+| “It looked squat, staid and lifeless, like middle-aged women who had let themselves go.” | How to animate architectural neglect with a biting physical simile | simile, imagery, voice |
+
+---
+
+## Isaac Asimov, Asimov's Mysteries (1968)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “They didn’t do anything. They stuck to the rule of being fair to the reader.” | How to define narrative integrity as a contractual duty | mystery craft, clarity, storytelling |
+| “Steam—at the low temperature of space? Steam—at the low pressure of space!” | How to dramatize scientific revelation through repeating interrogatives | pacing, rhythm, science fiction craft |
+| “It is the hallmark of the Ultras, I think. They are all very cold, very rigid, very sure of themselves. They can't empathize, or they wouldn’t speak of killing off billions of human beings.” | How to define technocratic tyranny through emotional detachment | characterization, voice, morality |
+| “You’ve got a gamma-fogged semireflector. Every time the positron beam circles round to its position the drive flickers out for a second.” | How to create tactile mechanical tension with procedural science fiction | worldbuilding, sensory detail, clarity |
+
+---
+
+## Uketsu, The Floor Plan (Strange Houses) (2021)
+*Trans. Louise Heal Kawai*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “They actively built walls that made the kitchen smaller.” | How to generate spatial dread through deliberate architectural anomaly | suspense, architectural dread, understatement |
+| “The idea that there were two of these houses… It’s not all that unusual for houses to have what they call ‘interior windows’, little openings between rooms. But rarely, if ever, do you find them in this double-leaf style.” | How to turn blueprint minutiae into a horrifying realization | deduction, atmosphere, pacing |
+| “They didn't decide to leave it. They had to. They could not build a room over that area.” | How to use deductive negative space to suggest concealment | syntax, mystery craft, suspense |
+| “The couple used those rooms to play the ideal family as they raised him. But, at the same time, the house has a darker face too.” | How to contrast suburban domestic performance with physical entrapment | contrast, psychological truth, atmosphere |
 
 ---
