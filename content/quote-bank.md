@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 754 | **Total Books Represented:** 152
+**Total Vetted Quotes:** 774 | **Total Books Represented:** 157
 
 ---
 
@@ -1870,5 +1870,63 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Dreams are the kind of things you can—when you need to—borrow and lend out.” | How to treat nocturnal fantasy as circulating currency | surrealism, understatement, voice |
 | “Lampreys think very lamprey-like thoughts. About lamprey-like topics in a context that’s very lamprey-like. There are no words for those thoughts.” | How to delineate alien consciousness through linguistic refusal | deadpan, defamiliarization, style |
 | “Don’t look away, look right at it.” | How to command unflinching attention in seven monosyllables | brevity, imperative, candor |
+
+---
+
+## Ryu Murakami, Coin Locker Babies (1980)
+*Trans. Ralph McCarthy*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It was the heat. No one could have gone on sleeping in a damp, double-sealed box like that.” | How to open trauma with physical thermodynamics | sensory-detail, realism, brevity |
+| “It’s not that we’re unhappy with each other, not at all; it’s just that it’s not all that easy being a grown-up, all alone in the world.” | How to diagnose adult loneliness without melodrama | candor, understatement, psychology |
+| “It was then that Kiku realized for the first time that he was fumbling around with a corpse.” | How to land horror in a single retrospective realization | understatement, shock, precision |
+| “You’re the one out of line. If you want to act all proud and uppity, if you’re so keen on exercising your inalienable rights, go do it in a hotel lobby or your own marble palace.” | How to skewer bourgeois entitlement with street geography | dialogue, cynicism, class-critique |
+
+---
+
+## Rahi Masoom Raza, Scene: 75 (1977)
+*Trans. Poonam Saxena*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It is said that after Lalaji died, swarming circles of ants waited for him on those paths for months… Lalaji made a lot of money in the Second World War. He got many army tenders. And from an ordinary man, he turned into a Big Man.” | How to weave commercial war profiteering into mythic grotesque | irony, satire, social-anatomy |
+| “My question is, why, in this country of the unemployed, in Bharat that is India, does any girl’s mother have the right to name her daughter Rosy?” | How to weaponize a child's name against postcolonial pretension | satire, cultural-critique, irony |
+| “VD was a strange fellow. He was always grave, as if the revolution would seek him out and land up at his very doorstep, as if in all of India no one else was waiting for a revolution except him.” | How to caricature revolutionary vanity with domestic solitude | character-sketch, irony, voice |
+| “Writing a story isn’t difficult. Just pick up a pen and start writing.” | How to mock artistic mysticism with disarming simplicity | craft, deadpan, satire |
+
+---
+
+## Harishankar Parsai, Vikalang Shraddha Ka Daur (1980)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “मैंने कतई ऐसा कुछ नहीं किया, जिससे ईमानदार माना जाऊँ। न जाने उन्हें कैसे यह भ्रम हो गया कि मैं ईमानदार हूँ।” | How to weaponize voluntary confession to mock public naivety | satire, paradox, irony |
+| “मैं जानता हूँ कि तुम एक अरसे से मेरी मृत्यु का शुभ समाचार सुनने को लालायित हो, पर फिलहाल मैं तुम्हें निराश कर रहा हूँ। इंतज़ार करो। किसी दिन सचमुच मरकर तुम पर मेहरबानी करूँगा।” | How to turn a death wish into polite social sabotage | dark-humor, candor, epistolary-craft |
+| “वे आचार्य चाहे साहित्य के हों, इतिहास के, अर्थशास्त्र के... जिन्दगी की किसी चीज की परिभाषा नहीं बदलने देने के लिए दिमाग-तोड़ मेहनत करते हैं, पुरस्कार प्राप्त करने का कष्ट उठाते हैं, सम्मान में माला पहनने का त्रास भोगते हैं।” | How to frame academic self-preservation as heroic martyrdom | satire, intellectual-craft, irony |
+| “प्यार? हाँ, हर बुर्जुआ क्रान्तिकारिता को मारने के लिए प्यार करता है। यह प्यार षड्यंत्र है।” | How to parody political dogmatism by criminalizing tenderness | satire, parody, brevity |
+
+---
+
+## Satyajit Ray, The Complete Adventures of Feluda (1988)
+*Trans. Gopa Majumdar*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “If Feluda needs information about any past event, he goes to Uncle Sidhu instead of the National Library. His work gets done far more quickly, and with good cheer.” | How to establish character efficiency through living archives | character-detail, observation, charm |
+| “You made one false move in Calcutta, Mr Batra. In trying to establish that there were two Batras, you bought a kukri at the gift shop in your hotel and gave them a fake note.” | How to unmask criminal cunning through tourist trivia | deduction, irony, precision |
+| “It may only be an accident of geography, but can you think of any other state that has lush green farmland, dry and arid areas, a forest like the Sunderbans, huge rivers like the Ganga, Padma and Meghna, an ocean at its bottom and the Himalayas at its top?” | How to sketch regional magnificence through geographic contrast | landscape, scale, lyricism |
+| “It is probably only my vanity that made me want to open the chest and look at the necklace. I had just watched my mother wear it on the screen and it looked lovely on her. So I thought I’d put it round my own neck and see how I looked.” | How to trace a crime back to fragile domestic imitation | psychology, candor, vulnerability |
+
+---
+
+## Pranay Lal, Indica: A Deep Natural History of the Indian Subcontinent (2016)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Each piece of rock, every pinch of soil and every little fossil tells a story, and because the earth is so old, there are an infinite number of stories to tell.” | How to turn geological strata into endless narrative craft | metaphor, deep-time, craft |
+| “Of all known liquids water is probably the most studied and least understood.” | How to establish mystery in the most ubiquitous element | paradox, brevity, scientific-wonder |
+| “The signature of the volcanic flow is its basalt rocks which, over 5 million years of volcanic activity, piled up to form a plateau more than 3350 metres high covering much of central and western India.” | How to convey continental scale through basalt accumulation | deep-time, scale, precision |
+| “The transformation of the fierce wolf-like ancestors of sheep into giant whales and gentle dolphins is the Cinderella story of the animal world.” | How to illuminate evolutionary drift through fairy tale subversion | metaphor, wonder, evolutionary-craft |
 
 ---
