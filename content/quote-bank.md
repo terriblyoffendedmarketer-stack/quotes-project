@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 694 | **Total Books Represented:** 138
+**Total Vetted Quotes:** 714 | **Total Books Represented:** 142
 
 ---
 
@@ -1213,6 +1213,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “hey, my God, here’s a TWENTY! God, here’s a TWENTY I never knew I had! I’m RICH!” | How to capture instant destitution relief through frantic repetition. | dialogue, repetition, poverty, humor |
 | “he said, ‘I’m just going to read 3 more poems and then I’m going to step down and let Bukowski read.’” | How to build anticipation by highlighting the dread of an impending performance. | dialogue, deadpan, understatement, metafiction |
 | “I use acrylics, paint right out of the tube. I do the left side of the painting first with my left hand and then finish the right side with my right hand.” | How to demystify creative technique through deadpan manual procedure. | process, deadpan, candor, simplicity |
+| “It was still 103 degrees. When I opened my mail I found my auto insurance company wanted $76 more.” | How to anchor existential dread in petty arithmetic | prose-rhythm, sensory-detail, candor |
+| “people are not good to each other. the rich are not good to the rich the poor are not good to the poor.” | How to strip human solidarity down to cold observation | candor, sentence-mechanics, understatement |
+| ““it’s good to hear your voice,” she’d say. “it’s good to hear your voice too,” I’d say.” | How to expose emotional weariness through mechanical repetition | dialogue, understatement, prose-rhythm |
+| “Hank, nobody loves you if you don’t have money.” | How to cut straight to the transactional bone | candor, dialogue, brevity |
 
 ---
 
@@ -1708,5 +1712,49 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “I contrast my illiterate writing with your scholarly one, and am ashamed. So dull, I am; dull outwardly, at least; all oafish and muddy; but not dull inside.” | How to defend inner incandescent vitality beneath self-deprecating mud. | epistolary, vulnerability, voice, contrast |
 | “She is utterly unaffected: there is no outward adornments – she dresses quite atrociously.” | How to sketch character charm through sartorial carelessness. | character, portrait, wit, fashion |
 | “I try to romanticise Berlin by thinking that Russia lies over there to the east. But the only tangible reminder of Russia is the piercing east wind which comes to us straight off the steppes.” | How to replace poetic nostalgia with harsh physical meteorology. | geography, weather, atmosphere, romanticism |
+
+---
+
+## Kurt Vonnegut, Timequake (1997)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Only when free will kicked in again could they stop running obstacle courses of their own construction.” | How to diagnose self-inflicted ritual | irony, philosophical-depth, observation |
+| “It’s true. Actors know everything they are going to say and do, and how everything is going to come out in the end, for good or ill, when the curtain goes up on Act One, Scene One.” | How to render determinism through theatrical craft | metaphor, existential-craft, irony |
+| “Listen, if it isn't a timequake dragging us through knothole after knothole, it’s something else just as mean and powerful.” | How to establish folksy fatalism | vernacular, voice, metaphor |
+| ““I only regret that I have but one life to lose for my country,” said the American patriot Nathan Hale. “Fuck the bums!” said the American patriot Kilgore Trout.” | How to puncture monumentality with vulgar counterpoint | satire, juxtaposition, sentence-mechanics |
+
+---
+
+## Alain de Botton, The School of Life: An Emotional Education (2019)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “We have the technology of an advanced civilization balancing precariously on an emotional base that has not developed much since we dwelt in caves.” | How to dramatize civilizational asymmetry | metaphor, observation, perspective |
+| “If a parent shouts at us, the foundations of the earth tremble.” | How to capture a child's psychological scale | perspective, psychological-truth, brevity |
+| “It is easy to imagine we know what we think, what we feel, and what’s going on in our heads. But we rarely do entirely.” | How to puncture cognitive complacency | understatement, psychological-truth, candor |
+| “It is always better to touch the ur-argument than for a relationship to die by a thousand squabbles.” | How to name the root cause of friction | intimacy, observation, clarity |
+
+---
+
+## Kurt Vonnegut, Welcome to the Monkey House (1968)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It’s a good way to grow up fast. Took me about six months to find out I was killing myself for peanuts, that a little guy couldn't even save a village three blocks long, and that the world wasn't worth saving anyway. So I started looking out for Number One.” | How to chart the arithmetic of disillusionment | voice, pacing, candor |
+| “The deer is not on the payroll—he isn't going to wait for you.” | How to humble human vanity through wildlife economy | deadpan, metaphor, irony |
+| “He looked like a machine, but he was a whole lot less like a machine than plenty of people I could name.” | How to turn mechanical comparison into moral verdict | irony, satire, observation |
+| “Just because you have talent, it doesn’t mean that you have to do something with it.” | How to emancipate art from obligation | paradox, craft, brevity |
+
+---
+
+## Pierce Brown, Red Rising (2014)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Patience is the better part of valor. And obedience the better part of humanity.” | How to invert classic maxims into ideological poison | subversion, sentence-mechanics, irony |
+| “They’ll preach caution. As if caution has ever helped them. We haven’t won a Laurel in ages.” | How to capture youthful defiance in clipped cadence | cadence, voice, pacing |
+| “The toughest ant is yet but an ant.” | How to crush individual distinction with scale | brevity, metaphor, candor |
+| “We have to leave the castle to get it, Sir Numbnuts. A real siege? We’d last five days without replenishing our water. Seven if we drank the animals’ blood before the salt jacks us up.” | How to puncture military romanticism with grim logistics | dialogue, realism, candor |
 
 ---

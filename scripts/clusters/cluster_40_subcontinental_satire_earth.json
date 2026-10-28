@@ -1,0 +1,49 @@
+{
+  "name": "Cluster 40: Subcontinental Satire, Visceral Tokyo & Deep Earth",
+  "output_file": "content/cluster_40_subcontinental_satire_earth_raw.json",
+  "books": [
+    {
+      "remote_file": "Coin Locker Babies - Ryu Murakami.epub",
+      "author": "Ryu Murakami",
+      "work": "Coin Locker Babies",
+      "year": 1980,
+      "translator": "Ralph McCarthy",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Scene__75_-_Rahi_Masoom_Raza.epub",
+      "author": "Rahi Masoom Raza",
+      "work": "Scene: 75",
+      "year": 1977,
+      "translator": "Poonam Saxena",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Harishankar Parsai - Vikalang Shraddha Ka Daur.epub",
+      "author": "Harishankar Parsai",
+      "work": "Vikalang Shraddha Ka Daur",
+      "year": 1980,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Feluda - The_Complete_Adventures_Of_Feluda_-_Satyajit_Ray.epub",
+      "author": "Satyajit Ray",
+      "work": "The Complete Adventures of Feluda",
+      "year": 1988,
+      "translator": "Gopa Majumdar",
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Pranay Lal - Indica_ A Deep Natural History of the Indian Subcontinent.epub",
+      "author": "Pranay Lal",
+      "work": "Indica: A Deep Natural History of the Indian Subcontinent",
+      "year": 2016,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}
