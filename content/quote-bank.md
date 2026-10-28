@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 124 | **Total Books Represented:** 37
+**Total Vetted Quotes:** 142 | **Total Books Represented:** 42
 
 ---
 
@@ -401,5 +401,62 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “‘I wish the boy was here,’ he said aloud and settled himself against the rounded planks of the bow and felt the strength of the great fish through the line he held across his shoulders moving steadily toward whatever he had chosen.” | How to bind private loneliness to the physical tension of a fishing line | Solitude, Sensory Detail, Physicality, Dialogue |
 | “‘I told the boy I was a strange old man,’ he said. ‘Now is when I must prove it.’” | How to state a private covenant of identity | Dialogue, Simplicity, Character, Discipline |
 | “‘Unless sharks come,’ he said aloud. ‘If sharks come, God pity him and me.’” | How to anticipate catastrophe with fatalistic pity | Dialogue, Foreshadowing, Compassion, Understatement |
+
+---
+
+## Kurt Vonnegut, Slaughterhouse-Five (1969)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “You know what I say to people when I hear they’re writing anti-war books? ‘Why don’t you write an anti-glacier book instead?’” | How to deflate moral crusades with geological indifference | Dialogue, Irony, Satire, Humor |
+| “The Tralfamadorians can look at all the different moments just the way we can look at a stretch of the Rocky Mountains, for instance.” | How to domesticate complex physics into a panoramic landscape | Metaphor, Time, Simplicity, Perspective |
+| “When a person dies he only appears to die. He is still very much alive in the past, so it is very silly for people to cry at his funeral.” | How to comfort through deadpan alien metaphysics | Deadpan, Grief, Voice, Philosophy |
+| “Before you kill somebody, make absolutely sure he isn’t well connected.” | How to reduce institutional morality to cynical etiquette | Aphorism, Irony, Satire, Cynicism |
+
+---
+
+## Mikhail Bulgakov, The Master and Margarita (1967)
+*Trans. Richard Pevear & Larissa Volokhonsky*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Gods, my gods! How sad the evening earth!” | How to pivot from demonic farce to cosmic lyricism | Lyricism, Atmosphere, Refrain, Grief |
+| “It seemed to me, especially as I was falling asleep, that some very cold and pliant octopus was stealing with its tentacles immediately and directly towards my heart.” | How to render neurotic dread as an aquatic creature | Sensory Detail, Metaphor, Dread, Interiority |
+| “‘Passport!’ barked the cat, holding out a plump paw.” | How to satirize totalitarian checkpoint culture in six words | Surrealism, Satire, Dialogue, Humor |
+| “The thing is ... that I was personally present at it all. I was on Pontius Pilate’s balcony, and in the garden when he talked with Kaifa, and on the platform, only secretly, incognito, so to speak...” | How to collapse biblical history into conversational gossip | Voice, Dialogue, Historical Fiction, Mystery |
+
+---
+
+## Etgar Keret, The Seven Good Years (2015)
+*Trans. Miriam Shlesinger & Sondra Silverston*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘It’s not the emergencies,’ the thin one insists. ‘I have no problem with accidents and things. It’s the terrorist attacks, I’m telling you. They put a damper on everything.’” | How to capture normalized trauma through suburban understatement | Dialogue, Understatement, Irony, Absurdism |
+| “If I read it properly, he would give me a piece of unchewed gum. If I made a mistake, he stuck his chewed gum in my hair.” | How to depict pedagogical cruelty through tactile childhood stakes | Childhood, Humor, Contrast, Brevity |
+| “There is a line that separates killing bugs from killing frogs, and that no matter how hard it is, that line must never be crossed.” | How to anchor an ethical boundary in animal taxonomy | Morality, Childhood, Precision, Aphorism |
+| “‘A lot of unlucky people are going to die in this damn war,’ Avraham said, trying to calm the frightened woman, ‘but I won’t be one of them.’” | How to comfort others through irrational personal bravado | Dialogue, War, Human Nature, Character |
+
+---
+
+## Hermann Hesse, Siddhartha (1922)
+*Trans. Hilda Rosner*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “This man, this Buddha was truthful down to the gesture of his last finger.” | How to anchor spiritual authority in microscopic somatic gesture | Sensory Detail, Physicality, Character, Precision |
+| “The river is everywhere at once, at the source and at the mouth, at the waterfall, at the ferry, at the rapids, in the sea, in the mountains, everywhere at once, and there is only the present time for it, not the shadow of the past, not the shadow of the future.” | How to explain non-linear time through fluid geography | Philosophy, Metaphor, Rhythm, Cadence |
+| “Walking the rosy paths of the fig tree garden, sitting in the bluish shade of the grove of contemplation, washing his limbs daily in the bath of repentance... he still lacked all joy in his heart.” | How to reveal spiritual despair through lush aesthetic abundance | Sensory Detail, Contrast, Interiority, Rhythm |
+
+---
+
+## Nikolai Gogol, Dead Souls (1842)
+*Trans. Richard Pevear & Larissa Volokhonsky*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘See that? There’s a wheel for you! What do you say, would that wheel make it as far as Moscow, if it so happened, or wouldn’t it?’” | How to open an epic satire with arbitrary provincial dispute | Dialogue, Opening, Humor, Subtext |
+| “What is our life? A vale wherein grief dwells. What is this world? A crowd of people who do not feel.” | How to balance rhetorical lament against societal numbness | Aphorism, Philosophy, Moral Clarity, Cadence |
+| “Nothing escaped my fresh, keen attention, and, poking my nose out of my traveling cart, I gazed at the never-before-seen cut of some frock coat, and at the wooden boxes of nails, of sulphur yellowing from afar, of raisins and soap, flashing by in the doorway of a grocer’s shop together with jars of stale Moscow candy.” | How to capture youthful curiosity through an inventory of provincial junk | Sensory Detail, Inventory, Voice, Pacing |
 
 ---
