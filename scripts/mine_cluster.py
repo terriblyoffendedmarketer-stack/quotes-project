@@ -39,7 +39,7 @@ def download_from_gdrive(remote_filename: str) -> Path:
 
 def process_cluster(cluster_file: Path):
     cluster = json.loads(cluster_file.read_text())
-    cluster_name = cluster.get("name", "cluster")
+    cluster_name = cluster.get("name") or cluster.get("cluster_name", "cluster")
     books = cluster.get("books", [])
     if cluster.get("output_file"):
         out_file = Path(__file__).resolve().parent.parent / cluster["output_file"]

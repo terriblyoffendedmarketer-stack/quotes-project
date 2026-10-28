@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Crossed 500-Quote Milestone: 514 high-caliber quotes curated across 114 books (incorporating Cluster 27: *Understanding Media*, *Tiny Beautiful Things*, *Solaris*, *The 7½ Deaths of Evelyn Hardcastle*, *Dark Matter* alongside previous clusters). Cluster 28 currently mining locally via Ollama.  
-> **Next**: Complete Cluster 28 (*The Dispossessed*, *Frankenstein*, *Man's Search for Meaning*, *Bloodlands*, *Thinking in Systems*) followed by Cluster 29 (*Story of Your Life*, *The Burnout Society*, *The Picture of Dorian Gray*, *On the Genealogy of Morals*, *Chaos*).
+> **Current**: 534 high-caliber quotes curated across 116 books (incorporating Cluster 28: *The Dispossessed*, *Frankenstein*, *Man's Search for Meaning*, *Bloodlands*, *Thinking in Systems* alongside previous clusters). Cluster 29 currently mining locally via Ollama.  
+> **Next**: Complete Cluster 29 (*Story of Your Life*, *The Burnout Society*, *The Picture of Dorian Gray*, *On the Genealogy of Morals*, *Chaos*) followed by Cluster 30 (*Pity the Reader*, *Sin and Syntax*, *The Bell Jar*, *The Book Thief*, *The Bus Driver Who Wanted to Be God*).
 
 ## Roadmap
 

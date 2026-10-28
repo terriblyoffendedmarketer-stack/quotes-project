@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 514 | **Total Books Represented:** 114
+**Total Vetted Quotes:** 534 | **Total Books Represented:** 116
 
 ---
 
@@ -685,6 +685,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Death was in him, under him; the earth itself was uncertain, unreliable. The enduring, the reliable, is a promise made by the human mind.” | How to ground human permanence against geophysical indifference. | contrast, cadence, philosophy, existentialism |
 | “Grain grows best in shit, as we say in Northsetting.” | How to cut intellectual pretension with agrarian earthiness. | proverb, voice, vernacular, candor |
 | “He lived about two hours. He couldn’t have been saved; there was no reason for him to live that long, no justification for those two hours.” | How to stare at meaningless biological suffering without consolation. | understatement, grief, staccato, candor |
+| “Nothing is yours. It is to use. It is to share. If you will not share it, you cannot use it.” | How to deconstruct property relations through short declarative mandates. | brevity, philosophy, politics, clarity |
+| “In the end, the truth usually insists upon serving only the common good.” | How to assert the objective moral weight of reality with quiet restraint. | philosophy, insight, truth, clarity |
+| “Nothing he did was understood. In fact—it was not an uncommon phenomenon in his field—he had burnt out at twenty.” | How to deflate intellectual prodigy with a dry parenthetical aside. | irony, pacing, observation, character |
+| “It was she who had withdrawn from him, and he had not tried to follow her. He had looked only at his own bitterness of heart, and never at her fear, or courage.” | How to dissect emotional estrangement through reciprocal moral failure. | psychology, relationship, intimacy, vulnerability |
 
 ---
 
@@ -696,6 +700,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “He appeared at one time a mere scion of the evil principle, and at another as all that can be conceived of noble and godlike.” | How to balance dual extremes across a single rhythmic sentence. | antithesis, syntax, character-voice, dualism |
 | “It is well. I go; but remember, I shall be with you on your wedding-night.” | How to deliver lethal menace in ten monosyllabic beats. | dialogue-craft, understatement, foreshadowing, chilling |
 | “Life is obstinate, and clings closest where it is most hated.” | How to personify vitality as an unwelcome parasite. | personification, aphorism, grief, irony |
+| “Leave them and you at peace; but if you refuse, I will glut the maw of death, until it be satiated with the blood of your remaining friends.” | How to weaponize gothic retribution through visceral personification. | gothic, imagery, threat, dialogue |
+| “Life, although it may only be an accumulation of anguish, is dear to me, and I will defend it.” | How to declare existential tenacity in the face of absolute despair. | existential, resilience, gothic, perspective |
+| “I was hurried away by fury; revenge alone endowed me with strength and composure; it modelled my feelings, and allowed me to be calculating and calm, at periods when otherwise delirium or death would have been my portion.” | How to chart the stabilizing architecture of extreme obsession. | psychology, obsession, craft, rhythm |
+| “I swear; and by thee, O Night, and by the spirits that preside over thee, I swear to pursue the dæmon, who caused this misery, until he or I shall perish in mortal conflict.” | How to elevate narrative climax into an invocational tragic oath. | tragedy, voice, gothic, rhythm |
 
 ---
 
@@ -785,6 +793,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “The organism digested its own protein, and the muscles disappeared. Then the body had no powers of resistance left.” | How to chronicle starvation through clinical biological detachment. | restraint, physicality, precision, understatement |
 | “Standing on tiptoe and looking past the others' heads through the bars of the window, I caught an eerie glimpse of my native town.” | How to anchor profound dispossession in a physical posture. | sensory-detail, posture, exile, interiority |
 | “‘He who has a why to live can bear with almost any how.’” | How to anchor psychological endurance in teleological purpose. | aphorism, endurance, rhythm, stoicism |
+| “The privilege of actually smoking cigarettes was reserved for the Capo, who had his assured quota of weekly coupons; or possibly for a prisoner who worked as a foreman in a warehouse or workshop and received a few cigarettes in exchange for doing dangerous jobs. The only exceptions to this were those who had lost the will to live and wanted to 'enjoy' their last days.” | How to decode symbolic objects into diagnostic markers of mortal surrender. | psychology, symbolism, observation, historical |
+| “The engine's whistle had an uncanny sound, like a cry for help sent out in commiseration for the unhappy load which it was destined to lead into perdition.” | How to infuse mechanical noise with ominous psychological dread. | simile, sound, imagery, dread |
+| “The corpse which had just been removed stared in at me with glazed eyes. If my lack of emotion had not surprised me from the standpoint of professional interest, I would not remember this incident now, because there was so little feeling involved in it.” | How to clinically document psychic numbing during sustained atrocity. | psychology, memoir, restraint, perspective |
+| “Love goes very far beyond the physical person of the beloved. It finds its deepest meaning in his spiritual being, his inner self.” | How to transcend physical absence through interior communion. | philosophy, love, memory, transcendence |
 
 ---
 
@@ -1353,5 +1365,27 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Everything that can happen will happen. Everything. Somewhere along this corridor, there’s a version of you and me that never made it into the box. And now we’re being tortured or already dead.” | How to translate quantum physics into visceral, somatic horror. | sci-fi, tension, terror, voice |
 | “I think sometimes she woke up in the night wondering if the path she took was the right one. Afraid it wasn’t. Wondering what a life with me might have been like.” | How to evoke the nocturnal haunting of alternate life paths. | pathos, regret, interiority, time |
 | “‘Are you happy with your life?’ Those are the last words I hear before the masked man knocks me unconscious.” | How to weaponize a philosophical self-help cliché into physical violence. | hook, opening, irony, tension |
+
+---
+
+## Timothy Snyder, Bloodlands: Europe Between Hitler and Stalin (2010)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘Now we will live!’ This is what the hungry little boy liked to say, as he toddled along the quiet roadside, or through the empty fields. But the food that he saw was only in his imagination.” | How to convey famine's devastation through the heartbreaking optimism of a toddler. | pathos, history, restraint, tragedy |
+| “‘They asked for my wedding ring, which I....’ The Polish officer broke off his diary just before he was executed by the Soviet secret police in 1940.” | How to let syntactic interruption mark the exact instant of slaughter. | history, archive, brevity, tragedy |
+| “People were sentenced for the most apparently minor of offenses: ten years in the Gulag for owning a rosary, death for not producing enough sugar.” | How to expose totalitarian terror through disproportionate legal arithmetic. | irony, history, clarity, contrast |
+| “Dina Pronicheva joined the perilous world of the few Jewish survivors in Kiev. The law required that Jews be turned in to the authorities. The Germans offered material incentives: money, and sometimes the keys to the Jew’s apartment.” | How to capture systemic complicity through casual transactional detail. | history, chilling, observation, reality |
+
+---
+
+## Donella H. Meadows, Thinking in Systems: A Primer (2008)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The development of the meanders in a river, the increasing complexity of the earth’s crust… are information-storing devices in the same manner that genetic systems are.” | How to redefine physical terrain as dynamic information storage. | metaphor, science, systems, perspective |
+| “The information delivered by a feedback loop can only affect future behavior; it can’t deliver the information, and so can’t have an impact fast enough to correct behavior that drove the current feedback.” | How to articulate systemic latency with rigorous structural logic. | clarity, systems, time, insight |
+| “The trouble is that the states created by interventions don’t last. The intoxication wears off. The subsidy is spent. The fertilizer is consumed or washed away.” | How to demonstrate the fragility of artificial fixes through rhythmic staccato syntax. | rhythm, brevity, parallelism, systems |
+| “Any new policy, especially if it’s effective, just pulls the system state farther from the goals of other actors and produces additional resistance, with a result that no one likes, but that everyone expends considerable effort in maintaining.” | How to diagnose policy resistance and exhausted equilibria. | systems, society, insight, paradox |
 
 ---
