@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 8 (In-App UX Polish, Boundary Fixes & Explanation Audit)  
-> **Current**: Fixed card padding and boundary clipping across Android app and Web reader. Resolved badge/book-title overlap with 12-14dp vertical separation. Fixed Daily Cards bottom pills clipping into deck corners by adding horizontal clip padding and centering. Reduced explanation font to 16sp (app) / 1.04rem (web) for comfortable reading. Replaced rigid "teacher" prose with clear, grounded analytical explanations. Release APK compiled and signed at `android/marginalia.apk`.  
-> **Next**: User verification of layout fixes on device and deeper audit of shelf explanations.
+> **Status**: In Progress | **Phase**: 9 (Two-Tier Companion Note Standardization & Gemini Free Tier Pipeline)  
+> **Current**: Perfected the companion note prompt specification through rigorous collaborative iteration (1984, Kino, Cat's Cradle). Paragraph 1 grounds the character's psychological defense posture and immediate stakes without decorative filler; Paragraph 2 captures author intent and universal human truth without re-stating plot danger. Prompt saved at `prompts/shelf_explanation_prompt.txt`. Gemini 3.5 Flash Lite pipeline verified on Google AI Studio Free Tier (15 RPM / ₹0 cost).  
+> **Next**: Apply the 10 verified test quotes to `content/quote-bank.json`, sync to Android assets, and scale across priority batches.
 
 ## Roadmap
 
@@ -13,6 +13,8 @@
 - [x] Phase 5: GitHub synchronization — commit and push updates to `terriblyoffendedmarketer-stack/quotes-project`
 - [x] Phase 6: Master Quote Bank mining — extract 800–1,200 quotes across 400+ books using local offline AI without token burnout (Reached 1,871 quotes / 416 books)
 - [x] Phase 7: Quote Bank UI & Integration — Thematic horizons web reader, dynamic tag discovery, and dual-mode Android widget integration
+- [x] Phase 8: In-App UX Polish, Boundary Fixes & Dostoevsky Trifles Curation (APK release compiled, boundary margins fixed)
+- [~] Phase 9: Shelf Quote Explanation Renaissance — Two-tier cognitive standard, zero-spoiler ground truth, and Gemini Free Tier pipeline (Gold standard validated on 10 quotes)
 
 ## File map
 

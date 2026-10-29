@@ -1,3 +1,6 @@
 .DS_Store
 __pycache__/
 content/*_raw.json
+.env
+*.env
+
