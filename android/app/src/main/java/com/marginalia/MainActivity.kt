@@ -18,10 +18,16 @@ class MainActivity : Activity() {
     private lateinit var dayLabel: TextView
     private lateinit var count: TextView
     private lateinit var stealToggle: TextView
+    private lateinit var modeCardsBtn: TextView
+    private lateinit var modeBankBtn: TextView
+    private lateinit var btnSurprise: TextView
     private val adapter = SlideAdapter()
 
-    private var index = 0
-    private var slides: List<Slide> = emptyList()
+    private var currentMode = MODE_CARDS
+    private var cardIndex = 0
+    private var bankIndex = 0
+    private var cardSlides: List<Slide> = emptyList()
+    private val shelfSlides: List<ShelfSlide> = listOf(ShelfSlide.LINE, ShelfSlide.CONTEXT)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +38,10 @@ class MainActivity : Activity() {
         dayLabel = findViewById(R.id.day_label)
         count = findViewById(R.id.count)
         stealToggle = findViewById(R.id.steal_toggle)
+        modeCardsBtn = findViewById(R.id.mode_cards)
+        modeBankBtn = findViewById(R.id.mode_bank)
+        btnSurprise = findViewById(R.id.btn_surprise)
 
-        // Slides carry their own colours, so clip them to the deck's rounded corners.
         findViewById<View>(R.id.deck).clipToOutline = true
         pager.adapter = adapter
         pager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
@@ -42,14 +50,48 @@ class MainActivity : Activity() {
 
         findViewById<View>(R.id.prev).setOnClickListener { step(-1) }
         findViewById<View>(R.id.next).setOnClickListener { step(1) }
-        dayLabel.setOnClickListener { index = Cards.todayIndex(this); render(0) }
+
+        modeCardsBtn.setOnClickListener {
+            if (currentMode != MODE_CARDS) {
+                currentMode = MODE_CARDS
+                render(0)
+            }
+        }
+
+        modeBankBtn.setOnClickListener {
+            if (currentMode != MODE_BANK) {
+                currentMode = MODE_BANK
+                render(0)
+            }
+        }
+
+        btnSurprise.setOnClickListener {
+            val quotes = QuoteBank.all(this)
+            if (quotes.isNotEmpty()) {
+                bankIndex = (0 until quotes.size).random()
+                render(0)
+            }
+        }
+
+        dayLabel.setOnClickListener {
+            if (currentMode == MODE_CARDS) {
+                cardIndex = Cards.todayIndex(this)
+            } else {
+                bankIndex = QuoteBank.todayIndex(this)
+            }
+            render(0)
+        }
+
         stealToggle.setOnClickListener {
             Prefs.setShowSteal(this, !Prefs.showSteal(this))
             render(0)
             CardWidgetProvider.refreshAll(this)
         }
 
-        index = savedInstanceState?.getInt(KEY_INDEX) ?: Cards.todayIndex(this)
+        currentMode = savedInstanceState?.getInt(KEY_MODE) ?: MODE_CARDS
+        cardIndex = savedInstanceState?.getInt(KEY_INDEX) ?: Cards.todayIndex(this)
+        bankIndex = savedInstanceState?.getInt(KEY_BANK_INDEX) ?: QuoteBank.todayIndex(this)
+        
         render(savedInstanceState?.getInt(KEY_SLIDE) ?: 0)
         handle(intent)
     }
@@ -62,68 +104,136 @@ class MainActivity : Activity() {
     override fun onResume() {
         super.onResume()
         CardWidgetProvider.refreshAll(this)
-        // Pick up new or edited cards from GitHub, then redraw if anything arrived.
-        val before = Cards.all(this)
+        val beforeCards = Cards.all(this)
+        val beforeBank = QuoteBank.all(this)
         ContentSync.syncIfDue(this) {
             runOnUiThread {
-                if (!isFinishing && Cards.all(this) !== before) {
-                    index = index.coerceIn(0, Cards.all(this).lastIndex)
+                if (!isFinishing && (Cards.all(this) !== beforeCards || QuoteBank.all(this) !== beforeBank)) {
                     render(pager.currentItem)
                 }
             }
         }
     }
 
-    /** Leaving the app on another card makes it today's card, on the widget too. */
     override fun onPause() {
         super.onPause()
-        if (index != Cards.todayIndex(this)) {
-            Cards.startFrom(this, index)
+        if (currentMode == MODE_CARDS && cardIndex != Cards.todayIndex(this)) {
+            Cards.startFrom(this, cardIndex)
             CardWidgetProvider.refreshAll(this)
         }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putInt(KEY_INDEX, index)
+        outState.putInt(KEY_MODE, currentMode)
+        outState.putInt(KEY_INDEX, cardIndex)
+        outState.putInt(KEY_BANK_INDEX, bankIndex)
         outState.putInt(KEY_SLIDE, pager.currentItem)
     }
 
-    /** A tap on the widget opens the card and slide that was tapped. */
     private fun handle(intent: Intent?) {
-        if (intent == null || !intent.hasExtra(EXTRA_CARD)) return
-        index = intent.getIntExtra(EXTRA_CARD, Cards.todayIndex(this))
-            .coerceIn(0, Cards.all(this).lastIndex)
+        if (intent == null) return
+        if (intent.hasExtra(EXTRA_MODE)) {
+            currentMode = intent.getIntExtra(EXTRA_MODE, MODE_CARDS)
+        }
+        if (intent.hasExtra(EXTRA_CARD)) {
+            cardIndex = intent.getIntExtra(EXTRA_CARD, Cards.todayIndex(this))
+                .coerceIn(0, Cards.all(this).lastIndex)
+        }
+        if (intent.hasExtra(EXTRA_BANK_INDEX)) {
+            bankIndex = intent.getIntExtra(EXTRA_BANK_INDEX, QuoteBank.todayIndex(this))
+                .coerceIn(0, QuoteBank.all(this).lastIndex)
+        }
         render(intent.getIntExtra(EXTRA_SLIDE, 0))
-        intent.removeExtra(EXTRA_CARD)
     }
 
     private fun step(delta: Int) {
-        val n = Cards.all(this).size
-        index = Math.floorMod(index + delta, n)
+        if (currentMode == MODE_CARDS) {
+            val n = Cards.all(this).size
+            cardIndex = Math.floorMod(cardIndex + delta, n)
+        } else {
+            val n = QuoteBank.all(this).size
+            if (n > 0) {
+                bankIndex = Math.floorMod(bankIndex + delta, n)
+            }
+        }
         render(0)
     }
 
-    private fun render(slide: Int) {
-        val cards = Cards.all(this)
-        slides = Cards.slides(this)
-        // Each card in the colours of the day it's shown on, so browsing looks like the days do.
-        val day = LocalDate.now().toEpochDay() + index - Cards.todayIndex(this)
-        adapter.show(cards[index], slides, Palette.forDay(day))
+    private fun render(targetSlide: Int) {
+        updateModeTabs()
 
-        val today = index == Cards.todayIndex(this)
+        if (currentMode == MODE_CARDS) {
+            renderCardsMode(targetSlide)
+        } else {
+            renderBankMode(targetSlide)
+        }
+    }
+
+    private fun updateModeTabs() {
+        val selectedBg = ContextCompat.getDrawable(this, R.drawable.button_bg)
+        val unselectedBg = null
+        val selectedTextColor = ContextCompat.getColor(this, R.color.paper)
+        val unselectedTextColor = ContextCompat.getColor(this, R.color.ink_soft)
+
+        if (currentMode == MODE_CARDS) {
+            modeCardsBtn.background = selectedBg
+            modeCardsBtn.setTextColor(selectedTextColor)
+            modeBankBtn.background = unselectedBg
+            modeBankBtn.setTextColor(unselectedTextColor)
+            stealToggle.visibility = View.VISIBLE
+            btnSurprise.visibility = View.GONE
+        } else {
+            modeCardsBtn.background = unselectedBg
+            modeCardsBtn.setTextColor(unselectedTextColor)
+            modeBankBtn.background = selectedBg
+            modeBankBtn.setTextColor(selectedTextColor)
+            stealToggle.visibility = View.GONE
+            btnSurprise.visibility = View.VISIBLE
+        }
+    }
+
+    private fun renderCardsMode(targetSlide: Int) {
+        val cards = Cards.all(this)
+        cardSlides = Cards.slides(this)
+        val day = LocalDate.now().toEpochDay() + cardIndex - Cards.todayIndex(this)
+        adapter.showCard(cards[cardIndex], cardSlides, Palette.forDay(day))
+
+        val today = cardIndex == Cards.todayIndex(this)
         dayLabel.text = if (today) getString(R.string.today) else getString(R.string.back_to_today)
-        count.text = getString(R.string.count, index + 1, cards.size)
+        count.text = getString(R.string.count, cardIndex + 1, cards.size)
         stealToggle.text = getString(if (Prefs.showSteal(this)) R.string.hide_steal else R.string.show_steal)
 
         tabs.removeAllViews()
-        slides.forEachIndexed { i, s ->
+        cardSlides.forEachIndexed { i, s ->
             val tab = layoutInflater.inflate(R.layout.tab_chip, tabs, false) as TextView
             tab.text = s.label
             tab.setOnClickListener { pager.currentItem = i }
             tabs.addView(tab)
         }
-        val target = slide.coerceIn(0, slides.lastIndex)
+        val target = targetSlide.coerceIn(0, cardSlides.lastIndex)
+        pager.setCurrentItem(target, false)
+        markTab(target)
+    }
+
+    private fun renderBankMode(targetSlide: Int) {
+        val quotes = QuoteBank.all(this)
+        if (quotes.isEmpty()) return
+        val quote = quotes[bankIndex]
+        adapter.showBank(quote, shelfSlides)
+
+        val today = bankIndex == QuoteBank.todayIndex(this)
+        dayLabel.text = if (today) "TODAY'S SPARK" else "BACK TO TODAY"
+        count.text = "${bankIndex + 1} / ${quotes.size}"
+
+        tabs.removeAllViews()
+        shelfSlides.forEachIndexed { i, s ->
+            val tab = layoutInflater.inflate(R.layout.tab_chip, tabs, false) as TextView
+            tab.text = s.label
+            tab.setOnClickListener { pager.currentItem = i }
+            tabs.addView(tab)
+        }
+        val target = targetSlide.coerceIn(0, shelfSlides.lastIndex)
         pager.setCurrentItem(target, false)
         markTab(target)
     }
@@ -138,9 +248,17 @@ class MainActivity : Activity() {
     }
 
     companion object {
+        const val EXTRA_MODE = "com.marginalia.MODE"
         const val EXTRA_CARD = "com.marginalia.CARD"
+        const val EXTRA_BANK_INDEX = "com.marginalia.BANK_INDEX"
         const val EXTRA_SLIDE = "com.marginalia.SLIDE"
-        private const val KEY_INDEX = "index"
+
+        const val MODE_CARDS = 0
+        const val MODE_BANK = 1
+
+        private const val KEY_MODE = "current_mode"
+        private const val KEY_INDEX = "card_index"
+        private const val KEY_BANK_INDEX = "bank_index"
         private const val KEY_SLIDE = "slide"
     }
 }

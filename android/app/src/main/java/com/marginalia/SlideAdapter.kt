@@ -1,5 +1,6 @@
 package com.marginalia
 
+import android.graphics.Color
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.BackgroundColorSpan
@@ -11,26 +12,53 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
+enum class ShelfSlide(val label: String) {
+    LINE("The Line"),
+    CONTEXT("Scene Context")
+}
+
 class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
 
     private var card: Card? = null
     private var slides: List<Slide> = emptyList()
+    private var bankQuote: BankQuote? = null
+    private var shelfSlides: List<ShelfSlide> = emptyList()
     private var colors: Palette.Day = Palette.today()
 
-    fun show(card: Card, slides: List<Slide>, colors: Palette.Day) {
+    fun showCard(card: Card, slides: List<Slide>, colors: Palette.Day) {
         this.card = card
         this.slides = slides
+        this.bankQuote = null
+        this.shelfSlides = emptyList()
         this.colors = colors
         notifyDataSetChanged()
     }
 
-    override fun getItemCount() = if (card == null) 0 else slides.size
+    fun showBank(quote: BankQuote, shelfSlides: List<ShelfSlide>) {
+        this.card = null
+        this.slides = emptyList()
+        this.bankQuote = quote
+        this.shelfSlides = shelfSlides
+        notifyDataSetChanged()
+    }
+
+    override fun getItemCount(): Int = when {
+        card != null -> slides.size
+        bankQuote != null -> shelfSlides.size
+        else -> 0
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         Holder(LayoutInflater.from(parent.context).inflate(R.layout.item_slide, parent, false))
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.bind(card ?: return, slides[position], colors)
+        val c = card
+        val bq = bankQuote
+        if (c != null && position < slides.size) {
+            holder.bindCard(c, slides[position], colors)
+        } else if (bq != null && position < shelfSlides.size) {
+            holder.bindBank(bq, shelfSlides[position])
+        }
     }
 
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
@@ -46,7 +74,7 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
         private val spacerTop: View = view.findViewById(R.id.spacer_top)
         private val spacerBottom: View = view.findViewById(R.id.spacer_bottom)
 
-        fun bind(card: Card, slide: Slide, colors: Palette.Day) {
+        fun bindCard(card: Card, slide: Slide, colors: Palette.Day) {
             val isHook = slide == Slide.HOOK
             val isLine = slide == Slide.LINE
             itemView.setBackgroundColor(colors.color(itemView.context, slide))
@@ -76,6 +104,46 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             if (slide == Slide.LOOK) mini.text = highlighted(card)
             footer.text = Markup.credit(card, withYear = slide == Slide.AROUND)
             job.text = card.job
+        }
+
+        fun bindBank(quote: BankQuote, shelfSlide: ShelfSlide) {
+            val isLine = shelfSlide == ShelfSlide.LINE
+            val context = itemView.context
+
+            val bg = ContextCompat.getColor(context, R.color.sheet)
+            itemView.setBackgroundColor(bg)
+
+            hookPill.visibility = View.VISIBLE
+            hookPill.text = if (isLine) "SHELF SPARK" else "SCENE CONTEXT"
+            hookPill.setTextColor(ContextCompat.getColor(context, R.color.ink))
+
+            hookTitle.visibility = View.GONE
+            hookAuthor.visibility = View.GONE
+            mini.visibility = View.GONE
+
+            kicker.visibility = View.VISIBLE
+            kicker.text = quote.work
+
+            spacerTop.visibility = if (isLine) View.VISIBLE else View.GONE
+            spacerBottom.visibility = spacerTop.visibility
+
+            line.visibility = if (isLine) View.VISIBLE else View.GONE
+            body.visibility = if (isLine) View.GONE else View.VISIBLE
+
+            if (isLine) {
+                line.text = "“${quote.quote}”"
+                line.textSize = if (quote.quote.length > 220) 20f else 25f
+            } else {
+                body.text = quote.explanation
+                body.textSize = 17f
+            }
+
+            footer.visibility = View.VISIBLE
+            val yearStr = if (quote.year != null) " · ${quote.year}" else ""
+            footer.text = "${quote.author}, ${quote.work}$yearStr"
+
+            job.visibility = View.VISIBLE
+            job.text = if (quote.tags.isNotEmpty()) quote.tags.joinToString("  #", prefix = "#") else quote.work
         }
 
         private fun highlighted(card: Card): CharSequence {

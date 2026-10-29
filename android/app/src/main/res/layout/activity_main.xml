@@ -10,6 +10,7 @@
     android:paddingEnd="16dp"
     android:paddingBottom="16dp">
 
+    <!-- Top Navigation Header with Mode Toggle -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,12 +18,55 @@
         android:minHeight="40dp"
         android:orientation="horizontal">
 
-        <TextView
-            style="@style/Kicker"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/app_name" />
+            android:background="@drawable/chip_bg"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/mode_cards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_bg"
+                android:paddingStart="10dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="6dp"
+                android:text="Daily Cards"
+                android:textColor="@color/paper"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mode_bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="6dp"
+                android:text="Quote Bank"
+                android:textColor="@color/ink_soft"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/btn_surprise"
+            style="@style/Kicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="🎲 Surprise"
+            android:textColor="@color/ink"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/day_label"

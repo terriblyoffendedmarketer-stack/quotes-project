@@ -168,88 +168,189 @@
             </LinearLayout>
 
             <!-- Mode 2: Shelf Spark (Personal Library Discovery) -->
-            <LinearLayout
+            <FrameLayout
                 android:id="@+id/shelf"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingStart="20dp"
-                android:paddingTop="18dp"
-                android:paddingEnd="20dp"
-                android:paddingBottom="4dp"
                 android:visibility="gone">
 
+                <!-- Shelf Slide 1: The Line -->
                 <LinearLayout
+                    android:id="@+id/shelf_line_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:paddingTop="18dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/shelf_pill"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/hook_pill"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="0.08"
+                            android:paddingStart="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingEnd="10dp"
+                            android:paddingBottom="4dp"
+                            android:text="@string/shelf_pill"
+                            android:textColor="@color/hook_pill_ink"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/shelf_book"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="sans-serif-medium"
+                            android:maxLines="1"
+                            android:textColor="@color/widget_soft"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
                     <TextView
-                        android:id="@+id/shelf_pill"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/hook_pill"
-                        android:fontFamily="sans-serif-black"
-                        android:letterSpacing="0.08"
-                        android:paddingStart="10dp"
-                        android:paddingTop="4dp"
-                        android:paddingEnd="10dp"
-                        android:paddingBottom="4dp"
-                        android:text="@string/shelf_pill"
-                        android:textColor="@color/hook_pill_ink"
-                        android:textSize="11sp" />
-
-                    <TextView
-                        android:id="@+id/shelf_book"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
+                        android:id="@+id/shelf_quote"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="8dp"
                         android:layout_weight="1"
-                        android:ellipsize="end"
-                        android:fontFamily="sans-serif-medium"
-                        android:maxLines="1"
-                        android:textColor="@color/widget_soft"
-                        android:textSize="12sp" />
+                        android:autoSizeMaxTextSize="28sp"
+                        android:autoSizeMinTextSize="12sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform"
+                        android:fontFamily="serif"
+                        android:gravity="center_vertical"
+                        android:lineSpacingMultiplier="1.15"
+                        android:textColor="@color/widget_text"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:baselineAligned="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/shelf_author"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@color/widget_soft"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Context →"
+                            android:textColor="@color/widget_soft"
+                            android:textSize="11sp" />
+                    </LinearLayout>
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/shelf_quote"
+                <!-- Shelf Slide 2: Scene Context -->
+                <LinearLayout
+                    android:id="@+id/shelf_context_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:autoSizeMaxTextSize="28sp"
-                    android:autoSizeMinTextSize="12sp"
-                    android:autoSizeStepGranularity="1sp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="serif"
-                    android:gravity="center_vertical"
-                    android:lineSpacingMultiplier="1.15"
-                    android:textColor="@color/widget_text"
-                    android:textStyle="bold" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:paddingTop="18dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="4dp"
+                    android:visibility="gone">
 
-                <TextView
-                    android:id="@+id/shelf_explanation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:ellipsize="end"
-                    android:maxLines="3"
-                    android:lineSpacingMultiplier="1.2"
-                    android:textColor="@color/widget_text"
-                    android:textSize="12sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/shelf_author"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:textColor="@color/widget_soft"
-                    android:textSize="12sp" />
-            </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/hook_pill"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="0.08"
+                            android:paddingStart="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingEnd="10dp"
+                            android:paddingBottom="4dp"
+                            android:text="SCENE CONTEXT"
+                            android:textColor="@color/hook_pill_ink"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/shelf_context_book"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="sans-serif-medium"
+                            android:maxLines="1"
+                            android:textColor="@color/widget_soft"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/shelf_explanation"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:autoSizeMaxTextSize="18sp"
+                        android:autoSizeMinTextSize="11sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform"
+                        android:gravity="center_vertical"
+                        android:lineSpacingMultiplier="1.25"
+                        android:textColor="@color/widget_text" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:baselineAligned="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="← Line"
+                            android:textColor="@color/widget_soft"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/shelf_context_author"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textColor="@color/widget_soft"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
 
             <!-- Tap zones: left third goes back, the rest goes forward. -->
             <LinearLayout

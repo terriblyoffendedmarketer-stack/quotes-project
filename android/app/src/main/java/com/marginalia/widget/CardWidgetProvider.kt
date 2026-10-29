@@ -29,17 +29,17 @@ import java.time.ZoneId
 
 /**
  * Adaptive dual-mode home-screen widget:
- * - Mode 1: Daily Craft Card (5 slides, sentence mechanics, writing exercises)
- * - Mode 2: Shelf Spark (pure voice from your unread personal library + plain-English scene context)
+ * - Mode 1: Daily Craft Card (5 slides: Hook, Line, Look, Steal, Around)
+ * - Mode 2: Shelf Spark (2 slides: The Line, Scene Context)
  *
  * Tap [ ⇄ ] in the footer to toggle modes in place without needing multiple widgets on the screen.
+ * In Shelf Spark mode, tapping right reveals the complete Scene Context before advancing to the next book.
  */
 class CardWidgetProvider : AppWidgetProvider() {
 
     override fun onUpdate(context: Context, manager: AppWidgetManager, ids: IntArray) {
         ids.forEach { manager.updateAppWidget(it, render(context, it)) }
         scheduleMidnight(context)
-        // Check for new cards and quote bank in the background; a download redraws the widget itself.
         val pending = goAsync()
         ContentSync.syncIfDue(context) { pending.finish() }
     }
@@ -59,7 +59,6 @@ class CardWidgetProvider : AppWidgetProvider() {
         }
     }
 
-    /** Redraw at the new size when the widget is resized. */
     override fun onAppWidgetOptionsChanged(context: Context, manager: AppWidgetManager, id: Int, options: Bundle) {
         manager.updateAppWidget(id, render(context, id))
     }
@@ -72,6 +71,7 @@ class CardWidgetProvider : AppWidgetProvider() {
                 .remove(cardKey(it))
                 .remove(modeKey(it))
                 .remove(shelfKey(it))
+                .remove(shelfSlideKey(it))
         }
         prefs.apply()
     }
@@ -98,6 +98,7 @@ class CardWidgetProvider : AppWidgetProvider() {
         private fun cardKey(id: Int) = "card_$id"
         private fun modeKey(id: Int) = "mode_$id"
         private fun shelfKey(id: Int) = "shelf_idx_$id"
+        private fun shelfSlideKey(id: Int) = "shelf_slide_$id"
         private fun cardId(context: Context) = Cards.all(context)[Cards.todayIndex(context)].id
 
         private fun currentMode(context: Context, id: Int): Int {
@@ -110,7 +111,7 @@ class CardWidgetProvider : AppWidgetProvider() {
             AppWidgetManager.getInstance(context).updateAppWidget(id, render(context, id))
         }
 
-        /** Which slide this widget is on in Card mode. */
+        /** Which slide this widget is on in Card mode (0 to 4). */
         private fun currentSlide(context: Context, id: Int): Int {
             val prefs = state(context)
             val today = LocalDate.now().toEpochDay()
@@ -134,6 +135,11 @@ class CardWidgetProvider : AppWidgetProvider() {
             return prefs.getInt(shelfKey(id), QuoteBank.todayIndex(context)).coerceIn(0, quotes.lastIndex)
         }
 
+        /** Which slide in Shelf mode (0 = The Line, 1 = Scene Context). */
+        private fun currentShelfSlide(context: Context, id: Int): Int {
+            return state(context).getInt(shelfSlideKey(id), 0).coerceIn(0, 1)
+        }
+
         private fun step(context: Context, id: Int, direction: Int) {
             if (currentMode(context, id) == MODE_CARDS) {
                 val count = Cards.slides(context).size
@@ -143,8 +149,27 @@ class CardWidgetProvider : AppWidgetProvider() {
             } else {
                 val quotes = QuoteBank.all(context)
                 if (quotes.isNotEmpty()) {
-                    val next = Math.floorMod(currentShelfIndex(context, id) + direction, quotes.size)
-                    state(context).edit().putInt(shelfKey(id), next).apply()
+                    val slide = currentShelfSlide(context, id)
+                    val qIndex = currentShelfIndex(context, id)
+                    if (direction > 0) {
+                        if (slide == 0) {
+                            // Move to Scene Context slide of current quote
+                            state(context).edit().putInt(shelfSlideKey(id), 1).apply()
+                        } else {
+                            // Move to The Line slide of NEXT quote
+                            val nextQ = Math.floorMod(qIndex + 1, quotes.size)
+                            state(context).edit().putInt(shelfKey(id), nextQ).putInt(shelfSlideKey(id), 0).apply()
+                        }
+                    } else {
+                        if (slide == 1) {
+                            // Move back to The Line slide of current quote
+                            state(context).edit().putInt(shelfSlideKey(id), 0).apply()
+                        } else {
+                            // Move to Scene Context slide of PREVIOUS quote
+                            val prevQ = Math.floorMod(qIndex - 1, quotes.size)
+                            state(context).edit().putInt(shelfKey(id), prevQ).putInt(shelfSlideKey(id), 1).apply()
+                        }
+                    }
                 }
             }
             AppWidgetManager.getInstance(context).updateAppWidget(id, render(context, id))
@@ -155,7 +180,6 @@ class CardWidgetProvider : AppWidgetProvider() {
             val size = WidgetFit.size(context, id)
 
             return RemoteViews(context.packageName, R.layout.widget_card).apply {
-                // Configure Mode Switch button
                 setOnClickPendingIntent(R.id.widget_mode_toggle, toggleModeIntent(context, id))
                 setOnClickPendingIntent(R.id.tap_back, stepIntent(context, id, -1))
                 setOnClickPendingIntent(R.id.tap_next, stepIntent(context, id, 1))
@@ -224,6 +248,7 @@ class CardWidgetProvider : AppWidgetProvider() {
             views.setTextViewText(R.id.widget_mode_toggle, context.getString(R.string.toggle_shelf))
 
             val open = Intent(context, MainActivity::class.java)
+                .putExtra(MainActivity.EXTRA_MODE, MainActivity.MODE_CARDS)
                 .putExtra(MainActivity.EXTRA_CARD, index)
                 .putExtra(MainActivity.EXTRA_SLIDE, position)
             views.setOnClickPendingIntent(
@@ -240,6 +265,7 @@ class CardWidgetProvider : AppWidgetProvider() {
             if (quotes.isEmpty()) return
 
             val shelfIdx = currentShelfIndex(context, id)
+            val shelfSlide = currentShelfSlide(context, id)
             val q = quotes[shelfIdx]
 
             // Tint widget background with a deep literary tone
@@ -255,23 +281,40 @@ class CardWidgetProvider : AppWidgetProvider() {
             views.setViewVisibility(R.id.content, View.GONE)
             views.setViewVisibility(R.id.shelf, View.VISIBLE)
 
-            views.setTextViewText(R.id.shelf_book, q.work)
-            views.setTextViewText(R.id.shelf_quote, "“${q.quote}”")
-            views.setTextViewText(R.id.shelf_explanation, q.explanation)
-            val yearStr = if (q.year != null) " · ${q.year}" else ""
-            views.setTextViewText(R.id.shelf_author, "— ${q.author}$yearStr")
+            if (shelfSlide == 0) {
+                // Slide 1: The Line
+                views.setViewVisibility(R.id.shelf_line_layout, View.VISIBLE)
+                views.setViewVisibility(R.id.shelf_context_layout, View.GONE)
+
+                views.setTextViewText(R.id.shelf_book, q.work)
+                views.setTextViewText(R.id.shelf_quote, "“${q.quote}”")
+                val yearStr = if (q.year != null) " · ${q.year}" else ""
+                views.setTextViewText(R.id.shelf_author, "— ${q.author}$yearStr")
+
+                views.setTextViewText(R.id.widget_progress, "1/2 · THE LINE")
+            } else {
+                // Slide 2: Scene Context (Full height, never cut off!)
+                views.setViewVisibility(R.id.shelf_line_layout, View.GONE)
+                views.setViewVisibility(R.id.shelf_context_layout, View.VISIBLE)
+
+                views.setTextViewText(R.id.shelf_context_book, q.work)
+                views.setTextViewText(R.id.shelf_explanation, q.explanation)
+                views.setTextViewText(R.id.shelf_context_author, "— ${q.author}")
+
+                views.setTextViewText(R.id.widget_progress, "2/2 · CONTEXT")
+            }
 
             views.textColor(context, R.id.widget_progress, R.color.widget_soft)
             views.textColor(context, R.id.widget_open, R.color.widget_text)
             views.textColor(context, R.id.widget_mode_toggle, R.color.widget_text)
 
-            views.setTextViewText(
-                R.id.widget_progress,
-                context.getString(R.string.shelf_progress, shelfIdx + 1, quotes.size),
-            )
             views.setTextViewText(R.id.widget_mode_toggle, context.getString(R.string.toggle_craft))
 
+            // Open Quote Bank view in MainActivity right on this quote!
             val open = Intent(context, MainActivity::class.java)
+                .putExtra(MainActivity.EXTRA_MODE, MainActivity.MODE_BANK)
+                .putExtra(MainActivity.EXTRA_BANK_INDEX, shelfIdx)
+                .putExtra(MainActivity.EXTRA_SLIDE, shelfSlide)
             views.setOnClickPendingIntent(
                 R.id.widget_open,
                 PendingIntent.getActivity(

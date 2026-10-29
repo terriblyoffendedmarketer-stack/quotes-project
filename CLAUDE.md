@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: Complete | **Phase**: 7 (Quote Bank UI & Dual-Mode Widget Complete)  
-> **Current**: Achieved 100% full-library coverage (1,871 vetted quotes across 416 books) with unified plain-English scene explanations. Single-page thematic horizons web reader live with instant search, interactive tag filtering, and reading queue. Adaptive dual-mode Android widget compiled into signed release APK (`android/marginalia.apk`).  
-> **Next**: User sideloading or future curation passes.
+> **Status**: Complete | **Phase**: 7 (Quote Bank UI, Dual-Mode App & 2-Slide Widget Complete)  
+> **Current**: Dual-mode browsing (Daily Cards vs Quote Bank) in `MainActivity` with 2-slide deep reading and `🎲 Surprise` quote discovery across 1,871 quotes. Adaptive home-screen widget upgraded to 2-slide Shelf Spark (Slide 1: The Line, Slide 2: Scene Context with full height, no truncation). Signed release APK compiled at `android/marginalia.apk`.  
+> **Next**: User verification and sideloading.
 
 ## Roadmap
 

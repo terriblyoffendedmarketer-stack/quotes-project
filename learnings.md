@@ -9,3 +9,5 @@
 - EPUB metadata naming mismatches | filenames alternate between Title-Author and Author-Title | parsed authoritative `dc:title` and `dc:creator` tags directly from `content.opf` inside the EPUB zip
 - Android SDK location failure in Gradle | `./gradlew` fails with `SDK location not found` | set `sdk.dir=/Users/apple/Library/Android/sdk` in `local.properties` and pointed `JAVA_HOME` to Homebrew OpenJDK 17
 - Single-page thematic UX vs folders | nested folder menus hide quotes and create navigation friction | flattened 1,871 quotes into a continuous single-page stream segmented by 6 evocative thematic horizons with live in-place tag filtering
+- Android app missing quote bank option | MainActivity was hardcoded exclusively to cards.json | added dual-mode switcher (Daily Cards vs Quote Bank) and QuoteBank loader with 2-slide reading and Surprise button
+- Widget shelf explanation truncated and tapping skipped to next book | quote and explanation were crammed into one view with maxLines="3" and tap zones covered full view | split Shelf Spark into 2 slides (The Line -> Scene Context with full height) and updated tap logic
