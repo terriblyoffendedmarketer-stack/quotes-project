@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 9 (Two-Tier Companion Note Standardization, Daily Alternation & Full Enrichment)  
-> **Current**: Implemented daily alternating dual-mode rotation across Android widget and app reader. The daily view seamlessly alternates between Daily Craft Cards and Personal Shelf Quotes each day, while honoring manual flips (leaving on a quote/mode locks it for today and continues alternating naturally tomorrow). Cleaned up slide chunking and progress counters across Web and Android. Background enrichment pipeline running with 5.0s pacing (12 RPM) on Google AI Studio Free Tier (460+ enriched).  
-> **Next**: Let enrichment run through the 1,874 quote bank, sync enriched entries to Android assets, and verify full build.
+> **Status**: In Progress | **Phase**: 9 (Two-Tier Companion Note Standardization, Evocative Badging & Daily Alternation)  
+> **Current**: Standardized evocative literary slide badges (`THE LINE` → `THE PREDICAMENT` → `THE MIRROR`) and distinct collection identities (`Prose Craft` and `Shelf Sparks`). Clarified dynamic 3-to-5 slide budget (a ~100-word quote fits cleanly in 3 slides; only longer 170+ word notes expand to 4 or 5 slides). Fixed web preview overflow (`overflow-y: auto`) to mirror Android's native `<ScrollView>`. Daily parity alternator smoothly switches between Prose Craft and Shelf Sparks with manual browse state persistence. 458 quotes enriched in quote-bank.json on Google AI Studio Free Tier (quota resumes at 00:00 UTC).  
+> **Next**: Resume background enrichment pipeline to cover remaining quotes, bundle into APK, and verify final build.
 
 ## Roadmap
 
