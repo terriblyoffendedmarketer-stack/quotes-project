@@ -61,40 +61,59 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html, body { height: 100%; margin: 0; }
 body {
   background: var(--paper); color: var(--ink);
   font-family: var(--font-note); font-size: 16px; line-height: 1.55;
-  padding-inline: 16px; padding-block: 16px 36px;
+  padding-inline: 16px; padding-block: 16px 40px;
+  display: flex; justify-content: center;
 }
-.wrap { max-width: 540px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+.wrap {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 95vh;
+}
 
 /* Studio Top Bar */
-.studio-bar { display: flex; justify-content: space-between; align-items: center; gap: 8px; border-bottom: 1px solid var(--rule); padding-bottom: 12px; margin-bottom: 4px; flex-wrap: wrap; }
+.studio-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 8px; border-bottom: 1px solid var(--rule);
+  padding-bottom: 12px; margin-bottom: 4px;
+}
 .studio-brand { display: flex; align-items: baseline; gap: 6px; }
 .studio-logo { font: 700 13px/1 var(--font-tag); letter-spacing: .08em; color: var(--ink); text-decoration: none; }
 .studio-badge { font: 500 10px/1 var(--font-tag); background: var(--sheet); color: var(--ink-soft); border: 1px solid var(--rule); padding: 3px 6px; border-radius: 99px; }
 
 .studio-tabs { display: flex; gap: 3px; background: var(--sheet); padding: 3px; border: 1px solid var(--rule); border-radius: 99px; }
-.studio-tab { font: 600 11.5px/1 var(--font-tag); letter-spacing: .02em; color: var(--ink-soft); background: none; border: 0; border-radius: 99px; padding: 6px 12px; cursor: pointer; transition: all .15s ease; }
+.studio-tab { font: 600 11.5px/1 var(--font-tag); letter-spacing: .02em; color: var(--ink-soft); background: none; border: 0; border-radius: 99px; padding: 6px 12px; cursor: pointer; transition: all .15s ease; white-space: nowrap; }
 .studio-tab[aria-pressed="true"] { color: var(--paper); background: var(--ink); }
 
-.studio-actions { display: flex; align-items: center; gap: 6px; }
+.studio-actions { display: flex; align-items: center; gap: 8px; }
 .apk-download-btn {
-  display: inline-flex; align-items: center; gap: 5px;
-  font: 700 11px/1 var(--font-tag);
-  background: var(--accent); color: #fff !important;
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+  font: 700 11.5px/1 var(--font-tag);
+  background: var(--accent); color: #ffffff !important;
   border: 1px solid var(--accent); border-radius: 99px;
-  padding: 6px 11px; text-decoration: none;
+  padding: 6px 12px; text-decoration: none;
   cursor: pointer; transition: all .15s ease;
   white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(45, 59, 232, 0.25);
 }
 .apk-download-btn:hover {
   filter: brightness(1.15); transform: translateY(-1px);
 }
 .theme-btn { font: 600 11px/1 var(--font-tag); background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 99px; padding: 6px 10px; cursor: pointer; }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
+  body {
+    padding-inline: 12px;
+    padding-block: 12px 32px;
+  }
   .studio-bar {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -102,6 +121,7 @@ body {
   }
   .studio-tabs {
     grid-column: 1 / -1;
+    display: flex;
     justify-content: center;
     width: 100%;
   }
@@ -152,9 +172,20 @@ body {
 
 /* Card & Bank Deck */
 .deck { min-width: 0; background: var(--sheet); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
-.track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+.track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .track::-webkit-scrollbar { display: none; }
-.slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; padding: 26px 24px 30px; min-height: 480px; max-height: 560px; overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: thin; display: flex; flex-direction: column; gap: 16px; }
+.slide {
+  flex: 0 0 100%; min-width: 0; scroll-snap-align: start;
+  padding: 24px 22px 28px; min-height: 440px; max-height: 520px;
+  overflow-y: auto; overscroll-behavior-y: auto; scrollbar-width: thin;
+  display: flex; flex-direction: column; gap: 14px;
+}
+@media (max-width: 520px) {
+  .slide {
+    min-height: 380px; max-height: 480px;
+    padding: 20px 18px 22px; gap: 12px;
+  }
+}
 
 .slide.hook { background: var(--s-hook); color: var(--hook-ink); }
 .slide.line-s { background: var(--s-line); }
@@ -197,20 +228,21 @@ mark.q { font-family: var(--font-line); font-style: italic; font-weight: 600; }
 button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
 /* ==========================================================================
-   WIDGET SIMULATOR (INTERNAL TESTING)
+   WIDGET SIMULATOR (DEV / LOCAL PREVIEW ONLY)
    ========================================================================== */
-.widget-sim-wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; margin-top: 8px; }
+.widget-sim-wrap { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 4px; width: 100%; }
+.widget-header-row { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 440px; }
 .widget-device-bg {
-  width: 100%; max-width: 420px;
+  width: 100%; max-width: 440px;
   background: radial-gradient(circle at top right, #384252 0%, #1c212b 100%);
-  border-radius: 36px; padding: 24px 18px;
+  border-radius: 36px; padding: 22px 18px;
   box-shadow: 0 16px 40px rgba(0,0,0,0.25);
-  display: flex; flex-direction: column; gap: 16px;
+  display: flex; flex-direction: column; gap: 14px;
 }
 .widget-card-sim {
   border-radius: 24px; padding: 18px 20px 14px;
-  height: 290px; max-height: 290px; display: flex; flex-direction: column; justify-content: space-between;
-  cursor: pointer; position: relative; overflow: hidden;
+  min-height: 290px; display: flex; flex-direction: column; justify-content: space-between;
+  cursor: pointer; position: relative;
   box-shadow: 0 4px 18px rgba(0,0,0,0.18);
   transition: all .2s ease;
   user-select: none;
@@ -218,17 +250,23 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .widget-card-sim.w-light { background: #f4f5f2; color: #14161b; }
 .widget-card-sim.w-dark { background: #15171b; color: #f6f5f0; }
 
-.w-badge-pill { font: 700 11px/1 var(--font-tag); letter-spacing: .08em; text-transform: uppercase; padding: 5px 10px; border-radius: 99px; align-self: flex-start; }
+.w-badge-pill { font: 700 10.5px/1 var(--font-tag); letter-spacing: .08em; text-transform: uppercase; padding: 4px 9px; border-radius: 99px; align-self: flex-start; }
 .widget-card-sim.w-light .w-badge-pill { background: #e4e7eb; color: #1b1d22; }
 .widget-card-sim.w-dark .w-badge-pill { background: #282d35; color: #f0efea; }
 
-.w-quote-text { font-family: var(--font-line); font-weight: 600; font-size: 1.25rem; line-height: 1.35; margin: 8px 0; }
-.w-explanation-text { font-size: 0.90rem; line-height: 1.40; margin: 6px 0; flex: 1; display: flex; align-items: center; }
+.w-body-container {
+  flex: 1; min-height: 0;
+  display: flex; flex-direction: column; justify-content: flex-start;
+  margin: 8px 0; overflow-y: auto; scrollbar-width: thin;
+}
+.w-quote-text { font-family: var(--font-line); font-weight: 600; margin: 0; text-wrap: pretty; }
+.w-explanation-text { font-family: var(--font-line); margin: 0; text-wrap: pretty; }
 
-.w-sub { font-size: 12px; opacity: .7; }
-.w-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; font-size: 12px; opacity: .85; border-top: 1px solid rgba(125,125,125,.15); padding-top: 8px; }
-.w-btn { font: 600 12px/1 var(--font-tag); background: none; border: 0; color: inherit; cursor: pointer; padding: 4px 8px; border-radius: 6px; }
-.w-btn:hover { background: rgba(125,125,125,.15); }
+.w-sub { font-size: 12px; opacity: .72; }
+.w-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; font-size: 11.5px; opacity: .88; border-top: 1px solid rgba(125,125,125,.18); padding-top: 8px; }
+.w-btn { font: 600 11.5px/1 var(--font-tag); background: none; border: 0; color: inherit; cursor: pointer; padding: 4px 8px; border-radius: 6px; }
+.w-btn:hover { background: rgba(125,125,125,.18); }
+.widget-instructions { font-size: 11.5px; color: var(--ink-soft); text-align: center; max-width: 400px; line-height: 1.4; }
 
 /* ==========================================================================
    THE MASTER LIBRARY (ALL QUOTES VIEW)
@@ -364,17 +402,15 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
       <span class="studio-logo">MARGINALIA</span>
       <span class="studio-badge">Web Edition</span>
     </div>
-    <nav class="studio-tabs" aria-label="Views">
-      <button class="studio-tab" id="studioTabApp" aria-pressed="true">✨ Daily</button>
-      <button class="studio-tab" id="studioTabCatalog" aria-pressed="false">📖 All Quotes</button>
+    <nav class="studio-tabs" id="studioTabs" aria-label="Views">
+      <button class="studio-tab" id="studioTabApp" aria-pressed="true" type="button">✨ Daily</button>
+      <button class="studio-tab" id="studioTabWidget" aria-pressed="false" type="button" style="display:none;">🔲 Widget</button>
+      <button class="studio-tab" id="studioTabCatalog" aria-pressed="false" type="button">📖 All Quotes</button>
     </nav>
     <div class="studio-actions">
-      <a href="marginalia.apk" download="marginalia.apk" class="apk-download-btn" id="apkDownloadLink" title="Download Android App (APK 3.2 MB)">
-        <span>↓</span> APK
+      <a href="marginalia.apk" download="marginalia.apk" class="apk-download-btn" id="apkDownloadLink" title="Download Android App (APK 3.3 MB)">
+        <span>↓ APK (3.3 MB)</span>
       </a>
-      <button class="theme-btn" id="themeBtn" type="button" title="Toggle dark/light theme">🌙 Dark</button>
-    </div>
-  </header>
       <button class="theme-btn" id="themeBtn" type="button" title="Toggle dark/light theme">🌙 Dark</button>
     </div>
   </header>
@@ -436,10 +472,13 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
     </aside>
   </main>
 
-  <!-- VIEW 2: HOME SCREEN WIDGET SIMULATOR -->
-  <main id="viewWidget" class="widget-sim-wrap" hidden>
-    <div style="display:flex; justify-content:space-between; width:100%; max-width:420px; align-items:center;">
-      <span class="kicker">Android Home Screen 4×2 Widget</span>
+  <!-- VIEW 2: HOME SCREEN WIDGET SIMULATOR (DEV / LOCAL PREVIEW ONLY) -->
+  <main id="viewWidget" class="widget-sim-wrap" style="display:none;">
+    <div class="widget-header-row">
+      <div class="widget-title-col">
+        <span class="widget-title">Home Screen Widget Simulator</span>
+        <span class="widget-subtitle">Interactive preview of the Android 4×2 widget</span>
+      </div>
       <button class="chip-btn" id="wThemeToggle" type="button">Theme: Dark</button>
     </div>
 
@@ -449,15 +488,15 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
       </div>
     </div>
 
-    <span class="fine" style="text-align:center; max-width:380px;">
-      Tap right on the widget to reveal the complete <strong>Scene Context</strong>. Tap <strong>[ ⇄ ]</strong> to toggle between Craft Card and Shelf Spark. Tap <strong>Open ↗</strong> to jump straight into the app.
-    </span>
+    <div class="widget-instructions">
+      <span>Tap right to advance slides · Tap <strong>[ ⇄ ]</strong> to toggle Craft / Shelf · Tap <strong>Open ↗</strong> for app</span>
+    </div>
 
-    <aside class="apk-banner-card" style="width:100%; max-width:420px;" aria-label="Download Android App">
+    <aside class="apk-banner-card" style="width:100%; max-width:440px;" aria-label="Download Android App">
       <div class="apk-banner-text">
         <div class="apk-banner-title">
-          <span>Get this Widget on your Home Screen</span>
-          <span class="badge-free">3.2 MB</span>
+          <span>Get this Widget on Android</span>
+          <span class="badge-free">FREE · 3.3 MB</span>
         </div>
         <div class="apk-banner-sub">Install the APK to place Marginalia directly on your phone's home screen</div>
       </div>
@@ -467,8 +506,8 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
     </aside>
   </main>
 
-  <!-- VIEW 2: THE MASTER LIBRARY (ALL QUOTES VIEW) -->
-  <main id="viewCatalog" class="bank-container" hidden>
+  <!-- VIEW 3: THE MASTER LIBRARY (ALL QUOTES VIEW) -->
+  <main id="viewCatalog" class="bank-container" style="display:none;">
     <div class="library-hero">
       <div class="library-headline">The Library</div>
       <div class="library-sub">1,874 curated passages &amp; literary companion notes across 416 books</div>
@@ -852,12 +891,20 @@ let widgetTheme = "dark"; // "dark" | "light"
 let widgetShelfSlide = 0;
 let widgetCardSlide = 0; // 0 to 4
 
+function getWidgetQuoteSize(text) {
+  const len = (text || "").length;
+  if (len > 240) return { fontSize: "1.02rem", lineHeight: "1.38" };
+  if (len > 150) return { fontSize: "1.15rem", lineHeight: "1.36" };
+  if (len > 80) return { fontSize: "1.28rem", lineHeight: "1.34" };
+  return { fontSize: "1.45rem", lineHeight: "1.32" };
+}
+
 function getWidgetTextSize(text) {
   const len = (text || "").length;
-  if (len > 240) return { fontSize: "0.78rem", lineHeight: "1.30" };
-  if (len > 150) return { fontSize: "0.84rem", lineHeight: "1.34" };
-  if (len > 85) return { fontSize: "0.90rem", lineHeight: "1.38" };
-  return { fontSize: "0.96rem", lineHeight: "1.44" };
+  if (len > 320) return { fontSize: "0.82rem", lineHeight: "1.42" };
+  if (len > 200) return { fontSize: "0.88rem", lineHeight: "1.45" };
+  if (len > 100) return { fontSize: "0.94rem", lineHeight: "1.48" };
+  return { fontSize: "1.00rem", lineHeight: "1.50" };
 }
 
 function renderWidget() {
@@ -877,12 +924,15 @@ function renderWidget() {
     cardEl.style.color = widgetTheme === 'dark' ? '#f6f5f0' : '#14161b';
 
     if (current.type === "line") {
+      const qSize = getWidgetQuoteSize(current.text);
       cardEl.innerHTML = `
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <span class="w-sub" style="font-weight:700; text-transform:uppercase; letter-spacing:.08em;">${escapeHtml(todayQuote.work)}</span>
           <span class="w-badge-pill" style="font-size:10px; padding:3px 8px;">${escapeHtml(current.pill)}</span>
         </div>
-        <div class="w-quote-text" style="font-size:${current.quoteSize}; line-height:1.36; flex:1; display:flex; align-items:center;">“${escapeHtml(current.text)}”</div>
+        <div class="w-body-container">
+          <div class="w-quote-text" style="font-size:${qSize.fontSize}; line-height:${qSize.lineHeight};">“${escapeHtml(current.text)}”</div>
+        </div>
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
           <span class="w-sub">— ${escapeHtml(todayQuote.author)}${todayQuote.year ? ` · ${todayQuote.year}` : ''}</span>
           <span class="w-sub" style="font-weight:600">Next →</span>
@@ -902,8 +952,8 @@ function renderWidget() {
           <span class="w-sub" style="font-weight:700; text-transform:uppercase; letter-spacing:.08em;">${escapeHtml(todayQuote.work)}</span>
           <span class="w-badge-pill" style="font-size:10px; padding:3px 8px;">${escapeHtml(current.pill)}</span>
         </div>
-        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:${sSize.fontSize}; line-height:${sSize.lineHeight}; overflow-y:auto; scrollbar-width:none; flex:1; display:flex; align-items:center;">
-          <p style="margin:0;">${escapeHtml(current.text)}</p>
+        <div class="w-body-container">
+          <div class="w-explanation-text" style="font-size:${sSize.fontSize}; line-height:${sSize.lineHeight};">${escapeHtml(current.text)}</div>
         </div>
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
           <span class="w-sub">— ${escapeHtml(todayQuote.author)}</span>
@@ -939,7 +989,9 @@ function renderWidget() {
     if (widgetCardSlide === 0) {
       cardEl.innerHTML = `
         ${hasHowTo ? `<span class="w-badge-pill" style="background:#fff4df; color:#2d3be8;">How to</span>` : ``}
-        <div class="hook-title" style="font-size:1.85rem; margin:10px 0;">${escapeHtml(hookTitle)}</div>
+        <div class="w-body-container">
+          <div class="hook-title" style="font-size:1.85rem; line-height:1.15; margin:0;">${escapeHtml(hookTitle)}</div>
+        </div>
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
           <span class="w-sub">${escapeHtml(card.author)}</span>
           <span class="w-sub">The line →</span>
@@ -953,9 +1005,12 @@ function renderWidget() {
         </div>
       `;
     } else if (widgetCardSlide === 1) {
+      const qSize = getWidgetQuoteSize(card.quote);
       cardEl.innerHTML = `
         <span class="w-badge-pill">THE LINE</span>
-        <div class="w-quote-text" style="font-size:1.2rem;">“${escapeHtml(card.quote)}”</div>
+        <div class="w-body-container">
+          <div class="w-quote-text" style="font-size:${qSize.fontSize}; line-height:${qSize.lineHeight};">“${escapeHtml(card.quote)}”</div>
+        </div>
         <div class="w-sub">— ${escapeHtml(card.author)}, ${escapeHtml(card.work)}</div>
         <div class="w-footer">
           <span>Card 2 of 5 · The Line</span>
@@ -969,7 +1024,9 @@ function renderWidget() {
       const lcSize = getWidgetTextSize(card.lookCloser);
       cardEl.innerHTML = `
         <span class="w-badge-pill">LOOK CLOSER</span>
-        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:${lcSize.fontSize}; line-height:${lcSize.lineHeight}; overflow-y:auto; scrollbar-width:none; flex:1; display:flex; align-items:center;">${escapeHtml(card.lookCloser)}</div>
+        <div class="w-body-container">
+          <div class="w-explanation-text" style="font-size:${lcSize.fontSize}; line-height:${lcSize.lineHeight};">${escapeHtml(card.lookCloser)}</div>
+        </div>
         <div class="w-sub">— ${escapeHtml(card.author)}</div>
         <div class="w-footer">
           <span>Card 3 of 5 · Look Closer</span>
@@ -983,7 +1040,9 @@ function renderWidget() {
       const stSize = getWidgetTextSize(card.stealIt);
       cardEl.innerHTML = `
         <span class="w-badge-pill">STEAL IT</span>
-        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:${stSize.fontSize}; line-height:${stSize.lineHeight}; overflow-y:auto; scrollbar-width:none; flex:1; display:flex; align-items:center;">${escapeHtml(card.stealIt)}</div>
+        <div class="w-body-container">
+          <div class="w-explanation-text" style="font-size:${stSize.fontSize}; line-height:${stSize.lineHeight};">${escapeHtml(card.stealIt)}</div>
+        </div>
         <div class="w-sub">— Prose Craft Exercise</div>
         <div class="w-footer">
           <span>Card 4 of 5 · Steal It</span>
@@ -997,7 +1056,9 @@ function renderWidget() {
       const arSize = getWidgetTextSize(card.aroundIt);
       cardEl.innerHTML = `
         <span class="w-badge-pill">AROUND IT</span>
-        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:${arSize.fontSize}; line-height:${arSize.lineHeight}; overflow-y:auto; scrollbar-width:none; flex:1; display:flex; align-items:center;">${escapeHtml(card.aroundIt)}</div>
+        <div class="w-body-container">
+          <div class="w-explanation-text" style="font-size:${arSize.fontSize}; line-height:${arSize.lineHeight};">${escapeHtml(card.aroundIt)}</div>
+        </div>
         <div class="w-sub">— ${escapeHtml(card.author)}, ${escapeHtml(card.work)}${card.year ? ` · ${card.year}` : ''}</div>
         <div class="w-footer">
           <span>Card 5 of 5 · Around It</span>
@@ -1191,26 +1252,31 @@ function switchView(view) {
   if ($("studioTabWidget")) $("studioTabWidget").setAttribute("aria-pressed", String(view === "widget"));
   $("studioTabCatalog").setAttribute("aria-pressed", String(view === "catalog"));
 
-  $("viewApp").hidden = view !== "app";
-  $("viewWidget").hidden = view !== "widget";
-  $("viewCatalog").hidden = view !== "catalog";
+  $("viewApp").style.display = view === "app" ? "flex" : "none";
+  $("viewWidget").style.display = view === "widget" ? "flex" : "none";
+  $("viewCatalog").style.display = view === "catalog" ? "flex" : "none";
 
   if (view === "widget") renderWidget();
   if (view === "catalog" && !renderedCount) renderBankStream(true);
+  window.scrollTo({ top: 0, behavior: "instant" });
 }
 
 $("studioTabApp").onclick = () => switchView("app");
 if ($("studioTabWidget")) $("studioTabWidget").onclick = () => switchView("widget");
 $("studioTabCatalog").onclick = () => switchView("catalog");
 
-// Debug shortcut: URL with ?debug=widget allows internal widget inspection
-if (new URLSearchParams(window.location.search).get("debug") === "widget") {
-  const wTab = document.createElement("button");
-  wTab.className = "studio-tab";
-  wTab.id = "studioTabWidget";
-  wTab.textContent = "🔲 Widget";
-  wTab.onclick = () => switchView("widget");
-  document.querySelector(".studio-tabs").appendChild(wTab);
+// Local vs. Public separation:
+// Localhost (http://localhost:8765) displays the Widget tab automatically for testing.
+// Public GitHub Pages (github.io) hides the Widget tab completely.
+const isLocal = window.location.hostname === "localhost" ||
+                window.location.hostname === "127.0.0.1" ||
+                window.location.hostname === "" ||
+                window.location.protocol === "file:";
+const urlParams = new URLSearchParams(window.location.search);
+const showWidget = isLocal || urlParams.get("widget") === "1" || urlParams.get("debug") === "widget";
+
+if (showWidget && $("studioTabWidget")) {
+  $("studioTabWidget").style.display = "inline-flex";
 }
 
 // App mode toggles
