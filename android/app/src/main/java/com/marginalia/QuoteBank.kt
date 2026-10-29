@@ -37,6 +37,12 @@ object Horizons {
         ALL.firstOrNull { it.code == code }?.title ?: code.replaceFirstChar { it.uppercase() }
 }
 
+data class ShelfSlide(
+    val label: String,
+    val text: String,
+    val isLine: Boolean
+)
+
 data class BankQuote(
     val quote: String,
     val author: String,
@@ -49,6 +55,22 @@ data class BankQuote(
 
 object QuoteBank {
     @Volatile private var cache: List<BankQuote>? = null
+
+    fun slidesFor(quote: BankQuote): List<ShelfSlide> {
+        val paragraphs = quote.explanation.split("\n\n").map { it.trim() }.filter { it.isNotEmpty() }
+        val slides = mutableListOf<ShelfSlide>()
+        slides.add(ShelfSlide(label = "The Line", text = quote.quote, isLine = true))
+        if (paragraphs.size >= 2) {
+            slides.add(ShelfSlide(label = "The Scene", text = paragraphs[0], isLine = false))
+            slides.add(ShelfSlide(label = "The Truth", text = paragraphs[1], isLine = false))
+            for (i in 2 until paragraphs.size) {
+                slides.add(ShelfSlide(label = "Context", text = paragraphs[i], isLine = false))
+            }
+        } else if (paragraphs.isNotEmpty()) {
+            slides.add(ShelfSlide(label = "Scene Context", text = paragraphs[0], isLine = false))
+        }
+        return slides
+    }
 
     fun all(context: Context): List<BankQuote> =
         cache ?: synchronized(this) { cache ?: load(context).also { cache = it } }

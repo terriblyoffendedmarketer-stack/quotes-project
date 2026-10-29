@@ -33,7 +33,6 @@ class MainActivity : Activity() {
     private var cardIndex = 0
     private var bankIndex = 0
     private var cardSlides: List<Slide> = emptyList()
-    private val shelfSlides: List<ShelfSlide> = listOf(ShelfSlide.LINE, ShelfSlide.CONTEXT)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -300,7 +299,8 @@ class MainActivity : Activity() {
         }
         bankIndex = bankIndex.coerceIn(0, quotes.lastIndex)
         val quote = quotes[bankIndex]
-        adapter.showBank(quote, shelfSlides)
+        val currentSlides = QuoteBank.slidesFor(quote)
+        adapter.showBank(quote, currentSlides)
 
         val isGlobalToday = activeHorizon == "all" && bankIndex == QuoteBank.todayIndex(this)
         dayLabel.text = if (isGlobalToday) "TODAY'S SPARK" else "TODAY"
@@ -308,13 +308,13 @@ class MainActivity : Activity() {
         count.text = "${bankIndex + 1} / ${quotes.size}  ·  $horizonTitle"
 
         tabs.removeAllViews()
-        shelfSlides.forEachIndexed { i, s ->
+        currentSlides.forEachIndexed { i, s ->
             val tab = layoutInflater.inflate(R.layout.tab_chip, tabs, false) as TextView
             tab.text = s.label
             tab.setOnClickListener { pager.currentItem = i }
             tabs.addView(tab)
         }
-        val target = targetSlide.coerceIn(0, shelfSlides.lastIndex)
+        val target = targetSlide.coerceIn(0, currentSlides.lastIndex)
         pager.setCurrentItem(target, false)
         markTab(target)
     }

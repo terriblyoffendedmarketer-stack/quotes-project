@@ -4,3 +4,4 @@ content/*_raw.json
 .env
 *.env
 
+scripts/enrichment_progress.log

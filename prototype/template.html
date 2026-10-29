@@ -500,35 +500,67 @@ function renderBankDeck() {
   bankIndex = Math.min(bankIndex, quotes.length - 1);
   const q = quotes[bankIndex];
 
+  const paragraphs = (q.explanation || "").split("\n\n").map(p => p.trim()).filter(Boolean);
+  const totalSlides = paragraphs.length >= 2 ? 3 : 2;
+  const quoteLen = (q.quote || "").length;
+  const quoteSize = quoteLen > 280 ? "1.25rem" : (quoteLen > 180 ? "1.45rem" : (quoteLen > 80 ? "1.75rem" : "2.05rem"));
+
   const slides = [
     {
       cls: "bank-line",
+      label: "The Line",
       html: `
         <span class="shelf-pill">SHELF SPARK</span>
-        <span class="kicker">${escapeHtml(q.work)}</span>
-        <div class="line ${q.quote.length > 220 ? 'long' : ''}">“${escapeHtml(q.quote)}”</div>
+        <span class="kicker">${escapeHtml(q.work.toUpperCase())} · 1 OF ${totalSlides}</span>
+        <div class="line" style="font-size: ${quoteSize}; line-height: 1.35;">“${escapeHtml(q.quote)}”</div>
         <div class="who">${escapeHtml(q.author)}, <cite>${escapeHtml(q.work)}</cite>${q.year ? ` · ${q.year}` : ''}</div>
-        <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
-      `
-    },
-    {
-      cls: "bank-context",
-      html: `
-        <span class="shelf-pill">SCENE CONTEXT</span>
-        <span class="kicker">${escapeHtml(q.work)}</span>
-        <div class="note" style="font-size:1.15rem; line-height:1.6; margin: auto 0;"><p>${escapeHtml(q.explanation)}</p></div>
-        <div class="who">${escapeHtml(q.author)}, <cite>${escapeHtml(q.work)}</cite></div>
         <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
       `
     }
   ];
 
+  if (paragraphs.length >= 2) {
+    slides.push({
+      cls: "bank-context",
+      label: "The Scene",
+      html: `
+        <span class="shelf-pill">SCENE CONTEXT</span>
+        <span class="kicker">${escapeHtml(q.work.toUpperCase())} · 2 OF 3</span>
+        <div class="note" style="font-size:1.05rem; line-height:1.62; margin: auto 0;"><p>${escapeHtml(paragraphs[0])}</p></div>
+        <div class="who">${escapeHtml(q.author)}, <cite>${escapeHtml(q.work)}</cite></div>
+        <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
+      `
+    });
+    slides.push({
+      cls: "bank-context",
+      label: "The Truth",
+      html: `
+        <span class="shelf-pill">HUMAN TRUTH</span>
+        <span class="kicker">${escapeHtml(q.work.toUpperCase())} · 3 OF 3</span>
+        <div class="note" style="font-size:1.05rem; line-height:1.62; margin: auto 0;"><p>${escapeHtml(paragraphs[1])}</p></div>
+        <div class="who">${escapeHtml(q.author)}, <cite>${escapeHtml(q.work)}</cite></div>
+        <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
+      `
+    });
+  } else {
+    slides.push({
+      cls: "bank-context",
+      label: "Scene Context",
+      html: `
+        <span class="shelf-pill">SCENE CONTEXT</span>
+        <span class="kicker">${escapeHtml(q.work.toUpperCase())} · 2 OF 2</span>
+        <div class="note" style="font-size:1.05rem; line-height:1.62; margin: auto 0;"><p>${escapeHtml(paragraphs[0] || "")}</p></div>
+        <div class="who">${escapeHtml(q.author)}, <cite>${escapeHtml(q.work)}</cite></div>
+        <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
+      `
+    });
+  }
+
   const track = $("track");
   track.innerHTML = slides.map(s => `<div class="slide ${s.cls}">${s.html}</div>`).join("");
-  $("dots").innerHTML = `
-    <button type="button" data-i="0" aria-current="true">The Line</button>
-    <button type="button" data-i="1" aria-current="false">Scene Context</button>
-  `;
+  $("dots").innerHTML = slides.map((s, idx) => `
+    <button type="button" data-i="${idx}" aria-current="${idx === 0 ? 'true' : 'false'}">${s.label}</button>
+  `).join("");
 
   const hName = THEMES.find(t => t.code === appHorizon)?.title || "All";
   $("count").textContent = `${bankIndex + 1} / ${quotes.length} · ${hName}`;
@@ -781,8 +813,8 @@ function renderBankStream(reset = false) {
         </div>
         ${q.explanation ? `
           <div class="qc-explanation">
-            <span class="qc-explanation-label">Scene Context</span>
-            ${escapeHtml(q.explanation)}
+            <span class="qc-explanation-label">Scene & Human Truth</span>
+            ${escapeHtml(q.explanation).split("\n\n").map(p => `<p style="margin: 6px 0;">${p}</p>`).join("")}
           </div>
         ` : ''}
         <div class="qc-footer">

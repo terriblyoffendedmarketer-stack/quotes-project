@@ -16,6 +16,7 @@ import android.view.View
 import android.widget.RemoteViews
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
+import com.marginalia.BankQuote
 import com.marginalia.Cards
 import com.marginalia.ContentSync
 import com.marginalia.MainActivity
@@ -123,14 +124,65 @@ class CardWidgetProvider : AppWidgetProvider() {
             return prefs.getInt(slideKey(id), 0).coerceIn(0, Cards.slides(context).lastIndex)
         }
 
+        data class WidgetShelfChunk(
+            val label: String,
+            val text: String,
+            val isLine: Boolean
+        )
+
+        private fun getWidgetShelfSlides(q: BankQuote): List<WidgetShelfChunk> {
+            val slides = mutableListOf<WidgetShelfChunk>()
+            slides.add(WidgetShelfChunk(label = "The Line", text = q.quote, isLine = true))
+
+            val paragraphs = q.explanation.split("\n\n").map { it.trim() }.filter { it.isNotEmpty() }
+            paragraphs.forEachIndexed { pIdx, paragraph ->
+                val baseLabel = when (pIdx) {
+                    0 -> "The Scene"
+                    1 -> "The Truth"
+                    else -> "Context"
+                }
+                val words = paragraph.split(Regex("\\s+"))
+                if (words.size <= 85) {
+                    slides.add(WidgetShelfChunk(label = baseLabel, text = paragraph, isLine = false))
+                } else {
+                    val sentences = paragraph.split(Regex("(?<=[.!?])\\s+"))
+                    val chunks = mutableListOf<String>()
+                    var currentChunk = StringBuilder()
+                    var currentWordCount = 0
+
+                    for (sentence in sentences) {
+                        val sentenceWords = sentence.split(Regex("\\s+")).size
+                        if (currentWordCount + sentenceWords > 80 && currentChunk.isNotEmpty()) {
+                            chunks.add(currentChunk.toString().trim())
+                            currentChunk = StringBuilder(sentence)
+                            currentWordCount = sentenceWords
+                        } else {
+                            if (currentChunk.isNotEmpty()) currentChunk.append(" ")
+                            currentChunk.append(sentence)
+                            currentWordCount += sentenceWords
+                        }
+                    }
+                    if (currentChunk.isNotEmpty()) {
+                        chunks.add(currentChunk.toString().trim())
+                    }
+
+                    chunks.forEachIndexed { cIdx, chunk ->
+                        val chunkLabel = if (chunks.size > 1) "$baseLabel (${cIdx + 1}/${chunks.size})" else baseLabel
+                        slides.add(WidgetShelfChunk(label = chunkLabel, text = chunk, isLine = false))
+                    }
+                }
+            }
+            return slides
+        }
+
         /** Which quote in Shelf mode (always today's quote). */
         private fun currentShelfIndex(context: Context, id: Int): Int {
             return QuoteBank.todayIndex(context)
         }
 
-        /** Which slide in Shelf mode (0 = The Line, 1 = Scene Context). */
-        private fun currentShelfSlide(context: Context, id: Int): Int {
-            return state(context).getInt(shelfSlideKey(id), 0).coerceIn(0, 1)
+        /** Which slide in Shelf mode. */
+        private fun currentShelfSlide(context: Context, id: Int, totalSlides: Int): Int {
+            return state(context).getInt(shelfSlideKey(id), 0).coerceIn(0, (totalSlides - 1).coerceAtLeast(0))
         }
 
         private fun step(context: Context, id: Int, direction: Int) {
@@ -140,11 +192,15 @@ class CardWidgetProvider : AppWidgetProvider() {
                 state(context).edit().putInt(slideKey(id), next).putLong(dayKey(id), LocalDate.now().toEpochDay())
                     .putString(cardKey(id), cardId(context)).apply()
             } else {
-                // Shelf mode shows only one quote at a time (today's quote).
-                // Tapping back and forth toggles between The Line and Scene Context.
-                val slide = currentShelfSlide(context, id)
-                val nextSlide = if (direction > 0) (if (slide == 0) 1 else 0) else 0
-                state(context).edit().putInt(shelfSlideKey(id), nextSlide).apply()
+                val quotes = QuoteBank.all(context)
+                if (quotes.isNotEmpty()) {
+                    val q = quotes[currentShelfIndex(context, id)]
+                    val widgetSlides = getWidgetShelfSlides(q)
+                    val total = widgetSlides.size
+                    val slide = currentShelfSlide(context, id, total)
+                    val nextSlide = Math.floorMod(slide + direction, total)
+                    state(context).edit().putInt(shelfSlideKey(id), nextSlide).apply()
+                }
             }
             AppWidgetManager.getInstance(context).updateAppWidget(id, render(context, id))
         }
@@ -239,8 +295,11 @@ class CardWidgetProvider : AppWidgetProvider() {
             if (quotes.isEmpty()) return
 
             val shelfIdx = currentShelfIndex(context, id)
-            val shelfSlide = currentShelfSlide(context, id)
             val q = quotes[shelfIdx]
+            val widgetSlides = getWidgetShelfSlides(q)
+            val totalSlides = widgetSlides.size
+            val shelfSlide = currentShelfSlide(context, id, totalSlides)
+            val current = widgetSlides[shelfSlide]
 
             // Tint widget background with a deep literary tone
             val shelfColorLight = Color.parseColor("#f4f5f2")
@@ -255,27 +314,27 @@ class CardWidgetProvider : AppWidgetProvider() {
             views.setViewVisibility(R.id.content, View.GONE)
             views.setViewVisibility(R.id.shelf, View.VISIBLE)
 
-            if (shelfSlide == 0) {
+            if (current.isLine) {
                 // Slide 1: The Line
                 views.setViewVisibility(R.id.shelf_line_layout, View.VISIBLE)
                 views.setViewVisibility(R.id.shelf_context_layout, View.GONE)
 
                 views.setTextViewText(R.id.shelf_book, q.work)
-                views.setTextViewText(R.id.shelf_quote, "“${q.quote}”")
+                views.setTextViewText(R.id.shelf_quote, "“${current.text}”")
                 val yearStr = if (q.year != null) " · ${q.year}" else ""
                 views.setTextViewText(R.id.shelf_author, "— ${q.author}$yearStr")
 
-                views.setTextViewText(R.id.widget_progress, "Today's Quote · 1 of 2")
+                views.setTextViewText(R.id.widget_progress, "${current.label} · ${shelfSlide + 1} of $totalSlides")
             } else {
-                // Slide 2: Scene Context (Full height, never cut off!)
+                // Context Slides: Scene / Truth (Full height, never cut off!)
                 views.setViewVisibility(R.id.shelf_line_layout, View.GONE)
                 views.setViewVisibility(R.id.shelf_context_layout, View.VISIBLE)
 
                 views.setTextViewText(R.id.shelf_context_book, q.work)
-                views.setTextViewText(R.id.shelf_explanation, q.explanation)
+                views.setTextViewText(R.id.shelf_explanation, current.text)
                 views.setTextViewText(R.id.shelf_context_author, "— ${q.author}")
 
-                views.setTextViewText(R.id.widget_progress, "Scene Context · 2 of 2")
+                views.setTextViewText(R.id.widget_progress, "${current.label} · ${shelfSlide + 1} of $totalSlides")
             }
 
             views.textColor(context, R.id.widget_progress, R.color.widget_soft)

@@ -12,11 +12,6 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
-enum class ShelfSlide(val label: String) {
-    LINE("The Line"),
-    CONTEXT("Scene Context")
-}
-
 class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
 
     private var card: Card? = null
@@ -55,9 +50,9 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
         val c = card
         val bq = bankQuote
         if (c != null && position < slides.size) {
-            holder.bindCard(c, slides[position], colors)
+            holder.bindCard(c, slides[position], colors, position, slides.size)
         } else if (bq != null && position < shelfSlides.size) {
-            holder.bindBank(bq, shelfSlides[position])
+            holder.bindBank(bq, shelfSlides[position], position, shelfSlides.size)
         }
     }
 
@@ -74,7 +69,7 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
         private val spacerTop: View = view.findViewById(R.id.spacer_top)
         private val spacerBottom: View = view.findViewById(R.id.spacer_bottom)
 
-        fun bindCard(card: Card, slide: Slide, colors: Palette.Day) {
+        fun bindCard(card: Card, slide: Slide, colors: Palette.Day, position: Int, total: Int) {
             val isHook = slide == Slide.HOOK
             val isLine = slide == Slide.LINE
             itemView.setBackgroundColor(colors.color(itemView.context, slide))
@@ -93,12 +88,18 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             footer.visibility = if (isHook) View.GONE else View.VISIBLE
             job.visibility = footer.visibility
 
-            kicker.text = slide.label
+            kicker.text = "${slide.label.uppercase()}  ·  ${position + 1} OF $total"
             when {
                 isHook -> hookTitle.text = slide.body(itemView.context, card)
                 isLine -> {
                     line.text = slide.body(itemView.context, card)
-                    line.textSize = if (card.quote.length > 220) 21f else 27f
+                    val len = card.quote.length
+                    line.textSize = when {
+                        len < 80 -> 28f
+                        len < 180 -> 24f
+                        len < 280 -> 20f
+                        else -> 17f
+                    }
                 }
                 else -> body.text = slide.body(itemView.context, card)
             }
@@ -107,8 +108,8 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             job.text = card.job
         }
 
-        fun bindBank(quote: BankQuote, shelfSlide: ShelfSlide) {
-            val isLine = shelfSlide == ShelfSlide.LINE
+        fun bindBank(quote: BankQuote, shelfSlide: ShelfSlide, position: Int, total: Int) {
+            val isLine = shelfSlide.isLine
             val context = itemView.context
 
             val bg = ContextCompat.getColor(context, R.color.sheet)
@@ -116,7 +117,11 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
 
             hookPill.visibility = View.VISIBLE
             hookPill.setBackgroundResource(R.drawable.shelf_badge)
-            hookPill.text = if (isLine) "SHELF SPARK" else "SCENE CONTEXT"
+            hookPill.text = when {
+                isLine -> "SHELF SPARK"
+                shelfSlide.label == "The Truth" -> "HUMAN TRUTH"
+                else -> "SCENE CONTEXT"
+            }
             hookPill.setTextColor(ContextCompat.getColor(context, R.color.shelf_badge_text))
 
             hookTitle.visibility = View.GONE
@@ -124,7 +129,7 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             mini.visibility = View.GONE
 
             kicker.visibility = View.VISIBLE
-            kicker.text = quote.work
+            kicker.text = "${quote.work.uppercase()}  ·  ${position + 1} OF $total"
             kicker.setTextColor(ContextCompat.getColor(context, R.color.ink_soft))
 
             spacerTop.visibility = if (isLine) View.VISIBLE else View.GONE
@@ -137,10 +142,16 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             body.setTextColor(ContextCompat.getColor(context, R.color.ink))
 
             if (isLine) {
-                line.text = "“${quote.quote}”"
-                line.textSize = if (quote.quote.length > 220) 20f else 25f
+                line.text = "“${shelfSlide.text}”"
+                val len = shelfSlide.text.length
+                line.textSize = when {
+                    len < 80 -> 28f
+                    len < 180 -> 24f
+                    len < 280 -> 20f
+                    else -> 17f
+                }
             } else {
-                body.text = quote.explanation
+                body.text = shelfSlide.text
                 body.textSize = 16f
             }
 
