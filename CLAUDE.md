@@ -1,7 +1,7 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 10 (Web App Edition & GitHub Pages Live Deployment)  
-> **Current**: Deployed Marginalia Web Edition to GitHub Pages (`https://terriblyoffendedmarketer-stack.github.io/quotes-project/`). Fully responsive on mobile Chrome (PWA-ready with touch-swipe, Apple Touch icon, and dark/light themes) and desktop Chrome. Provides seamless browsing across both Prose Craft (108 cards) and Shelf Sparks (1,874 quotes) with instant Thematic Horizons filtering, widget simulation, and direct one-click APK download links (`marginalia.apk` bundled in `/docs` and GitHub Releases).  
+> **Current**: Cleaned up the public Web App by hiding developer widget views from public visitors (accessible only via `?debug=widget`). Fixed widget truncation by reducing widget slide chunk limit to 42 words with dynamic responsive font auto-scaling (`0.96rem` down to `0.78rem`). Redesigned the entire Quote Bank ("The Library") screen with serene anthology typography, collapsible companion notes (`▾ Companion Note`), and clear separation between the Daily Reader and the Master Library.  
 > **Next**: Let enrichment run through the remaining quotes once daily quota resets, update bundled assets, and re-release.
 
 ## Roadmap

@@ -134,7 +134,7 @@ class CardWidgetProvider : AppWidgetProvider() {
             val total: Int = 1
         )
 
-        private fun getWidgetShelfSlides(q: BankQuote, maxWords: Int = 60): List<WidgetShelfChunk> {
+        private fun getWidgetShelfSlides(q: BankQuote, maxWords: Int = 42): List<WidgetShelfChunk> {
             val slides = mutableListOf<WidgetShelfChunk>()
             slides.add(WidgetShelfChunk(label = "The Line", pill = "THE LINE", text = q.quote, isLine = true))
 

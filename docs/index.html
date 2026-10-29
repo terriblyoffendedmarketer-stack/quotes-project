@@ -197,19 +197,19 @@ mark.q { font-family: var(--font-line); font-style: italic; font-weight: 600; }
 button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
 /* ==========================================================================
-   WIDGET SIMULATOR
+   WIDGET SIMULATOR (INTERNAL TESTING)
    ========================================================================== */
 .widget-sim-wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; margin-top: 8px; }
 .widget-device-bg {
   width: 100%; max-width: 420px;
   background: radial-gradient(circle at top right, #384252 0%, #1c212b 100%);
-  border-radius: 36px; padding: 28px 20px;
+  border-radius: 36px; padding: 24px 18px;
   box-shadow: 0 16px 40px rgba(0,0,0,0.25);
   display: flex; flex-direction: column; gap: 16px;
 }
 .widget-card-sim {
   border-radius: 24px; padding: 18px 20px 14px;
-  height: 270px; max-height: 270px; display: flex; flex-direction: column; justify-content: space-between;
+  height: 290px; max-height: 290px; display: flex; flex-direction: column; justify-content: space-between;
   cursor: pointer; position: relative; overflow: hidden;
   box-shadow: 0 4px 18px rgba(0,0,0,0.18);
   transition: all .2s ease;
@@ -222,50 +222,135 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .widget-card-sim.w-light .w-badge-pill { background: #e4e7eb; color: #1b1d22; }
 .widget-card-sim.w-dark .w-badge-pill { background: #282d35; color: #f0efea; }
 
-.w-quote-text { font-family: var(--font-line); font-weight: 600; font-size: 1.25rem; line-height: 1.35; margin: 10px 0; }
-.w-explanation-text { font-size: 0.95rem; line-height: 1.45; margin: 8px 0; flex: 1; display: flex; align-items: center; }
+.w-quote-text { font-family: var(--font-line); font-weight: 600; font-size: 1.25rem; line-height: 1.35; margin: 8px 0; }
+.w-explanation-text { font-size: 0.90rem; line-height: 1.40; margin: 6px 0; flex: 1; display: flex; align-items: center; }
 
 .w-sub { font-size: 12px; opacity: .7; }
-.w-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 12px; opacity: .85; border-top: 1px solid rgba(125,125,125,.15); padding-top: 8px; }
+.w-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; font-size: 12px; opacity: .85; border-top: 1px solid rgba(125,125,125,.15); padding-top: 8px; }
 .w-btn { font: 600 12px/1 var(--font-tag); background: none; border: 0; color: inherit; cursor: pointer; padding: 4px 8px; border-radius: 6px; }
 .w-btn:hover { background: rgba(125,125,125,.15); }
 
 /* ==========================================================================
-   CATALOG HORIZONS STREAM
+   THE MASTER LIBRARY (ALL QUOTES VIEW)
    ========================================================================== */
 .bank-container { display: flex; flex-direction: column; gap: 16px; }
-.bank-header-panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 12px; }
+
+.library-hero {
+  padding: 4px 2px 2px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.library-headline {
+  font-family: var(--font-hook); font-weight: 700;
+  font-size: 1.65rem; line-height: 1.15; color: var(--ink);
+  letter-spacing: -.01em;
+}
+.library-sub {
+  font-size: 13px; color: var(--ink-soft);
+}
+
+.bank-header-panel {
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 16px;
+  padding: 14px 16px; display: flex; flex-direction: column; gap: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
 .search-row { display: flex; gap: 8px; align-items: center; }
-.search-input { flex: 1; font: 500 14px/1.4 var(--font-note); background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-radius: 10px; padding: 9px 12px; outline: none; transition: border-color .15s; }
+.search-input {
+  flex: 1; font: 500 13.5px/1.4 var(--font-note);
+  background: var(--paper); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 10px;
+  padding: 9px 13px; outline: none; transition: border-color .15s;
+}
 .search-input:focus { border-color: var(--ink); }
-.filter-active-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-soft); }
+
+.filter-active-row {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 8px; font-size: 12px; color: var(--ink-soft); flex-wrap: wrap;
+}
 .active-tag-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--ink); color: var(--paper); font: 500 11px/1 var(--font-tag); padding: 4px 10px; border-radius: 99px; }
 .active-tag-pill button { background: none; border: 0; color: var(--paper); cursor: pointer; padding: 0; font-weight: bold; font-size: 13px; line-height: 1; }
 .spark-queue-btn { font: 600 11px/1 var(--font-tag); background: var(--paper); color: var(--spark-gold); border: 1px solid var(--rule); border-radius: 99px; padding: 5px 9px; cursor: pointer; }
 .spark-queue-btn[aria-pressed="true"] { background: var(--spark-gold); color: #fff; border-color: var(--spark-gold); }
 
-.horizon-section { display: flex; flex-direction: column; gap: 14px; margin-top: 6px; }
-.horizon-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid var(--ink); padding-bottom: 6px; margin-top: 14px; }
-.horizon-title { font-family: var(--font-tag); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
-.horizon-count { font-family: var(--font-tag); font-size: 11px; color: var(--ink-soft); }
-
-.quote-card { background: var(--sheet); border: 1px solid var(--rule); border-radius: 16px; padding: 22px 20px 18px; display: flex; flex-direction: column; gap: 14px; transition: border-color .15s, box-shadow .15s; }
+/* Elegant Anthology Quote Cards */
+.quotes-stream { display: flex; flex-direction: column; gap: 14px; }
+.quote-card {
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 16px;
+  padding: 20px 20px 16px; display: flex; flex-direction: column; gap: 12px;
+  transition: border-color .15s, box-shadow .15s;
+}
 .quote-card:hover { border-color: var(--ink-soft); }
 .quote-card.spark-highlight { border-color: var(--spark-gold); box-shadow: 0 0 0 1px var(--spark-gold); }
-.qc-quote { font-family: var(--font-line); font-size: 1.35rem; line-height: 1.44; margin: 0; color: var(--ink); text-wrap: pretty; }
-.qc-quote.long { font-size: 1.15rem; }
-.qc-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; font-size: 13.5px; color: var(--ink-soft); }
-.qc-book { font-weight: 600; color: var(--ink); font-family: var(--font-line); }
-.qc-explanation { background: var(--paper); border-left: 3px solid var(--accent); border-radius: 6px; padding: 11px 13px; font-size: 13.5px; line-height: 1.48; color: var(--ink); }
-.qc-explanation-label { font-family: var(--font-tag); font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); font-weight: 600; margin-bottom: 3px; display: block; }
-.qc-footer { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 2px; }
-.qc-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-.qc-tag { font: 500 10.5px/1 var(--font-tag); background: var(--paper); color: var(--ink-soft); padding: 4px 7px; border-radius: 6px; cursor: pointer; border: 1px solid transparent; transition: all .15s; }
-.qc-tag:hover { color: var(--ink); border-color: var(--rule); }
 
-.btn-spark { font: 600 11.5px/1 var(--font-tag); background: transparent; color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 99px; padding: 6px 11px; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all .15s; }
+.qc-top-bar {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+}
+.qc-horizon-badge {
+  font-family: var(--font-tag); font-size: 10.5px; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft);
+}
+.btn-spark {
+  font: 600 11px/1 var(--font-tag); background: transparent; color: var(--ink-soft);
+  border: 1px solid var(--rule); border-radius: 99px; padding: 5px 10px;
+  cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all .15s;
+}
 .btn-spark:hover { color: var(--spark-gold); border-color: var(--spark-gold); }
 .btn-spark.saved { background: var(--paper); color: var(--spark-gold); border-color: var(--spark-gold); }
+
+.qc-quote {
+  font-family: var(--font-line); font-size: 1.25rem; line-height: 1.48;
+  margin: 0; color: var(--ink); text-wrap: pretty;
+}
+.qc-quote.long { font-size: 1.12rem; line-height: 1.45; }
+
+.qc-attribution {
+  font-size: 13px; color: var(--ink-soft); line-height: 1.4;
+}
+.qc-author { font-weight: 600; color: var(--ink); }
+.qc-work { font-style: italic; color: var(--ink); }
+
+/* Collapsible Companion Note */
+.btn-note-toggle {
+  align-self: flex-start;
+  font: 600 11.5px/1 var(--font-tag); letter-spacing: .02em;
+  background: var(--paper); color: var(--ink-soft);
+  border: 1px solid var(--rule); border-radius: 99px;
+  padding: 6px 12px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: all .15s ease;
+  margin-top: 2px;
+}
+.btn-note-toggle:hover { color: var(--ink); border-color: var(--ink-soft); }
+.btn-note-toggle.open { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.qc-note-body {
+  display: flex; flex-direction: column; gap: 10px;
+  background: var(--paper); border-radius: 12px; padding: 14px 16px;
+  margin-top: 4px;
+}
+.qc-tier { display: flex; flex-direction: column; gap: 4px; }
+.qc-tier-badge {
+  font-family: var(--font-tag); font-size: 10px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--accent);
+}
+:root[data-theme="dark"] .qc-tier-badge { color: #8fa0ff; }
+.qc-tier-text {
+  font-family: var(--font-line); font-size: 13.5px; line-height: 1.52;
+  color: var(--ink); margin: 0;
+}
+
+.qc-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 10px; flex-wrap: wrap; margin-top: 4px; border-top: 1px solid var(--rule);
+  padding-top: 10px;
+}
+.qc-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.qc-tag {
+  font: 500 10.5px/1 var(--font-tag); background: var(--paper);
+  color: var(--ink-soft); padding: 4px 7px; border-radius: 6px;
+  cursor: pointer; border: 1px solid transparent; transition: all .15s;
+}
+.qc-tag:hover { color: var(--ink); border-color: var(--rule); }
+
 .load-more-wrap { text-align: center; padding: 18px 0; }
 .btn-load-more { font: 600 13px/1 var(--font-note); background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 10px; padding: 11px 22px; cursor: pointer; }
 </style>
@@ -273,21 +358,23 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 <body>
 <div class="wrap">
 
-  <!-- Top Studio Header -->
+  <!-- Top Navigation Header -->
   <header class="studio-bar">
     <div class="studio-brand">
       <span class="studio-logo">MARGINALIA</span>
       <span class="studio-badge">Web Edition</span>
     </div>
-    <nav class="studio-tabs" aria-label="Visual Studio Views">
-      <button class="studio-tab" id="studioTabApp" aria-pressed="true">📱 App Reader</button>
-      <button class="studio-tab" id="studioTabWidget" aria-pressed="false">🔲 Widget</button>
-      <button class="studio-tab" id="studioTabCatalog" aria-pressed="false">📚 Catalog</button>
+    <nav class="studio-tabs" aria-label="Views">
+      <button class="studio-tab" id="studioTabApp" aria-pressed="true">✨ Daily</button>
+      <button class="studio-tab" id="studioTabCatalog" aria-pressed="false">📖 All Quotes</button>
     </nav>
     <div class="studio-actions">
       <a href="marginalia.apk" download="marginalia.apk" class="apk-download-btn" id="apkDownloadLink" title="Download Android App (APK 3.2 MB)">
         <span>↓</span> APK
       </a>
+      <button class="theme-btn" id="themeBtn" type="button" title="Toggle dark/light theme">🌙 Dark</button>
+    </div>
+  </header>
       <button class="theme-btn" id="themeBtn" type="button" title="Toggle dark/light theme">🌙 Dark</button>
     </div>
   </header>
@@ -380,28 +467,33 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
     </aside>
   </main>
 
-  <!-- VIEW 3: FULL HORIZONS CATALOG -->
+  <!-- VIEW 2: THE MASTER LIBRARY (ALL QUOTES VIEW) -->
   <main id="viewCatalog" class="bank-container" hidden>
+    <div class="library-hero">
+      <div class="library-headline">The Library</div>
+      <div class="library-sub">1,874 curated passages &amp; literary companion notes across 416 books</div>
+    </div>
+
     <section class="bank-header-panel">
       <div class="search-row">
-        <input type="text" class="search-input" id="bankSearch" placeholder="Search 1,871 quotes, authors, books..." autocomplete="off">
-        <button class="chip-btn" id="btnSurpriseCatalog" type="button">🎲 Surprise</button>
+        <input type="text" class="search-input" id="bankSearch" placeholder="Search passages, authors, books, themes..." autocomplete="off">
+        <button class="chip-btn" id="btnSurpriseCatalog" type="button" title="Jump to random quote">🎲 Surprise</button>
       </div>
 
       <nav class="horizons-bar" id="catalogHorizonsBar" aria-label="Thematic Horizons">
-        <button class="horizon-chip" data-h="all" aria-pressed="true">All (1,871)</button>
+        <button class="horizon-chip" data-h="all" aria-pressed="true">All (1,874)</button>
         <button class="horizon-chip" data-h="dread" aria-pressed="false">Atmospheric Dread</button>
         <button class="horizon-chip" data-h="folly" aria-pressed="false">Human Folly</button>
-        <button class="horizon-chip" data-h="solitude" aria-pressed="false">Solitude & Finitude</button>
+        <button class="horizon-chip" data-h="solitude" aria-pressed="false">Solitude &amp; Finitude</button>
         <button class="horizon-chip" data-h="stakes" aria-pressed="false">High Stakes</button>
         <button class="horizon-chip" data-h="irony" aria-pressed="false">Sharp Irony</button>
-        <button class="horizon-chip" data-h="power" aria-pressed="false">Power & History</button>
-        <button class="horizon-chip" data-h="prose" aria-pressed="false">Observation & Prose</button>
+        <button class="horizon-chip" data-h="power" aria-pressed="false">Power &amp; History</button>
+        <button class="horizon-chip" data-h="prose" aria-pressed="false">Observation &amp; Prose</button>
       </nav>
 
       <div class="filter-active-row">
         <div>
-          <span id="bankMatchCount">1,871</span> quotes across <span id="bankBooksCount">416</span> books
+          <span id="bankMatchCount">1,874</span> quotes across <span id="bankBooksCount">416</span> books
           <span id="activeTagContainer" style="margin-left:8px; display:none">
             <span class="active-tag-pill">#<span id="activeTagName"></span> <button id="btnClearTag" type="button">×</button></span>
           </span>
@@ -760,15 +852,23 @@ let widgetTheme = "dark"; // "dark" | "light"
 let widgetShelfSlide = 0;
 let widgetCardSlide = 0; // 0 to 4
 
+function getWidgetTextSize(text) {
+  const len = (text || "").length;
+  if (len > 240) return { fontSize: "0.78rem", lineHeight: "1.30" };
+  if (len > 150) return { fontSize: "0.84rem", lineHeight: "1.34" };
+  if (len > 85) return { fontSize: "0.90rem", lineHeight: "1.38" };
+  return { fontSize: "0.96rem", lineHeight: "1.44" };
+}
+
 function renderWidget() {
   const cardEl = $("widgetSimCard");
   cardEl.className = `widget-card-sim ${widgetTheme === 'dark' ? 'w-dark' : 'w-light'}`;
   $("wThemeToggle").textContent = `Theme: ${widgetTheme === 'dark' ? 'Dark' : 'Light'}`;
 
   if (widgetMode === "shelf") {
-    // Shelf Spark quote with dynamic multi-slide pagination
+    // Shelf Spark quote with dynamic multi-slide pagination (42 words max per slide chunk)
     const todayQuote = QUOTE_BANK[bankIndex] || QUOTE_BANK[0];
-    const slides = getShelfSlides(todayQuote, 60);
+    const slides = getShelfSlides(todayQuote, 42);
     const totalSlides = slides.length;
     widgetShelfSlide = Math.max(0, Math.min(widgetShelfSlide, totalSlides - 1));
     const current = slides[widgetShelfSlide];
@@ -796,12 +896,13 @@ function renderWidget() {
         </div>
       `;
     } else {
+      const sSize = getWidgetTextSize(current.text);
       cardEl.innerHTML = `
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <span class="w-sub" style="font-weight:700; text-transform:uppercase; letter-spacing:.08em;">${escapeHtml(todayQuote.work)}</span>
           <span class="w-badge-pill" style="font-size:10px; padding:3px 8px;">${escapeHtml(current.pill)}</span>
         </div>
-        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:0.95rem; line-height:1.46; overflow:hidden; flex:1; display:flex; align-items:center;">
+        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:${sSize.fontSize}; line-height:${sSize.lineHeight}; overflow-y:auto; scrollbar-width:none; flex:1; display:flex; align-items:center;">
           <p style="margin:0;">${escapeHtml(current.text)}</p>
         </div>
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
@@ -865,9 +966,10 @@ function renderWidget() {
         </div>
       `;
     } else if (widgetCardSlide === 2) {
+      const lcSize = getWidgetTextSize(card.lookCloser);
       cardEl.innerHTML = `
         <span class="w-badge-pill">LOOK CLOSER</span>
-        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:0.90rem; line-height:1.42;">${escapeHtml(card.lookCloser)}</div>
+        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:${lcSize.fontSize}; line-height:${lcSize.lineHeight}; overflow-y:auto; scrollbar-width:none; flex:1; display:flex; align-items:center;">${escapeHtml(card.lookCloser)}</div>
         <div class="w-sub">— ${escapeHtml(card.author)}</div>
         <div class="w-footer">
           <span>Card 3 of 5 · Look Closer</span>
@@ -878,9 +980,10 @@ function renderWidget() {
         </div>
       `;
     } else if (widgetCardSlide === 3) {
+      const stSize = getWidgetTextSize(card.stealIt);
       cardEl.innerHTML = `
         <span class="w-badge-pill">STEAL IT</span>
-        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:0.90rem; line-height:1.42;">${escapeHtml(card.stealIt)}</div>
+        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:${stSize.fontSize}; line-height:${stSize.lineHeight}; overflow-y:auto; scrollbar-width:none; flex:1; display:flex; align-items:center;">${escapeHtml(card.stealIt)}</div>
         <div class="w-sub">— Prose Craft Exercise</div>
         <div class="w-footer">
           <span>Card 4 of 5 · Steal It</span>
@@ -891,9 +994,10 @@ function renderWidget() {
         </div>
       `;
     } else {
+      const arSize = getWidgetTextSize(card.aroundIt);
       cardEl.innerHTML = `
         <span class="w-badge-pill">AROUND IT</span>
-        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:0.90rem; line-height:1.42;">${escapeHtml(card.aroundIt)}</div>
+        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:${arSize.fontSize}; line-height:${arSize.lineHeight}; overflow-y:auto; scrollbar-width:none; flex:1; display:flex; align-items:center;">${escapeHtml(card.aroundIt)}</div>
         <div class="w-sub">— ${escapeHtml(card.author)}, ${escapeHtml(card.work)}${card.year ? ` · ${card.year}` : ''}</div>
         <div class="w-footer">
           <span>Card 5 of 5 · Around It</span>
@@ -931,9 +1035,9 @@ $("widgetSimCard").addEventListener("click", e => {
   const isBack = x < rect.width * 0.35;
 
   if (widgetMode === "shelf") {
-    // In Shelf Spark mode, cycle through all dynamic slides
+    // In Shelf Spark mode, cycle through all dynamic slides (42 words max)
     const todayQuote = QUOTE_BANK[bankIndex] || QUOTE_BANK[0];
-    const slides = getShelfSlides(todayQuote, 60);
+    const slides = getShelfSlides(todayQuote, 42);
     const total = slides.length;
     if (isBack) {
       widgetShelfSlide = (widgetShelfSlide - 1 + total) % total;
@@ -948,6 +1052,8 @@ $("widgetSimCard").addEventListener("click", e => {
       widgetCardSlide = (widgetCardSlide + 1) % 5;
     }
   }
+  renderWidget();
+});
   renderWidget();
 });
 
@@ -993,34 +1099,55 @@ function renderBankStream(reset = false) {
 
   const slice = currentFilteredList.slice(renderedCount, renderedCount + PAGE_SIZE);
   if (!slice.length) {
-    if (reset) $("quotesStream").innerHTML = `<div style="text-align:center; padding:40px; color:var(--ink-soft);">No quotes match your filter.</div>`;
+    if (reset) $("quotesStream").innerHTML = `<div style="text-align:center; padding:40px; color:var(--ink-soft);">No passages match your search.</div>`;
     $("loadMoreWrap").style.display = "none";
     return;
   }
 
-  const html = slice.map(q => {
+  const html = slice.map((q, idx) => {
     const isSaved = sparkQueue.includes(q.work);
+    const paragraphs = (q.explanation || "").split("\n\n").map(p => p.trim()).filter(Boolean);
+    const p1 = paragraphs[0] || "";
+    const p2 = paragraphs[1] || "";
+    const noteId = `note_${renderedCount + idx}`;
+
     return `
       <article class="quote-card" data-work="${escapeHtml(q.work)}">
-        <blockquote class="qc-quote ${q.quote.length > 220 ? 'long' : ''}">“${escapeHtml(q.quote)}”</blockquote>
-        <div class="qc-meta">
-          <span class="qc-book">${escapeHtml(q.work)}</span>
-          <span>— ${escapeHtml(q.author)}${q.year ? ` · ${q.year}` : ''}</span>
+        <div class="qc-top-bar">
+          <span class="qc-horizon-badge">#${escapeHtml(q.horizon)}</span>
+          <button class="btn-spark ${isSaved ? 'saved' : ''}" type="button" onclick="toggleSpark('${escapeHtml(q.work)}')">
+            ${isSaved ? '★ Saved' : '☆ Read Next'}
+          </button>
         </div>
-        ${q.explanation ? `
-          <div class="qc-explanation">
-            <span class="qc-explanation-label">Scene & Human Truth</span>
-            ${escapeHtml(q.explanation).split("\n\n").map(p => `<p style="margin: 6px 0;">${p}</p>`).join("")}
+
+        <blockquote class="qc-quote ${q.quote.length > 220 ? 'long' : ''}">“${escapeHtml(q.quote)}”</blockquote>
+
+        <div class="qc-attribution">
+          — <strong class="qc-author">${escapeHtml(q.author)}</strong>, <cite class="qc-work">${escapeHtml(q.work)}</cite>${q.year ? ` · ${q.year}` : ''}
+        </div>
+
+        ${paragraphs.length > 0 ? `
+          <button class="btn-note-toggle" type="button" onclick="toggleNote('${noteId}', this)">
+            <span>▾ Read Companion Note</span>
+          </button>
+          <div class="qc-note-body" id="${noteId}" style="display:none;">
+            <div class="qc-tier">
+              <span class="qc-tier-badge">THE PREDICAMENT</span>
+              <p class="qc-tier-text">${escapeHtml(p1)}</p>
+            </div>
+            ${p2 ? `
+            <div class="qc-tier">
+              <span class="qc-tier-badge">THE MIRROR</span>
+              <p class="qc-tier-text">${escapeHtml(p2)}</p>
+            </div>` : ''}
           </div>
         ` : ''}
+
         <div class="qc-footer">
           <div class="qc-tags">
             <span class="qc-tag" onclick="filterByTag('${escapeHtml(q.horizon)}')">#${escapeHtml(q.horizon)}</span>
             ${(q.tags || []).map(t => `<span class="qc-tag" onclick="filterByTag('${escapeHtml(t)}')">#${escapeHtml(t)}</span>`).join('')}
           </div>
-          <button class="btn-spark ${isSaved ? 'saved' : ''}" type="button" onclick="toggleSpark('${escapeHtml(q.work)}')">
-            ${isSaved ? '✓ Saved' : '+ Read Next'}
-          </button>
         </div>
       </article>
     `;
@@ -1030,6 +1157,15 @@ function renderBankStream(reset = false) {
   renderedCount += slice.length;
   $("loadMoreWrap").style.display = renderedCount < currentFilteredList.length ? "block" : "none";
 }
+
+window.toggleNote = function(id, btn) {
+  const el = $(id);
+  if (!el) return;
+  const isHidden = el.style.display === "none";
+  el.style.display = isHidden ? "flex" : "none";
+  btn.classList.toggle("open", isHidden);
+  btn.querySelector("span").textContent = isHidden ? "▴ Hide Companion Note" : "▾ Read Companion Note";
+};
 
 window.filterByTag = function(tag) {
   bankActiveTag = tag;
@@ -1054,7 +1190,7 @@ window.toggleSpark = function(work) {
    ========================================================================== */
 function switchView(view) {
   $("studioTabApp").setAttribute("aria-pressed", String(view === "app"));
-  $("studioTabWidget").setAttribute("aria-pressed", String(view === "widget"));
+  if ($("studioTabWidget")) $("studioTabWidget").setAttribute("aria-pressed", String(view === "widget"));
   $("studioTabCatalog").setAttribute("aria-pressed", String(view === "catalog"));
 
   $("viewApp").hidden = view !== "app";
@@ -1066,8 +1202,18 @@ function switchView(view) {
 }
 
 $("studioTabApp").onclick = () => switchView("app");
-$("studioTabWidget").onclick = () => switchView("widget");
+if ($("studioTabWidget")) $("studioTabWidget").onclick = () => switchView("widget");
 $("studioTabCatalog").onclick = () => switchView("catalog");
+
+// Debug shortcut: URL with ?debug=widget allows internal widget inspection
+if (new URLSearchParams(window.location.search).get("debug") === "widget") {
+  const wTab = document.createElement("button");
+  wTab.className = "studio-tab";
+  wTab.id = "studioTabWidget";
+  wTab.textContent = "🔲 Widget";
+  wTab.onclick = () => switchView("widget");
+  document.querySelector(".studio-tabs").appendChild(wTab);
+}
 
 // App mode toggles
 $("appModeCards").onclick = () => { appMode = "cards"; setTodayMode("cards"); renderApp(); };
