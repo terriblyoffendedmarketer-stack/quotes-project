@@ -19099,5 +19099,423 @@
     ],
     "author": "Tara Mohr",
     "work": "Playing Big: Find Your Voice, Your Mission, Your Message"
+  },
+  {
+    "quote": "\"What he’s got is a major case of cover my ass.\"",
+    "explanation": "Burne's blunt assessment reveals the immense pressure Edgarton is under. The scene captures a moment of raw anxiety and strategic maneuvering within the aerospace industry, highlighting how decisions driven by fear can dramatically alter the course of events.",
+    "tags": [
+      "tension",
+      "strategy"
+    ],
+    "author": "Crichton, Michael",
+    "work": "Airframe"
+  },
+  {
+    "quote": "\"The media image is the reality, and by comparison day-to-day life seems to lack excitement. So now day-to-day life is false, and the media image is true.\"",
+    "explanation": "This passage captures Amos’s cynical worldview – that the sensationalized stories presented in the media have become a distorted reflection of actual events. It highlights the unsettling idea that reality itself has been reshaped by public perception, creating a sense of unease and detachment.",
+    "tags": [
+      "media",
+      "perception",
+      "truth"
+    ],
+    "author": "Crichton, Michael",
+    "work": "Airframe"
+  },
+  {
+    "quote": "“It was a new aircraft, and all aircraft have problems when they’re first introduced. You can’t build a machine with a million parts and not have snags.”",
+    "explanation": "This passage captures the frustrating reality of introducing complex technology – even seemingly simple systems like an aircraft slat mechanism – to the world. It highlights the inevitability of early issues, emphasizing that problems are inherent in the process of innovation and widespread adoption.",
+    "tags": [
+      "technical challenges",
+      "innovation"
+    ],
+    "author": "Crichton, Michael",
+    "work": "Airframe"
+  },
+  {
+    "quote": "\"The wing data doesn't fit the fuse data which doesn't fit the tail data. So it breaks up.\"",
+    "explanation": "This passage captures the core of the problem: the flight recorder data is fundamentally corrupted, creating impossible inconsistencies within the simulated aircraft model. It highlights the technical difficulty and frustration of trying to reconstruct the flight from flawed information—a key element driving the narrative’s suspense.",
+    "tags": [
+      "technical",
+      "data corruption"
+    ],
+    "author": "Crichton, Michael",
+    "work": "Airframe"
+  },
+  {
+    "quote": "“Enough mystery and suspense to keep the reader hooked . . . [The] glimpses into the deep-rooted otherness of Japanese mores are fascinating. So is the book’s science, as one might expect from an author with an M.D. degree and a long line of bestsellers with high-tech plots.”",
+    "explanation": "This passage highlights Crichton's signature blend – suspenseful storytelling combined with meticulous research, particularly his medical background informing the narrative. It suggests a core element of the book’s appeal: a compelling mystery intertwined with an exploration of cultural differences.",
+    "tags": [
+      "science",
+      "cultural conflict"
+    ],
+    "author": "Michael Crichton",
+    "work": "Rising Sun"
+  },
+  {
+    "quote": "“You are to blame here,” he said to Ishiguro. “ You are the cause of all these troubles. And you will see that my detectives get any assistance they need. I want the name of every person who has been on this floor since the body was discovered. And I want the film from Tanaka’s camera. Ore wa honk ida I will arrest you if you obstruct this investigation further.”",
+    "explanation": "This passage is striking because it encapsulates Connor's ruthless, strategic approach to the investigation. He isn't simply pursuing a crime; he's manipulating the situation and individuals involved – particularly Ishiguro – to achieve his goals. The clipped, demanding tone combined with the Japanese phrases highlights the tension and power dynamics at play.",
+    "tags": [
+      "manipulation",
+      "power",
+      "tension"
+    ],
+    "author": "Michael Crichton",
+    "work": "Rising Sun"
+  },
+  {
+    "quote": "“It’s common practice to put a lesser man in front, while the boss stays in the background, where he is free to observe progress. Just as I did with you, kohai.”",
+    "explanation": "This short exchange reveals Connor's calculated worldview – that every situation involves a hierarchy and strategic positioning. The use of ‘kohai’ (student/apprentice) adds a layer of formality and suggests he sees Ishiguro as someone to be controlled, mirroring his own role in the investigation.",
+    "tags": [
+      "strategy",
+      "hierarchy",
+      "control"
+    ],
+    "author": "Michael Crichton",
+    "work": "Rising Sun"
+  },
+  {
+    "quote": "‘It’s because of the time sequence. You see, the murder was reported at eight thirty-two. Less than fifteen minutes later, at eight forty-five, a Japanese man was down there switching the tapes, arranging a cover-up. That’s a very fast response. Much too fast for a Japanese company.’",
+    "explanation": "This passage highlights a crucial point in the investigation: Connor's suspicion that the rapid action taken by the Japanese company is not typical. The speed itself – and the specific timing of the tape manipulation – immediately raises red flags, suggesting deliberate orchestration rather than panicked reaction. It’s a moment of sharp deduction.",
+    "tags": [
+      "suspicion",
+      "timing",
+      "deduction"
+    ],
+    "author": "Michael Crichton",
+    "work": "Rising Sun"
+  },
+  {
+    "quote": "“The first rule of Fight Club is you don’t talk about Fight Club.”",
+    "explanation": "This opening line immediately establishes the core premise and central conflict of the novel. It's a deceptively simple statement that sets up the entire narrative—a secret, underground world operating outside the bounds of societal norms and communication. The quote’s power lies in its inherent secrecy and foreshadowing.",
+    "tags": [
+      "secrecy",
+      "conflict"
+    ],
+    "author": "Palahniuk, Chuck",
+    "work": "Fight Club"
+  },
+  {
+    "quote": "“A gun,” Tyler said, “is simple and perfect. You just draw the trigger back.”",
+    "explanation": "This passage is arresting because of its stark simplicity and brutal logic. It encapsulates the core philosophy of Project Mayhem – a reductionist approach to problem-solving through violence. The repetition of 'Tyler' emphasizes his influence and the almost ritualistic nature of this instruction, highlighting the unsettling power dynamics at play.",
+    "tags": [
+      "violence",
+      "control",
+      "philosophy"
+    ],
+    "author": "Palahniuk, Chuck",
+    "work": "Fight Club"
+  },
+  {
+    "quote": "“You want to destroy everything beautiful I’ve never had. Burn the Amazon rain forests. Pump chlorofluorocarbons straight up o > gobble the ozone.”",
+    "explanation": "This is a particularly potent image of rage and nihilism. The speaker's frustration with the world – specifically, his inability to experience beauty or have desires fulfilled – explodes into a fantasy of catastrophic destruction. It’s memorable for its vivid imagery and the raw, almost childish, intensity of the desire for ruin.",
+    "tags": [
+      "nihilism",
+      "rage",
+      "imagery"
+    ],
+    "author": "Palahniuk, Chuck",
+    "work": "Fight Club"
+  },
+  {
+    "quote": "‘Nobody they know has ever seen Tyler Durden. Sir. Is it true, everybody asks. Is Tyler Durden building an army?’",
+    "explanation": "This passage captures the unsettling and increasingly frantic nature of the new fight club members’ obsession with Tyler. It highlights how quickly a figure—even one shrouded in mystery—can become a focal point for belief and ambition, fueled by a shared desire to find meaning and purpose.",
+    "tags": [
+      "mystery",
+      "cult"
+    ],
+    "author": "Palahniuk, Chuck",
+    "work": "Fight Club"
+  },
+  {
+    "quote": "“More of my vaccinations,” Rant used to say.",
+    "explanation": "This short line encapsulates Rant’s bizarre ritual – deliberately seeking out bites from venomous creatures. It highlights his almost perverse fascination with pain and danger, presenting a striking image of self-experimentation without any apparent logic or purpose. The repetition emphasizes the strangeness of his behavior.",
+    "tags": [
+      "absurdity",
+      "self-harm"
+    ],
+    "author": "Palahniuk, Chuck",
+    "work": "Rant"
+  },
+  {
+    "quote": "“A rattlesnake’s just my vaccination against boredom.”",
+    "explanation": "This quote reveals Rant's core motivation: a desperate attempt to avoid the mundane. He frames dangerous encounters as a way to inject excitement and meaning into his life, showcasing a profound dissatisfaction with ordinary existence. It’s a darkly humorous assertion about finding stimulation in risk.",
+    "tags": [
+      "existentialism",
+      "nihilism"
+    ],
+    "author": "Palahniuk, Chuck",
+    "work": "Rant"
+  },
+  {
+    "quote": "“The way I figure, as long as food tastes better than it hurts, you’re going to keep eating. As long as you’re more enjoying than you are suffering.”",
+    "explanation": "This passage captures Irene Casey's pragmatic and somewhat unsettling philosophy about food and pleasure. It highlights her willingness to prioritize enjoyment over any potential discomfort or harm associated with consuming something, revealing a core element of her character and the story’s exploration of distorted desires.",
+    "tags": [
+      "character",
+      "desire",
+      "dark humor"
+    ],
+    "author": "Palahniuk, Chuck",
+    "work": "Rant"
+  },
+  {
+    "quote": "“Truth was, if you didn’t chew her food, then her food chewed you.”",
+    "explanation": "This blunt statement from Logan Elliot is a striking image of Irene Casey's cooking—it’s not just about the taste; it’s about a forceful, almost predatory interaction with her food. The quote emphasizes the unsettling power dynamics at play and foreshadows the themes of control and consumption within the narrative.",
+    "tags": [
+      "imagery",
+      "power",
+      "violence"
+    ],
+    "author": "Palahniuk, Chuck",
+    "work": "Rant"
+  },
+  {
+    "quote": "Frontiers Frontiers \"If everybody jumped off a cliff,\" my father used to say, \"would you?\" This was a few years ago. It was the summer a wild cougar killed a jogger in Sacramento. The summer my doctor wouldn't give me anabolic steroids.",
+    "explanation": "This opening establishes a surreal and slightly unsettling atmosphere through the repetition of 'Frontiers,' hinting at a journey into obsession and self-destruction. The father’s question immediately introduces a theme of risk and potentially reckless behavior, setting the stage for the characters’ increasingly bizarre pursuits. It's arresting because it presents a seemingly simple philosophical dilemma with immediate, disturbing implications.",
+    "tags": [
+      "risk",
+      "philosophical"
+    ],
+    "author": "Chuck Palahniuk",
+    "work": "Stranger Than Fiction (True Stories)"
+  },
+  {
+    "quote": "\"It happens a lot!\" Then he realized what he'd said. He'd acknowledged the invisible elephant. Every man in the room was glaring at him.",
+    "explanation": "This passage captures a moment of uncomfortable realization within a tense Navy environment. The sailor’s casual remark about sex on board quickly escalates into a silent, furious confrontation – highlighting the unspoken pressures and restrictions of life within the submarine. It's a potent image of suppressed desire and rigid rules.",
+    "tags": [
+      "tension",
+      "subculture",
+      "communication"
+    ],
+    "author": "Chuck Palahniuk",
+    "work": "Stranger Than Fiction (True Stories)"
+  },
+  {
+    "quote": "‘When you have good actors to work with, you guys just sort of create this alternate universe of pretended reality. It’s the unexplainable. I just think it’s magic. It’s pure belief.’",
+    "explanation": "This passage captures Juliette’s perspective on acting – a reliance on shared imagination and a willingness to embrace the ‘magic’ of performance. She describes this process as creating an entirely separate, believable world with her colleagues, highlighting the collaborative and somewhat surreal nature of filmmaking.",
+    "tags": [
+      "performance",
+      "imagination",
+      "collaboration"
+    ],
+    "author": "Chuck Palahniuk",
+    "work": "Stranger Than Fiction (True Stories)"
+  },
+  {
+    "quote": "'My security blanket is the camera. I know the camera's universe. It’s capturing only this much. I have a certain security or certainty that I can execute stuff in that space.'",
+    "explanation": "Here, Juliette reveals her reliance on the technical constraints of filmmaking as a source of comfort and control. The ‘camera’s universe’ provides a defined framework within which she operates, offering a sense of stability amidst the often-chaotic demands of acting.",
+    "tags": [
+      "technicality",
+      "control",
+      "reliance"
+    ],
+    "author": "Chuck Palahniuk",
+    "work": "Stranger Than Fiction (True Stories)"
+  },
+  {
+    "quote": "‘We can also see that the arrangement of archetypal symbols follows a pattern of wholeness in the individual, and that an appropriate understanding of the symbols can have a healing effect.’",
+    "explanation": "This passage highlights a core concept in Jungian psychology: the idea that recognizing and interpreting symbolic patterns within ourselves – particularly those rooted in archetypes – can lead to personal growth and healing. It suggests a fundamental connection between our unconscious experiences and the potential for psychological well-being, without offering prescriptive advice.",
+    "tags": [
+      "archetypes",
+      "wholeness",
+      "healing"
+    ],
+    "author": "Carl Gustav Jung",
+    "work": "Man and His Symbols"
+  },
+  {
+    "quote": "It is this kind of behavior that makes so many physicians dismiss statements by hysterical patients as utter lies. Such persons certainly produce more untruths than most of us, but ‘lie’ is scarcely the right word to use. In fact, their mental state causes an uncertainty of behavior because their consciousness is liable to unpredictable eclipse by an interference from the unconscious.",
+    "explanation": "Jung powerfully illustrates the deceptive nature of conscious experience here. He argues that patients exhibiting 'hysterical' symptoms – often dismissed as simply lying – are actually victims of a temporary ‘eclipse’ of their consciousness, where the unconscious exerts influence without the individual being aware. This highlights the difficulty in understanding someone whose behavior seems erratic and inexplicable.",
+    "tags": [
+      "unconscious influence",
+      "perception",
+      "psychopathology"
+    ],
+    "author": "Carl Gustav Jung",
+    "work": "Man and His Symbols"
+  },
+  {
+    "quote": "‘Either the patient has not yet reached the point where he understands, or the interpretation does not fit.’",
+    "explanation": "Jung highlights a crucial impasse in therapy: when the patient’s understanding doesn't align with the analyst’s interpretation. This passage captures the core of his argument about the need for genuine resonance between the analyst and patient – it’s not just about imposing an idea, but about achieving a shared grasp of meaning.",
+    "tags": [
+      "resonance",
+      "understanding"
+    ],
+    "author": "Carl Gustav Jung",
+    "work": "Man and His Symbols"
+  },
+  {
+    "quote": "‘It will be clear from all I have said that we cannot lay down general rules for interpreting dreams.’",
+    "explanation": "Jung emphasizes the inherent difficulty and danger of applying rigid, theoretical frameworks to dream interpretation. He’s pushing back against a purely intellectual approach, suggesting that true insight comes from recognizing the unique, often messy, interplay between the individual's unconscious and their conscious experience.",
+    "tags": [
+      "context",
+      "individual"
+    ],
+    "author": "Carl Gustav Jung",
+    "work": "Man and His Symbols"
+  },
+  {
+    "quote": "\"Stop this at once, long have thy speech and thy species disgusted me.... Out of love alone shall my contempt and my warning bird take wing; BUT NOT OUT OF THE SWAMP!\"",
+    "explanation": "This passage captures the core of Zarathustra’s frustration. He's confronting a mimic, someone who has superficially adopted his ideas without genuine understanding or motivation – essentially a fraud. The powerful image of the ‘warning bird’ taking flight only through love highlights Nietzsche’s insistence on authentic creation stemming from positive intent.",
+    "tags": [
+      "philosophy",
+      "authenticity"
+    ],
+    "author": "Friedrich Wilhelm Nietzsche",
+    "work": "Thus Spake Zarathustra: A Book for All and None"
+  },
+  {
+    "quote": "\"It honoureth thee, that thou soughtest for greatness, but it betrayeth thee also. Thou art not great.\"",
+    "explanation": "This passage captures the core of Nietzsche’s disillusionment with Wagner. Zarathustra confronts the Magician, representing Wagner's inflated ego and self-deception, pointing out the inherent contradiction between striving for greatness and failing to achieve genuine substance. It highlights a crucial tension within Nietzsche’s philosophy – the danger of idealization.",
+    "tags": [
+      "disillusionment",
+      "ego",
+      "idealization"
+    ],
+    "author": "Friedrich Wilhelm Nietzsche",
+    "work": "Thus Spake Zarathustra: A Book for All and None"
+  },
+  {
+    "quote": "“If you provide access to or distribute copies of a Project Gutenberg™ work in a format other than ‘Plain Vanilla ASCII’ or other format used in the official version posted on the official Project Gutenberg™ website (www.gutenberg.org), you must, at no additional cost, fee or expense to the user, provide a copy, a means of exporting a copy, or a means of obtaining a copy upon request, of the work in its original ‘Plain Vanilla ASCII’ or other form.”",
+    "explanation": "This passage describes the core principle behind Project Gutenberg: preserving works in their original, accessible format. It highlights the foundational commitment to open access and immediate availability – a stark reminder that the project's very existence depends on maintaining this simple, unadorned delivery method.",
+    "tags": [
+      "open access",
+      "preservation"
+    ],
+    "author": "Friedrich Wilhelm Nietzsche",
+    "work": "Thus Spake Zarathustra: A Book for All and None"
+  },
+  {
+    "quote": "\"Not at all,\" said Zarathustra, \"as yet hast thou not received my thanks! Thou hast awakened me in time; my journey is yet long.\"",
+    "explanation": "This passage captures the core of Zarathustra’s self-imposed suffering. He welcomes the adder's bite – a painful, potentially fatal event – as an opportunity to begin his philosophical journey anew. The dialogue highlights his detached acceptance of hardship and emphasizes the importance of continuing his work regardless of personal discomfort.",
+    "tags": [
+      "suffering",
+      "acceptance",
+      "philosophy"
+    ],
+    "author": "Friedrich Wilhelm Nietzsche",
+    "work": "Thus Spake Zarathustra: A Book for All and None"
+  },
+  {
+    "quote": "‘It’s not what YOU say it is. It’s what THEY say it is.’",
+    "explanation": "This passage encapsulates a core tenet of Neumeier's argument: that brands aren’t built on corporate messaging, but rather on the perceptions and feelings of consumers. The power lies in how people *interpret* the product or service, not what the company proclaims about it – this is a foundational insight for understanding brand building.",
+    "tags": [
+      "perception",
+      "consumer"
+    ],
+    "author": "Marty Neumeier",
+    "work": "The Brand Gap"
+  },
+  {
+    "quote": "“Brands may not last, but companies can, say Collins and Porras.”",
+    "explanation": "This passage highlights a key distinction made in the book: longevity isn't about brand names surviving, but rather the underlying company’s ability to adapt and endure. It establishes a foundational concept – that sustainable business is built on more than just fleeting branding – and sets the stage for understanding the importance of core values.",
+    "tags": [
+      "strategy",
+      "longevity"
+    ],
+    "author": "Marty Neumeier",
+    "work": "The Brand Gap"
+  },
+  {
+    "quote": "“If you can grasp the simple truths in this body of work, you’ll understand 90% of what marketing people don’t—the customer decides the brand.”",
+    "explanation": "This quote encapsulates a central argument of ‘The Brand Gap’: that brands aren't created by marketers but are ultimately shaped by consumer perception. It’s a provocative statement that challenges conventional wisdom and underscores the importance of truly understanding your target audience.",
+    "tags": [
+      "customer",
+      "perception"
+    ],
+    "author": "Marty Neumeier",
+    "work": "The Brand Gap"
+  },
+  {
+    "quote": "“Unless you have compelling answers to all three questions, meaning that customers find them irresistible, you haven’t got a brand.”",
+    "explanation": "Neumeier introduces the core of his argument here: the three questions – ‘Who are you?’, ‘What do you do?’, and ‘Why does it matter?’ – are the foundation of a strong brand. The passage illustrates this with an example, highlighting that simply stating facts about a product or service isn’t enough; customers need to find genuine value and connection.",
+    "tags": [
+      "brand identity",
+      "customer perception"
+    ],
+    "author": "Marty Neumeier",
+    "work": "The Brand Gap"
+  },
+  {
+    "quote": "“It started out with an object created in a factory and ended up with an emotion created in a customer. It went from totally within the company’s control to partially outside it.”",
+    "explanation": "This passage powerfully illustrates the fundamental shift Neumeier describes – the move away from brands being solely about product features and towards a focus on how those products impact customers' feelings and identities. The author highlights the increasing influence of the customer in shaping brand meaning, moving control from the company to the individual.",
+    "tags": [
+      "customer-centricity",
+      "brand evolution"
+    ],
+    "author": "Neumeier, Marty",
+    "work": "The Brand Flip: Why customers now run companies and how to profit from it (Voices That Matter)"
+  },
+  {
+    "quote": "“If I buy this product, what does that make me?”",
+    "explanation": "This simple question encapsulates the core of the ‘meaning economy’ – customers aren't just buying products; they are seeking to define themselves through their purchases. It’s a poignant reflection on the evolving role of brands in providing identity and belonging for consumers.",
+    "tags": [
+      "identity",
+      "meaning-making"
+    ],
+    "author": "Neumeier, Marty",
+    "work": "The Brand Flip: Why customers now run companies and how to profit from it (Voices That Matter)"
+  },
+  {
+    "quote": "“They will never see these two Americans again. It’s now or never.”",
+    "explanation": "Neumeier uses this striking image of the Istanbul shopkeepers to illustrate a fundamental difference in business philosophy. The vendors are solely focused on immediate transactions, driven by urgency and a lack of concern for future relationships – a stark contrast to the brand-building approach he advocates for.",
+    "tags": [
+      "sales",
+      "customer relations"
+    ],
+    "author": "Neumeier, Marty",
+    "work": "The Brand Flip: Why customers now run companies and how to profit from it (Voices That Matter)"
+  },
+  {
+    "quote": "‘The battle is no longer between companies, but between the people who buy from them.’",
+    "explanation": "This passage highlights a fundamental shift in business strategy. Neumeier argues that traditional competitive models are outdated; the real power now resides with customers. This simple statement encapsulates the core idea of the ‘Brand Flip’ and its impact on how companies should operate.",
+    "tags": [
+      "customer-centric",
+      "brand strategy"
+    ],
+    "author": "Neumeier, Marty",
+    "work": "The Brand Flip: Why customers now run companies and how to profit from it (Voices That Matter)"
+  },
+  {
+    "quote": "“The book is the boss,” he said. ‘Plotting’ is the literary version of artificial respiration.",
+    "explanation": "This passage encapsulates King's philosophy on storytelling – a rejection of rigid planning in favor of letting the narrative flow organically. It highlights the tension between control and surrender, a central theme in his work, and it’s delivered with a wonderfully blunt, almost clinical tone that perfectly suits the scene.",
+    "tags": [
+      "philosophy",
+      "narrative"
+    ],
+    "author": "Stephen King",
+    "work": "Salem's Lot"
+  },
+  {
+    "quote": "“I let out a scream that probably could have been heard for two miles. And then I ran. I fell halfway downstairs, got up, and ran out the front door and straight down the road. The kids were waiting for me about half a mile down. That’s when I noticed I still had the glass snow globe in my hand. And I’ve still got it.”",
+    "explanation": "This passage is striking because of its visceral detail – the boy's panicked flight, the physical sensation of falling, and the unsettling realization that he retains a tangible piece of the horrific event. It immediately establishes Ben’s perspective and the core mystery surrounding the Marsten House, highlighting the lasting impact of trauma.",
+    "tags": [
+      "childhood",
+      "fear",
+      "memory"
+    ],
+    "author": "Stephen King",
+    "work": "Salem's Lot"
+  },
+  {
+    "quote": "“Every now and then,” Danny went on eerily, “when some ringmeat little kid comes out after dark, it comes flapping out of the trees, the face all putrid and covered with quicksand—”,",
+    "explanation": "This passage captures the escalating dread within Danny as he recounts his imagined horror. The phrase ‘ringmeat little kid’ is particularly unsettling, hinting at something unnatural emerging from the woods. It establishes a sense of mounting terror through Danny's increasingly eerie narration, highlighting the vulnerability and disorientation experienced by a young boy confronting an unknown threat.",
+    "tags": [
+      "fear",
+      "atmosphere",
+      "hallucination"
+    ],
+    "author": "Stephen King",
+    "work": "Salem's Lot"
+  },
+  {
+    "quote": "“It’s watchin’ us,” Ralphie whispered. “Listen, I’m not gonna—”,",
+    "explanation": "Ralphie's terrified whisper – ‘It’s watching us’ – is a pivotal moment of realization for the reader. The abrupt halt to Danny’s narration underscores the immediate and visceral fear gripping Ralphie, creating a palpable sense of being observed. This short exchange powerfully demonstrates the shift from imaginative storytelling to genuine terror.",
+    "tags": [
+      "suspense",
+      "fear",
+      "perception"
+    ],
+    "author": "Stephen King",
+    "work": "Salem's Lot"
   }
 ]
