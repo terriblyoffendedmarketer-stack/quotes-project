@@ -424,13 +424,15 @@ function renderCardDeck() {
   document.documentElement.style.setProperty("--d-steal", p.dark[2]);
   document.documentElement.style.setProperty("--d-around", p.dark[3]);
 
-  const hasHowTo = Boolean(card.hook && card.hook.trim());
+  const jobText = card.job || "";
+  const hasHowTo = jobText.startsWith("How to ");
+  const hookTitle = hasHowTo ? jobText.slice(7).trim() : jobText;
   const slides = [
     {
       cls: "hook",
       html: `
         ${hasHowTo ? `<span class="pill">How to</span>` : ``}
-        <h1 class="hook-title">${escapeHtml(card.hook || card.quote)}</h1>
+        <h1 class="hook-title">${escapeHtml(hookTitle)}</h1>
         <div class="hook-foot"><span>${escapeHtml(card.author)}</span><span>The line that does it →</span></div>
       `
     },
@@ -595,10 +597,14 @@ function renderWidget() {
     cardEl.style.backgroundColor = widgetCardSlide === 0 ? p.hook : (widgetTheme === 'dark' ? '#1a1d22' : '#ffffff');
     cardEl.style.color = widgetCardSlide === 0 ? '#fff4df' : (widgetTheme === 'dark' ? '#f6f5f0' : '#14161b');
 
+    const jobText = card.job || "";
+    const hasHowTo = jobText.startsWith("How to ");
+    const hookTitle = hasHowTo ? jobText.slice(7).trim() : jobText;
+
     if (widgetCardSlide === 0) {
       cardEl.innerHTML = `
-        <span class="w-badge-pill" style="background:#fff4df; color:#2d3be8;">How to</span>
-        <div class="hook-title" style="font-size:1.9rem; margin:10px 0;">${escapeHtml(card.hook || card.quote)}</div>
+        ${hasHowTo ? `<span class="w-badge-pill" style="background:#fff4df; color:#2d3be8;">How to</span>` : ``}
+        <div class="hook-title" style="font-size:1.9rem; margin:10px 0;">${escapeHtml(hookTitle)}</div>
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
           <span class="w-sub">${escapeHtml(card.author)}</span>
           <span class="w-sub">The line →</span>
