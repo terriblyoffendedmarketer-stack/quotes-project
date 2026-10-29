@@ -31,6 +31,7 @@
 - `tools/build_prototype.py`: Rebuilds the browser review prototype in `prototype/index.html`.
 - `tools/sync_quote_bank_md.py`: Synchronizes `content/quote-bank.md` from `content/quote-bank.json`.
 - `tools/add_cards.py`: Batch helper to append verified cards without duplicates or broken highlights.
+- `scripts/add_dostoevsky_quotes.py`: Curates and updates iconic Dostoevsky passages with 2-tier scene context and philosophical depth.
 - `scripts/audit_and_rewrite.py`: Automation script for content audit, rewriting, and testing craft exercises.
 - `android/`: Android app and adaptive dual-mode home-screen widget source code.
 - `android/marginalia.apk`: Signed release build ready for sideloading.
