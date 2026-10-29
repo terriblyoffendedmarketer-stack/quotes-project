@@ -155,11 +155,24 @@ object QuoteBank {
 
     /**
      * Today's shelf quote, rotating every day deterministically through the entire library.
+     * If you left the app on a different quote, that quote becomes today's and subsequent days carry on from it.
      */
     fun todayIndex(context: Context): Int {
         val quotes = all(context)
         if (quotes.isEmpty()) return 0
         val today = LocalDate.now().toEpochDay()
-        return Math.floorMod(today, quotes.size.toLong()).toInt()
+        val start = Prefs.startShelf(context)?.let { (idx, day) ->
+            idx.toLong() - day
+        } ?: 0L
+        return Math.floorMod(start + today, quotes.size.toLong()).toInt()
+    }
+
+    /** Makes [index] today's shelf quote, so the widget and app show it now and advance each day. */
+    fun startFrom(context: Context, index: Int) {
+        val quotes = all(context)
+        if (quotes.isNotEmpty()) {
+            val safeIndex = index.coerceIn(0, quotes.lastIndex)
+            Prefs.setStartShelf(context, safeIndex, LocalDate.now().toEpochDay())
+        }
     }
 }

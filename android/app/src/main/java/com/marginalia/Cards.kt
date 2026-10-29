@@ -142,4 +142,47 @@ object Prefs {
         context.getSharedPreferences(FILE, Context.MODE_PRIVATE).edit()
             .putString(START_CARD, id).putLong(START_DAY, day).apply()
     }
+
+    private const val START_SHELF_INDEX = "start_shelf_index"
+    private const val START_SHELF_DAY = "start_shelf_day"
+
+    /** The shelf quote index you last left the app on, and the day you left it there. */
+    fun startShelf(context: Context): Pair<Int, Long>? {
+        val prefs = context.getSharedPreferences(FILE, Context.MODE_PRIVATE)
+        if (!prefs.contains(START_SHELF_INDEX)) return null
+        return prefs.getInt(START_SHELF_INDEX, 0) to prefs.getLong(START_SHELF_DAY, 0L)
+    }
+
+    fun setStartShelf(context: Context, index: Int, day: Long) {
+        context.getSharedPreferences(FILE, Context.MODE_PRIVATE).edit()
+            .putInt(START_SHELF_INDEX, index).putLong(START_SHELF_DAY, day).apply()
+    }
+
+    private const val BASE_MODE = "base_mode"
+    private const val BASE_MODE_DAY = "base_mode_day"
+
+    const val MODE_CARDS = 0
+    const val MODE_SHELF = 1
+
+    /**
+     * Determines today's mode, alternating each day between Daily Craft Cards (MODE_CARDS)
+     * and Shelf Quotes (MODE_SHELF). If the user manually flips modes, that choice becomes
+     * the base for today, and the daily alternation continues from there.
+     */
+    fun todayMode(context: Context): Int {
+        val prefs = context.getSharedPreferences(FILE, Context.MODE_PRIVATE)
+        val today = LocalDate.now().toEpochDay()
+        val baseMode = prefs.getInt(BASE_MODE, MODE_CARDS)
+        val baseDay = prefs.getLong(BASE_MODE_DAY, today)
+        val offset = Math.floorMod(today - baseDay, 2L)
+        return if (offset == 0L) baseMode else (1 - baseMode)
+    }
+
+    fun setMode(context: Context, mode: Int) {
+        val today = LocalDate.now().toEpochDay()
+        context.getSharedPreferences(FILE, Context.MODE_PRIVATE).edit()
+            .putInt(BASE_MODE, mode)
+            .putLong(BASE_MODE_DAY, today)
+            .apply()
+    }
 }

@@ -384,11 +384,56 @@ QUOTE_BANK.forEach(q => {
 });
 
 /* ==========================================================================
+   DAILY ALTERNATION & ROTATION ENGINE
+   ========================================================================== */
+const todayEpoch = Math.floor(Date.now() / 86400000);
+let baseMode = store.get("baseMode", "cards");
+let baseDay = store.get("baseDay", todayEpoch);
+
+function getTodayMode() {
+  const offset = Math.abs(todayEpoch - baseDay) % 2;
+  return offset === 0 ? baseMode : (baseMode === "cards" ? "shelf" : "cards");
+}
+
+function setTodayMode(mode) {
+  baseMode = mode;
+  baseDay = todayEpoch;
+  store.set("baseMode", baseMode);
+  store.set("baseDay", baseDay);
+}
+
+// Compute today's shelf quote index (with daily progression & startFrom retention)
+const savedShelfStart = store.get("startShelf", null);
+let todayBankIndex = 0;
+if (QUOTE_BANK.length > 0) {
+  if (savedShelfStart && Array.isArray(savedShelfStart)) {
+    const sIdx = savedShelfStart[0] || 0;
+    const sDay = savedShelfStart[1] || todayEpoch;
+    todayBankIndex = ((sIdx + (todayEpoch - sDay)) % QUOTE_BANK.length + QUOTE_BANK.length) % QUOTE_BANK.length;
+  } else {
+    todayBankIndex = todayEpoch % QUOTE_BANK.length;
+  }
+}
+
+// Compute today's card index
+const savedCardStart = store.get("startCard", null);
+let todayCardIndex = 0;
+if (CARDS.length > 0) {
+  if (savedCardStart && Array.isArray(savedCardStart)) {
+    const cIdx = savedCardStart[0] || 0;
+    const cDay = savedCardStart[1] || todayEpoch;
+    todayCardIndex = ((cIdx + (todayEpoch - cDay)) % CARDS.length + CARDS.length) % CARDS.length;
+  } else {
+    todayCardIndex = todayEpoch % CARDS.length;
+  }
+}
+
+/* ==========================================================================
    APP READER STATE & ENGINE
    ========================================================================== */
-let appMode = "cards"; // "cards" | "bank"
-let cardIndex = 0;
-let bankIndex = 0;
+let appMode = getTodayMode() === "shelf" ? "bank" : "cards";
+let cardIndex = todayCardIndex;
+let bankIndex = todayBankIndex;
 let appHorizon = "all";
 let showSteal = store.get("showSteal", true);
 
@@ -606,7 +651,7 @@ function renderBankDeck() {
 /* ==========================================================================
    WIDGET SIMULATOR ENGINE
    ========================================================================== */
-let widgetMode = "shelf"; // "shelf" | "cards"
+let widgetMode = getTodayMode(); // Alternates daily: "cards" <-> "shelf"
 let widgetTheme = "dark"; // "dark" | "light"
 let widgetShelfSlide = 0;
 let widgetCardSlide = 0; // 0 to 4
@@ -619,7 +664,7 @@ function renderWidget() {
   if (widgetMode === "shelf") {
     // Shelf Spark quote with dynamic multi-slide pagination
     const todayQuote = QUOTE_BANK[bankIndex] || QUOTE_BANK[0];
-    const slides = getShelfSlides(todayQuote, 65);
+    const slides = getShelfSlides(todayQuote, 60);
     const totalSlides = slides.length;
     widgetShelfSlide = Math.max(0, Math.min(widgetShelfSlide, totalSlides - 1));
     const current = slides[widgetShelfSlide];
@@ -761,6 +806,7 @@ function renderWidget() {
   document.getElementById("wBtnModeToggle").onclick = e => {
     e.stopPropagation();
     widgetMode = widgetMode === "shelf" ? "cards" : "shelf";
+    setTodayMode(widgetMode);
     widgetShelfSlide = 0;
     widgetCardSlide = 0;
     renderWidget();
@@ -769,6 +815,7 @@ function renderWidget() {
     e.stopPropagation();
     switchView("app");
     appMode = widgetMode === "shelf" ? "bank" : "cards";
+    setTodayMode(widgetMode);
     renderApp();
   };
 }
@@ -919,8 +966,8 @@ $("studioTabWidget").onclick = () => switchView("widget");
 $("studioTabCatalog").onclick = () => switchView("catalog");
 
 // App mode toggles
-$("appModeCards").onclick = () => { appMode = "cards"; renderApp(); };
-$("appModeBank").onclick = () => { appMode = "bank"; renderApp(); };
+$("appModeCards").onclick = () => { appMode = "cards"; setTodayMode("cards"); renderApp(); };
+$("appModeBank").onclick = () => { appMode = "bank"; setTodayMode("shelf"); renderApp(); };
 
 // App Horizons
 $("appHorizonsBar").addEventListener("click", e => {
@@ -959,19 +1006,25 @@ $("appDayLabel").onclick = () => {
 };
 
 $("prev").onclick = () => {
-  if (appMode === "cards") cardIndex = (cardIndex - 1 + CARDS.length) % CARDS.length;
-  else {
+  if (appMode === "cards") {
+    cardIndex = (cardIndex - 1 + CARDS.length) % CARDS.length;
+    store.set("startCard", [cardIndex, todayEpoch]);
+  } else {
     const q = getAppBankQuotes();
     bankIndex = (bankIndex - 1 + q.length) % q.length;
+    store.set("startShelf", [bankIndex, todayEpoch]);
   }
   renderApp();
 };
 
 $("next").onclick = () => {
-  if (appMode === "cards") cardIndex = (cardIndex + 1) % CARDS.length;
-  else {
+  if (appMode === "cards") {
+    cardIndex = (cardIndex + 1) % CARDS.length;
+    store.set("startCard", [cardIndex, todayEpoch]);
+  } else {
     const q = getAppBankQuotes();
     bankIndex = (bankIndex + 1) % q.length;
+    store.set("startShelf", [bankIndex, todayEpoch]);
   }
   renderApp();
 };

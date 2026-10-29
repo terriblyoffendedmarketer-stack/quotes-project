@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 9 (Two-Tier Companion Note Standardization, Multi-Slide Paging & Full Enrichment)  
-> **Current**: Cleaned up the Shelf Quote reader and Widget architecture across web prototype and Android. Segregated Paragraph 1 (stakes) and Paragraph 2 (human truth) into separate slides with dynamic sentence chunking (≤60w in widget, ≤85w in app), eliminated clinical tags (`SCENE CONTEXT`, `HUMAN TRUTH`), added clean progress counters (`1 OF 4`, `2 OF 4`), and fixed widget tap cycle. Full quote enrichment running steadily in the background on Google AI Studio Free Tier (15 RPM / ₹0 cost).  
-> **Next**: Let background enrichment run through the 1,874 quote bank, sync enriched entries to Android assets, and verify full build.
+> **Status**: In Progress | **Phase**: 9 (Two-Tier Companion Note Standardization, Daily Alternation & Full Enrichment)  
+> **Current**: Implemented daily alternating dual-mode rotation across Android widget and app reader. The daily view seamlessly alternates between Daily Craft Cards and Personal Shelf Quotes each day, while honoring manual flips (leaving on a quote/mode locks it for today and continues alternating naturally tomorrow). Cleaned up slide chunking and progress counters across Web and Android. Background enrichment pipeline running with 5.0s pacing (12 RPM) on Google AI Studio Free Tier (460+ enriched).  
+> **Next**: Let enrichment run through the 1,874 quote bank, sync enriched entries to Android assets, and verify full build.
 
 ## Roadmap
 

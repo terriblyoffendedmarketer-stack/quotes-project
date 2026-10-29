@@ -22,6 +22,7 @@ import com.marginalia.ContentSync
 import com.marginalia.MainActivity
 import com.marginalia.Markup
 import com.marginalia.Palette
+import com.marginalia.Prefs
 import com.marginalia.QuoteBank
 import com.marginalia.R
 import com.marginalia.Slide
@@ -103,13 +104,13 @@ class CardWidgetProvider : AppWidgetProvider() {
         private fun cardId(context: Context) = Cards.all(context)[Cards.todayIndex(context)].id
 
         private fun currentMode(context: Context, id: Int): Int {
-            return state(context).getInt(modeKey(id), MODE_CARDS)
+            return Prefs.todayMode(context)
         }
 
         private fun toggleMode(context: Context, id: Int) {
             val newMode = if (currentMode(context, id) == MODE_CARDS) MODE_SHELF else MODE_CARDS
-            state(context).edit().putInt(modeKey(id), newMode).apply()
-            AppWidgetManager.getInstance(context).updateAppWidget(id, render(context, id))
+            Prefs.setMode(context, newMode)
+            refreshAll(context)
         }
 
         /** Which slide this widget is on in Card mode (0 to 4). */
@@ -184,9 +185,16 @@ class CardWidgetProvider : AppWidgetProvider() {
             return QuoteBank.todayIndex(context)
         }
 
-        /** Which slide in Shelf mode. */
+        /** Which slide in Shelf mode. Resets to 0 each morning. */
         private fun currentShelfSlide(context: Context, id: Int, totalSlides: Int): Int {
-            return state(context).getInt(shelfSlideKey(id), 0).coerceIn(0, (totalSlides - 1).coerceAtLeast(0))
+            val prefs = state(context)
+            val today = LocalDate.now().toEpochDay()
+            val shelfDayKey = "shelf_day_$id"
+            if (prefs.getLong(shelfDayKey, -1) != today) {
+                prefs.edit().putLong(shelfDayKey, today).putInt(shelfSlideKey(id), 0).apply()
+                return 0
+            }
+            return prefs.getInt(shelfSlideKey(id), 0).coerceIn(0, (totalSlides - 1).coerceAtLeast(0))
         }
 
         private fun step(context: Context, id: Int, direction: Int) {
@@ -203,7 +211,8 @@ class CardWidgetProvider : AppWidgetProvider() {
                     val total = widgetSlides.size
                     val slide = currentShelfSlide(context, id, total)
                     val nextSlide = Math.floorMod(slide + direction, total)
-                    state(context).edit().putInt(shelfSlideKey(id), nextSlide).apply()
+                    state(context).edit().putInt(shelfSlideKey(id), nextSlide)
+                        .putLong("shelf_day_$id", LocalDate.now().toEpochDay()).apply()
                 }
             }
             AppWidgetManager.getInstance(context).updateAppWidget(id, render(context, id))

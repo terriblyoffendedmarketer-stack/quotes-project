@@ -101,7 +101,7 @@ class MainActivity : Activity() {
             CardWidgetProvider.refreshAll(this)
         }
 
-        currentMode = savedInstanceState?.getInt(KEY_MODE) ?: MODE_CARDS
+        currentMode = savedInstanceState?.getInt(KEY_MODE) ?: Prefs.todayMode(this)
         activeHorizon = savedInstanceState?.getString(KEY_HORIZON) ?: "all"
         cardIndex = savedInstanceState?.getInt(KEY_INDEX) ?: Cards.todayIndex(this)
         bankIndex = savedInstanceState?.getInt(KEY_BANK_INDEX) ?: QuoteBank.todayIndex(this)
@@ -133,8 +133,11 @@ class MainActivity : Activity() {
         super.onPause()
         if (currentMode == MODE_CARDS && cardIndex != Cards.todayIndex(this)) {
             Cards.startFrom(this, cardIndex)
-            CardWidgetProvider.refreshAll(this)
+        } else if (currentMode == MODE_BANK && bankIndex != QuoteBank.todayIndex(this)) {
+            QuoteBank.startFrom(this, bankIndex)
         }
+        Prefs.setMode(this, currentMode)
+        CardWidgetProvider.refreshAll(this)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

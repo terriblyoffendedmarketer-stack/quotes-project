@@ -20,8 +20,8 @@ LOG_FILE = ROOT / "scripts" / "enrichment_progress.log"
 MODEL_NAME = "gemini-3.5-flash-lite"
 API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_NAME}:generateContent"
 
-# Pacing: 4.2 seconds between requests = 14.2 requests/minute (Free Tier ceiling is 15 RPM)
-REQUEST_DELAY = 4.2
+# Pacing: 5.0 seconds between requests = 12.0 requests/minute (Safely under Free Tier ceiling of 15 RPM)
+REQUEST_DELAY = 5.0
 
 def load_api_key():
     if not ENV_PATH.exists():
@@ -119,7 +119,7 @@ def main():
         # Call with retries for rate limits
         attempt = 0
         success = False
-        while attempt < 3 and not success:
+        while attempt < 5 and not success:
             try:
                 raw = call_gemini(key, prompt)
                 cleaned = raw.replace("**Paragraph 1:**", "").replace("**Paragraph 2:**", "")
@@ -141,8 +141,8 @@ def main():
             except urllib.error.HTTPError as e:
                 attempt += 1
                 if e.code == 429:
-                    log(f"[{idx+1}/{total}] ⚠ Rate limited (429). Sleeping 30s before retry (attempt {attempt}/3)...")
-                    time.sleep(30)
+                    log(f"[{idx+1}/{total}] ⚠ Rate limited (429). Sleeping 60s before retry (attempt {attempt}/5)...")
+                    time.sleep(60)
                 else:
                     log(f"[{idx+1}/{total}] ✗ HTTP Error {e.code}: {e.reason}")
                     time.sleep(5)
@@ -153,7 +153,7 @@ def main():
 
         if not success:
             consecutive_errors += 1
-            log(f"[{idx+1}/{total}] ⚠ Skipped {author} — {work} after 3 failed attempts.")
+            log(f"[{idx+1}/{total}] ⚠ Skipped {author} — {work} after 5 failed attempts.")
             if consecutive_errors >= 5:
                 log("CRITICAL: 5 consecutive failures. Pausing pipeline to avoid error loop. Saving database.")
                 save_quote_bank(qb)
