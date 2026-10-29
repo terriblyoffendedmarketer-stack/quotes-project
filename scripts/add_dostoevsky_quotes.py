@@ -26,10 +26,11 @@ def main():
                 "Trifles, trifles are what matter! Why, it’s just such trifles that always ruin everything…."
             )
             q["explanation"] = (
-                "A destitute student in St. Petersburg has spent weeks constructing a grand theory that exceptional men are entitled to commit murder. "
-                "Yet as he steps into the street to execute his plan, his confidence completely unravels over an absurd, oversized German hat that might catch a passerby’s eye.\n\n"
-                "Dostoevsky homes in on the word ‘trifles’ because monumental human schemes are rarely defeated by grand moral epiphanies—they are undone by petty, humiliating minutiae. "
-                "The criminal's true terror is not cosmic justice, but the uncontrollable trivia of the physical world: a creaking board, a stray thread, or a memorable hat."
+                "Stepping into the Petersburg street to execute a premeditated murder, Raskolnikov suddenly freezes over a ridiculous German hat he forgot he was wearing. "
+                "He has spent months preparing his mind for the grand moral horror of killing, yet the entire enterprise is brought to a dead halt by an absurd piece of headwear.\n\n"
+                "The word ‘trifles’ carries the terrifying kernel of Dostoevsky’s psychology: monumental human ambitions are almost never brought down by grand philosophical opposition or sudden moral epiphanies—they are sabotaged by microscopic, humiliating trivia. "
+                "You can rationalize away murder, guilt, and law, but you cannot outmaneuver the mindless physics of everyday life: an awkward hat, a creaking stair, a stray bloodstain on a cuff. "
+                "The bitter truth is that human destiny is ruled not by grand ideas, but by the relentless tyranny of trifles."
             )
             q["tags"] = ["trifles", "paranoia", "irony", "vanity", "crime"]
             updated_trifles = True
