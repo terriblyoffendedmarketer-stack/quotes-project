@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Reached 934 high-caliber craft quotes curated across 193 books. Pioneered "The Librarian" dual-layer architecture (`context` plain-English setup + `takeaway` universal life application). Continuous automated engine built with zero-spoiler gate.  
-> **Next**: Execute continuous library sweep across remaining ~200-250 unmined EPUBs via `caffeinate -dimsu python3 scripts/mine_full_library.py` to reach 100% full-library coverage, followed by backfilling Librarian layers across Clusters 1–47.
+> **Status**: In Progress | **Phase**: 7 (Quote Bank UI & Integration)  
+> **Current**: Achieved 100% full-library coverage across all personal EPUBs! Reached **1,871 vetted quotes across 416 books** (934 quotes with rich in-context plain-English scene explanations). Continuous runner finished with 0 flags, clean disk (32GB free), and pushed to GitHub (`c0c3b27`).  
+> **Next**: Build the unified reader UI with single-page thematic horizons, instant search, dynamic tag filtering, and the dual-mode Android widget.
 
 ## Roadmap
 
@@ -11,8 +11,8 @@
 - [x] Phase 3: Validation — verify zero flags in `python3 tools/lint_cards.py` and clean `build_prototype.py`
 - [x] Phase 4: Curate stronger quotes — add 5 gold-standard cards (Manto, Baldwin, Didion, Dillard, Burkeman) & expand `content/quote-bank.md`
 - [x] Phase 5: GitHub synchronization — commit and push updates to `terriblyoffendedmarketer-stack/quotes-project`
-- [~] Phase 6: Master Quote Bank mining — extract 800–1,200 quotes across 400+ books using local offline AI without token burnout
-- [ ] Phase 7: Quote Bank UI & Integration — Serendipity shuffle, bookshelf view, and Android app integration
+- [x] Phase 6: Master Quote Bank mining — extract 800–1,200 quotes across 400+ books using local offline AI without token burnout (Reached 1,871 quotes / 416 books)
+- [~] Phase 7: Quote Bank UI & Integration — Serendipity shuffle, bookshelf view, and Android app integration
 
 ## File map
 

@@ -168,7 +168,7 @@ def sync_and_commit(books_processed, total_quotes):
         subprocess.run(["python3", str(ROOT / "tools" / "lint_cards.py")], check=True)
         subprocess.run(["git", "-C", str(ROOT), "add", "content/quote-bank.json", "content/quote-bank.md", "prototype/index.html"], check=True)
         commit_msg = f"feat(quotes): auto-sync continuous library sweep ({total_quotes} quotes in bank)"
-        subprocess.run(["git", "-C", str(ROOT), "commit", "-m", commit_msg], check=True)
+        subprocess.run(["git", "-C", str(ROOT), "commit", "-m", commit_msg], check=False)
         subprocess.run(["git", "-C", str(ROOT), "push", "origin", "main"], check=False)
         print("--- Git commit and push complete! ---\n")
     except Exception as e:
@@ -180,6 +180,26 @@ def run_continuous():
 
     existing_works = set(q["work"].lower().strip() for q in bank if "work" in q)
     existing_quotes = set(q["quote"].strip() for q in bank)
+
+    def get_title_tokens(s):
+        s = re.sub(r"\.(epub|mobi|pdf)$", "", s, flags=re.I)
+        s = re.split(r"[:\-\(\[\{]", s)[0]
+        return set(w for w in re.findall(r"[a-z0-9]+", s.lower()) if len(w) > 2)
+
+    existing_titles = [q["work"] for q in bank if "work" in q]
+
+    def is_already_mined(fn):
+        fn_tokens = get_title_tokens(fn)
+        if not fn_tokens:
+            return False
+        for et in existing_titles:
+            et_tokens = get_title_tokens(et)
+            if not et_tokens:
+                continue
+            overlap = fn_tokens & et_tokens
+            if len(overlap) >= len(et_tokens) or (len(overlap) >= 2 and len(overlap) >= len(fn_tokens) * 0.7):
+                return True
+        return False
 
     with open(ROOT / "scripts" / "gdrive_file_list.txt") as f:
         raw_lines = [l.strip() for l in f if l.strip().endswith(".epub")]
@@ -194,12 +214,7 @@ def run_continuous():
             all_epubs.append(l.strip())
 
     # Exclude files already in bank
-    unmined = []
-    for fn in all_epubs:
-        base = re.sub(r"^\d+\s*", "", fn).replace(".epub", "").lower()
-        clean_name = Path(fn).stem.lower().replace("_", " ")
-        if not any(w in clean_name for w in existing_works if len(w) > 4):
-            unmined.append(fn)
+    unmined = [fn for fn in all_epubs if not is_already_mined(fn)]
 
     print(f"============================================================")
     print(f"CONTINUOUS FULL-LIBRARY RUNNER STARTING")
