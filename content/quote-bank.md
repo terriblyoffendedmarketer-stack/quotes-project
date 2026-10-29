@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 894 | **Total Books Represented:** 183
+**Total Vetted Quotes:** 914 | **Total Books Represented:** 188
 
 ---
 
@@ -2234,5 +2234,62 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “Nothing is so rare as silence; nothing so precious as sound advice.” | How to elevate verbal economy through parallel aphorisms | aphorism, parallelism, wisdom |
 | “It was time for him to go back among men and take up the rank, influence and power which great wealth gives in this world.” | How to herald a character's return with monumental social clarity | transition, revenge, grandeur |
 | “I realize it would be useless for me to struggle against the vengeance of God which has just struck me. There’s no need for proof—everything this young man has brought against me is true.” | How to stage the sudden collapse of legal arrogance | justice, climax, speech |
+
+---
+
+## Patrick Rothfuss, The Name of the Wind (2007)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The world is a map, and we are the ink.” | How to condense narrative metaphysics into an intimate cartographic metaphor | metaphor, worldbuilding, poetics |
+| “Etiquette is a set of rules people use so they can be rude to each other in public.” | How to dismantle polite society with a cynical social aphorism | aphorism, cynicism, dialogue |
+| “Man wants his daughter to have a fine house with a view, that’s all to the good. But when you’re diggin the foundation and you find bones and such, and you don’t stop…that’s a whole new type of stupid.” | How to ground supernatural dread in working-class construction common sense | voice, folklore, humor |
+| “It is always, always, expressly forbidden to cause harm with sympathy, especially to a master.” | How to formulate an institutional prohibition with an ominous hierarchy | rules, worldbuilding, suspense |
+
+---
+
+## Leo Tolstoy, War and Peace (1869)
+*Trans. Louise and Aylmer Maude*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘The Prussians are our faithful allies who have only betrayed us three times in three years.’” | How to skewer military alliances through deadpan arithmetic irony | irony, politics, understatement |
+| “After all, you must understand that besides your pleasure there is such a thing as other people’s happiness and peace, and that you are ruining a whole life for the sake of amusing yourself!” | How to confront selfish hedonism with moral fury | morality, dialogue, conflict |
+| “‘It is not in the eye of the beholder that truth resides, but in the world itself,’ he said to himself.” | How to rescue objective truth from solipsism with a quiet conviction | philosophy, truth, interiority |
+| “‘You may go and kill whom you please, but I don’t want to do so any more!’” | How to record the abrupt exhaustion of a soldier's obedience | war, clarity, conscience |
+
+---
+
+## Umberto Eco, How to Travel with a Salmon & Other Essays (1992)
+*Trans. William Weaver*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “For such is the fate of parody: it must never fear exaggerating. If it strikes home, it will only prefigure something that others will then do without a smile—and without a blush—in steadfast, virile seriousness.” | How to define the predictive destiny of literary parody | satire, philosophy, prophecy |
+| “The peas have only two alternatives: either they roll down your shirtfront or they fall on your fly.” | How to reduce airline dining to binary gravitational humiliation | humor, observation, hyperbole |
+| “When revolutionary inventions become widely accessible, they cease to be accessible.” | How to formulate the paradox of democratized infrastructure | aphorism, paradox, technology |
+| “Posterity, as we know, is voracious and easily pleased. In order to have something to write about, any writing by others will do.” | How to deflate academic legacy through voracious indifference | cynicism, academia, legacy |
+
+---
+
+## Max Brooks, World War Z (2006)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘It was all too intimate,’ the chairperson said during one of our many ‘animated’ discussions. ‘Too many opinions, too much feeling. That’s not what this report is about. We need clear facts and figures, unclouded by the human factor.’” | How to dramatize bureaucratic erasure of human suffering | dialogue, bureaucracy, satire |
+| “‘And in the end, isn’t the human factor the only true difference between us and the enemy we now refer to as ‘the living dead’?’” | How to invert an institutional dismissal into an existential defense | rhetorical question, humanity, theme |
+| “The dead were coming. Slow and deliberate, and just as tightly packed as the refugees they were devouring.” | How to mirror civilian panic against relentless mechanical momentum | pacing, visceral detail, horror |
+| “Cities were dying, whole countries. We listened to the last report from Buenos Aires, the evacuation of the Japanese home islands, too.” | How to register planetary collapse through radio silence | scale, apocalypse, understatement |
+
+---
+
+## Virginia Feito, Victorian Psycho (2024)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘It sounded like a woman screaming in the night.’ ‘That’s Yorkshire for you.’” | How to deflate nocturnal terror with provincial dismissal | dialogue, dark comedy, gothic |
+| “I have never tasted swan before and so do not know if it is always like this or if it has been overcooked, which tends to occur nowadays because undercooking is thought to exacerbate women’s weak nervous conditions.” | How to satirize medical misogyny through dinner party critique | satire, voice, historical irony |
+| “‘Nothing a good rest devoid of intellectual strain can’t cure,’ Mr Pounds says brightly.” | How to capture Victorian patriarchal condescension in a cheerful diagnosis | irony, patriarchy, dialogue |
+| “The ghosts of the servants are reflected on the silver. They wait at the sideboard to serve the food and drinks, looking upon the scene through a veil of their superiors’ indifference.” | How to reveal class invisibility through polished dining silver | imagery, class, atmosphere |
 
 ---
