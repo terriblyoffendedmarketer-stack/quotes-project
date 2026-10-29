@@ -146,7 +146,7 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 }
 .widget-card-sim {
   border-radius: 24px; padding: 18px 20px 14px;
-  min-height: 230px; display: flex; flex-direction: column; justify-content: space-between;
+  height: 270px; max-height: 270px; display: flex; flex-direction: column; justify-content: space-between;
   cursor: pointer; position: relative; overflow: hidden;
   box-shadow: 0 4px 18px rgba(0,0,0,0.18);
   transition: all .2s ease;
@@ -494,70 +494,105 @@ function renderCardDeck() {
   track.scrollLeft = 0;
 }
 
+function getShelfSlides(q, maxWords = 60) {
+  const slides = [];
+  const quoteLen = (q.quote || "").length;
+  const quoteSize = quoteLen > 280 ? "1.18rem" : (quoteLen > 180 ? "1.32rem" : (quoteLen > 80 ? "1.55rem" : "1.85rem"));
+
+  slides.push({
+    type: "line",
+    text: q.quote,
+    work: q.work,
+    author: q.author,
+    year: q.year,
+    quoteSize: quoteSize
+  });
+
+  const paragraphs = (q.explanation || "").split("\n\n").map(p => p.trim()).filter(Boolean);
+
+  paragraphs.forEach((p) => {
+    const words = p.split(/\s+/);
+
+    if (words.length <= maxWords) {
+      slides.push({
+        type: "text",
+        text: p,
+        work: q.work,
+        author: q.author
+      });
+    } else {
+      const sentences = p.match(/[^.!?]+[.!?]+(\s+|$)|[^.!?]+$/g) || [p];
+      let currentChunk = "";
+      let currentWords = 0;
+      const chunks = [];
+
+      for (const s of sentences) {
+        const sWords = s.trim().split(/\s+/).length;
+        if (currentWords + sWords > maxWords && currentChunk.length > 0) {
+          chunks.push(currentChunk.trim());
+          currentChunk = s;
+          currentWords = sWords;
+        } else {
+          currentChunk += (currentChunk ? " " : "") + s;
+          currentWords += sWords;
+        }
+      }
+      if (currentChunk.trim().length > 0) {
+        chunks.push(currentChunk.trim());
+      }
+
+      chunks.forEach((chunk) => {
+        slides.push({
+          type: "text",
+          text: chunk,
+          work: q.work,
+          author: q.author
+        });
+      });
+    }
+  });
+
+  slides.forEach((s, idx) => {
+    s.step = idx + 1;
+    s.total = slides.length;
+    s.label = idx === 0 ? "The Line" : (slides.length > 2 ? `Part ${idx}` : "Note");
+  });
+
+  return slides;
+}
+
 function renderBankDeck() {
   const quotes = getAppBankQuotes();
   if (!quotes.length) return;
   bankIndex = Math.min(bankIndex, quotes.length - 1);
   const q = quotes[bankIndex];
 
-  const paragraphs = (q.explanation || "").split("\n\n").map(p => p.trim()).filter(Boolean);
-  const totalSlides = paragraphs.length >= 2 ? 3 : 2;
-  const quoteLen = (q.quote || "").length;
-  const quoteSize = quoteLen > 280 ? "1.25rem" : (quoteLen > 180 ? "1.45rem" : (quoteLen > 80 ? "1.75rem" : "2.05rem"));
-
-  const slides = [
-    {
-      cls: "bank-line",
-      label: "The Line",
-      html: `
-        <span class="shelf-pill">SHELF SPARK</span>
-        <span class="kicker">${escapeHtml(q.work.toUpperCase())} · 1 OF ${totalSlides}</span>
-        <div class="line" style="font-size: ${quoteSize}; line-height: 1.35;">“${escapeHtml(q.quote)}”</div>
-        <div class="who">${escapeHtml(q.author)}, <cite>${escapeHtml(q.work)}</cite>${q.year ? ` · ${q.year}` : ''}</div>
-        <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
-      `
-    }
-  ];
-
-  if (paragraphs.length >= 2) {
-    slides.push({
-      cls: "bank-context",
-      label: "The Scene",
-      html: `
-        <span class="shelf-pill">SCENE CONTEXT</span>
-        <span class="kicker">${escapeHtml(q.work.toUpperCase())} · 2 OF 3</span>
-        <div class="note" style="font-size:1.05rem; line-height:1.62; margin: auto 0;"><p>${escapeHtml(paragraphs[0])}</p></div>
-        <div class="who">${escapeHtml(q.author)}, <cite>${escapeHtml(q.work)}</cite></div>
-        <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
-      `
-    });
-    slides.push({
-      cls: "bank-context",
-      label: "The Truth",
-      html: `
-        <span class="shelf-pill">HUMAN TRUTH</span>
-        <span class="kicker">${escapeHtml(q.work.toUpperCase())} · 3 OF 3</span>
-        <div class="note" style="font-size:1.05rem; line-height:1.62; margin: auto 0;"><p>${escapeHtml(paragraphs[1])}</p></div>
-        <div class="who">${escapeHtml(q.author)}, <cite>${escapeHtml(q.work)}</cite></div>
-        <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
-      `
-    });
-  } else {
-    slides.push({
-      cls: "bank-context",
-      label: "Scene Context",
-      html: `
-        <span class="shelf-pill">SCENE CONTEXT</span>
-        <span class="kicker">${escapeHtml(q.work.toUpperCase())} · 2 OF 2</span>
-        <div class="note" style="font-size:1.05rem; line-height:1.62; margin: auto 0;"><p>${escapeHtml(paragraphs[0] || "")}</p></div>
-        <div class="who">${escapeHtml(q.author)}, <cite>${escapeHtml(q.work)}</cite></div>
-        <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
-      `
-    });
-  }
+  const slides = getShelfSlides(q, 85);
+  const totalSlides = slides.length;
 
   const track = $("track");
-  track.innerHTML = slides.map(s => `<div class="slide ${s.cls}">${s.html}</div>`).join("");
+  track.innerHTML = slides.map((s, idx) => {
+    if (s.type === "line") {
+      return `
+        <div class="slide bank-line">
+          <span class="kicker">${escapeHtml(s.work.toUpperCase())} · 1 OF ${totalSlides}</span>
+          <div class="line" style="font-size: ${s.quoteSize}; line-height: 1.35;">“${escapeHtml(s.text)}”</div>
+          <div class="who">${escapeHtml(s.author)}, <cite>${escapeHtml(s.work)}</cite>${s.year ? ` · ${s.year}` : ''}</div>
+          <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
+        </div>
+      `;
+    } else {
+      return `
+        <div class="slide bank-context">
+          <span class="kicker">${escapeHtml(s.work.toUpperCase())} · ${idx + 1} OF ${totalSlides}</span>
+          <div class="note" style="font-size:1.06rem; line-height:1.62; margin: auto 0;"><p>${escapeHtml(s.text)}</p></div>
+          <div class="who">${escapeHtml(s.author)}, <cite>${escapeHtml(s.work)}</cite></div>
+          <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
+        </div>
+      `;
+    }
+  }).join("");
+
   $("dots").innerHTML = slides.map((s, idx) => `
     <button type="button" data-i="${idx}" aria-current="${idx === 0 ? 'true' : 'false'}">${s.label}</button>
   `).join("");
@@ -573,7 +608,7 @@ function renderBankDeck() {
    ========================================================================== */
 let widgetMode = "shelf"; // "shelf" | "cards"
 let widgetTheme = "dark"; // "dark" | "light"
-let widgetShelfSlide = 0; // 0 = Line, 1 = Context
+let widgetShelfSlide = 0;
 let widgetCardSlide = 0; // 0 to 4
 
 function renderWidget() {
@@ -582,24 +617,29 @@ function renderWidget() {
   $("wThemeToggle").textContent = `Theme: ${widgetTheme === 'dark' ? 'Dark' : 'Light'}`;
 
   if (widgetMode === "shelf") {
-    // Shelf Spark quote
+    // Shelf Spark quote with dynamic multi-slide pagination
     const todayQuote = QUOTE_BANK[bankIndex] || QUOTE_BANK[0];
+    const slides = getShelfSlides(todayQuote, 65);
+    const totalSlides = slides.length;
+    widgetShelfSlide = Math.max(0, Math.min(widgetShelfSlide, totalSlides - 1));
+    const current = slides[widgetShelfSlide];
+
     cardEl.style.backgroundColor = widgetTheme === 'dark' ? '#15171b' : '#f4f5f2';
     cardEl.style.color = widgetTheme === 'dark' ? '#f6f5f0' : '#14161b';
 
-    if (widgetShelfSlide === 0) {
+    if (current.type === "line") {
       cardEl.innerHTML = `
         <div style="display:flex; justify-content:space-between; align-items:center;">
-          <span class="w-badge-pill">SHELF SPARK</span>
-          <span class="w-sub">${escapeHtml(todayQuote.work)}</span>
+          <span class="w-sub" style="font-weight:700; text-transform:uppercase; letter-spacing:.08em;">${escapeHtml(todayQuote.work)}</span>
+          <span class="w-badge-pill" style="font-size:10px; padding:3px 8px;">1 OF ${totalSlides}</span>
         </div>
-        <div class="w-quote-text" style="font-size:1.25rem;">“${escapeHtml(todayQuote.quote)}”</div>
+        <div class="w-quote-text" style="font-size:${current.quoteSize}; line-height:1.36; flex:1; display:flex; align-items:center;">“${escapeHtml(current.text)}”</div>
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
-          <span class="w-sub">— ${escapeHtml(todayQuote.author)}</span>
-          <span class="w-sub" style="font-weight:600">Context →</span>
+          <span class="w-sub">— ${escapeHtml(todayQuote.author)}${todayQuote.year ? ` · ${todayQuote.year}` : ''}</span>
+          <span class="w-sub" style="font-weight:600">Next →</span>
         </div>
         <div class="w-footer">
-          <span>Today's Quote · 1 of 2</span>
+          <span>1 of ${totalSlides}</span>
           <div>
             <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
             <button class="w-btn" id="wBtnOpen">Open ↗</button>
@@ -609,16 +649,18 @@ function renderWidget() {
     } else {
       cardEl.innerHTML = `
         <div style="display:flex; justify-content:space-between; align-items:center;">
-          <span class="w-badge-pill">SCENE CONTEXT</span>
-          <span class="w-sub">${escapeHtml(todayQuote.work)}</span>
+          <span class="w-sub" style="font-weight:700; text-transform:uppercase; letter-spacing:.08em;">${escapeHtml(todayQuote.work)}</span>
+          <span class="w-badge-pill" style="font-size:10px; padding:3px 8px;">${widgetShelfSlide + 1} OF ${totalSlides}</span>
         </div>
-        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:1.02rem; line-height:1.5;">${escapeHtml(todayQuote.explanation)}</div>
+        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:0.95rem; line-height:1.46; overflow:hidden; flex:1; display:flex; align-items:center;">
+          <p style="margin:0;">${escapeHtml(current.text)}</p>
+        </div>
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
-          <span class="w-sub">← Line</span>
           <span class="w-sub">— ${escapeHtml(todayQuote.author)}</span>
+          <span class="w-sub" style="font-weight:600">${widgetShelfSlide < totalSlides - 1 ? 'Next →' : 'Restart ↺'}</span>
         </div>
         <div class="w-footer">
-          <span>Scene Context · 2 of 2</span>
+          <span>${widgetShelfSlide + 1} of ${totalSlides}</span>
           <div>
             <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
             <button class="w-btn" id="wBtnOpen">Open ↗</button>
@@ -738,11 +780,14 @@ $("widgetSimCard").addEventListener("click", e => {
   const isBack = x < rect.width * 0.35;
 
   if (widgetMode === "shelf") {
-    // In Shelf Spark mode, tapping forward flips between Line and Context
+    // In Shelf Spark mode, cycle through all dynamic slides
+    const todayQuote = QUOTE_BANK[bankIndex] || QUOTE_BANK[0];
+    const slides = getShelfSlides(todayQuote, 60);
+    const total = slides.length;
     if (isBack) {
-      widgetShelfSlide = 0;
+      widgetShelfSlide = (widgetShelfSlide - 1 + total) % total;
     } else {
-      widgetShelfSlide = widgetShelfSlide === 0 ? 1 : 0;
+      widgetShelfSlide = (widgetShelfSlide + 1) % total;
     }
   } else {
     // In Craft Cards mode, step slides

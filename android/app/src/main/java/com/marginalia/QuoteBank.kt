@@ -56,20 +56,47 @@ data class BankQuote(
 object QuoteBank {
     @Volatile private var cache: List<BankQuote>? = null
 
-    fun slidesFor(quote: BankQuote): List<ShelfSlide> {
-        val paragraphs = quote.explanation.split("\n\n").map { it.trim() }.filter { it.isNotEmpty() }
+    fun slidesFor(quote: BankQuote, maxWords: Int = 85): List<ShelfSlide> {
         val slides = mutableListOf<ShelfSlide>()
         slides.add(ShelfSlide(label = "The Line", text = quote.quote, isLine = true))
-        if (paragraphs.size >= 2) {
-            slides.add(ShelfSlide(label = "The Scene", text = paragraphs[0], isLine = false))
-            slides.add(ShelfSlide(label = "The Truth", text = paragraphs[1], isLine = false))
-            for (i in 2 until paragraphs.size) {
-                slides.add(ShelfSlide(label = "Context", text = paragraphs[i], isLine = false))
+
+        val paragraphs = quote.explanation.split("\n\n").map { it.trim() }.filter { it.isNotEmpty() }
+        paragraphs.forEach { paragraph ->
+            val words = paragraph.split(Regex("\\s+"))
+            if (words.size <= maxWords) {
+                slides.add(ShelfSlide(label = "Note", text = paragraph, isLine = false))
+            } else {
+                val sentences = paragraph.split(Regex("(?<=[.!?])\\s+"))
+                val chunks = mutableListOf<String>()
+                var currentChunk = StringBuilder()
+                var currentWordCount = 0
+
+                for (sentence in sentences) {
+                    val sWords = sentence.split(Regex("\\s+")).size
+                    if (currentWordCount + sWords > maxWords && currentChunk.isNotEmpty()) {
+                        chunks.add(currentChunk.toString().trim())
+                        currentChunk = StringBuilder(sentence)
+                        currentWordCount = sWords
+                    } else {
+                        if (currentChunk.isNotEmpty()) currentChunk.append(" ")
+                        currentChunk.append(sentence)
+                        currentWordCount += sWords
+                    }
+                }
+                if (currentChunk.isNotEmpty()) {
+                    chunks.add(currentChunk.toString().trim())
+                }
+
+                chunks.forEach { chunk ->
+                    slides.add(ShelfSlide(label = "Note", text = chunk, isLine = false))
+                }
             }
-        } else if (paragraphs.isNotEmpty()) {
-            slides.add(ShelfSlide(label = "Scene Context", text = paragraphs[0], isLine = false))
         }
-        return slides
+
+        val total = slides.size
+        return slides.mapIndexed { idx, s ->
+            s.copy(label = if (idx == 0) "The Line" else (if (total > 2) "Part $idx" else "Note"))
+        }
     }
 
     fun all(context: Context): List<BankQuote> =

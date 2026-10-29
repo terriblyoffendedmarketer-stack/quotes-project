@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 9 (Two-Tier Companion Note Standardization & Gemini Free Tier Pipeline)  
-> **Current**: Perfected the companion note prompt specification through rigorous collaborative iteration (1984, Kino, Cat's Cradle). Paragraph 1 grounds the character's psychological defense posture and immediate stakes without decorative filler; Paragraph 2 captures author intent and universal human truth without re-stating plot danger. Prompt saved at `prompts/shelf_explanation_prompt.txt`. Gemini 3.5 Flash Lite pipeline verified on Google AI Studio Free Tier (15 RPM / ₹0 cost).  
-> **Next**: Apply the 10 verified test quotes to `content/quote-bank.json`, sync to Android assets, and scale across priority batches.
+> **Status**: In Progress | **Phase**: 9 (Two-Tier Companion Note Standardization, Multi-Slide Paging & Full Enrichment)  
+> **Current**: Cleaned up the Shelf Quote reader and Widget architecture across web prototype and Android. Segregated Paragraph 1 (stakes) and Paragraph 2 (human truth) into separate slides with dynamic sentence chunking (≤60w in widget, ≤85w in app), eliminated clinical tags (`SCENE CONTEXT`, `HUMAN TRUTH`), added clean progress counters (`1 OF 4`, `2 OF 4`), and fixed widget tap cycle. Full quote enrichment running steadily in the background on Google AI Studio Free Tier (15 RPM / ₹0 cost).  
+> **Next**: Let background enrichment run through the 1,874 quote bank, sync enriched entries to Android assets, and verify full build.
 
 ## Roadmap
 

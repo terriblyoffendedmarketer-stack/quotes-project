@@ -192,31 +192,32 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/shelf_book"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="0.08"
+                            android:maxLines="1"
+                            android:textAllCaps="true"
+                            android:textColor="@color/widget_text"
+                            android:textSize="11sp" />
+
+                        <TextView
                             android:id="@+id/shelf_pill"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/shelf_badge"
                             android:fontFamily="sans-serif-black"
                             android:letterSpacing="0.08"
-                            android:paddingStart="10dp"
-                            android:paddingTop="4dp"
-                            android:paddingEnd="10dp"
-                            android:paddingBottom="4dp"
-                            android:text="@string/shelf_pill"
+                            android:paddingStart="8dp"
+                            android:paddingTop="3dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="3dp"
+                            android:text="1 OF 4"
                             android:textColor="@color/shelf_badge_text"
-                            android:textSize="11sp" />
-
-                        <TextView
-                            android:id="@+id/shelf_book"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:fontFamily="sans-serif-medium"
-                            android:maxLines="1"
-                            android:textColor="@color/widget_soft"
-                            android:textSize="12sp" />
+                            android:textSize="10sp" />
                     </LinearLayout>
 
                     <TextView
@@ -253,11 +254,12 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/shelf_nav_hint"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:fontFamily="sans-serif-medium"
-                            android:text="Context →"
+                            android:text="Next →"
                             android:textColor="@color/widget_soft"
                             android:textSize="11sp" />
                     </LinearLayout>
@@ -282,30 +284,32 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/shelf_context_book"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="0.08"
+                            android:maxLines="1"
+                            android:textAllCaps="true"
+                            android:textColor="@color/widget_text"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/shelf_context_pill"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/shelf_badge"
                             android:fontFamily="sans-serif-black"
                             android:letterSpacing="0.08"
-                            android:paddingStart="10dp"
-                            android:paddingTop="4dp"
-                            android:paddingEnd="10dp"
-                            android:paddingBottom="4dp"
-                            android:text="SCENE CONTEXT"
+                            android:paddingStart="8dp"
+                            android:paddingTop="3dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="3dp"
+                            android:text="2 OF 4"
                             android:textColor="@color/shelf_badge_text"
-                            android:textSize="11sp" />
-
-                        <TextView
-                            android:id="@+id/shelf_context_book"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:fontFamily="sans-serif-medium"
-                            android:maxLines="1"
-                            android:textColor="@color/widget_soft"
-                            android:textSize="12sp" />
+                            android:textSize="10sp" />
                     </LinearLayout>
 
                     <TextView
@@ -330,24 +334,24 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-medium"
-                            android:text="← Line"
-                            android:textColor="@color/widget_soft"
-                            android:textSize="11sp" />
-
-                        <TextView
                             android:id="@+id/shelf_context_author"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
                             android:layout_weight="1"
                             android:ellipsize="end"
-                            android:gravity="end"
                             android:maxLines="1"
                             android:textColor="@color/widget_soft"
                             android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/shelf_context_nav_hint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Next →"
+                            android:textColor="@color/widget_soft"
+                            android:textSize="11sp" />
                     </LinearLayout>
                 </LinearLayout>
             </FrameLayout>

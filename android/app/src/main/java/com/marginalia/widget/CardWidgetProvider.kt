@@ -127,23 +127,20 @@ class CardWidgetProvider : AppWidgetProvider() {
         data class WidgetShelfChunk(
             val label: String,
             val text: String,
-            val isLine: Boolean
+            val isLine: Boolean,
+            val step: Int = 1,
+            val total: Int = 1
         )
 
-        private fun getWidgetShelfSlides(q: BankQuote): List<WidgetShelfChunk> {
+        private fun getWidgetShelfSlides(q: BankQuote, maxWords: Int = 60): List<WidgetShelfChunk> {
             val slides = mutableListOf<WidgetShelfChunk>()
             slides.add(WidgetShelfChunk(label = "The Line", text = q.quote, isLine = true))
 
             val paragraphs = q.explanation.split("\n\n").map { it.trim() }.filter { it.isNotEmpty() }
-            paragraphs.forEachIndexed { pIdx, paragraph ->
-                val baseLabel = when (pIdx) {
-                    0 -> "The Scene"
-                    1 -> "The Truth"
-                    else -> "Context"
-                }
+            paragraphs.forEach { paragraph ->
                 val words = paragraph.split(Regex("\\s+"))
-                if (words.size <= 85) {
-                    slides.add(WidgetShelfChunk(label = baseLabel, text = paragraph, isLine = false))
+                if (words.size <= maxWords) {
+                    slides.add(WidgetShelfChunk(label = "Note", text = paragraph, isLine = false))
                 } else {
                     val sentences = paragraph.split(Regex("(?<=[.!?])\\s+"))
                     val chunks = mutableListOf<String>()
@@ -152,7 +149,7 @@ class CardWidgetProvider : AppWidgetProvider() {
 
                     for (sentence in sentences) {
                         val sentenceWords = sentence.split(Regex("\\s+")).size
-                        if (currentWordCount + sentenceWords > 80 && currentChunk.isNotEmpty()) {
+                        if (currentWordCount + sentenceWords > maxWords && currentChunk.isNotEmpty()) {
                             chunks.add(currentChunk.toString().trim())
                             currentChunk = StringBuilder(sentence)
                             currentWordCount = sentenceWords
@@ -166,13 +163,20 @@ class CardWidgetProvider : AppWidgetProvider() {
                         chunks.add(currentChunk.toString().trim())
                     }
 
-                    chunks.forEachIndexed { cIdx, chunk ->
-                        val chunkLabel = if (chunks.size > 1) "$baseLabel (${cIdx + 1}/${chunks.size})" else baseLabel
-                        slides.add(WidgetShelfChunk(label = chunkLabel, text = chunk, isLine = false))
+                    chunks.forEach { chunk ->
+                        slides.add(WidgetShelfChunk(label = "Note", text = chunk, isLine = false))
                     }
                 }
             }
-            return slides
+
+            val total = slides.size
+            return slides.mapIndexed { idx, s ->
+                s.copy(
+                    label = if (idx == 0) "The Line" else (if (total > 2) "Part $idx" else "Note"),
+                    step = idx + 1,
+                    total = total
+                )
+            }
         }
 
         /** Which quote in Shelf mode (always today's quote). */
@@ -314,27 +318,34 @@ class CardWidgetProvider : AppWidgetProvider() {
             views.setViewVisibility(R.id.content, View.GONE)
             views.setViewVisibility(R.id.shelf, View.VISIBLE)
 
+            val progressPill = "${current.step} OF ${current.total}"
+            val navHint = if (shelfSlide < totalSlides - 1) "Next →" else "Restart ↺"
+
             if (current.isLine) {
                 // Slide 1: The Line
                 views.setViewVisibility(R.id.shelf_line_layout, View.VISIBLE)
                 views.setViewVisibility(R.id.shelf_context_layout, View.GONE)
 
                 views.setTextViewText(R.id.shelf_book, q.work)
+                views.setTextViewText(R.id.shelf_pill, progressPill)
                 views.setTextViewText(R.id.shelf_quote, "“${current.text}”")
                 val yearStr = if (q.year != null) " · ${q.year}" else ""
                 views.setTextViewText(R.id.shelf_author, "— ${q.author}$yearStr")
+                views.setTextViewText(R.id.shelf_nav_hint, navHint)
 
-                views.setTextViewText(R.id.widget_progress, "${current.label} · ${shelfSlide + 1} of $totalSlides")
+                views.setTextViewText(R.id.widget_progress, "${shelfSlide + 1} of $totalSlides")
             } else {
-                // Context Slides: Scene / Truth (Full height, never cut off!)
+                // Context Slides: Segregated chunks (Full height, never cut off!)
                 views.setViewVisibility(R.id.shelf_line_layout, View.GONE)
                 views.setViewVisibility(R.id.shelf_context_layout, View.VISIBLE)
 
                 views.setTextViewText(R.id.shelf_context_book, q.work)
+                views.setTextViewText(R.id.shelf_context_pill, progressPill)
                 views.setTextViewText(R.id.shelf_explanation, current.text)
                 views.setTextViewText(R.id.shelf_context_author, "— ${q.author}")
+                views.setTextViewText(R.id.shelf_context_nav_hint, navHint)
 
-                views.setTextViewText(R.id.widget_progress, "${current.label} · ${shelfSlide + 1} of $totalSlides")
+                views.setTextViewText(R.id.widget_progress, "${shelfSlide + 1} of $totalSlides")
             }
 
             views.textColor(context, R.id.widget_progress, R.color.widget_soft)
