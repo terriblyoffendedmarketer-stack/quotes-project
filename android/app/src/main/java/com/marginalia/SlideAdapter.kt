@@ -88,7 +88,7 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             line.visibility = if (isLine) View.VISIBLE else View.GONE
             body.visibility = if (isHook || isLine) View.GONE else View.VISIBLE
             spacerTop.visibility = if (isHook || isLine) View.VISIBLE else View.GONE
-            spacerBottom.visibility = spacerTop.visibility
+            spacerBottom.visibility = View.VISIBLE
             mini.visibility = if (slide == Slide.LOOK) View.VISIBLE else View.GONE
             footer.visibility = if (isHook) View.GONE else View.VISIBLE
             job.visibility = footer.visibility
@@ -128,7 +128,7 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             kicker.setTextColor(ContextCompat.getColor(context, R.color.ink_soft))
 
             spacerTop.visibility = if (isLine) View.VISIBLE else View.GONE
-            spacerBottom.visibility = spacerTop.visibility
+            spacerBottom.visibility = View.VISIBLE
 
             line.visibility = if (isLine) View.VISIBLE else View.GONE
             body.visibility = if (isLine) View.GONE else View.VISIBLE
@@ -141,7 +141,7 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
                 line.textSize = if (quote.quote.length > 220) 20f else 25f
             } else {
                 body.text = quote.explanation
-                body.textSize = 18f
+                body.textSize = 16f
             }
 
             footer.visibility = View.VISIBLE
