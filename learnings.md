@@ -14,3 +14,4 @@
 - Dark mode low contrast on pills and headers | mode toggle pills and badges lacked night-mode color declarations and used paper color on sheet background | defined semantic pill_active_bg/text and shelf_badge drawables with explicit light/dark values
 - Widget shelf cycling quotes on tap | step() incremented quote index on the widget instead of restricting home screen to single daily quote | locked widget to todayIndex and configured tap to flip only between The Line and Scene Context
 - Lackluster quote bank explanations | initial extraction used 1-sentence micro-glossary verbs without narrative setting | expanded explanations to 2-3 sentences setting book circumstance, human dilemma, and emotional stakes
+- Prototype Slide 1 repeated quote instead of job | cards.json stores job in "job" key while template checked undefined "hook" and fell back to quote | parsed card.job with removePrefix("How to ") matching Android Slide.hookTitle
