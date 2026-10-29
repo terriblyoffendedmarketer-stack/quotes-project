@@ -6,7 +6,7 @@
 import sys
 import os
 import webbrowser
-from http.server import SimpleHTTPRequestHandler, HTTPServer
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -33,7 +33,7 @@ def main():
         print("prototype/index.html not found. Building now...")
         os.system(f"python3 '{ROOT / 'tools' / 'build_prototype.py'}'")
 
-    httpd = HTTPServer(server_address, PrototypeHandler)
+    httpd = ThreadingHTTPServer(server_address, PrototypeHandler)
     url = f"http://localhost:{port}"
     print(f"\n=======================================================")
     print(f"  Marginalia Visual Studio Live on Computer")
