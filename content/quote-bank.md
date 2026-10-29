@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 874 | **Total Books Represented:** 179
+**Total Vetted Quotes:** 894 | **Total Books Represented:** 183
 
 ---
 
@@ -92,6 +92,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “The world ends at that barricaded door.” | How to draw the boundary of isolation in seven words | solitude, aphorism, spatial-metaphor, brevity |
 | “Permanent solutions never interested him. He went on patching and patching, a little piece here, a little piece there, never allowing his boat to sink, but never giving it a chance to float either.” | How to portray chronic indecision through maritime maintenance | characterization, metaphor, repetition, rhythm |
 | “It is almost like the drawing a child makes when he is troubled by some inexpressible fear: the most important thing is always the biggest thing.” | How to explain emotional distortion through naive proportions | psychology, analogy, perspective, craft-rule |
+| “Things are inert: they have meaning only in function of the life that makes use of them. When that life ends, the things change, even though they remain the same.” | How to capture the sudden hollow weight of an inherited room | grief, objects, philosophy |
+| “It would be impossible to say that we are not haunted.” | How to state an uncanny psychological truth with double negation | syntax, memory, understatement |
+| “Life is death, and death is a kind of life.” | How to distill an existential threshold into chiasmic balance | chiasmus, mortality, paradox |
+| “It was not that he was afraid of strangers, nor that he was physically reluctant to speak. More subtly, he found himself hesitating to speak English to the Dutch.” | How to dramatize linguistic displacement through quiet hesitation | language, interiority, displacement |
 
 ---
 
@@ -2186,5 +2190,49 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “It pays to be obvious, especially if you have a reputation for subtlety.” | How to weaponize transparency against suspicious rivals | paradox, cynicism, strategy |
 | “To succeed, planning alone is insufficient. One must improvise as well.” | How to puncture deterministic confidence with tactical necessity | balance, philosophy, action |
 | “A nuclear blaster is a good weapon, but it can point both ways.” | How to warn against technological hubris through symmetrical leverage | idiom, technology, leverage |
+
+---
+
+## Peter Frankopan, The Silk Roads: A New History of the World (2015)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It was, as one leading scholar has put it, a Versailles moment: too many towns, forts and important locations were handed over with too little thought about how they could be held.” | How to compress geopolitical overreach into a historical shorthand | history, metaphor, geopolitics |
+| “The hour of need in the east looked like it might deliver unity to the church.” | How to reveal the predatory optimism behind religious diplomacy | irony, diplomacy, power |
+| “He has a very large palace, entirely roofed with fine gold.” | How to evoke mythic wealth through medieval unadorned scale | imagery, scale, simplicity |
+| “He is a miserly king, not a man from whom one might hope for a rich present.” | How to puncture royal majesty with a travel chronicler's blunt disappointment | voice, irony, portraiture |
+
+---
+
+## Samin Nosrat, Salt, Fat, Acid, Heat (2017)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Imagine that you’re cooking green beans in a pot of water. If the water is unseasoned or only lightly seasoned, then its salinity will be lower than that of the beans, and the salt from the beans will actually leach out into the cooking water, leaving the beans limp and dull.” | How to explain chemical osmosis through domestic sensory consequence | sensory detail, craft, explanation |
+| “You might flinch upon seeing just how much salt this takes, but remember, most of the salt ends up going down the drain.” | How to disarm cook's anxiety with domestic reassurance | voice, reassurance, process |
+| “Short doughs are the epitome of tenderness, crumbling and melting in your mouth.” | How to define textural mastery with twin sensory verbs | texture, verbs, food writing |
+| “Pat its skin dry before you stick it in the oven, so it can brown, instead of steam.” | How to isolate the culinary boundary between roasting and steaming | imperative, contrast, instruction |
+
+---
+
+## T. Kingfisher, What Moves the Dead (2022)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “They watch, all the time. Not the way hares stare at you and bolt if you move. They’ll come up to you and watch.” | How to invert animal instinct to manufacture uncanny dread | horror, defamiliarization, suspense |
+| “Saprophytic fungi—ah, that is to say, those that feed upon decaying organic matter—are exceedingly common. Unsightly, perhaps, but they pose no threat to living creatures.” | How to weaponize scientific reassurance as dramatic irony | irony, science, dialogue |
+| “Americans, so far as I know, have no sworn, but I am given to understand that they have very lurid periodicals.” | How to reveal cultural estrangement through dry satirical assessment | humor, voice, satire |
+| “She will be entirely herself one morning, and then by afternoon, I will find her speaking to the servants as if she is a small child. She points at things and asks for their names and seems astonished.” | How to chart cognitive decay through lost vocabulary | psychological horror, pathos, pacing |
+
+---
+
+## Alexandre Dumas, The Count of Monte Cristo (1844)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Gentlemen, when you grow tired of being actors and wish to become spectators again, you know that you have a place at my windows.” | How to reduce human tragedy to theatrical entertainment | dialogue, metaphor, power |
+| “Nothing is so rare as silence; nothing so precious as sound advice.” | How to elevate verbal economy through parallel aphorisms | aphorism, parallelism, wisdom |
+| “It was time for him to go back among men and take up the rank, influence and power which great wealth gives in this world.” | How to herald a character's return with monumental social clarity | transition, revenge, grandeur |
+| “I realize it would be useless for me to struggle against the vengeance of God which has just struck me. There’s no need for proof—everything this young man has brought against me is true.” | How to stage the sudden collapse of legal arrogance | justice, climax, speech |
 
 ---

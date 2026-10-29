@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Reached 874 high-caliber craft quotes curated across 179 books (incorporating Cluster 45: *Before They Are Hanged*, *20th Century Ghosts*, *John Dies at the End*, *Congo*, *Foundation*). Cluster 46 (*The Invention of Solitude*, *The Silk Roads*, *Salt, Fat, Acid, Heat*, *What Moves the Dead*, *The Count of Monte Cristo*) currently mining locally via Ollama.  
-> **Next**: Complete Cluster 46 curation to reach 894 quotes, followed by Cluster 47 (*The Name of the Wind*, *War and Peace*, *How to Travel with a Salmon*, *World War Z*, *Victorian Psycho*) to cross the 900-quote milestone at 914 quotes.
+> **Current**: Reached 894 high-caliber craft quotes curated across 183 books (incorporating Cluster 46: *The Invention of Solitude*, *The Silk Roads*, *Salt, Fat, Acid, Heat*, *What Moves the Dead*, *The Count of Monte Cristo*). Cluster 47 (*The Name of the Wind*, *War and Peace*, *How to Travel with a Salmon*, *World War Z*, *Victorian Psycho*) currently mining locally via Ollama.  
+> **Next**: Complete Cluster 47 curation to cross the 900-quote milestone at 914 quotes, followed by Cluster 48 (*Pet Sematary*, *The Mist*, *The Last Argument of Kings*, *Strange Pictures*, *Project Hail Mary*) to reach 934 quotes.
 
 ## Roadmap
 
