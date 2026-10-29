@@ -23,6 +23,7 @@
 - `content/authors.md`: Master author library (classic, contemporary, memoir, nonfiction) and their strengths.
 - `scripts/mine_quote_bank.py`: Local extraction engine using Ollama (`gemma3:4b`) to scout literary quotes from EPUBs.
 - `scripts/mine_full_library.py`: Continuous automated full-library mining engine with Dublin Core metadata reader and zero-spoiler gating.
+- `scripts/harmonize_quote_bank.py`: Harmonization utility ensuring all 1,871 quotes share the unified reading companion schema.
 - `scripts/run_batch.py`: Batch orchestrator to mine clusters of books and output candidate JSON.
 - `tools/lint_cards.py`: Linter enforcing word limits, banned AI shapes, triads, and opener variety.
 - `tools/build_prototype.py`: Rebuilds the browser review prototype in `prototype/index.html`.

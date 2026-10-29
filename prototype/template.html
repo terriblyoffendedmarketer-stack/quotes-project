@@ -1,9 +1,13 @@
-<title>Marginalia</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marginalia — Daily Craft & Personal Library Bank</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@48,700,100,0&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: one phone-width reading column. A card is a horizontal stack of slides, each in its own colour, which changes every day (palette() below). */
 :root {
   --paper: #f4f5f2;
   --sheet: #ffffff;
@@ -12,6 +16,8 @@
   --rule: #dcdfe0;
   --marker: #f5e36a;
   --marker-ink: #1b1d22;
+  --accent: #2d3be8;
+  --spark-gold: #c98a00;
   --s-hook: #2d3be8; --s-line: var(--l-line); --s-look: var(--l-look); --s-steal: var(--l-steal); --s-around: var(--l-around);
   --hook-ink: #fff4df; --hook-soft: rgba(255, 244, 223, .8); --hook-pill: #fff4df;
   --font-hook: "Fraunces", Georgia, serif;
@@ -22,13 +28,13 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --paper: #111317; --sheet: #1a1d22; --ink: #e9e8e3; --ink-soft: #a2a5ab;
-    --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; color-scheme: dark;
+    --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; --accent: #6f80ff; --spark-gold: #f2ba42; color-scheme: dark;
     --s-line: var(--d-line); --s-look: var(--d-look); --s-steal: var(--d-steal); --s-around: var(--d-around);
   }
 }
 :root[data-theme="dark"] {
   --paper: #111317; --sheet: #1a1d22; --ink: #e9e8e3; --ink-soft: #a2a5ab;
-  --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; color-scheme: dark;
+  --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; --accent: #6f80ff; --spark-gold: #f2ba42; color-scheme: dark;
   --s-line: var(--d-line); --s-look: var(--d-look); --s-steal: var(--d-steal); --s-around: var(--d-around);
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -36,17 +42,18 @@ html, body { height: 100%; margin: 0; }
 body {
   background: var(--paper); color: var(--ink);
   font-family: var(--font-note); font-size: 16px; line-height: 1.55;
-  padding-inline: 16px; padding-block: 16px 28px;
+  padding-inline: 16px; padding-block: 16px 36px;
 }
-.wrap { max-width: 440px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+.wrap { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
 
 .top { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-family: var(--font-tag); font-size: 12px; color: var(--ink-soft); letter-spacing: .04em; }
 .top-title { font-weight: 700; color: var(--ink); letter-spacing: .08em; }
 
 .modes { display: flex; gap: 3px; background: var(--sheet); padding: 3px; border: 1px solid var(--rule); border-radius: 99px; }
-.mode-btn { font: 600 11px/1 var(--font-tag); letter-spacing: .03em; color: var(--ink-soft); background: none; border: 0; border-radius: 99px; padding: 6px 10px; cursor: pointer; transition: all .15s ease; }
+.mode-btn { font: 600 11.5px/1 var(--font-tag); letter-spacing: .03em; color: var(--ink-soft); background: none; border: 0; border-radius: 99px; padding: 7px 12px; cursor: pointer; transition: all .15s ease; }
 .mode-btn[aria-pressed="true"] { color: var(--paper); background: var(--ink); }
 
+/* Card Deck Styles */
 .deck { min-width: 0; background: var(--sheet); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; }
 .track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
 .track::-webkit-scrollbar { display: none; }
@@ -66,8 +73,8 @@ body {
 .job { font-family: var(--font-tag); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
 .line { white-space: pre-line; font-family: var(--font-line); font-size: 1.45rem; line-height: 1.42; text-wrap: pretty; margin: auto 0; }
 .line.long { font-size: 1.2rem; }
-.who { font-size: 14px; color: var(--ink-soft); }
-.who cite { font-style: italic; color: var(--ink); }
+.who { font-size: 13.5px; color: var(--ink-soft); }
+.who cite { font-style: italic; color: var(--ink); font-weight: 500; }
 
 .kicker { font-family: var(--font-tag); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
 .mini { white-space: pre-line; font-family: var(--font-line); font-size: 1rem; line-height: 1.5; color: var(--ink-soft); border-left: 2px solid var(--rule); padding-left: 12px; }
@@ -93,53 +100,82 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .caption { font-size: 13px; color: var(--ink-soft); }
 .row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
 
-/* Quote Bank Styles */
-.bank-container { display: flex; flex-direction: column; gap: 14px; }
-.bank-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
-.bank-views { display: flex; gap: 4px; }
-.bank-btn { font: 500 12px/1 var(--font-note); background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 8px; padding: 7px 11px; cursor: pointer; }
-.bank-btn[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-.bank-select { font: 500 12px/1 var(--font-tag); background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 8px; padding: 6px 10px; cursor: pointer; max-width: 140px; }
+/* ==========================================================================
+   QUOTE BANK: THEMATIC HORIZONS & READING COMPANION STYLES
+   ========================================================================== */
+.bank-container { display: flex; flex-direction: column; gap: 16px; }
 
-.bank-card { background: var(--sheet); border: 1px solid var(--rule); border-radius: 20px; padding: 26px 22px 22px; min-height: 440px; display: flex; flex-direction: column; gap: 16px; position: relative; }
-.bank-hook-badge { align-self: flex-start; font: 600 12px/1 var(--font-tag); letter-spacing: .04em; text-transform: uppercase; background: var(--paper); color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 99px; padding: 6px 12px; }
-.bank-quote { font-family: var(--font-line); font-size: 1.45rem; line-height: 1.42; margin: auto 0; text-wrap: pretty; color: var(--ink); }
-.bank-quote.long { font-size: 1.2rem; }
-.bank-insight { background: var(--paper); border-left: 3px solid var(--ink); border-radius: 6px; padding: 12px 14px; font-size: 13.5px; line-height: 1.45; color: var(--ink); }
-.bank-insight strong { display: block; font-family: var(--font-tag); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); margin-bottom: 4px; }
-.bank-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.bank-tag { font: 500 11px/1 var(--font-tag); background: var(--paper); color: var(--ink-soft); padding: 4px 8px; border-radius: 6px; }
-
-.bank-shuffle-nav { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.btn-surprise { font: 600 13px/1 var(--font-note); background: var(--ink); color: var(--paper); border: 0; border-radius: 10px; padding: 11px 16px; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+/* Search & Filter Header */
+.bank-header-panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 12px; }
+.search-row { display: flex; gap: 8px; align-items: center; }
+.search-input { flex: 1; font: 500 14px/1.4 var(--font-note); background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-radius: 10px; padding: 9px 12px; outline: none; transition: border-color .15s; }
+.search-input:focus { border-color: var(--ink); }
+.btn-surprise { font: 600 13px/1 var(--font-note); background: var(--ink); color: var(--paper); border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
 .btn-surprise:hover { opacity: .9; }
 
-.bookshelf { display: flex; flex-direction: column; gap: 10px; }
-.book-entry { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; }
-.book-header { padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; }
-.book-header:hover { background: var(--paper); }
-.book-title { font-family: var(--font-line); font-size: 1.05rem; font-weight: 600; color: var(--ink); }
-.book-author { font-size: 13px; color: var(--ink-soft); }
-.book-badge { font: 500 11px/1 var(--font-tag); background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-radius: 99px; padding: 4px 8px; }
-.book-quotes { padding: 0 16px 14px; display: flex; flex-direction: column; gap: 10px; border-top: 1px dashed var(--rule); margin-top: 4px; padding-top: 12px; }
-.book-q-item { font-family: var(--font-line); font-size: 13.5px; line-height: 1.45; color: var(--ink); cursor: pointer; padding: 8px 10px; border-radius: 8px; background: var(--paper); }
-.book-q-item:hover { background: var(--rule); }
-.book-q-hook { font-family: var(--font-tag); font-size: 11px; color: var(--ink-soft); text-transform: uppercase; margin-bottom: 2px; }
+/* Thematic Horizon Pills */
+.horizons-bar { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.horizons-bar::-webkit-scrollbar { display: none; }
+.horizon-chip { font: 500 11px/1 var(--font-tag); background: var(--paper); color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 99px; padding: 6px 10px; white-space: nowrap; cursor: pointer; transition: all .15s; }
+.horizon-chip:hover { color: var(--ink); border-color: var(--ink-soft); }
+.horizon-chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* Active Filter Badges */
+.filter-active-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-soft); }
+.active-tag-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--ink); color: var(--paper); font: 500 11px/1 var(--font-tag); padding: 4px 10px; border-radius: 99px; }
+.active-tag-pill button { background: none; border: 0; color: var(--paper); cursor: pointer; padding: 0; font-weight: bold; font-size: 13px; line-height: 1; }
+.spark-queue-btn { font: 600 11px/1 var(--font-tag); background: var(--paper); color: var(--spark-gold); border: 1px solid var(--rule); border-radius: 99px; padding: 5px 9px; cursor: pointer; }
+.spark-queue-btn[aria-pressed="true"] { background: var(--spark-gold); color: #fff; border-color: var(--spark-gold); }
+
+/* The Stream of Quotes */
+.horizon-section { display: flex; flex-direction: column; gap: 14px; margin-top: 6px; }
+.horizon-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid var(--ink); padding-bottom: 6px; margin-top: 14px; }
+.horizon-title { font-family: var(--font-tag); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+.horizon-count { font-family: var(--font-tag); font-size: 11px; color: var(--ink-soft); }
+
+.quote-card { background: var(--sheet); border: 1px solid var(--rule); border-radius: 16px; padding: 22px 20px 18px; display: flex; flex-direction: column; gap: 14px; transition: border-color .15s, box-shadow .15s; }
+.quote-card:hover { border-color: var(--ink-soft); }
+.quote-card.spark-highlight { border-color: var(--spark-gold); box-shadow: 0 0 0 1px var(--spark-gold); }
+
+.qc-quote { font-family: var(--font-line); font-size: 1.35rem; line-height: 1.44; margin: 0; color: var(--ink); text-wrap: pretty; }
+.qc-quote.long { font-size: 1.15rem; }
+
+.qc-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; font-size: 13.5px; color: var(--ink-soft); }
+.qc-book { font-weight: 600; color: var(--ink); font-family: var(--font-line); }
+
+.qc-explanation { background: var(--paper); border-left: 3px solid var(--accent); border-radius: 6px; padding: 11px 13px; font-size: 13.5px; line-height: 1.48; color: var(--ink); }
+.qc-explanation-label { font-family: var(--font-tag); font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); font-weight: 600; margin-bottom: 3px; display: block; }
+
+.qc-footer { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 2px; }
+.qc-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.qc-tag { font: 500 10.5px/1 var(--font-tag); background: var(--paper); color: var(--ink-soft); padding: 4px 7px; border-radius: 6px; cursor: pointer; border: 1px solid transparent; transition: all .15s; }
+.qc-tag:hover { color: var(--ink); border-color: var(--rule); }
+
+.btn-spark { font: 600 11.5px/1 var(--font-tag); background: transparent; color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 99px; padding: 6px 11px; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all .15s; }
+.btn-spark:hover { color: var(--spark-gold); border-color: var(--spark-gold); }
+.btn-spark.saved { background: var(--paper); color: var(--spark-gold); border-color: var(--spark-gold); }
+
+/* Infinite / Load More */
+.load-more-wrap { text-align: center; padding: 18px 0; }
+.btn-load-more { font: 600 13px/1 var(--font-note); background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 10px; padding: 11px 22px; cursor: pointer; }
+.btn-load-more:hover { border-color: var(--ink); }
 
 @media (prefers-reduced-motion: reduce) { .track { scroll-behavior: auto; } }
 </style>
+</head>
+<body>
 
 <div class="wrap">
-  <div class="top">
+  <header class="top">
     <span class="top-title">MARGINALIA</span>
-    <div class="modes">
-      <button class="mode-btn" id="modeCards" aria-pressed="true">Cards (108)</button>
-      <button class="mode-btn" id="modeBank" aria-pressed="false">Quote Bank (<span id="bankCountLabel">24</span>)</button>
-    </div>
+    <nav class="modes" aria-label="Switch views">
+      <button class="mode-btn" id="modeCards" aria-pressed="true">Daily Cards (108)</button>
+      <button class="mode-btn" id="modeBank" aria-pressed="false">Quote Bank (1,871)</button>
+    </nav>
     <span id="day"></span>
-  </div>
+  </header>
 
-  <!-- VIEW 1: DAILY 5-SLIDE CARDS -->
+  <!-- VIEW 1: DAILY 5-SLIDE CRAFT DECK -->
   <main id="viewCards">
     <section class="deck" aria-label="Today's card">
       <div class="track" id="track"></div>
@@ -168,42 +204,47 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
     </div>
   </main>
 
-  <!-- VIEW 2: MASTER QUOTE BANK -->
+  <!-- VIEW 2: MASTER QUOTE BANK (CONTINUOUS THEMATIC HORIZONS) -->
   <main id="viewBank" class="bank-container" hidden>
-    <div class="bank-toolbar">
-      <div class="bank-views">
-        <button class="bank-btn" id="bankViewShuffle" aria-pressed="true">🎲 Serendipity</button>
-        <button class="bank-btn" id="bankViewShelf" aria-pressed="false">📚 Bookshelf</button>
+    <!-- Search & Navigation Panel -->
+    <section class="bank-header-panel">
+      <div class="search-row">
+        <input type="text" class="search-input" id="bankSearch" placeholder="Search 1,871 quotes, authors, books..." autocomplete="off">
+        <button class="btn-surprise" id="btnSurprise" type="button" title="Jump to a surprise quote">🎲 Surprise</button>
       </div>
-      <select class="bank-select" id="bankTagFilter" aria-label="Filter quotes by theme">
-        <option value="">All themes</option>
-      </select>
-    </div>
 
-    <!-- Shuffle Single Card View -->
-    <div id="bankShufflePanel" style="display:flex; flex-direction:column; gap:14px">
-      <article class="bank-card" id="bankCard">
-        <div class="bank-hook-badge" id="bHook"></div>
-        <p class="bank-quote" id="bQuote"></p>
-        <div class="who" id="bWho"></div>
-        <div class="bank-insight" id="bInsight">
-          <strong>Craft Insight</strong>
-          <span id="bWhy"></span>
+      <!-- Thematic Horizon Chips -->
+      <nav class="horizons-bar" id="horizonsBar" aria-label="Thematic Horizons">
+        <button class="horizon-chip" data-h="all" aria-pressed="true">All (1,871)</button>
+        <button class="horizon-chip" data-h="dread" aria-pressed="false">Atmospheric Dread</button>
+        <button class="horizon-chip" data-h="folly" aria-pressed="false">Human Folly</button>
+        <button class="horizon-chip" data-h="solitude" aria-pressed="false">Solitude & Finitude</button>
+        <button class="horizon-chip" data-h="stakes" aria-pressed="false">High Stakes</button>
+        <button class="horizon-chip" data-h="irony" aria-pressed="false">Sharp Irony</button>
+        <button class="horizon-chip" data-h="power" aria-pressed="false">Power & History</button>
+        <button class="horizon-chip" data-h="prose" aria-pressed="false">Observation & Prose</button>
+      </nav>
+
+      <!-- Filter Stats & Reading Queue Toggle -->
+      <div class="filter-active-row">
+        <div>
+          <span id="bankMatchCount">1,871</span> quotes across <span id="bankBooksCount">416</span> books
+          <span id="activeTagContainer" style="margin-left:8px; display:none">
+            <span class="active-tag-pill">#<span id="activeTagName"></span> <button id="btnClearTag" type="button">×</button></span>
+          </span>
         </div>
-        <div class="bank-tags" id="bTags"></div>
-      </article>
-
-      <div class="bank-shuffle-nav">
-        <button class="bank-btn" id="bPrev" type="button">← Prev</button>
-        <button class="btn-surprise" id="bSurprise" type="button">Surprise Me 🎲</button>
-        <button class="bank-btn" id="bNext" type="button">Next →</button>
+        <button class="spark-queue-btn" id="btnSparkQueue" type="button" aria-pressed="false">✨ Read Next Queue (<span id="sparkQueueCount">0</span>)</button>
       </div>
-      <div style="text-align:center; font-size:12px; color:var(--ink-soft); font-family:var(--font-tag)" id="bCounter"></div>
+    </section>
+
+    <!-- Continuous Stream of Quotes -->
+    <div id="quotesStream" class="quotes-stream">
+      <!-- Injected by JavaScript -->
     </div>
 
-    <!-- Bookshelf Directory View -->
-    <div id="bankShelfPanel" class="bookshelf" hidden>
-      <!-- Injected via JS -->
+    <!-- Infinite Scroll / Load More -->
+    <div class="load-more-wrap" id="loadMoreWrap">
+      <button class="btn-load-more" id="btnLoadMore" type="button">Load More Quotes ↓</button>
     </div>
   </main>
 </div>
@@ -263,7 +304,7 @@ function credit(item) {
 }
 
 /* ==========================================================================
-   CARDS RENDERER
+   CARDS VIEW RENDERER
    ========================================================================== */
 function renderCards() {
   if (!CARDS.length) return;
@@ -308,116 +349,169 @@ function renderCards() {
 }
 
 /* ==========================================================================
-   QUOTE BANK RENDERER
+   QUOTE BANK: THEMATIC HORIZONS & STREAM ENGINE
    ========================================================================== */
-let bankFiltered = [...QUOTE_BANK];
-let bankIndex = 0;
+const THEMES = [
+  { code: "dread", title: "Atmospheric Dread & The Uncanny", kw: new Set(["dread", "horror", "fear", "death", "dark", "eerie", "uncanny", "haunting", "tension", "macabre", "grotesque"]) },
+  { code: "folly", title: "Human Folly & Social Pretense", kw: new Set(["folly", "vanity", "satire", "hypocrisy", "manners", "social", "pretension", "awkwardness", "family", "prejudice", "pride"]) },
+  { code: "solitude", title: "Solitude, Stillness & Finitude", kw: new Set(["solitude", "stillness", "time", "silence", "memory", "grief", "mortality", "loss", "longing", "reflection", "quiet", "finitude", "loneliness"]) },
+  { code: "stakes", title: "High Stakes & Moral Friction", kw: new Set(["stakes", "high-stakes", "choice", "sacrifice", "survival", "courage", "crisis", "danger", "pressure", "willpower", "duty", "moral"]) },
+  { code: "irony", title: "Sharp Bites of Irony", kw: new Set(["irony", "dark-humor", "humor", "wit", "cynicism", "absurdity", "paradox", "comedy", "dry", "understatement", "wry"]) },
+  { code: "power", title: "The Machinery of Power & History", kw: new Set(["power", "history", "politics", "empire", "systems", "bureaucracy", "control", "civilization", "war", "ideology", "propaganda"]) },
+  { code: "prose", title: "Observation & Prose Rhythm", kw: new Set(["observation", "prose", "rhythm", "sensory-detail", "detail", "voice"]) }
+];
 
-function initBank() {
-  $("bankCountLabel").textContent = QUOTE_BANK.length;
-  // Populate tags dropdown
-  const tagSet = new Set();
-  QUOTE_BANK.forEach(q => (q.tags || []).forEach(t => tagSet.add(t)));
-  const tags = Array.from(tagSet).sort();
-  $("bankTagFilter").innerHTML = `<option value="">All themes (${QUOTE_BANK.length})</option>` +
-    tags.map(t => `<option value="${esc(t)}">#${esc(t)}</option>`).join("");
-
-  renderBookshelf();
-  filterBank();
-}
-
-function filterBank() {
-  const selTag = $("bankTagFilter").value;
-  if (!selTag) {
-    bankFiltered = [...QUOTE_BANK];
-  } else {
-    bankFiltered = QUOTE_BANK.filter(q => (q.tags || []).includes(selTag));
+// Pre-assign each quote to its primary horizon
+QUOTE_BANK.forEach(q => {
+  const tags = new Set(q.tags || []);
+  const text = (q.quote + " " + (q.explanation || "")).toLowerCase();
+  for (const t of THEMES) {
+    if (tags.size && [...tags].some(tag => t.kw.has(tag))) {
+      q.horizon = t.code;
+      return;
+    }
   }
-  bankIndex = 0;
-  renderBankCard();
-}
-
-function renderBankCard() {
-  if (!bankFiltered.length) {
-    $("bHook").textContent = "EMPTY";
-    $("bQuote").textContent = "No quotes match this filter.";
-    $("bWho").textContent = "";
-    $("bWhy").textContent = "";
-    $("bTags").innerHTML = "";
-    $("bCounter").textContent = "0 / 0";
-    return;
+  for (const t of THEMES) {
+    for (const w of t.kw) {
+      if (text.includes(w)) {
+        q.horizon = t.code;
+        return;
+      }
+    }
   }
-  const q = bankFiltered[bankIndex];
-  $("bHook").textContent = q.hook || "Craft Job";
-  $("bQuote").textContent = `“${q.quote}”`;
-  $("bQuote").className = `bank-quote${q.quote.length > 180 ? " long" : ""}`;
-  $("bWho").innerHTML = `${credit(q)}${q.year ? ` (${q.year})` : ""}`;
-  $("bWhy").textContent = q.whyItLands || "";
-  $("bTags").innerHTML = (q.tags || []).map(t => `<span class="bank-tag">#${esc(t)}</span>`).join("");
-  $("bCounter").textContent = `${bankIndex + 1} of ${bankFiltered.length}`;
+  q.horizon = "prose";
+});
+
+let bankQuery = "";
+let bankActiveHorizon = "all";
+let bankActiveTag = null;
+let bankShowingSparkQueue = false;
+let sparkQueue = store.get("sparkQueue", []); // Array of work titles
+let renderedCount = 0;
+const PAGE_SIZE = 35;
+let currentFilteredList = [];
+
+function updateSparkCount() {
+  $("sparkQueueCount").textContent = sparkQueue.length;
 }
 
-function renderBookshelf() {
-  const shelf = $("bankShelfPanel");
-  // Group by work
-  const grouped = {};
-  QUOTE_BANK.forEach(q => {
-    const key = `${q.work}:::${q.author}:::${q.year || ""}`;
-    if (!grouped[key]) grouped[key] = [];
-    grouped[key].push(q);
+function getFilteredBank() {
+  return QUOTE_BANK.filter(q => {
+    // 1. Reading Queue filter
+    if (bankShowingSparkQueue) {
+      if (!sparkQueue.includes(q.work)) return false;
+    }
+    // 2. Horizon filter
+    if (bankActiveHorizon !== "all" && q.horizon !== bankActiveHorizon) {
+      return false;
+    }
+    // 3. Tag filter
+    if (bankActiveTag && !(q.tags || []).includes(bankActiveTag)) {
+      return false;
+    }
+    // 4. Text Query
+    if (bankQuery) {
+      const qLower = bankQuery.toLowerCase();
+      const matchQuote = q.quote.toLowerCase().includes(qLower);
+      const matchWork = q.work.toLowerCase().includes(qLower);
+      const matchAuthor = q.author.toLowerCase().includes(qLower);
+      const matchExp = (q.explanation || "").toLowerCase().includes(qLower);
+      const matchTags = (q.tags || []).some(t => t.toLowerCase().includes(qLower));
+      if (!matchQuote && !matchWork && !matchAuthor && !matchExp && !matchTags) {
+        return false;
+      }
+    }
+    return true;
   });
+}
 
-  const keys = Object.keys(grouped).sort();
-  shelf.innerHTML = keys.map((k, idx) => {
-    const [work, author, year] = k.split(":::");
-    const items = grouped[k];
-    return `
-      <div class="book-entry">
-        <div class="book-header" onclick="toggleBook(${idx})">
-          <div>
-            <div class="book-title">${esc(work)}</div>
-            <div class="book-author">${esc(author)}${year ? ` (${year})` : ""}</div>
-          </div>
-          <span class="book-badge">${items.length} quotes</span>
-        </div>
-        <div class="book-quotes" id="bookQ_${idx}" hidden>
-          ${items.map(it => `
-            <div class="book-q-item" onclick="openQuoteInShuffle('${esc(it.id)}')">
-              <div class="book-q-hook">${esc(it.hook)}</div>
-              <div>“${esc(it.quote.slice(0, 140))}${it.quote.length > 140 ? "..." : ""}”</div>
-            </div>
-          `).join("")}
-        </div>
+function renderBankStream(reset = true) {
+  if (reset) {
+    renderedCount = 0;
+    currentFilteredList = getFilteredBank();
+    $("quotesStream").innerHTML = "";
+    
+    // Update count labels
+    $("bankMatchCount").textContent = currentFilteredList.length.toLocaleString();
+    const books = new Set(currentFilteredList.map(q => q.work));
+    $("bankBooksCount").textContent = books.size.toLocaleString();
+  }
+
+  const slice = currentFilteredList.slice(renderedCount, renderedCount + PAGE_SIZE);
+  renderedCount += slice.length;
+
+  if (renderedCount >= currentFilteredList.length) {
+    $("loadMoreWrap").style.display = "none";
+  } else {
+    $("loadMoreWrap").style.display = "block";
+  }
+
+  if (currentFilteredList.length === 0) {
+    $("quotesStream").innerHTML = `
+      <div style="text-align:center; padding:40px 20px; color:var(--ink-soft)">
+        <p style="font-family:var(--font-line); font-size:1.2rem; margin-bottom:8px">No lines found matching your search.</p>
+        <p style="font-size:13px">Try clearing filters or searching another keyword.</p>
       </div>
     `;
+    return;
+  }
+
+  const html = slice.map((q, idx) => {
+    const isSaved = sparkQueue.includes(q.work);
+    const yearStr = q.year ? ` · ${q.year}` : "";
+    return `
+      <article class="quote-card" id="qcard_${esc(q.work)}_${idx}">
+        <p class="qc-quote${q.quote.length > 180 ? ' long' : ''}">“${esc(q.quote)}”</p>
+        
+        <div class="qc-meta">
+          <span class="qc-book">${esc(q.work)}</span>
+          <span>${esc(q.author)}${yearStr}</span>
+        </div>
+
+        ${q.explanation ? `
+          <div class="qc-explanation">
+            <span class="qc-explanation-label">Scene Context</span>
+            ${esc(q.explanation)}
+          </div>
+        ` : ''}
+
+        <div class="qc-footer">
+          <div class="qc-tags">
+            ${(q.tags || []).map(t => `<button type="button" class="qc-tag" onclick="filterByTag('${esc(t)}')">#${esc(t)}</button>`).join('')}
+          </div>
+          <button type="button" class="btn-spark${isSaved ? ' saved' : ''}" onclick="toggleSpark('${esc(q.work)}')">
+            ${isSaved ? '✓ In Queue' : '✨ Read Next'}
+          </button>
+        </div>
+      </article>
+    `;
   }).join("");
+
+  $("quotesStream").insertAdjacentHTML("beforeend", html);
 }
 
-window.toggleBook = function(idx) {
-  const el = $(`bookQ_${idx}`);
-  if (el) el.hidden = !el.hidden;
+window.filterByTag = function(tag) {
+  bankActiveTag = tag;
+  $("activeTagName").textContent = tag;
+  $("activeTagContainer").style.display = "inline-flex";
+  renderBankStream(true);
 };
 
-window.openQuoteInShuffle = function(id) {
-  const foundIdx = bankFiltered.findIndex(q => q.id === id);
-  if (foundIdx >= 0) {
-    bankIndex = foundIdx;
+window.toggleSpark = function(workTitle) {
+  if (sparkQueue.includes(workTitle)) {
+    sparkQueue = sparkQueue.filter(w => w !== workTitle);
   } else {
-    $("bankTagFilter").value = "";
-    filterBank();
-    const allIdx = bankFiltered.findIndex(q => q.id === id);
-    if (allIdx >= 0) bankIndex = allIdx;
+    sparkQueue.push(workTitle);
   }
-  // Switch to shuffle view
-  $("bankViewShuffle").setAttribute("aria-pressed", "true");
-  $("bankViewShelf").setAttribute("aria-pressed", "false");
-  $("bankShufflePanel").hidden = false;
-  $("bankShelfPanel").hidden = true;
-  renderBankCard();
+  store.set("sparkQueue", sparkQueue);
+  updateSparkCount();
+  // Re-render to update button states
+  const cards = document.querySelectorAll(".quote-card");
+  renderBankStream(true);
 };
 
 /* ==========================================================================
-   EVENT LISTENERS
+   EVENT HANDLERS
    ========================================================================== */
 $("modeCards").addEventListener("click", () => {
   $("modeCards").setAttribute("aria-pressed", "true");
@@ -433,64 +527,72 @@ $("modeBank").addEventListener("click", () => {
   $("viewCards").hidden = true;
   $("viewBank").hidden = false;
   $("day").hidden = true;
-});
-
-$("bankViewShuffle").addEventListener("click", () => {
-  $("bankViewShuffle").setAttribute("aria-pressed", "true");
-  $("bankViewShelf").setAttribute("aria-pressed", "false");
-  $("bankShufflePanel").hidden = false;
-  $("bankShelfPanel").hidden = true;
-});
-
-$("bankViewShelf").addEventListener("click", () => {
-  $("bankViewShuffle").setAttribute("aria-pressed", "false");
-  $("bankViewShelf").setAttribute("aria-pressed", "true");
-  $("bankShufflePanel").hidden = true;
-  $("bankShelfPanel").hidden = false;
-});
-
-$("bankTagFilter").addEventListener("change", filterBank);
-
-$("bSurprise").addEventListener("click", () => {
-  if (bankFiltered.length <= 1) return;
-  let next;
-  do {
-    next = Math.floor(Math.random() * bankFiltered.length);
-  } while (next === bankIndex);
-  bankIndex = next;
-  renderBankCard();
-});
-
-$("bNext").addEventListener("click", () => {
-  if (!bankFiltered.length) return;
-  bankIndex = (bankIndex + 1) % bankFiltered.length;
-  renderBankCard();
-});
-
-$("bPrev").addEventListener("click", () => {
-  if (!bankFiltered.length) return;
-  bankIndex = (bankIndex - 1 + bankFiltered.length) % bankFiltered.length;
-  renderBankCard();
-});
-
-// Keyboard shortcuts: Space for Surprise Me when Bank is visible
-window.addEventListener("keydown", e => {
-  if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
-  if ($("viewBank").hidden === false && $("bankShufflePanel").hidden === false) {
-    if (e.code === "Space") {
-      e.preventDefault();
-      $("bSurprise").click();
-    } else if (e.code === "ArrowRight") {
-      $("bNext").click();
-    } else if (e.code === "ArrowLeft") {
-      $("bPrev").click();
-    }
-  } else if ($("viewCards").hidden === false) {
-    if (e.code === "ArrowRight") $("next").click();
-    if (e.code === "ArrowLeft") $("prev").click();
+  if (!renderedCount) {
+    renderBankStream(true);
   }
 });
 
+$("horizonsBar").addEventListener("click", e => {
+  const btn = e.target.closest(".horizon-chip");
+  if (!btn) return;
+  document.querySelectorAll(".horizon-chip").forEach(b => b.setAttribute("aria-pressed", "false"));
+  btn.setAttribute("aria-pressed", "true");
+  bankActiveHorizon = btn.dataset.h;
+  renderBankStream(true);
+});
+
+$("bankSearch").addEventListener("input", e => {
+  bankQuery = e.target.value.trim();
+  renderBankStream(true);
+});
+
+$("btnClearTag").addEventListener("click", () => {
+  bankActiveTag = null;
+  $("activeTagContainer").style.display = "none";
+  renderBankStream(true);
+});
+
+$("btnSparkQueue").addEventListener("click", () => {
+  bankShowingSparkQueue = !bankShowingSparkQueue;
+  $("btnSparkQueue").setAttribute("aria-pressed", String(bankShowingSparkQueue));
+  renderBankStream(true);
+});
+
+$("btnLoadMore").addEventListener("click", () => {
+  renderBankStream(false);
+});
+
+$("btnSurprise").addEventListener("click", () => {
+  // Clear search and filters to surprise from whole bank
+  bankQuery = "";
+  $("bankSearch").value = "";
+  bankActiveTag = null;
+  $("activeTagContainer").style.display = "none";
+  bankActiveHorizon = "all";
+  document.querySelectorAll(".horizon-chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.h === "all"));
+  bankShowingSparkQueue = false;
+  $("btnSparkQueue").setAttribute("aria-pressed", "false");
+
+  currentFilteredList = getFilteredBank();
+  const randIdx = Math.floor(Math.random() * currentFilteredList.length);
+  const picked = currentFilteredList[randIdx];
+
+  // Put picked quote right at top of stream
+  currentFilteredList.splice(randIdx, 1);
+  currentFilteredList.unshift(picked);
+
+  renderBankStream(true);
+
+  // Highlight first card
+  const firstCard = document.querySelector(".quote-card");
+  if (firstCard) {
+    firstCard.classList.add("spark-highlight");
+    firstCard.scrollIntoView({ behavior: "smooth", block: "center" });
+    setTimeout(() => firstCard.classList.remove("spark-highlight"), 3000);
+  }
+});
+
+// Card deck event listeners
 $("dots").addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
   const t = $("track");
@@ -506,6 +608,9 @@ $("next").addEventListener("click", () => { index = (index + 1) % CARDS.length; 
 $("stealToggle").addEventListener("click", () => { showSteal = !showSteal; store.set("showSteal", showSteal); renderCards(); });
 $("widget").addEventListener("click", () => { $("track").scrollLeft = 0; window.scrollTo({ top: 0, behavior: "smooth" }); });
 
+// Initialize
 renderCards();
-initBank();
+updateSparkCount();
 </script>
+</body>
+</html>
