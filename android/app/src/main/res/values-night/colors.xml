@@ -7,7 +7,25 @@
     <color name="rule">#2C3036</color>
     <color name="marker">#B9A63A</color>
     <color name="marker_ink">#111317</color>
+    <color name="icon_bg">#111317</color>
+
+    <!-- Semantic pill colors for active/inactive mode selection -->
+    <color name="pill_active_bg">#E9E8E3</color>
+    <color name="pill_active_text">#111317</color>
+    <color name="pill_inactive_text">#A2A5AB</color>
+
+    <!-- Shelf badge pill -->
+    <color name="shelf_badge_bg">#282D35</color>
+    <color name="shelf_badge_text">#F0EFEA</color>
+
+    <!-- The widget follows the phone's light or dark mode. -->
     <color name="widget_bg">#15171B</color>
     <color name="widget_text">#F6F5F0</color>
     <color name="widget_soft">#B4B7BD</color>
+
+    <color name="slide_hook">#2D3BE8</color>
+    <color name="hook_ink">#FFF4DF</color>
+    <color name="hook_soft">#CCFFF4DF</color>
+    <color name="hook_pill">#282D35</color>
+    <color name="hook_pill_ink">#F0EFEA</color>
 </resources>

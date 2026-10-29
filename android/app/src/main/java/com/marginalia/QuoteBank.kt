@@ -5,13 +5,46 @@ import org.json.JSONArray
 import java.io.File
 import java.time.LocalDate
 
+data class HorizonInfo(val code: String, val title: String, val keywords: Set<String>)
+
+object Horizons {
+    val ALL = listOf(
+        HorizonInfo("all", "All", emptySet()),
+        HorizonInfo("dread", "Atmospheric Dread", setOf("dread", "horror", "fear", "death", "dark", "eerie", "uncanny", "haunting", "tension", "macabre", "grotesque")),
+        HorizonInfo("folly", "Human Folly", setOf("folly", "vanity", "satire", "hypocrisy", "manners", "social", "pretension", "awkwardness", "family", "prejudice", "pride")),
+        HorizonInfo("solitude", "Solitude & Finitude", setOf("solitude", "stillness", "time", "silence", "memory", "grief", "mortality", "loss", "longing", "reflection", "quiet", "finitude", "loneliness")),
+        HorizonInfo("stakes", "High Stakes", setOf("stakes", "high-stakes", "choice", "sacrifice", "survival", "courage", "crisis", "danger", "pressure", "willpower", "duty", "moral")),
+        HorizonInfo("irony", "Sharp Irony", setOf("irony", "dark-humor", "humor", "wit", "cynicism", "absurdity", "paradox", "comedy", "dry", "understatement", "wry")),
+        HorizonInfo("power", "Power & History", setOf("power", "history", "politics", "empire", "systems", "bureaucracy", "control", "civilization", "war", "ideology", "propaganda")),
+        HorizonInfo("prose", "Prose & Voice", setOf("observation", "prose", "rhythm", "sensory-detail", "detail", "voice"))
+    )
+
+    fun horizonFor(quote: String, explanation: String, tags: List<String>): String {
+        val tagSet = tags.map { it.lowercase() }.toSet()
+        val text = "$quote $explanation".lowercase()
+        for (h in ALL) {
+            if (h.code == "all" || h.code == "prose") continue
+            if (tagSet.any { h.keywords.contains(it) }) return h.code
+        }
+        for (h in ALL) {
+            if (h.code == "all" || h.code == "prose") continue
+            if (h.keywords.any { text.contains(it) }) return h.code
+        }
+        return "prose"
+    }
+
+    fun titleFor(code: String): String =
+        ALL.firstOrNull { it.code == code }?.title ?: code.replaceFirstChar { it.uppercase() }
+}
+
 data class BankQuote(
     val quote: String,
     val author: String,
     val work: String,
     val year: Int?,
     val explanation: String,
-    val tags: List<String>
+    val tags: List<String>,
+    val horizon: String = Horizons.horizonFor(quote, explanation, tags)
 )
 
 object QuoteBank {
@@ -19,6 +52,14 @@ object QuoteBank {
 
     fun all(context: Context): List<BankQuote> =
         cache ?: synchronized(this) { cache ?: load(context).also { cache = it } }
+
+    fun forHorizon(context: Context, horizonCode: String): List<BankQuote> {
+        val list = all(context)
+        return if (horizonCode == "all") list else list.filter { it.horizon == horizonCode }
+    }
+
+    fun countForHorizon(context: Context, horizonCode: String): Int =
+        forHorizon(context, horizonCode).size
 
     fun cacheFile(context: Context) = File(context.filesDir, "quote-bank.json")
 

@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: Complete | **Phase**: 7 (Quote Bank UI, Dual-Mode App & 2-Slide Widget Complete)  
-> **Current**: Dual-mode browsing (Daily Cards vs Quote Bank) in `MainActivity` with 2-slide deep reading and `🎲 Surprise` quote discovery across 1,871 quotes. Adaptive home-screen widget upgraded to 2-slide Shelf Spark (Slide 1: The Line, Slide 2: Scene Context with full height, no truncation). Signed release APK compiled at `android/marginalia.apk`.  
-> **Next**: User verification and sideloading.
+> **Status**: Complete | **Phase**: 7 (Quote Bank Categorization, Visual Studio & Dark Mode Complete)  
+> **Current**: High-contrast Dark & Light mode theme-aware styling across app and widget. In-app Quote Bank features Thematic Horizons filter bar (`All`, `Dread`, `Folly`, `Solitude`, `High Stakes`, `Irony`, `Power & History`, `Prose & Voice`) with `☰ Catalog` overview dialog and `🎲 Surprise` shuffle. Widget shelf mode locked to 1 quote per day (flipping only between The Line and Scene Context without quote cycling). Marginalia Visual Studio running locally via `python3 scripts/serve_preview.py` for immediate Mac browser previewing without sideloading. Scene contexts enriched with narrative setting and emotional stakes. Signed release APK compiled at `android/marginalia.apk`.  
+> **Next**: User testing and sideloading.
 
 ## Roadmap
 
@@ -24,6 +24,8 @@
 - `scripts/mine_quote_bank.py`: Local extraction engine using Ollama (`gemma3:4b`) to scout literary quotes from EPUBs.
 - `scripts/mine_full_library.py`: Continuous automated full-library mining engine with Dublin Core metadata reader and zero-spoiler gating.
 - `scripts/harmonize_quote_bank.py`: Harmonization utility ensuring all 1,871 quotes share the unified reading companion schema.
+- `scripts/enrich_explanations.py`: Enriches scene explanations with narrative setting and emotional stakes without reductive takeaways.
+- `scripts/serve_preview.py`: Zero-install local HTTP preview server for Marginalia Visual Studio in browser.
 - `scripts/run_batch.py`: Batch orchestrator to mine clusters of books and output candidate JSON.
 - `tools/lint_cards.py`: Linter enforcing word limits, banned AI shapes, triads, and opener variety.
 - `tools/build_prototype.py`: Rebuilds the browser review prototype in `prototype/index.html`.

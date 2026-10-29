@@ -10,7 +10,7 @@
     android:paddingEnd="16dp"
     android:paddingBottom="16dp">
 
-    <!-- Top Navigation Header with Mode Toggle -->
+    <!-- Top Navigation Header with Mode Toggle & Actions -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,6 +18,7 @@
         android:minHeight="40dp"
         android:orientation="horizontal">
 
+        <!-- Mode Toggle Segmented Control -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,13 +30,13 @@
                 android:id="@+id/mode_cards"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_bg"
-                android:paddingStart="10dp"
+                android:background="@drawable/mode_pill_active"
+                android:paddingStart="12dp"
                 android:paddingTop="6dp"
-                android:paddingEnd="10dp"
+                android:paddingEnd="12dp"
                 android:paddingBottom="6dp"
                 android:text="Daily Cards"
-                android:textColor="@color/paper"
+                android:textColor="@color/pill_active_text"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
@@ -43,12 +44,13 @@
                 android:id="@+id/mode_bank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="10dp"
+                android:background="@android:color/transparent"
+                android:paddingStart="12dp"
                 android:paddingTop="6dp"
-                android:paddingEnd="10dp"
+                android:paddingEnd="12dp"
                 android:paddingBottom="6dp"
                 android:text="Quote Bank"
-                android:textColor="@color/ink_soft"
+                android:textColor="@color/pill_inactive_text"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -60,23 +62,69 @@
 
         <TextView
             android:id="@+id/btn_surprise"
-            style="@style/Kicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/chip_button_bg"
+            android:fontFamily="monospace"
+            android:paddingStart="10dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="6dp"
             android:text="🎲 Surprise"
             android:textColor="@color/ink"
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/btn_catalog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/chip_button_bg"
+            android:fontFamily="monospace"
+            android:paddingStart="10dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="6dp"
+            android:text="☰ Catalog"
+            android:textColor="@color/ink"
+            android:textSize="11sp"
             android:visibility="gone" />
 
         <TextView
             android:id="@+id/day_label"
-            style="@style/Kicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textColor="@color/ink" />
+            android:background="@drawable/chip_button_bg"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.04"
+            android:paddingStart="10dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="6dp"
+            android:textColor="@color/ink"
+            android:textSize="11sp" />
     </LinearLayout>
 
+    <!-- Thematic Horizons Filter Bar (visible only in Quote Bank mode) -->
+    <HorizontalScrollView
+        android:id="@+id/horizons_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/horizons_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <!-- Main Deck with ViewPager -->
     <LinearLayout
         android:id="@+id/deck"
         android:layout_width="match_parent"
@@ -109,6 +157,7 @@
         </HorizontalScrollView>
     </LinearLayout>
 
+    <!-- Bottom Navigation Controls -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

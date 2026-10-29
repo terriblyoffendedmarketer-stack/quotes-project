@@ -123,16 +123,9 @@ class CardWidgetProvider : AppWidgetProvider() {
             return prefs.getInt(slideKey(id), 0).coerceIn(0, Cards.slides(context).lastIndex)
         }
 
-        /** Which quote in Shelf mode. */
+        /** Which quote in Shelf mode (always today's quote). */
         private fun currentShelfIndex(context: Context, id: Int): Int {
-            val quotes = QuoteBank.all(context)
-            if (quotes.isEmpty()) return 0
-            val prefs = state(context)
-            val today = LocalDate.now().toEpochDay()
-            if (prefs.getLong(dayKey(id), -1) != today && !prefs.contains(shelfKey(id))) {
-                return QuoteBank.todayIndex(context)
-            }
-            return prefs.getInt(shelfKey(id), QuoteBank.todayIndex(context)).coerceIn(0, quotes.lastIndex)
+            return QuoteBank.todayIndex(context)
         }
 
         /** Which slide in Shelf mode (0 = The Line, 1 = Scene Context). */
@@ -147,30 +140,11 @@ class CardWidgetProvider : AppWidgetProvider() {
                 state(context).edit().putInt(slideKey(id), next).putLong(dayKey(id), LocalDate.now().toEpochDay())
                     .putString(cardKey(id), cardId(context)).apply()
             } else {
-                val quotes = QuoteBank.all(context)
-                if (quotes.isNotEmpty()) {
-                    val slide = currentShelfSlide(context, id)
-                    val qIndex = currentShelfIndex(context, id)
-                    if (direction > 0) {
-                        if (slide == 0) {
-                            // Move to Scene Context slide of current quote
-                            state(context).edit().putInt(shelfSlideKey(id), 1).apply()
-                        } else {
-                            // Move to The Line slide of NEXT quote
-                            val nextQ = Math.floorMod(qIndex + 1, quotes.size)
-                            state(context).edit().putInt(shelfKey(id), nextQ).putInt(shelfSlideKey(id), 0).apply()
-                        }
-                    } else {
-                        if (slide == 1) {
-                            // Move back to The Line slide of current quote
-                            state(context).edit().putInt(shelfSlideKey(id), 0).apply()
-                        } else {
-                            // Move to Scene Context slide of PREVIOUS quote
-                            val prevQ = Math.floorMod(qIndex - 1, quotes.size)
-                            state(context).edit().putInt(shelfKey(id), prevQ).putInt(shelfSlideKey(id), 1).apply()
-                        }
-                    }
-                }
+                // Shelf mode shows only one quote at a time (today's quote).
+                // Tapping back and forth toggles between The Line and Scene Context.
+                val slide = currentShelfSlide(context, id)
+                val nextSlide = if (direction > 0) (if (slide == 0) 1 else 0) else 0
+                state(context).edit().putInt(shelfSlideKey(id), nextSlide).apply()
             }
             AppWidgetManager.getInstance(context).updateAppWidget(id, render(context, id))
         }
@@ -291,7 +265,7 @@ class CardWidgetProvider : AppWidgetProvider() {
                 val yearStr = if (q.year != null) " · ${q.year}" else ""
                 views.setTextViewText(R.id.shelf_author, "— ${q.author}$yearStr")
 
-                views.setTextViewText(R.id.widget_progress, "1/2 · THE LINE")
+                views.setTextViewText(R.id.widget_progress, "Today's Quote · 1 of 2")
             } else {
                 // Slide 2: Scene Context (Full height, never cut off!)
                 views.setViewVisibility(R.id.shelf_line_layout, View.GONE)
@@ -301,7 +275,7 @@ class CardWidgetProvider : AppWidgetProvider() {
                 views.setTextViewText(R.id.shelf_explanation, q.explanation)
                 views.setTextViewText(R.id.shelf_context_author, "— ${q.author}")
 
-                views.setTextViewText(R.id.widget_progress, "2/2 · CONTEXT")
+                views.setTextViewText(R.id.widget_progress, "Scene Context · 2 of 2")
             }
 
             views.textColor(context, R.id.widget_progress, R.color.widget_soft)

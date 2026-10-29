@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marginalia — Daily Craft & Personal Library Bank</title>
+<title>Marginalia Visual Studio — App Reader & Home Screen Widget</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@48,700,100,0&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -18,6 +18,8 @@
   --marker-ink: #1b1d22;
   --accent: #2d3be8;
   --spark-gold: #c98a00;
+  --badge-bg: #e4e7eb;
+  --badge-text: #1b1d22;
   --s-hook: #2d3be8; --s-line: var(--l-line); --s-look: var(--l-look); --s-steal: var(--l-steal); --s-around: var(--l-around);
   --hook-ink: #fff4df; --hook-soft: rgba(255, 244, 223, .8); --hook-pill: #fff4df;
   --font-hook: "Fraunces", Georgia, serif;
@@ -29,14 +31,23 @@
   :root:not([data-theme="light"]) {
     --paper: #111317; --sheet: #1a1d22; --ink: #e9e8e3; --ink-soft: #a2a5ab;
     --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; --accent: #6f80ff; --spark-gold: #f2ba42; color-scheme: dark;
+    --badge-bg: #282d35; --badge-text: #f0efea;
     --s-line: var(--d-line); --s-look: var(--d-look); --s-steal: var(--d-steal); --s-around: var(--d-around);
   }
 }
 :root[data-theme="dark"] {
   --paper: #111317; --sheet: #1a1d22; --ink: #e9e8e3; --ink-soft: #a2a5ab;
   --rule: #2c3036; --marker: #b9a63a; --marker-ink: #111317; --accent: #6f80ff; --spark-gold: #f2ba42; color-scheme: dark;
+  --badge-bg: #282d35; --badge-text: #f0efea;
   --s-line: var(--d-line); --s-look: var(--d-look); --s-steal: var(--d-steal); --s-around: var(--d-around);
 }
+:root[data-theme="light"] {
+  --paper: #f4f5f2; --sheet: #ffffff; --ink: #1b1d22; --ink-soft: #565a63;
+  --rule: #dcdfe0; --marker: #f5e36a; --marker-ink: #1b1d22; --accent: #2d3be8; --spark-gold: #c98a00; color-scheme: light;
+  --badge-bg: #e4e7eb; --badge-text: #1b1d22;
+  --s-line: var(--l-line); --s-look: var(--l-look); --s-steal: var(--l-steal); --s-around: var(--l-around);
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; }
 body {
@@ -44,17 +55,40 @@ body {
   font-family: var(--font-note); font-size: 16px; line-height: 1.55;
   padding-inline: 16px; padding-block: 16px 36px;
 }
-.wrap { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.wrap { max-width: 540px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
 
-.top { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-family: var(--font-tag); font-size: 12px; color: var(--ink-soft); letter-spacing: .04em; }
-.top-title { font-weight: 700; color: var(--ink); letter-spacing: .08em; }
+/* Studio Top Bar */
+.studio-bar { display: flex; justify-content: space-between; align-items: center; gap: 8px; border-bottom: 1px solid var(--rule); padding-bottom: 12px; margin-bottom: 4px; flex-wrap: wrap; }
+.studio-brand { display: flex; align-items: baseline; gap: 6px; }
+.studio-logo { font: 700 13px/1 var(--font-tag); letter-spacing: .08em; color: var(--ink); }
+.studio-badge { font: 500 10px/1 var(--font-tag); background: var(--sheet); color: var(--ink-soft); border: 1px solid var(--rule); padding: 3px 6px; border-radius: 99px; }
 
-.modes { display: flex; gap: 3px; background: var(--sheet); padding: 3px; border: 1px solid var(--rule); border-radius: 99px; }
-.mode-btn { font: 600 11.5px/1 var(--font-tag); letter-spacing: .03em; color: var(--ink-soft); background: none; border: 0; border-radius: 99px; padding: 7px 12px; cursor: pointer; transition: all .15s ease; }
-.mode-btn[aria-pressed="true"] { color: var(--paper); background: var(--ink); }
+.studio-tabs { display: flex; gap: 3px; background: var(--sheet); padding: 3px; border: 1px solid var(--rule); border-radius: 99px; }
+.studio-tab { font: 600 11.5px/1 var(--font-tag); letter-spacing: .02em; color: var(--ink-soft); background: none; border: 0; border-radius: 99px; padding: 6px 12px; cursor: pointer; transition: all .15s ease; }
+.studio-tab[aria-pressed="true"] { color: var(--paper); background: var(--ink); }
 
-/* Card Deck Styles */
-.deck { min-width: 0; background: var(--sheet); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; }
+.theme-btn { font: 600 11px/1 var(--font-tag); background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 99px; padding: 6px 10px; cursor: pointer; }
+
+/* Phone Frame Mockup */
+.phone-ui { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+
+.app-header { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 38px; }
+.app-mode-toggle { display: flex; gap: 2px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 99px; padding: 2px; }
+.app-mode-btn { font: 700 11.5px/1 var(--font-tag); padding: 6px 12px; border-radius: 99px; border: 0; background: none; color: var(--ink-soft); cursor: pointer; transition: all .15s; }
+.app-mode-btn.active { background: var(--ink); color: var(--paper); }
+
+.app-actions { display: flex; align-items: center; gap: 6px; }
+.chip-btn { font: 600 11px/1 var(--font-tag); background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 99px; padding: 6px 10px; cursor: pointer; }
+
+/* Thematic Horizon Chips */
+.horizons-bar { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.horizons-bar::-webkit-scrollbar { display: none; }
+.horizon-chip { font: 500 11px/1 var(--font-tag); background: var(--sheet); color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 99px; padding: 6px 10px; white-space: nowrap; cursor: pointer; transition: all .15s; }
+.horizon-chip:hover { color: var(--ink); border-color: var(--ink-soft); }
+.horizon-chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* Card & Bank Deck */
+.deck { min-width: 0; background: var(--sheet); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
 .track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
 .track::-webkit-scrollbar { display: none; }
 .slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; padding: 26px 22px 22px; min-height: 480px; display: flex; flex-direction: column; gap: 16px; }
@@ -64,11 +98,15 @@ body {
 .slide.look { background: var(--s-look); }
 .slide.steal-s { background: var(--s-steal); }
 .slide.around { background: var(--s-around); }
+.slide.bank-line { background: var(--sheet); }
+.slide.bank-context { background: var(--sheet); }
+
 .pill { align-self: flex-start; font: 700 13px/1 var(--font-note); letter-spacing: .08em; text-transform: uppercase; background: var(--hook-pill); color: var(--s-hook); border-radius: 99px; padding: 7px 14px; }
+.shelf-pill { align-self: flex-start; font: 700 11px/1 var(--font-note); letter-spacing: .08em; text-transform: uppercase; background: var(--badge-bg); color: var(--badge-text); border-radius: 99px; padding: 5px 12px; }
+
 .hook-title { font-family: var(--font-hook); font-weight: 700; font-variation-settings: "opsz" 48, "SOFT" 100, "WONK" 0; font-size: clamp(2.4rem, 12vw, 3.2rem); line-height: 1.04; letter-spacing: -.01em; text-wrap: balance; margin: auto 0; }
 .hook-foot { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font: 500 14px/1.2 var(--font-note); color: var(--hook-soft); }
 .hook-foot span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.hook-foot span:last-child { flex: none; }
 .fine { font-size: 12px; font-style: italic; color: var(--ink-soft); margin-top: -10px; }
 .job { font-family: var(--font-tag); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
 .line { white-space: pre-line; font-family: var(--font-line); font-size: 1.45rem; line-height: 1.42; text-wrap: pretty; margin: auto 0; }
@@ -88,46 +126,60 @@ mark.q { font-family: var(--font-line); font-style: italic; }
 .dots button { font: 500 11px/1 var(--font-tag); letter-spacing: .04em; color: var(--ink-soft); background: none; border: 1px solid var(--rule); border-radius: 99px; padding: 6px 9px; white-space: nowrap; cursor: pointer; }
 .dots button[aria-current="true"] { color: var(--ink); border-color: var(--ink); }
 
-.nav { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.nav { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 10px; }
 .nav button, .toggle { font: 500 14px/1 var(--font-note); color: var(--ink); background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; padding: 10px 14px; cursor: pointer; }
 .nav button:disabled { opacity: .4; cursor: default; }
 .count { font-family: var(--font-tag); font-size: 12px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
 button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
-.widget-wrap { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
-.widget { background: var(--s-hook); color: var(--hook-ink); border-radius: 24px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; cursor: pointer; border: 0; text-align: left; font: inherit; }
-.widget .wl { font-family: var(--font-hook); font-weight: 700; font-variation-settings: "opsz" 48, "SOFT" 100, "WONK" 0; font-size: 2rem; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance; }
-.caption { font-size: 13px; color: var(--ink-soft); }
-.row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+/* ==========================================================================
+   WIDGET SIMULATOR
+   ========================================================================== */
+.widget-sim-wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; margin-top: 8px; }
+.widget-device-bg {
+  width: 100%; max-width: 420px;
+  background: radial-gradient(circle at top right, #384252 0%, #1c212b 100%);
+  border-radius: 36px; padding: 28px 20px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+  display: flex; flex-direction: column; gap: 16px;
+}
+.widget-card-sim {
+  border-radius: 24px; padding: 18px 20px 14px;
+  min-height: 230px; display: flex; flex-direction: column; justify-content: space-between;
+  cursor: pointer; position: relative; overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+  transition: all .2s ease;
+  user-select: none;
+}
+.widget-card-sim.w-light { background: #f4f5f2; color: #14161b; }
+.widget-card-sim.w-dark { background: #15171b; color: #f6f5f0; }
+
+.w-badge-pill { font: 700 11px/1 var(--font-tag); letter-spacing: .08em; text-transform: uppercase; padding: 5px 10px; border-radius: 99px; align-self: flex-start; }
+.widget-card-sim.w-light .w-badge-pill { background: #e4e7eb; color: #1b1d22; }
+.widget-card-sim.w-dark .w-badge-pill { background: #282d35; color: #f0efea; }
+
+.w-quote-text { font-family: var(--font-line); font-weight: 600; font-size: 1.25rem; line-height: 1.35; margin: 10px 0; }
+.w-explanation-text { font-size: 0.95rem; line-height: 1.45; margin: 8px 0; flex: 1; display: flex; align-items: center; }
+
+.w-sub { font-size: 12px; opacity: .7; }
+.w-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 12px; opacity: .85; border-top: 1px solid rgba(125,125,125,.15); padding-top: 8px; }
+.w-btn { font: 600 12px/1 var(--font-tag); background: none; border: 0; color: inherit; cursor: pointer; padding: 4px 8px; border-radius: 6px; }
+.w-btn:hover { background: rgba(125,125,125,.15); }
 
 /* ==========================================================================
-   QUOTE BANK: THEMATIC HORIZONS & READING COMPANION STYLES
+   CATALOG HORIZONS STREAM
    ========================================================================== */
 .bank-container { display: flex; flex-direction: column; gap: 16px; }
-
-/* Search & Filter Header */
 .bank-header-panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 12px; }
 .search-row { display: flex; gap: 8px; align-items: center; }
 .search-input { flex: 1; font: 500 14px/1.4 var(--font-note); background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-radius: 10px; padding: 9px 12px; outline: none; transition: border-color .15s; }
 .search-input:focus { border-color: var(--ink); }
-.btn-surprise { font: 600 13px/1 var(--font-note); background: var(--ink); color: var(--paper); border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
-.btn-surprise:hover { opacity: .9; }
-
-/* Thematic Horizon Pills */
-.horizons-bar { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
-.horizons-bar::-webkit-scrollbar { display: none; }
-.horizon-chip { font: 500 11px/1 var(--font-tag); background: var(--paper); color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 99px; padding: 6px 10px; white-space: nowrap; cursor: pointer; transition: all .15s; }
-.horizon-chip:hover { color: var(--ink); border-color: var(--ink-soft); }
-.horizon-chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-
-/* Active Filter Badges */
 .filter-active-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-soft); }
 .active-tag-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--ink); color: var(--paper); font: 500 11px/1 var(--font-tag); padding: 4px 10px; border-radius: 99px; }
 .active-tag-pill button { background: none; border: 0; color: var(--paper); cursor: pointer; padding: 0; font-weight: bold; font-size: 13px; line-height: 1; }
 .spark-queue-btn { font: 600 11px/1 var(--font-tag); background: var(--paper); color: var(--spark-gold); border: 1px solid var(--rule); border-radius: 99px; padding: 5px 9px; cursor: pointer; }
 .spark-queue-btn[aria-pressed="true"] { background: var(--spark-gold); color: #fff; border-color: var(--spark-gold); }
 
-/* The Stream of Quotes */
 .horizon-section { display: flex; flex-direction: column; gap: 14px; margin-top: 6px; }
 .horizon-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid var(--ink); padding-bottom: 6px; margin-top: 14px; }
 .horizon-title { font-family: var(--font-tag); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
@@ -136,16 +188,12 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .quote-card { background: var(--sheet); border: 1px solid var(--rule); border-radius: 16px; padding: 22px 20px 18px; display: flex; flex-direction: column; gap: 14px; transition: border-color .15s, box-shadow .15s; }
 .quote-card:hover { border-color: var(--ink-soft); }
 .quote-card.spark-highlight { border-color: var(--spark-gold); box-shadow: 0 0 0 1px var(--spark-gold); }
-
 .qc-quote { font-family: var(--font-line); font-size: 1.35rem; line-height: 1.44; margin: 0; color: var(--ink); text-wrap: pretty; }
 .qc-quote.long { font-size: 1.15rem; }
-
 .qc-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; font-size: 13.5px; color: var(--ink-soft); }
 .qc-book { font-weight: 600; color: var(--ink); font-family: var(--font-line); }
-
 .qc-explanation { background: var(--paper); border-left: 3px solid var(--accent); border-radius: 6px; padding: 11px 13px; font-size: 13.5px; line-height: 1.48; color: var(--ink); }
 .qc-explanation-label { font-family: var(--font-tag); font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); font-weight: 600; margin-bottom: 3px; display: block; }
-
 .qc-footer { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 2px; }
 .qc-tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .qc-tag { font: 500 10.5px/1 var(--font-tag); background: var(--paper); color: var(--ink-soft); padding: 4px 7px; border-radius: 6px; cursor: pointer; border: 1px solid transparent; transition: all .15s; }
@@ -154,67 +202,97 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .btn-spark { font: 600 11.5px/1 var(--font-tag); background: transparent; color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 99px; padding: 6px 11px; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all .15s; }
 .btn-spark:hover { color: var(--spark-gold); border-color: var(--spark-gold); }
 .btn-spark.saved { background: var(--paper); color: var(--spark-gold); border-color: var(--spark-gold); }
-
-/* Infinite / Load More */
 .load-more-wrap { text-align: center; padding: 18px 0; }
 .btn-load-more { font: 600 13px/1 var(--font-note); background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 10px; padding: 11px 22px; cursor: pointer; }
-.btn-load-more:hover { border-color: var(--ink); }
-
-@media (prefers-reduced-motion: reduce) { .track { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
-
 <div class="wrap">
-  <header class="top">
-    <span class="top-title">MARGINALIA</span>
-    <nav class="modes" aria-label="Switch views">
-      <button class="mode-btn" id="modeCards" aria-pressed="true">Daily Cards (108)</button>
-      <button class="mode-btn" id="modeBank" aria-pressed="false">Quote Bank (1,871)</button>
+
+  <!-- Top Studio Header -->
+  <header class="studio-bar">
+    <div class="studio-brand">
+      <span class="studio-logo">MARGINALIA</span>
+      <span class="studio-badge">Visual Studio</span>
+    </div>
+    <nav class="studio-tabs" aria-label="Visual Studio Views">
+      <button class="studio-tab" id="studioTabApp" aria-pressed="true">📱 App Reader</button>
+      <button class="studio-tab" id="studioTabWidget" aria-pressed="false">🔲 Widget</button>
+      <button class="studio-tab" id="studioTabCatalog" aria-pressed="false">📚 Catalog</button>
     </nav>
-    <span id="day"></span>
+    <button class="theme-btn" id="themeBtn" type="button">🌙 Dark</button>
   </header>
 
-  <!-- VIEW 1: DAILY 5-SLIDE CRAFT DECK -->
-  <main id="viewCards">
-    <section class="deck" aria-label="Today's card">
+  <!-- VIEW 1: PHONE APP SIMULATOR -->
+  <main id="viewApp" class="phone-ui">
+    <div class="app-header">
+      <div class="app-mode-toggle">
+        <button class="app-mode-btn active" id="appModeCards" type="button">Daily Cards</button>
+        <button class="app-mode-btn" id="appModeBank" type="button">Quote Bank</button>
+      </div>
+      <div class="app-actions">
+        <button class="chip-btn" id="appBtnSurprise" type="button" style="display:none">🎲 Surprise</button>
+        <button class="chip-btn" id="appDayLabel" type="button">TODAY</button>
+      </div>
+    </div>
+
+    <!-- Horizons row in Quote Bank mode -->
+    <nav class="horizons-bar" id="appHorizonsBar" style="display:none" aria-label="Thematic Horizons">
+      <button class="horizon-chip" data-h="all" aria-pressed="true">All (1,871)</button>
+      <button class="horizon-chip" data-h="dread" aria-pressed="false">Dread</button>
+      <button class="horizon-chip" data-h="folly" aria-pressed="false">Folly</button>
+      <button class="horizon-chip" data-h="solitude" aria-pressed="false">Solitude</button>
+      <button class="horizon-chip" data-h="stakes" aria-pressed="false">High Stakes</button>
+      <button class="horizon-chip" data-h="irony" aria-pressed="false">Irony</button>
+      <button class="horizon-chip" data-h="power" aria-pressed="false">Power & History</button>
+      <button class="horizon-chip" data-h="prose" aria-pressed="false">Prose</button>
+    </nav>
+
+    <!-- App Card / Bank Deck -->
+    <section class="deck" id="appDeck" aria-label="Reading Deck">
       <div class="track" id="track"></div>
       <div class="dots" id="dots"></div>
     </section>
 
-    <div class="nav" style="margin-top:14px">
+    <!-- Navigation Bar -->
+    <div class="nav">
       <button id="prev" type="button">← Previous</button>
       <span class="count" id="count"></span>
       <button id="next" type="button">Next →</button>
     </div>
 
-    <div class="row" style="margin-top:12px">
-      <span class="caption">Swipe sideways. Each slide is one step deeper.</span>
+    <div class="nav" style="justify-content: flex-end; margin-top: -2px;">
       <button class="toggle" id="stealToggle" type="button"></button>
-    </div>
-
-    <div class="widget-wrap">
-      <span class="kicker">On your home screen</span>
-      <button class="widget" id="widget" type="button" aria-label="Widget preview, opens the card">
-        <span class="pill" id="wPill">How to</span>
-        <span class="wl" id="wLine"></span>
-        <span class="hook-foot" style="font-size:13px"><span id="wAuthor"></span><span>The line that does it →</span></span>
-      </button>
-      <span class="caption">Flick through every slide directly inside the Android widget on your phone.</span>
     </div>
   </main>
 
-  <!-- VIEW 2: MASTER QUOTE BANK (CONTINUOUS THEMATIC HORIZONS) -->
-  <main id="viewBank" class="bank-container" hidden>
-    <!-- Search & Navigation Panel -->
+  <!-- VIEW 2: HOME SCREEN WIDGET SIMULATOR -->
+  <main id="viewWidget" class="widget-sim-wrap" hidden>
+    <div style="display:flex; justify-content:space-between; width:100%; max-width:420px; align-items:center;">
+      <span class="kicker">Android Home Screen 4×2 Widget</span>
+      <button class="chip-btn" id="wThemeToggle" type="button">Theme: Dark</button>
+    </div>
+
+    <div class="widget-device-bg">
+      <div class="widget-card-sim w-dark" id="widgetSimCard">
+        <!-- Content injected by JS -->
+      </div>
+    </div>
+
+    <span class="fine" style="text-align:center; max-width:380px;">
+      Tap right on the widget to reveal the complete <strong>Scene Context</strong>. Tap <strong>[ ⇄ ]</strong> to toggle between Craft Card and Shelf Spark. Tap <strong>Open ↗</strong> to jump straight into the app.
+    </span>
+  </main>
+
+  <!-- VIEW 3: FULL HORIZONS CATALOG -->
+  <main id="viewCatalog" class="bank-container" hidden>
     <section class="bank-header-panel">
       <div class="search-row">
         <input type="text" class="search-input" id="bankSearch" placeholder="Search 1,871 quotes, authors, books..." autocomplete="off">
-        <button class="btn-surprise" id="btnSurprise" type="button" title="Jump to a surprise quote">🎲 Surprise</button>
+        <button class="chip-btn" id="btnSurpriseCatalog" type="button">🎲 Surprise</button>
       </div>
 
-      <!-- Thematic Horizon Chips -->
-      <nav class="horizons-bar" id="horizonsBar" aria-label="Thematic Horizons">
+      <nav class="horizons-bar" id="catalogHorizonsBar" aria-label="Thematic Horizons">
         <button class="horizon-chip" data-h="all" aria-pressed="true">All (1,871)</button>
         <button class="horizon-chip" data-h="dread" aria-pressed="false">Atmospheric Dread</button>
         <button class="horizon-chip" data-h="folly" aria-pressed="false">Human Folly</button>
@@ -225,7 +303,6 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
         <button class="horizon-chip" data-h="prose" aria-pressed="false">Observation & Prose</button>
       </nav>
 
-      <!-- Filter Stats & Reading Queue Toggle -->
       <div class="filter-active-row">
         <div>
           <span id="bankMatchCount">1,871</span> quotes across <span id="bankBooksCount">416</span> books
@@ -237,12 +314,8 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
       </div>
     </section>
 
-    <!-- Continuous Stream of Quotes -->
-    <div id="quotesStream" class="quotes-stream">
-      <!-- Injected by JavaScript -->
-    </div>
+    <div id="quotesStream" class="quotes-stream"></div>
 
-    <!-- Infinite Scroll / Load More -->
     <div class="load-more-wrap" id="loadMoreWrap">
       <button class="btn-load-more" id="btnLoadMore" type="button">Load More Quotes ↓</button>
     </div>
@@ -258,110 +331,37 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
 };
 
-const dayNumber = Math.floor(Date.now() / 86400000);
+const $ = id => document.getElementById(id);
 
+/* ==========================================================================
+   PALETTES FOR CRAFT CARDS
+   ========================================================================== */
 const HOOKS = ["#2d3be8", "#d9402a", "#1f6b45", "#7a2a7a", "#0f6e74", "#bf4a17", "#c21f6e", "#5b2bd9", "#14161b"];
 const LIGHT = ["#ffe9a8", "#ffd0e1", "#d2f3b0", "#dcd0ff", "#ffd6bf", "#cde7ff", "#c4f0e0", "#f2e3c6", "#ffc2b8"];
 const DARK = ["#5e460c", "#571f3b", "#1f4527", "#2e2870", "#6a2e14", "#173a5e", "#0f4a44", "#4a3524", "#6b1f2a"];
-const seeded = seed => () => { seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
-const shuffled = (n, rand) => { const a = [...Array(n).keys()]; for (let i = n - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
-function palette(day) {
-  const order = shuffled(HOOKS.length, seeded(Math.floor(day / HOOKS.length) * 7919 + 17));
-  const picks = shuffled(LIGHT.length, seeded(day * 104729 + 3)).slice(0, 4);
-  if (picks[1] === 0) [picks[0], picks[1]] = [picks[1], picks[0]];
-  const root = document.documentElement.style;
-  root.setProperty("--s-hook", HOOKS[order[((day % HOOKS.length) + HOOKS.length) % HOOKS.length]]);
-  ["line", "look", "steal", "around"].forEach((k, i) => { root.setProperty(`--l-${k}`, LIGHT[picks[i]]); root.setProperty(`--d-${k}`, DARK[picks[i]]); });
-}
-
-const todayIndex = dayNumber % (CARDS.length || 1);
-let index = todayIndex;
-let showSteal = store.get("showSteal", true);
-
-const $ = id => document.getElementById(id);
-const esc = s => String(s || "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const md = s => esc(s).replace(/\*([^*]+)\*/g, "<em>$1</em>");
-const note = s => {
-  let h = md(s);
-  const m = h.slice(12).search(/[.!?]”?\s/);
-  if (m >= 0) { const end = 12 + m + (h[12 + m + 1] === "”" ? 2 : 1); h = "<strong>" + h.slice(0, end) + "</strong>" + h.slice(end); }
-  return h.replace(/“([^”]{1,80})”/g, '<mark class="q">“$1”</mark>');
-};
-
-function marked(card) {
-  let html = esc(card.quote);
-  for (const h of card.highlights || []) {
-    const e = esc(h);
-    const i = html.indexOf(e);
-    if (i >= 0) html = html.slice(0, i) + "<mark>" + e + "</mark>" + html.slice(i + e.length);
-  }
-  return html;
-}
-
-function credit(item) {
-  return `${esc(item.author)}, <cite>${esc(item.work)}</cite>${item.translator ? ` · trans. ${esc(item.translator)}` : ""}`;
+function paletteFor(day) {
+  let h = Math.abs(Number(day)) || 0;
+  const hook = HOOKS[h % HOOKS.length];
+  const l = [LIGHT[h % LIGHT.length], LIGHT[(h + 2) % LIGHT.length], LIGHT[(h + 4) % LIGHT.length], LIGHT[(h + 6) % LIGHT.length]];
+  const d = [DARK[h % DARK.length], DARK[(h + 2) % DARK.length], DARK[(h + 4) % DARK.length], DARK[(h + 6) % DARK.length]];
+  return { hook, light: l, dark: d };
 }
 
 /* ==========================================================================
-   CARDS VIEW RENDERER
-   ========================================================================== */
-function renderCards() {
-  if (!CARDS.length) return;
-  const c = CARDS[index];
-  const howTo = c.job.startsWith("How to ");
-  palette(dayNumber + index - todayIndex);
-  const fine = `<div class="fine">${esc(c.job)}</div>`;
-  const slides = [
-    { tab: "How to", cls: "hook", html: `
-      ${howTo ? '<span class="pill">How to</span>' : ""}
-      <h2 class="hook-title">${esc(howTo ? c.job.slice(7) : c.job)}</h2>
-      <div class="hook-foot"><span>${esc(c.author)}</span><span>The line that does it →</span></div>` },
-    { tab: "The line", cls: "line-s", html: `
-      <div class="kicker">The line</div>
-      <p class="line${c.quote.length > 180 ? " long" : ""}">“${esc(c.quote)}”</p>
-      <div class="who">${credit(c)}</div>${fine}` },
-    { tab: "Look closer", cls: "look", html: `
-      <div class="kicker">Look closer</div>
-      <p class="mini">${marked(c)}</p>
-      <div class="note"><p>${note(c.lookCloser)}</p></div>
-      <div class="who" style="margin-top:auto">${credit(c)}</div>${fine}` }
-  ];
-  if (showSteal) slides.push({ tab: "Steal it", cls: "steal-s", html: `
-      <div class="kicker">Steal it</div>
-      <div class="note"><p>${note(c.stealIt)}</p></div>
-      <div class="who" style="margin-top:auto">${credit(c)}</div>${fine}` });
-  slides.push({ tab: "Around it", cls: "around", html: `
-      <div class="kicker">Around it</div>
-      <div class="note"><p>${note(c.aroundIt)}</p></div>
-      <div class="who" style="margin-top:auto">${credit(c)} · ${c.year}</div>${fine}` });
-
-  $("track").innerHTML = slides.map((s, i) => `<article class="slide ${s.cls}" aria-label="${s.tab}">${s.html}</article>`).join("");
-  $("dots").innerHTML = slides.map((s, i) => `<button type="button" data-i="${i}" aria-current="${i === 0}">${s.tab}</button>`).join("");
-  $("track").scrollLeft = 0;
-
-  $("day").innerHTML = index === todayIndex ? "<b>TODAY</b>" : `CARD ${String(index + 1).padStart(2, "0")}`;
-  $("count").textContent = `${index + 1} / ${CARDS.length}`;
-  $("stealToggle").textContent = showSteal ? "Hide “Steal it”" : "Show “Steal it”";
-  $("wPill").hidden = !howTo;
-  $("wAuthor").textContent = c.author;
-  $("wLine").textContent = howTo ? c.job.slice(7) : c.job;
-}
-
-/* ==========================================================================
-   QUOTE BANK: THEMATIC HORIZONS & STREAM ENGINE
+   THEMES & HORIZONS ENGINE
    ========================================================================== */
 const THEMES = [
-  { code: "dread", title: "Atmospheric Dread & The Uncanny", kw: new Set(["dread", "horror", "fear", "death", "dark", "eerie", "uncanny", "haunting", "tension", "macabre", "grotesque"]) },
-  { code: "folly", title: "Human Folly & Social Pretense", kw: new Set(["folly", "vanity", "satire", "hypocrisy", "manners", "social", "pretension", "awkwardness", "family", "prejudice", "pride"]) },
-  { code: "solitude", title: "Solitude, Stillness & Finitude", kw: new Set(["solitude", "stillness", "time", "silence", "memory", "grief", "mortality", "loss", "longing", "reflection", "quiet", "finitude", "loneliness"]) },
-  { code: "stakes", title: "High Stakes & Moral Friction", kw: new Set(["stakes", "high-stakes", "choice", "sacrifice", "survival", "courage", "crisis", "danger", "pressure", "willpower", "duty", "moral"]) },
-  { code: "irony", title: "Sharp Bites of Irony", kw: new Set(["irony", "dark-humor", "humor", "wit", "cynicism", "absurdity", "paradox", "comedy", "dry", "understatement", "wry"]) },
-  { code: "power", title: "The Machinery of Power & History", kw: new Set(["power", "history", "politics", "empire", "systems", "bureaucracy", "control", "civilization", "war", "ideology", "propaganda"]) },
-  { code: "prose", title: "Observation & Prose Rhythm", kw: new Set(["observation", "prose", "rhythm", "sensory-detail", "detail", "voice"]) }
+  { code: "dread", title: "Atmospheric Dread", kw: new Set(["dread", "horror", "fear", "death", "dark", "eerie", "uncanny", "haunting", "tension", "macabre", "grotesque"]) },
+  { code: "folly", title: "Human Folly", kw: new Set(["folly", "vanity", "satire", "hypocrisy", "manners", "social", "pretension", "awkwardness", "family", "prejudice", "pride"]) },
+  { code: "solitude", title: "Solitude & Finitude", kw: new Set(["solitude", "stillness", "time", "silence", "memory", "grief", "mortality", "loss", "longing", "reflection", "quiet", "finitude", "loneliness"]) },
+  { code: "stakes", title: "High Stakes", kw: new Set(["stakes", "high-stakes", "choice", "sacrifice", "survival", "courage", "crisis", "danger", "pressure", "willpower", "duty", "moral"]) },
+  { code: "irony", title: "Sharp Irony", kw: new Set(["irony", "dark-humor", "humor", "wit", "cynicism", "absurdity", "paradox", "comedy", "dry", "understatement", "wry"]) },
+  { code: "power", title: "Power & History", kw: new Set(["power", "history", "politics", "empire", "systems", "bureaucracy", "control", "civilization", "war", "ideology", "propaganda"]) },
+  { code: "prose", title: "Observation & Prose", kw: new Set(["observation", "prose", "rhythm", "sensory-detail", "detail", "voice"]) }
 ];
 
-// Pre-assign each quote to its primary horizon
+// Pre-assign horizons
 QUOTE_BANK.forEach(q => {
   const tags = new Set(q.tags || []);
   const text = (q.quote + " " + (q.explanation || "")).toLowerCase();
@@ -382,105 +382,360 @@ QUOTE_BANK.forEach(q => {
   q.horizon = "prose";
 });
 
+/* ==========================================================================
+   APP READER STATE & ENGINE
+   ========================================================================== */
+let appMode = "cards"; // "cards" | "bank"
+let cardIndex = 0;
+let bankIndex = 0;
+let appHorizon = "all";
+let showSteal = store.get("showSteal", true);
+
+function getAppBankQuotes() {
+  if (appHorizon === "all") return QUOTE_BANK;
+  return QUOTE_BANK.filter(q => q.horizon === appHorizon);
+}
+
+function renderApp() {
+  const isCards = appMode === "cards";
+  $("appModeCards").classList.toggle("active", isCards);
+  $("appModeBank").classList.toggle("active", !isCards);
+  $("appBtnSurprise").style.display = isCards ? "none" : "block";
+  $("appHorizonsBar").style.display = isCards ? "none" : "flex";
+  $("stealToggle").style.display = isCards ? "block" : "none";
+
+  if (isCards) {
+    renderCardDeck();
+  } else {
+    renderBankDeck();
+  }
+}
+
+function renderCardDeck() {
+  const card = CARDS[cardIndex];
+  const p = paletteFor(cardIndex);
+  document.documentElement.style.setProperty("--s-hook", p.hook);
+  document.documentElement.style.setProperty("--l-line", p.light[0]);
+  document.documentElement.style.setProperty("--l-look", p.light[1]);
+  document.documentElement.style.setProperty("--l-steal", p.light[2]);
+  document.documentElement.style.setProperty("--l-around", p.light[3]);
+  document.documentElement.style.setProperty("--d-line", p.dark[0]);
+  document.documentElement.style.setProperty("--d-look", p.dark[1]);
+  document.documentElement.style.setProperty("--d-steal", p.dark[2]);
+  document.documentElement.style.setProperty("--d-around", p.dark[3]);
+
+  const hasHowTo = Boolean(card.hook && card.hook.trim());
+  const slides = [
+    {
+      cls: "hook",
+      html: `
+        ${hasHowTo ? `<span class="pill">How to</span>` : ``}
+        <h1 class="hook-title">${escapeHtml(card.hook || card.quote)}</h1>
+        <div class="hook-foot"><span>${escapeHtml(card.author)}</span><span>The line that does it →</span></div>
+      `
+    },
+    {
+      cls: "line-s",
+      html: `
+        <span class="kicker">The line</span>
+        <div class="line ${card.quote.length > 220 ? 'long' : ''}">“${escapeHtml(card.quote)}”</div>
+        <div class="who">${escapeHtml(card.author)}, <cite>${escapeHtml(card.work)}</cite></div>
+        <div class="job">${escapeHtml(card.job)}</div>
+      `
+    },
+    {
+      cls: "look",
+      html: `
+        <span class="kicker">Look closer</span>
+        <div class="mini">${highlightQuote(card)}</div>
+        <div class="note"><p>${escapeHtml(card.lookCloser)}</p></div>
+        <div class="who">${escapeHtml(card.author)}, <cite>${escapeHtml(card.work)}</cite></div>
+        <div class="job">${escapeHtml(card.job)}</div>
+      `
+    }
+  ];
+
+  if (showSteal && card.stealIt) {
+    slides.push({
+      cls: "steal-s",
+      html: `
+        <span class="kicker">Steal it</span>
+        <div class="note"><p>${escapeHtml(card.stealIt)}</p></div>
+        <div class="who">${escapeHtml(card.author)}, <cite>${escapeHtml(card.work)}</cite></div>
+        <div class="job">${escapeHtml(card.job)}</div>
+      `
+    });
+  }
+
+  slides.push({
+    cls: "around",
+    html: `
+      <span class="kicker">Around it</span>
+      <div class="note"><p>${escapeHtml(card.aroundIt)}</p></div>
+      <div class="who">${escapeHtml(card.author)}, <cite>${escapeHtml(card.work)}</cite>${card.year ? ` · ${card.year}` : ''}</div>
+      <div class="job">${escapeHtml(card.job)}</div>
+    `
+  });
+
+  const track = $("track");
+  track.innerHTML = slides.map(s => `<div class="slide ${s.cls}">${s.html}</div>`).join("");
+
+  const labels = ["How to", "The line", "Look closer"];
+  if (showSteal && card.stealIt) labels.push("Steal it");
+  labels.push("Around it");
+  $("dots").innerHTML = labels.map((l, i) => `<button type="button" data-i="${i}" aria-current="${i === 0}">${l}</button>`).join("");
+
+  $("count").textContent = `Card ${cardIndex + 1} of ${CARDS.length}`;
+  $("stealToggle").textContent = showSteal ? "Hide 'Steal it'" : "Show 'Steal it'";
+  $("appDayLabel").textContent = cardIndex === 0 ? "TODAY" : "← TODAY";
+  track.scrollLeft = 0;
+}
+
+function renderBankDeck() {
+  const quotes = getAppBankQuotes();
+  if (!quotes.length) return;
+  bankIndex = Math.min(bankIndex, quotes.length - 1);
+  const q = quotes[bankIndex];
+
+  const slides = [
+    {
+      cls: "bank-line",
+      html: `
+        <span class="shelf-pill">SHELF SPARK</span>
+        <span class="kicker">${escapeHtml(q.work)}</span>
+        <div class="line ${q.quote.length > 220 ? 'long' : ''}">“${escapeHtml(q.quote)}”</div>
+        <div class="who">${escapeHtml(q.author)}, <cite>${escapeHtml(q.work)}</cite>${q.year ? ` · ${q.year}` : ''}</div>
+        <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
+      `
+    },
+    {
+      cls: "bank-context",
+      html: `
+        <span class="shelf-pill">SCENE CONTEXT</span>
+        <span class="kicker">${escapeHtml(q.work)}</span>
+        <div class="note" style="font-size:1.15rem; line-height:1.6; margin: auto 0;"><p>${escapeHtml(q.explanation)}</p></div>
+        <div class="who">${escapeHtml(q.author)}, <cite>${escapeHtml(q.work)}</cite></div>
+        <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
+      `
+    }
+  ];
+
+  const track = $("track");
+  track.innerHTML = slides.map(s => `<div class="slide ${s.cls}">${s.html}</div>`).join("");
+  $("dots").innerHTML = `
+    <button type="button" data-i="0" aria-current="true">The Line</button>
+    <button type="button" data-i="1" aria-current="false">Scene Context</button>
+  `;
+
+  const hName = THEMES.find(t => t.code === appHorizon)?.title || "All";
+  $("count").textContent = `${bankIndex + 1} / ${quotes.length} · ${hName}`;
+  $("appDayLabel").textContent = "TODAY";
+  track.scrollLeft = 0;
+}
+
+/* ==========================================================================
+   WIDGET SIMULATOR ENGINE
+   ========================================================================== */
+let widgetMode = "shelf"; // "shelf" | "cards"
+let widgetTheme = "dark"; // "dark" | "light"
+let widgetShelfSlide = 0; // 0 = Line, 1 = Context
+let widgetCardSlide = 0; // 0 to 4
+
+function renderWidget() {
+  const cardEl = $("widgetSimCard");
+  cardEl.className = `widget-card-sim ${widgetTheme === 'dark' ? 'w-dark' : 'w-light'}`;
+  $("wThemeToggle").textContent = `Theme: ${widgetTheme === 'dark' ? 'Dark' : 'Light'}`;
+
+  if (widgetMode === "shelf") {
+    // Today's quote only (never cycles through random quotes on widget)
+    const todayQuote = QUOTE_BANK[0];
+    if (widgetShelfSlide === 0) {
+      cardEl.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span class="w-badge-pill">SHELF SPARK</span>
+          <span class="w-sub">${escapeHtml(todayQuote.work)}</span>
+        </div>
+        <div class="w-quote-text">“${escapeHtml(todayQuote.quote)}”</div>
+        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+          <span class="w-sub">— ${escapeHtml(todayQuote.author)}</span>
+          <span class="w-sub" style="font-weight:600">Context →</span>
+        </div>
+        <div class="w-footer">
+          <span>Today's Quote · 1 of 2</span>
+          <div>
+            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnOpen">Open ↗</button>
+          </div>
+        </div>
+      `;
+    } else {
+      cardEl.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span class="w-badge-pill">SCENE CONTEXT</span>
+          <span class="w-sub">${escapeHtml(todayQuote.work)}</span>
+        </div>
+        <div class="w-explanation-text">${escapeHtml(todayQuote.explanation)}</div>
+        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+          <span class="w-sub">← Line</span>
+          <span class="w-sub">— ${escapeHtml(todayQuote.author)}</span>
+        </div>
+        <div class="w-footer">
+          <span>Scene Context · 2 of 2</span>
+          <div>
+            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnOpen">Open ↗</button>
+          </div>
+        </div>
+      `;
+    }
+  } else {
+    // Craft card
+    const card = CARDS[0];
+    const p = paletteFor(0);
+    cardEl.style.backgroundColor = widgetCardSlide === 0 ? p.hook : (widgetTheme === 'dark' ? '#1a1d22' : '#ffffff');
+    cardEl.style.color = widgetCardSlide === 0 ? '#fff4df' : (widgetTheme === 'dark' ? '#f6f5f0' : '#14161b');
+
+    if (widgetCardSlide === 0) {
+      cardEl.innerHTML = `
+        <span class="w-badge-pill" style="background:#fff4df; color:#2d3be8;">How to</span>
+        <div class="hook-title" style="font-size:1.9rem; margin:10px 0;">${escapeHtml(card.hook || card.quote)}</div>
+        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+          <span class="w-sub">${escapeHtml(card.author)}</span>
+          <span class="w-sub">The line →</span>
+        </div>
+        <div class="w-footer">
+          <span>Card 1 of 5</span>
+          <div>
+            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnOpen">Open ↗</button>
+          </div>
+        </div>
+      `;
+    } else {
+      cardEl.innerHTML = `
+        <span class="w-sub" style="font-weight:bold">THE LINE</span>
+        <div class="w-quote-text">“${escapeHtml(card.quote)}”</div>
+        <div class="w-sub">— ${escapeHtml(card.author)}, ${escapeHtml(card.work)}</div>
+        <div class="w-footer">
+          <span>Card ${widgetCardSlide + 1} of 5</span>
+          <div>
+            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnOpen">Open ↗</button>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  // Bind footer buttons
+  document.getElementById("wBtnModeToggle").onclick = e => {
+    e.stopPropagation();
+    widgetMode = widgetMode === "shelf" ? "cards" : "shelf";
+    widgetShelfSlide = 0;
+    widgetCardSlide = 0;
+    renderWidget();
+  };
+  document.getElementById("wBtnOpen").onclick = e => {
+    e.stopPropagation();
+    switchView("app");
+    appMode = widgetMode === "shelf" ? "bank" : "cards";
+    renderApp();
+  };
+}
+
+// Widget card tap to step slides
+$("widgetSimCard").addEventListener("click", e => {
+  const rect = $("widgetSimCard").getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const isBack = x < rect.width * 0.35;
+
+  if (widgetMode === "shelf") {
+    // In Shelf Spark mode, tapping forward flips between Line and Context
+    if (isBack) {
+      widgetShelfSlide = 0;
+    } else {
+      widgetShelfSlide = widgetShelfSlide === 0 ? 1 : 0;
+    }
+  } else {
+    // In Craft Cards mode, step slides
+    if (isBack) {
+      widgetCardSlide = Math.max(0, widgetCardSlide - 1);
+    } else {
+      widgetCardSlide = (widgetCardSlide + 1) % 5;
+    }
+  }
+  renderWidget();
+});
+
+$("wThemeToggle").addEventListener("click", () => {
+  widgetTheme = widgetTheme === "dark" ? "light" : "dark";
+  renderWidget();
+});
+
+/* ==========================================================================
+   CATALOG HORIZONS STREAM ENGINE
+   ========================================================================== */
 let bankQuery = "";
 let bankActiveHorizon = "all";
 let bankActiveTag = null;
 let bankShowingSparkQueue = false;
-let sparkQueue = store.get("sparkQueue", []); // Array of work titles
+let sparkQueue = store.get("sparkQueue", []);
 let renderedCount = 0;
-const PAGE_SIZE = 35;
+const PAGE_SIZE = 25;
 let currentFilteredList = [];
-
-function updateSparkCount() {
-  $("sparkQueueCount").textContent = sparkQueue.length;
-}
 
 function getFilteredBank() {
   return QUOTE_BANK.filter(q => {
-    // 1. Reading Queue filter
-    if (bankShowingSparkQueue) {
-      if (!sparkQueue.includes(q.work)) return false;
-    }
-    // 2. Horizon filter
-    if (bankActiveHorizon !== "all" && q.horizon !== bankActiveHorizon) {
-      return false;
-    }
-    // 3. Tag filter
-    if (bankActiveTag && !(q.tags || []).includes(bankActiveTag)) {
-      return false;
-    }
-    // 4. Text Query
+    if (bankShowingSparkQueue && !sparkQueue.includes(q.work)) return false;
+    if (bankActiveHorizon !== "all" && q.horizon !== bankActiveHorizon) return false;
+    if (bankActiveTag && !(q.tags || []).includes(bankActiveTag)) return false;
     if (bankQuery) {
-      const qLower = bankQuery.toLowerCase();
-      const matchQuote = q.quote.toLowerCase().includes(qLower);
-      const matchWork = q.work.toLowerCase().includes(qLower);
-      const matchAuthor = q.author.toLowerCase().includes(qLower);
-      const matchExp = (q.explanation || "").toLowerCase().includes(qLower);
-      const matchTags = (q.tags || []).some(t => t.toLowerCase().includes(qLower));
-      if (!matchQuote && !matchWork && !matchAuthor && !matchExp && !matchTags) {
-        return false;
-      }
+      const hay = (q.quote + " " + q.author + " " + q.work + " " + (q.explanation || "") + " " + (q.tags || []).join(" ")).toLowerCase();
+      if (!hay.includes(bankQuery.toLowerCase())) return false;
     }
     return true;
   });
 }
 
-function renderBankStream(reset = true) {
+function renderBankStream(reset = false) {
   if (reset) {
     renderedCount = 0;
-    currentFilteredList = getFilteredBank();
     $("quotesStream").innerHTML = "";
-    
-    // Update count labels
+    currentFilteredList = getFilteredBank();
     $("bankMatchCount").textContent = currentFilteredList.length.toLocaleString();
     const books = new Set(currentFilteredList.map(q => q.work));
     $("bankBooksCount").textContent = books.size.toLocaleString();
   }
 
   const slice = currentFilteredList.slice(renderedCount, renderedCount + PAGE_SIZE);
-  renderedCount += slice.length;
-
-  if (renderedCount >= currentFilteredList.length) {
+  if (!slice.length) {
+    if (reset) $("quotesStream").innerHTML = `<div style="text-align:center; padding:40px; color:var(--ink-soft);">No quotes match your filter.</div>`;
     $("loadMoreWrap").style.display = "none";
-  } else {
-    $("loadMoreWrap").style.display = "block";
-  }
-
-  if (currentFilteredList.length === 0) {
-    $("quotesStream").innerHTML = `
-      <div style="text-align:center; padding:40px 20px; color:var(--ink-soft)">
-        <p style="font-family:var(--font-line); font-size:1.2rem; margin-bottom:8px">No lines found matching your search.</p>
-        <p style="font-size:13px">Try clearing filters or searching another keyword.</p>
-      </div>
-    `;
     return;
   }
 
-  const html = slice.map((q, idx) => {
+  const html = slice.map(q => {
     const isSaved = sparkQueue.includes(q.work);
-    const yearStr = q.year ? ` · ${q.year}` : "";
     return `
-      <article class="quote-card" id="qcard_${esc(q.work)}_${idx}">
-        <p class="qc-quote${q.quote.length > 180 ? ' long' : ''}">“${esc(q.quote)}”</p>
-        
+      <article class="quote-card" data-work="${escapeHtml(q.work)}">
+        <blockquote class="qc-quote ${q.quote.length > 220 ? 'long' : ''}">“${escapeHtml(q.quote)}”</blockquote>
         <div class="qc-meta">
-          <span class="qc-book">${esc(q.work)}</span>
-          <span>${esc(q.author)}${yearStr}</span>
+          <span class="qc-book">${escapeHtml(q.work)}</span>
+          <span>— ${escapeHtml(q.author)}${q.year ? ` · ${q.year}` : ''}</span>
         </div>
-
         ${q.explanation ? `
           <div class="qc-explanation">
             <span class="qc-explanation-label">Scene Context</span>
-            ${esc(q.explanation)}
+            ${escapeHtml(q.explanation)}
           </div>
         ` : ''}
-
         <div class="qc-footer">
           <div class="qc-tags">
-            ${(q.tags || []).map(t => `<button type="button" class="qc-tag" onclick="filterByTag('${esc(t)}')">#${esc(t)}</button>`).join('')}
+            <span class="qc-tag" onclick="filterByTag('${escapeHtml(q.horizon)}')">#${escapeHtml(q.horizon)}</span>
+            ${(q.tags || []).map(t => `<span class="qc-tag" onclick="filterByTag('${escapeHtml(t)}')">#${escapeHtml(t)}</span>`).join('')}
           </div>
-          <button type="button" class="btn-spark${isSaved ? ' saved' : ''}" onclick="toggleSpark('${esc(q.work)}')">
-            ${isSaved ? '✓ In Queue' : '✨ Read Next'}
+          <button class="btn-spark ${isSaved ? 'saved' : ''}" type="button" onclick="toggleSpark('${escapeHtml(q.work)}')">
+            ${isSaved ? '✓ Saved' : '+ Read Next'}
           </button>
         </div>
       </article>
@@ -488,6 +743,8 @@ function renderBankStream(reset = true) {
   }).join("");
 
   $("quotesStream").insertAdjacentHTML("beforeend", html);
+  renderedCount += slice.length;
+  $("loadMoreWrap").style.display = renderedCount < currentFilteredList.length ? "block" : "none";
 }
 
 window.filterByTag = function(tag) {
@@ -497,120 +754,174 @@ window.filterByTag = function(tag) {
   renderBankStream(true);
 };
 
-window.toggleSpark = function(workTitle) {
-  if (sparkQueue.includes(workTitle)) {
-    sparkQueue = sparkQueue.filter(w => w !== workTitle);
+window.toggleSpark = function(work) {
+  if (sparkQueue.includes(work)) {
+    sparkQueue = sparkQueue.filter(w => w !== work);
   } else {
-    sparkQueue.push(workTitle);
+    sparkQueue.push(work);
   }
   store.set("sparkQueue", sparkQueue);
-  updateSparkCount();
-  // Re-render to update button states
-  const cards = document.querySelectorAll(".quote-card");
+  $("sparkQueueCount").textContent = sparkQueue.length;
   renderBankStream(true);
 };
 
 /* ==========================================================================
-   EVENT HANDLERS
+   VIEW SWITCHER & EVENT LISTENERS
    ========================================================================== */
-$("modeCards").addEventListener("click", () => {
-  $("modeCards").setAttribute("aria-pressed", "true");
-  $("modeBank").setAttribute("aria-pressed", "false");
-  $("viewCards").hidden = false;
-  $("viewBank").hidden = true;
-  $("day").hidden = false;
-});
+function switchView(view) {
+  $("studioTabApp").setAttribute("aria-pressed", String(view === "app"));
+  $("studioTabWidget").setAttribute("aria-pressed", String(view === "widget"));
+  $("studioTabCatalog").setAttribute("aria-pressed", String(view === "catalog"));
 
-$("modeBank").addEventListener("click", () => {
-  $("modeCards").setAttribute("aria-pressed", "false");
-  $("modeBank").setAttribute("aria-pressed", "true");
-  $("viewCards").hidden = true;
-  $("viewBank").hidden = false;
-  $("day").hidden = true;
-  if (!renderedCount) {
-    renderBankStream(true);
-  }
-});
+  $("viewApp").hidden = view !== "app";
+  $("viewWidget").hidden = view !== "widget";
+  $("viewCatalog").hidden = view !== "catalog";
 
-$("horizonsBar").addEventListener("click", e => {
+  if (view === "widget") renderWidget();
+  if (view === "catalog" && !renderedCount) renderBankStream(true);
+}
+
+$("studioTabApp").onclick = () => switchView("app");
+$("studioTabWidget").onclick = () => switchView("widget");
+$("studioTabCatalog").onclick = () => switchView("catalog");
+
+// App mode toggles
+$("appModeCards").onclick = () => { appMode = "cards"; renderApp(); };
+$("appModeBank").onclick = () => { appMode = "bank"; renderApp(); };
+
+// App Horizons
+$("appHorizonsBar").addEventListener("click", e => {
   const btn = e.target.closest(".horizon-chip");
   if (!btn) return;
-  document.querySelectorAll(".horizon-chip").forEach(b => b.setAttribute("aria-pressed", "false"));
+  document.querySelectorAll("#appHorizonsBar .horizon-chip").forEach(b => b.setAttribute("aria-pressed", "false"));
+  btn.setAttribute("aria-pressed", "true");
+  appHorizon = btn.dataset.h;
+  bankIndex = 0;
+  renderApp();
+});
+
+// Catalog Horizons
+$("catalogHorizonsBar").addEventListener("click", e => {
+  const btn = e.target.closest(".horizon-chip");
+  if (!btn) return;
+  document.querySelectorAll("#catalogHorizonsBar .horizon-chip").forEach(b => b.setAttribute("aria-pressed", "false"));
   btn.setAttribute("aria-pressed", "true");
   bankActiveHorizon = btn.dataset.h;
   renderBankStream(true);
 });
 
-$("bankSearch").addEventListener("input", e => {
-  bankQuery = e.target.value.trim();
-  renderBankStream(true);
-});
-
-$("btnClearTag").addEventListener("click", () => {
-  bankActiveTag = null;
-  $("activeTagContainer").style.display = "none";
-  renderBankStream(true);
-});
-
-$("btnSparkQueue").addEventListener("click", () => {
-  bankShowingSparkQueue = !bankShowingSparkQueue;
-  $("btnSparkQueue").setAttribute("aria-pressed", String(bankShowingSparkQueue));
-  renderBankStream(true);
-});
-
-$("btnLoadMore").addEventListener("click", () => {
-  renderBankStream(false);
-});
-
-$("btnSurprise").addEventListener("click", () => {
-  // Clear search and filters to surprise from whole bank
-  bankQuery = "";
-  $("bankSearch").value = "";
-  bankActiveTag = null;
-  $("activeTagContainer").style.display = "none";
-  bankActiveHorizon = "all";
-  document.querySelectorAll(".horizon-chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.h === "all"));
-  bankShowingSparkQueue = false;
-  $("btnSparkQueue").setAttribute("aria-pressed", "false");
-
-  currentFilteredList = getFilteredBank();
-  const randIdx = Math.floor(Math.random() * currentFilteredList.length);
-  const picked = currentFilteredList[randIdx];
-
-  // Put picked quote right at top of stream
-  currentFilteredList.splice(randIdx, 1);
-  currentFilteredList.unshift(picked);
-
-  renderBankStream(true);
-
-  // Highlight first card
-  const firstCard = document.querySelector(".quote-card");
-  if (firstCard) {
-    firstCard.classList.add("spark-highlight");
-    firstCard.scrollIntoView({ behavior: "smooth", block: "center" });
-    setTimeout(() => firstCard.classList.remove("spark-highlight"), 3000);
+// App Surprise
+$("appBtnSurprise").onclick = () => {
+  const quotes = getAppBankQuotes();
+  if (quotes.length) {
+    bankIndex = Math.floor(Math.random() * quotes.length);
+    renderApp();
   }
-});
+};
 
-// Card deck event listeners
+$("appDayLabel").onclick = () => {
+  if (appMode === "cards") cardIndex = 0;
+  else { appHorizon = "all"; bankIndex = 0; }
+  renderApp();
+};
+
+$("prev").onclick = () => {
+  if (appMode === "cards") cardIndex = (cardIndex - 1 + CARDS.length) % CARDS.length;
+  else {
+    const q = getAppBankQuotes();
+    bankIndex = (bankIndex - 1 + q.length) % q.length;
+  }
+  renderApp();
+};
+
+$("next").onclick = () => {
+  if (appMode === "cards") cardIndex = (cardIndex + 1) % CARDS.length;
+  else {
+    const q = getAppBankQuotes();
+    bankIndex = (bankIndex + 1) % q.length;
+  }
+  renderApp();
+};
+
+$("stealToggle").onclick = () => {
+  showSteal = !showSteal;
+  store.set("showSteal", showSteal);
+  renderApp();
+};
+
+// Dots click
 $("dots").addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
-  const t = $("track");
-  t.scrollTo({ left: t.clientWidth * Number(b.dataset.i), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  $("track").scrollTo({ left: $("track").clientWidth * Number(b.dataset.i), behavior: "smooth" });
 });
+
 $("track").addEventListener("scroll", () => {
   const t = $("track");
   const i = Math.round(t.scrollLeft / t.clientWidth);
   [...$("dots").children].forEach((b, j) => b.setAttribute("aria-current", String(j === i)));
 }, { passive: true });
-$("prev").addEventListener("click", () => { index = (index - 1 + CARDS.length) % CARDS.length; renderCards(); });
-$("next").addEventListener("click", () => { index = (index + 1) % CARDS.length; renderCards(); });
-$("stealToggle").addEventListener("click", () => { showSteal = !showSteal; store.set("showSteal", showSteal); renderCards(); });
-$("widget").addEventListener("click", () => { $("track").scrollLeft = 0; window.scrollTo({ top: 0, behavior: "smooth" }); });
 
-// Initialize
-renderCards();
-updateSparkCount();
+// Theme toggle
+let currentTheme = store.get("theme", "system");
+function setTheme(t) {
+  currentTheme = t;
+  store.set("theme", t);
+  if (t === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+    $("themeBtn").textContent = "☀️ Light";
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+    $("themeBtn").textContent = "🌙 Dark";
+  }
+}
+$("themeBtn").onclick = () => {
+  setTheme(currentTheme === "dark" ? "light" : "dark");
+};
+
+// Catalog search & controls
+$("bankSearch").oninput = e => { bankQuery = e.target.value.trim(); renderBankStream(true); };
+$("btnSurpriseCatalog").onclick = () => {
+  bankQuery = ""; $("bankSearch").value = "";
+  bankActiveTag = null; $("activeTagContainer").style.display = "none";
+  bankActiveHorizon = "all";
+  document.querySelectorAll("#catalogHorizonsBar .horizon-chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.h === "all"));
+  currentFilteredList = getFilteredBank();
+  const rand = Math.floor(Math.random() * currentFilteredList.length);
+  const picked = currentFilteredList[rand];
+  currentFilteredList.splice(rand, 1);
+  currentFilteredList.unshift(picked);
+  renderBankStream(true);
+  const first = document.querySelector(".quote-card");
+  if (first) {
+    first.classList.add("spark-highlight");
+    first.scrollIntoView({ behavior: "smooth", block: "center" });
+    setTimeout(() => first.classList.remove("spark-highlight"), 3000);
+  }
+};
+$("btnClearTag").onclick = () => { bankActiveTag = null; $("activeTagContainer").style.display = "none"; renderBankStream(true); };
+$("btnSparkQueue").onclick = () => {
+  bankShowingSparkQueue = !bankShowingSparkQueue;
+  $("btnSparkQueue").setAttribute("aria-pressed", String(bankShowingSparkQueue));
+  renderBankStream(true);
+};
+$("btnLoadMore").onclick = () => renderBankStream(false);
+
+function escapeHtml(s) {
+  return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function highlightQuote(card) {
+  let text = escapeHtml(card.quote);
+  for (const h of card.highlights || []) {
+    const escH = escapeHtml(h);
+    text = text.replace(escH, `<mark class="q">${escH}</mark>`);
+  }
+  return text;
+}
+
+// Init
+$("sparkQueueCount").textContent = sparkQueue.length;
+renderApp();
 </script>
 </body>
 </html>

@@ -78,6 +78,7 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             val isHook = slide == Slide.HOOK
             val isLine = slide == Slide.LINE
             itemView.setBackgroundColor(colors.color(itemView.context, slide))
+            hookPill.setBackgroundResource(R.drawable.hook_pill)
             hookPill.setTextColor(colors.hook)
             hookPill.visibility = if (isHook && Slide.hasHowTo(card)) View.VISIBLE else View.GONE
             hookTitle.visibility = if (isHook) View.VISIBLE else View.GONE
@@ -114,8 +115,9 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             itemView.setBackgroundColor(bg)
 
             hookPill.visibility = View.VISIBLE
+            hookPill.setBackgroundResource(R.drawable.shelf_badge)
             hookPill.text = if (isLine) "SHELF SPARK" else "SCENE CONTEXT"
-            hookPill.setTextColor(ContextCompat.getColor(context, R.color.ink))
+            hookPill.setTextColor(ContextCompat.getColor(context, R.color.shelf_badge_text))
 
             hookTitle.visibility = View.GONE
             hookAuthor.visibility = View.GONE
@@ -123,12 +125,16 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
 
             kicker.visibility = View.VISIBLE
             kicker.text = quote.work
+            kicker.setTextColor(ContextCompat.getColor(context, R.color.ink_soft))
 
             spacerTop.visibility = if (isLine) View.VISIBLE else View.GONE
             spacerBottom.visibility = spacerTop.visibility
 
             line.visibility = if (isLine) View.VISIBLE else View.GONE
             body.visibility = if (isLine) View.GONE else View.VISIBLE
+
+            line.setTextColor(ContextCompat.getColor(context, R.color.ink))
+            body.setTextColor(ContextCompat.getColor(context, R.color.ink))
 
             if (isLine) {
                 line.text = "“${quote.quote}”"
@@ -139,11 +145,14 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             }
 
             footer.visibility = View.VISIBLE
+            footer.setTextColor(ContextCompat.getColor(context, R.color.ink_soft))
             val yearStr = if (quote.year != null) " · ${quote.year}" else ""
             footer.text = "${quote.author}, ${quote.work}$yearStr"
 
             job.visibility = View.VISIBLE
-            job.text = if (quote.tags.isNotEmpty()) quote.tags.joinToString("  #", prefix = "#") else quote.work
+            job.setTextColor(ContextCompat.getColor(context, R.color.ink_soft))
+            val tagPrefix = "#${Horizons.titleFor(quote.horizon)}"
+            job.text = if (quote.tags.isNotEmpty()) "$tagPrefix  ·  " + quote.tags.joinToString("  #", prefix = "#") else tagPrefix
         }
 
         private fun highlighted(card: Card): CharSequence {
