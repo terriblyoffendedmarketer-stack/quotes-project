@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Reached 934 high-caliber craft quotes curated across 193 books (incorporating Cluster 48: *Pet Sematary*, *The Mist*, *The Last Argument of Kings*, *Strange Pictures*, *Project Hail Mary* with full Librarian context & takeaway layer). Pre-configured Clusters 49 and 50 ready for execution.  
-> **Next**: Complete Cluster 49 (*The Brothers Karamazov*, *Breakfast of Champions*, *Gunahon Ka Devta*, *IT*, *The Amazing Adventures of Kavalier & Clay*) to reach 954 quotes, followed by Cluster 50 to reach 974 quotes.
+> **Current**: Reached 934 high-caliber craft quotes curated across 193 books. Pioneered "The Librarian" dual-layer architecture (`context` plain-English setup + `takeaway` universal life application). Continuous automated engine built with zero-spoiler gate.  
+> **Next**: Execute continuous library sweep across remaining ~200-250 unmined EPUBs via `caffeinate -dimsu python3 scripts/mine_full_library.py` to reach 100% full-library coverage, followed by backfilling Librarian layers across Clusters 1–47.
 
 ## Roadmap
 
@@ -22,6 +22,7 @@
 - `content/quote-bank.md`: Human-readable quote bank catalog grouped by book.
 - `content/authors.md`: Master author library (classic, contemporary, memoir, nonfiction) and their strengths.
 - `scripts/mine_quote_bank.py`: Local extraction engine using Ollama (`gemma3:4b`) to scout literary quotes from EPUBs.
+- `scripts/mine_full_library.py`: Continuous automated full-library mining engine with Dublin Core metadata reader and zero-spoiler gating.
 - `scripts/run_batch.py`: Batch orchestrator to mine clusters of books and output candidate JSON.
 - `tools/lint_cards.py`: Linter enforcing word limits, banned AI shapes, triads, and opener variety.
 - `tools/build_prototype.py`: Rebuilds the browser review prototype in `prototype/index.html`.

@@ -41,14 +41,15 @@ def sync():
         if translator:
             lines.append(f"*Trans. {translator}*")
         lines.append("")
-        lines.append("| Line | Craft Job | Tags |")
+        lines.append("| Line | Context / Note | Tags |")
         lines.append("|---|---|---|")
         for q in b_quotes:
             # Clean newlines for table cells
             q_clean = q["quote"].replace("\n", " ").replace("|", "\\|")
-            hook_clean = q["hook"].replace("|", "\\|")
+            note = q.get("explanation") or q.get("hook") or q.get("why_it_lands") or ""
+            note_clean = note.replace("\n", " ").replace("|", "\\|")
             tags_clean = ", ".join(q.get("tags", []))
-            lines.append(f"| “{q_clean}” | {hook_clean} | {tags_clean} |")
+            lines.append(f"| “{q_clean}” | {note_clean} | {tags_clean} |")
         lines.append("")
         lines.append("---")
         lines.append("")
