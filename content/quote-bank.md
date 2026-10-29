@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 914 | **Total Books Represented:** 188
+**Total Vetted Quotes:** 934 | **Total Books Represented:** 193
 
 ---
 
@@ -2291,5 +2291,61 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “I have never tasted swan before and so do not know if it is always like this or if it has been overcooked, which tends to occur nowadays because undercooking is thought to exacerbate women’s weak nervous conditions.” | How to satirize medical misogyny through dinner party critique | satire, voice, historical irony |
 | “‘Nothing a good rest devoid of intellectual strain can’t cure,’ Mr Pounds says brightly.” | How to capture Victorian patriarchal condescension in a cheerful diagnosis | irony, patriarchy, dialogue |
 | “The ghosts of the servants are reflected on the silver. They wait at the sideboard to serve the food and drinks, looking upon the scene through a veil of their superiors’ indifference.” | How to reveal class invisibility through polished dining silver | imagery, class, atmosphere |
+
+---
+
+## Stephen King, Pet Sematary (1983)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘There were better than a hundred graves up in the Pet Sematary, I’d say.’” | How to introduce a cursed threshold through countrified arithmetic | dialogue, folklore, understatement |
+| “Your destruction and the destruction of all you love is very near, Doctor.” | How to deliver an apocalyptic prophecy through clinical detachment | prophecy, horror, brevity |
+| “‘There’s a lot of funny things down this way, Louis. The air’s heavier . . . more electrical . . . or somethin.’” | How to register atmospheric wrongness through colloquial imprecision | atmosphere, voice, uncanny |
+| “‘It was like washing a piece of meat.’” | How to evoke the uncanny through domestic tactile revulsion | simile, grotesque, visceral detail |
+
+---
+
+## Stephen King, The Mist (1980)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The telephone gave out a startled ting! and I turned to see my wife and son standing directly in front of the big picture window... That was the last call that came into the house.” | How to mark the severance of civilization with a domestic sound effect | sound, foreshadowing, domestic |
+| “‘It’s the brightness of the sun,’ I said. ‘It’s the same way clouds look from an airplane when you fly over them.’” | How to construct denial through rational scientific explanation | dialogue, denial, psychology |
+| “‘Plate glass,’ Myron LaFleur whispered. ‘Jesus Christ in a chariot-driven sidecar.’” | How to reveal structural fragility through a sudden architectural realization | humor, suspense, realization |
+| “‘That bad, huh?’ he said. ‘That bad,’ Ollie agreed, and worked his beer.” | How to register catastrophe through small-town monosyllabic understatement | understatement, dialogue, stoicism |
+
+---
+
+## Joe Abercrombie, The Last Argument of Kings (2008)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘You can never have too many knives,’ his father had told him, often enough, ‘unless you’re trying to swim.’” | How to anchor survivalist paranoia in a humorous parenthetic limit | voice, paranoia, humor |
+| “‘It is only natural that you made commitments, but your past life is gone, and your commitments have gone with it. You are a king, now, and your people demand that you behave like one.’” | How to strip personal loyalty in the name of sovereign necessity | power, statecraft, duty |
+| “‘Crowns. Kings. The whole notion’s shit, and me the worst choice there could be.’” | How to deflate royal elevation with visceral northern profanity | cynicism, leadership, profanity |
+| “‘Sometimes mercy buys you more than ruthlessness.’” | How to reframe compassion as a pragmatic transaction | strategy, morality, leverage |
+
+---
+
+## Uketsu, Strange Pictures (2022)
+*Trans. Louise Heal Kawai*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘It’s weird, right? It has none of the finesse of the others. And it was drawn on the back of a receipt.’” | How to identify a dying message through material degradation | mystery, observation, materiality |
+| “‘His death is a shock, but honestly, I’m not sad about it at all.’” | How to sever grief from etiquette with blunt dispassion | psychology, honesty, dialogue |
+| “‘If they could have drawn the mountains even in the dark of the night, then they might not have been murdered after dawn.’” | How to link artistic spatial memory to mortal survival | suspense, puzzle, deduction |
+| “‘I used to practise drawing from memory... I’d stare at it for ten seconds and memorize the shape. I did that over and over, and now it’s one of my biggest assets. I can perfectly recreate any scene after seeing it once.’” | How to build sensory eidetic recall through repetitive childhood discipline | skill, observation, memory |
+
+---
+
+## Andy Weir, Project Hail Mary (2021)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘The universe is a strange and beautiful place. It’s also incredibly hostile, and I was about to become part of it.’” | How to balance cosmic awe against biological fragility | sci-fi, perspective, wonder |
+| “‘That’s not what I meant,’ Voigt said. ‘There are processes and background checks to—’ Stratt put her hand on my shoulder. ‘Dr. Ryland Grace, I hereby grant you top-secret clearance to all information pertaining to Project Hail Mary.’” | How to bypass bureaucratic inertia with absolute executive authority | leadership, authority, dialogue |
+| “‘Astrophage has a predator! If we find a predator…we take it home!’” | How to ignite scientific breakthrough with an ecological parallel | science, breakthrough, discovery |
+| “‘It must be your decision,’ said Stratt. ‘I will not have someone on my crew who is there against their will. You must come of your own volition.’” | How to enforce voluntary consent under total coercion | choice, sacrifice, leadership |
 
 ---

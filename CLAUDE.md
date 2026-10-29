@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Reached 914 high-caliber craft quotes curated across 188 books (incorporating Cluster 47: *The Name of the Wind*, *War and Peace*, *How to Travel with a Salmon*, *World War Z*, *Victorian Psycho*). Pre-configured Clusters 48, 49, and 50 ready for execution.  
-> **Next**: Complete Cluster 48 (*Pet Sematary*, *The Mist*, *The Last Argument of Kings*, *Strange Pictures*, *Project Hail Mary*) to reach 934 quotes, followed by Cluster 49 to reach 954 quotes.
+> **Current**: Reached 934 high-caliber craft quotes curated across 193 books (incorporating Cluster 48: *Pet Sematary*, *The Mist*, *The Last Argument of Kings*, *Strange Pictures*, *Project Hail Mary* with full Librarian context & takeaway layer). Pre-configured Clusters 49 and 50 ready for execution.  
+> **Next**: Complete Cluster 49 (*The Brothers Karamazov*, *Breakfast of Champions*, *Gunahon Ka Devta*, *IT*, *The Amazing Adventures of Kavalier & Clay*) to reach 954 quotes, followed by Cluster 50 to reach 974 quotes.
 
 ## Roadmap
 
