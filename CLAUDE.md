@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: Complete | **Phase**: 7 (Quote Bank Categorization, Visual Studio & Dark Mode Complete)  
-> **Current**: High-contrast Dark & Light mode theme-aware styling across app and widget. In-app Quote Bank features Thematic Horizons filter bar (`All`, `Dread`, `Folly`, `Solitude`, `High Stakes`, `Irony`, `Power & History`, `Prose & Voice`) with `☰ Catalog` overview dialog and `🎲 Surprise` shuffle. Widget shelf mode locked to 1 quote per day (flipping only between The Line and Scene Context without quote cycling). Marginalia Visual Studio running locally via `python3 scripts/serve_preview.py` for immediate Mac browser previewing without sideloading. Scene contexts enriched with narrative setting and emotional stakes. Signed release APK compiled at `android/marginalia.apk`.  
-> **Next**: User testing and sideloading.
+> **Status**: In Progress | **Phase**: 8 (In-App UX Polish, Boundary Fixes & Explanation Audit)  
+> **Current**: Fixed card padding and boundary clipping across Android app and Web reader. Resolved badge/book-title overlap with 12-14dp vertical separation. Fixed Daily Cards bottom pills clipping into deck corners by adding horizontal clip padding and centering. Reduced explanation font to 16sp (app) / 1.04rem (web) for comfortable reading. Replaced rigid "teacher" prose with clear, grounded analytical explanations. Release APK compiled and signed at `android/marginalia.apk`.  
+> **Next**: User verification of layout fixes on device and deeper audit of shelf explanations.
 
 ## Roadmap
 
