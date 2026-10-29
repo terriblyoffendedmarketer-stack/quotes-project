@@ -1,7 +1,7 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 10 (Web App Edition & GitHub Pages Live Deployment)  
-> **Current**: Fixed desktop width overflow, DOM nesting, and APK download button visibility. Resolved mobile touch scroll trap (`overscroll-behavior-y: auto`). Auto-separated local preview (`localhost:8765` shows `🔲 Widget` tab) from public preview (`github.io` hides widget completely). Fixed widget preview scroll clipping and truncation with proportional font scaling and `.w-body-container`. Views now switch cleanly without stacking.  
+> **Current**: Fixed desktop width overflow, DOM nesting, and APK download button visibility. Resolved mobile touch scroll trap (`overscroll-behavior-y: auto`). Auto-separated local preview (`localhost:8765` shows `🔲 Widget` tab) from public preview (`github.io` hides widget completely). Consolidated Shelf Spark widget slide chunks to 80 words max (3 to 5 slides max instead of 10), recompiled release APK, and rebuilt web edition.  
 > **Next**: Let enrichment run through the remaining quotes once daily quota resets, update bundled assets, and re-release.
 
 ## Roadmap
