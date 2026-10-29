@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 6 (Master Quote Bank Mining)  
-> **Current**: Crossed the 800-Quote Milestone! Reached 814 high-caliber craft quotes curated across 166 books (incorporating Cluster 42: *The Letters of Abelard and Heloise*, *Paradise and Other Stories*, *Nithalle Ki Diary*, *Asimov's Mysteries*, *The Floor Plan (Strange Houses)*). Cluster 43 (*Blind Willow, Sleeping Woman*, *Awara Bheed Ke Khatare*, *Six Walks in the Fictional Woods*, *Survivor*, *Why I Am an Atheist*) currently mining locally via Ollama.  
-> **Next**: Complete Cluster 43 curation to reach 834 quotes, followed by Cluster 44 (*The Blade Itself*, *Invisible Monsters*, *Sphere*, *The Fifth Science*, *Animal Farm*) to reach 854 quotes.
+> **Current**: Reached 834 high-caliber craft quotes curated across 169 books (incorporating Cluster 43: *Blind Willow, Sleeping Woman*, *Awara Bheed Ke Khatare*, *Six Walks in the Fictional Woods*, *Survivor*, *Why I Am an Atheist*). Cluster 44 (*The Blade Itself*, *Invisible Monsters*, *Sphere*, *The Fifth Science*, *Animal Farm*) currently mining locally via Ollama.  
+> **Next**: Complete Cluster 44 curation to reach 854 quotes, followed by Cluster 45 (*Before They Are Hanged*, *20th Century Ghosts*, *John Dies at the End*, *Congo*, *Foundation*) to reach 874 quotes.
 
 ## Roadmap
 

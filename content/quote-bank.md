@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 814 | **Total Books Represented:** 166
+**Total Vetted Quotes:** 834 | **Total Books Represented:** 169
 
 ---
 
@@ -807,6 +807,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “When trying to assess a film that contains sexually explicit scenes, you should check to see whether, when a character gets into an elevator or a car, the discourse time coincides with the story time.” | How to expose narrative stalling through chronological pacing. | pacing, craft-rule, wit, observation |
 | “It is true that in Sylvie we know without a doubt that Adrienne died in 1832 (whereas we are not equally sure that Napoleon died in 1821—since he could have been secretly rescued from Saint Helena by Julien Sorel, leaving a double there in his place, and may subsequently have lived under the name of Père Dodu in Loisy, where he encountered the narrator in 1830).” | How to prove that fictional certainty outlasts historical fact. | paradox, metafiction, narrative-theory, wit |
 | “It is the quantity of pages devoted to the effort of recollecting these hours, without actually reconstructing their actual sequence, it is the disproportion between the time of recollection and the time recollected...” | How to stretch subjective memory against chronological story time. | time, narrative-structure, craft-analysis, memory |
+| “Every text, after all, is a lazy machine asking the reader to do some of its work.” | How to define narrative mechanism through collaborative cognitive labor | narrative theory, aphorism, writing craft |
+| “If something important or gripping is going to take place, we have to cultivate the art of lingering.” | How to build narrative tension by deliberately delaying arrival | pacing, suspense, story structure |
+| “Texts are not always so wicked, and are usually inclined to allow the reader the pleasure of making a guess which will then be proved correct.” | How to reward reader anticipation without feeling predictable | reader response, mystery craft, wit |
+| “I know that Rip Van Winkle has never existed; nevertheless, I not only believe but I assume to know that up the Hudson River one can really find the Catskill Mountains.” | How to anchor impossible fictional fables in concrete geography | worldbuilding, philosophy, storytelling |
 
 ---
 
@@ -1169,6 +1173,10 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “जो करोड़ खर्च करेगा, वह पाँच करोड़ कहीं से निकालेगा ही। इस तरह जनसेवकों का व्यापार और लूट एक साथ होगी।” | How to expose democratic corruption with mathematical inevitability. | satire, clarity, hindi-literature, corruption |
 | “तुम इन लोगों की परवाह मत करो. ये उस रूमाल को उठाने योग्य भी नहीं हैं, जो तुम्हारे हाथ से गिर गया हो।” | How to deliver a devastating dismissal through an aristocratic domestic prop. | dialogue, satire, hindi-literature, class |
 | “जातियों के संगठन हैं खास राजनेता के पीछे। जातियों की सशस्त्र फौजें हैं। राजनेता जाति के नाम पर अपनी पार्टी के लिए समर्थन माँगते हैं। मत माँगते हैं।” | How to trace the militarization of identity politics in clipped, staccato clauses. | staccato, political-thought, hindi-literature, candor |
+| “क्लर्क को जुकाम है। उसे छींक आती है। साहब की चाँद निकली है। क्लर्क को भ्रम होता है कि उसकी छींक के छींटे साहब की चाँद पर गिर गए होंगे और साहब नाराज हो गया होगा।” | How to dramatize feudal office paranoia through microscopic somatic absurdity | satire, bureaucracy, humor |
+| “जो समाज कसमसाता नहीं, वह जड़ रह जाता है। इस कसमसाहट के कारण इक्का-दुक्का घटनाएँ होती हैं। ये प्रतीक हैं—व्यापक परिवर्तन और विकास की इच्छा की।” | How to interpret social unrest as an index of collective vitality | sociology, political critique, philosophy |
+| “मैंने एक रसगुल्ला उठाया। मेजबान से कहा—आप भी तो खाइए। उन्होंने कहा—अरे साहब, आप खाइए। हम तो खाते ही रहते हैं।” | How to puncture performative hospitality through a single culinary exchange | satire, dialogue, cultural critique |
+| “'मार्केट इकॉनमी’... कंट्रोल लाइसेंस सब गए। स्वतंत्र पूँजीवाद और बाजार की शोषक व्यवस्था आ गई।” | How to satirize economic liberalization through predatory clarity | satire, economic critique, subcontinental realism |
 
 ---
 
@@ -2034,5 +2042,39 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “The idea that there were two of these houses… It’s not all that unusual for houses to have what they call ‘interior windows’, little openings between rooms. But rarely, if ever, do you find them in this double-leaf style.” | How to turn blueprint minutiae into a horrifying realization | deduction, atmosphere, pacing |
 | “They didn't decide to leave it. They had to. They could not build a room over that area.” | How to use deductive negative space to suggest concealment | syntax, mystery craft, suspense |
 | “The couple used those rooms to play the ideal family as they raised him. But, at the same time, the house has a darker face too.” | How to contrast suburban domestic performance with physical entrapment | contrast, psychological truth, atmosphere |
+
+---
+
+## Haruki Murakami, Blind Willow, Sleeping Woman (2006)
+*Trans. Philip Gabriel*
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Newspapers are all the same, no matter where you go. They never tell you what you really want to know.” | How to articulate narrative disillusionment with casual finality | voice, philosophy, realism |
+| “I don’t know when it began, or when it ended, but before I knew it I was locked away, alone and numb in the endless winter of that world of ice.” | How to render psychological dissociation through sensory climate | atmosphere, sensory detail, psychological truth |
+| “It’s like being in an elevator when it breaks down and you’re trapped inside with strangers.” | How to compress urban social dread into a broken elevator | simile, claustrophobia, voice |
+| “It wasn’t bad, it was just missing that extra element that sends us flying to another world.” | How to describe aesthetic disappointment through understated longing | understatement, artistic craft, reflection |
+
+---
+
+## Chuck Palahniuk, Survivor (1999)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “The caseworker wouldn’t be dropping by for a breakfast gin and tonic if there hadn’t been another suicide last night.” | How to establish dark institutional normalization through causal inversion | opening, dark humor, voice |
+| “To get lipstick out of a collar, rub in a little white vinegar. For stubborn protein-based stains, like semen, try rinsing with cold salt water, then wash as usual.” | How to collide domestic housekeeping manuals with transgressive violence | voice, juxtaposition, satire |
+| “The big question people ask isn’t ‘What’s the nature of existence?’ The big question people ask is ‘What’s that from?’” | How to diagnose cultural shallowness through competing interrogatives | cultural critique, aphorism, dialogue |
+| “Long-term, we’re all going to die. Then our bodies will rot. No surprise there. Short-term, we’re going to live happily ever after.” | How to dismantle commercial optimism with blunt biological certainty | irony, rhythm, voice |
+
+---
+
+## Bhagat Singh, Why I Am an Atheist (1930)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “To the extent that you believe in an almighty, omnipresent, omniscient and omnipotent God—who created the earth or world, please let me know, why did he create it? This world of woes and miseries, a veritable, eternal combination of numberless tragedies: not a single soul being perfectly satisfied.” | How to escalate rhetorical pressure on divine benevolence | rhetoric, polemic, cadence |
+| “For us, compromise never means surrender, but a step forward and some rest. That is all and nothing else.” | How to redefine political compromise without ideological surrender | clarity, voice, political thought |
+| “We will die a martyr’s death while fighting, as a real revolutionary, for the sake of our motherland, but we shall not surrender our weapons.” | How to voice unconditional resolve before the gallows | defiance, manifesto craft, moral courage |
+| “Neither you nor I, rather none of us, have suffered any pain so far. That part of our life has started only now.” | How to define the threshold of true ordeal through ascending negation | stoicism, voice, solidarity |
 
 ---
