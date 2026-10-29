@@ -17849,5 +17849,423 @@
     ],
     "author": "Paul Loomans",
     "work": "Time Surfing"
+  },
+  {
+    "quote": "\"Never Leave Me\" Is a Weird Thing to Say to an Employee",
+    "explanation": "This passage cuts through the often-romanticized view of startup leadership. Fishkin highlights the awkwardness and potential harm of overly attached founder behavior, suggesting it can be detrimental to employee relationships and overall company health. It’s striking because of its blunt honesty.",
+    "tags": [
+      "relationships",
+      "leadership"
+    ],
+    "author": "Rand Fishkin",
+    "work": "Lost and Founder"
+  },
+  {
+    "quote": "“Secrets, lies, opacity—they tear families apart just as surely as they do startups.”",
+    "explanation": "This passage encapsulates a core theme of the excerpt: the corrosive effect of secrecy and dishonesty. Fishkin vividly illustrates how personal deception, specifically his family’s hidden debts, mirrored the potential damage to his startup, highlighting the profound interconnectedness between personal and professional integrity.",
+    "tags": [
+      "family",
+      "trust",
+      "regret"
+    ],
+    "author": "Rand Fishkin",
+    "work": "Lost and Founder"
+  },
+  {
+    "quote": "“My only consolation: my dad and I weren’t speaking at the time. We’ve probably had three conversations in the last seven years.”",
+    "explanation": "This short, almost throwaway line is incredibly powerful. It underscores the lasting consequences of the initial dishonesty – a fractured relationship with his father that persists even after years. It demonstrates the personal cost of prioritizing perceived strategic advantage over genuine human connection.",
+    "tags": [
+      "relationship",
+      "consequences",
+      "personal"
+    ],
+    "author": "Rand Fishkin",
+    "work": "Lost and Founder"
+  },
+  {
+    "quote": "‘Unless what you love is managing people, handling crises, delegating, holding people responsible, recruiting, setting, then constantly amplifying and repeating the company’s mission, vision, strategy, and values, being a startup CEO may not provide you with the work you love to do.’",
+    "explanation": "This passage captures Fishkin's core argument about the demands of early-stage startup leadership. It highlights the often-overlooked reality that the intense focus on ‘doing the work’ can be a significant source of frustration and burnout for founders, particularly when it clashes with their passion.",
+    "tags": [
+      "founder challenges",
+      "burnout",
+      "startup realities"
+    ],
+    "author": "Rand Fishkin",
+    "work": "Lost and Founder"
+  },
+  {
+    "quote": "‘Why didn’t the Aborigines in Australia invade England? Living and growing up in Sydney as you do, your schoolteachers have spent many hours and lessons making you and your classmates aware of the hideous injustices perpetrated by ‘white’ Australia on the country’s original inhabitants, the Aborigines; of their splendid culture, which white European colonialists trampled underfoot for over two centuries; and of the conditions of shocking poverty in which they still live as a result of those centuries of violence, theft and humiliation.’",
+    "explanation": "This passage powerfully illustrates Varoufakis’s central argument: that understanding historical injustices – like colonization – is crucial to grasping contemporary inequality. He uses the Australian example to highlight how narratives often gloss over systemic oppression and the lasting consequences of exploitation, prompting a critical examination of power dynamics.",
+    "tags": [
+      "history",
+      "inequality",
+      "colonialism"
+    ],
+    "author": "Yanis Varoufakis",
+    "work": "Talking to My Daughter About the Economy"
+  },
+  {
+    "quote": "‘Markets are one thing, economies another. In the bubble of Western prosperity you’re growing up in most grown-ups would say to you that poor countries are poor because their ‘economies’ are weak – whatever that means.’",
+    "explanation": "Varoufakis deftly exposes a common, and ultimately misleading, justification for global poverty: attributing it solely to the weakness of an economy. He reveals how this argument obscures the deeper historical and structural factors—like colonialism and unequal trade relationships—that contribute to economic disparity.",
+    "tags": [
+      "economy",
+      "poverty",
+      "globalization"
+    ],
+    "author": "Yanis Varoufakis",
+    "work": "Talking to My Daughter About the Economy"
+  },
+  {
+    "quote": "‘Sure,’ you respond, seizing the opportunity to be the heroine of the moment as you proudly dive into the sea.",
+    "explanation": "This passage captures a pivotal moment – your daughter’s spontaneous act of kindness and bravery. It highlights her inherent desire for connection and purpose, showcasing how simple acts of service can be profoundly rewarding when driven by genuine goodwill rather than expectation of reward. The imagery of diving ‘proudly’ is particularly striking.",
+    "tags": [
+      "altruism",
+      "heroism"
+    ],
+    "author": "Yanis Varoufakis",
+    "work": "Talking to My Daughter About the Economy"
+  },
+  {
+    "quote": "‘Money makes the world go round!’ You’ve heard the expression quite often. Though it’s an unbearably cynical and miserably pessimistic view of humanity, it may – unfortunately – be largely true.",
+    "explanation": "Varoufakis uses this familiar phrase to immediately establish a critical perspective on modern society. He acknowledges its cynicism but suggests it holds a disturbing truth: that money has become the dominant force, shaping human behavior in ways that are profoundly negative. This sets up his argument about how this shift occurred and its consequences.",
+    "tags": [
+      "money",
+      "perspective",
+      "critique"
+    ],
+    "author": "Yanis Varoufakis",
+    "work": "Talking to My Daughter About the Economy"
+  },
+  {
+    "quote": "\"The right way to lay people off is to treat them with respect and dignity. It’s not about minimizing the pain, it’s about acknowledging the value they brought.\"",
+    "explanation": "This passage describes a core challenge for CEOs – how to handle difficult decisions regarding layoffs. Horowitz emphasizes that even in these painful situations, maintaining respect and recognizing an employee's contributions is paramount; it highlights the human element often overlooked in business.",
+    "tags": [
+      "leadership",
+      "ethics",
+      "difficult decisions"
+    ],
+    "author": "Horowitz, Ben",
+    "work": "The Hard Thing About Hard Things: Building a Business When There Are No Easy Answers"
+  },
+  {
+    "quote": "Deploying software to scale to millions of users was totally different from making it work for thousands. And it was extremely complicated.",
+    "explanation": "This passage captures a critical moment in Horowitz’s early struggles – the realization that scaling technology wasn't simply about building better tools, but about handling massive, unpredictable demand. The contrast highlights the fundamental difference between media and tech companies, and foreshadows the immense technical challenges ahead as they conceived of the cloud.",
+    "tags": [
+      "scaling",
+      "technical challenge",
+      "early struggles"
+    ],
+    "author": "Horowitz, Ben",
+    "work": "The Hard Thing About Hard Things: Building a Business When There Are No Easy Answers"
+  },
+  {
+    "quote": "‘Spiral.’ And I knew that he understood.",
+    "explanation": "This is a pivotal moment in the excerpt. Horowitz recounts Bill Campbell’s succinct observation about Loudcloud’s situation – a spiraling decline due to negative feedback loops of declining cash, reduced sales, and further cash depletion. It highlights Campbell's strategic insight and demonstrates how quickly he grasped the core problem.",
+    "tags": [
+      "crisis management",
+      "strategic thinking"
+    ],
+    "author": "Horowitz, Ben",
+    "work": "The Hard Thing About Hard Things: Building a Business When There Are No Easy Answers"
+  },
+  {
+    "quote": "“Gentlemen, I’ve done many deals in my lifetime and through that process, I’ve developed a methodology, a way of doing things, a philosophy if you will. Within that philosophy, I have certain beliefs. I believe in artificial deadlines. I believe in playing one against the other. I believe in doing everything and anything short of illegal or immoral to get the damned deal done.”",
+    "explanation": "Michael Ovitz’s advice is a masterclass in ruthless negotiation tactics. He reveals his approach – using manufactured urgency and leveraging competing interests – to drive the deal forward, showcasing the lengths he was willing to go to secure a successful outcome for Loudcloud. It's a striking illustration of the high-stakes environment Horowitz describes.",
+    "tags": [
+      "negotiation",
+      "pressure tactics"
+    ],
+    "author": "Horowitz, Ben",
+    "work": "The Hard Thing About Hard Things: Building a Business When There Are No Easy Answers"
+  },
+  {
+    "quote": "“How long since your last cigarette?” one of the physicians asked, starting down the list of questions Lisa Allen answered every time she came to this laboratory outside Bethesda, Maryland. “Almost four years,” she said, “and I’ve lost sixty pounds and run a marathon since then.”",
+    "explanation": "This passage immediately establishes a striking contrast – Lisa Allen's current life versus her past struggles with addiction. The direct exchange highlights the transformative power of habit change, showcasing how a seemingly simple shift can dramatically alter someone’s trajectory. It’s arresting because it presents a tangible example of the book’s central argument.",
+    "tags": [
+      "transformation",
+      "habit loop"
+    ],
+    "author": "Charles Duhigg",
+    "work": "The Power of Habit: Why We Do What We Do in Life and Business"
+  },
+  {
+    "quote": "‘Habits never really disappear. They’re encoded into the structures of our brain, and that’s a huge advantage for us, because it would be awful if we had to relearn how to drive after every vacation.’",
+    "explanation": "This passage describes a key finding from Charles Duhigg's research: habits aren’t truly erased; they become ingrained within the brain’s structure. It highlights the practical benefit of this neurological process – our ability to retain learned behaviors, like driving, without constant conscious effort. The quote is striking because it reveals a fundamental truth about how our brains work and subtly acknowledges the potential for both convenience and dependence.",
+    "tags": [
+      "neuroscience",
+      "memory",
+      "automaticity"
+    ],
+    "author": "Charles Duhigg",
+    "work": "The Power of Habit: Why We Do What We Do in Life and Business"
+  },
+  {
+    "quote": "‘Without habit loops, our brains would shut down, overwhelmed by the minutiae of daily life. People whose basal ganglia are damaged by injury or disease often become mentally paralyzed.’",
+    "explanation": "This passage powerfully illustrates the critical role of the basal ganglia in maintaining our ability to function. It paints a stark picture of what happens when this system fails – a state of paralysis due to an inability to manage even basic, habitual behaviors. The quote is memorable for its dramatic depiction of neurological impairment and emphasizes the fragility of our everyday routines.",
+    "tags": [
+      "brain",
+      "neurology",
+      "function"
+    ],
+    "author": "Charles Duhigg",
+    "work": "The Power of Habit: Why We Do What We Do in Life and Business"
+  },
+  {
+    "quote": "“There is nothing programmed into our brains that makes us see a box of doughnuts and automatically want a sugary treat,” Schultz told me. “But once our brain learns that a doughnut box contains yummy sugar and other carbohydrates, it will start anticipating the sugar high. Our brains will push us toward the box.”",
+    "explanation": "This passage describes how habits aren’t innate desires but learned associations. Schultz uses the example of doughnuts to illustrate that the brain creates cravings based on past rewards—the ‘sugar high’—linking a specific cue (seeing a doughnut box) with an anticipated pleasurable outcome. It highlights the subtle, almost unconscious way our brains build these patterns.",
+    "tags": [
+      "reward",
+      "cue",
+      "anticipation"
+    ],
+    "author": "Charles Duhigg",
+    "work": "The Power of Habit: Why We Do What We Do in Life and Business"
+  },
+  {
+    "quote": "I therefore tried a device I sometimes use. I opened a book at random and set up free association, beginning with whatever I first saw.",
+    "explanation": "This passage captures Asimov’s creative process – a key element of his storytelling. It reveals the genesis of ‘Foundation’ as a purely associative exercise, driven by chance and intellectual curiosity rather than a fully formed idea. This illustrates the often-unplanned nature of great fiction.",
+    "tags": [
+      "creative process",
+      "inspiration"
+    ],
+    "author": "Isaac Asimov",
+    "work": "Foundation 1 - Foundation"
+  },
+  {
+    "quote": "“Plenty of seats.” Gaal closed his mouth; he had been gaping; and said, “It certainly seems so.” He started for them automatically, then stopped. He said, “If you don’t mind, I’ll just stop a moment at the railing. I - I want to look a bit.”",
+    "explanation": "This passage captures Gaal's initial disorientation and almost childlike wonder upon seeing the open terrace. It highlights his lack of understanding of the world around him – a world dominated by metal and devoid of natural beauty – and reveals his immediate, instinctive desire for observation, mirroring a fundamental human reaction to novelty. The scene establishes Gaal’s naivete and vulnerability.",
+    "tags": [
+      "naiveté",
+      "observation"
+    ],
+    "author": "Isaac Asimov",
+    "work": "Foundation 1 - Foundation"
+  },
+  {
+    "quote": "‘The Empire will vanish and all its good with it. Its accumulated knowledge will decay and the order it has imposed will vanish.’",
+    "explanation": "This passage is striking for its stark, almost fatalistic assessment of the Roman Empire’s fate. Seldon lays out a chilling vision of collapse – not just of a political entity, but of all human knowledge and civilization itself – emphasizing the irreversible nature of historical decline. It immediately establishes the core themes of the book: entropy, loss, and the desperate attempt to combat them.",
+    "tags": [
+      "entropy",
+      "collapse",
+      "knowledge"
+    ],
+    "author": "Isaac Asimov",
+    "work": "Foundation 1 - Foundation"
+  },
+  {
+    "quote": "‘It is that state of anarchy which my project is pledged to fight. The fall of Empire, gentlemen, is a massive thing, however, and not easily fought. It is dictated by a rising bureaucracy, a receding initiative, a freezing of caste, a damming of curiosity - a hundred other factors.’",
+    "explanation": "This passage reveals the incredibly complex and almost deterministic nature of Seldon’s plan. He doesn't see himself as preventing the fall of the Empire – that’s an inevitable consequence of long-term trends. Instead, his project is focused on mitigating the chaos *after* the collapse, a recognition of history’s relentless march toward disorder.",
+    "tags": [
+      "determinism",
+      "chaos",
+      "inevitability"
+    ],
+    "author": "Isaac Asimov",
+    "work": "Foundation 1 - Foundation"
+  },
+  {
+    "quote": "‘Rather than use the Orth word, which would be devoid of meaning and connotations to Earth readers, I have tried to devise an Earth word that serves as its rough equivalent while preserving some flavor of the Orth term.’",
+    "explanation": "Stephenson’s opening note is a fascinating meta-commentary on his writing process. He explicitly acknowledges the challenges of translating concepts from Arbre (a fictional world with a completely different language and history) to an Earth audience, demonstrating a deliberate effort to bridge the gap between cultures while retaining key thematic elements.",
+    "tags": [
+      "worldbuilding",
+      "translation",
+      "metafiction"
+    ],
+    "author": "Neal Stephenson",
+    "work": "Anathem"
+  },
+  {
+    "quote": "“So, you can’t come up here except during Apert,” she asserted at one point. “What makes you think that?”",
+    "explanation": "This passage captures a moment of intense intellectual sparring between the characters. Cord's insistence on the restricted access to this space—a towering staircase within a complex structure—highlights the rigid rules and hierarchies governing their world, while her direct question forces the narrator to confront the underlying logic behind these limitations. It’s arresting because it immediately establishes the core conflict of the novel: the tension between knowledge and control.",
+    "tags": [
+      "hierarchy",
+      "restriction"
+    ],
+    "author": "Neal Stephenson",
+    "work": "Anathem"
+  },
+  {
+    "quote": "“The walls were a fractal foam of hand-carved, interlocking stone.”",
+    "explanation": "This brief description is striking for its visual imagery and hints at the incredible complexity of the Mynster’s architecture. It suggests an obsessive level of detail and craftsmanship, reflecting the Mathic architects' fascination with intricate systems – and perhaps mirroring the layered nature of the world itself. The phrase 'fractal foam' evokes a sense of both beauty and overwhelming intricacy.",
+    "tags": [
+      "architecture",
+      "complexity"
+    ],
+    "author": "Neal Stephenson",
+    "work": "Anathem"
+  },
+  {
+    "quote": "\"The grapes chose to grow up small, pale, and bitter.\"",
+    "explanation": "This striking image immediately establishes a core theme in *Anathem*: the way memory and experience can be distorted and diminished. The library grapes, imbued with encoded pheromones of past events, represent a tangible manifestation of this decay – their bitterness mirroring the tainted recollections they carry.",
+    "tags": [
+      "memory",
+      "distortion",
+      "pheromones"
+    ],
+    "author": "Neal Stephenson",
+    "work": "Anathem"
+  },
+  {
+    "quote": "“At 60 miles an hour the loudest noise comes from the electric clock,”",
+    "explanation": "This passage highlights a key aspect of Rolls-Royce’s engineering philosophy: obsessive attention to detail. The engineer's observation, relayed by THE MOTOR, reveals that even seemingly minor elements – like the ticking of a clock – contribute significantly to the overall experience and perceived luxury of the car. It underscores the meticulous process behind creating a premium product.",
+    "tags": [
+      "detail",
+      "luxury"
+    ],
+    "author": "David Ogilvy",
+    "work": "Ogilvy on Advertising"
+  },
+  {
+    "quote": "“You aren’t the only one with imagination. I’ve got to go; they’re calling my flight. I’ll be back Tuesday. Can I bring you anything? My Paco Rabanne. And a fig leaf.”",
+    "explanation": "This excerpt, pulled from a later section of the text, offers a startling and humorous shift in tone. The speaker's wistful reflections on a fleeting encounter reveal a surprising vulnerability and a touch of romantic obsession. It’s a moment of unexpected intimacy that disrupts the earlier focus on mechanical precision.",
+    "tags": [
+      "humor",
+      "intimacy"
+    ],
+    "author": "David Ogilvy",
+    "work": "Ogilvy on Advertising"
+  },
+  {
+    "quote": "“When Shell proposed a pipeline from the North East coast of Anglesey to Stanlow refinery, seventy eight miles away in industrial Cheshire, people were worried. The line would run through part of the Snowdonia National Park and have to pass under rivers Conwy, Elwy, Clwyd and Dee. What scars would remain?”",
+    "explanation": "This passage powerfully illustrates the quiet, insidious nature of environmental damage. It’s not a dramatic explosion or immediate catastrophe; rather, it's the creeping realization that even seemingly small intrusions – a pipeline snaking through a beloved national park – can represent a profound loss. The detail about the rivers and the concern over ‘scars’ creates a vivid image of irreversible alteration.",
+    "tags": [
+      "environmentalism",
+      "industrialization"
+    ],
+    "author": "David Ogilvy",
+    "work": "Ogilvy on Advertising"
+  },
+  {
+    "quote": "“It will take us one full year to complete this piano. But it will last for generations.”",
+    "explanation": "This brief statement, describing the meticulous construction of a Steinway grand piano, is striking for its juxtaposition with the broader environmental concerns presented earlier in the text. It highlights an almost obsessive dedication to quality and longevity – a commitment to permanence that feels both admirable and somewhat unsettling when contrasted with the rapid destruction being described.",
+    "tags": [
+      "craftsmanship",
+      "legacy"
+    ],
+    "author": "David Ogilvy",
+    "work": "Ogilvy on Advertising"
+  },
+  {
+    "quote": "‘Habits are very powerful, but sometimes you need a mindset shift to change your behavior.’",
+    "explanation": "This passage highlights a core tension within the book’s approach – that simply implementing tactics isn't enough. Knapp recognizes that lasting behavioral changes require more than just new routines; they demand a fundamental adjustment in how we think about our time and priorities.",
+    "tags": [
+      "habits",
+      "mindset"
+    ],
+    "author": "Jake Knapp",
+    "work": "Make Time"
+  },
+  {
+    "quote": "‘The most important thing is to start. The hardest part is just beginning.’",
+    "explanation": "This passage comes from a collection of reflections by numerous individuals, each grappling with the challenge of initiating meaningful change in their lives. It highlights the critical first step – simply starting—as the most daunting aspect of personal transformation and emphasizes that momentum builds from there.",
+    "tags": [
+      "action",
+      "initiation"
+    ],
+    "author": "Jake Knapp",
+    "work": "Make Time"
+  },
+  {
+    "quote": "‘You don’t need to be a genius to make time. You just need to start.’",
+    "explanation": "This quote, attributed to Jim McDonough, is a succinct distillation of the book's core message: that self-improvement isn't about innate talent but about consistent action. It offers a reassuringly simple approach – beginning regardless of perceived limitations.",
+    "tags": [
+      "simplicity",
+      "action"
+    ],
+    "author": "Jake Knapp",
+    "work": "Make Time"
+  },
+  {
+    "quote": "“What will be the highlight of your day? If, at the end of the day, someone asks you, ‘What was the highlight of your day?’ what do you want your answer to be?”",
+    "explanation": "This opening immediately establishes the core concept of the book – intentionally choosing a single, meaningful activity for each day. The repetition of the question creates a sense of reflection and emphasizes the importance of defining what truly matters.",
+    "tags": [
+      "intention",
+      "reflection"
+    ],
+    "author": "Jake Knapp",
+    "work": "Make Time"
+  },
+  {
+    "quote": "Matthew is a thirty-six-time Moth StorySLAM champion and five-time GrandSLAM champion whose stories have been featured on the nationally syndicated Moth Radio Hour and its weekly podcast.",
+    "explanation": "This quote immediately establishes Matthew Dicks’ impressive storytelling credentials. It highlights his success in competitive storytelling events, showcasing his skill and reach – he's not just telling stories, but sharing them widely through established platforms like the Moth.",
+    "tags": [
+      "storytelling",
+      "achievement"
+    ],
+    "author": "Matthew Dicks",
+    "work": "Storyworthy"
+  },
+  {
+    "quote": "‘We all know what it’s like to want something important and essential — food, friendship, acceptance, love — but never to have enough of it. And we all know what it’s like to feel embarrassed or ashamed of never having enough of something that you so desperately need.’",
+    "explanation": "This passage captures the core of Storyworthy's premise: that profound human experiences often arise from seemingly small, unmet desires and the accompanying feelings of inadequacy. Dicks highlights a universal truth about longing – we all grapple with wanting ‘enough’ in some form, making this moment relatable to readers.",
+    "tags": [
+      "longing",
+      "human experience"
+    ],
+    "author": "Matthew Dicks",
+    "work": "Storyworthy"
+  },
+  {
+    "quote": "‘It’s a simple moment between a husband and wife that has come to mean so much to me, and in turn to many of my fans.’",
+    "explanation": "Dicks reveals the surprising source of his storytelling inspiration – a quiet, unremarkable event within his own marriage. This illustrates the idea that powerful stories aren’t always grand or dramatic; they can be found in the ordinary moments of everyday life, resonating deeply with audiences.",
+    "tags": [
+      "inspiration",
+      "ordinary moments"
+    ],
+    "author": "Matthew Dicks",
+    "work": "Storyworthy"
+  },
+  {
+    "quote": "‘The next sentence is often as much of a surprise to the writer as it is to the reader.’",
+    "explanation": "This passage captures the core of Dicks’s ‘Crash & Burn’ technique – the unpredictable nature of creative writing. It highlights that writers don't control every step, but rather allow themselves to be carried by the flow of ideas, mirroring the experience for the audience.",
+    "tags": [
+      "creative process",
+      "writing technique"
+    ],
+    "author": "Matthew Dicks",
+    "work": "Storyworthy"
+  },
+  {
+    "quote": "“To see what Times Square looked like before a city was there, we turn to a remarkable project called Welikia, which grew out of a smaller project called Mannahatta. The Welikia project has produced a detailed ecological map of the landscape in New York City at the time of the arrival of Europeans.”",
+    "explanation": "This passage introduces a fascinating element—a virtual reconstruction of Times Square as it was 1000 years ago. It highlights the ambition and methodology behind this ‘Welikia’ project, which aims to visualize the pre-urban landscape through detailed mapping. The scene establishes the core concept of exploring vastly different time periods.",
+    "tags": [
+      "history",
+      "environmental science"
+    ],
+    "author": "Munroe Randall",
+    "work": "What If? Serious Scientific Answers to Absurd Hypothetical Questions"
+  },
+  {
+    "quote": "“You would literally get a lethal dose of radiation in the blink of an eye.”",
+    "explanation": "This passage describes the terrifyingly rapid effect of high-level radiation exposure – it’s not a slow burn, but immediate and catastrophic. Randall uses vivid language to illustrate how quickly one could succumb to this danger, emphasizing the fragility of human biology against these forces.",
+    "tags": [
+      "radiation",
+      "physics",
+      "danger"
+    ],
+    "author": "Munroe Randall",
+    "work": "What If? Serious Scientific Answers to Absurd Hypothetical Questions"
+  },
+  {
+    "quote": "‘Watch dials, however, are not our only radioactive light source. When radioactive particles travel through materials like water or glass, they can emit light through a sort of optical sonic boom. Th is light is called Cherenkov radiation, and it’s seen in the distinctive blue glow of nuclear reactor cores.’",
+    "explanation": "Randall uses this passage to introduce a surprisingly beautiful and unsettling image: radioactive materials emitting a persistent blue glow. It highlights the unexpected ways science can produce both danger and aesthetic wonder – a consequence of the fundamental properties of radiation.",
+    "tags": [
+      "science",
+      "radiation",
+      "beauty"
+    ],
+    "author": "Munroe Randall",
+    "work": "What If? Serious Scientific Answers to Absurd Hypothetical Questions"
+  },
+  {
+    "quote": "‘And thus, we arrive at our answer: Centuries from now, deep in concrete vaults, the light from our most toxic waste will still be shining.’",
+    "explanation": "This concluding sentence is stark and memorable. It’s a chilling thought experiment that forces you to consider the long-term consequences of human activity – even seemingly contained hazards like nuclear waste – and their potential for enduring presence.",
+    "tags": [
+      "dystopian",
+      "waste",
+      "future"
+    ],
+    "author": "Munroe Randall",
+    "work": "What If? Serious Scientific Answers to Absurd Hypothetical Questions"
   }
 ]
