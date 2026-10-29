@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 7 (Quote Bank UI & Integration)  
-> **Current**: Achieved 100% full-library coverage across all personal EPUBs! Reached **1,871 vetted quotes across 416 books** (934 quotes with rich in-context plain-English scene explanations). Continuous runner finished with 0 flags, clean disk (32GB free), and pushed to GitHub (`c0c3b27`).  
-> **Next**: Build the unified reader UI with single-page thematic horizons, instant search, dynamic tag filtering, and the dual-mode Android widget.
+> **Status**: Complete | **Phase**: 7 (Quote Bank UI & Dual-Mode Widget Complete)  
+> **Current**: Achieved 100% full-library coverage (1,871 vetted quotes across 416 books) with unified plain-English scene explanations. Single-page thematic horizons web reader live with instant search, interactive tag filtering, and reading queue. Adaptive dual-mode Android widget compiled into signed release APK (`android/marginalia.apk`).  
+> **Next**: User sideloading or future curation passes.
 
 ## Roadmap
 
@@ -12,7 +12,7 @@
 - [x] Phase 4: Curate stronger quotes — add 5 gold-standard cards (Manto, Baldwin, Didion, Dillard, Burkeman) & expand `content/quote-bank.md`
 - [x] Phase 5: GitHub synchronization — commit and push updates to `terriblyoffendedmarketer-stack/quotes-project`
 - [x] Phase 6: Master Quote Bank mining — extract 800–1,200 quotes across 400+ books using local offline AI without token burnout (Reached 1,871 quotes / 416 books)
-- [~] Phase 7: Quote Bank UI & Integration — Serendipity shuffle, bookshelf view, and Android app integration
+- [x] Phase 7: Quote Bank UI & Integration — Thematic horizons web reader, dynamic tag discovery, and dual-mode Android widget integration
 
 ## File map
 
@@ -30,8 +30,9 @@
 - `tools/sync_quote_bank_md.py`: Synchronizes `content/quote-bank.md` from `content/quote-bank.json`.
 - `tools/add_cards.py`: Batch helper to append verified cards without duplicates or broken highlights.
 - `scripts/audit_and_rewrite.py`: Automation script for content audit, rewriting, and testing craft exercises.
-- `android/`: Android app and home-screen widget source code (Kotlin / Jetpack Compose).
-- `prototype/`: Web-based card previewer for rapid visual review.
+- `android/`: Android app and adaptive dual-mode home-screen widget source code.
+- `android/marginalia.apk`: Signed release build ready for sideloading.
+- `prototype/`: Web-based reader with single-page thematic horizons, instant search, and tag filtering.
 
 ## Setup & run instructions
 

@@ -7,3 +7,5 @@
 - Mac sleep halts unattended Ollama mining | macOS power management sleeps system after idle timer during long scripts | invoked background automation via `caffeinate -dimsu` to keep Apple Silicon CPU/GPU awake
 - rclone ls path parsing failure | `rclone ls` outputs byte size prefix before file path causing 'directory not found' | parsed clean path via regex `^\s*(\d+)\s+(.+)$`
 - EPUB metadata naming mismatches | filenames alternate between Title-Author and Author-Title | parsed authoritative `dc:title` and `dc:creator` tags directly from `content.opf` inside the EPUB zip
+- Android SDK location failure in Gradle | `./gradlew` fails with `SDK location not found` | set `sdk.dir=/Users/apple/Library/Android/sdk` in `local.properties` and pointed `JAVA_HOME` to Homebrew OpenJDK 17
+- Single-page thematic UX vs folders | nested folder menus hide quotes and create navigation friction | flattened 1,871 quotes into a continuous single-page stream segmented by 6 evocative thematic horizons with live in-place tag filtering

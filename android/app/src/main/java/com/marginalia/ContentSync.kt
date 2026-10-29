@@ -7,13 +7,14 @@ import java.net.URL
 import kotlin.concurrent.thread
 
 /**
- * Keeps the cards up to date without reinstalling the app. It downloads cards.json from the
- * project's GitHub repository at most every few hours, checks that it parses, and swaps it in.
- * If anything goes wrong it keeps whatever it already had.
+ * Keeps cards and quote bank up to date without reinstalling the app. It downloads from the
+ * project's GitHub repository at most every few hours, validates JSON, and updates cache files.
  */
 object ContentSync {
     const val CARDS_URL =
         "https://raw.githubusercontent.com/terriblyoffendedmarketer-stack/quotes-project/main/content/cards.json"
+    const val QUOTE_BANK_URL =
+        "https://raw.githubusercontent.com/terriblyoffendedmarketer-stack/quotes-project/main/content/quote-bank.json"
 
     private const val PREFS = "content_sync"
     private const val LAST_CHECK = "last_check"
@@ -29,30 +30,51 @@ object ContentSync {
             return
         }
         prefs.edit().putLong(LAST_CHECK, now).apply()
-        thread(name = "card-sync") {
+        thread(name = "content-sync") {
             try {
-                val text = download()
-                if (text != null) {
-                    Cards.parse(text)
+                var changed = false
+                
+                // 1. Sync Cards
+                val cardsText = download(CARDS_URL)
+                if (cardsText != null) {
+                    Cards.parse(cardsText)
                     val file = Cards.cacheFile(app)
-                    if (!file.exists() || file.readText() != text) {
+                    if (!file.exists() || file.readText() != cardsText) {
                         val tmp = java.io.File(file.path + ".tmp")
-                        tmp.writeText(text)
+                        tmp.writeText(cardsText)
                         tmp.renameTo(file)
                         Cards.invalidate()
-                        CardWidgetProvider.refreshAll(app)
+                        changed = true
                     }
                 }
+
+                // 2. Sync Quote Bank
+                val bankText = download(QUOTE_BANK_URL)
+                if (bankText != null) {
+                    QuoteBank.parse(bankText)
+                    val bFile = QuoteBank.cacheFile(app)
+                    if (!bFile.exists() || bFile.readText() != bankText) {
+                        val tmp = java.io.File(bFile.path + ".tmp")
+                        tmp.writeText(bankText)
+                        tmp.renameTo(bFile)
+                        QuoteBank.invalidate()
+                        changed = true
+                    }
+                }
+
+                if (changed) {
+                    CardWidgetProvider.refreshAll(app)
+                }
             } catch (_: Exception) {
-                // Offline or a bad file: keep the cards we already have.
+                // Offline or bad file: keep existing files
             } finally {
                 done?.invoke()
             }
         }
     }
 
-    private fun download(): String? {
-        val connection = URL(CARDS_URL).openConnection() as HttpURLConnection
+    private fun download(urlStr: String): String? {
+        val connection = URL(urlStr).openConnection() as HttpURLConnection
         return try {
             connection.connectTimeout = 8000
             connection.readTimeout = 8000
