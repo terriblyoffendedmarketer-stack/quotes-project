@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 834 | **Total Books Represented:** 169
+**Total Vetted Quotes:** 854 | **Total Books Represented:** 174
 
 ---
 
@@ -2076,5 +2076,60 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “For us, compromise never means surrender, but a step forward and some rest. That is all and nothing else.” | How to redefine political compromise without ideological surrender | clarity, voice, political thought |
 | “We will die a martyr’s death while fighting, as a real revolutionary, for the sake of our motherland, but we shall not surrender our weapons.” | How to voice unconditional resolve before the gallows | defiance, manifesto craft, moral courage |
 | “Neither you nor I, rather none of us, have suffered any pain so far. That part of our life has started only now.” | How to define the threshold of true ordeal through ascending negation | stoicism, voice, solidarity |
+
+---
+
+## Joe Abercrombie, The Blade Itself (2006)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Once you’ve got a task to do, it’s better to do it than to live with the fear of it.” | How to anchor a warrior's mindset in unsentimental pragmatic stoicism | voice, stoicism, characterization |
+| “Things had taken a turn for the worse alright. A moment ago that had hardly seemed possible, but fate had found a way.” | How to undercut high-stakes tension with dry fatalistic irony | irony, voice, understatement |
+| “Damn, he was bored. It was a fact, he was only now beginning to realise, that the conversation of the drunk is only interesting to the drunk.” | How to dismantle high-society camaraderie through solitary sober irritation | internal monologue, wit, social critique |
+| “They will catch you, and they will break your legs with hammers in the city square, so you can never run again.” | How to convey state intimidation through unadorned anatomical violence | visceral voice, understatement, tension |
+
+---
+
+## Chuck Palahniuk, Invisible Monsters (1999)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “You can live a completely normal, regular life. You just can’t let anybody get close enough to you to learn the truth.” | How to define social survival as total emotional quarantine | voice, psychological truth, aphorism |
+| “The word love tastes like earwax when I think about Manus and Evie.” | How to destroy romantic sentiment through abrasive sensory synesthesia | sensory detail, metaphor, voice |
+| “That’s what I love about fire, how it would kill me as quick as anybody else. How it can’t know I’m its mother.” | How to find radical solace in non-discriminating physical destruction | paradox, psychological truth, visceral voice |
+| “The point is whoever cuts your ears off is the one you’ll hate for the rest of your life.” | How to deliver an abrasive moral lesson through brutal physical mutilation | understatement, morality, voice |
+
+---
+
+## Michael Crichton, Sphere (1987)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Every conception of extraterrestrial life… has been basically human.” | How to expose anthropocentric bias in speculative investigation | science fiction craft, clarity, philosophy |
+| “God, it’s big. You know, we’re the first people in human history to see a free-swimming giant squid. This should be a great moment.” | How to collide historical scientific triumph with impending physical dread | irony, suspense, sensory detail |
+| “That’s a psychologist’s trick, isn’t it? To repeat the last word in a sentence. It’s a way to keep the person talking.” | How to create claustrophobic paranoia by exposing clinical dialogue tactics | dialogue, paranoia, psychological realism |
+| “Nothing else. It is not your ape-nature, not your tool-using nature, not language or your violence or your caring for young or your social groupings. Your greatness lies in imagination.” | How to strip away anthropological categories to isolate a species' defining trait | syntax, rhetoric, thematic payoff |
+
+---
+
+## Exurb1a, The Fifth Science (2018)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Void workers are often told that decompression is painless, that one passes out immediately. This is a lie to maintain the steady stream of colonisation volunteers.” | How to expose institutional recruitment propaganda through physiological reality | worldbuilding, clarity, political critique |
+| “They fired anger. They dispatched hope. Yes, with all these hurdles dead, Dr. Ek would know true contentment soon.” | How to treat human emotional faculties as corporate obstacles to be liquidated | satire, dark humor, science fiction craft |
+| “In even asking a question one affects the world.” | How to compress quantum epistemology into an unadorned aphorism | aphorism, philosophy, economy |
+| “I don't think taking photos of crumpled tissues is very clever. I don't think taking photos of yourself with minor celebrities makes you an interesting person... But something has gone awful, awful wrong.” | How to capture civilizational exhaustion through ordinary cultural irritation | voice, social critique, rhythm |
+
+---
+
+## George Orwell, Animal Farm (1945)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “No animal in England is free. The life of an animal is misery and slavery: that is the plain truth.” | How to establish revolutionary premise through unadorned declarative prose | clarity, opening, political prose |
+| “‘Comrade,’ said Snowball, ‘can you not understand that liberty is worth more than ribbons?’” | How to contrast political emancipation with superficial vanity | dialogue, contrast, parable craft |
+| “‘Donkeys live a long time. None of you has ever seen a dead donkey.’” | How to embody historical skepticism through cryptic folk wisdom | characterization, voice, understatement |
+| “But if there were hardships to be borne, they were partly offset by the fact that life nowadays had a greater dignity than it had had before. There were more songs, more speeches, more processions.” | How to expose authoritarian substitution of spectacle for substance | irony, political critique, syntax |
 
 ---
