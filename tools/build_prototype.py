@@ -1,8 +1,10 @@
-"""Build the prototype page by inlining content/cards.json and content/quote-bank.json into prototype/template.html.
+"""Build the web and prototype pages by inlining content/cards.json and content/quote-bank.json into prototype/template.html.
+Outputs to both prototype/index.html (for local visual studio) and docs/index.html (for GitHub Pages).
 
 Usage: python3 tools/build_prototype.py
 """
 import json
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -20,5 +22,28 @@ for card in cards:
 template = (ROOT / "prototype" / "template.html").read_text()
 page = template.replace("/*CARDS*/[]", json.dumps(cards, ensure_ascii=False))
 page = page.replace("/*QUOTE_BANK*/[]", json.dumps(bank, ensure_ascii=False))
-(ROOT / "prototype" / "index.html").write_text(page)
-print(f"Built prototype/index.html with {len(cards)} cards and {len(bank)} quote bank entries")
+
+# 1. Local prototype
+proto_dir = ROOT / "prototype"
+proto_dir.mkdir(exist_ok=True)
+(proto_dir / "index.html").write_text(page)
+
+# 2. GitHub Pages web deployment
+docs_dir = ROOT / "docs"
+docs_dir.mkdir(exist_ok=True)
+(docs_dir / "index.html").write_text(page)
+(docs_dir / ".nojekyll").touch(exist_ok=True)
+
+# 3. Bundle release APK for one-click web downloads
+apk_src = ROOT / "marginalia.apk"
+if not apk_src.exists():
+    candidate = ROOT / "android" / "app" / "build" / "outputs" / "apk" / "release" / "app-release.apk"
+    if candidate.exists():
+        shutil.copy(candidate, apk_src)
+
+if apk_src.exists():
+    shutil.copy(apk_src, proto_dir / "marginalia.apk")
+    shutil.copy(apk_src, docs_dir / "marginalia.apk")
+    print(f"Bundled marginalia.apk ({apk_src.stat().st_size / 1024 / 1024:.1f} MB) into docs/ and prototype/")
+
+print(f"Built prototype/index.html and docs/index.html with {len(cards)} cards and {len(bank)} quote bank entries")

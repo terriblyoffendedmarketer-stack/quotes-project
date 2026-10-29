@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 9 (Two-Tier Companion Note Standardization, Evocative Badging & Daily Alternation)  
-> **Current**: Standardized evocative literary slide badges (`THE LINE` → `THE PREDICAMENT` → `THE MIRROR`) and distinct collection identities (`Prose Craft` and `Shelf Sparks`). Clarified dynamic 3-to-5 slide budget (a ~100-word quote fits cleanly in 3 slides; only longer 170+ word notes expand to 4 or 5 slides). Fixed web preview overflow (`overflow-y: auto`) to mirror Android's native `<ScrollView>`. Daily parity alternator smoothly switches between Prose Craft and Shelf Sparks with manual browse state persistence. 458 quotes enriched in quote-bank.json on Google AI Studio Free Tier (quota resumes at 00:00 UTC).  
-> **Next**: Resume background enrichment pipeline to cover remaining quotes, bundle into APK, and verify final build.
+> **Status**: In Progress | **Phase**: 10 (Web App Edition & GitHub Pages Live Deployment)  
+> **Current**: Deployed Marginalia Web Edition to GitHub Pages (`https://terriblyoffendedmarketer-stack.github.io/quotes-project/`). Fully responsive on mobile Chrome (PWA-ready with touch-swipe, Apple Touch icon, and dark/light themes) and desktop Chrome. Provides seamless browsing across both Prose Craft (108 cards) and Shelf Sparks (1,874 quotes) with instant Thematic Horizons filtering, widget simulation, and direct one-click APK download links (`marginalia.apk` bundled in `/docs` and GitHub Releases).  
+> **Next**: Let enrichment run through the remaining quotes once daily quota resets, update bundled assets, and re-release.
 
 ## Roadmap
 
@@ -14,7 +14,8 @@
 - [x] Phase 6: Master Quote Bank mining — extract 800–1,200 quotes across 400+ books using local offline AI without token burnout (Reached 1,871 quotes / 416 books)
 - [x] Phase 7: Quote Bank UI & Integration — Thematic horizons web reader, dynamic tag discovery, and dual-mode Android widget integration
 - [x] Phase 8: In-App UX Polish, Boundary Fixes & Dostoevsky Trifles Curation (APK release compiled, boundary margins fixed)
-- [~] Phase 9: Shelf Quote Explanation Renaissance — Two-tier cognitive standard, zero-spoiler ground truth, and Gemini Free Tier pipeline (Gold standard validated on 10 quotes)
+- [x] Phase 9: Shelf Quote Explanation Renaissance — Two-tier cognitive standard, zero-spoiler ground truth, and Gemini Free Tier pipeline (458 quotes enriched)
+- [~] Phase 10: Web App Edition & GitHub Pages Live Deployment — Fully responsive mobile/desktop web app with APK download, OpenGraph previews, and dual-collection browsing
 
 ## File map
 

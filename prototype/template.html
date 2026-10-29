@@ -2,8 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marginalia Visual Studio — App Reader & Home Screen Widget</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marginalia — Writing Craft & Shelf Sparks</title>
+<meta name="description" content="A quiet reading companion with 108 prose craft cards and 1,870+ literary sparks from 400+ books. Browse in your browser or install on Android.">
+<meta property="og:title" content="Marginalia — Writing Craft & Shelf Sparks">
+<meta property="og:description" content="108 prose craft cards and 1,870+ literary sparks from 400+ books. Browse online or download the Android app.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://terriblyoffendedmarketer-stack.github.io/quotes-project/">
+<meta name="theme-color" content="#111317" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f5f2" media="(prefers-color-scheme: light)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Marginalia">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232d3be8'/><text x='50%' y='68%' font-size='56' font-family='serif' font-weight='bold' fill='%23fff4df' text-anchor='middle'>M</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232d3be8'/><text x='50%' y='68%' font-size='56' font-family='serif' font-weight='bold' fill='%23fff4df' text-anchor='middle'>M</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@48,700,100,0&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -60,14 +72,65 @@ body {
 /* Studio Top Bar */
 .studio-bar { display: flex; justify-content: space-between; align-items: center; gap: 8px; border-bottom: 1px solid var(--rule); padding-bottom: 12px; margin-bottom: 4px; flex-wrap: wrap; }
 .studio-brand { display: flex; align-items: baseline; gap: 6px; }
-.studio-logo { font: 700 13px/1 var(--font-tag); letter-spacing: .08em; color: var(--ink); }
+.studio-logo { font: 700 13px/1 var(--font-tag); letter-spacing: .08em; color: var(--ink); text-decoration: none; }
 .studio-badge { font: 500 10px/1 var(--font-tag); background: var(--sheet); color: var(--ink-soft); border: 1px solid var(--rule); padding: 3px 6px; border-radius: 99px; }
 
 .studio-tabs { display: flex; gap: 3px; background: var(--sheet); padding: 3px; border: 1px solid var(--rule); border-radius: 99px; }
 .studio-tab { font: 600 11.5px/1 var(--font-tag); letter-spacing: .02em; color: var(--ink-soft); background: none; border: 0; border-radius: 99px; padding: 6px 12px; cursor: pointer; transition: all .15s ease; }
 .studio-tab[aria-pressed="true"] { color: var(--paper); background: var(--ink); }
 
+.studio-actions { display: flex; align-items: center; gap: 6px; }
+.apk-download-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  font: 700 11px/1 var(--font-tag);
+  background: var(--accent); color: #fff !important;
+  border: 1px solid var(--accent); border-radius: 99px;
+  padding: 6px 11px; text-decoration: none;
+  cursor: pointer; transition: all .15s ease;
+  white-space: nowrap;
+}
+.apk-download-btn:hover {
+  filter: brightness(1.15); transform: translateY(-1px);
+}
 .theme-btn { font: 600 11px/1 var(--font-tag); background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 99px; padding: 6px 10px; cursor: pointer; }
+
+@media (max-width: 480px) {
+  .studio-bar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 10px;
+  }
+  .studio-tabs {
+    grid-column: 1 / -1;
+    justify-content: center;
+    width: 100%;
+  }
+  .studio-tab {
+    flex: 1;
+    text-align: center;
+    padding: 7px 6px;
+    font-size: 11px;
+  }
+}
+
+/* APK Download Card Banner */
+.apk-banner-card {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px;
+  padding: 13px 16px; margin-top: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  transition: all .2s ease;
+}
+.apk-banner-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.apk-banner-title { font: 700 13px/1.2 var(--font-note); color: var(--ink); display: flex; align-items: center; gap: 6px; }
+.apk-banner-title .badge-free { font: 600 9px/1 var(--font-tag); background: rgba(45, 59, 232, 0.12); color: var(--accent); padding: 2px 6px; border-radius: 4px; }
+.apk-banner-sub { font: 400 11.5px/1.3 var(--font-note); color: var(--ink-soft); }
+.apk-banner-btn {
+  font: 700 11.5px/1 var(--font-tag); background: var(--ink); color: var(--paper) !important;
+  border-radius: 99px; padding: 8px 14px; text-decoration: none; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 4px;
+  transition: all .15s ease;
+}
+.apk-banner-btn:hover { opacity: .85; transform: translateY(-1px); }
 
 /* Phone Frame Mockup */
 .phone-ui { display: flex; flex-direction: column; gap: 12px; width: 100%; }
@@ -214,14 +277,19 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   <header class="studio-bar">
     <div class="studio-brand">
       <span class="studio-logo">MARGINALIA</span>
-      <span class="studio-badge">Visual Studio</span>
+      <span class="studio-badge">Web Edition</span>
     </div>
     <nav class="studio-tabs" aria-label="Visual Studio Views">
       <button class="studio-tab" id="studioTabApp" aria-pressed="true">📱 App Reader</button>
       <button class="studio-tab" id="studioTabWidget" aria-pressed="false">🔲 Widget</button>
       <button class="studio-tab" id="studioTabCatalog" aria-pressed="false">📚 Catalog</button>
     </nav>
-    <button class="theme-btn" id="themeBtn" type="button">🌙 Dark</button>
+    <div class="studio-actions">
+      <a href="marginalia.apk" download="marginalia.apk" class="apk-download-btn" id="apkDownloadLink" title="Download Android App (APK 3.2 MB)">
+        <span>↓</span> APK
+      </a>
+      <button class="theme-btn" id="themeBtn" type="button" title="Toggle dark/light theme">🌙 Dark</button>
+    </div>
   </header>
 
   <!-- VIEW 1: PHONE APP SIMULATOR -->
@@ -265,6 +333,20 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
     <div class="nav" style="justify-content: flex-end; margin-top: -2px;">
       <button class="toggle" id="stealToggle" type="button"></button>
     </div>
+
+    <!-- APK Download Banner Card -->
+    <aside class="apk-banner-card" aria-label="Download Android App">
+      <div class="apk-banner-text">
+        <div class="apk-banner-title">
+          <span>Marginalia for Android</span>
+          <span class="badge-free">FREE · 3.2 MB</span>
+        </div>
+        <div class="apk-banner-sub">Install the companion app for daily home-screen widgets &amp; offline reading</div>
+      </div>
+      <a href="marginalia.apk" download="marginalia.apk" class="apk-banner-btn">
+        <span>Download APK</span> ↓
+      </a>
+    </aside>
   </main>
 
   <!-- VIEW 2: HOME SCREEN WIDGET SIMULATOR -->
@@ -283,6 +365,19 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
     <span class="fine" style="text-align:center; max-width:380px;">
       Tap right on the widget to reveal the complete <strong>Scene Context</strong>. Tap <strong>[ ⇄ ]</strong> to toggle between Craft Card and Shelf Spark. Tap <strong>Open ↗</strong> to jump straight into the app.
     </span>
+
+    <aside class="apk-banner-card" style="width:100%; max-width:420px;" aria-label="Download Android App">
+      <div class="apk-banner-text">
+        <div class="apk-banner-title">
+          <span>Get this Widget on your Home Screen</span>
+          <span class="badge-free">3.2 MB</span>
+        </div>
+        <div class="apk-banner-sub">Install the APK to place Marginalia directly on your phone's home screen</div>
+      </div>
+      <a href="marginalia.apk" download="marginalia.apk" class="apk-banner-btn">
+        <span>Download APK</span> ↓
+      </a>
+    </aside>
   </main>
 
   <!-- VIEW 3: FULL HORIZONS CATALOG -->

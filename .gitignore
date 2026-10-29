@@ -5,3 +5,6 @@ content/*_raw.json
 *.env
 
 scripts/enrichment_progress.log
+/marginalia.apk
+/prototype/marginalia.apk
+!docs/marginalia.apk
