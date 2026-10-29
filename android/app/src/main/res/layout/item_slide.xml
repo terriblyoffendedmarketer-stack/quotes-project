@@ -88,9 +88,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:lineSpacingMultiplier="1.4"
+            android:fontFamily="@font/literata"
+            android:lineSpacingMultiplier="1.45"
             android:textColor="@color/ink"
-            android:textSize="17sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/spacer_bottom"

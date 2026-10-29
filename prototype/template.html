@@ -115,12 +115,13 @@ body {
 .who cite { font-style: italic; color: var(--ink); font-weight: 500; }
 
 .kicker { font-family: var(--font-tag); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
-.mini { white-space: pre-line; font-family: var(--font-line); font-size: 1rem; line-height: 1.5; color: var(--ink-soft); border-left: 2px solid var(--rule); padding-left: 12px; }
+.mini { white-space: pre-line; font-family: var(--font-line); font-size: 1.05rem; line-height: 1.55; color: var(--ink-soft); border-left: 2px solid var(--rule); padding-left: 12px; }
 mark { background: linear-gradient(transparent 12%, var(--marker) 12%, var(--marker) 88%, transparent 88%); color: var(--marker-ink); padding: 0 2px; }
-.note { font-size: 1.02rem; text-wrap: pretty; }
-.note p { margin: 0; }
+.note { font-family: var(--font-line); font-size: 1.16rem; line-height: 1.64; letter-spacing: -0.01em; color: var(--ink); text-wrap: pretty; }
+.note p { margin: 0 0 12px 0; }
+.note p:last-child { margin-bottom: 0; }
 .note strong { font-weight: 600; }
-mark.q { font-family: var(--font-line); font-style: italic; }
+mark.q { font-family: var(--font-line); font-style: italic; font-weight: 600; }
 
 .dots { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 12px 12px 14px; }
 .dots button { font: 500 11px/1 var(--font-tag); letter-spacing: .04em; color: var(--ink-soft); background: none; border: 1px solid var(--rule); border-radius: 99px; padding: 6px 9px; white-space: nowrap; cursor: pointer; }
@@ -549,15 +550,18 @@ function renderWidget() {
   $("wThemeToggle").textContent = `Theme: ${widgetTheme === 'dark' ? 'Dark' : 'Light'}`;
 
   if (widgetMode === "shelf") {
-    // Today's quote only (never cycles through random quotes on widget)
-    const todayQuote = QUOTE_BANK[0];
+    // Shelf Spark quote
+    const todayQuote = QUOTE_BANK[bankIndex] || QUOTE_BANK[0];
+    cardEl.style.backgroundColor = widgetTheme === 'dark' ? '#15171b' : '#f4f5f2';
+    cardEl.style.color = widgetTheme === 'dark' ? '#f6f5f0' : '#14161b';
+
     if (widgetShelfSlide === 0) {
       cardEl.innerHTML = `
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <span class="w-badge-pill">SHELF SPARK</span>
           <span class="w-sub">${escapeHtml(todayQuote.work)}</span>
         </div>
-        <div class="w-quote-text">“${escapeHtml(todayQuote.quote)}”</div>
+        <div class="w-quote-text" style="font-size:1.25rem;">“${escapeHtml(todayQuote.quote)}”</div>
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
           <span class="w-sub">— ${escapeHtml(todayQuote.author)}</span>
           <span class="w-sub" style="font-weight:600">Context →</span>
@@ -576,7 +580,7 @@ function renderWidget() {
           <span class="w-badge-pill">SCENE CONTEXT</span>
           <span class="w-sub">${escapeHtml(todayQuote.work)}</span>
         </div>
-        <div class="w-explanation-text">${escapeHtml(todayQuote.explanation)}</div>
+        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:1.02rem; line-height:1.5;">${escapeHtml(todayQuote.explanation)}</div>
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
           <span class="w-sub">← Line</span>
           <span class="w-sub">— ${escapeHtml(todayQuote.author)}</span>
@@ -591,11 +595,18 @@ function renderWidget() {
       `;
     }
   } else {
-    // Craft card
-    const card = CARDS[0];
-    const p = paletteFor(0);
-    cardEl.style.backgroundColor = widgetCardSlide === 0 ? p.hook : (widgetTheme === 'dark' ? '#1a1d22' : '#ffffff');
-    cardEl.style.color = widgetCardSlide === 0 ? '#fff4df' : (widgetTheme === 'dark' ? '#f6f5f0' : '#14161b');
+    // Craft card (5 distinct slides)
+    const card = CARDS[cardIndex];
+    const p = paletteFor(cardIndex);
+    
+    if (widgetCardSlide === 0) {
+      cardEl.style.backgroundColor = p.hook;
+      cardEl.style.color = '#fff4df';
+    } else {
+      const slideColor = widgetTheme === 'dark' ? p.dark[widgetCardSlide - 1] : p.light[widgetCardSlide - 1];
+      cardEl.style.backgroundColor = slideColor;
+      cardEl.style.color = widgetTheme === 'dark' ? '#f6f5f0' : '#14161b';
+    }
 
     const jobText = card.job || "";
     const hasHowTo = jobText.startsWith("How to ");
@@ -604,13 +615,52 @@ function renderWidget() {
     if (widgetCardSlide === 0) {
       cardEl.innerHTML = `
         ${hasHowTo ? `<span class="w-badge-pill" style="background:#fff4df; color:#2d3be8;">How to</span>` : ``}
-        <div class="hook-title" style="font-size:1.9rem; margin:10px 0;">${escapeHtml(hookTitle)}</div>
+        <div class="hook-title" style="font-size:1.85rem; margin:10px 0;">${escapeHtml(hookTitle)}</div>
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
           <span class="w-sub">${escapeHtml(card.author)}</span>
           <span class="w-sub">The line →</span>
         </div>
         <div class="w-footer">
-          <span>Card 1 of 5</span>
+          <span>Card 1 of 5 · Hook</span>
+          <div>
+            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnOpen">Open ↗</button>
+          </div>
+        </div>
+      `;
+    } else if (widgetCardSlide === 1) {
+      cardEl.innerHTML = `
+        <span class="w-badge-pill">THE LINE</span>
+        <div class="w-quote-text" style="font-size:1.2rem;">“${escapeHtml(card.quote)}”</div>
+        <div class="w-sub">— ${escapeHtml(card.author)}, ${escapeHtml(card.work)}</div>
+        <div class="w-footer">
+          <span>Card 2 of 5 · The Line</span>
+          <div>
+            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnOpen">Open ↗</button>
+          </div>
+        </div>
+      `;
+    } else if (widgetCardSlide === 2) {
+      cardEl.innerHTML = `
+        <span class="w-badge-pill">LOOK CLOSER</span>
+        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:1.02rem; line-height:1.5;">${escapeHtml(card.lookCloser)}</div>
+        <div class="w-sub">— ${escapeHtml(card.author)}</div>
+        <div class="w-footer">
+          <span>Card 3 of 5 · Look Closer</span>
+          <div>
+            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnOpen">Open ↗</button>
+          </div>
+        </div>
+      `;
+    } else if (widgetCardSlide === 3) {
+      cardEl.innerHTML = `
+        <span class="w-badge-pill">STEAL IT</span>
+        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:1.02rem; line-height:1.5;">${escapeHtml(card.stealIt)}</div>
+        <div class="w-sub">— Prose Craft Exercise</div>
+        <div class="w-footer">
+          <span>Card 4 of 5 · Steal It</span>
           <div>
             <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
             <button class="w-btn" id="wBtnOpen">Open ↗</button>
@@ -619,11 +669,11 @@ function renderWidget() {
       `;
     } else {
       cardEl.innerHTML = `
-        <span class="w-sub" style="font-weight:bold">THE LINE</span>
-        <div class="w-quote-text">“${escapeHtml(card.quote)}”</div>
-        <div class="w-sub">— ${escapeHtml(card.author)}, ${escapeHtml(card.work)}</div>
+        <span class="w-badge-pill">AROUND IT</span>
+        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:1.02rem; line-height:1.5;">${escapeHtml(card.aroundIt)}</div>
+        <div class="w-sub">— ${escapeHtml(card.author)}, ${escapeHtml(card.work)}${card.year ? ` · ${card.year}` : ''}</div>
         <div class="w-footer">
-          <span>Card ${widgetCardSlide + 1} of 5</span>
+          <span>Card 5 of 5 · Around It</span>
           <div>
             <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
             <button class="w-btn" id="wBtnOpen">Open ↗</button>

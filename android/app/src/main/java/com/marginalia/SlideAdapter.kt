@@ -141,7 +141,7 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
                 line.textSize = if (quote.quote.length > 220) 20f else 25f
             } else {
                 body.text = quote.explanation
-                body.textSize = 17f
+                body.textSize = 18f
             }
 
             footer.visibility = View.VISIBLE
