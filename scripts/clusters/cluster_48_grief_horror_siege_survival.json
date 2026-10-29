@@ -1,0 +1,46 @@
+{
+  "name": "Cluster 48: Grief Horror, Supermarket Siege, Climax Grit & Orbital Isolation",
+  "output_file": "content/cluster_48_grief_horror_siege_survival_raw.json",
+  "books": [
+    {
+      "remote_file": "Stephen King - Pet Sematary.epub",
+      "author": "Stephen King",
+      "work": "Pet Sematary",
+      "year": 1983,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Stephen King - The Mist.epub",
+      "author": "Stephen King",
+      "work": "The Mist",
+      "year": 1980,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Joe Abercrombie - The Last Argument of Kings .epub",
+      "author": "Joe Abercrombie",
+      "work": "The Last Argument of Kings",
+      "year": 2008,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Strange Pictures{Uketsu}.epub",
+      "author": "Uketsu",
+      "work": "Strange Pictures",
+      "year": 2022,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "Andy Weir - Project Hail Mary.epub",
+      "author": "Andy Weir",
+      "work": "Project Hail Mary",
+      "year": 2021,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

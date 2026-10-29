@@ -2,7 +2,7 @@
 
 A personal anthology of memorable lines, working passages, and craft moments mined across the owner's library, curated to rekindle enthusiasm for unread books.
 
-**Total Vetted Quotes:** 854 | **Total Books Represented:** 174
+**Total Vetted Quotes:** 874 | **Total Books Represented:** 179
 
 ---
 
@@ -2131,5 +2131,60 @@ A personal anthology of memorable lines, working passages, and craft moments min
 | “‘Comrade,’ said Snowball, ‘can you not understand that liberty is worth more than ribbons?’” | How to contrast political emancipation with superficial vanity | dialogue, contrast, parable craft |
 | “‘Donkeys live a long time. None of you has ever seen a dead donkey.’” | How to embody historical skepticism through cryptic folk wisdom | characterization, voice, understatement |
 | “But if there were hardships to be borne, they were partly offset by the fact that life nowadays had a greater dignity than it had had before. There were more songs, more speeches, more processions.” | How to expose authoritarian substitution of spectacle for substance | irony, political critique, syntax |
+
+---
+
+## Joe Abercrombie, Before They Are Hanged (2007)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “‘That’s what the hillmen call him. Death, that is. He levels all differences. Named Men and nobodies, south or north. He catches everyone in the end, and he treats each man the same.’” | How to level all social hierarchy with a single impartial noun | dialogue, fatalism, rhythm |
+| “A choice between killing and dying is no choice at all. You have to be realistic about these things.” | How to expose false dilemmas with brutal pragmatic cadence | voice, pragmatism, irony |
+| “Battles are like men. No two are ever quite the same.” | How to introduce martial complexity through home-spun simile | simile, understatement, war |
+| “Here we still cling to the ways of our forefathers. The city is yet governed by an Imperial Legate, as it was in the Old Time, not ruled by some brigand, some petty chieftain, some false Emperor.” | How to dramatize political decay through stubborn adherence to ritual | worldbuilding, irony, politics |
+
+---
+
+## Joe Hill, 20th Century Ghosts (2005)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Some silences seem to resonate with feeling. You can almost sense them trying to articulate an idea, like someone leaning toward you to whisper in your ear.” | How to give atmospheric silence the tactile weight of a human whisper | sensory detail, atmosphere, horror |
+| “It was about young people, young healthy bodies, punched full of holes and the life pouring out in arterial gouts, not a single dream realized, not a single ambition achieved.” | How to balance visceral horror against the tragedy of unlived time | contrast, visceral detail, mortality |
+| “When the typewriter jumped to life and began to write, Elena’s mother threw her hands up and shrieked and her legs wobbled under her, and Elena had to grab her by the arm to keep her from going down.” | How to register supernatural shock through immediate physical collapse | pacing, physicality, supernatural |
+| “‘He dropped it,’ she said. ‘His hands were bloody and he got it stuck in Baxter. When he tried to pull it out, it slipped out of his hands. It fell on the floor and I picked it up. That’s why he didn’t kill me. Because I had the knife.’” | How to narrate traumatic survival through staccato physical causality | suspense, staccato, syntax |
+
+---
+
+## David Wong, John Dies at the End (2007)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Imagine fifty thousand men trapped on a desert island, deprived of food and water and sex but somehow kept alive for fifty thousand years. Then, after they’ve been tormented a hundred steps beyond insanity, tortured past self-mutilation and cannibalism, somebody drops off a sculpture of a naked woman made from T-bone steaks.” | How to escalate a cosmic nightmare through grotesque comedic hyperbole | hyperbole, grotesque, dark comedy |
+| “It was madness and desperation and deprivation and torment gone supernova, screeches and howls and, sprinkled in here and there, my own name.” | How to punctuate an abstract onslaught of noise with a personal terror | sound, escalation, psychological horror |
+| “It takes so much energy to keep myself on top, on the surface, at the wheel. As soon as I relax, he’ll take over. It will take over. And I’ll just be a spectator. Helpless.” | How to dramatize the psychic fatigue of fighting off possession | metaphor, internal conflict, voice |
+| “The thing was as tall as the truck and walked on six legs that looked horned and armored like something seen at a seafood buffet.” | How to ground eldritch menace in suburban culinary banality | simile, bizarre, defamiliarization |
+
+---
+
+## Michael Crichton, Congo (1980)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “It takes too long for a man to push the button—at least 1.8 seconds, which is an eternity in modern warfare.” | How to dramatize human obsolescence with a biological fraction of a second | precision, suspense, techno-thriller |
+| “We’ve been doing it for centuries. What’s a domesticated animal—or a pocket calculator—except an attempt to give up control?” | How to link prehistoric domestication to computational surrender | juxtaposition, philosophy, dialogue |
+| “Like Stanley, the Americans lost two-thirds of their party, and emerged from the jungle as desperately as Stanley’s men a century before.” | How to haunt modern technological hubris with historical repetition | irony, history, understatement |
+| “The hair is definitely not human. Cross section doesn’t match. Some kind of animal hair, close to human.” | How to evoke biological horror through forensic laboratory staccato | dialogue, suspense, science |
+
+---
+
+## Isaac Asimov, Foundation (1951)
+
+| Line | Craft Job | Tags |
+|---|---|---|
+| “Violence is the last refuge of the incompetent.” | How to turn pacifism into an intellectual weapon with an uncompromising noun | aphorism, intellect, theme |
+| “It pays to be obvious, especially if you have a reputation for subtlety.” | How to weaponize transparency against suspicious rivals | paradox, cynicism, strategy |
+| “To succeed, planning alone is insufficient. One must improvise as well.” | How to puncture deterministic confidence with tactical necessity | balance, philosophy, action |
+| “A nuclear blaster is a good weapon, but it can point both ways.” | How to warn against technological hubris through symmetrical leverage | idiom, technology, leverage |
 
 ---

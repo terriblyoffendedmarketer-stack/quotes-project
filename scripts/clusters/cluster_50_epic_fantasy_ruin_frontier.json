@@ -1,0 +1,46 @@
+{
+  "name": "Cluster 50: Desolate Frontiers, Monastic Math, Locked-Room Decapitation & Chichikov Ruin",
+  "output_file": "content/cluster_50_epic_fantasy_ruin_frontier_raw.json",
+  "books": [
+    {
+      "remote_file": "1279240 The Gunslinger - Stephen King (Dark Tower 1).epub",
+      "author": "Stephen King",
+      "work": "The Gunslinger",
+      "year": 1982,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "1014653 Anathem - Neil Stephenson.epub",
+      "author": "Neal Stephenson",
+      "work": "Anathem",
+      "year": 2008,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "14175340 Zaregoto - Light Novel/Zaregoto - Volume 01 - The Kubikiri Cycle [Vertical][Kobo].epub",
+      "author": "Nisioisin",
+      "work": "The Kubikiri Cycle: A Decapitation Cycle",
+      "year": 2002,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "6994416 Dead_Souls_-_Nikolai_Gogol.epub",
+      "author": "Nikolai Gogol",
+      "work": "Dead Souls",
+      "year": 1842,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "8628800 The_Paper_Menagerie_and_Other_Stories_-_Ken_Liu.epub",
+      "author": "Ken Liu",
+      "work": "The Paper Menagerie and Other Stories",
+      "year": 2016,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}

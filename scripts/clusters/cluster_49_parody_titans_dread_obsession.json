@@ -1,0 +1,46 @@
+{
+  "name": "Cluster 49: Parody, Subcontinental Tragedy, Cosmic Carnage & Comic Metaphor",
+  "output_file": "content/cluster_49_parody_titans_dread_obsession_raw.json",
+  "books": [
+    {
+      "remote_file": "1035446 Fyodor Dostoyevsky/The Brothers Karamazov  - Fyodor Dostoevsky.epub",
+      "author": "Fyodor Dostoevsky",
+      "work": "The Brothers Karamazov",
+      "year": 1880,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "1382371 Breakfast_of_Champions_-_Kurt_Vonnegut_Jr.epub",
+      "author": "Kurt Vonnegut Jr.",
+      "work": "Breakfast of Champions",
+      "year": 1973,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "1440066 Gunahon_Ka_Devta_-_Dharmaveer_Bharti.epub",
+      "author": "Dharamvir Bharati",
+      "work": "Gunahon Ka Devta",
+      "year": 1949,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "1162168 Stephen King - IT.epub",
+      "author": "Stephen King",
+      "work": "IT",
+      "year": 1986,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    },
+    {
+      "remote_file": "732432 Kavalier and Clay - Michael Chabon.epub",
+      "author": "Michael Chabon",
+      "work": "The Amazing Adventures of Kavalier & Clay",
+      "year": 2000,
+      "sample_chunks": 10,
+      "max_candidates": 10
+    }
+  ]
+}
