@@ -127,6 +127,7 @@ class CardWidgetProvider : AppWidgetProvider() {
 
         data class WidgetShelfChunk(
             val label: String,
+            val pill: String,
             val text: String,
             val isLine: Boolean,
             val step: Int = 1,
@@ -135,13 +136,18 @@ class CardWidgetProvider : AppWidgetProvider() {
 
         private fun getWidgetShelfSlides(q: BankQuote, maxWords: Int = 60): List<WidgetShelfChunk> {
             val slides = mutableListOf<WidgetShelfChunk>()
-            slides.add(WidgetShelfChunk(label = "The Line", text = q.quote, isLine = true))
+            slides.add(WidgetShelfChunk(label = "The Line", pill = "THE LINE", text = q.quote, isLine = true))
 
             val paragraphs = q.explanation.split("\n\n").map { it.trim() }.filter { it.isNotEmpty() }
-            paragraphs.forEach { paragraph ->
+            paragraphs.forEachIndexed { pIdx, paragraph ->
+                val (baseLabel, basePill) = when (pIdx) {
+                    0 -> "The Predicament" to "THE PREDICAMENT"
+                    1 -> "The Mirror" to "THE MIRROR"
+                    else -> "The Insight" to "THE INSIGHT"
+                }
                 val words = paragraph.split(Regex("\\s+"))
                 if (words.size <= maxWords) {
-                    slides.add(WidgetShelfChunk(label = "Note", text = paragraph, isLine = false))
+                    slides.add(WidgetShelfChunk(label = baseLabel, pill = basePill, text = paragraph, isLine = false))
                 } else {
                     val sentences = paragraph.split(Regex("(?<=[.!?])\\s+"))
                     val chunks = mutableListOf<String>()
@@ -149,23 +155,25 @@ class CardWidgetProvider : AppWidgetProvider() {
                     var currentWordCount = 0
 
                     for (sentence in sentences) {
-                        val sentenceWords = sentence.split(Regex("\\s+")).size
-                        if (currentWordCount + sentenceWords > maxWords && currentChunk.isNotEmpty()) {
+                        val sWords = sentence.split(Regex("\\s+")).size
+                        if (currentWordCount + sWords > maxWords && currentChunk.isNotEmpty()) {
                             chunks.add(currentChunk.toString().trim())
                             currentChunk = StringBuilder(sentence)
-                            currentWordCount = sentenceWords
+                            currentWordCount = sWords
                         } else {
                             if (currentChunk.isNotEmpty()) currentChunk.append(" ")
                             currentChunk.append(sentence)
-                            currentWordCount += sentenceWords
+                            currentWordCount += sWords
                         }
                     }
                     if (currentChunk.isNotEmpty()) {
                         chunks.add(currentChunk.toString().trim())
                     }
 
-                    chunks.forEach { chunk ->
-                        slides.add(WidgetShelfChunk(label = "Note", text = chunk, isLine = false))
+                    chunks.forEachIndexed { cIdx, chunk ->
+                        val chunkLabel = if (chunks.size > 1) "$baseLabel (${cIdx + 1}/${chunks.size})" else baseLabel
+                        val chunkPill = if (chunks.size > 1) "$basePill (${cIdx + 1}/${chunks.size})" else basePill
+                        slides.add(WidgetShelfChunk(label = chunkLabel, pill = chunkPill, text = chunk, isLine = false))
                     }
                 }
             }
@@ -173,7 +181,6 @@ class CardWidgetProvider : AppWidgetProvider() {
             val total = slides.size
             return slides.mapIndexed { idx, s ->
                 s.copy(
-                    label = if (idx == 0) "The Line" else (if (total > 2) "Part $idx" else "Note"),
                     step = idx + 1,
                     total = total
                 )
@@ -327,7 +334,7 @@ class CardWidgetProvider : AppWidgetProvider() {
             views.setViewVisibility(R.id.content, View.GONE)
             views.setViewVisibility(R.id.shelf, View.VISIBLE)
 
-            val progressPill = "${current.step} OF ${current.total}"
+            val progressPill = current.pill
             val navHint = if (shelfSlide < totalSlides - 1) "Next →" else "Restart ↺"
 
             if (current.isLine) {
@@ -342,7 +349,7 @@ class CardWidgetProvider : AppWidgetProvider() {
                 views.setTextViewText(R.id.shelf_author, "— ${q.author}$yearStr")
                 views.setTextViewText(R.id.shelf_nav_hint, navHint)
 
-                views.setTextViewText(R.id.widget_progress, "${shelfSlide + 1} of $totalSlides")
+                views.setTextViewText(R.id.widget_progress, "${shelfSlide + 1} of $totalSlides · ${current.label}")
             } else {
                 // Context Slides: Segregated chunks (Full height, never cut off!)
                 views.setViewVisibility(R.id.shelf_line_layout, View.GONE)
@@ -354,7 +361,7 @@ class CardWidgetProvider : AppWidgetProvider() {
                 views.setTextViewText(R.id.shelf_context_author, "— ${q.author}")
                 views.setTextViewText(R.id.shelf_context_nav_hint, navHint)
 
-                views.setTextViewText(R.id.widget_progress, "${shelfSlide + 1} of $totalSlides")
+                views.setTextViewText(R.id.widget_progress, "${shelfSlide + 1} of $totalSlides · ${current.label}")
             }
 
             views.textColor(context, R.id.widget_progress, R.color.widget_soft)

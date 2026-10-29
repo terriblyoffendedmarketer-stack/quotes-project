@@ -115,7 +115,10 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             val bg = ContextCompat.getColor(context, R.color.sheet)
             itemView.setBackgroundColor(bg)
 
-            hookPill.visibility = View.GONE
+            hookPill.visibility = View.VISIBLE
+            hookPill.setBackgroundResource(R.drawable.shelf_badge)
+            hookPill.text = shelfSlide.pill
+            hookPill.setTextColor(ContextCompat.getColor(context, R.color.shelf_badge_text))
 
             hookTitle.visibility = View.GONE
             hookAuthor.visibility = View.GONE

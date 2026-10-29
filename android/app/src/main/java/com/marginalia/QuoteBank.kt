@@ -39,6 +39,7 @@ object Horizons {
 
 data class ShelfSlide(
     val label: String,
+    val pill: String,
     val text: String,
     val isLine: Boolean
 )
@@ -58,13 +59,18 @@ object QuoteBank {
 
     fun slidesFor(quote: BankQuote, maxWords: Int = 85): List<ShelfSlide> {
         val slides = mutableListOf<ShelfSlide>()
-        slides.add(ShelfSlide(label = "The Line", text = quote.quote, isLine = true))
+        slides.add(ShelfSlide(label = "The Line", pill = "THE LINE", text = quote.quote, isLine = true))
 
         val paragraphs = quote.explanation.split("\n\n").map { it.trim() }.filter { it.isNotEmpty() }
-        paragraphs.forEach { paragraph ->
+        paragraphs.forEachIndexed { pIdx, paragraph ->
+            val (baseLabel, basePill) = when (pIdx) {
+                0 -> "The Predicament" to "THE PREDICAMENT"
+                1 -> "The Mirror" to "THE MIRROR"
+                else -> "The Insight" to "THE INSIGHT"
+            }
             val words = paragraph.split(Regex("\\s+"))
             if (words.size <= maxWords) {
-                slides.add(ShelfSlide(label = "Note", text = paragraph, isLine = false))
+                slides.add(ShelfSlide(label = baseLabel, pill = basePill, text = paragraph, isLine = false))
             } else {
                 val sentences = paragraph.split(Regex("(?<=[.!?])\\s+"))
                 val chunks = mutableListOf<String>()
@@ -87,16 +93,15 @@ object QuoteBank {
                     chunks.add(currentChunk.toString().trim())
                 }
 
-                chunks.forEach { chunk ->
-                    slides.add(ShelfSlide(label = "Note", text = chunk, isLine = false))
+                chunks.forEachIndexed { cIdx, chunk ->
+                    val chunkLabel = if (chunks.size > 1) "$baseLabel (${cIdx + 1}/${chunks.size})" else baseLabel
+                    val chunkPill = if (chunks.size > 1) "$basePill (${cIdx + 1}/${chunks.size})" else basePill
+                    slides.add(ShelfSlide(label = chunkLabel, pill = chunkPill, text = chunk, isLine = false))
                 }
             }
         }
 
-        val total = slides.size
-        return slides.mapIndexed { idx, s ->
-            s.copy(label = if (idx == 0) "The Line" else (if (total > 2) "Part $idx" else "Note"))
-        }
+        return slides
     }
 
     fun all(context: Context): List<BankQuote> =

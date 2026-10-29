@@ -35,7 +35,7 @@
                 android:paddingTop="6dp"
                 android:paddingEnd="12dp"
                 android:paddingBottom="6dp"
-                android:text="Daily Cards"
+                android:text="Prose Craft"
                 android:textColor="@color/pill_active_text"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -49,7 +49,7 @@
                 android:paddingTop="6dp"
                 android:paddingEnd="12dp"
                 android:paddingBottom="6dp"
-                android:text="Quote Bank"
+                android:text="Shelf Sparks"
                 android:textColor="@color/pill_inactive_text"
                 android:textSize="12sp"
                 android:textStyle="bold" />

@@ -91,7 +91,7 @@ body {
 .deck { min-width: 0; background: var(--sheet); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
 .track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
 .track::-webkit-scrollbar { display: none; }
-.slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; padding: 26px 24px 30px; min-height: 480px; display: flex; flex-direction: column; gap: 16px; }
+.slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; padding: 26px 24px 30px; min-height: 480px; max-height: 560px; overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: thin; display: flex; flex-direction: column; gap: 16px; }
 
 .slide.hook { background: var(--s-hook); color: var(--hook-ink); }
 .slide.line-s { background: var(--s-line); }
@@ -106,7 +106,7 @@ body {
 
 .hook-title { font-family: var(--font-hook); font-weight: 700; font-variation-settings: "opsz" 48, "SOFT" 100, "WONK" 0; font-size: clamp(2.4rem, 12vw, 3.2rem); line-height: 1.04; letter-spacing: -.01em; text-wrap: balance; margin: auto 0; }
 .hook-foot { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font: 500 14px/1.2 var(--font-note); color: var(--hook-soft); }
-.hook-foot span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hook-foot span:first-child { min-width: 0; }
 .fine { font-size: 12px; font-style: italic; color: var(--ink-soft); margin-top: -10px; }
 .job { font-family: var(--font-tag); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
 .line { white-space: pre-line; font-family: var(--font-line); font-size: 1.45rem; line-height: 1.42; text-wrap: pretty; margin: auto 0; }
@@ -228,8 +228,8 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   <main id="viewApp" class="phone-ui">
     <div class="app-header">
       <div class="app-mode-toggle">
-        <button class="app-mode-btn active" id="appModeCards" type="button">Daily Cards</button>
-        <button class="app-mode-btn" id="appModeBank" type="button">Quote Bank</button>
+        <button class="app-mode-btn active" id="appModeCards" type="button">Prose Craft</button>
+        <button class="app-mode-btn" id="appModeBank" type="button">Shelf Sparks</button>
       </div>
       <div class="app-actions">
         <button class="chip-btn" id="appBtnSurprise" type="button" style="display:none">🎲 Surprise</button>
@@ -546,6 +546,8 @@ function getShelfSlides(q, maxWords = 60) {
 
   slides.push({
     type: "line",
+    label: "The Line",
+    pill: "THE LINE",
     text: q.quote,
     work: q.work,
     author: q.author,
@@ -555,12 +557,16 @@ function getShelfSlides(q, maxWords = 60) {
 
   const paragraphs = (q.explanation || "").split("\n\n").map(p => p.trim()).filter(Boolean);
 
-  paragraphs.forEach((p) => {
+  paragraphs.forEach((p, pIdx) => {
+    const baseLabel = pIdx === 0 ? "The Predicament" : (pIdx === 1 ? "The Mirror" : "The Insight");
+    const basePill = pIdx === 0 ? "THE PREDICAMENT" : (pIdx === 1 ? "THE MIRROR" : "THE INSIGHT");
     const words = p.split(/\s+/);
 
     if (words.length <= maxWords) {
       slides.push({
         type: "text",
+        label: baseLabel,
+        pill: basePill,
         text: p,
         work: q.work,
         author: q.author
@@ -586,9 +592,13 @@ function getShelfSlides(q, maxWords = 60) {
         chunks.push(currentChunk.trim());
       }
 
-      chunks.forEach((chunk) => {
+      chunks.forEach((chunk, cIdx) => {
+        const chunkLabel = chunks.length > 1 ? `${baseLabel} (${cIdx + 1}/${chunks.length})` : baseLabel;
+        const chunkPill = chunks.length > 1 ? `${basePill} (${cIdx + 1}/${chunks.length})` : basePill;
         slides.push({
           type: "text",
+          label: chunkLabel,
+          pill: chunkPill,
           text: chunk,
           work: q.work,
           author: q.author
@@ -600,7 +610,6 @@ function getShelfSlides(q, maxWords = 60) {
   slides.forEach((s, idx) => {
     s.step = idx + 1;
     s.total = slides.length;
-    s.label = idx === 0 ? "The Line" : (slides.length > 2 ? `Part ${idx}` : "Note");
   });
 
   return slides;
@@ -620,7 +629,7 @@ function renderBankDeck() {
     if (s.type === "line") {
       return `
         <div class="slide bank-line">
-          <span class="kicker">${escapeHtml(s.work.toUpperCase())} · 1 OF ${totalSlides}</span>
+          <span class="kicker">${escapeHtml(s.work.toUpperCase())} · ${escapeHtml(s.pill)}</span>
           <div class="line" style="font-size: ${s.quoteSize}; line-height: 1.35;">“${escapeHtml(s.text)}”</div>
           <div class="who">${escapeHtml(s.author)}, <cite>${escapeHtml(s.work)}</cite>${s.year ? ` · ${s.year}` : ''}</div>
           <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
@@ -629,7 +638,7 @@ function renderBankDeck() {
     } else {
       return `
         <div class="slide bank-context">
-          <span class="kicker">${escapeHtml(s.work.toUpperCase())} · ${idx + 1} OF ${totalSlides}</span>
+          <span class="kicker">${escapeHtml(s.work.toUpperCase())} · ${escapeHtml(s.pill)}</span>
           <div class="note" style="font-size:1.06rem; line-height:1.62; margin: auto 0;"><p>${escapeHtml(s.text)}</p></div>
           <div class="who">${escapeHtml(s.author)}, <cite>${escapeHtml(s.work)}</cite></div>
           <div class="job">#${escapeHtml(q.horizon)} ${q.tags ? q.tags.map(t => `#${t}`).join(' ') : ''}</div>
@@ -676,7 +685,7 @@ function renderWidget() {
       cardEl.innerHTML = `
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <span class="w-sub" style="font-weight:700; text-transform:uppercase; letter-spacing:.08em;">${escapeHtml(todayQuote.work)}</span>
-          <span class="w-badge-pill" style="font-size:10px; padding:3px 8px;">1 OF ${totalSlides}</span>
+          <span class="w-badge-pill" style="font-size:10px; padding:3px 8px;">${escapeHtml(current.pill)}</span>
         </div>
         <div class="w-quote-text" style="font-size:${current.quoteSize}; line-height:1.36; flex:1; display:flex; align-items:center;">“${escapeHtml(current.text)}”</div>
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
@@ -684,9 +693,9 @@ function renderWidget() {
           <span class="w-sub" style="font-weight:600">Next →</span>
         </div>
         <div class="w-footer">
-          <span>1 of ${totalSlides}</span>
+          <span>1 of ${totalSlides} · ${escapeHtml(current.label)}</span>
           <div>
-            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnModeToggle">⇄ Craft</button>
             <button class="w-btn" id="wBtnOpen">Open ↗</button>
           </div>
         </div>
@@ -695,7 +704,7 @@ function renderWidget() {
       cardEl.innerHTML = `
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <span class="w-sub" style="font-weight:700; text-transform:uppercase; letter-spacing:.08em;">${escapeHtml(todayQuote.work)}</span>
-          <span class="w-badge-pill" style="font-size:10px; padding:3px 8px;">${widgetShelfSlide + 1} OF ${totalSlides}</span>
+          <span class="w-badge-pill" style="font-size:10px; padding:3px 8px;">${escapeHtml(current.pill)}</span>
         </div>
         <div class="w-explanation-text" style="font-family:var(--font-line); font-size:0.95rem; line-height:1.46; overflow:hidden; flex:1; display:flex; align-items:center;">
           <p style="margin:0;">${escapeHtml(current.text)}</p>
@@ -705,9 +714,9 @@ function renderWidget() {
           <span class="w-sub" style="font-weight:600">${widgetShelfSlide < totalSlides - 1 ? 'Next →' : 'Restart ↺'}</span>
         </div>
         <div class="w-footer">
-          <span>${widgetShelfSlide + 1} of ${totalSlides}</span>
+          <span>${widgetShelfSlide + 1} of ${totalSlides} · ${escapeHtml(current.label)}</span>
           <div>
-            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnModeToggle">⇄ Craft</button>
             <button class="w-btn" id="wBtnOpen">Open ↗</button>
           </div>
         </div>
@@ -742,7 +751,7 @@ function renderWidget() {
         <div class="w-footer">
           <span>Card 1 of 5 · Hook</span>
           <div>
-            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnModeToggle">⇄ Shelf</button>
             <button class="w-btn" id="wBtnOpen">Open ↗</button>
           </div>
         </div>
@@ -755,7 +764,7 @@ function renderWidget() {
         <div class="w-footer">
           <span>Card 2 of 5 · The Line</span>
           <div>
-            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnModeToggle">⇄ Shelf</button>
             <button class="w-btn" id="wBtnOpen">Open ↗</button>
           </div>
         </div>
@@ -763,12 +772,12 @@ function renderWidget() {
     } else if (widgetCardSlide === 2) {
       cardEl.innerHTML = `
         <span class="w-badge-pill">LOOK CLOSER</span>
-        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:1.02rem; line-height:1.5;">${escapeHtml(card.lookCloser)}</div>
+        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:0.90rem; line-height:1.42;">${escapeHtml(card.lookCloser)}</div>
         <div class="w-sub">— ${escapeHtml(card.author)}</div>
         <div class="w-footer">
           <span>Card 3 of 5 · Look Closer</span>
           <div>
-            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnModeToggle">⇄ Shelf</button>
             <button class="w-btn" id="wBtnOpen">Open ↗</button>
           </div>
         </div>
@@ -776,12 +785,12 @@ function renderWidget() {
     } else if (widgetCardSlide === 3) {
       cardEl.innerHTML = `
         <span class="w-badge-pill">STEAL IT</span>
-        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:1.02rem; line-height:1.5;">${escapeHtml(card.stealIt)}</div>
+        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:0.90rem; line-height:1.42;">${escapeHtml(card.stealIt)}</div>
         <div class="w-sub">— Prose Craft Exercise</div>
         <div class="w-footer">
           <span>Card 4 of 5 · Steal It</span>
           <div>
-            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnModeToggle">⇄ Shelf</button>
             <button class="w-btn" id="wBtnOpen">Open ↗</button>
           </div>
         </div>
@@ -789,12 +798,12 @@ function renderWidget() {
     } else {
       cardEl.innerHTML = `
         <span class="w-badge-pill">AROUND IT</span>
-        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:1.02rem; line-height:1.5;">${escapeHtml(card.aroundIt)}</div>
+        <div class="w-explanation-text" style="font-family:var(--font-line); font-size:0.90rem; line-height:1.42;">${escapeHtml(card.aroundIt)}</div>
         <div class="w-sub">— ${escapeHtml(card.author)}, ${escapeHtml(card.work)}${card.year ? ` · ${card.year}` : ''}</div>
         <div class="w-footer">
           <span>Card 5 of 5 · Around It</span>
           <div>
-            <button class="w-btn" id="wBtnModeToggle">[ ⇄ ]</button>
+            <button class="w-btn" id="wBtnModeToggle">⇄ Shelf</button>
             <button class="w-btn" id="wBtnOpen">Open ↗</button>
           </div>
         </div>
