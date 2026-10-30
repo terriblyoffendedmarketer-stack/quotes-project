@@ -28,6 +28,7 @@ class MainActivity : Activity() {
     // Daily View elements
     private lateinit var pager: ViewPager2
     private lateinit var tabs: LinearLayout
+    private lateinit var tabsScroll: HorizontalScrollView
     private lateinit var dayLabel: TextView
     private lateinit var count: TextView
     private lateinit var stealToggle: TextView
@@ -77,6 +78,7 @@ class MainActivity : Activity() {
         // Daily View
         pager = findViewById(R.id.pager)
         tabs = findViewById(R.id.tabs)
+        tabsScroll = findViewById(R.id.tabs_scroll)
         dayLabel = findViewById(R.id.day_label)
         count = findViewById(R.id.count)
         stealToggle = findViewById(R.id.steal_toggle)
@@ -485,6 +487,7 @@ class MainActivity : Activity() {
         stealToggle.text = getString(if (Prefs.showSteal(this)) R.string.hide_steal else R.string.show_steal)
 
         tabs.removeAllViews()
+        tabsScroll.scrollTo(0, 0)
         cardSlides.forEachIndexed { i, s ->
             val tab = layoutInflater.inflate(R.layout.tab_chip, tabs, false) as TextView
             tab.text = s.label
@@ -516,6 +519,7 @@ class MainActivity : Activity() {
         count.text = "${bankIndex + 1} / ${quotes.size}  ·  $horizonTitle"
 
         tabs.removeAllViews()
+        tabsScroll.scrollTo(0, 0)
         currentSlides.forEachIndexed { i, s ->
             val tab = layoutInflater.inflate(R.layout.tab_chip, tabs, false) as TextView
             tab.text = s.label
@@ -533,6 +537,11 @@ class MainActivity : Activity() {
             val active = i == position
             tab.isSelected = active
             tab.setTextColor(ContextCompat.getColor(this, if (active) R.color.ink else R.color.ink_soft))
+        }
+        tabs.post {
+            val selectedTab = tabs.getChildAt(position) ?: return@post
+            val targetScrollX = selectedTab.left - (tabsScroll.width - selectedTab.width) / 2
+            tabsScroll.smoothScrollTo(targetScrollX.coerceAtLeast(0), 0)
         }
     }
 

@@ -58,6 +58,7 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
 
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
         private val hookPill: TextView = view.findViewById(R.id.hook_pill)
+        private val stepCounter: TextView = view.findViewById(R.id.slide_step_counter)
         private val hookTitle: TextView = view.findViewById(R.id.hook_title)
         private val hookAuthor: TextView = view.findViewById(R.id.hook_author)
         private val kicker: TextView = view.findViewById(R.id.slide_kicker)
@@ -73,22 +74,39 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             val isHook = slide == Slide.HOOK
             val isLine = slide == Slide.LINE
             itemView.setBackgroundColor(colors.color(itemView.context, slide))
-            hookPill.setBackgroundResource(R.drawable.hook_pill)
-            hookPill.setTextColor(colors.hook)
-            hookPill.visibility = if (isHook && Slide.hasHowTo(card)) View.VISIBLE else View.GONE
+
+            stepCounter.visibility = View.VISIBLE
+            stepCounter.text = "${position + 1} OF $total"
+
+            if (isHook) {
+                hookPill.visibility = if (Slide.hasHowTo(card)) View.VISIBLE else View.GONE
+                hookPill.text = "HOW TO"
+                hookPill.setBackgroundResource(R.drawable.hook_pill)
+                hookPill.setTextColor(colors.hook)
+                hookPill.textSize = 12f
+                stepCounter.setTextColor(ContextCompat.getColor(itemView.context, R.color.hook_soft))
+                kicker.visibility = View.GONE
+            } else {
+                hookPill.visibility = View.VISIBLE
+                hookPill.setBackgroundResource(R.drawable.shelf_badge)
+                hookPill.text = slide.label.uppercase()
+                hookPill.setTextColor(ContextCompat.getColor(itemView.context, R.color.ink))
+                hookPill.textSize = 10.5f
+                stepCounter.setTextColor(ContextCompat.getColor(itemView.context, R.color.ink_soft))
+                kicker.visibility = View.GONE
+            }
+
             hookTitle.visibility = if (isHook) View.VISIBLE else View.GONE
             hookAuthor.visibility = hookTitle.visibility
             hookAuthor.text = card.author
-            kicker.visibility = if (isHook) View.GONE else View.VISIBLE
             line.visibility = if (isLine) View.VISIBLE else View.GONE
             body.visibility = if (isHook || isLine) View.GONE else View.VISIBLE
-            spacerTop.visibility = if (isHook || isLine) View.VISIBLE else View.GONE
+            spacerTop.visibility = View.VISIBLE
             spacerBottom.visibility = View.VISIBLE
             mini.visibility = if (slide == Slide.LOOK) View.VISIBLE else View.GONE
             footer.visibility = if (isHook) View.GONE else View.VISIBLE
             job.visibility = footer.visibility
 
-            kicker.text = "${slide.label.uppercase()}  ·  ${position + 1} OF $total"
             when {
                 isHook -> hookTitle.text = slide.body(itemView.context, card)
                 isLine -> {
@@ -119,13 +137,18 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             hookPill.setBackgroundResource(R.drawable.shelf_badge)
             hookPill.text = shelfSlide.pill
             hookPill.setTextColor(ContextCompat.getColor(context, R.color.shelf_badge_text))
+            hookPill.textSize = 10.5f
+
+            stepCounter.visibility = View.VISIBLE
+            stepCounter.text = "${position + 1} OF $total"
+            stepCounter.setTextColor(ContextCompat.getColor(context, R.color.ink_soft))
 
             hookTitle.visibility = View.GONE
             hookAuthor.visibility = View.GONE
             mini.visibility = View.GONE
 
             kicker.visibility = View.VISIBLE
-            kicker.text = "${quote.work.uppercase()}  ·  ${position + 1} OF $total"
+            kicker.text = quote.work.uppercase()
             kicker.setTextColor(ContextCompat.getColor(context, R.color.ink_soft))
 
             spacerTop.visibility = View.VISIBLE

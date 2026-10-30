@@ -1,7 +1,7 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 10 (Web App Edition & Android Library Parity Deployment)  
-> **Current**: Aligned Android mobile app with web preview edition. Replaced cramped top buttons with top-level studio tabs (`✨ Daily` vs `📖 All Quotes`). Segregated Daily reader from The Library. Implemented full scrollable quotes stream via `RecyclerView` (`QuoteCardAdapter`) with live search, thematic horizons bar, expandable 2-tier companion notes, hashtag filtering, Read Next queue, and direct "Read in Daily" jump. Recompiled signed release APK (`marginalia.apk`).  
+> **Current**: Fixed bottom slide tab clipping and locked scroll by removing `center_horizontal` trap from `HorizontalScrollView` and adding smooth auto-centering on tab change. Fixed step counter text bleeding (`2 OF 5`) by separating it into a dedicated top-right view and locking book titles to a single ellipsize line. Recompiled signed release APK (`marginalia.apk`).  
 > **Next**: Task 2 — resume quote explanations enrichment once Gemini quota resets or when API key is rotated.
 
 ## Roadmap
