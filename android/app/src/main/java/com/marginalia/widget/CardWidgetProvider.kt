@@ -357,7 +357,7 @@ class CardWidgetProvider : AppWidgetProvider() {
 
                 views.setTextViewText(R.id.shelf_context_book, q.work)
                 views.setTextViewText(R.id.shelf_context_pill, progressPill)
-                views.setTextViewText(R.id.shelf_explanation, current.text)
+                views.setTextViewText(R.id.shelf_explanation, Markup.render(current.text))
                 views.setTextViewText(R.id.shelf_context_author, "— ${q.author}")
                 views.setTextViewText(R.id.shelf_context_nav_hint, navHint)
 

@@ -139,6 +139,7 @@
                     android:autoSizeMinTextSize="10sp"
                     android:autoSizeStepGranularity="0.5sp"
                     android:autoSizeTextType="uniform"
+                    android:fontFamily="serif"
                     android:gravity="top"
                     android:lineSpacingMultiplier="1.25"
                     android:textColor="@color/widget_text"
@@ -150,6 +151,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:ellipsize="end"
+                    android:fontFamily="sans-serif-medium"
                     android:maxLines="2"
                     android:textColor="@color/widget_soft"
                     android:textSize="13sp" />
@@ -161,6 +163,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:ellipsize="end"
+                    android:fontFamily="sans-serif-medium"
                     android:maxLines="1"
                     android:textColor="@color/widget_soft"
                     android:textSize="11sp"
@@ -249,6 +252,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:ellipsize="end"
+                            android:fontFamily="sans-serif-medium"
                             android:maxLines="1"
                             android:textColor="@color/widget_soft"
                             android:textSize="12sp" />
@@ -322,6 +326,7 @@
                         android:autoSizeMinTextSize="11sp"
                         android:autoSizeStepGranularity="1sp"
                         android:autoSizeTextType="uniform"
+                        android:fontFamily="serif"
                         android:gravity="center_vertical"
                         android:lineSpacingMultiplier="1.25"
                         android:textColor="@color/widget_text" />
@@ -339,6 +344,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:ellipsize="end"
+                            android:fontFamily="sans-serif-medium"
                             android:maxLines="1"
                             android:textColor="@color/widget_soft"
                             android:textSize="12sp" />

@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 10 (Web App Edition & Android Library Parity Deployment)  
-> **Current**: Fixed bottom slide tab clipping and locked scroll by removing `center_horizontal` trap from `HorizontalScrollView` and adding smooth auto-centering on tab change. Fixed step counter text bleeding (`2 OF 5`) by separating it into a dedicated top-right view and locking book titles to a single ellipsize line. Recompiled signed release APK (`marginalia.apk`).  
-> **Next**: Task 2 — resume quote explanations enrichment once Gemini quota resets or when API key is rotated.
+> **Current**: Elevated widget typography for Shelf mode: applied `fontFamily="serif"` to `shelf_explanation` and `slide_note`, and `fontFamily="sans-serif-medium"` to author/attribution lines while strictly maintaining the auto-sizing bounds (`11sp`–`18sp`). Recompiled signed release APK (`marginalia.apk`).  
+> **Next**: User verification of widget typography & resuming quote explanations enrichment for remaining quotes.
 
 ## Roadmap
 
