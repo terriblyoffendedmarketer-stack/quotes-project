@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 10 (Web App Edition & Android Library Parity Deployment)  
-> **Current**: Elevated widget typography for Shelf mode: applied `fontFamily="serif"` to `shelf_explanation` and `slide_note`, and `fontFamily="sans-serif-medium"` to author/attribution lines while strictly maintaining the auto-sizing bounds (`11sp`–`18sp`). Recompiled signed release APK (`marginalia.apk`).  
-> **Next**: User verification of widget typography & resuming quote explanations enrichment for remaining quotes.
+> **Current**: Added Khushwant Singh craft card to `content/cards.json` (113 cards total, 0 linter flags). Integrated user Kindle highlights into `content/quote-bank.json` across Cixin Liu (*The Three-Body Problem* slender-girl callback trilogy), Oliver Burkeman (*Four Thousand Weeks* planning lasso & freedom to suck), and Khushwant Singh (*Train to Pakistan* Mano Majra). All quotes sized between 35-55 words with rich 2-tier companion notes.  
+> **Next**: Re-run background quote enrichment pipeline when API quotas reset, and continue content curation.
 
 ## Roadmap
 

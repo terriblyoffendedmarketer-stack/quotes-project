@@ -1,14 +1,17 @@
-Explain this quote from {work} by {author}:
+You are writing a literary companion note for this quote from {work} by {author}:
 "{quote}"
 
-Write a companion note in two distinct, flowing paragraphs (~120–160 words).
+Write a companion note in exactly two distinct, flowing paragraphs (~120–180 words total).
 
 PARAGRAPH 1 (The Character & The Predicament):
-- Ground us immediately in the character's immediate predicament. 
-- Avoid decorative atmosphere: only describe the physical environment if it is the direct source of danger (like a telescreen or a frozen road). If the quote is about a moral, emotional, or psychological dilemma, focus directly on who the character is, the defense mechanism they are hiding behind, and the pressure they are facing.
+- Ground us immediately in the character's or reader's immediate predicament.
+- Avoid decorative atmosphere: only describe the physical environment if it is the direct source of danger (like a telescreen or a frozen road). If the quote is about a moral, emotional, or psychological dilemma, focus directly on the defense mechanism being hidden behind, the quiet delusion, and the immediate pressure being faced.
 - Make the stakes and tension crystal clear without spoiling what happens later in the book.
 
 PARAGRAPH 2 (The Author's Intent & The Human Reality):
-- Do NOT re-state the plot danger or situation from Paragraph 1. 
-- Touch on what the author is trying to reveal about human nature, power, morality, or grief.
-- Unpack the core line or concept of the quote: why this human flaw or truth is so universal, and how the quote cuts straight to the bone.
+- Do NOT re-state the situation or plot danger from Paragraph 1.
+- Move from the specific scene to what the author is trying to reveal about human nature, power, morality, avoidance, or grief.
+- Unpack the core concept of the quote: why this human flaw or truth is so universal, and how the quote cuts straight to the bone.
+
+OUTPUT FORMAT:
+Respond with ONLY the two paragraphs separated by a single blank line. Do NOT output any titles, labels (no 'Paragraph 1', no 'The Predicament'), headings, bullet points, or markdown dividers.

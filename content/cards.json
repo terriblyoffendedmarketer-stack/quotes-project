@@ -1045,7 +1045,7 @@
   {
     "id": "king-on-writing-reading",
     "job": "How to close an argument in three words",
-    "quote": "If you don't have time to read, you don't have the time (or the tools) to write. Simple as that.",
+    "quote": "If you want to be a writer, you must do two things above all others: read a lot and write a lot. There's no way around these two things that I've seen, no shortcut... If you don't have the time to read, you don't have the time (or the tools) to write. Simple as that.",
     "author": "Stephen King",
     "work": "On Writing: A Memoir of the Craft",
     "year": 2000,
@@ -1054,7 +1054,7 @@
       "(or the tools)",
       "Simple as that."
     ],
-    "lookCloser": "The sentence is built like a trap. You think it's about time, which everyone says they lack, and the brackets slip in a second, harder point. Reading is where the tools come from. Then “Simple as that” shuts the door. There's no “I think” and no room for the excuse you were forming. Three words that sound like a man putting his coffee down.",
+    "lookCloser": "The sentence is built like a trap. First he sets the rule. Read a lot and write a lot. Then you think it's about time, which everyone says they lack, but the brackets slip in a second, harder point. Reading is where the tools come from. Then “Simple as that” shuts the door. There's no “I think” and no room for excuses. Three words that sound like a man putting his coffee down.",
     "stealIt": "After your strongest claim, add a short closer that refuses to debate it, like “Simple as that” or “That's the job.” Use it once per piece at most.",
     "aroundIt": "King says he reads seventy or eighty books a year, mostly fiction, and takes one everywhere, including the dentist's waiting room. He wrote his early novels in the laundry room of a rented trailer. He threw an early draft of *Carrie* in the bin, and his wife, Tabitha, fished it out and told him to finish it. It became his first published novel.",
     "verification": "Checked against published excerpts.",
@@ -2014,5 +2014,102 @@
     "aroundIt": "Burkeman calls this principle “the joy of missing out”, drawing on the existentialist idea of finitude. Before writing the book, he spent years testing productivity systems before concluding that efficiency merely increases the volume of trivial obligations.",
     "stealIt": "Take a worry your reader views as a personal flaw, like running out of energy or leaving things undone. Prove with cold arithmetic that the shortfall is mathematically unavoidable. Exposing the impossible standard dissolves the guilt.",
     "verification": "Checked against the 2021 Farrar, Straus and Giroux edition."
+  },
+  {
+    "id": "king-the-body-hardest-to-say",
+    "job": "How to describe the gap between thought and language",
+    "quote": "The most important things are the hardest to say. They are the things you get ashamed of, because words diminish them—words shrink things that seemed limitless when they were in your head to no more than living size when they’re brought out.",
+    "author": "Stephen King",
+    "work": "The Body",
+    "year": 1982,
+    "translator": null,
+    "highlights": [
+      "words diminish them",
+      "no more than living size"
+    ],
+    "lookCloser": "Notice the physical verbs King uses for language. Words shrink and diminish. He treats an inner feeling like something vast that gets crammed into a smaller box. Speech itself makes your deepest experience ordinary.",
+    "stealIt": "Describe a character struggling to speak by focusing on scale. Show their secret feeling as vast inside their head, and language as the awkward tool that reduces it to household dimensions.",
+    "aroundIt": "The novella appeared in *Different Seasons*, a collection of four non-horror stories. Rob Reiner adapted it into the 1986 film *Stand by Me*. King wept during a private screening, later calling it the first completely successful film adaptation of his work.",
+    "verification": "Opening lines of the novella.",
+    "lintAccepted": [
+      "possible triad"
+    ]
+  },
+  {
+    "id": "nabokov-speak-memory-crack-of-light",
+    "job": "How to open a memoir with cosmic scale",
+    "quote": "The cradle rocks above an abyss, and common sense tells us that our existence is but a brief crack of light between two eternities of darkness.",
+    "author": "Vladimir Nabokov",
+    "work": "Speak, Memory",
+    "year": 1951,
+    "translator": null,
+    "highlights": [
+      "The cradle rocks above an abyss",
+      "a brief crack of light"
+    ],
+    "lookCloser": "The opening sentence pairs a nursery object with the void. A rocking cradle usually suggests safety, but here it tilts directly over emptiness. Nabokov frames the entire human lifetime as a tiny slit in a dark wall, turning every remembered detail that follows into an urgent treasure.",
+    "stealIt": "Set a private memoir against an immense cosmic background in your opening sentence. Contrast a fragile domestic object with something bottomless to raise the stakes of your memories.",
+    "aroundIt": "Nabokov began writing the memoir in French in Paris, completed it in English in America, then translated it into Russian before revising it back into English. He described memory as an act of defiance against time.",
+    "verification": "First sentence of Chapter One.",
+    "lintAccepted": [
+      "possible triad"
+    ]
+  },
+  {
+    "id": "baldwin-giovannis-room-home",
+    "job": "How to define home through exile",
+    "quote": "You don’t have a home until you leave it and then, when you have left it, you never go back.",
+    "author": "James Baldwin",
+    "work": "Giovanni’s Room",
+    "year": 1956,
+    "translator": null,
+    "highlights": [
+      "until you leave it",
+      "you never go back"
+    ],
+    "lookCloser": "Baldwin delivers a paradox with absolute economy. Leaving is the condition for understanding where you came from, yet departure permanently alters the person who left. The repetition of the word home makes the sentence circle like an exile who cannot land.",
+    "stealIt": "Write about belonging through subtraction. Show that a character only recognizes their roots when distance makes returning impossible, building the cadence around a repeated noun.",
+    "aroundIt": "Baldwin wrote the novel while living in Paris, away from the racial terror of 1950s America. His publisher initially told him to burn the manuscript because its frank portrayal of gay love would ruin his career.",
+    "verification": "Part One of the novel.",
+    "lintAccepted": [
+      "possible triad"
+    ]
+  },
+  {
+    "id": "woolf-to-the-lighthouse-matches",
+    "job": "How to replace grand meaning with small illuminations",
+    "quote": "What is the meaning of life? That was all—a simple question that would press upon one with years... The great revelation had never come. The great revelation perhaps never came. Instead there were little daily miracles, illuminations, matches struck unexpectedly in the dark.",
+    "author": "Virginia Woolf",
+    "work": "To the Lighthouse",
+    "year": 1927,
+    "translator": null,
+    "highlights": [
+      "The great revelation perhaps never came",
+      "matches struck unexpectedly in the dark"
+    ],
+    "lookCloser": "Woolf asks the largest question possible and dismisses it in the same breath. She repeats the phrase about revelation to let its grandeur crumble. In its place she leaves a sensory image. A match flares in pitch black, bright and temporary.",
+    "stealIt": "Puncture a lofty philosophical question with a concrete sensory image. Reject the search for one permanent answer in favor of small, fleeting moments of clarity.",
+    "aroundIt": "The character Lily Briscoe stands at her easel throughout the novel, trying to capture the elusive presence of Mrs. Ramsay. Woolf said writing the book allowed her to lay the ghost of her own mother to rest.",
+    "verification": "Part Three: The Lighthouse.",
+    "lintAccepted": [
+      "possible triad"
+    ]
+  },
+  {
+    "id": "singh-train-to-pakistan-both-sides",
+    "job": "How to strip an atrocity of its excuses",
+    "quote": "Muslims said the Hindus had planned and started the killing. According to the Hindus, the Muslims were to blame. The fact is, both sides killed. Both shot and stabbed and speared and clubbed. Both tortured. Both raped.",
+    "author": "Khushwant Singh",
+    "work": "Train to Pakistan",
+    "year": 1956,
+    "translator": null,
+    "highlights": [
+      "The fact is, both sides killed",
+      "Both shot and stabbed and speared and clubbed"
+    ],
+    "lookCloser": "Singh strips away political rationalizations by hammering the reader with monosyllabic verbs. He links four violent actions with the word and, refusing commas or pauses. The sentences grow shorter as the violence intensifies. By repeating the subject both across four consecutive declarations, he dissolves partisan blame into shared savagery.",
+    "stealIt": "To describe collective violence without taking sides, eliminate explanatory adverbs. Chain physical verbs together with the conjunction and. Let the unadorned actions carry the horror.",
+    "aroundIt": "Set during the 1947 Partition of British India, the novel depicts the fictional border village of Mano Majra. As ten million refugees crossed the new frontier and nearly a million died in communal massacres, Singh sought to record the human tragedy without historical abstraction.",
+    "verification": "Chapter 1: Dacoity, opening pages."
   }
 ]

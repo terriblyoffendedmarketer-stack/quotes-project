@@ -2,6 +2,12 @@
 # enrich_full_quote_bank.py — Continuous background pipeline to enrich the full quote bank via Gemini Free Tier
 # Usage: python3 scripts/enrich_full_quote_bank.py
 # Requires: Python standard library, .env file with GEMINI_API_KEY
+#
+# Gotchas:
+# - gemini-3.5-flash and gemini-3.1-flash-lite default to thinking mode unless thinkingBudget: 0 is explicitly set.
+#   Without thinkingBudget: 0, internal thought tokens consume the token budget and cause premature MAX_TOKENS truncations.
+# - gemini-3.5-flash-lite rejects thinkingConfig with HTTP 400, so only pass thinkingConfig to models that support it.
+# - Free tier quotas have per-model 500-1500 RPD caps. Rotating between active models prevents pipeline pauses.
 
 import json
 import time
@@ -17,11 +23,14 @@ ENV_PATH = ROOT / ".env"
 PROMPT_FILE = ROOT / "prompts" / "shelf_explanation_prompt.txt"
 LOG_FILE = ROOT / "scripts" / "enrichment_progress.log"
 
-MODEL_NAME = "gemini-3.5-flash-lite"
-API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_NAME}:generateContent"
+MODELS = [
+    "gemini-3.5-flash",
+    "gemini-3.1-flash-lite",
+    "gemini-3.5-flash-lite"
+]
 
-# Pacing: 5.0 seconds between requests = 12.0 requests/minute (Safely under Free Tier ceiling of 15 RPM)
-REQUEST_DELAY = 5.0
+# Pacing: 4.5 seconds between requests = 13.3 requests/minute (under Free Tier ceiling of 15 RPM)
+REQUEST_DELAY = 4.5
 
 def load_api_key():
     if not ENV_PATH.exists():
@@ -32,8 +41,17 @@ def load_api_key():
                 return line.strip().split("=", 1)[1].strip()
     return None
 
-def call_gemini(key, prompt_text):
-    url = f"{API_URL}?key={key}"
+def call_gemini(key, prompt_text, model_name):
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={key}"
+    
+    gen_config = {
+        "temperature": 0.35,
+        "maxOutputTokens": 1200
+    }
+    # Only models with extended thinking support thinkingBudget
+    if "flash-lite" not in model_name or "3.1" in model_name:
+        gen_config["thinkingConfig"] = {"thinkingBudget": 0}
+
     payload = json.dumps({
         "contents": [
             {
@@ -42,10 +60,7 @@ def call_gemini(key, prompt_text):
                 ]
             }
         ],
-        "generationConfig": {
-            "temperature": 0.4,
-            "maxOutputTokens": 600
-        }
+        "generationConfig": gen_config
     }).encode("utf-8")
 
     req = urllib.request.Request(
@@ -56,14 +71,47 @@ def call_gemini(key, prompt_text):
 
     with urllib.request.urlopen(req, timeout=30) as resp:
         data = json.loads(resp.read().decode("utf-8"))
-        return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        candidates = data.get("candidates", [])
+        if not candidates:
+            raise ValueError(f"No candidates returned: {data}")
+        parts = candidates[0].get("content", {}).get("parts", [])
+        if not parts:
+            raise ValueError(f"No content parts returned: {data}")
+        return parts[0].get("text", "").strip()
+
+def clean_explanation(raw_text):
+    # If the model produced a split with dividers, take the final companion note section
+    if "***" in raw_text:
+        raw_text = raw_text.split("***")[-1]
+    elif "---" in raw_text:
+        raw_text = raw_text.split("---")[-1]
+
+    lines = raw_text.splitlines()
+    filtered = []
+    for line in lines:
+        l = line.strip()
+        # Skip divider lines or title/label lines
+        if l in ["***", "---", "___"]:
+            continue
+        if l.startswith("#"):
+            continue
+        if l.lower().startswith("**explanation") or l.lower().startswith("**companion note"):
+            continue
+        # Strip inline paragraph labels
+        for prefix in ["**Paragraph 1:**", "**Paragraph 2:**", "Paragraph 1:", "Paragraph 2:", "**The Predicament:**", "**The Mirror:**", "The Predicament:", "The Mirror:"]:
+            if l.startswith(prefix):
+                l = l[len(prefix):].strip()
+        filtered.append(l)
+    
+    text = "\n".join(filtered)
+    paras = [p.strip() for p in text.split("\n\n") if p.strip()]
+    return "\n\n".join(paras)
 
 def is_already_enriched(exp):
     if not exp:
         return False
-    # Check for two distinct paragraphs and substantive word count (>120 words)
     paragraphs = [p.strip() for p in exp.split("\n\n") if p.strip()]
-    return len(paragraphs) >= 2 and len(exp.split()) >= 120
+    return len(paragraphs) >= 2 and len(exp.split()) >= 100
 
 def save_quote_bank(qb):
     with open(QB_PATH, "w", encoding="utf-8") as f:
@@ -104,6 +152,7 @@ def main():
 
     success_count = 0
     consecutive_errors = 0
+    model_idx = 0
 
     for idx, entry in enumerate(qb):
         exp = entry.get("explanation", "")
@@ -116,46 +165,69 @@ def main():
 
         prompt = prompt_template.format(work=work, author=author, quote=quote)
 
-        # Call with retries for rate limits
+        # Call with retries and model rotation
         attempt = 0
         success = False
-        while attempt < 5 and not success:
+        models_tried = 0
+
+        while attempt < 6 and not success:
+            active_model = MODELS[model_idx]
             try:
-                raw = call_gemini(key, prompt)
-                cleaned = raw.replace("**Paragraph 1:**", "").replace("**Paragraph 2:**", "")
-                cleaned = cleaned.replace("Paragraph 1:", "").replace("Paragraph 2:", "").strip()
+                raw = call_gemini(key, prompt, active_model)
+                cleaned = clean_explanation(raw)
 
-                entry["explanation"] = cleaned
-                words = len(cleaned.split())
-                log(f"[{idx+1}/{total}] ✓ {author} — {work} ({words}w)")
-                success = True
-                success_count += 1
-                consecutive_errors = 0
+                if is_already_enriched(cleaned):
+                    entry["explanation"] = cleaned
+                    words = len(cleaned.split())
+                    log(f"[{idx+1}/{total}] ✓ [{active_model}] {author} — {work} ({words}w)")
+                    success = True
+                    success_count += 1
+                    consecutive_errors = 0
 
-                # Auto-save every 5 quotes
-                if success_count % 5 == 0:
-                    save_quote_bank(qb)
+                    # Auto-save every 5 quotes
+                    if success_count % 5 == 0:
+                        save_quote_bank(qb)
 
-                time.sleep(REQUEST_DELAY)
+                    time.sleep(REQUEST_DELAY)
+                else:
+                    log(f"[{idx+1}/{total}] ⚠ Incomplete response from {active_model} ({len(cleaned.split())}w). Retrying...")
+                    attempt += 1
+                    time.sleep(2)
 
             except urllib.error.HTTPError as e:
                 attempt += 1
+                err_body = ""
+                try:
+                    err_body = e.read().decode("utf-8")
+                except:
+                    pass
+
                 if e.code == 429:
-                    log(f"[{idx+1}/{total}] ⚠ Rate limited (429). Sleeping 60s before retry (attempt {attempt}/5)...")
-                    time.sleep(60)
+                    is_daily_cap = "Quota exceeded" in err_body or "Resource has been exhausted" in err_body
+                    if is_daily_cap:
+                        log(f"[{idx+1}/{total}] ⚠ Model {active_model} daily quota exhausted. Rotating...")
+                        model_idx = (model_idx + 1) % len(MODELS)
+                        models_tried += 1
+                        if models_tried >= len(MODELS):
+                            log("All models currently rate-limited. Sleeping 90s before next round...")
+                            time.sleep(90)
+                            models_tried = 0
+                    else:
+                        log(f"[{idx+1}/{total}] ⚠ RPM rate limited on {active_model}. Sleeping 15s...")
+                        time.sleep(15)
                 else:
-                    log(f"[{idx+1}/{total}] ✗ HTTP Error {e.code}: {e.reason}")
+                    log(f"[{idx+1}/{total}] ✗ HTTP Error {e.code} on {active_model}: {e.reason}")
                     time.sleep(5)
             except Exception as e:
                 attempt += 1
-                log(f"[{idx+1}/{total}] ✗ Error: {e}. Retrying in 10s...")
-                time.sleep(10)
+                log(f"[{idx+1}/{total}] ✗ Error on {active_model}: {e}. Retrying in 8s...")
+                time.sleep(8)
 
         if not success:
             consecutive_errors += 1
-            log(f"[{idx+1}/{total}] ⚠ Skipped {author} — {work} after 5 failed attempts.")
-            if consecutive_errors >= 5:
-                log("CRITICAL: 5 consecutive failures. Pausing pipeline to avoid error loop. Saving database.")
+            log(f"[{idx+1}/{total}] ⚠ Skipped {author} — {work} after repeated attempts.")
+            if consecutive_errors >= 8:
+                log("CRITICAL: 8 consecutive failures. Pausing pipeline to avoid error loop. Saving database.")
                 save_quote_bank(qb)
                 sys.exit(1)
 
