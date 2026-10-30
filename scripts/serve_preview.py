@@ -25,7 +25,7 @@ class PrototypeHandler(SimpleHTTPRequestHandler):
 
 def main():
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
-    server_address = ("127.0.0.1", port)
+    server_address = ("0.0.0.0", port)
     
     # Ensure index.html exists
     index_file = PROTOTYPE_DIR / "index.html"
