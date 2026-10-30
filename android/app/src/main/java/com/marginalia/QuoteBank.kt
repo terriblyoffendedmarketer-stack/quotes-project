@@ -10,6 +10,7 @@ data class HorizonInfo(val code: String, val title: String, val keywords: Set<St
 object Horizons {
     val ALL = listOf(
         HorizonInfo("all", "All", emptySet()),
+        HorizonInfo("craft", "✨ How-To", setOf("how-to", "craft", "daily", "prose-craft")),
         HorizonInfo("dread", "Atmospheric Dread", setOf("dread", "horror", "fear", "death", "dark", "eerie", "uncanny", "haunting", "tension", "macabre", "grotesque")),
         HorizonInfo("folly", "Human Folly", setOf("folly", "vanity", "satire", "hypocrisy", "manners", "social", "pretension", "awkwardness", "family", "prejudice", "pride")),
         HorizonInfo("solitude", "Solitude & Finitude", setOf("solitude", "stillness", "time", "silence", "memory", "grief", "mortality", "loss", "longing", "reflection", "quiet", "finitude", "loneliness")),
@@ -23,11 +24,11 @@ object Horizons {
         val tagSet = tags.map { it.lowercase() }.toSet()
         val text = "$quote $explanation".lowercase()
         for (h in ALL) {
-            if (h.code == "all" || h.code == "prose") continue
+            if (h.code == "all" || h.code == "craft" || h.code == "prose") continue
             if (tagSet.any { h.keywords.contains(it) }) return h.code
         }
         for (h in ALL) {
-            if (h.code == "all" || h.code == "prose") continue
+            if (h.code == "all" || h.code == "craft" || h.code == "prose") continue
             if (h.keywords.any { text.contains(it) }) return h.code
         }
         return "prose"
@@ -51,7 +52,13 @@ data class BankQuote(
     val year: Int?,
     val explanation: String,
     val tags: List<String>,
-    val horizon: String = Horizons.horizonFor(quote, explanation, tags)
+    val horizon: String = Horizons.horizonFor(quote, explanation, tags),
+    val isCard: Boolean = false,
+    val cardJob: String? = null,
+    val cardIndex: Int? = null,
+    val lookCloser: String? = null,
+    val stealIt: String? = null,
+    val aroundIt: String? = null
 )
 
 object QuoteBank {

@@ -176,13 +176,18 @@ class MainActivity : Activity() {
                 updateLibraryList()
             },
             onOpenDaily = { quote ->
-                // Switch to Daily tab and open this quote directly in the swipeable deck
-                currentMode = MODE_BANK
-                activeHorizon = "all"
-                val allQuotes = QuoteBank.forHorizon(this, "all")
-                val foundIdx = allQuotes.indexOfFirst { it.quote == quote.quote }
-                if (foundIdx >= 0) {
-                    bankIndex = foundIdx
+                // Switch to Daily tab and open this item directly in the swipeable deck
+                if (quote.isCard && quote.cardIndex != null) {
+                    currentMode = MODE_CARDS
+                    cardIndex = quote.cardIndex
+                } else {
+                    currentMode = MODE_BANK
+                    activeHorizon = "all"
+                    val allQuotes = QuoteBank.forHorizon(this, "all")
+                    val foundIdx = allQuotes.indexOfFirst { it.quote == quote.quote }
+                    if (foundIdx >= 0) {
+                        bankIndex = foundIdx
+                    }
                 }
                 switchStudioTab(TAB_DAILY)
                 render(0)
@@ -202,15 +207,17 @@ class MainActivity : Activity() {
         })
 
         libBtnSurprise.setOnClickListener {
+            val allCards = Cards.all(this)
             val allQuotes = QuoteBank.all(this)
-            if (allQuotes.isNotEmpty()) {
+            val totalCount = allCards.size + allQuotes.size
+            if (totalCount > 0) {
                 libQuery = ""
                 libSearch.setText("")
                 libActiveTag = null
                 libActiveHorizon = "all"
                 libShowingSparkQueue = false
                 renderLibHorizonsBar()
-                val rand = (0 until allQuotes.size).random()
+                val rand = (0 until totalCount).random()
                 updateLibraryList()
                 libRecycler.scrollToPosition(rand)
             }
@@ -288,19 +295,46 @@ class MainActivity : Activity() {
     }
 
     private fun updateLibraryList() {
-        val allQuotes = QuoteBank.all(this)
+        val allCards = Cards.all(this)
+        val allBankQuotes = QuoteBank.all(this)
         val sparks = Prefs.sparkQueue(this)
 
-        val filtered = allQuotes.filter { q ->
-            if (libShowingSparkQueue && !sparks.contains(q.work)) return@filter false
-            if (libActiveHorizon != "all" && q.horizon != libActiveHorizon) return@filter false
+        val adaptedCards = allCards.mapIndexed { idx, c ->
+            BankQuote(
+                quote = c.quote,
+                author = c.author,
+                work = c.work,
+                year = c.year,
+                explanation = "${c.lookCloser}\n\n${c.stealIt}",
+                tags = listOf("how-to", "prose-craft"),
+                horizon = "craft",
+                isCard = true,
+                cardJob = c.job,
+                cardIndex = idx,
+                lookCloser = c.lookCloser,
+                stealIt = c.stealIt,
+                aroundIt = c.aroundIt
+            )
+        }
+
+        val allItems = adaptedCards + allBankQuotes
+
+        val filtered = allItems.filter { q ->
+            if (libShowingSparkQueue && (q.isCard || !sparks.contains(q.work))) return@filter false
+            if (libActiveHorizon != "all") {
+                if (libActiveHorizon == "craft") {
+                    if (!q.isCard) return@filter false
+                } else {
+                    if (q.isCard || q.horizon != libActiveHorizon) return@filter false
+                }
+            }
             if (libActiveTag != null) {
                 val matchHorizon = q.horizon.equals(libActiveTag, ignoreCase = true)
                 val matchTag = q.tags.any { it.equals(libActiveTag, ignoreCase = true) }
                 if (!matchHorizon && !matchTag) return@filter false
             }
             if (libQuery.isNotEmpty()) {
-                val haystack = "${q.quote} ${q.author} ${q.work} ${q.explanation} ${q.tags.joinToString(" ")}".lowercase()
+                val haystack = "${q.cardJob ?: ""} ${q.quote} ${q.author} ${q.work} ${q.explanation} ${q.lookCloser ?: ""} ${q.stealIt ?: ""} ${q.tags.joinToString(" ")}".lowercase()
                 if (!haystack.contains(libQuery.lowercase())) return@filter false
             }
             true
@@ -309,7 +343,15 @@ class MainActivity : Activity() {
         libAdapter.submitList(filtered, sparks)
 
         val distinctBooks = filtered.map { it.work }.toSet().size
-        libMatchCount.text = "${filtered.size} quotes across $distinctBooks books"
+        val cardsCount = filtered.count { it.isCard }
+        val shelfCount = filtered.size - cardsCount
+        libMatchCount.text = if (cardsCount > 0 && shelfCount > 0) {
+            "${filtered.size} items ($cardsCount How-To + $shelfCount Shelf) across $distinctBooks works"
+        } else if (cardsCount > 0) {
+            "$cardsCount How-To cards across $distinctBooks works"
+        } else {
+            "$shelfCount Shelf quotes across $distinctBooks works"
+        }
 
         if (libActiveTag != null) {
             libActiveTagContainer.visibility = View.VISIBLE

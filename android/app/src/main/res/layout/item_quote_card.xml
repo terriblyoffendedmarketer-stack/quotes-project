@@ -41,6 +41,19 @@
             android:textSize="11sp" />
     </LinearLayout>
 
+    <!-- Card Job Headline (for How-To Craft Cards) -->
+    <TextView
+        android:id="@+id/qc_job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/literata"
+        android:lineSpacingMultiplier="1.25"
+        android:textColor="@color/ink"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
     <!-- Quote Text -->
     <TextView
         android:id="@+id/qc_quote"

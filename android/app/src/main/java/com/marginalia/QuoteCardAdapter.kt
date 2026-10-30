@@ -41,6 +41,7 @@ class QuoteCardAdapter(
     inner class CardHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val horizonView: TextView = view.findViewById(R.id.qc_horizon)
         private val btnSpark: TextView = view.findViewById(R.id.qc_btn_spark)
+        private val jobView: TextView = view.findViewById(R.id.qc_job)
         private val quoteView: TextView = view.findViewById(R.id.qc_quote)
         private val attributionView: TextView = view.findViewById(R.id.qc_attribution)
         private val btnNote: TextView = view.findViewById(R.id.qc_btn_note)
@@ -53,58 +54,108 @@ class QuoteCardAdapter(
         private val btnOpenDaily: TextView = view.findViewById(R.id.qc_btn_open_daily)
 
         fun bind(quote: BankQuote) {
-            horizonView.text = "#${quote.horizon}"
-
-            val isSaved = sparkQueue.contains(quote.work)
-            if (isSaved) {
-                btnSpark.text = "★ Saved"
-                btnSpark.setTextColor(ContextCompat.getColor(context, R.color.spark_gold))
-            } else {
-                btnSpark.text = "☆ Read Next"
-                btnSpark.setTextColor(ContextCompat.getColor(context, R.color.ink_soft))
-            }
-
-            btnSpark.setOnClickListener {
-                onSparkToggle(quote)
-            }
-
             quoteView.text = "“${quote.quote}”"
             quoteView.textSize = if (quote.quote.length > 220) 16f else 18f
 
             val yearText = if (quote.year != null) " · ${quote.year}" else ""
             attributionView.text = "— ${quote.author}, ${quote.work}$yearText"
 
-            val paragraphs = quote.explanation.split("\n\n").map { it.trim() }.filter { it.isNotEmpty() }
-            if (paragraphs.isNotEmpty()) {
-                btnNote.visibility = View.VISIBLE
-                val isExpanded = expandedQuotes.contains(quote.quote)
-                noteBody.visibility = if (isExpanded) View.VISIBLE else View.GONE
-                btnNote.text = if (isExpanded) "▴ Hide Companion Note" else "▾ Read Companion Note"
+            if (quote.isCard) {
+                jobView.visibility = View.VISIBLE
+                jobView.text = quote.cardJob ?: ""
+                horizonView.text = "✨ HOW-TO: PROSE CRAFT"
+                horizonView.setTextColor(ContextCompat.getColor(context, R.color.spark_gold))
+                btnSpark.visibility = View.GONE
 
-                tier1Text.text = paragraphs[0]
-                if (paragraphs.size > 1) {
-                    tier2Kicker.visibility = View.VISIBLE
-                    tier2Text.visibility = View.VISIBLE
-                    tier2Text.text = paragraphs[1]
-                } else {
-                    tier2Kicker.visibility = View.GONE
-                    tier2Text.visibility = View.GONE
-                }
+                val hasLook = !quote.lookCloser.isNullOrEmpty()
+                val hasSteal = !quote.stealIt.isNullOrEmpty()
+                if (hasLook || hasSteal) {
+                    btnNote.visibility = View.VISIBLE
+                    val isExpanded = expandedQuotes.contains(quote.quote)
+                    noteBody.visibility = if (isExpanded) View.VISIBLE else View.GONE
+                    btnNote.text = if (isExpanded) "▴ Hide Craft Breakdown" else "▾ Read Craft Breakdown"
 
-                btnNote.setOnClickListener {
-                    if (expandedQuotes.contains(quote.quote)) {
-                        expandedQuotes.remove(quote.quote)
-                        noteBody.visibility = View.GONE
-                        btnNote.text = "▾ Read Companion Note"
+                    tier1Kicker.text = "LOOK CLOSER"
+                    tier1Text.text = quote.lookCloser ?: ""
+
+                    if (hasSteal) {
+                        tier2Kicker.visibility = View.VISIBLE
+                        tier2Text.visibility = View.VISIBLE
+                        tier2Kicker.text = "STEAL IT"
+                        tier2Text.text = quote.stealIt ?: ""
                     } else {
-                        expandedQuotes.add(quote.quote)
-                        noteBody.visibility = View.VISIBLE
-                        btnNote.text = "▴ Hide Companion Note"
+                        tier2Kicker.visibility = View.GONE
+                        tier2Text.visibility = View.GONE
                     }
+
+                    btnNote.setOnClickListener {
+                        if (expandedQuotes.contains(quote.quote)) {
+                            expandedQuotes.remove(quote.quote)
+                            noteBody.visibility = View.GONE
+                            btnNote.text = "▾ Read Craft Breakdown"
+                        } else {
+                            expandedQuotes.add(quote.quote)
+                            noteBody.visibility = View.VISIBLE
+                            btnNote.text = "▴ Hide Craft Breakdown"
+                        }
+                    }
+                } else {
+                    btnNote.visibility = View.GONE
+                    noteBody.visibility = View.GONE
                 }
             } else {
-                btnNote.visibility = View.GONE
-                noteBody.visibility = View.GONE
+                jobView.visibility = View.GONE
+                horizonView.text = "#${quote.horizon}"
+                horizonView.setTextColor(ContextCompat.getColor(context, R.color.ink_soft))
+                btnSpark.visibility = View.VISIBLE
+
+                val isSaved = sparkQueue.contains(quote.work)
+                if (isSaved) {
+                    btnSpark.text = "★ Saved"
+                    btnSpark.setTextColor(ContextCompat.getColor(context, R.color.spark_gold))
+                } else {
+                    btnSpark.text = "☆ Read Next"
+                    btnSpark.setTextColor(ContextCompat.getColor(context, R.color.ink_soft))
+                }
+
+                btnSpark.setOnClickListener {
+                    onSparkToggle(quote)
+                }
+
+                val paragraphs = quote.explanation.split("\n\n").map { it.trim() }.filter { it.isNotEmpty() }
+                if (paragraphs.isNotEmpty()) {
+                    btnNote.visibility = View.VISIBLE
+                    val isExpanded = expandedQuotes.contains(quote.quote)
+                    noteBody.visibility = if (isExpanded) View.VISIBLE else View.GONE
+                    btnNote.text = if (isExpanded) "▴ Hide Companion Note" else "▾ Read Companion Note"
+
+                    tier1Kicker.text = "THE PREDICAMENT"
+                    tier1Text.text = paragraphs[0]
+                    if (paragraphs.size > 1) {
+                        tier2Kicker.visibility = View.VISIBLE
+                        tier2Text.visibility = View.VISIBLE
+                        tier2Kicker.text = "THE MIRROR"
+                        tier2Text.text = paragraphs[1]
+                    } else {
+                        tier2Kicker.visibility = View.GONE
+                        tier2Text.visibility = View.GONE
+                    }
+
+                    btnNote.setOnClickListener {
+                        if (expandedQuotes.contains(quote.quote)) {
+                            expandedQuotes.remove(quote.quote)
+                            noteBody.visibility = View.GONE
+                            btnNote.text = "▾ Read Companion Note"
+                        } else {
+                            expandedQuotes.add(quote.quote)
+                            noteBody.visibility = View.VISIBLE
+                            btnNote.text = "▴ Hide Companion Note"
+                        }
+                    }
+                } else {
+                    btnNote.visibility = View.GONE
+                    noteBody.visibility = View.GONE
+                }
             }
 
             // Tags

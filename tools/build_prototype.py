@@ -36,10 +36,9 @@ docs_dir.mkdir(exist_ok=True)
 
 # 3. Bundle release APK for one-click web downloads
 apk_src = ROOT / "marginalia.apk"
-if not apk_src.exists():
-    candidate = ROOT / "android" / "app" / "build" / "outputs" / "apk" / "release" / "app-release.apk"
-    if candidate.exists():
-        shutil.copy(candidate, apk_src)
+candidate = ROOT / "android" / "app" / "build" / "outputs" / "apk" / "release" / "app-release.apk"
+if candidate.exists():
+    shutil.copy(candidate, apk_src)
 
 if apk_src.exists():
     shutil.copy(apk_src, proto_dir / "marginalia.apk")
