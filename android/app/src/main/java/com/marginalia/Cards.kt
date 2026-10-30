@@ -109,11 +109,22 @@ object Cards {
 
     /** Prefer the latest download; fall back to the copy built into the app. */
     private fun load(context: Context): List<Card> {
+        val assetCards = runCatching {
+            parse(context.assets.open("cards.json").bufferedReader().use { it.readText() })
+        }.getOrNull() ?: emptyList()
+
         val file = cacheFile(context)
-        if (file.exists()) {
-            runCatching { return parse(file.readText()) }
+        if (!file.exists()) return assetCards
+
+        val cachedCards = runCatching { parse(file.readText()) }.getOrNull()
+        if (cachedCards == null || cachedCards.isEmpty()) return assetCards
+
+        return if (assetCards.size >= cachedCards.size && assetCards.isNotEmpty()) {
+            runCatching { file.delete() }
+            assetCards
+        } else {
+            cachedCards
         }
-        return parse(context.assets.open("cards.json").bufferedReader().use { it.readText() })
     }
 }
 

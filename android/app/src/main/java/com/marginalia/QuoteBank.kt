@@ -149,13 +149,25 @@ object QuoteBank {
     }
 
     private fun load(context: Context): List<BankQuote> {
-        val file = cacheFile(context)
-        if (file.exists()) {
-            runCatching { return parse(file.readText()) }
-        }
-        return runCatching {
+        val assetQuotes = runCatching {
             parse(context.assets.open("quote-bank.json").bufferedReader().use { it.readText() })
-        }.getOrElse { emptyList() }
+        }.getOrNull() ?: emptyList()
+
+        val file = cacheFile(context)
+        if (!file.exists()) return assetQuotes
+
+        val cachedQuotes = runCatching { parse(file.readText()) }.getOrNull()
+        if (cachedQuotes == null || cachedQuotes.isEmpty()) return assetQuotes
+
+        val assetExpChars = assetQuotes.sumOf { it.explanation.length.toLong() }
+        val cachedExpChars = cachedQuotes.sumOf { it.explanation.length.toLong() }
+
+        return if (assetExpChars >= cachedExpChars && assetQuotes.isNotEmpty()) {
+            runCatching { file.delete() }
+            assetQuotes
+        } else {
+            cachedQuotes
+        }
     }
 
     /**

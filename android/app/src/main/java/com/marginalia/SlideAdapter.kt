@@ -128,7 +128,7 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
             kicker.text = "${quote.work.uppercase()}  ·  ${position + 1} OF $total"
             kicker.setTextColor(ContextCompat.getColor(context, R.color.ink_soft))
 
-            spacerTop.visibility = if (isLine) View.VISIBLE else View.GONE
+            spacerTop.visibility = View.VISIBLE
             spacerBottom.visibility = View.VISIBLE
 
             line.visibility = if (isLine) View.VISIBLE else View.GONE
@@ -148,7 +148,7 @@ class SlideAdapter : RecyclerView.Adapter<SlideAdapter.Holder>() {
                 }
             } else {
                 body.text = shelfSlide.text
-                body.textSize = 16f
+                body.textSize = 17f
             }
 
             footer.visibility = View.VISIBLE
