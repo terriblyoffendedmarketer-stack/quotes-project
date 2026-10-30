@@ -18,6 +18,8 @@
     <color name="shelf_badge_bg">#E4E7EB</color>
     <color name="shelf_badge_text">#1B1D22</color>
 
+    <color name="spark_gold">#C98A00</color>
+
     <!-- The widget follows the phone's light or dark mode. -->
     <color name="widget_bg">#F4F5F2</color>
     <color name="widget_text">#14161B</color>

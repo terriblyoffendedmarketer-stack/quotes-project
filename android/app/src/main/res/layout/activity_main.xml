@@ -8,18 +8,37 @@
     android:paddingStart="16dp"
     android:paddingTop="12dp"
     android:paddingEnd="16dp"
-    android:paddingBottom="16dp">
+    android:paddingBottom="12dp">
 
-    <!-- Top Navigation Header with Mode Toggle & Actions -->
+    <!-- Top Studio Header: Brand + 2 Main Tabs (Daily vs All Quotes) -->
     <LinearLayout
+        android:id="@+id/top_studio_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:minHeight="40dp"
-        android:orientation="horizontal">
+        android:minHeight="38dp"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
 
-        <!-- Mode Toggle Segmented Control -->
+        <TextView
+            android:id="@+id/brand_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.08"
+            android:text="MARGINALIA"
+            android:textColor="@color/ink"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Segregated Main View Tabs -->
         <LinearLayout
+            android:id="@+id/studio_tabs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/chip_bg"
@@ -27,7 +46,7 @@
             android:padding="2dp">
 
             <TextView
-                android:id="@+id/mode_cards"
+                android:id="@+id/tab_daily"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/mode_pill_active"
@@ -35,13 +54,13 @@
                 android:paddingTop="6dp"
                 android:paddingEnd="12dp"
                 android:paddingBottom="6dp"
-                android:text="Prose Craft"
+                android:text="✨ Daily"
                 android:textColor="@color/pill_active_text"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/mode_bank"
+                android:id="@+id/tab_library"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -49,154 +68,367 @@
                 android:paddingTop="6dp"
                 android:paddingEnd="12dp"
                 android:paddingBottom="6dp"
-                android:text="Shelf Sparks"
+                android:text="📖 All Quotes"
                 android:textColor="@color/pill_inactive_text"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/btn_surprise"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
-            android:background="@drawable/chip_button_bg"
-            android:fontFamily="monospace"
-            android:paddingStart="10dp"
-            android:paddingTop="6dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="6dp"
-            android:text="🎲 Surprise"
-            android:textColor="@color/ink"
-            android:textSize="11sp"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/btn_catalog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
-            android:background="@drawable/chip_button_bg"
-            android:fontFamily="monospace"
-            android:paddingStart="10dp"
-            android:paddingTop="6dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="6dp"
-            android:text="☰ Catalog"
-            android:textColor="@color/ink"
-            android:textSize="11sp"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/day_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/chip_button_bg"
-            android:fontFamily="monospace"
-            android:letterSpacing="0.04"
-            android:paddingStart="10dp"
-            android:paddingTop="6dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="6dp"
-            android:textColor="@color/ink"
-            android:textSize="11sp" />
     </LinearLayout>
 
-    <!-- Thematic Horizons Filter Bar (visible only in Quote Bank mode) -->
-    <HorizontalScrollView
-        android:id="@+id/horizons_scroll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:scrollbars="none"
-        android:visibility="gone">
-
-        <LinearLayout
-            android:id="@+id/horizons_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" />
-    </HorizontalScrollView>
-
-    <!-- Main Deck with ViewPager -->
+    <!-- VIEW 1: DAILY READING DECK (✨ Daily) -->
     <LinearLayout
-        android:id="@+id/deck"
+        android:id="@+id/view_daily"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         android:layout_weight="1"
-        android:background="@drawable/deck_bg"
         android:orientation="vertical">
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/pager"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <HorizontalScrollView
+        <!-- Subheader: Collection Mode Toggle (Prose Craft vs Shelf Sparks) & Actions -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="14dp"
+            android:gravity="center_vertical"
+            android:minHeight="36dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chip_bg"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <TextView
+                    android:id="@+id/mode_cards"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/mode_pill_active"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="Prose Craft"
+                    android:textColor="@color/pill_active_text"
+                    android:textSize="11.5sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/mode_bank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="Shelf Sparks"
+                    android:textColor="@color/pill_inactive_text"
+                    android:textSize="11.5sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/btn_surprise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/chip_button_bg"
+                android:fontFamily="monospace"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:text="🎲 Surprise"
+                android:textColor="@color/ink"
+                android:textSize="11sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/day_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chip_button_bg"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.04"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/ink"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Thematic Horizons Filter Bar (visible only in Shelf Sparks mode) -->
+        <HorizontalScrollView
+            android:id="@+id/horizons_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:scrollbars="none"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/horizons_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <!-- Main Reading Deck with ViewPager -->
+        <LinearLayout
+            android:id="@+id/deck"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/deck_bg"
+            android:orientation="vertical">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <!-- Bottom Navigation Controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/prev"
+                style="@style/NavButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/previous" />
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:textColor="@color/ink_soft"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/next"
+                style="@style/NavButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/next" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/steal_toggle"
+            style="@style/NavButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!-- VIEW 2: THE MASTER LIBRARY (📖 All Quotes) -->
+    <LinearLayout
+        android:id="@+id/view_library"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- Library Headline & Sub -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/fraunces_soft_bold"
+                android:text="The Library"
+                android:textColor="@color/ink"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="sans-serif"
+                android:text="1,874 curated passages &amp; companion notes"
+                android:textColor="@color/ink_soft"
+                android:textSize="12.5sp" />
+        </LinearLayout>
+
+        <!-- Search & Filter Controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/lib_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/search_bg"
+                android:fontFamily="sans-serif"
+                android:hint="Search passages, authors, books..."
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="12dp"
+                android:paddingTop="9dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="9dp"
+                android:singleLine="true"
+                android:textColor="@color/ink"
+                android:textColorHint="@color/ink_soft"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/lib_btn_surprise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/chip_button_bg"
+                android:fontFamily="monospace"
+                android:paddingStart="10dp"
+                android:paddingTop="9dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="9dp"
+                android:text="🎲 Surprise"
+                android:textColor="@color/ink"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Thematic Horizons Filter Bar for Library -->
+        <HorizontalScrollView
+            android:id="@+id/lib_horizons_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:scrollbars="none">
 
             <LinearLayout
-                android:id="@+id/tabs"
+                android:id="@+id/lib_horizons_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:orientation="horizontal" />
         </HorizontalScrollView>
-    </LinearLayout>
 
-    <!-- Bottom Navigation Controls -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/prev"
-            style="@style/NavButton"
-            android:layout_width="wrap_content"
+        <!-- Status & Queue Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/previous" />
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/count"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/lib_match_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:textColor="@color/ink_soft"
+                android:textSize="11.5sp" />
+
+            <!-- Active Tag Filter Pill -->
+            <LinearLayout
+                android:id="@+id/lib_active_tag_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/mode_pill_active"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="3dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/lib_active_tag_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:textColor="@color/pill_active_text"
+                    android:textSize="10.5sp" />
+
+                <TextView
+                    android:id="@+id/lib_btn_clear_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="4dp"
+                    android:text="✕"
+                    android:textColor="@color/pill_active_text"
+                    android:textSize="10.5sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/lib_btn_spark_queue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chip_button_bg"
+                android:fontFamily="monospace"
+                android:paddingStart="9dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="9dp"
+                android:paddingBottom="4dp"
+                android:text="✨ Read Next (0)"
+                android:textColor="@color/spark_gold"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Stream of Quotes -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lib_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="1"
-            android:fontFamily="monospace"
-            android:gravity="center"
-            android:textColor="@color/ink_soft"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/next"
-            style="@style/NavButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/next" />
+            android:clipToPadding="false"
+            android:paddingBottom="16dp"
+            android:scrollbars="vertical" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/steal_toggle"
-        style="@style/NavButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" />
 </LinearLayout>

@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 10 (Web App Edition & GitHub Pages Live Deployment)  
-> **Current**: Fixed desktop width overflow, DOM nesting, and APK download button visibility. Resolved mobile touch scroll trap (`overscroll-behavior-y: auto`). Auto-separated local preview (`localhost:8765` shows `🔲 Widget` tab) from public preview (`github.io` hides widget completely). Consolidated Shelf Spark widget slide chunks to 80 words max (3 to 5 slides max instead of 10), recompiled release APK, and rebuilt web edition.  
-> **Next**: Let enrichment run through the remaining quotes once daily quota resets, update bundled assets, and re-release.
+> **Status**: In Progress | **Phase**: 10 (Web App Edition & Android Library Parity Deployment)  
+> **Current**: Aligned Android mobile app with web preview edition. Replaced cramped top buttons with top-level studio tabs (`✨ Daily` vs `📖 All Quotes`). Segregated Daily reader from The Library. Implemented full scrollable quotes stream via `RecyclerView` (`QuoteCardAdapter`) with live search, thematic horizons bar, expandable 2-tier companion notes, hashtag filtering, Read Next queue, and direct "Read in Daily" jump. Recompiled signed release APK (`marginalia.apk`).  
+> **Next**: Task 2 — resume quote explanations enrichment once Gemini quota resets or when API key is rotated.
 
 ## Roadmap
 
@@ -37,6 +37,7 @@
 - `scripts/add_dostoevsky_quotes.py`: Curates and updates iconic Dostoevsky passages with 2-tier scene context and philosophical depth.
 - `scripts/audit_and_rewrite.py`: Automation script for content audit, rewriting, and testing craft exercises.
 - `android/`: Android app and adaptive dual-mode home-screen widget source code.
+- `android/app/src/main/java/com/marginalia/QuoteCardAdapter.kt`: RecyclerView adapter for the Android Library stream with expandable notes and tags.
 - `android/marginalia.apk`: Signed release build ready for sideloading.
 - `prototype/`: Web-based reader with single-page thematic horizons, instant search, and tag filtering.
 

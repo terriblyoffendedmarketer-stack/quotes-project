@@ -185,4 +185,25 @@ object Prefs {
             .putLong(BASE_MODE_DAY, today)
             .apply()
     }
+
+    private const val SPARK_QUEUE = "spark_queue"
+
+    fun sparkQueue(context: Context): Set<String> {
+        val prefs = context.getSharedPreferences(FILE, Context.MODE_PRIVATE)
+        return prefs.getStringSet(SPARK_QUEUE, emptySet()) ?: emptySet()
+    }
+
+    fun toggleSpark(context: Context, work: String): Boolean {
+        val prefs = context.getSharedPreferences(FILE, Context.MODE_PRIVATE)
+        val current = prefs.getStringSet(SPARK_QUEUE, emptySet())?.toMutableSet() ?: mutableSetOf()
+        val added = if (current.contains(work)) {
+            current.remove(work)
+            false
+        } else {
+            current.add(work)
+            true
+        }
+        prefs.edit().putStringSet(SPARK_QUEUE, current).apply()
+        return added
+    }
 }
