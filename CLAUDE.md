@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 10 (Web App Edition & Android Library Parity Deployment)  
-> **Current**: Restored beloved Khushwant Singh craft breakdown in `content/cards.json` (0 linter flags). Fixed Android category chip count bug (`✨ How-To` now correctly displays `113` instead of `0`). Hidden `STEAL IT` and surfaced `LOOK CLOSER` + `AROUND IT` in All Quotes catalog stream (Android & Web). Deeply expanded the three *The Three-Body Problem* shelf companion notes (~230w each). Recompiled release APK (`3.5 MB`). Active Claude API enrichment pipeline (`claude-haiku-4-5-20251001`) running in background.  
-> **Next**: Let Claude enrichment pipeline finish remaining quotes, sync markdown catalog, and push final bundle.
+> **Status**: Complete | **Phase**: 10 (Web App Edition & Android Library Parity Deployment)  
+> **Current**: 100% of the Master Quote Bank (1,882 quotes across 436 books) fully enriched with substantive two-tier companion notes (~220-250 words each). All 113 How-To craft cards pass linter with 0 flags. Category chip counts and "All Quotes" views synchronized between Web and Android app (hiding "Steal It" and displaying "Look Closer" + "Around It"). Recompiled release APK (`3.7 MB`) bundled into `docs/marginalia.apk`.  
+> **Next**: Ready for daily reading and widget usage on Android and web.
 
 ## Roadmap
 
@@ -15,7 +15,7 @@
 - [x] Phase 7: Quote Bank UI & Integration — Thematic horizons web reader, dynamic tag discovery, and dual-mode Android widget integration
 - [x] Phase 8: In-App UX Polish, Boundary Fixes & Dostoevsky Trifles Curation (APK release compiled, boundary margins fixed)
 - [x] Phase 9: Shelf Quote Explanation Renaissance — Two-tier cognitive standard, zero-spoiler ground truth, and Gemini Free Tier pipeline (458 quotes enriched)
-- [~] Phase 10: Web App Edition & GitHub Pages Live Deployment — Fully responsive mobile/desktop web app with APK download, OpenGraph previews, and dual-collection browsing
+- [x] Phase 10: Web App Edition & GitHub Pages Live Deployment — Fully responsive mobile/desktop web app with APK download, OpenGraph previews, and dual-collection browsing
 
 ## File map
 
