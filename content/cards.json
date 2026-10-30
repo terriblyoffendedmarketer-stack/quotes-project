@@ -2107,9 +2107,13 @@
       "The fact is, both sides killed",
       "Both shot and stabbed and speared and clubbed"
     ],
-    "lookCloser": "Singh strips away political rationalizations by hammering the reader with monosyllabic verbs. He links four violent actions with the word and, refusing commas or pauses. The sentences grow shorter as the violence intensifies. By repeating the subject both across four consecutive declarations, he dissolves partisan blame into shared savagery.",
-    "stealIt": "To describe collective violence without taking sides, eliminate explanatory adverbs. Chain physical verbs together with the conjunction and. Let the unadorned actions carry the horror.",
+    "lookCloser": "Two sentences give each side their opening justification. Then Singh dismisses both in five words: The fact is, both sides killed. Look at the rhythm that follows: six monosyllabic verbs chained together with and. No adjectives, no moralizing, no political explanation. Singh strips the violence down to physical instruments and physical actions, refusing to let either side hide behind rhetoric.",
+    "stealIt": "When recording collective violence, strip away explanatory adverbs and political context. Chain physical verbs together with the conjunction and. Force the reader to confront the unadorned acts.",
     "aroundIt": "Set during the 1947 Partition of British India, the novel depicts the fictional border village of Mano Majra. As ten million refugees crossed the new frontier and nearly a million died in communal massacres, Singh sought to record the human tragedy without historical abstraction.",
-    "verification": "Chapter 1: Dacoity, opening pages."
+    "verification": "Chapter 1: Dacoity, opening pages.",
+    "lintAccepted": [
+      "colon reveal",
+      "possible triad"
+    ]
   }
 ]

@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: In Progress | **Phase**: 10 (Web App Edition & Android Library Parity Deployment)  
-> **Current**: Added Khushwant Singh craft card to `content/cards.json` (113 cards total, 0 linter flags). Integrated user Kindle highlights into `content/quote-bank.json` across Cixin Liu (*The Three-Body Problem* slender-girl callback trilogy), Oliver Burkeman (*Four Thousand Weeks* planning lasso & freedom to suck), and Khushwant Singh (*Train to Pakistan* Mano Majra). All quotes sized between 35-55 words with rich 2-tier companion notes.  
-> **Next**: Re-run background quote enrichment pipeline when API quotas reset, and continue content curation.
+> **Current**: Restored beloved Khushwant Singh craft breakdown in `content/cards.json` (0 linter flags). Fixed Android category chip count bug (`✨ How-To` now correctly displays `113` instead of `0`). Hidden `STEAL IT` and surfaced `LOOK CLOSER` + `AROUND IT` in All Quotes catalog stream (Android & Web). Deeply expanded the three *The Three-Body Problem* shelf companion notes (~230w each). Recompiled release APK (`3.5 MB`). Active Claude API enrichment pipeline (`claude-haiku-4-5-20251001`) running in background.  
+> **Next**: Let Claude enrichment pipeline finish remaining quotes, sync markdown catalog, and push final bundle.
 
 ## Roadmap
 
@@ -28,6 +28,8 @@
 - `scripts/mine_full_library.py`: Continuous automated full-library mining engine with Dublin Core metadata reader and zero-spoiler gating.
 - `scripts/harmonize_quote_bank.py`: Harmonization utility ensuring all 1,871 quotes share the unified reading companion schema.
 - `scripts/enrich_explanations.py`: Enriches scene explanations with narrative setting and emotional stakes without reductive takeaways.
+- `scripts/enrich_with_claude.py`: Claude API (`claude-haiku-4-5-20251001`) enrichment engine generating 2-tier companion notes.
+- `scripts/update_three_body_explanations.py`: Dedicated updater for deep 2-tier companion notes on The Three-Body Problem shelf quotes.
 - `scripts/serve_preview.py`: Zero-install local HTTP preview server for Marginalia Visual Studio in browser.
 - `scripts/run_batch.py`: Batch orchestrator to mine clusters of books and output candidate JSON.
 - `tools/lint_cards.py`: Linter enforcing word limits, banned AI shapes, triads, and opener variety.

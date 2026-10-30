@@ -68,8 +68,8 @@ class QuoteCardAdapter(
                 btnSpark.visibility = View.GONE
 
                 val hasLook = !quote.lookCloser.isNullOrEmpty()
-                val hasSteal = !quote.stealIt.isNullOrEmpty()
-                if (hasLook || hasSteal) {
+                val hasAround = !quote.aroundIt.isNullOrEmpty()
+                if (hasLook || hasAround) {
                     btnNote.visibility = View.VISIBLE
                     val isExpanded = expandedQuotes.contains(quote.quote)
                     noteBody.visibility = if (isExpanded) View.VISIBLE else View.GONE
@@ -78,11 +78,11 @@ class QuoteCardAdapter(
                     tier1Kicker.text = "LOOK CLOSER"
                     tier1Text.text = quote.lookCloser ?: ""
 
-                    if (hasSteal) {
+                    if (hasAround) {
                         tier2Kicker.visibility = View.VISIBLE
                         tier2Text.visibility = View.VISIBLE
-                        tier2Kicker.text = "STEAL IT"
-                        tier2Text.text = quote.stealIt ?: ""
+                        tier2Kicker.text = "AROUND IT"
+                        tier2Text.text = quote.aroundIt ?: ""
                     } else {
                         tier2Kicker.visibility = View.GONE
                         tier2Text.visibility = View.GONE

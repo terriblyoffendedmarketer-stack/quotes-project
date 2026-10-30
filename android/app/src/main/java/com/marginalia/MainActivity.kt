@@ -269,8 +269,15 @@ class MainActivity : Activity() {
         val activeTextColor = ContextCompat.getColor(this, R.color.pill_active_text)
         val inactiveTextColor = ContextCompat.getColor(this, R.color.ink_soft)
 
+        val allCardsCount = Cards.all(this).size
+        val allBankCount = QuoteBank.countForHorizon(this, "all")
+
         Horizons.ALL.forEach { h ->
-            val count = QuoteBank.countForHorizon(this, h.code)
+            val count = when (h.code) {
+                "all" -> allCardsCount + allBankCount
+                "craft" -> allCardsCount
+                else -> QuoteBank.countForHorizon(this, h.code)
+            }
             val chip = layoutInflater.inflate(R.layout.tab_chip, libHorizonsBar, false) as TextView
             chip.text = if (h.code == "all") "All ($count)" else "${h.title} ($count)"
 

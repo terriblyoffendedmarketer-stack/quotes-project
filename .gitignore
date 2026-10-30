@@ -5,6 +5,9 @@ content/*_raw.json
 *.env
 
 scripts/enrichment_progress.log
+scripts/claude_enrichment_progress.log
+scripts/*_preview.json
+scripts/*_gemini.json
 /marginalia.apk
 /prototype/marginalia.apk
 !docs/marginalia.apk
