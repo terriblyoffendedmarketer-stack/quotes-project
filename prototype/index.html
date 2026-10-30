@@ -334,6 +334,21 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .btn-spark:hover { color: var(--spark-gold); border-color: var(--spark-gold); }
 .btn-spark.saved { background: var(--paper); color: var(--spark-gold); border-color: var(--spark-gold); }
 
+.qc-read-daily-btn {
+  font: 600 11px/1 var(--font-tag); background: transparent; color: var(--ink-soft);
+  border: 1px solid var(--rule); border-radius: 99px; padding: 5px 10px;
+  cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all .15s;
+}
+.qc-read-daily-btn:hover { color: var(--ink); border-color: var(--ink-soft); background: var(--paper); }
+
+.qc-job-banner {
+  font-family: var(--font-hook); font-size: 1.18rem; font-weight: 700;
+  color: var(--ink); line-height: 1.28; letter-spacing: -.01em;
+}
+.qc-craft-card {
+  border-left: 3px solid var(--spark-gold);
+}
+
 .qc-quote {
   font-family: var(--font-line); font-size: 1.25rem; line-height: 1.48;
   margin: 0; color: var(--ink); text-wrap: pretty;
@@ -510,17 +525,18 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   <main id="viewCatalog" class="bank-container" style="display:none;">
     <div class="library-hero">
       <div class="library-headline">The Library</div>
-      <div class="library-sub">1,874 curated passages &amp; literary companion notes across 416 books</div>
+      <div class="library-sub">113 How-To craft cards &amp; 1,882 shelf passages across 440+ books</div>
     </div>
 
     <section class="bank-header-panel">
       <div class="search-row">
-        <input type="text" class="search-input" id="bankSearch" placeholder="Search passages, authors, books, themes..." autocomplete="off">
+        <input type="text" class="search-input" id="bankSearch" placeholder="Search craft cards, passages, authors, books, techniques..." autocomplete="off">
         <button class="chip-btn" id="btnSurpriseCatalog" type="button" title="Jump to random quote">🎲 Surprise</button>
       </div>
 
       <nav class="horizons-bar" id="catalogHorizonsBar" aria-label="Thematic Horizons">
-        <button class="horizon-chip" data-h="all" aria-pressed="true">All (1,874)</button>
+        <button class="horizon-chip" data-h="all" aria-pressed="true">All (1,995)</button>
+        <button class="horizon-chip" data-h="craft" aria-pressed="false" style="color:var(--spark-gold); font-weight:700;">✨ How-To (113)</button>
         <button class="horizon-chip" data-h="dread" aria-pressed="false">Atmospheric Dread</button>
         <button class="horizon-chip" data-h="folly" aria-pressed="false">Human Folly</button>
         <button class="horizon-chip" data-h="solitude" aria-pressed="false">Solitude &amp; Finitude</button>
@@ -532,7 +548,7 @@ button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
       <div class="filter-active-row">
         <div>
-          <span id="bankMatchCount">1,874</span> quotes across <span id="bankBooksCount">416</span> books
+          <span id="bankMatchCount">1,995</span> items across <span id="bankBooksCount">440</span> works
           <span id="activeTagContainer" style="margin-left:8px; display:none">
             <span class="active-tag-pill">#<span id="activeTagName"></span> <button id="btnClearTag" type="button">×</button></span>
           </span>
@@ -1122,7 +1138,7 @@ $("wThemeToggle").addEventListener("click", () => {
 });
 
 /* ==========================================================================
-   CATALOG HORIZONS STREAM ENGINE
+   CATALOG HORIZONS STREAM ENGINE (UNIFIED: HOW-TO CARDS + SHELF SPARKS)
    ========================================================================== */
 let bankQuery = "";
 let bankActiveHorizon = "all";
@@ -1133,14 +1149,73 @@ let renderedCount = 0;
 const PAGE_SIZE = 25;
 let currentFilteredList = [];
 
+// Combine CARDS (113 How-To Craft Cards) and QUOTE_BANK (1882 Shelf Sparks)
+let ALL_LIBRARY_ITEMS = [];
+
+function initLibraryItems() {
+  if (ALL_LIBRARY_ITEMS.length) return;
+  
+  const adaptedCards = (typeof CARDS !== 'undefined' ? CARDS : []).map((c, idx) => ({
+    isCard: true,
+    cardIndex: idx,
+    id: c.id,
+    job: c.job || "",
+    quote: c.quote || "",
+    author: c.author || "Unknown",
+    work: c.work || "Prose Craft",
+    year: c.year,
+    horizon: "craft",
+    lookCloser: c.lookCloser || "",
+    stealIt: c.stealIt || "",
+    aroundIt: c.aroundIt || "",
+    explanation: `${c.lookCloser || ""}\n\n${c.stealIt || ""}`,
+    tags: ["how-to", "prose-craft"]
+  }));
+
+  const adaptedBank = (typeof QUOTE_BANK !== 'undefined' ? QUOTE_BANK : []).map((q, idx) => ({
+    ...q,
+    isCard: false,
+    shelfIndex: idx
+  }));
+
+  ALL_LIBRARY_ITEMS = [...adaptedCards, ...adaptedBank];
+}
+
 function getFilteredBank() {
-  return QUOTE_BANK.filter(q => {
-    if (bankShowingSparkQueue && !sparkQueue.includes(q.work)) return false;
-    if (bankActiveHorizon !== "all" && q.horizon !== bankActiveHorizon) return false;
-    if (bankActiveTag && !(q.tags || []).includes(bankActiveTag)) return false;
+  initLibraryItems();
+
+  return ALL_LIBRARY_ITEMS.filter(q => {
+    if (bankShowingSparkQueue && (q.isCard || !sparkQueue.includes(q.work))) return false;
+
+    if (bankActiveHorizon !== "all") {
+      if (bankActiveHorizon === "craft") {
+        if (!q.isCard) return false;
+      } else {
+        if (q.isCard || q.horizon !== bankActiveHorizon) return false;
+      }
+    }
+
+    if (bankActiveTag) {
+      const tagLow = bankActiveTag.toLowerCase();
+      const matchTag = (q.tags || []).some(t => t.toLowerCase() === tagLow);
+      const matchHorizon = (q.horizon || "").toLowerCase() === tagLow;
+      if (!matchTag && !matchHorizon) return false;
+    }
+
     if (bankQuery) {
-      const hay = (q.quote + " " + q.author + " " + q.work + " " + (q.explanation || "") + " " + (q.tags || []).join(" ")).toLowerCase();
-      if (!hay.includes(bankQuery.toLowerCase())) return false;
+      const qLow = bankQuery.toLowerCase();
+      const hay = (
+        (q.job || "") + " " +
+        (q.quote || "") + " " +
+        (q.author || "") + " " +
+        (q.work || "") + " " +
+        (q.explanation || "") + " " +
+        (q.lookCloser || "") + " " +
+        (q.stealIt || "") + " " +
+        (q.aroundIt || "") + " " +
+        (q.tags || []).join(" ")
+      ).toLowerCase();
+      if (!hay.includes(qLow)) return false;
     }
     return true;
   });
@@ -1151,32 +1226,99 @@ function renderBankStream(reset = false) {
     renderedCount = 0;
     $("quotesStream").innerHTML = "";
     currentFilteredList = getFilteredBank();
-    $("bankMatchCount").textContent = currentFilteredList.length.toLocaleString();
+    
+    const cardsCount = currentFilteredList.filter(q => q.isCard).length;
+    const shelfCount = currentFilteredList.length - cardsCount;
     const books = new Set(currentFilteredList.map(q => q.work));
+
+    let summary = currentFilteredList.length.toLocaleString();
+    if (cardsCount > 0 && shelfCount > 0) {
+      summary = `${currentFilteredList.length.toLocaleString()} items (${cardsCount} How-To + ${shelfCount} Shelf)`;
+    } else if (cardsCount > 0) {
+      summary = `${cardsCount} How-To cards`;
+    } else {
+      summary = `${shelfCount.toLocaleString()} Shelf quotes`;
+    }
+    $("bankMatchCount").textContent = summary;
     $("bankBooksCount").textContent = books.size.toLocaleString();
   }
 
   const slice = currentFilteredList.slice(renderedCount, renderedCount + PAGE_SIZE);
   if (!slice.length) {
-    if (reset) $("quotesStream").innerHTML = `<div style="text-align:center; padding:40px; color:var(--ink-soft);">No passages match your search.</div>`;
+    if (reset) $("quotesStream").innerHTML = `<div style="text-align:center; padding:40px; color:var(--ink-soft);">No passages or craft cards match your search.</div>`;
     $("loadMoreWrap").style.display = "none";
     return;
   }
 
   const html = slice.map((q, idx) => {
-    const isSaved = sparkQueue.includes(q.work);
+    const isSaved = !q.isCard && sparkQueue.includes(q.work);
+    const noteId = `note_${renderedCount + idx}`;
+
+    if (q.isCard) {
+      return `
+        <article class="quote-card qc-craft-card" data-work="${escapeHtml(q.work)}">
+          <div class="qc-top-bar">
+            <span class="qc-horizon-badge" style="background:rgba(217,119,6,0.12); color:#b45309; border:1px solid rgba(217,119,6,0.25); font-weight:700; padding:3px 8px; border-radius:6px;">✨ HOW-TO: PROSE CRAFT</span>
+            <button class="qc-read-daily-btn" type="button" onclick="openCardInDaily(${q.cardIndex})">
+              Read in Daily ↗
+            </button>
+          </div>
+
+          <div class="qc-job-banner">
+            ${escapeHtml(q.job)}
+          </div>
+
+          <blockquote class="qc-quote ${q.quote.length > 220 ? 'long' : ''}">“${escapeHtml(q.quote)}”</blockquote>
+
+          <div class="qc-attribution">
+            — <strong class="qc-author">${escapeHtml(q.author)}</strong>, <cite class="qc-work">${escapeHtml(q.work)}</cite>${q.year ? ` · ${q.year}` : ''}
+          </div>
+
+          <button class="btn-note-toggle" type="button" onclick="toggleNote('${noteId}', this)">
+            <span>▾ Read Craft Breakdown</span>
+          </button>
+          <div class="qc-note-body" id="${noteId}" style="display:none;">
+            <div class="qc-tier">
+              <span class="qc-tier-badge" style="color:var(--spark-gold);">LOOK CLOSER</span>
+              <p class="qc-tier-text">${escapeHtml(q.lookCloser)}</p>
+            </div>
+            <div class="qc-tier">
+              <span class="qc-tier-badge" style="color:var(--spark-gold);">STEAL IT</span>
+              <p class="qc-tier-text">${escapeHtml(q.stealIt)}</p>
+            </div>
+            ${q.aroundIt ? `
+            <div class="qc-tier">
+              <span class="qc-tier-badge" style="color:var(--spark-gold);">AROUND IT</span>
+              <p class="qc-tier-text">${escapeHtml(q.aroundIt)}</p>
+            </div>` : ''}
+          </div>
+
+          <div class="qc-footer">
+            <div class="qc-tags">
+              <span class="qc-tag" onclick="filterByTag('how-to')">#how-to</span>
+              <span class="qc-tag" onclick="filterByTag('prose-craft')">#prose-craft</span>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
     const paragraphs = (q.explanation || "").split("\n\n").map(p => p.trim()).filter(Boolean);
     const p1 = paragraphs[0] || "";
     const p2 = paragraphs[1] || "";
-    const noteId = `note_${renderedCount + idx}`;
 
     return `
       <article class="quote-card" data-work="${escapeHtml(q.work)}">
         <div class="qc-top-bar">
           <span class="qc-horizon-badge">#${escapeHtml(q.horizon)}</span>
-          <button class="btn-spark ${isSaved ? 'saved' : ''}" type="button" onclick="toggleSpark('${escapeHtml(q.work)}')">
-            ${isSaved ? '★ Saved' : '☆ Read Next'}
-          </button>
+          <div style="display:flex; gap:6px; align-items:center;">
+            <button class="qc-read-daily-btn" type="button" onclick="openShelfInDaily(${q.shelfIndex})">
+              Read in Daily ↗
+            </button>
+            <button class="btn-spark ${isSaved ? 'saved' : ''}" type="button" onclick="toggleSpark('${escapeHtml(q.work)}')">
+              ${isSaved ? '★ Saved' : '☆ Read Next'}
+            </button>
+          </div>
         </div>
 
         <blockquote class="qc-quote ${q.quote.length > 220 ? 'long' : ''}">“${escapeHtml(q.quote)}”</blockquote>
@@ -1216,6 +1358,24 @@ function renderBankStream(reset = false) {
   renderedCount += slice.length;
   $("loadMoreWrap").style.display = renderedCount < currentFilteredList.length ? "block" : "none";
 }
+
+window.openCardInDaily = function(cardIdx) {
+  appMode = "cards";
+  setTodayMode("cards");
+  cardIndex = cardIdx;
+  switchView("app");
+  renderApp();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+window.openShelfInDaily = function(shelfIdx) {
+  appMode = "bank";
+  setTodayMode("shelf");
+  bankIndex = shelfIdx;
+  switchView("app");
+  renderApp();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 window.toggleNote = function(id, btn) {
   const el = $(id);
