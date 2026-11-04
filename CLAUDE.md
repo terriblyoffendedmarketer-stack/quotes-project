@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: Complete | **Phase**: 10 (Web App Edition & Android Library Parity Deployment)  
-> **Current**: 100% of the Master Quote Bank (1,882 quotes across 436 books) fully enriched with substantive two-tier companion notes (~220-250 words each). All 113 How-To craft cards pass linter with 0 flags. Category chip counts and "All Quotes" views synchronized between Web and Android app (hiding "Steal It" and displaying "Look Closer" + "Around It"). Recompiled release APK (`3.7 MB`) bundled into `docs/marginalia.apk`.  
-> **Next**: Ready for daily reading and widget usage on Android and web.
+> **Status**: Complete | **Phase**: 11 (Google Drive Library Dynamic Shelf & TBR Recommender)  
+> **Current**: 100% of the Google Drive library (676 files across 8 collections) indexed and parsed. Generated 631 unique curated shelf books with back-cover pitches, "Why People Love It" reading notes, and cold-reader excerpts. Created clean copy-pastable TBR list (587 distinct works) in `content/tbr_clean_list.txt`. Built interactive "What to Read Next?" dynamic shelf web application deployed to `prototype/shelf.html` and `docs/shelf.html`.  
+> **Next**: Ready for interactive browsing, mood-based reading recommendations, and 1-click TBR exports.
 
 ## Roadmap
 
@@ -16,14 +16,21 @@
 - [x] Phase 8: In-App UX Polish, Boundary Fixes & Dostoevsky Trifles Curation (APK release compiled, boundary margins fixed)
 - [x] Phase 9: Shelf Quote Explanation Renaissance — Two-tier cognitive standard, zero-spoiler ground truth, and Gemini Free Tier pipeline (458 quotes enriched)
 - [x] Phase 10: Web App Edition & GitHub Pages Live Deployment — Fully responsive mobile/desktop web app with APK download, OpenGraph previews, and dual-collection browsing
+- [x] Phase 11: Google Drive Library Dynamic Shelf & TBR Recommender — Full drive indexing (676 files), 631 unique shelf cards, 587 clean TBR entries, and interactive recommendation web app
 
 ## File map
 
 - `content/cards.json`: Single source of truth for all 108 cards (quote, hook, lookCloser, stealIt, aroundIt).
 - `QUOTE_BANK_ARCHITECTURE.md`: Master architectural blueprint for the 800-1,200 quote bank, anti-fatigue UX, and local Ollama pipeline.
-- `content/quote-bank.json`: Structured storage for the master multi-book quote bank.
+- `content/quote-bank.json`: Structured storage for the master multi-book quote bank (1,882 quotes across 423 books).
 - `content/quote-bank.md`: Human-readable quote bank catalog grouped by book.
 - `content/authors.md`: Master author library (classic, contemporary, memoir, nonfiction) and their strengths.
+- `content/gdrive_books_catalog.json`: Raw index of all 676 book files across Google Drive with paths and sizes.
+- `content/books_curated_shelf.json`: Structured dynamic shelf containing 631 works with pitches, reader notes, and tags.
+- `content/tbr_clean_list.txt`: Clean, 1-click copy-pastable `Title — Author` list of 587 books for TBR trackers.
+- `scripts/fetch_all_gdrive_books.py`: Rclone drive indexing script scanning `gdrive:Books` recursively.
+- `scripts/build_dynamic_bookshelf.py`: Compiles, normalizes, and enriches drive catalog into interactive shelf web app.
+- `prototype/shelf.html` & `docs/shelf.html`: Interactive dynamic shelf and "What Should I Read Next?" recommender.
 - `scripts/mine_quote_bank.py`: Local extraction engine using Ollama (`gemma3:4b`) to scout literary quotes from EPUBs.
 - `scripts/mine_full_library.py`: Continuous automated full-library mining engine with Dublin Core metadata reader and zero-spoiler gating.
 - `scripts/harmonize_quote_bank.py`: Harmonization utility ensuring all 1,871 quotes share the unified reading companion schema.
@@ -48,6 +55,7 @@
 - Python tools require only the Python 3 standard library:
   - Run linter: `python3 tools/lint_cards.py`
   - Rebuild web prototype: `python3 tools/build_prototype.py`
+  - Rebuild dynamic bookshelf & TBR list: `python3 scripts/build_dynamic_bookshelf.py`
 - GitHub sync:
   - Push updates: `git add . && git commit -m "..." && git push origin main`
   - The Android app auto-downloads `content/cards.json` from the GitHub repo every few hours.
