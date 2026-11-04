@@ -174,6 +174,8 @@ def clean_title_author(title, author):
 
 def fetch_openlibrary_metadata(book):
     book_id = book["id"]
+    if book.get("no_cover"):
+        return book_id, {"cover_url": None, "no_cover": True}
     if book_id in METADATA_CACHE:
         return book_id, METADATA_CACHE[book_id]
 

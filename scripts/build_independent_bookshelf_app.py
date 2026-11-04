@@ -265,8 +265,11 @@ def build():
                 for k, v in MANUAL_BOOK_FIXES[bid].items():
                     b[k] = v
 
-            # Backfill from cache if missing
-            if not b.get("cover_url"):
+            # If explicitly marked as having no cover or set to None in manual fixes, respect that decision
+            if b.get("no_cover") or (bid in MANUAL_BOOK_FIXES and MANUAL_BOOK_FIXES[bid].get("cover_url") is None):
+                b["cover_url"] = None
+                b["no_cover"] = True
+            elif not b.get("cover_url"):
                 clean_t = re.sub(r"libgen\.li|libgen|\(20\d\d.*?\)|\{.*?\}", "", b.get("title", ""), flags=re.I).strip()
                 clean_a = re.sub(r"libgen\.li|libgen|\(dir\..*?\)|Unknown", "", b.get("author", ""), flags=re.I).strip()
                 cache_key = f"{clean_t}|{clean_a}"
@@ -901,10 +904,20 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         <div>
           <label class="block font-semibold text-[var(--text-muted)] uppercase mb-1">Cover Image URL</label>
           <input type="text" id="editCoverUrl" placeholder="https://..." class="w-full px-3 py-2 bg-[var(--canvas)] border border-[var(--border)] rounded-lg text-[var(--text-heading)] focus:border-[var(--terracotta)] focus:outline-none" />
-          <div class="flex items-center gap-3 mt-1.5 text-[11px] text-[var(--terracotta)]">
-            <button type="button" onclick="searchGoodreads()" class="hover:underline">🔎 Search Goodreads Cover</button>
-            <button type="button" onclick="searchGoogleImages()" class="hover:underline">🖼️ Search Google Images</button>
+          <div class="flex flex-wrap items-center justify-between gap-2 mt-2 pt-1 border-t border-[var(--border-subtle)] text-[11px]">
+            <div class="flex items-center gap-2.5 text-[var(--terracotta)] font-medium">
+              <button type="button" onclick="searchGoodreads()" class="hover:underline flex items-center gap-1">🔎 Goodreads</button>
+              <span>•</span>
+              <button type="button" onclick="searchGoogleImages()" class="hover:underline flex items-center gap-1">🖼️ Google Images</button>
+            </div>
+            <button type="button" onclick="removeCoverAction()" class="px-2.5 py-1 text-red-600 dark:text-red-400 bg-red-500/10 hover:bg-red-500/20 rounded font-semibold text-[11px] transition flex items-center gap-1">
+              <span>🗑️</span>
+              <span>Remove Cover (Use Template Jacket)</span>
+            </button>
           </div>
+          <p class="text-[10px] text-[var(--text-muted)] mt-1.5 leading-tight">
+            ✦ Removing cover applies an authentic typographic clothbound jacket featuring the book title and author, and remembers not to regenerate it.
+          </p>
         </div>
         <div>
           <label class="block font-semibold text-[var(--text-muted)] uppercase mb-1">Back-Cover Pitch</label>
@@ -941,7 +954,17 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       const saved = localStorage.getItem("exlibris_shelf_edits");
       if (saved) {{
         const overrides = JSON.parse(saved);
-        SHELF_DATA = SHELF_DATA.map(b => overrides[b.id] ? Object.assign(b, overrides[b.id]) : b);
+        SHELF_DATA = SHELF_DATA.map(b => {{
+          if (overrides[b.id]) {{
+            const ov = overrides[b.id];
+            b = Object.assign(b, ov);
+            if (ov.no_cover) {{
+              b.cover_url = null;
+              b.no_cover = true;
+            }}
+          }}
+          return b;
+        }});
       }}
     }} catch (e) {{}}
 
@@ -995,6 +1018,45 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       if (cat.includes("Harvard")) return "jacket-hbr";
       if (cat.includes("Food")) return "jacket-food";
       return "jacket-fiction";
+    }}
+
+    function renderTypographicJacket(b, extraClasses = "") {{
+      const jacketCls = getJacketStyle(b.category || "");
+      const authorDisplay = (b.author && b.author.trim() && b.author.toLowerCase() !== "unknown") 
+        ? b.author 
+        : "Unknown Author";
+
+      return `
+        <div class="typographic-jacket w-full h-full ${{jacketCls}} p-3 sm:p-4 flex flex-col justify-between relative overflow-hidden select-none rounded-[6px] shadow-inner ${{extraClasses}}">
+          <!-- Spine hinge shadow on left edge -->
+          <div class="absolute left-0 top-0 bottom-0 w-2.5 bg-gradient-to-r from-black/40 via-black/15 to-transparent pointer-events-none z-10"></div>
+          <!-- Fine cloth weave highlight -->
+          <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/25 pointer-events-none"></div>
+
+          <!-- Top Header: Format & Star Badge -->
+          <div class="relative z-10 flex items-center justify-between text-[9px] text-white/80 font-mono tracking-wider uppercase">
+            <span class="bg-black/35 backdrop-blur-xs px-1.5 py-0.5 rounded font-bold">${{b.format || 'EPUB'}}</span>
+            <span class="text-amber-300 text-xs drop-shadow-xs">✦</span>
+          </div>
+
+          <!-- Center Typography Frame: Refined Inset Card -->
+          <div class="relative z-10 my-auto py-2.5 px-3 rounded-lg border border-white/20 bg-black/25 backdrop-blur-xs text-center shadow-inner">
+            <h4 class="font-serif font-bold text-xs sm:text-sm md:text-base text-white leading-snug drop-shadow-sm line-clamp-3 sm:line-clamp-4">
+              ${{b.title}}
+            </h4>
+            <div class="w-8 h-[1px] bg-amber-300/60 mx-auto my-2"></div>
+            <p class="font-serif italic text-white/90 text-[10px] sm:text-xs truncate">
+              by ${{authorDisplay}}
+            </p>
+          </div>
+
+          <!-- Bottom Publisher Ornament -->
+          <div class="relative z-10 flex items-center justify-between text-[8px] font-mono text-white/60 uppercase tracking-widest pt-1.5 border-t border-white/10">
+            <span class="truncate max-w-[100px]">${{b.category || 'Reading Corner'}}</span>
+            <span>EX LIBRIS</span>
+          </div>
+        </div>
+      `;
     }}
 
     function getFilteredBooks() {{
@@ -1145,42 +1207,26 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
       grid.innerHTML = books.map(b => {{
         const jacketCls = getJacketStyle(b.category);
-        const hasCover = !!b.cover_url;
+        const hasCover = !!b.cover_url && !b.no_cover;
         const hook = extractFirstWhyReadHook(b.why_love);
 
         return `
           <div class="book-card group cursor-pointer relative" onclick="openBookDetail('${{b.id}}')">
             <!-- Book Cover -->
-            <div class="book-cover ${{jacketCls}} relative overflow-hidden rounded-[8px] shadow-md transition-all duration-200 group-hover:shadow-2xl group-hover:-translate-y-1.5">
+            <div class="book-cover ${{jacketCls}} relative overflow-hidden rounded-[8px] shadow-md transition-all duration-200 group-hover:shadow-2xl group-hover:-translate-y-1.5 aspect-[2/3]">
               ${{hasCover ? `
-                <img src="${{b.cover_url}}" alt="${{b.title}}" loading="lazy" class="w-full h-full object-cover z-0" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-jacket').style.display='flex';" />
+                <img src="${{b.cover_url}}" alt="${{b.title}}" loading="lazy" class="w-full h-full object-cover z-0" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-jacket').style.display='block';" />
                 <div class="absolute top-2 left-2 z-10 flex items-center gap-1.5">
                   <span class="text-[9px] font-mono uppercase tracking-wider text-white bg-black/60 backdrop-blur-xs px-1.5 py-0.5 rounded shadow-sm">
-                    ${{b.format}}
+                    ${{b.format || 'EPUB'}}
                   </span>
                   ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-950 bg-amber-300/95 backdrop-blur-xs px-1.5 py-0.5 rounded shadow-sm">★ Quotes</span>` : ''}}
                 </div>
-                <div class="fallback-jacket hidden flex-col justify-between h-full p-3.5 absolute inset-0 z-0">
-                  <div class="flex items-center justify-between">
-                    <span class="text-[9px] font-mono uppercase text-white/80 bg-black/40 px-1.5 py-0.5 rounded">${{b.format}}</span>
-                    ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-300">★ Quotes</span>` : ''}}
-                  </div>
-                  <div class="mt-auto pt-2">
-                    <h3 class="font-serif font-bold text-xs text-white leading-tight drop-shadow-md line-clamp-3">${{b.title}}</h3>
-                    <p class="text-[10px] text-white/85 font-medium mt-0.5 line-clamp-1">${{b.author}}</p>
-                  </div>
+                <div class="fallback-jacket hidden absolute inset-0 z-0 w-full h-full">
+                  ${{renderTypographicJacket(b)}}
                 </div>
               ` : `
-                <div class="flex flex-col justify-between h-full p-3.5 relative z-10">
-                  <div class="flex items-center justify-between">
-                    <span class="text-[9px] font-mono uppercase text-white/80 bg-black/40 px-1.5 py-0.5 rounded">${{b.format}}</span>
-                    ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-300">★ Quotes</span>` : ''}}
-                  </div>
-                  <div class="mt-auto pt-2">
-                    <h3 class="font-serif font-bold text-xs sm:text-sm text-white leading-tight drop-shadow-md line-clamp-3">${{b.title}}</h3>
-                    <p class="text-[10px] text-white/85 font-medium mt-0.5 line-clamp-1">${{b.author}}</p>
-                  </div>
-                </div>
+                ${{renderTypographicJacket(b)}}
               `}}
 
               <!-- Hover Peek Card Overlay (Context on Hover) -->
@@ -1236,22 +1282,20 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
       grid.innerHTML = books.map(b => {{
         const jacketCls = getJacketStyle(b.category);
-        const hasCover = !!b.cover_url;
+        const hasCover = !!b.cover_url && !b.no_cover;
 
         return `
           <div class="editorial-card bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--terracotta)]/40 rounded-2xl p-4 sm:p-5 md:p-6 flex flex-row gap-4 sm:gap-6 hover:shadow-lg transition-all duration-200 cursor-pointer group items-stretch" onclick="openBookDetail('${{b.id}}')">
             <!-- Cover (Left: substantial horizontal real estate, perfectly proportioned, 4 cards visible on screen) -->
             <div class="w-32 sm:w-40 md:w-48 lg:w-56 shrink-0 aspect-[2/3] book-cover ${{jacketCls}} relative rounded-xl overflow-hidden shadow-sm border border-black/10 flex items-center justify-center bg-[var(--border-subtle)]/40 p-1">
               ${{hasCover ? `
-                <img src="${{b.cover_url}}" alt="${{b.title}}" loading="lazy" class="w-full h-full object-contain drop-shadow-xs rounded-lg" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-ed').style.display='flex';" />
-                <div class="fallback-ed hidden flex-col justify-between h-full w-full p-2.5 absolute inset-0">
-                  <span class="text-[9px] font-mono uppercase text-white/80">${{b.format}}</span>
-                  <p class="font-serif text-xs font-bold text-white leading-tight line-clamp-3">${{b.title}}</p>
+                <img src="${{b.cover_url}}" alt="${{b.title}}" loading="lazy" class="w-full h-full object-contain drop-shadow-xs rounded-lg" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-ed').style.display='block';" />
+                <div class="fallback-ed hidden absolute inset-0 w-full h-full">
+                  ${{renderTypographicJacket(b)}}
                 </div>
               ` : `
-                <div class="flex flex-col justify-between h-full w-full p-2.5">
-                  <span class="text-[9px] font-mono uppercase text-white/80">${{b.format}}</span>
-                  <p class="font-serif text-xs font-bold text-white leading-tight line-clamp-3">${{b.title}}</p>
+                <div class="w-full h-full">
+                  ${{renderTypographicJacket(b)}}
                 </div>
               `}}
               <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-r from-black/15 to-transparent pointer-events-none"></div>
@@ -1317,7 +1361,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
                 : 'hover:bg-[var(--card-hover)] border border-transparent'
             }}">
             <div class="w-10 h-14 shrink-0 book-cover ${{jacketCls}} relative overflow-hidden rounded">
-              ${{b.cover_url ? `<img src="${{b.cover_url}}" class="w-full h-full object-cover" onerror="this.style.display='none'" />` : ''}}
+              ${{b.cover_url && !b.no_cover ? `<img src="${{b.cover_url}}" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentElement.querySelector('.fallback-thumb').style.display='block';" /><div class="fallback-thumb hidden w-full h-full">${{renderTypographicJacket(b, 'text-[6px] p-1')}}</div>` : `<div class="w-full h-full">${{renderTypographicJacket(b, 'text-[6px] p-1')}}</div>`}}
             </div>
             <div class="flex-1 min-w-0">
               <h4 class="font-serif font-bold text-xs text-[var(--text-heading)] truncate">${{b.title}}</h4>
@@ -1350,23 +1394,15 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       container.innerHTML = `
         <div class="flex flex-col md:flex-row gap-6 items-start mb-6 pb-6 border-b border-[var(--border)]">
           <!-- Hero Cover -->
-          <div class="w-36 md:w-48 shrink-0 book-cover ${{jacketCls}} shadow-xl relative overflow-hidden rounded-[8px]">
-            ${{b.cover_url ? `
-              <img src="${{b.cover_url}}" alt="${{b.title}}" class="w-full h-full object-cover" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-hero').style.display='flex';" />
-              <div class="fallback-hero hidden flex-col justify-between h-full p-4 absolute inset-0 z-10">
-                <span class="text-[10px] font-mono uppercase text-white/80">${{b.format}}</span>
-                <div class="mt-auto">
-                  <h3 class="font-serif font-bold text-sm text-white leading-tight">${{b.title}}</h3>
-                  <p class="text-xs text-white/80 mt-1">${{b.author}}</p>
-                </div>
+          <div class="w-36 md:w-48 shrink-0 aspect-[2/3] book-cover ${{jacketCls}} shadow-xl relative overflow-hidden rounded-[8px] bg-[var(--border-subtle)]/40 p-1">
+            ${{b.cover_url && !b.no_cover ? `
+              <img src="${{b.cover_url}}" alt="${{b.title}}" class="w-full h-full object-contain drop-shadow-xs rounded-lg" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-hero').style.display='block';" />
+              <div class="fallback-hero hidden absolute inset-0 z-10 w-full h-full">
+                ${{renderTypographicJacket(b)}}
               </div>
             ` : `
-              <div class="flex flex-col justify-between h-full p-4 relative z-10">
-                <span class="text-[10px] font-mono uppercase text-white/80">${{b.format}}</span>
-                <div class="mt-auto">
-                  <h3 class="font-serif font-bold text-sm text-white leading-tight">${{b.title}}</h3>
-                  <p class="text-xs text-white/80 mt-1">${{b.author}}</p>
-                </div>
+              <div class="w-full h-full">
+                ${{renderTypographicJacket(b)}}
               </div>
             `}}
           </div>
@@ -1397,6 +1433,10 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
               <button onclick="openEditModal('${{b.id}}')" class="px-3.5 py-2 bg-[var(--canvas)] border border-[var(--border)] text-xs font-semibold text-[var(--text-muted)] hover:text-[var(--text-heading)] rounded-xl transition flex items-center gap-1.5">
                 <span>✏️</span>
                 <span>Edit / Cover</span>
+              </button>
+              <button onclick="quickRemoveCover('${{b.id}}')" class="px-3.5 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-red-400 text-xs font-semibold text-[var(--text-muted)] hover:text-red-500 rounded-xl transition flex items-center gap-1.5" title="Remove cover and use classic typographic template">
+                <span>🗑️</span>
+                <span>${{b.cover_url && !b.no_cover ? 'Remove Cover' : 'Jacket Active'}}</span>
               </button>
             </div>
           </div>
@@ -1513,11 +1553,15 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
       content.innerHTML = `
         <div class="flex gap-4 items-start mb-6">
-          <div class="w-28 shrink-0 book-cover ${{jacketCls}} shadow-md relative overflow-hidden rounded-[6px]">
-            ${{b.cover_url ? `<img src="${{b.cover_url}}" class="w-full h-full object-cover" onerror="this.style.display='none'" />` : `
-              <div class="p-3 h-full flex flex-col justify-between">
-                <span class="text-[9px] font-mono uppercase text-white/80">${{b.format}}</span>
-                <p class="font-serif text-xs font-bold text-white leading-tight">${{b.title}}</p>
+          <div class="w-28 shrink-0 aspect-[2/3] book-cover ${{jacketCls}} shadow-md relative overflow-hidden rounded-[8px] bg-[var(--border-subtle)]/40 p-1">
+            ${{b.cover_url && !b.no_cover ? `
+              <img src="${{b.cover_url}}" alt="${{b.title}}" class="w-full h-full object-contain drop-shadow-xs rounded-lg" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-drawer').style.display='block';" />
+              <div class="fallback-drawer hidden absolute inset-0 z-10 w-full h-full">
+                ${{renderTypographicJacket(b)}}
+              </div>
+            ` : `
+              <div class="w-full h-full">
+                ${{renderTypographicJacket(b)}}
               </div>
             `}}
           </div>
@@ -1536,6 +1580,10 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
                 </a>
               ` : ''}}
               <button onclick="copySingleTbr('${{b.title.replace(/'/g, "\\\\\\'")}}', '${{b.author.replace(/'/g, "\\\\\\'")}}')" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] text-xs font-semibold rounded-lg">Copy TBR</button>
+              <button onclick="openEditModal('${{b.id}}')" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] text-xs font-semibold text-[var(--text-muted)] hover:text-[var(--text-heading)] rounded-lg">Edit</button>
+              <button onclick="quickRemoveCover('${{b.id}}')" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] hover:border-red-400 text-xs font-semibold text-[var(--text-muted)] hover:text-red-500 rounded-lg">
+                ${{b.cover_url && !b.no_cover ? 'Remove Cover' : 'Jacket Active'}}
+              </button>
             </div>
           </div>
         </div>
@@ -1618,13 +1666,8 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
       res.innerHTML = `
         <div class="flex flex-col sm:flex-row gap-5 items-start p-4 md:p-5 bg-[var(--canvas)] border border-[var(--border)] rounded-2xl max-h-[60vh] overflow-y-auto">
-          <div class="w-28 md:w-32 shrink-0 book-cover ${{jacketCls}} shadow-md relative overflow-hidden rounded-[6px]">
-            ${{chosen.cover_url ? `<img src="${{chosen.cover_url}}" class="w-full h-full object-cover" onerror="this.style.display='none'" />` : `
-              <div class="p-3 h-full flex flex-col justify-between">
-                <span class="text-[9px] font-mono uppercase text-white/80">${{chosen.format}}</span>
-                <p class="font-serif text-xs font-bold text-white leading-tight">${{chosen.title}}</p>
-              </div>
-            `}}
+          <div class="w-28 md:w-32 shrink-0 aspect-[2/3] book-cover ${{jacketCls}} shadow-md relative overflow-hidden rounded-[8px] bg-[var(--border-subtle)]/40 p-1">
+            ${{chosen.cover_url && !chosen.no_cover ? `<img src="${{chosen.cover_url}}" class="w-full h-full object-contain drop-shadow-xs rounded-lg" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-surprise').style.display='block';" /><div class="fallback-surprise hidden absolute inset-0 z-10 w-full h-full">${{renderTypographicJacket(chosen)}}</div>` : `<div class="w-full h-full">${{renderTypographicJacket(chosen)}}</div>`}}
           </div>
           <div class="flex-1 min-w-0">
             <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)]">${{chosen.category}}</span>
@@ -1660,8 +1703,8 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
       document.getElementById("editBookId").value = b.id;
       document.getElementById("editTitle").value = b.title;
-      document.getElementById("editAuthor").value = b.author;
-      document.getElementById("editCoverUrl").value = b.cover_url || "";
+      document.getElementById("editAuthor").value = b.author || "";
+      document.getElementById("editCoverUrl").value = b.no_cover ? "" : (b.cover_url || "");
       document.getElementById("editPitch").value = b.pitch || "";
       document.getElementById("editWhyLove").value = b.why_love || "";
 
@@ -1672,14 +1715,58 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       document.getElementById("editModal").classList.add("hidden");
     }}
 
+    function removeCoverAction() {{
+      document.getElementById("editCoverUrl").value = "";
+      showToast("Cover cleared. Tap 'Save Changes' to apply the typographic template jacket!");
+    }}
+
+    function quickRemoveCover(bookId) {{
+      const b = SHELF_DATA.find(item => item.id === bookId);
+      if (!b) return;
+
+      if (!b.no_cover && b.cover_url) {{
+        b.cover_url = null;
+        b.no_cover = true;
+        showToast(`Cover removed for "${{b.title}}"! Applied typographic template jacket.`);
+      }} else {{
+        b.no_cover = false;
+        showToast(`Template jacket active for "${{b.title}}". Use Edit to paste a cover URL if desired.`);
+      }}
+
+      // Persist to localStorage
+      let saved = {{}};
+      try {{ saved = JSON.parse(localStorage.getItem("exlibris_shelf_edits") || "{{}}"); }} catch (e) {{}}
+      saved[b.id] = Object.assign(saved[b.id] || {{}}, {{
+        title: b.title,
+        author: b.author,
+        cover_url: b.cover_url,
+        no_cover: b.no_cover
+      }});
+      localStorage.setItem("exlibris_shelf_edits", JSON.stringify(saved));
+
+      renderCurrentView();
+      if (activeView === "split" && selectedBookId === b.id) {{
+        selectBookForSplit(b.id);
+      }}
+    }}
+
     function saveEdit() {{
       const bookId = document.getElementById("editBookId").value;
       const b = SHELF_DATA.find(item => item.id === bookId);
       if (!b) return;
 
-      b.title = document.getElementById("editTitle").value.trim();
-      b.author = document.getElementById("editAuthor").value.trim();
-      b.cover_url = document.getElementById("editCoverUrl").value.trim();
+      b.title = document.getElementById("editTitle").value.trim() || b.title;
+      b.author = document.getElementById("editAuthor").value.trim() || "Unknown Author";
+      const newCover = document.getElementById("editCoverUrl").value.trim();
+
+      if (!newCover) {{
+        b.cover_url = null;
+        b.no_cover = true;
+      }} else {{
+        b.cover_url = newCover;
+        b.no_cover = false;
+      }}
+
       b.pitch = document.getElementById("editPitch").value.trim();
       b.why_love = document.getElementById("editWhyLove").value.trim();
 
@@ -1690,6 +1777,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         title: b.title,
         author: b.author,
         cover_url: b.cover_url,
+        no_cover: b.no_cover,
         pitch: b.pitch,
         why_love: b.why_love
       }};
@@ -1697,7 +1785,10 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
       closeEditModal();
       renderCurrentView();
-      showToast(`Updated "${{b.title}}" and saved changes!`);
+      if (activeView === "split" && selectedBookId === b.id) {{
+        selectBookForSplit(b.id);
+      }}
+      showToast(b.cover_url ? `Updated "${{b.title}}" and saved changes!` : `Saved "${{b.title}}" with typographic template jacket!`);
     }}
 
     function searchGoodreads() {{

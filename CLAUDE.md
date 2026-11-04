@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 19 (My Reading Corner — Seamless 1-Click "Read in Nook" Flow, Apple Books/Kindle Viewport & Generous Editorial Posters)  
-> **Current**: Polished reading workflow: clicking "Read on Nook" now initiates direct background download of the EPUB file via Google Drive's direct content endpoint (`https://drive.usercontent.google.com/download?id={id}&export=download`) while opening the native in-browser reader (`reader.html`) in a separate browser tab (`target="_blank"`, `rel="noopener noreferrer"`), ensuring mobile PWA sessions stay active. Re-architected reader viewport with Apple Books and Kindle proportions: centered 760px column (`max-w-[760px]`), Newsreader 18.5px serif typography with 1.8 line-height, generous gutters, and navigation chevrons placed in outer margins. Enlarged Editorial posters (`w-28 sm:w-36 md:w-40 lg:w-44 shrink-0 aspect-[2/3]`) with `object-contain` and integrated 1-click "Read in Nook ↗" buttons on every card. Added cover fixes for *How to Win at Chess 2* and *All Tomorrows*.  
-> **Next**: Final live verification of GitHub Actions Pages deployment and offline reading experience.
+> **Status**: In Progress | **Phase**: 20 (My Reading Corner — Remove Cover Feature, Classic Typographic Template Jacket & Persistence Guard)  
+> **Current**: Added "Remove Cover" functionality across the app: Edit modal now includes a dedicated "Remove Cover" button, alongside a 1-click "Remove Cover" toggle in the Book Dossier and mobile drawer. When triggered, the cover is cleared, `no_cover: true` is persisted to `localStorage` (and guarded against re-enrichment in backend build scripts), and the book instantly transitions to a classic typographic clothbound template jacket. The template features category-colored cloth textures, spine hinge shadows, gold rules, centered Newsreader typography displaying the book title, and `by [Author]` (or `by Unknown Author` fallback). Rebuilt and deployed to GitHub Pages with v4 service worker cache-busting.  
+> **Next**: Final user walkthrough of the cover removal and template jacket experience.
 
 ## Roadmap
 
@@ -25,6 +25,7 @@
 - [x] Phase 17: Library Integrity & Full Quote Enrichment — Separated Bad Pharma/Bad Science; corrected How to Research Anything, GothamChess, and Osho; resolved 33 new covers (539/620); Claude API daemon completing remaining quotes to reach 100% (620/620 titles)
 - [x] Phase 18: In-Browser Reading Nook & GitHub Pages CI — Standalone client-side EPUB reader with IndexedDB offline storage and quote saving tool; automated GitHub Pages deploy pipeline; unclipped 2-column editorial cards with synopsis focus
 - [x] Phase 19: Streamlined "Read in Nook" Flow, Apple Books/Kindle Viewport & Generous Editorial Posters — 1-click direct download via usercontent, Apple Books centered typography, generous unclipped posters, and new tab PWA isolation
+- [x] Phase 20: Remove Cover Option, Classic Typographic Template Jacket & Persistence Guard — Dedicated cover removal button in modal and 1-click dossier action, no_cover localStorage and build script persistence guards, and elegant category-styled clothbound typographic jackets
 
 ## File map
 
