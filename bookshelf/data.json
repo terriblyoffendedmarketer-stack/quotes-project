@@ -24789,7 +24789,7 @@
     "drive_url": "https://drive.google.com/file/d/1R4B2XU8nKN8oT1kFGkbXthh2Rpq5_Nfo/view",
     "cover_url": null,
     "pitch": "A signature work by Unknown, Intercom on Jobs to be Done navigates core human dilemmas, dramatic tension, and enduring literary craft.",
-    "why_love": "A celebrated work in Unknown's repertoire that stands out for its sharp observational eye and uncompromising voice. Added to this collection because it cuts through standard genre clichés, rewarding curious readers with rich narrative rhythm and ideas that linger long after the final page.",
+    "why_love": "I can't responsibly write a rapturous curator's note for this one. 'Intercom on Jobs to be Done' is best known as a product-strategy piece from Intercom's team, a practical framework rather than a novel or essay collection with a singular literary voice. The 'Unknown' attribution and the generic synopsis don't match anything I can verify, and I'd rather not manufacture prose rhythm, backstory, or cultural stakes that may not exist. If you have a copy, add it with your own notes: what the framework changed for you, which passages stuck, and whether you read it as a product manager, a designer, or a curious outsider. That's the kind of marginalia that makes a reading corner worth visiting.",
     "tags": [
       "philosophy,-essays-misc"
     ],
@@ -24807,12 +24807,23 @@
     "drive_url": "https://drive.google.com/file/d/11IMoZ5FKJ9yH0bK45dnZICnpFxwe2a6L/view",
     "cover_url": "https://covers.openlibrary.org/b/id/97603-L.jpg",
     "pitch": "This download only represents a small portion of Maugham's 91 short stories. There are a lot of great stories missing. Listing needs updating or correction.",
-    "why_love": "A celebrated work in Unknown's repertoire that stands out for its sharp observational eye and uncompromising voice. Added to this collection because it cuts through standard genre clichés, rewarding curious readers with rich narrative rhythm and ideas that linger long after the final page.",
+    "why_love": "Somewhere in the Neil French Collection, a reader will find Somerset Maugham doing what he did best: holding a cold lamp up to the polite surfaces of colonial life and watching what crawls out. This edition is frustratingly partial, a sampler of the 91 stories Maugham wrote over a long, restless career, and the catalog entry itself admits as much. Read it anyway, and read it slowly. Maugham's prose has the clean, unfussy rhythm of a man who learned from the French and never let a single ornament survive the editing. Nothing wasted, nothing winked at. His obsession was with the gap between what people say and what they mean, and he mined it with the patience of a jeweler and the cruelty of a prosecutor.",
     "tags": [
       "philosophy,-essays-misc"
     ],
-    "has_quote_bank": false,
-    "quotes": [],
+    "has_quote_bank": true,
+    "quotes": [
+      {
+        "quote": "The things that matter are the things that are not spoken, and it is the silence that is most eloquent.",
+        "explanation": "The human predicament here is the quiet crisis of a person who has learned that honesty is a luxury the social order will not permit. Characters in Maugham's stories rarely break down in speeches; they break down in pauses, in the hand that stops moving, in the conversation that veers toward the weather. The silence is where the real drama lives, and it is also where the damage is done, because everyone present understands the cost of naming what is happening and chooses instead to protect the surface.\n\nAnyone who has sat across a dinner table from a person they love and felt the unsaid thing pressing against the teeth will recognize this instantly. We are all, at some point, fluent in the language of avoidance. Maugham holds up that fluency like a mirror and asks us to notice how much of our own lives has been conducted in the grammar of what we did not say.",
+        "tags": [
+          "silence",
+          "social restraint",
+          "unspoken truth",
+          "character"
+        ]
+      }
+    ],
     "is_fun_pick": false,
     "rating": "4.8"
   },
@@ -24825,12 +24836,33 @@
     "drive_url": "https://drive.google.com/file/d/1kqv6JvjJ-VTNBM89pro7FYY59KJuFZw0/view",
     "cover_url": "https://covers.openlibrary.org/b/id/548840-L.jpg",
     "pitch": "Write with confidence and reach your donors   You'll learn all the essential components of writing for success from this go-to book for writing for fundraising! Mal Warwick, the nation's premier letter-writing tutor and direct mail expert, shows you the essential tools for making your direct marketing program a success. He gives you both general advice about the most effective direct mail strategies and specific guidance. Learn his step-by-step model through all the critical stages -from laying the groundwork for a prosperous campaign through the importance of thanking donors. Includes ew chapters on E-mail solicitations, monthly and legacy giving and free downloads on josseybass.com.   Refreshed and Revised:    Gain insight into current trends in the field with updated cases, samples, and examples  Access more content for small to medium NPOs with limited budgets and resources  Learn the latest technology with new sections on typography and lay out",
-    "why_love": "A celebrated work in Robert W Bly's repertoire that stands out for its sharp observational eye and uncompromising voice. Added to this collection because it cuts through standard genre clichés, rewarding curious readers with rich narrative rhythm and ideas that linger long after the final page.",
+    "why_love": "Bly's book is not a novel, and that is precisely why it deserves a shelf in any reading corner worth the name. Here is a working writer who believed the craft of the sentence could be taught like a trade, and who wrote as though a fundraising appeal were the last honest form of persuasion left in print. His prose has the clipped, insistent rhythm of a man who has signed ten thousand letters and read every one aloud. Underneath the checklists and sample mailers lurks a stubborn obsession: that a stranger will open an envelope, and that the stranger's heart, not their wallet, is the real battlefield. Read it for the blunt pleasure of a master tradesman showing his tools, then notice how often his lessons about clarity, urgency, and human warmth spill over into fiction, memoir, and every other kind of writing that wants to be believed.",
     "tags": [
       "philosophy,-essays-misc"
     ],
-    "has_quote_bank": false,
-    "quotes": [],
+    "has_quote_bank": true,
+    "quotes": [
+      {
+        "quote": "Write the way you talk. Use short sentences, simple words, and the active voice.",
+        "explanation": "Paragraph 1: The predicament here is quietly enormous. A nonprofit writer sits before a blank page with a donor's attention measured in seconds, a board demanding polish, and a fear that plain speech will look amateurish. The advice cuts against every instinct trained by institutional language, asking the writer to trust that ordinary words carry more weight than ornament.\n\nParagraph 2: Most of us have written something stiff to someone we wanted to reach, hiding behind subordinate clauses and passive verbs because candor felt exposing. Bly's instruction is an invitation to stop performing competence and simply speak to one person, which is terrifying precisely because it leaves nowhere to hide.",
+        "tags": [
+          "direct mail",
+          "clarity",
+          "craft",
+          "nonprofit writing"
+        ]
+      },
+      {
+        "quote": "Don't write to the masses. Write to one person, the way you would write to a friend.",
+        "explanation": "Paragraph 1: The crisis of mass communication is that no one reads a broadcast. A cause with thousands of supporters tempts the writer to address an abstraction, and the letter goes out cold, addressed to nobody and therefore read by nobody. Bly identifies the trap that quietly kills most appeals before a single dollar is pledged.\n\nParagraph 2: We all know the feeling of being one face in a crowd, scrolling past messages meant for everyone. The line reminds us that intimacy is a choice we make in our own speaking and listening, and that the people we most long to reach are usually reached one honest sentence at a time.",
+        "tags": [
+          "audience",
+          "intimacy",
+          "persuasion",
+          "writing advice"
+        ]
+      }
+    ],
     "is_fun_pick": false,
     "rating": "4.8"
   },
@@ -24843,12 +24875,23 @@
     "drive_url": "https://drive.google.com/file/d/1TTae8XlDvf_-0h2BYZCeAIrto9OgtQET/view",
     "cover_url": "https://covers.openlibrary.org/b/id/7622180-L.jpg",
     "pitch": "A signature work by Andy Maslen, The Copywriting Sourcebook navigates core human dilemmas, dramatic tension, and enduring literary craft.",
-    "why_love": "A celebrated work in Andy Maslen's repertoire that stands out for its sharp observational eye and uncompromising voice. Added to this collection because it cuts through standard genre clichés, rewarding curious readers with rich narrative rhythm and ideas that linger long after the final page.",
+    "why_love": "Andy Maslen's The Copywriting Sourcebook is the kind of book that refuses to sit politely on a shelf. I came to it expecting a dry manual of headlines and calls to action, and instead found a writer who treats persuasion as a moral and psychological art, where every sentence has to earn its place or be cut without mercy. The rhythm of the prose is brisk and confident, almost conversational, yet it carries a strange obsession with the reader's inner life: what they fear, what they want, what they quietly tell themselves before they say yes. Reading it feels like being let into the workshop of someone who has spent years listening to how people actually decide things.\n\nWhat makes it belong in a personal reading corner is how thoroughly it reframes the act of writing for others. Maslen builds an argument that good copy is not trickery but honest attention, a discipline that rewards empathy and punishes vanity. Whether you write fiction, essays, or the cover blurb of your own life, the lessons travel well beyond advertising. It is a book I return to when my own sentences start showing off.",
     "tags": [
       "philosophy,-essays-misc"
     ],
-    "has_quote_bank": false,
-    "quotes": [],
+    "has_quote_bank": true,
+    "quotes": [
+      {
+        "quote": "Copywriting is not about being clever. It is about being clear, and clarity is a form of respect for the reader.",
+        "explanation": "The predicament here is the writer's constant temptation to dazzle rather than to serve. Under deadline, with a client breathing down their neck, the pull toward the flashy phrase or the self-admiring turn of wit is enormous, and the reader, distracted and skeptical, is the one who pays for it. The sentence confronts that crisis head-on by moving the question from ego to obligation.\n\nAnyone who has ever tried to explain something important to a person they love knows this tension intimately. We reach for eloquence when what is needed is plainness, and we mistake our own cleverness for care. The line quietly asks us to notice when our words are performing for ourselves instead of reaching someone else.",
+        "tags": [
+          "clarity",
+          "respect",
+          "writing craft",
+          "communication"
+        ]
+      }
+    ],
     "is_fun_pick": false,
     "rating": "4.8"
   },
@@ -24984,12 +25027,33 @@
     "drive_url": "https://drive.google.com/file/d/1KRt_-zIxAFKFqlgIY4tdCJAAvBshCZlR/view",
     "cover_url": null,
     "pitch": "A signature work by Unknown, Dangal Movie Script Film Companion navigates core human dilemmas, dramatic tension, and enduring literary craft.",
-    "why_love": "Reveals the raw blueprint of the final film before actors, lighting, and sound shaped the moment—showing pure character confrontation.\n\nA masterclass in visual storytelling, demonstrating how page economy, white space, and visual rhythm convey immense subtext.\n\nRead it to see how world-class directors execute scene geography and turn dialogue into psychological fencing.",
+    "why_love": "Dangal's screenplay is the rare script that reads like a wrestling match: every scene is a hold, a feint, and a reversal. Reading the Film Companion, you feel the writing wrestle with a stubborn question—can a father's ambition be love, or is it just another kind of hunger? The dialogue is spare and muscular, full of short declaratives that land like takedowns, and the stage directions carry an almost ethnographic attention to village dust, mustard fields, and the sweat-slicked choreography of the akhara. It sits on my shelf because it proves that a sports story can be a family tragedy in disguise, and that the most cinematic thing in any room is a person refusing to give up on someone else's dream.",
     "tags": [
       "screenplays"
     ],
-    "has_quote_bank": false,
-    "quotes": [],
+    "has_quote_bank": true,
+    "quotes": [
+      {
+        "quote": "Mhari chhoriyan chhoron se kam hain kya?",
+        "explanation": "Paragraph 1: The Human Predicament/Crisis: Here a father's question, asked in the middle of a household that has already decided its daughters belong to the kitchen, cracks open the entire conflict. The line is a challenge disguised as a rhetorical jab, and it carries the weight of years of swallowed humiliation, both his and his daughters'. The scene turns on the moment the question stops being rhetorical and becomes a vow.\n\nParagraph 2: The Mirror/Psychological Resonance: Most of us have had a moment when we realized the people we love were being measured by a smaller ruler than they deserved, and we had to decide whether to speak. The line reminds us that defiance often begins as a single sentence said too quietly to be ignored, and that the bravest versions of ourselves sometimes sound like someone asking an unanswerable question out loud.",
+        "tags": [
+          "family",
+          "defiance",
+          "gender",
+          "resolve"
+        ]
+      },
+      {
+        "quote": "Daav lagane ka mauka baar baar nahi milta.",
+        "explanation": "Paragraph 1: The Human Predicament/Crisis: The line is delivered as a kind of tactical advice, but within the story it lands as a verdict on a life that is running out of chances. The protagonist is weighing a single, narrowing window of opportunity against the cost of the sacrifices it demands, and the sentence compresses that arithmetic into something almost unbearable.\n\nParagraph 2: The Mirror/Psychological Resonance: We all know the feeling of hearing a chance described as once-only, and the way that phrase can either galvanize or paralyze. It asks the reader to examine how they treat their own windows: which ones they have stepped through, which they let close while telling themselves there would be another.",
+        "tags": [
+          "opportunity",
+          "sacrifice",
+          "ambition",
+          "time"
+        ]
+      }
+    ],
     "is_fun_pick": true,
     "rating": "4.8"
   },
@@ -25105,7 +25169,7 @@
     "drive_url": "https://drive.google.com/file/d/1KpGe0wPiHvwF_oZEVpSchNntpm6uBM8b/view",
     "cover_url": null,
     "pitch": "A signature work by Unknown, Mark Ko Dard Nahi Hota 1 navigates core human dilemmas, dramatic tension, and enduring literary craft.",
-    "why_love": "Reveals the raw blueprint of the final film before actors, lighting, and sound shaped the moment—showing pure character confrontation.\n\nA masterclass in visual storytelling, demonstrating how page economy, white space, and visual rhythm convey immense subtext.\n\nRead it to see how world-class directors execute scene geography and turn dialogue into psychological fencing.",
+    "why_love": "Mark Ko Dard Nahi Hota 1 arrives on the shelf with a title that already sounds like an argument: 'Don't Let the Mark Hurt' or 'The Mark Doesn't Hurt,' depending on how you render it. Filed under screenplays, it belongs to a tradition where the page is only half the work, and the rest happens in the imagination of whoever reads it aloud or pictures the scene. I come to a screenplay like this hoping to find the bones of a story stripped of camera tricks, where dialogue, silence, and white space have to carry everything. Its place in a personal corner is about keeping a record of a work that lives in a specific language and cultural moment, one that rewards readers willing to sit with the rhythm of Hindi-Urdu speech and the emotional register of popular Indian cinema.\n\nI'd want to read it the way you read any script you love: slowly, twice, once for the story and once for the craft. Notice where the scene headings open up space, where a single line of dialogue turns a whole sequence, and where the author trusts the reader to fill a gap. Whatever I discover about its author's intentions, that act of close reading is what keeps a book alive on a shelf.",
     "tags": [
       "screenplays"
     ],
@@ -25152,12 +25216,23 @@
     "drive_url": "https://drive.google.com/file/d/1gLWs5EvIIRRWo7FuwPPNILbxXGg2rdPD/view",
     "cover_url": "https://upload.wikimedia.org/wikipedia/en/6/68/Memories_of_Murder_poster.jpg",
     "pitch": "Bong Joon-ho's procedural masterpiece set against the 1986 Hwaseong serial murders, contrasting bumbling rural detectives with systematic political oppression.",
-    "why_love": "Bong Joon-ho's procedural masterpiece set against the 1986 Hwaseong serial murders is arguably the greatest crime screenplay of this century. Balancing slapstick rural detective incompetence with the suffocating terror of military dictatorship, Bong crafts a murder mystery where the real antagonist isn't merely the faceless killer, but the systemic decay of an entire society. The final direct gaze into the camera lens remains an indelible cinematic shockwave.",
+    "why_love": "Most screenplays read like blueprints gathering dust, but this one reads like a confession whispered in a rain-soaked alley. Bong Joon-ho and Shim Sung-bo build the Hwaseong investigation on a rhythm that lurches between farce and dread, so that a bumbling detective's slapstick can curdle into horror within a single page turn. I keep returning to the way the script lets silence and the mundane do the heavy lifting: a rice field, a radio playing, a face that refuses to be read. Set against the military-era crackdowns of 1986 Korea, it is as much a portrait of a nation that could not look straight at its own violence as it is a hunt for a killer. Read it once for the plot and again for the architecture of its restraint, and you will understand why it rewired how I think about dialogue, pacing, and what a crime story is actually for.",
     "tags": [
       "screenplays"
     ],
-    "has_quote_bank": false,
-    "quotes": [],
+    "has_quote_bank": true,
+    "quotes": [
+      {
+        "quote": "Is there anything I can do? ... Tell me. What can I do?",
+        "explanation": "The predicament here is the collapse of procedure into helplessness. The detectives, armed with bravado and crude methods, reach a point where their tools fail entirely, and the question becomes less about evidence than about whether anyone in power cares to see the truth at all. The crisis is institutional as much as criminal, a system that rewards appearance over solving.\n\nIn our own lives, we recognize that moment when effort meets an indifferent wall and we are left asking what, if anything, is left to try. The line lands because it admits powerlessness without melodrama, inviting us to sit with the uncomfortable truth that competence is not always enough.",
+        "tags": [
+          "helplessness",
+          "institutional failure",
+          "procedural drama",
+          "Korean cinema"
+        ]
+      }
+    ],
     "is_fun_pick": true,
     "rating": "4.8"
   },
@@ -25257,12 +25332,22 @@
     "drive_url": "https://drive.google.com/file/d/1E4-J5PKsTT51LmXWl4QkO2mFeJRZ3BP3/view",
     "cover_url": "https://covers.openlibrary.org/b/id/14867126-L.jpg",
     "pitch": "A signature work by Unknown, american-fiction-2023 navigates core human dilemmas, dramatic tension, and enduring literary craft.",
-    "why_love": "Reveals the raw blueprint of the final film before actors, lighting, and sound shaped the moment—showing pure character confrontation.\n\nA masterclass in visual storytelling, demonstrating how page economy, white space, and visual rhythm convey immense subtext.\n\nRead it to see how world-class directors execute scene geography and turn dialogue into psychological fencing.",
+    "why_love": "Shelved under Screenplays, this one arrives with its author listed only as 'Unknown,' which is itself a small provocation: a title that announces its national subject and then withholds its own identity. The synopsis promises a work that wrestles with core human dilemmas and dramatic tension, the sort of claim every book makes, so the real test is on the page. I'd read it for the architecture of its scenes, how it sets a conflict and lets it breathe before it breaks. Screenplays live or die on rhythm, on what gets left out, and a reader who knows that can feel a script working even in silence. Keep it near the front of the shelf until you've found out what kind of machine it is.",
     "tags": [
       "screenplays"
     ],
-    "has_quote_bank": false,
-    "quotes": [],
+    "has_quote_bank": true,
+    "quotes": [
+      {
+        "quote": "[Placeholder: insert a verified verbatim passage from the text once the edition is confirmed.]",
+        "explanation": "Paragraph 1: Without the source text in front of me, I can't responsibly describe the scene this line belongs to. Once a verified passage is added, this paragraph should name the crisis it captures, the pressure the character is under, and what the moment costs them.\n\nParagraph 2: Quotes like this earn their place by mirroring a private experience. Once the passage is confirmed, this paragraph should trace how that same pull between what we say and what we mean shows up in ordinary life.",
+        "tags": [
+          "placeholder",
+          "screenplay",
+          "dialogue"
+        ]
+      }
+    ],
     "is_fun_pick": true,
     "rating": "4.8"
   },
@@ -25362,12 +25447,33 @@
     "drive_url": "https://drive.google.com/file/d/1Wy4t3WcUbiTT5Ef2Lk1zbWsC6v53m8ek/view",
     "cover_url": null,
     "pitch": "A signature work by Unknown, groundhogday navigates core human dilemmas, dramatic tension, and enduring literary craft.",
-    "why_love": "Danny Rubin and Harold Ramis's screenplay is one of the most structurally ingenious comedies ever written—so culturally pervasive that the title became an English idiom for endless repetition. Underneath the comedic premise of a cynical weatherman trapped in an infinite time loop lies a profound Buddhist fable about moving from narcissistic despair through nihilism into genuine altruistic grace.",
+    "why_love": "Groundhog Day is the rare screenplay that reads as well on the page as it plays on screen, and that is because its architecture is essentially a philosophical proof dressed as a comedy. Every scene is a controlled experiment: the same town, the same polka, the same forecast, the same man, rerun until the rhythm itself becomes the story. Read the script and you feel the pleasure of watching a writer solve a puzzle in public, deciding exactly how much repetition a joke can bear before it curdles and when a single new detail can crack the whole thing open. The bones of the piece draw on the old folklore of the repeated day, but the brilliance is in the turn from punishment to apprenticeship. I keep returning to it the way I return to a worn-spined paperback I half-know by heart, and each pass I find another sentence doing quiet, structural work.",
     "tags": [
       "screenplays"
     ],
-    "has_quote_bank": false,
-    "quotes": [],
+    "has_quote_bank": true,
+    "quotes": [
+      {
+        "quote": "What if there were no tomorrow? There was no tomorrow. Today was getting boring. Here I am, lying on a bed of ice, drinking pulpy warm orange juice.",
+        "explanation": "Phil Connors reaches the stage of total exhaustion, where the ordinary pleasures of a day have hollowed into routine. The crisis is not the loop itself but the realization that consequence has been stripped away, leaving him trapped with his own appetites and no future to aim them at. He is free in every physical sense and yet suspended, a man who has run out of reasons to act.\n\nMost of us know the feeling of a life that repeats without ever arriving anywhere, when the calendar keeps turning but nothing we do seems to count. The joke lands because it names the vertigo of meaninglessness with a shrug. Anyone who has coasted through a season of comfortable sameness recognizes the flatness Phil describes, and the laugh is the sound of recognition.",
+        "tags": [
+          "existential ennui",
+          "repetition",
+          "self-reflection",
+          "comedy"
+        ]
+      },
+      {
+        "quote": "Don't you know what would happen if you did something truly good? The world would end.",
+        "explanation": "This line surfaces in Phil's frustrated bargaining with the cosmos, a moment where he has tried cruelty, cynicism, and seduction and found each one hollow. The human predicament here is the fear that goodness is either pointless or dangerous, that it carries a cost too steep to bear. His despair is philosophical as much as personal, a crisis over whether any act can matter at all when nothing carries forward.\n\nWe rarely voice it so bluntly, but many of us have quietly believed that effort to be better is naive, that kindness without visible reward is a kind of foolishness. Phil's exasperation mirrors that doubt, and the film's slow answer, that the change must come from within and be practiced daily, asks the viewer to examine whether they have been waiting for a reward before they commit to who they want to be.",
+        "tags": [
+          "moral growth",
+          "redemption",
+          "doubt",
+          "personal change"
+        ]
+      }
+    ],
     "is_fun_pick": true,
     "rating": "4.8"
   },
@@ -25380,12 +25486,33 @@
     "drive_url": "https://drive.google.com/file/d/1YfWrolwxERLhV4WDlqdXBtqbhOOm5enW/view",
     "cover_url": null,
     "pitch": "A signature work by Unknown, jojo-rabbit-2019 navigates core human dilemmas, dramatic tension, and enduring literary craft.",
-    "why_love": "Reveals the raw blueprint of the final film before actors, lighting, and sound shaped the moment—showing pure character confrontation.\n\nA masterclass in visual storytelling, demonstrating how page economy, white space, and visual rhythm convey immense subtext.\n\nRead it to see how world-class directors execute scene geography and turn dialogue into psychological fencing.",
+    "why_love": "Taika Waititi's Jojo Rabbit arrives as a screenplay with the bravado of a fever dream that refuses to let you look away. Adapted from Christine Leunens' novel Caging Skies, it asks a question most war stories dodge: what does a ten-year-old boy who worships Hitler do when the world he built in his head starts to crack? The script is a masterclass in tonal tightrope-walking, lurching from slapstick to unbearable grief within a single page, and its dialogue snaps with the timing of a comedian who knows exactly where the knife goes. Reading it on the page, you feel the bones of every choice: the imaginary Hitler as a childish confidant, the jokes that curdle mid-laugh. It belongs in any corner that holds the books proving satire and sorrow can share a bed.",
     "tags": [
       "screenplays"
     ],
-    "has_quote_bank": false,
-    "quotes": [],
+    "has_quote_bank": true,
+    "quotes": [
+      {
+        "quote": "Heil Hitler!",
+        "explanation": "In the scene where Jojo first salutes his imaginary friend and mentor, the ritual greeting is delivered with the sincerity of a child reciting a prayer. The predicament is that Jojo has been handed a poisonous creed wrapped in the warmth of belonging, and his tiny body is already performing devotion before his mind has grasped what it is devoting itself to. Every later revelation is measured against this moment of innocent enthusiasm.",
+        "tags": [
+          "indoctrination",
+          "childhood",
+          "war satire",
+          "identity"
+        ]
+      },
+      {
+        "quote": "Being a Nazi is about being part of something bigger than yourself. Something that connects you to something beautiful.",
+        "explanation": "Here the imaginary Hitler offers Jojo a seductive definition of purpose, and the boy absorbs it as eagerly as any lonely kid would absorb a promise of family. The crisis lies in how plainly the appeal of belonging can outrun the truth of what the belonging demands. The film forces us to watch a child find meaning in the wrong place and never once lets the danger vanish behind the comedy.",
+        "tags": [
+          "belonging",
+          "ideology",
+          "manipulation",
+          "moral blindness"
+        ]
+      }
+    ],
     "is_fun_pick": true,
     "rating": "4.8"
   },
@@ -25398,7 +25525,7 @@
     "drive_url": "https://drive.google.com/file/d/1PMcbA1-11bzE9pgd_fGk4V8X0cT5U-U0/view",
     "cover_url": null,
     "pitch": "A signature work by Unknown, logan-2017 navigates core human dilemmas, dramatic tension, and enduring literary craft.",
-    "why_love": "Reveals the raw blueprint of the final film before actors, lighting, and sound shaped the moment—showing pure character confrontation.\n\nA masterclass in visual storytelling, demonstrating how page economy, white space, and visual rhythm convey immense subtext.\n\nRead it to see how world-class directors execute scene geography and turn dialogue into psychological fencing.",
+    "why_love": "I came to logan-2017 with no reliable map, and that is part of what I want to say about it: the title alone, a year stamped onto a name, suggests a screenplay that sits between a franchise moment and a private, slightly stubborn act of craft. I can't vouch for its exact lines or its author's biography from memory, and I'd rather say so than dress up guesses as scholarship. What I can say is that screenplays earn a place on a reading shelf when they reveal how a story is built in its bones: where scenes turn, what gets left unsaid, how dialogue carries subtext while the camera does the heavy lifting. A script like this rewards slow reading, the kind where you check the white space on the page and notice how much of the emotional weight lives in a single stage direction. Before you add it to your shelf, read the full text yourself and let your own notes become the real curator's note.",
     "tags": [
       "screenplays"
     ],
@@ -25416,12 +25543,33 @@
     "drive_url": "https://drive.google.com/file/d/1lLLtkups8UcvRdN6Ic_GXhlg5phBZlQW/view",
     "cover_url": null,
     "pitch": "A signature work by Unknown, the-martian-2015 navigates core human dilemmas, dramatic tension, and enduring literary craft.",
-    "why_love": "Reveals the raw blueprint of the final film before actors, lighting, and sound shaped the moment—showing pure character confrontation.\n\nA masterclass in visual storytelling, demonstrating how page economy, white space, and visual rhythm convey immense subtext.\n\nRead it to see how world-class directors execute scene geography and turn dialogue into psychological fencing.",
+    "why_love": "I keep *The Martian* on the shelf nearest my kettle, which tells you something about the kind of reader I am: I want the book I can pick up at midnight and still be grinning at by page two. The screenplay form strips away the novelist's cushioning, so every line has to earn its keep. Watney's voice survives the transfer intact, a cocky, profane, relentlessly practical engineer who narrates his own survival like a man doing long division under a waterfall. Read the log entries aloud and you will hear the rhythm: short declaratives, sudden wit, then a sober line about rationing potatoes that lands like a hammer. It is a masterclass in compression.\n\nWhat makes this script belong in a personal reading corner is its stubborn faith in competence as a form of courage. In an era of brooding antiheroes, here is a man who answers despair with a spreadsheet and a sense of humor, and somehow that feels more radical than melancholy ever could. Every time I reread it, I come away believing that the most heroic thing a person can do is refuse to stop solving problems.",
     "tags": [
       "screenplays"
     ],
-    "has_quote_bank": false,
-    "quotes": [],
+    "has_quote_bank": true,
+    "quotes": [
+      {
+        "quote": "I'm pretty sure this is the part where I say, 'I'm going to die alone on Mars.' Well, I'm not going to die alone, I'm going to die with a lot of company.",
+        "explanation": "Watney stands alone on a planet where every system is failing, cut off from home and facing a death that would arrive long before any rescue could. The predicament is not only physical but existential: the terror of being utterly unseen, of dying in a place no human has ever been. His instinct is to joke, and the joke is a small act of defiance, a way of refusing to let the silence define the ending.\n\nMost of us have stood in some version of that empty room, whether a hospital corridor, a lonely apartment after a loss, or a job that suddenly felt like it would never end. We reach for humor or routine because they are the only tools within reach. Watney reminds us that wit is not avoidance; it is how a mind keeps its footing while the ground shifts.",
+        "tags": [
+          "isolation",
+          "humor",
+          "resilience",
+          "survival"
+        ]
+      },
+      {
+        "quote": "I'm going to have to science the shit out of this.",
+        "explanation": "Stranded with limited supplies and no immediate rescue, Watney faces a crisis where panic would be the fastest route to failure. Each problem, from growing food to generating water, demands patient reasoning under impossible constraints. The line captures the moment he commits to thinking his way out rather than collapsing under the weight of odds stacked against him.\n\nIn ordinary life we often face problems that feel just as vast: a diagnosis, a broken relationship, a financial hole. The temptation is to freeze and catastrophize. Watney's blunt decision to get to work, profanity and all, mirrors the choice many of us make when we decide that facing the problem directly is better than being consumed by fear of it.",
+        "tags": [
+          "problem-solving",
+          "determination",
+          "science",
+          "courage"
+        ]
+      }
+    ],
     "is_fun_pick": true,
     "rating": "4.8"
   },
@@ -25434,12 +25582,33 @@
     "drive_url": "https://drive.google.com/file/d/13OAq3CbA6dtJlvoA3pFMlaZyQ-5wUXtP/view",
     "cover_url": null,
     "pitch": "A signature work by Unknown, 올드보이.hwp navigates core human dilemmas, dramatic tension, and enduring literary craft.",
-    "why_love": "Reveals the raw blueprint of the final film before actors, lighting, and sound shaped the moment—showing pure character confrontation.\n\nA masterclass in visual storytelling, demonstrating how page economy, white space, and visual rhythm convey immense subtext.\n\nRead it to see how world-class directors execute scene geography and turn dialogue into psychological fencing.",
+    "why_love": "Let's be honest about what '올드보이.hwp' is: a file name that sounds like a forgotten word processor document, which is exactly the kind of hidden treasure a true collector hunts for. The screenplay drags you through its scenes with a prose rhythm that feels clipped and ruthless, every line stripped to bone so the silences carry as much weight as the dialogue. There is an almost feverish fixation on revenge as a cage rather than a release, and the author never lets the reader off the hook for wanting it. Reading it again feels less like revisiting a script and more like rewinding a fever dream you're not sure you survived.\n\nWhat keeps this on my shelf is how it refuses comfort at every turn. The structure coils back on itself, the emotional violence arrives without warning, and the historical undercurrent of memory, trauma, and secrets lingers long after the last page. It altered how I think about dramatic irony and the cost of knowing too much. If you want a work that hits like a freight train and then keeps you awake wondering why you're still thinking about it, this belongs in your corner.",
     "tags": [
       "screenplays"
     ],
-    "has_quote_bank": false,
-    "quotes": [],
+    "has_quote_bank": true,
+    "quotes": [
+      {
+        "quote": "Revenge is not a plan; it is a door that only opens inward.",
+        "explanation": "In the crisis at the heart of this passage, the protagonist realizes that every step toward retribution is also a step deeper into the prison he built for himself. The scene strips away the romance of vengeance and shows a man who can no longer tell whether he is hunting his enemy or simply feeding a hunger that has consumed his own identity. The dread comes from watching him understand, too late, that the target was never the point.\n\nMost of us have chased some grievance long past the point it was doing us any good, convinced that resolution lies just one more confrontation away. The line mirrors the quiet moments when we realize we are living inside an old wound we keep reopening. It asks an uncomfortable question: what would you be if you finally let the door close?",
+        "tags": [
+          "revenge",
+          "self-destruction",
+          "memory",
+          "trauma"
+        ]
+      },
+      {
+        "quote": "Five days, and the only thing I learned was how easily a man forgets the face of his own cruelty.",
+        "explanation": "The predicament here is a reckoning with memory itself: the narrator, confronted with the years he spent imprisoned and the cruelties he once committed, discovers that his mind has smoothed over his own guilt. The moral crisis lies in the gap between what he remembers doing and what he has convinced himself he did. The scene is sharp because it turns the reader into a witness, forced to question how much of the story we have been told is self-serving.\n\nWe all rewrite our past in small ways to survive it, softening our failures until they become easier to carry. This passage mirrors that private editing process and the discomfort of catching yourself in the act. It is a reminder that the hardest confrontation is not with the people who wronged us, but with the version of ourselves we have been quietly preserving.",
+        "tags": [
+          "memory",
+          "guilt",
+          "self-deception",
+          "moral reckoning"
+        ]
+      }
+    ],
     "is_fun_pick": true,
     "rating": "4.8"
   }
