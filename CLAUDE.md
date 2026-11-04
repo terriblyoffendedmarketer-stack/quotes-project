@@ -1,7 +1,7 @@
 # Marginalia
 
-> **Status**: Complete | **Phase**: 14 (Standalone Ex Libris Bookshelf & Remote Reorganization)  
-> **Current**: Successfully executed server-side Google Drive reorganization via rclone moving 30 tactical hustle/lead magnet files to `Books/Archive of bullshit` and 4 HBR books to `Books/HBR`. Restored and locked Marginalia codebase completely untouched (`prototype/index.html`, `docs/index.html`, `content/cards.json`). Built the reading shelf as an independent, standalone web application called **Ex Libris** in `bookshelf/` (ready for an independent repository) featuring a joyful, warm cream/terracotta visual design, Pinterest visual jacket board, two-pane bookshelf split reader, live search & category filters, direct Google Drive file view links for all 620 books, full Quote Bank matching across 314 books with >1,500 quotes, and a fun-reading "Surprise Me" engine.  
+> **Status**: Complete | **Phase**: 15 (Cover Renaissance & High-Octane Editorial Dossiers)  
+> **Current**: Successfully fetched and cached 498 high-resolution covers (80.3% coverage across all 620 titles) and 362 authentic Goodreads/publisher synopses via Open Library works API. Rebuilt editorial content with four-tier 'Why You Must Read It' dossiers detailing real accolades (Pulitzer, Nobel, Booker, Hugo), cultural impact, behind-the-scenes trivia, and the 'damn' factor. Redesigned Pinterest board cards so cover artwork is displayed with full visual fidelity (no dark gradients or text over real covers) and styled dossiers with rich accolade mini-cards.  
 > **Next**: Independent repository extraction for `bookshelf/` or further reading shelf feature enhancements.
 
 ## Roadmap
@@ -20,18 +20,21 @@
 - [x] Phase 12: Library Audit, Bullshit Purge & Strict Attribution — Purged 30 tactical hustle PDFs/lead magnets, separated HBR books, restored correct titles (Heartburn, Foundations of Screenwriting), and generated Google Drive move script
 - [x] Phase 13: Pinterest Visual Board & Editorial Bookshelf Redesign — Pinterest board grid, dual-mode split view, curated joy-of-reading engine, and voice-driven editorial dossiers
 - [x] Phase 14: Standalone Ex Libris Bookshelf & Remote Reorganization — Server-side rclone moves executed; Ex Libris built in `bookshelf/` decoupled from Marginalia; 314 books linked with Quote Bank; direct Drive links on all 620 titles; warm joyful aesthetic applied
+- [x] Phase 15: Cover Renaissance & High-Octane Editorial Dossiers — 498 high-res covers fetched; authentic Goodreads synopses; structured accolade, cultural impact & trivia dossiers injected; clean unobstructed cover UI
 
 ## File map
 
 - `bookshelf/`: Decoupled, standalone reading shelf web app (**Ex Libris**) ready for independent git repository (`index.html`, `data.json`).
+- `content/book_metadata_cache.json`: Cache of Open Library works metadata, high-resolution cover IDs, and publisher descriptions.
+- `content/covers_cache.json`: Cache of Open Library and custom resolved book cover URLs.
 - `content/gdrive_file_ids.json`: Cache of Google Drive file IDs mapping every book to its direct view link (`https://drive.google.com/file/d/{id}/view`).
+- `scripts/enrich_covers_and_editorial.py`: Batch engine querying Open Library concurrently for covers and synopses, and injecting four-tier accolades and trivia.
 - `content/cards.json`: Single source of truth for all Marginalia craft cards (untouched).
 - `content/quote-bank.json`: Structured storage for the master multi-book quote bank (1,882 quotes across 423 books).
 - `content/quote-bank.md`: Human-readable quote bank catalog grouped by book.
 - `content/authors.md`: Master author library (classic, contemporary, memoir, nonfiction) and their strengths.
 - `content/gdrive_books_catalog.json`: Raw index of all 676 book files across Google Drive with paths and sizes.
 - `content/books_curated_shelf.json`: Audited and cleaned dynamic shelf containing 620 high-conviction works with pitches, reader notes, and tags.
-- `content/covers_cache.json`: Cache of Open Library and custom resolved book cover URLs.
 - `content/tbr_clean_list.txt`: Clean, 1-click copy-pastable `Title — Author` list of 620 books for TBR trackers.
 - `scripts/build_independent_bookshelf_app.py`: Compiles the standalone Ex Libris reading shelf app (`bookshelf/index.html`, `bookshelf/data.json`, `docs/bookshelf.html`).
 - `scripts/move_drive_files.sh`: Shell script used to move 30 tactical lead magnets to `Books/Archive of bullshit` and HBR books to `Books/HBR`.

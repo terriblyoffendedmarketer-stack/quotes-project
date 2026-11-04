@@ -103,6 +103,31 @@ def is_fun_reading(book):
     return False
 
 def build():
+    if BOOKSHELF_DATA.exists():
+        print(f"Loading pre-enriched data from {BOOKSHELF_DATA}...")
+        shelf_books = json.loads(BOOKSHELF_DATA.read_text(encoding="utf-8"))
+        matched_quotes_books = len([b for b in shelf_books if b.get("has_quote_bank")])
+        covers_count = len([b for b in shelf_books if b.get("cover_url")])
+        print(f"Loaded {len(shelf_books)} books for Ex Libris.")
+        print(f"Books successfully linked with Quote Bank: {matched_quotes_books} (over 1,500+ quotes).")
+        print(f"Books with active covers: {covers_count} / {len(shelf_books)}")
+        clean_tbr_lines = [f"{b['title']} — {b['author']}" for b in shelf_books]
+
+        # Ensure output directories exist
+        BOOKSHELF_DIR.mkdir(exist_ok=True)
+        DOCS_BOOKSHELF_HTML.parent.mkdir(exist_ok=True)
+
+        # Generate standalone web app HTML
+        html = generate_app_html(shelf_books, clean_tbr_lines, matched_quotes_books)
+        BOOKSHELF_HTML.write_text(html, encoding="utf-8")
+        DOCS_BOOKSHELF_HTML.write_text(html, encoding="utf-8")
+        ARTIFACT_PATH.write_text(html, encoding="utf-8")
+
+        print(f"Generated standalone app: {BOOKSHELF_HTML}")
+        print(f"Generated docs view: {DOCS_BOOKSHELF_HTML}")
+        print(f"Generated artifact view: {ARTIFACT_PATH}")
+        return
+
     print("Loading data files...")
     raw_catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
     qb_data = json.loads(QUOTE_BANK_PATH.read_text(encoding="utf-8")) if QUOTE_BANK_PATH.exists() else []
@@ -354,6 +379,7 @@ def build():
 def generate_app_html(shelf_books, tbr_lines, quote_count):
     shelf_json_str = json.dumps(shelf_books, ensure_ascii=False)
     total_books = len(shelf_books)
+    covers_count = len([b for b in shelf_books if b.get('cover_url')])
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -463,7 +489,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         <span class="text-3xl drop-shadow-sm">📚</span>
         <div>
           <h1 class="font-serif font-bold text-xl md:text-2xl text-[var(--text-heading)] tracking-tight">Ex Libris</h1>
-          <p class="text-[11px] font-medium text-[var(--text-muted)] hidden sm:block">Personal Reading Shelf • {total_books} Books in Drive • {quote_count} with Quotes</p>
+          <p class="text-[11px] font-medium text-[var(--text-muted)] hidden sm:block">Personal Reading Shelf • {total_books} Books in Drive • {covers_count} with Covers • {quote_count} with Quotes</p>
         </div>
       </div>
 
@@ -825,6 +851,27 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       }}
     }}
 
+    function formatWhyRead(text) {{
+      if (!text) return "";
+      return text
+        .split("\\n\\n")
+        .map(para => {{
+          const p = para.trim();
+          if (!p) return "";
+          const m = p.match(/^\\*\\*(.*?)\\*\\*:?\\s*(.*)$/s);
+          if (m) {{
+            return `
+              <div class="bg-[var(--card-bg)]/80 border border-[var(--border-subtle)] p-3 rounded-xl shadow-xs">
+                <span class="font-bold text-[var(--terracotta)] block text-xs uppercase tracking-wider mb-1">${{m[1]}}</span>
+                <span class="text-[var(--text-heading)] text-xs md:text-sm leading-relaxed">${{m[2]}}</span>
+              </div>
+            `;
+          }}
+          return `<p class="leading-relaxed text-xs md:text-sm text-[var(--text-body)]">${{p}}</p>`;
+        }})
+        .join("");
+    }}
+
     // Render Pinterest Board
     function renderBoard(books) {{
       const grid = document.getElementById("boardGrid");
@@ -840,39 +887,51 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         return `
           <div class="book-card group cursor-pointer" onclick="openBookDetail('${{b.id}}')">
             <!-- Book Cover -->
-            <div class="book-cover ${{jacketCls}} flex flex-col justify-between p-3.5 relative">
+            <div class="book-cover ${{jacketCls}} relative overflow-hidden rounded-[6px] shadow-md transition-all duration-200 group-hover:shadow-xl group-hover:-translate-y-1">
               ${{hasCover ? `
-                <img src="${{b.cover_url}}" alt="${{b.title}}" class="absolute inset-0 w-full h-full object-cover z-0" onerror="this.style.display='none'" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent z-0"></div>
-              ` : ''}}
-              
-              <!-- Badges -->
-              <div class="relative z-10 flex items-center justify-between">
-                <span class="text-[9px] font-mono uppercase tracking-wider text-white/80 bg-black/40 px-1.5 py-0.5 rounded">
-                  ${{b.format}}
-                </span>
-                ${{b.has_quote_bank ? `<span class="text-[10px] font-bold text-amber-300">★ Quotes</span>` : ''}}
-              </div>
-
-              <!-- Typographic Title Overlay / Fallback -->
-              <div class="relative z-10 mt-auto pt-2">
-                <h3 class="font-serif font-bold text-xs sm:text-sm text-white leading-tight tracking-tight drop-shadow-md line-clamp-3">
-                  ${{b.title}}
-                </h3>
-                <p class="text-[11px] text-white/80 font-medium mt-0.5 line-clamp-1">
-                  ${{b.author}}
-                </p>
-              </div>
+                <img src="${{b.cover_url}}" alt="${{b.title}}" loading="lazy" class="w-full h-full object-cover z-0" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-jacket').style.display='flex';" />
+                <div class="absolute top-2 left-2 z-10 flex items-center gap-1.5">
+                  <span class="text-[9px] font-mono uppercase tracking-wider text-white bg-black/60 backdrop-blur-xs px-1.5 py-0.5 rounded shadow-sm">
+                    ${{b.format}}
+                  </span>
+                  ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-950 bg-amber-300/95 backdrop-blur-xs px-1.5 py-0.5 rounded shadow-sm">★ Quotes</span>` : ''}}
+                </div>
+                <div class="fallback-jacket hidden flex-col justify-between h-full p-3.5 absolute inset-0 z-0">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[9px] font-mono uppercase text-white/80 bg-black/40 px-1.5 py-0.5 rounded">${{b.format}}</span>
+                    ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-300">★ Quotes</span>` : ''}}
+                  </div>
+                  <div class="mt-auto pt-2">
+                    <h3 class="font-serif font-bold text-xs text-white leading-tight drop-shadow-md line-clamp-3">${{b.title}}</h3>
+                    <p class="text-[10px] text-white/85 font-medium mt-0.5 line-clamp-1">${{b.author}}</p>
+                  </div>
+                </div>
+              ` : `
+                <div class="flex flex-col justify-between h-full p-3.5 relative z-10">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[9px] font-mono uppercase text-white/80 bg-black/40 px-1.5 py-0.5 rounded">${{b.format}}</span>
+                    ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-300">★ Quotes</span>` : ''}}
+                  </div>
+                  <div class="mt-auto pt-2">
+                    <h3 class="font-serif font-bold text-xs sm:text-sm text-white leading-tight drop-shadow-md line-clamp-3">${{b.title}}</h3>
+                    <p class="text-[10px] text-white/85 font-medium mt-0.5 line-clamp-1">${{b.author}}</p>
+                  </div>
+                </div>
+              `}}
             </div>
 
             <!-- Meta Beneath -->
-            <div class="pt-2">
-              <h4 class="font-serif font-bold text-xs text-[var(--text-heading)] group-hover:text-[var(--terracotta)] transition leading-snug line-clamp-1">
+            <div class="pt-2.5 px-0.5">
+              <h4 class="font-serif font-bold text-xs sm:text-sm text-[var(--text-heading)] group-hover:text-[var(--terracotta)] transition leading-snug line-clamp-2">
                 ${{b.title}}
               </h4>
-              <p class="text-[11px] text-[var(--text-muted)] line-clamp-1">
+              <p class="text-[11px] text-[var(--text-muted)] font-medium mt-0.5 line-clamp-1">
                 ${{b.author}}
               </p>
+              <div class="flex items-center gap-1.5 mt-1.5 text-[10px]">
+                <span class="text-[var(--terracotta)] font-semibold truncate">${{b.category}}</span>
+                ${{b.has_quote_bank ? `<span class="text-[var(--text-muted)]">• ${{b.quotes.length}} Quotes</span>` : ''}}
+              </div>
             </div>
           </div>
         `;
@@ -938,16 +997,25 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       container.innerHTML = `
         <div class="flex flex-col md:flex-row gap-6 items-start mb-6 pb-6 border-b border-[var(--border)]">
           <!-- Hero Cover -->
-          <div class="w-36 md:w-44 shrink-0 book-cover ${{jacketCls}} p-4 flex flex-col justify-between shadow-xl relative">
+          <div class="w-36 md:w-48 shrink-0 book-cover ${{jacketCls}} shadow-xl relative overflow-hidden rounded-[8px]">
             ${{b.cover_url ? `
-              <img src="${{b.cover_url}}" alt="${{b.title}}" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-            ` : ''}}
-            <span class="relative z-10 text-[10px] font-mono text-white/80 uppercase">${{b.format}}</span>
-            <div class="relative z-10">
-              <h3 class="font-serif font-bold text-sm text-white leading-tight">${{b.title}}</h3>
-              <p class="text-xs text-white/80 mt-0.5">${{b.author}}</p>
-            </div>
+              <img src="${{b.cover_url}}" alt="${{b.title}}" class="w-full h-full object-cover" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-hero').style.display='flex';" />
+              <div class="fallback-hero hidden flex-col justify-between h-full p-4 absolute inset-0 z-10">
+                <span class="text-[10px] font-mono uppercase text-white/80">${{b.format}}</span>
+                <div class="mt-auto">
+                  <h3 class="font-serif font-bold text-sm text-white leading-tight">${{b.title}}</h3>
+                  <p class="text-xs text-white/80 mt-1">${{b.author}}</p>
+                </div>
+              </div>
+            ` : `
+              <div class="flex flex-col justify-between h-full p-4 relative z-10">
+                <span class="text-[10px] font-mono uppercase text-white/80">${{b.format}}</span>
+                <div class="mt-auto">
+                  <h3 class="font-serif font-bold text-sm text-white leading-tight">${{b.title}}</h3>
+                  <p class="text-xs text-white/80 mt-1">${{b.author}}</p>
+                </div>
+              </div>
+            `}}
           </div>
 
           <!-- Title & Actions -->
@@ -977,20 +1045,27 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
           </div>
         </div>
 
-        <!-- The Pitch -->
-        <div class="mb-5">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-1.5">The Pitch</h4>
-          <p class="font-serif text-sm md:text-base text-[var(--text-heading)] leading-relaxed">
-            ${{b.pitch}}
-          </p>
+        <!-- Back of the Book / Synopsis -->
+        <div class="mb-6">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">Back of the Book • Synopsis</span>
+          </div>
+          <div class="p-4 md:p-5 bg-[var(--canvas)] border border-[var(--border)] rounded-2xl">
+            <p class="font-serif text-sm md:text-[15px] text-[var(--text-heading)] leading-relaxed whitespace-pre-line">
+              ${{b.pitch}}
+            </p>
+          </div>
         </div>
 
-        <!-- Why People Love It -->
-        <div class="mb-6 p-4 bg-[var(--amber-bg)] border border-[var(--border)] rounded-2xl">
-          <h4 class="text-xs font-bold text-[var(--terracotta)] uppercase tracking-wider mb-1">Why You Should Read It</h4>
-          <p class="text-xs md:text-sm text-[var(--text-body)] leading-relaxed">
-            ${{b.why_love}}
-          </p>
+        <!-- Why You Must Read It • The Damn Factor -->
+        <div class="mb-6 p-5 md:p-6 bg-[var(--amber-bg)] border border-[var(--amber)]/35 rounded-2xl shadow-sm">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-lg">🔥</span>
+            <h4 class="text-xs font-bold text-[var(--terracotta)] uppercase tracking-wider">Why You Must Read It • Accolades & Damn Factor</h4>
+          </div>
+          <div class="text-xs md:text-sm text-[var(--text-body)] leading-relaxed space-y-2.5">
+            ${{formatWhyRead(b.why_love)}}
+          </div>
         </div>
 
         <!-- Excerpt Quotes & Notes from Quote Bank -->
@@ -1040,14 +1115,18 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
       content.innerHTML = `
         <div class="flex gap-4 items-start mb-6">
-          <div class="w-28 shrink-0 book-cover ${{jacketCls}} p-2 relative shadow-lg">
-            ${{b.cover_url ? `<img src="${{b.cover_url}}" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />` : ''}}
-            <span class="relative z-10 text-[9px] font-mono uppercase text-white/80">${{b.format}}</span>
+          <div class="w-28 shrink-0 book-cover ${{jacketCls}} shadow-md relative overflow-hidden rounded-[6px]">
+            ${{b.cover_url ? `<img src="${{b.cover_url}}" class="w-full h-full object-cover" onerror="this.style.display='none'" />` : `
+              <div class="p-3 h-full flex flex-col justify-between">
+                <span class="text-[9px] font-mono uppercase text-white/80">${{b.format}}</span>
+                <p class="font-serif text-xs font-bold text-white leading-tight">${{b.title}}</p>
+              </div>
+            `}}
           </div>
           <div>
             <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)]">${{b.category}}</span>
             <h3 class="font-serif font-bold text-lg text-[var(--text-heading)] mt-0.5 leading-snug">${{b.title}}</h3>
-            <p class="text-xs text-[var(--text-muted)]">${{b.author}}</p>
+            <p class="text-xs text-[var(--text-muted)] font-medium">by ${{b.author}}</p>
             <div class="flex flex-wrap items-center gap-2 mt-3">
               ${{b.drive_url ? `
                 <a href="${{b.drive_url}}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-[var(--terracotta)] text-white text-xs font-bold rounded-lg shadow-sm">
@@ -1060,13 +1139,20 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         </div>
 
         <div class="mb-5">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-1">The Pitch</h4>
-          <p class="font-serif text-sm text-[var(--text-heading)] leading-relaxed">${{b.pitch}}</p>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-1.5">Back of the Book • Synopsis</h4>
+          <div class="p-3.5 bg-[var(--canvas)] border border-[var(--border)] rounded-xl">
+            <p class="font-serif text-sm text-[var(--text-heading)] leading-relaxed whitespace-pre-line">${{b.pitch}}</p>
+          </div>
         </div>
 
-        <div class="mb-5 p-3.5 bg-[var(--amber-bg)] rounded-xl border border-[var(--border)]">
-          <h4 class="text-xs font-bold text-[var(--terracotta)] uppercase mb-1">Why Read It</h4>
-          <p class="text-xs text-[var(--text-body)] leading-relaxed">${{b.why_love}}</p>
+        <div class="mb-5 p-4 bg-[var(--amber-bg)] rounded-xl border border-[var(--amber)]/35 space-y-2.5">
+          <div class="flex items-center gap-1.5 mb-1">
+            <span class="text-base">🔥</span>
+            <h4 class="text-xs font-bold text-[var(--terracotta)] uppercase tracking-wider">Why You Must Read It • Accolades & Lore</h4>
+          </div>
+          <div class="space-y-2.5">
+            ${{formatWhyRead(b.why_love)}}
+          </div>
         </div>
 
         ${{quotes.length > 0 ? `
@@ -1112,20 +1198,28 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       const jacketCls = getJacketStyle(chosen.category);
 
       res.innerHTML = `
-        <div class="flex gap-5 items-start p-4 bg-[var(--canvas)] border border-[var(--border)] rounded-2xl">
-          <div class="w-24 md:w-28 shrink-0 book-cover ${{jacketCls}} p-2 relative shadow-md">
-            ${{chosen.cover_url ? `<img src="${{chosen.cover_url}}" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />` : ''}}
-            <span class="relative z-10 text-[9px] font-mono uppercase text-white/80">${{chosen.format}}</span>
+        <div class="flex flex-col sm:flex-row gap-5 items-start p-4 md:p-5 bg-[var(--canvas)] border border-[var(--border)] rounded-2xl max-h-[60vh] overflow-y-auto">
+          <div class="w-28 md:w-32 shrink-0 book-cover ${{jacketCls}} shadow-md relative overflow-hidden rounded-[6px]">
+            ${{chosen.cover_url ? `<img src="${{chosen.cover_url}}" class="w-full h-full object-cover" onerror="this.style.display='none'" />` : `
+              <div class="p-3 h-full flex flex-col justify-between">
+                <span class="text-[9px] font-mono uppercase text-white/80">${{chosen.format}}</span>
+                <p class="font-serif text-xs font-bold text-white leading-tight">${{chosen.title}}</p>
+              </div>
+            `}}
           </div>
           <div class="flex-1 min-w-0">
             <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)]">${{chosen.category}}</span>
-            <h3 class="font-serif font-bold text-lg text-[var(--text-heading)] mt-0.5 leading-snug">${{chosen.title}}</h3>
+            <h3 class="font-serif font-bold text-lg md:text-xl text-[var(--text-heading)] mt-0.5 leading-snug">${{chosen.title}}</h3>
             <p class="text-xs text-[var(--text-muted)] font-medium">by ${{chosen.author}}</p>
-            <div class="mt-3 text-xs text-[var(--text-heading)] font-serif leading-relaxed line-clamp-3">
-              ${{chosen.pitch}}
+            <div class="mt-3 p-3 bg-[var(--card-bg)] border border-[var(--border-subtle)] rounded-xl">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)] mb-1">Back of the Book:</span>
+              <p class="text-xs text-[var(--text-heading)] font-serif leading-relaxed">${{chosen.pitch}}</p>
             </div>
-            <div class="mt-2.5 text-[11px] text-[var(--terracotta)] font-semibold">
-              💡 ${{chosen.why_love}}
+            <div class="mt-3 p-3 bg-[var(--amber-bg)] border border-[var(--amber)]/35 rounded-xl space-y-2">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)]">🔥 Accolades & Lore:</span>
+              <div class="text-xs text-[var(--text-body)] leading-relaxed space-y-2">
+                ${{formatWhyRead(chosen.why_love)}}
+              </div>
             </div>
           </div>
         </div>
