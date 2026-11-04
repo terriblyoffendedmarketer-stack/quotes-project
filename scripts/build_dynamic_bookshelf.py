@@ -6,7 +6,7 @@
 # - Drives contain inverted filenames ("Author - Title" vs "Title - Author").
 # - Multi-issue comics (Watchmen #1..#12, Oyasumi Punpun v1..v13) are grouped into complete series cards.
 # - Screenplays have specific authors and directors mapped for clean attribution.
-# - Output HTML includes full Tailwind UI, search, tag filters, TBR copy, and recommendation engine.
+# - Output HTML includes full Tailwind UI, search, tag filters, TBR copy, editable rename modal, custom cover URLs, and quote corpus.
 
 import json
 import re
@@ -20,333 +20,38 @@ TBR_OUTPUT_PATH = ROOT / "content" / "tbr_clean_list.txt"
 SHELF_JSON_PATH = ROOT / "content" / "books_curated_shelf.json"
 SHELF_HTML_PROTO = ROOT / "prototype" / "shelf.html"
 SHELF_HTML_DOCS = ROOT / "docs" / "shelf.html"
+ARTIFACT_PATH = Path("/Users/apple/.gemini/antigravity/brain/81ccc3e6-122f-446d-b723-e563a56f7ea9/dynamic_bookshelf.html")
 
-# Precise mappings for filenames that need exact title/author normalization
-EXACT_FILE_MAPPINGS = {
-    "the-argumentative-indian-amartya.epub": {
-        "title": "The Argumentative Indian",
-        "author": "Amartya Sen",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "Nobel laureate Amartya Sen explores India's millennia-long tradition of rigorous public debate, pluralism, and intellectual skepticism.",
-        "why_love": "Dismantles simplistic caricatures of Eastern thought by demonstrating how argument and dissent have always shaped Indian democracy.",
-        "tags": ["philosophy", "essays", "history", "intellectual-history"]
-    },
-    "william_faulkner.epub": {
-        "title": "Selected Works & Stories",
-        "author": "William Faulkner",
-        "category": "Fiction & Non-Fiction",
-        "pitch": "The haunting, multi-voiced Southern Gothic tales of Yoknapatawpha County, capturing decay, racial trauma, and the unyielding weight of memory.",
-        "why_love": "Faulkner's breathless, streaming sentences and shifting perspectives remain the peak of American modernism.",
-        "tags": ["southern-gothic", "modernism", "memory", "american-epic"]
-    },
-    "alex verus #1 - fated_-_benedict_jacka.epub": {
-        "title": "Fated (Alex Verus #1)",
-        "author": "Benedict Jacka",
-        "category": "Fiction & Non-Fiction",
-        "pitch": "In the hidden magical underbelly of London, a probability mage who cannot throw fireballs must survive by seeing every possible immediate future.",
-        "why_love": "Fast-paced urban fantasy where strategic cunning and foresight always beat raw brute force.",
-        "tags": ["urban-fantasy", "fast-paced", "magic", "london"]
-    },
-    "how_to_win_at_chess 2 - next_level_-_levy_rozman.epub": {
-        "title": "How to Win at Chess 2: Next Level",
-        "author": "Levy Rozman (GothamChess)",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "Internet chess educator GothamChess breaks down intermediate positional play, pawn structures, and psychological attacking plans.",
-        "why_love": "Breezy, humorous, and visual explanations that demystify intermediate board visualization.",
-        "tags": ["chess", "strategy", "games", "tactics"]
-    },
-    "feline-philosophy-john-gray.epub": {
-        "title": "Feline Philosophy: Cats and the Meaning of Life",
-        "author": "John Gray",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "A witty, cutting philosophical critique of human anxiety and self-delusion through the unburdened, contented existence of cats.",
-        "why_love": "John Gray strips away existential pretension, contrasting neurotic human philosophies with feline tranquility.",
-        "tags": ["philosophy", "existentialism", "animals", "wry-humor"]
-    },
-    "a-wrinkle-in-time.epub": {
-        "title": "A Wrinkle in Time",
-        "author": "Madeleine L'Engle",
-        "category": "Fiction & Non-Fiction",
-        "pitch": "Meg Murry embarks on a cosmic tesseract journey across dimensions to rescue her scientist father from the psychic darkness of IT.",
-        "why_love": "A genre-defining children's classic uniting astrophysics, love, and spiritual courage against totalitarian conformity.",
-        "tags": ["classic", "sci-fi", "coming-of-age", "fantasy"]
-    },
-    "the-science-of-logic-[friedrich-hegel].epub": {
-        "title": "The Science of Logic",
-        "author": "G. W. F. Hegel",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "Hegel's masterwork on speculative dialectics: tracing pure thought as it moves through Being, Essence, and the Notion.",
-        "why_love": "The foundational bedrock of 19th and 20th-century continental philosophy and dialectical materialism.",
-        "tags": ["philosophy", "dialectics", "german-idealism", "deep-thought"]
-    },
-    "an-outline-of-philosophy-[ted-tripp].epub": {
-        "title": "An Outline of Philosophy",
-        "author": "Bertrand Russell & Ted Tripp",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "A lucid, analytical survey tracing epistemology, language, mind, and the physical universe from a naturalist standpoint.",
-        "why_love": "Uncompromising clarity and British analytical rigor tackling life's grandest questions without jargon.",
-        "tags": ["philosophy", "epistemology", "primer"]
-    },
-    "commodify-your-dissent-[thomas-frank].epub": {
-        "title": "Commodify Your Dissent",
-        "author": "Thomas Frank & Matt Weiland (eds.)",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "Incendiary essays from The Baffler exposing how American corporate advertising co-opted rebellion and counterculture into marketing fodder.",
-        "why_love": "Ferocious cultural critique that anticipated the modern Silicon Valley commodification of rebellion.",
-        "tags": ["media-critique", "counterculture", "advertising", "satire"]
-    },
-    "what-is-dialectical-materialism-a-study-guide-[rob-sewell].mobi": {
-        "title": "What Is Dialectical Materialism? A Study Guide",
-        "author": "Rob Sewell & Alan Woods",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "A concise introductory guide explaining the Marxist philosophy of change, contradiction, and historical development.",
-        "why_love": "Clear, direct breakdown of philosophical materialism vs idealism for political students.",
-        "tags": ["philosophy", "marxism", "politics", "study-guide"]
-    },
-    "zizek's-jokes-[slavoj-zizek].epub": {
-        "title": "Žižek's Jokes: (Did You Hear the One about Hegel and Negation?)",
-        "author": "Slavoj Žižek",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "A hilarious compendium of dirty Soviet jokes, obscene riddles, and Jewish humor used to explain Lacan, Hegel, and contemporary ideology.",
-        "why_love": "Classic Žižek: using low-brow humor to unlock profound post-modern philosophical truths.",
-        "tags": ["philosophy", "humor", "ideology", "lacan"]
-    },
-    "socialism-utopian-and-scientific-[frederick-engels].epub": {
-        "title": "Socialism: Utopian and Scientific",
-        "author": "Friedrich Engels",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "Engels traces the historical evolution of socialist thought from the moral dreams of French utopians to historical materialism.",
-        "why_love": "One of the most accessible and influential political pamphlets in world history.",
-        "tags": ["politics", "history", "economics", "classic"]
-    },
-    "qntm-there-is-no-antimemetics-di.epub": {
-        "title": "There Is No Antimemetics Division",
-        "author": "qntm (Sam Hughes)",
-        "category": "Fiction & Non-Fiction",
-        "pitch": "How do you fight an enemy that erases itself from your memory the instant you look at it? A brilliant thriller set in the SCP Foundation universe.",
-        "why_love": "An astonishingly original concept executed with relentless suspense and cerebral mind-benders.",
-        "tags": ["sci-fi", "horror", "mind-bending", "unputdownable"]
-    },
-    "how to research anything.epub": {
-        "title": "How to Research Anything",
-        "author": "Nat Eliason",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "A pragmatic operating system for deconstructing new domains, finding primary sources, and synthesizing complex knowledge fast.",
-        "why_love": "Actionable frameworks for curious autodidacts and researchers.",
-        "tags": ["research", "learning", "productivity", "frameworks"]
-    },
-    "lessons-in-stoicism-john-sellers (1).epub": {
-        "title": "Lessons in Stoicism",
-        "author": "John Sellars",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "A short, elegant distillation of Seneca, Epictetus, and Marcus Aurelius on controlling emotions, facing adversity, and living calmly.",
-        "why_love": "Stripped of pop-self-help fluff; pure ancient philosophical therapy in under 100 pages.",
-        "tags": ["stoicism", "philosophy", "ancient-wisdom", "mental-clarity"]
-    },
-    "sophies-world-a-novel-about-the (1).epub": {
-        "title": "Sophie's World",
-        "author": "Jostein Gaarder",
-        "category": "Fiction & Non-Fiction",
-        "pitch": "A 14-year-old Norwegian girl begins receiving mysterious letters from an anonymous philosopher, plunging into a meta-fictional history of Western thought.",
-        "why_love": "A worldwide bestseller that turns 2,500 years of philosophy into an irresistible mystery novel.",
-        "tags": ["philosophy", "coming-of-age", "mystery", "metafiction"]
-    },
-    "the-tao-te-ching-translated-by-g.epub": {
-        "title": "Tao Te Ching",
-        "author": "Lao Tzu (trans. Gia-Fu Feng & Jane English)",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "Eighty-one poetic chapters on the paradoxical power of non-action (wu wei), water-like flexibility, and harmony with nature.",
-        "why_love": "The definitive English poetic translation; timeless sentences that re-center a distracted mind.",
-        "tags": ["eastern-philosophy", "poetry", "taoism", "meditative"]
-    },
-    "good-stories-on-ai-and-future-ke.epub": {
-        "title": "Good Stories on AI and the Future",
-        "author": "Kevin Kelly",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "Wired co-founder Kevin Kelly outlines optimistic, proactive scenarios for humanity co-evolving alongside artificial intelligence.",
-        "why_love": "A refreshingly expansive, non-apocalyptic antidote to prevailing tech pessimism.",
-        "tags": ["technology", "ai", "futures", "optimism"]
-    },
-    "david-allen-getting-things-done.epub": {
-        "title": "Getting Things Done: The Art of Stress-Free Productivity",
-        "author": "David Allen",
-        "category": "Marketing & Strategy",
-        "pitch": "The legendary methodology for externalizing mental loops into trusted capture systems and clearing cognitive RAM.",
-        "why_love": "The gold-standard productivity architecture that freed millions from executive overwhelm.",
-        "tags": ["productivity", "systems", "mental-clarity", "focus"]
-    },
-    "no-more-mr-nice-guy-robert-glove.epub": {
-        "title": "No More Mr. Nice Guy",
-        "author": "Dr. Robert A. Glover",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "A clinical examination of covert contracts, passive-aggression, and fear of conflict, showing how to reclaim healthy assertiveness.",
-        "why_love": "Direct, empathetic diagnosis of people-pleasing traps and boundary enforcement.",
-        "tags": ["psychology", "boundaries", "relationships", "self-honesty"]
-    },
-    "the-great-business-reformation-h.epub": {
-        "title": "The Great Business Reformation",
-        "author": "H. W. Charles",
-        "category": "Marketing & Strategy",
-        "pitch": "A critical manifesto detailing how customer expectations and decentralized technology are forcing corporate institutions to reinvent themselves.",
-        "why_love": "Sharply observed business strategy on agility and brand trust.",
-        "tags": ["business-strategy", "innovation", "brand"]
-    },
-    "the-new-control-society-by-jon-a.epub": {
-        "title": "The New Control Society",
-        "author": "Jon Agar",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "Historical examination of government surveillance, digital databases, and administrative identity registers since WWII.",
-        "why_love": "Scholarly, fascinating look at how bureaucratic data collection morphed into total digital oversight.",
-        "tags": ["surveillance", "technology", "privacy", "history"]
-    },
-    "japans-historical-arc-from-feuda.epub": {
-        "title": "Japan's Historical Arc: From Feudalism to Modernity",
-        "author": "Mikiso Hane",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "A vivid historical chronicle detailing Japan's rapid leap from isolated Tokugawa shogunate to industrial world empire.",
-        "why_love": "Focuses on the ordinary peasants, factory workers, and women who bore the human cost of rapid modernization.",
-        "tags": ["japanese-history", "culture", "asia", "modernization"]
-    },
-    "ray-dalio-principles.epub": {
-        "title": "Principles: Life and Work",
-        "author": "Ray Dalio",
-        "category": "Marketing & Strategy",
-        "pitch": "Billionaire hedge fund founder Ray Dalio shares his systematic operating rules for radical truth, radical transparency, and machine-like execution.",
-        "why_love": "An engineering mindset applied to organizational psychology and decision-making under uncertainty.",
-        "tags": ["decision-making", "systems", "leadership", "principles"]
-    },
-    "all tomorrows cm kosemen .pdf": {
-        "title": "All Tomorrows: A Billion Year Chronicle of the Post-Humans",
-        "author": "C. M. Kôsemen (Nemo Ramjet)",
-        "category": "Fiction & Non-Fiction",
-        "pitch": "A chilling billion-year speculative chronicle tracing human descendants bio-engineered into grotesque alien forms by an enigmatic god-like race.",
-        "why_love": "One of the most haunting, deeply imaginative works of cosmic body-horror and perseverance ever conceived.",
-        "tags": ["cosmic-horror", "speculative-evolution", "sci-fi", "unforgettable"]
-    },
-    "the ones who walk away from omelas.pdf": {
-        "title": "The Ones Who Walk Away from Omelas",
-        "author": "Ursula K. Le Guin",
-        "category": "Fiction & Non-Fiction",
-        "pitch": "A utopian festival city whose boundless splendor and joy depends entirely on the perpetual, locked-room torment of a single innocent child.",
-        "why_love": "Le Guin's devastating philosophical parable questioning utilitarian ethics and the price of social happiness.",
-        "tags": ["philosophical-fiction", "parable", "ethics", "classic"]
-    },
-    "freakonomics.pdf": {
-        "title": "Freakonomics: A Rogue Economist Explores the Hidden Side of Everything",
-        "author": "Steven D. Levitt & Stephen J. Dubner",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "Economist Steven Levitt uses statistical correlations and behavioral incentives to investigate sumo wrestling, cheating teachers, and crime drops.",
-        "why_love": "Delightfully counterintuitive data storytelling that changed popular non-fiction forever.",
-        "tags": ["economics", "incentives", "psychology", "surprising-insights"]
-    },
-    "hbr on persuasive presentations.pdf": {
-        "title": "HBR Guide to Persuasive Presentations",
-        "author": "Nancy Duarte",
-        "category": "Marketing & Strategy",
-        "pitch": "Presentation expert Nancy Duarte shows how to structure executive pitches like dramatic hero journeys with contrast and emotional resonance.",
-        "why_love": "Eliminates slide-deck clutter and teaches how to move cynical stakeholders to action.",
-        "tags": ["presentations", "storytelling", "persuasion", "communication"]
-    },
-    "hbr on communication": {
-        "title": "HBR's 10 Must Reads on Communication",
-        "author": "Harvard Business Review",
-        "category": "Marketing & Strategy",
-        "pitch": "The definitive collection of executive essays on persuasive rhetoric, difficult conversations, and managing narrative.",
-        "why_love": "Essential business strategy articles on the science of why arguments convince people.",
-        "tags": ["communication", "leadership", "rhetoric", "management"]
-    },
-    "어린왕자.pdf": {
-        "title": "The Little Prince (어린 왕자 - Korean Edition)",
-        "author": "Antoine de Saint-Exupéry",
-        "category": "Fiction & Non-Fiction",
-        "pitch": "A stranded desert aviator encounters a boy prince from Asteroid B-612 who tends roses and tames foxes.",
-        "why_love": "A poetic, tender masterpiece reminding adults that what is essential is invisible to the eye.",
-        "tags": ["classic", "fable", "korean-language", "heartfelt"]
-    },
-    "barthes-the-death-of-the-author.pdf": {
-        "title": "The Death of the Author",
-        "author": "Roland Barthes",
-        "category": "Philosophy, Essays & Misc",
-        "pitch": "The landmark literary essay arguing that a text's true birth happens in the mind of the reader, not the biography of the author.",
-        "why_love": "Shattered traditional literary criticism and opened modern subjective interpretation.",
-        "tags": ["literary-theory", "philosophy", "essays", "foundational"]
-    },
-    "intercom on jobs to be done.pdf": {
-        "title": "Intercom on Jobs to be Done",
-        "author": "Des Traynor & Intercom Team",
-        "category": "Marketing & Strategy",
-        "pitch": "A practical product guide to Clay Christensen's Jobs-to-be-Done framework: discovering why customers actually 'hire' your software.",
-        "why_love": "Cuts through vanity feature roadmaps to focus on real customer struggle.",
-        "tags": ["product-management", "jobs-to-be-done", "saas", "user-research"]
-    },
-    "the-dream-of-a-ridiculous-man-fi.epub": {
-        "title": "The Dream of a Ridiculous Man",
-        "author": "Fyodor Dostoevsky",
-        "category": "Fiction & Non-Fiction",
-        "pitch": "A suicidal man falls asleep with a revolver and dreams he is transported to an uncorrupted, paradise version of Earth.",
-        "why_love": "One of Dostoevsky's most visionary, emotionally intense short parables on human sin and redemption.",
-        "tags": ["dostoevsky", "existentialism", "short-story", "philosophical-depth"]
-    },
-    "what the fortune 500 read.pdf": {
-        "title": "What the Fortune 500 Read",
-        "author": "Alan Scharf",
-        "category": "Marketing & Strategy",
-        "pitch": "A curated compendium dissecting the executive reading habits, foundational books, and mental models of elite corporate leaders.",
-        "why_love": "High-signal filter on which business and management books genuinely endure.",
-        "tags": ["reading-lists", "business", "executive-mindset"]
-    },
-    "worldclasspricingthejourney.pdf": {
-        "title": "World Class Pricing: The Journey",
-        "author": "Paul Hunt & Jim Saunders",
-        "category": "Marketing & Strategy",
-        "pitch": "A strategic playbook for B2B enterprises to transition from cost-plus pricing to value-based pricing architectures.",
-        "why_love": "Demystifies the most potent yet neglected profit lever in business.",
-        "tags": ["pricing", "b2b", "revenue", "strategy"]
-    },
-    "the art of seo.pdf": {
-        "title": "The Art of SEO: Mastering Search Engine Optimization",
-        "author": "Eric Enge, Stephan Spencer & Jessie Stricchiola",
-        "category": "Marketing & Strategy",
-        "pitch": "The authoritative industry encyclopedia on algorithmic search, crawl architecture, content strategy, and link authority.",
-        "why_love": "Comprehensive, technical, and grounded in search engine reality.",
-        "tags": ["seo", "digital-marketing", "technical-search", "strategy"]
-    },
-    "cinematography theory and practice.pdf": {
-        "title": "Cinematography: Theory and Practice",
-        "author": "Blain Brown",
-        "category": "Cinema & Film Craft",
-        "pitch": "An exhaustive, visual masterclass in camera movement, lighting aesthetics, visual composition, and cinematic visual language.",
-        "why_love": "The standard university textbook that teaches how to translate written emotion into camera choreography.",
-        "tags": ["cinematography", "film-craft", "visual-storytelling", "directing"]
-    },
-    "directing actors.pdf": {
-        "title": "Directing Actors: Creating Memorable Performances for Film & Television",
-        "author": "Judith Weston",
-        "category": "Cinema & Film Craft",
-        "pitch": "The industry's most acclaimed guide for directors on how to communicate with actors using active verbs and subtext rather than 'result directing'.",
-        "why_love": "Crucial reading for both filmmakers and writers seeking genuine human behavior in their dialogue.",
-        "tags": ["directing", "acting", "subtext", "film-craft"]
-    }
-}
-
-SWAPPED_AUTHOR_TITLES = {
-    "andy weir": ("Project Hail Mary", "Andy Weir"),
-    "ann handley": ("Everybody Writes: Your Go-To Guide to Creating Ridiculously Good Content", "Ann Handley"),
-    "blake crouch": ("Dark Matter", "Blake Crouch"),
-    "dan nelken": ("A Self-Help Guide for Copywriters", "Dan Nelken"),
-    "dave gerhardt": ("Founder Brand: Turn Your Story Into Your Competitive Advantage", "Dave Gerhardt"),
-    "eli schwartz": ("Product-Led SEO", "Eli Schwartz"),
-    "jordan belfort": ("Way of the Wolf: Straight Line Selling", "Jordan Belfort"),
-    "justin welsh": ("The LinkedIn Engagement Routine & Content Operating System", "Justin Welsh"),
-    "matt barker": ("72 Viral LinkedIn Post Breakdown", "Matt Barker"),
-    "neil french": ("The Neil French Collection: Master Copywriting & Advertising", "Neil French"),
-    "rory sutherland": ("Alchemy: The Dark Art and Curious Science of Creating Magic in Brands", "Rory Sutherland"),
-    "sabri suby": ("Sell Like Crazy: How to Get As Many Clients and Sales As You Can Possibly Handle", "Sabri Suby"),
-    "seth godin": ("Permission Marketing / All Marketers Are Liars", "Seth Godin"),
-    "stephen fox": ("The Mirror Makers: A History of American Advertising and Its Creators", "Stephen Fox"),
-    "tiago amaral": ("The 6 Rules of Fiction", "Tiago Amaral"),
-    "wynter / peep laja": ("9 Tips for Your Messaging Strategy", "Peep Laja (Wynter)")
-}
+KNOWN_AUTHORS = [
+    "Haruki Murakami", "Kurt Vonnegut", "Kurt Vonnegut Jr.", "Charles Bukowski", "Alain De Botton",
+    "James Baldwin", "Pierce Brown", "Virginia Woolf", "Robert Cialdini", "Matt Dinniman",
+    "Meiko Kawakami", "Rahi Masoom Raza", "Perumal Murugan", "Jia Tolentino", "Ted Chiang",
+    "Ken Liu", "Claudia Piñeiro", "E. M. Forster", "Chuck Palahniuk", "George Orwell",
+    "Umberto Eco", "Harishankar Parsai", "Stephen King", "Franz Kafka", "Fyodor Dostoevsky",
+    "Leo Tolstoy", "Albert Camus", "Jorge Luis Borges", "Italo Calvino", "Vladimir Nabokov",
+    "Sylvia Plath", "Saadat Hasan Manto", "Truman Capote", "Raymond Carver", "E. B. White",
+    "Kazuo Ishiguro", "Cormac McCarthy", "David Foster Wallace", "George Saunders", "Zadie Smith",
+    "Arundhati Roy", "Vivek Shanbhag", "Jhumpa Lahiri", "Salman Rushdie", "Amitav Ghosh",
+    "Geetanjali Shree", "Elena Ferrante", "Milan Kundera", "Hilary Mantel", "Donna Tartt",
+    "Ocean Vuong", "Sally Rooney", "Ottessa Moshfegh", "Annie Ernaux", "Joan Didion",
+    "Annie Dillard", "Anne Lamott", "Mary Karr", "Oliver Sacks", "Nora Ephron",
+    "Hunter S. Thompson", "Tom Wolfe", "Oliver Burkeman", "Paul Kalanithi", "J. D. Salinger",
+    "Shirley Jackson", "Ursula K. Le Guin", "Seneca", "Andrei Tarkovsky", "Walter Murch",
+    "John Yorke", "Blake Snyder", "Neil Gaiman", "Alan Moore", "Katsuhiro Otomo",
+    "Seth Godin", "Al Ries", "Laura Ries", "Alex Hormozi", "Tim Ferriss", "J. Kenji López-Alt",
+    "Maangchi", "Amartya Sen", "John Gray", "Roland Barthes", "Nigel Benson", "David Orrell",
+    "Rupert Woodfin", "Stuart Hood", "David Norris", "Anthony O'Hear", "Ziauddin Sardar",
+    "Maggie Hyde", "Rius", "John Nagle", "Stephen Fox", "Adele Revella", "Eli Schwartz",
+    "Jordan Belfort", "Sabri Suby", "Liu Cixin", "Cixin Liu", "H. P. Lovecraft", "Thomas S. Kuhn",
+    "Patrick Radden Keefe", "Rebecca Skloot", "Cho Nam-Joo", "Bret Easton Ellis", "Seishi Yokomizo",
+    "Benedict Jacka", "Ben Aaronovitch", "Jim Butcher", "Jann S. Wenner", "Irvine Welsh",
+    "Nawal El Saadawi", "Amir Levine", "Lidia Zylowska", "Stuart Turton", "Sohn Won-pyung",
+    "John Steinbeck", "Phil Knight", "Lori Gottlieb", "Julie Zhuo", "NISIOISIN", "Etgar Keret",
+    "J. K. Rowling", "Inio Asano", "Ray Dalio", "David Allen", "Kevin Kelly", "Slavoj Žižek",
+    "Thomas Frank", "Friedrich Engels", "G. W. F. Hegel", "Bertrand Russell", "Jostein Gaarder",
+    "Lao Tzu", "Madeleine L'Engle", "Steven D. Levitt", "Nancy Duarte", "Cord Jefferson",
+    "Rainer Maria Rilke", "Movement by David"
+]
 
 KNOWN_SCREENPLAYS = {
     "arrival": ("Arrival (Screenplay)", "Eric Heisserer (dir. Denis Villeneuve)", "2016", ["sci-fi", "linguistics", "nonlinear-time", "grief"]),
@@ -381,21 +86,23 @@ SPECIAL_CLEANUPS = {
     "the death of the author": ("The Death of the Author", "Roland Barthes", "Philosophy, Essays & Misc", "The revolutionary post-structuralist essay severing a text's meaning from its creator's intent.", "The bedrock of modern literary criticism and open interpretation."),
     "the 22 immutable laws of branding": ("The 22 Immutable Laws of Branding", "Al Ries & Laura Ries", "Marketing & Strategy", "The battle-tested laws of category ownership, contraction, and singular focus.", "Brutally concise rules that prevent businesses from self-sabotaging their identity."),
     "permission marketing": ("Permission Marketing", "Seth Godin", "Marketing & Strategy", "The paradigm shift from interruptive spam to turning strangers into friends and friends into customers.", "The foundational doctrine of modern respect-based digital marketing."),
-    "$100m offers": ("$100M Offers: How To Make Offers So Good People Feel Stupid Saying No", "Alex Hormozi", "Marketing & Strategy", "A ruthlessly practical, mathematically sound guide to creating irresistible value propositions.", "Zero-nonsense operational guide that simplifies pricing and pricing psychology.")
+    "$100m offers": ("$100M Offers: How To Make Offers So Good People Feel Stupid Saying No", "Alex Hormozi", "Marketing & Strategy", "A ruthlessly practical, mathematically sound guide to creating irresistible value propositions.", "Zero-nonsense operational guide that simplifies pricing and pricing psychology."),
+    "rilke": ("Poems from the Book of Hours", "Rainer Maria Rilke", "Fiction & Non-Fiction", "Rilke's transcendent, mystical prayers wrestling with darkness, divinity, and solitary creative awakening.", "Lyrical spiritual poetry that pierces ordinary perception."),
+    "total shoulder mobility": ("Total Shoulder Mobility 2.0", "Movement by David", "Philosophy, Essays & Misc", "A functional movement routine designed to decompress stiff joints and build bulletproof overhead mobility.", "Direct, biomechanically sound drills for daily posture correction.")
 }
 
 def clean_title_author(raw_title, raw_author, filename):
     fn_lower = filename.lower()
     
-    # Check exact filename mapping
-    for exact_k, data in EXACT_FILE_MAPPINGS.items():
-        if exact_k in fn_lower:
-            return data["title"], data["author"], data["category"], data["pitch"], data["why_love"], data["tags"]
+    # Check exact cleanups
+    for k, (t, a, c, p, w) in SPECIAL_CLEANUPS.items():
+        if k in fn_lower:
+            return t, a, c, p, w, [c.lower().replace(" & ", "-")]
             
-    # Check swapped patterns
-    for auth_k, (true_title, true_author) in SWAPPED_AUTHOR_TITLES.items():
-        if auth_k in raw_title.lower() or auth_k in raw_author.lower():
-            return true_title, true_author, None, None, None, None
+    # Check screenplays
+    for spk, (spt, spa, spyear, sptags) in KNOWN_SCREENPLAYS.items():
+        if spk in fn_lower:
+            return spt, spa, "Screenplays", f"Original master screenplay from {spyear}.", "Masterclass in scene geometry and dialogue.", sptags
             
     return raw_title, raw_author, None, None, None, None
 
@@ -441,10 +148,12 @@ def normalize_all():
                 continue
             seen_keys.add("watchmen_all")
             shelf.append({
+                "id": "watchmen-complete",
                 "title": "Watchmen (Complete Series)",
                 "author": "Alan Moore & Dave Gibbons",
                 "category": "Comics & Graphic Novels",
                 "format": "CBR",
+                "cover_url": "https://covers.openlibrary.org/b/id/8231996-M.jpg",
                 "pitch": "The monumental superhero deconstruction set against the ticking clock of nuclear armageddon. Rorschach investigates the murder of a former masked vigilante, uncovering a cosmic conspiracy.",
                 "why_love": "Redefined what comic art could achieve; a dense, nine-panel grid masterpiece of political dread and flawed human gods.",
                 "tags": ["graphic-novel", "superhero-deconstruction", "cold-war", "classic", "dark"],
@@ -461,12 +170,14 @@ def normalize_all():
                 continue
             seen_keys.add("punpun_all")
             shelf.append({
-                "title": "Goodnight Punpun (Oyasumi Punpun - Complete Series)",
+                "id": "goodnight-punpun-complete",
+                "title": "Goodnight Punpun (Complete Series)",
                 "author": "Inio Asano",
                 "category": "Comics & Graphic Novels",
                 "format": "PDF",
-                "pitch": "A coming-of-age psychological masterpiece depicting Punpun Onodera, an innocent child drawn as a simple bird caricature navigating parental domestic abuse, crippling depression, and turbulent young adulthood.",
-                "why_love": "Universally acclaimed for its raw, unfiltered vulnerability and devastatingly photorealistic backgrounds.",
+                "cover_url": "https://covers.openlibrary.org/b/id/10574169-M.jpg",
+                "pitch": "A coming-of-age psychological masterpiece depicting Punpun Onodera, an innocent child drawn as a simple bird caricature navigating domestic abuse, depression, and turbulent young adulthood.",
+                "why_love": "Universally acclaimed for its raw vulnerability, devastating emotional realism, and photorealistic backdrops.",
                 "tags": ["manga", "coming-of-age", "psychological", "raw-honesty", "dark"],
                 "drive_path": drive_path,
                 "filename": fn,
@@ -480,24 +191,6 @@ def normalize_all():
         t, a, c, p, w, tg = clean_title_author(item["title"], item["author"], fn)
         if c:
             cat = c
-        
-        # Check special cleanups
-        for sk, (stitle, sauthor, scat, spitch, swhy) in SPECIAL_CLEANUPS.items():
-            if sk in fn_lower:
-                t, a, cat, p, w = stitle, sauthor, scat, spitch, swhy
-                tg = [scat.lower().replace(" & ", "-"), "essential"]
-                break
-                
-        # Check screenplays
-        if cat == "Screenplays" or "screenplay" in fn_lower:
-            for spk, (spt, spa, spyear, sptags) in KNOWN_SCREENPLAYS.items():
-                if spk in fn_lower:
-                    t, a = spt, spa
-                    p = f"Original production screenplay from {spyear}. A pristine masterclass in scene geometry, pacing, and visual description."
-                    w = "Essential reading for screenwriters and novelists studying story architecture and subtext."
-                    tg = sptags + ["screenplay", "cinema"]
-                    cat = "Screenplays"
-                    break
 
         # Check graphic guides
         if "graphic guide" in cat.lower() or "introducing" in fn_lower:
@@ -545,11 +238,16 @@ def normalize_all():
             continue
         seen_keys.add(key)
         
+        # Build clean ID
+        book_id = re.sub(r'[^a-z0-9]+', '-', f"{t}-{a}".lower()).strip('-')
+        
         shelf.append({
+            "id": book_id,
             "title": t,
             "author": a,
             "category": cat,
             "format": fmt,
+            "cover_url": "", # Will fall back to dynamic jacket or user custom
             "pitch": p,
             "why_love": w,
             "tags": tg,
@@ -561,20 +259,15 @@ def normalize_all():
         
         tbr_dict[t] = a
 
-    # Sort shelf and TBR
     shelf.sort(key=lambda x: (x["category"], x["title"]))
     tbr_clean_lines = [f"{t} — {a}" for t, a in sorted(tbr_dict.items(), key=lambda x: x[0].lower())]
 
     print(f"Processed {len(shelf)} unique books for shelf.")
     print(f"Generated {len(tbr_clean_lines)} unique clean TBR items.")
 
-    # Save data
     SHELF_JSON_PATH.write_text(json.dumps(shelf, indent=2, ensure_ascii=False), encoding="utf-8")
     TBR_OUTPUT_PATH.write_text("\n".join(tbr_clean_lines), encoding="utf-8")
-    print(f"Saved: {SHELF_JSON_PATH}")
-    print(f"Saved: {TBR_OUTPUT_PATH}")
 
-    # Build HTML app
     build_html_app(shelf, tbr_clean_lines)
 
 def build_html_app(shelf, tbr_lines):
@@ -627,6 +320,51 @@ def build_html_app(shelf, tbr_lines):
       -webkit-box-orient: vertical;
       overflow: hidden;
     }}
+    /* Physical Book Cover Jacket Aesthetic */
+    .book-jacket {{
+      position: relative;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.4), inset -2px 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 4px 8px 8px 4px;
+      border-left: 6px solid rgba(255, 255, 255, 0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }}
+    .book-jacket:hover {{
+      transform: translateY(-2px);
+      box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.5), inset -2px 0 6px rgba(0, 0, 0, 0.3);
+    }}
+    .jacket-fiction {{
+      background: linear-gradient(145deg, #312e81 0%, #1e1b4b 100%);
+      border-left-color: #818cf8;
+    }}
+    .jacket-marketing {{
+      background: linear-gradient(145deg, #831843 0%, #500724 100%);
+      border-left-color: #f472b6;
+    }}
+    .jacket-philosophy {{
+      background: linear-gradient(145deg, #064e3b 0%, #022c22 100%);
+      border-left-color: #34d399;
+    }}
+    .jacket-cinema {{
+      background: linear-gradient(145deg, #78350f 0%, #451a03 100%);
+      border-left-color: #fbbf24;
+    }}
+    .jacket-screenplay {{
+      background: linear-gradient(145deg, #1c1917 0%, #0c0a09 100%);
+      border-left-color: #a8a29e;
+    }}
+    .jacket-comics {{
+      background: linear-gradient(145deg, #701a75 0%, #4a044e 100%);
+      border-left-color: #e879f9;
+    }}
+    .jacket-guides {{
+      background: linear-gradient(145deg, #1e3a8a 0%, #172554 100%);
+      border-left-color: #60a5fa;
+    }}
+    .jacket-food {{
+      background: linear-gradient(145deg, #7c2d12 0%, #431407 100%);
+      border-left-color: #fb923c;
+    }}
   </style>
 </head>
 <body class="min-h-screen p-4 md:p-8">
@@ -639,10 +377,10 @@ def build_html_app(shelf, tbr_lines):
           <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-[var(--foreground)]">My Drive Library & Dynamic Shelf</h1>
         </div>
         <p class="text-[var(--muted-foreground)] text-sm mt-1">
-          {len(shelf)} indexed volumes & screenplays • Back-cover pitches • Why readers love each work • Instant TBR exporter
+          {len(shelf)} volumes & screenplays • Visual Book Jackets • Quotes & Companion Notes • Live Rename & Cover Editor • TBR Exporter
         </p>
       </div>
-      <div class="flex items-center gap-2">
+      <div class="flex flex-wrap items-center gap-2">
         <button onclick="openRecommender()" class="px-4 py-2 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-sm font-semibold rounded-lg shadow transition flex items-center gap-2">
           <span>✨</span>
           <span>What to Read Next?</span>
@@ -663,7 +401,7 @@ def build_html_app(shelf, tbr_lines):
             type="text" 
             id="searchInput" 
             oninput="renderShelf()"
-            placeholder="Search title, author, keyword, or mood..." 
+            placeholder="Search title, author, keyword, or quote..." 
             class="w-full pl-10 pr-4 py-2 bg-[var(--background)] border border-[var(--border)] rounded-lg text-sm text-[var(--foreground)] placeholder-[var(--muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
           />
           <span class="absolute left-3 top-2.5 text-[var(--muted-foreground)] text-sm">🔍</span>
@@ -673,7 +411,7 @@ def build_html_app(shelf, tbr_lines):
         <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
           <label class="flex items-center gap-2 text-sm text-[var(--muted-foreground)] cursor-pointer select-none">
             <input type="checkbox" id="quoteBankOnly" onchange="renderShelf()" class="rounded border-[var(--border)] accent-[var(--accent)] w-4 h-4" />
-            <span>Has Marginalia Quotes Only</span>
+            <span>Has Quotes ({len([b for b in shelf if b['has_quote_bank']])})</span>
           </label>
           <span id="itemCount" class="text-xs font-semibold px-2.5 py-1 bg-[var(--pill-bg)] rounded-full text-[var(--muted-foreground)]">
             Showing {len(shelf)}
@@ -768,14 +506,114 @@ def build_html_app(shelf, tbr_lines):
     </div>
   </div>
 
+  <!-- Rename & Edit Modal -->
+  <div id="editModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl max-w-lg w-full p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+      <div class="flex items-center justify-between pb-3 border-b border-[var(--border)] mb-4">
+        <h3 class="text-lg font-bold text-[var(--foreground)] flex items-center gap-2">
+          <span>✏️</span>
+          <span>Rename & Edit Book</span>
+        </h3>
+        <button onclick="closeEditModal()" class="text-[var(--muted-foreground)] hover:text-[var(--foreground)] font-bold text-lg px-2">✕</button>
+      </div>
+
+      <input type="hidden" id="editBookId" />
+
+      <div class="space-y-4 text-sm">
+        <div>
+          <label class="block text-xs font-semibold text-[var(--muted-foreground)] uppercase mb-1">Book Title</label>
+          <input type="text" id="editTitle" class="w-full px-3 py-2 bg-[var(--background)] border border-[var(--border)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-[var(--muted-foreground)] uppercase mb-1">Author</label>
+          <input type="text" id="editAuthor" class="w-full px-3 py-2 bg-[var(--background)] border border-[var(--border)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-[var(--muted-foreground)] uppercase mb-1">Category</label>
+            <select id="editCategory" class="w-full px-3 py-2 bg-[var(--background)] border border-[var(--border)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]">
+              <option value="Fiction & Non-Fiction">Fiction & Non-Fiction</option>
+              <option value="Cinema & Film Craft">Cinema & Film Craft</option>
+              <option value="Screenplays">Screenplays</option>
+              <option value="Marketing & Strategy">Marketing & Strategy</option>
+              <option value="Philosophy, Essays & Misc">Philosophy, Essays & Misc</option>
+              <option value="Graphic Guides">Graphic Guides</option>
+              <option value="Comics & Graphic Novels">Comics & Graphic Novels</option>
+              <option value="Cooking & Food">Cooking & Food</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-[var(--muted-foreground)] uppercase mb-1">Custom Cover Image URL</label>
+            <input type="text" id="editCoverUrl" placeholder="https://..." class="w-full px-3 py-2 bg-[var(--background)] border border-[var(--border)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]" />
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between text-xs text-[var(--accent)] pt-1">
+          <button type="button" onclick="openGoodreadsSearch()" class="hover:underline flex items-center gap-1">
+            <span>🔎</span>
+            <span>Search cover on Goodreads</span>
+          </button>
+          <button type="button" onclick="openGoogleImagesSearch()" class="hover:underline flex items-center gap-1">
+            <span>🖼️</span>
+            <span>Search Google Images</span>
+          </button>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-[var(--muted-foreground)] uppercase mb-1">Back-Cover Pitch</label>
+          <textarea id="editPitch" rows="3" class="w-full px-3 py-2 bg-[var(--background)] border border-[var(--border)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-[var(--muted-foreground)] uppercase mb-1">Why Read It / Notes</label>
+          <textarea id="editWhyLove" rows="2" class="w-full px-3 py-2 bg-[var(--background)] border border-[var(--border)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"></textarea>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-3 border-t border-[var(--border)]">
+          <button onclick="closeEditModal()" class="px-4 py-2 border border-[var(--border)] rounded-lg text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)]">Cancel</button>
+          <button onclick="saveEdit()" class="px-5 py-2 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-sm font-semibold rounded-lg shadow">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quote Notes Modal -->
+  <div id="quotesModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl max-w-2xl w-full p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+      <div class="flex items-center justify-between pb-3 border-b border-[var(--border)] mb-4">
+        <div>
+          <h3 id="modalBookTitle" class="text-lg font-bold text-[var(--foreground)]"></h3>
+          <p id="modalBookAuthor" class="text-xs font-semibold text-[var(--muted-foreground)]"></p>
+        </div>
+        <button onclick="closeQuotesModal()" class="text-[var(--muted-foreground)] hover:text-[var(--foreground)] font-bold text-lg px-2">✕</button>
+      </div>
+      <div id="modalQuotesList" class="space-y-4">
+        <!-- populated dynamically -->
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification -->
   <div id="toast" class="fixed bottom-6 right-6 bg-[var(--foreground)] text-[var(--background)] px-4 py-2.5 rounded-lg shadow-xl text-sm font-medium transition-all transform translate-y-16 opacity-0 pointer-events-none z-50">
     Copied to clipboard!
   </div>
 
   <script>
-    const SHELF_DATA = {shelf_json};
+    let SHELF_DATA = {shelf_json};
     let activeCategory = "All";
+
+    // Load any user overrides from localStorage
+    const savedOverrides = localStorage.getItem("marginalia_shelf_edits");
+    if (savedOverrides) {{
+      try {{
+        const overrides = JSON.parse(savedOverrides);
+        SHELF_DATA = SHELF_DATA.map(b => overrides[b.id] ? Object.assign(b, overrides[b.id]) : b);
+      }} catch (e) {{
+        console.error("Failed to parse saved overrides", e);
+      }}
+    }}
 
     const CATEGORIES = [
       "All",
@@ -855,6 +693,18 @@ def build_html_app(shelf, tbr_lines):
       renderShelf();
     }}
 
+    function getJacketClass(cat) {{
+      if (cat.includes("Fiction")) return "jacket-fiction";
+      if (cat.includes("Marketing")) return "jacket-marketing";
+      if (cat.includes("Philosophy")) return "jacket-philosophy";
+      if (cat.includes("Cinema")) return "jacket-cinema";
+      if (cat.includes("Screenplay")) return "jacket-screenplay";
+      if (cat.includes("Comics")) return "jacket-comics";
+      if (cat.includes("Graphic Guide")) return "jacket-guides";
+      if (cat.includes("Cooking")) return "jacket-food";
+      return "";
+    }}
+
     function renderShelf() {{
       const q = document.getElementById("searchInput").value.toLowerCase().trim();
       const quoteOnly = document.getElementById("quoteBankOnly").checked;
@@ -868,7 +718,8 @@ def build_html_app(shelf, tbr_lines):
           const matchAuthor = b.author.toLowerCase().includes(q);
           const matchPitch = (b.pitch || "").toLowerCase().includes(q);
           const matchTags = (b.tags || []).some(t => t.toLowerCase().includes(q));
-          if (!matchTitle && !matchAuthor && !matchPitch && !matchTags) return false;
+          const matchQuotes = (b.quotes || []).some(item => (item.quote || "").toLowerCase().includes(q));
+          if (!matchTitle && !matchAuthor && !matchPitch && !matchTags && !matchQuotes) return false;
         }}
         return true;
       }});
@@ -886,28 +737,42 @@ def build_html_app(shelf, tbr_lines):
         return;
       }}
 
-      grid.innerHTML = filtered.map((b, idx) => {{
+      grid.innerHTML = filtered.map((b) => {{
         const hasQuote = b.quotes && b.quotes.length > 0;
         const quoteSnippet = hasQuote ? b.quotes[0].quote : "";
+        const jacketCls = getJacketClass(b.category);
 
         return `
-          <div class="bg-[var(--card)] hover:bg-[var(--card-hover)] border border-[var(--border)] rounded-xl p-5 shadow-sm transition flex flex-col justify-between group">
+          <div class="bg-[var(--card)] hover:bg-[var(--card-hover)] border border-[var(--border)] rounded-xl p-5 shadow-sm transition flex flex-col justify-between group relative">
             <div>
-              <!-- Category and Format badges -->
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="text-[11px] font-semibold text-[var(--accent)] tracking-wider uppercase">${{b.category}}</span>
-                <span class="text-[10px] font-mono px-2 py-0.5 bg-[var(--background)] rounded border border-[var(--border)] text-[var(--muted-foreground)]">
-                  ${{b.format}}
-                </span>
-              </div>
+              <!-- Visual Book Jacket Banner -->
+              <div class="book-jacket ${{jacketCls}} p-4 mb-4 text-white rounded-lg flex flex-col justify-between min-h-[140px] relative overflow-hidden">
+                ${{b.cover_url ? `
+                  <img src="${{b.cover_url}}" alt="${{b.title}}" class="absolute inset-0 w-full h-full object-cover rounded-lg" onerror="this.style.display='none'" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
+                ` : ''}}
+                
+                <div class="relative z-10 flex items-center justify-between">
+                  <span class="text-[10px] font-bold tracking-widest uppercase opacity-85">${{b.category}}</span>
+                  <span class="text-[9px] font-mono px-1.5 py-0.5 bg-black/40 rounded border border-white/20 text-white/90">
+                    ${{b.format}}
+                  </span>
+                </div>
 
-              <!-- Title & Author -->
-              <h3 class="text-base font-bold text-[var(--foreground)] tracking-tight group-hover:text-[var(--accent)] transition leading-snug">
-                ${{b.title}}
-              </h3>
-              <p class="text-xs font-semibold text-[var(--muted-foreground)] mb-3">
-                ${{b.author}}
-              </p>
+                <div class="relative z-10 my-2">
+                  <h4 class="font-serif font-bold text-base md:text-lg leading-tight tracking-wide drop-shadow-sm text-white">
+                    ${{b.title}}
+                  </h4>
+                  <p class="text-xs text-white/80 font-medium mt-0.5">${{b.author}}</p>
+                </div>
+
+                <div class="relative z-10 flex items-center justify-between pt-1 border-t border-white/15 text-[10px] text-white/70">
+                  <span>${{hasQuote ? '★ Mined Passages' : 'Drive Library'}}</span>
+                  <button onclick="openEditModal('${{b.id}}')" class="text-white hover:text-[var(--accent)] hover:underline flex items-center gap-1">
+                    <span>✏️ Edit / Cover</span>
+                  </button>
+                </div>
+              </div>
 
               <!-- Pitch / Back-cover synopsis -->
               <div class="text-xs text-[var(--foreground)] leading-relaxed mb-3 line-clamp-3">
@@ -921,8 +786,16 @@ def build_html_app(shelf, tbr_lines):
 
               <!-- Excerpt Quote (if available) -->
               ${{quoteSnippet ? `
-                <div class="p-2.5 bg-blue-500/5 border border-blue-500/20 rounded-lg text-xs italic text-[var(--foreground)] mb-3">
-                  “${{quoteSnippet.length > 140 ? quoteSnippet.substring(0, 140) + '...' : quoteSnippet}}”
+                <div class="p-3 bg-blue-500/5 border border-blue-500/20 rounded-lg mb-3">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-[10px] font-semibold text-blue-400 uppercase tracking-wider">Notable Excerpt</span>
+                    <button onclick="openQuotesModal('${{b.id}}')" class="text-[10px] text-blue-400 hover:underline font-medium">
+                      View all notes (${{b.quotes.length}}) →
+                    </button>
+                  </div>
+                  <p class="text-xs italic text-[var(--foreground)] line-clamp-3">
+                    “${{quoteSnippet}}”
+                  </p>
                 </div>
               ` : ''}}
             </div>
@@ -930,18 +803,119 @@ def build_html_app(shelf, tbr_lines):
             <!-- Footer / Copy button -->
             <div class="pt-3 border-t border-[var(--border)] flex items-center justify-between text-xs">
               <span class="text-[10px] text-[var(--muted-foreground)]">
-                ${{b.has_quote_bank ? '★ In Quote Bank' : ''}}
+                ${{hasQuote ? `★ ${{b.quotes.length}} Quotes` : ''}}
               </span>
-              <button 
-                onclick="copySingleTbr('${{b.title.replace(/'/g, "\\\\\\'")}}', '${{b.author.replace(/'/g, "\\\\\\'")}}')" 
-                class="px-2.5 py-1 bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] rounded text-[11px] font-medium text-[var(--foreground)] transition flex items-center gap-1">
-                <span>📋</span>
-                <span>Copy TBR</span>
-              </button>
+              <div class="flex items-center gap-2">
+                <button 
+                  onclick="openEditModal('${{b.id}}')" 
+                  class="px-2 py-1 bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] rounded text-[11px] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">
+                  Rename
+                </button>
+                <button 
+                  onclick="copySingleTbr('${{b.title.replace(/'/g, "\\\\\\'")}}', '${{b.author.replace(/'/g, "\\\\\\'")}}')" 
+                  class="px-2.5 py-1 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white rounded text-[11px] font-medium transition flex items-center gap-1 shadow-sm">
+                  <span>📋</span>
+                  <span>Copy</span>
+                </button>
+              </div>
             </div>
           </div>
         `;
       }}).join("");
+    }}
+
+    function openQuotesModal(bookId) {{
+      const book = SHELF_DATA.find(b => b.id === bookId);
+      if (!book) return;
+      document.getElementById("modalBookTitle").innerText = book.title;
+      document.getElementById("modalBookAuthor").innerText = book.author;
+      const list = document.getElementById("modalQuotesList");
+
+      list.innerHTML = (book.quotes || []).map((q, idx) => `
+        <div class="p-4 bg-[var(--background)] border border-[var(--border)] rounded-xl">
+          <div class="text-sm italic font-serif text-[var(--foreground)] mb-3 leading-relaxed border-l-2 border-[var(--accent)] pl-3">
+            “${{q.quote}}”
+          </div>
+          ${{q.explanation ? `
+            <div class="text-xs text-[var(--muted-foreground)] leading-relaxed pt-2 border-t border-[var(--border)]">
+              <span class="font-semibold text-[var(--foreground)] block mb-1">Companion Insight & Context:</span>
+              <p class="whitespace-pre-line">${{q.explanation}}</p>
+            </div>
+          ` : ''}}
+        </div>
+      `).join("");
+
+      document.getElementById("quotesModal").classList.remove("hidden");
+    }}
+
+    function closeQuotesModal() {{
+      document.getElementById("quotesModal").classList.add("hidden");
+    }}
+
+    function openEditModal(bookId) {{
+      const b = SHELF_DATA.find(item => item.id === bookId);
+      if (!b) return;
+
+      document.getElementById("editBookId").value = b.id;
+      document.getElementById("editTitle").value = b.title;
+      document.getElementById("editAuthor").value = b.author;
+      document.getElementById("editCategory").value = b.category;
+      document.getElementById("editCoverUrl").value = b.cover_url || "";
+      document.getElementById("editPitch").value = b.pitch || "";
+      document.getElementById("editWhyLove").value = b.why_love || "";
+
+      document.getElementById("editModal").classList.remove("hidden");
+    }}
+
+    function closeEditModal() {{
+      document.getElementById("editModal").classList.add("hidden");
+    }}
+
+    function saveEdit() {{
+      const bookId = document.getElementById("editBookId").value;
+      const b = SHELF_DATA.find(item => item.id === bookId);
+      if (!b) return;
+
+      b.title = document.getElementById("editTitle").value.trim();
+      b.author = document.getElementById("editAuthor").value.trim();
+      b.category = document.getElementById("editCategory").value;
+      b.cover_url = document.getElementById("editCoverUrl").value.trim();
+      b.pitch = document.getElementById("editPitch").value.trim();
+      b.why_love = document.getElementById("editWhyLove").value.trim();
+
+      // Save to localStorage
+      let saved = {{}};
+      try {{
+        saved = JSON.parse(localStorage.getItem("marginalia_shelf_edits") || "{{}}");
+      }} catch (e) {{}}
+      saved[b.id] = {{
+        title: b.title,
+        author: b.author,
+        category: b.category,
+        cover_url: b.cover_url,
+        pitch: b.pitch,
+        why_love: b.why_love
+      }};
+      localStorage.setItem("marginalia_shelf_edits", JSON.stringify(saved));
+
+      closeEditModal();
+      renderCategoryPills();
+      renderShelf();
+      showToast(`Updated "${{b.title}}" and saved changes!`);
+    }}
+
+    function openGoodreadsSearch() {{
+      const title = document.getElementById("editTitle").value.trim();
+      const author = document.getElementById("editAuthor").value.trim();
+      const q = encodeURIComponent(`${{title}} ${{author}}`);
+      window.open(`https://www.goodreads.com/search?q=${{q}}`, '_blank');
+    }}
+
+    function openGoogleImagesSearch() {{
+      const title = document.getElementById("editTitle").value.trim();
+      const author = document.getElementById("editAuthor").value.trim();
+      const q = encodeURIComponent(`${{title}} ${{author}} book cover`);
+      window.open(`https://www.google.com/search?tbm=isch&q=${{q}}`, '_blank');
     }}
 
     function openRecommender() {{
@@ -998,11 +972,13 @@ def build_html_app(shelf, tbr_lines):
 """
     SHELF_HTML_PROTO.parent.mkdir(exist_ok=True)
     SHELF_HTML_PROTO.write_text(html, encoding="utf-8")
-    
     SHELF_HTML_DOCS.parent.mkdir(exist_ok=True)
     SHELF_HTML_DOCS.write_text(html, encoding="utf-8")
+    ARTIFACT_PATH.parent.mkdir(exist_ok=True)
+    ARTIFACT_PATH.write_text(html, encoding="utf-8")
     print(f"Generated prototype page: {SHELF_HTML_PROTO}")
     print(f"Generated docs page: {SHELF_HTML_DOCS}")
+    print(f"Generated artifact page: {ARTIFACT_PATH}")
 
 if __name__ == "__main__":
     normalize_all()
