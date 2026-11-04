@@ -102,13 +102,174 @@ def is_fun_reading(book):
 
     return False
 
+MANUAL_BOOK_FIXES = {
+    "ben-goldacre-bad-pharma": {
+        "title": "Bad Pharma: How Drug Companies Mislead Doctors and Harm Patients",
+        "author": "Ben Goldacre",
+        "category": "Philosophy, Essays & Misc",
+        "cover_url": "https://covers.openlibrary.org/b/id/7289568-L.jpg",
+        "pitch": "We like to imagine that medicine is based on evidence and the results of fair clinical trials. In reality, those tests are conducted by the pharmaceutical companies themselves, who frequently bury negative trials, conduct flawed studies with tiny participant groups, and distort research to market ineffective and dangerous drugs to doctors and patients.",
+        "tags": ["medicine", "investigative", "science", "healthcare", "pharma"],
+        "why_love": (
+            "Ben Goldacre is the scourge of medical quackery and institutional deceit. In Bad Pharma, he lays bare the systemic corruption "
+            "of clinical drug trials: how negative results are buried, how regulatory agencies are captured, and how doctors are misled into "
+            "prescribing expensive, ineffective treatments to real patients. A furious, meticulously footnoted exposé that every scientifically "
+            "minded citizen needs on their shelf."
+        )
+    },
+    "ben-goldacre-bad-science": {
+        "title": "Bad Science: Quacks, Hacks, and Big Pharma Flacks",
+        "author": "Ben Goldacre",
+        "category": "Philosophy, Essays & Misc",
+        "cover_url": "https://covers.openlibrary.org/b/id/6680603-L.jpg",
+        "pitch": "Full of spleen, this is a hilarious, invigorating and informative journey through the world of bad science. When Dr. Ben Goldacre saw someone on daytime TV dipping her feet in an 'Aqua Detox' footbath and releasing brown sludge, he tested it with a Barbie doll and salt water. An essential takedown of homeopaths, nutritionist gurus, and tabloid scaremongers.",
+        "tags": ["pseudoscience", "critical-thinking", "media-literacy", "humor"],
+        "why_love": (
+            "Ben Goldacre opened his book with a Barbie doll sitting in a tub of brown sludge, and I have never trusted a footbath since. "
+            "That opening is the whole book in miniature: a deadpan, slightly unhinged experiment, a flash of spleen, and then a sudden turn toward "
+            "the serious business of asking how anyone knows what they claim to know. Reading it feels like being taken by the collar by a friend "
+            "who happens to be a doctor and refuses to let you swallow a claim without checking the numbers."
+        )
+    },
+    "how-to-research-anything-unknown": {
+        "title": "How to Research Anything",
+        "author": "Curated Dossier / Research Heuristics",
+        "category": "Philosophy, Essays & Misc",
+        "cover_url": None,
+        "pitch": "A curated compendium of advanced web intelligence, investigative research workflows, search heuristics, and OSINT methodologies gathered from investigative journalists and research practitioners across the web.",
+        "tags": ["research", "osint", "investigation", "methodology", "web-intelligence"],
+        "why_love": (
+            "This isn't a single corporate manual written by a single academic; it's a battle-tested compilation of heuristics, investigative workflows, "
+            "and search tools gathered across the best research communities on the web. It belongs here as a practical field handbook for anyone who "
+            "needs to cut through algorithmic clutter and find verifiable truth."
+        )
+    },
+    "how-to-win-at-chess-1-levy-rozman": {
+        "title": "How to Win at Chess: The Ultimate Guide for Beginners and Beyond",
+        "author": "Levy Rozman (GothamChess)",
+        "category": "Fiction & Non-Fiction",
+        "cover_url": "https://covers.openlibrary.org/b/id/14135096-L.jpg",
+        "pitch": "YouTube's favorite chess educator, International Master Levy Rozman, demystifies the 64 squares with accessible, humorous, and ruthlessly practical lessons covering opening traps, positional control, and endgames.",
+        "tags": ["chess", "strategy", "games", "tactics"],
+        "why_love": (
+            "Levy Rozman did what generations of Soviet grandmasters failed to do: he made chess strategy feel kinetic, hilarious, and genuinely fun. "
+            "Instead of burying beginners in dry algebraic notation, he breaks down the psychology of mistakes, the joy of punishing blunders, "
+            "and the fundamental habits that actually raise your rating. Pure chess joy."
+        )
+    },
+    "how-to-win-at-chess-2-next-level-levy-rozman": {
+        "title": "How to Win at Chess 2: Next Level",
+        "author": "Levy Rozman (GothamChess)",
+        "category": "Fiction & Non-Fiction",
+        "cover_url": "https://covers.openlibrary.org/b/id/14135096-L.jpg",
+        "pitch": "The follow-up masterclass expanding into intermediate opening repertoires, piece sacrifice evaluations, middlegame planning, and calculation techniques.",
+        "tags": ["chess", "strategy", "games", "tactics", "intermediate"],
+        "why_love": (
+            "Taking players beyond the beginner plateau, this second volume focuses on the murky middlegame where games are won and lost. "
+            "Rozman teaches you how to form a coherent attack, spot tactical patterns under pressure, and think two moves ahead without getting paralyzed."
+        )
+    },
+    "intimacy-trusting-oneself-and-the-other-by-osho": {
+        "title": "Intimacy: Trusting Oneself and the Other",
+        "author": "Osho",
+        "category": "Philosophy, Essays & Misc",
+        "cover_url": "https://covers.openlibrary.org/b/id/177935-L.jpg",
+        "pitch": "An uncompromising exploration of why human beings crave profound connection yet run in terror from genuine vulnerability, revealing how fear of exposure and self-rejection undermine our closest relationships.",
+        "tags": ["philosophy", "intimacy", "psychology", "vulnerability"],
+        "why_love": (
+            "Osho cuts through romantic sentimentalism to expose the fundamental paradox of modern relationships: we want to be loved deeply, "
+            "yet we armor ourselves behind masks and performative control to keep from being seen. A provocative, meditative reflection on "
+            "dropping defense mechanisms and learning to trust your own soul before demanding it from another."
+        )
+    },
+    "barabara-oakley-a-mind-for-numbers": {
+        "title": "A Mind for Numbers: How to Excel at Math and Science",
+        "author": "Barbara Oakley",
+        "category": "Fiction & Non-Fiction",
+        "cover_url": "https://covers.openlibrary.org/b/id/8352403-L.jpg"
+    },
+    "david-allen-getting-things-done-unknown": {
+        "title": "Getting Things Done: The Art of Stress-Free Productivity",
+        "author": "David Allen",
+        "category": "Marketing & Strategy",
+        "cover_url": "https://covers.openlibrary.org/b/id/109288-L.jpg"
+    },
+    "ed-catmull-amy-wallace-creativity-inc-overcoming-the-unseen-forces-that-stand-in-the-way-of-true-inspiration-libgen-li": {
+        "title": "Creativity, Inc.: Overcoming the Unseen Forces That Stand in the Way of True Inspiration",
+        "author": "Ed Catmull & Amy Wallace",
+        "category": "Marketing & Strategy",
+        "cover_url": "https://covers.openlibrary.org/b/id/13124793-L.jpg"
+    },
+    "master-shots-100-advanced-camera-techniques-to-get-an-expensive-look-on-your-low-budget-movie-unknown": {
+        "title": "Master Shots: 100 Advanced Camera Techniques",
+        "author": "Christopher Kenworthy",
+        "category": "Cinema & Film Craft",
+        "cover_url": "https://covers.openlibrary.org/b/id/7104834-L.jpg"
+    },
+    "40-rules-of-love-elif-shafak": {
+        "title": "The Forty Rules of Love",
+        "author": "Elif Shafak",
+        "category": "Fiction & Non-Fiction",
+        "cover_url": "https://covers.openlibrary.org/b/id/9078986-L.jpg"
+    },
+    "everybody-lies-seth-stephens-davidowitz": {
+        "title": "Everybody Lies: Big Data, New Data, and What the Internet Can Tell Us About Who We Really Are",
+        "author": "Seth Stephens-Davidowitz",
+        "category": "Fiction & Non-Fiction",
+        "cover_url": "https://covers.openlibrary.org/b/id/8294628-L.jpg"
+    },
+    "alex-verus-1-fated-benedict-jacka": {
+        "title": "Fated (Alex Verus #1)",
+        "author": "Benedict Jacka",
+        "category": "Fiction & Non-Fiction",
+        "cover_url": "https://covers.openlibrary.org/b/id/7367355-L.jpg"
+    },
+    "a-self-help-guide-for-copywriters-dan-nelken": {
+        "title": "A Self-Help Guide for Copywriters",
+        "author": "Dan Nelken",
+        "category": "Marketing & Strategy",
+        "cover_url": "https://covers.openlibrary.org/b/id/12838741-L.jpg"
+    },
+    "chess-for-zebras-jonathan-rowson": {
+        "title": "Chess for Zebras: Thinking Differently About Black and White",
+        "author": "Jonathan Rowson",
+        "category": "Fiction & Non-Fiction",
+        "cover_url": "https://covers.openlibrary.org/b/id/2144888-L.jpg"
+    },
+    "mikhail-tal-the-life-and-games-of-mikhail-tal-2012-everyman-chess-libgen-li": {
+        "title": "The Life and Games of Mikhail Tal",
+        "author": "Mikhail Tal",
+        "category": "Fiction & Non-Fiction",
+        "cover_url": "https://covers.openlibrary.org/b/id/7946850-L.jpg"
+    }
+}
+
 def build():
     if BOOKSHELF_DATA.exists():
         print(f"Loading pre-enriched data from {BOOKSHELF_DATA}...")
         shelf_books = json.loads(BOOKSHELF_DATA.read_text(encoding="utf-8"))
+
+        # Load covers cache to backfill any missing covers
+        covers_cache = json.loads(COVERS_CACHE_PATH.read_text(encoding="utf-8")) if COVERS_CACHE_PATH.exists() else {}
+
+        # Apply in-memory fixes to guarantee accurate titles, authors, and covers
+        for b in shelf_books:
+            bid = b.get("id")
+            if bid in MANUAL_BOOK_FIXES:
+                for k, v in MANUAL_BOOK_FIXES[bid].items():
+                    b[k] = v
+
+            # Backfill from cache if missing
+            if not b.get("cover_url"):
+                clean_t = re.sub(r"libgen\.li|libgen|\(20\d\d.*?\)|\{.*?\}", "", b.get("title", ""), flags=re.I).strip()
+                clean_a = re.sub(r"libgen\.li|libgen|\(dir\..*?\)|Unknown", "", b.get("author", ""), flags=re.I).strip()
+                cache_key = f"{clean_t}|{clean_a}"
+                if cache_key in covers_cache and covers_cache[cache_key]:
+                    b["cover_url"] = covers_cache[cache_key]
+
         matched_quotes_books = len([b for b in shelf_books if b.get("has_quote_bank")])
         covers_count = len([b for b in shelf_books if b.get("cover_url")])
-        print(f"Loaded {len(shelf_books)} books for Ex Libris.")
+        print(f"Loaded {len(shelf_books)} books for My Reading Corner.")
         print(f"Books successfully linked with Quote Bank: {matched_quotes_books} (over 1,500+ quotes).")
         print(f"Books with active covers: {covers_count} / {len(shelf_books)}")
         clean_tbr_lines = [f"{b['title']} — {b['author']}" for b in shelf_books]
@@ -554,9 +715,9 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
             id="viewBtnEditorial" 
             onclick="switchView('editorial')" 
             class="px-3 py-1 rounded-lg font-medium transition text-[var(--text-muted)] hover:text-[var(--text-heading)] flex items-center gap-1.5"
-            title="3x2 magazine cards with visible synopsis and hook">
+            title="Spacious 2-column cards with full synopsis and curator note">
             <span>📰</span>
-            <span class="hidden md:inline">Editorial (3x2)</span>
+            <span class="hidden md:inline">Editorial</span>
           </button>
           <button 
             id="viewBtnSplit" 
@@ -623,9 +784,9 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       </div>
     </div>
 
-    <!-- 2. Editorial 3x2 View (Wide Cards with Cover + Synopsis + Damn Factor) -->
+    <!-- 2. Editorial View (Refined 2-column cards with authentic back-cover synopsis) -->
     <div id="editorialView" class="hidden">
-      <div id="editorialGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div id="editorialGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5">
         <!-- Populated dynamically -->
       </div>
     </div>
@@ -1046,7 +1207,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       }}).join("");
     }}
 
-    // Render Editorial 3x2 View (Wide Cards with Cover + Synopsis + Damn Factor)
+    // Render Editorial View (Refined 2-column cards with back-cover synopsis, zero clipping)
     function renderEditorial(books) {{
       const grid = document.getElementById("editorialGrid");
       if (books.length === 0) {{
@@ -1057,51 +1218,50 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       grid.innerHTML = books.map(b => {{
         const jacketCls = getJacketStyle(b.category);
         const hasCover = !!b.cover_url;
-        const hook = extractFirstWhyReadHook(b.why_love);
 
         return `
-          <div class="editorial-card bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--terracotta)]/40 rounded-2xl p-4 flex gap-4 hover:shadow-xl transition-all duration-200 cursor-pointer group" onclick="openBookDetail('${{b.id}}')">
-            <!-- Cover (Left) -->
-            <div class="w-24 sm:w-28 shrink-0 book-cover ${{jacketCls}} relative rounded-[6px] overflow-hidden shadow-sm">
+          <div class="editorial-card bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--terracotta)]/40 rounded-xl p-3.5 sm:p-4 md:p-5 flex flex-row gap-3.5 sm:gap-4 md:gap-5 hover:shadow-lg transition-all duration-200 cursor-pointer group items-stretch" onclick="openBookDetail('${{b.id}}')">
+            <!-- Cover (Left: fixed ratio, shrink-0 prevents mobile crunch, object-contain prevents clipping) -->
+            <div class="w-20 sm:w-24 md:w-26 shrink-0 aspect-[2/3] book-cover ${{jacketCls}} relative rounded-[6px] overflow-hidden shadow-sm border border-black/10 flex items-center justify-center bg-[var(--border-subtle)]/60">
               ${{hasCover ? `
-                <img src="${{b.cover_url}}" alt="${{b.title}}" loading="lazy" class="w-full h-full object-cover" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-ed').style.display='flex';" />
-                <div class="fallback-ed hidden flex-col justify-between h-full p-2.5 absolute inset-0">
+                <img src="${{b.cover_url}}" alt="${{b.title}}" loading="lazy" class="w-full h-full object-contain p-0.5" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-ed').style.display='flex';" />
+                <div class="fallback-ed hidden flex-col justify-between h-full w-full p-2 absolute inset-0">
                   <span class="text-[8px] font-mono uppercase text-white/80">${{b.format}}</span>
                   <p class="font-serif text-[11px] font-bold text-white leading-tight line-clamp-3">${{b.title}}</p>
                 </div>
               ` : `
-                <div class="flex flex-col justify-between h-full p-2.5">
+                <div class="flex flex-col justify-between h-full w-full p-2">
                   <span class="text-[8px] font-mono uppercase text-white/80">${{b.format}}</span>
                   <p class="font-serif text-[11px] font-bold text-white leading-tight line-clamp-3">${{b.title}}</p>
                 </div>
               `}}
+              <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-r from-black/20 to-transparent pointer-events-none"></div>
             </div>
 
-            <!-- Content (Right) -->
-            <div class="flex-1 min-w-0 flex flex-col justify-between">
+            <!-- Content (Right: Description Only, Spacious & Readable) -->
+            <div class="flex-1 min-w-0 flex flex-col justify-between py-0.5">
               <div>
-                <div class="flex items-center justify-between gap-1.5">
+                <div class="flex items-center justify-between gap-2 mb-1">
                   <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)] truncate">${{b.category}}</span>
-                  ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-950 bg-amber-300/90 px-1.5 py-0.5 rounded shrink-0">★ Quotes</span>` : ''}}
+                  ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-950 bg-amber-300/90 px-1.5 py-0.5 rounded shrink-0">★ ${{b.quotes.length}} Quotes</span>` : ''}}
                 </div>
-                <h3 class="font-serif font-bold text-sm md:text-base text-[var(--text-heading)] group-hover:text-[var(--terracotta)] transition line-clamp-1 mt-0.5 leading-snug">
+                <h3 class="font-serif font-bold text-sm sm:text-base text-[var(--text-heading)] group-hover:text-[var(--terracotta)] transition leading-snug line-clamp-2">
                   ${{b.title}}
                 </h3>
-                <p class="text-xs text-[var(--text-muted)] font-medium line-clamp-1">by ${{b.author}}</p>
+                <p class="text-xs text-[var(--text-muted)] font-medium mt-0.5 line-clamp-1">by ${{b.author}}</p>
 
-                <!-- Back of the Book Synopsis Snippet -->
-                <p class="font-serif text-xs text-[var(--text-heading)] line-clamp-3 mt-2 leading-relaxed opacity-90">
+                <!-- Back of the Book Synopsis (Clean, Compelling & Balanced) -->
+                <p class="font-serif text-xs sm:text-[13px] text-[var(--text-heading)]/85 mt-2 leading-relaxed line-clamp-3 sm:line-clamp-4 md:line-clamp-5">
                   ${{b.pitch}}
                 </p>
               </div>
 
-              <!-- Hook / Damn Factor -->
-              <div class="mt-3 pt-2.5 border-t border-[var(--border-subtle)] flex items-center justify-between text-[11px]">
-                <div class="text-[var(--terracotta)] font-medium truncate flex items-center gap-1.5 min-w-0">
-                  <span class="text-xs">✦</span>
-                  <span class="truncate text-[11px] font-serif italic">${{hook}}</span>
-                </div>
-                <span class="text-[var(--text-muted)] group-hover:text-[var(--terracotta)] text-xs font-bold shrink-0 ml-2">Read →</span>
+              <!-- Bottom Row Action -->
+              <div class="mt-2.5 pt-2 border-t border-[var(--border-subtle)] flex items-center justify-between text-[11px]">
+                <span class="text-[10px] font-mono uppercase text-[var(--text-muted)]">${{b.format}}</span>
+                <span class="text-[var(--terracotta)] font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform text-xs">
+                  View Notes & Quotes →
+                </span>
               </div>
             </div>
           </div>

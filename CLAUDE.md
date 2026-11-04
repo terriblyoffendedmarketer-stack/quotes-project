@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 16 (My Reading Corner — Rebranding, 3x2 Editorial Cards, Bespoke Logo & Landmark Quotes Enrichment)  
-> **Current**: Rebranded the reading shelf app to **My Reading Corner** with an artisanal literary crest logo (arc reading lamp casting ambient light over an open book). Delivered 3 distinct views: 5-column spacious Covers view with instant hover context, 3x2 Editorial view with side-by-side jacket & synopsis/hook cards, and Bookshelf split-view. Quote companion insights are collapsed by default with single-open exclusive accordion. Enriched 37 landmark missing books (McKee, Truby, Syd Field, Snyder, Tarkovsky, Watchmen, Sandman, Punpun, Akira, Arundhati Roy, Morrison, Bong Joon-ho screenplays, etc.) boosting active quote coverage to 351 books (1,550+ quotes). Live preview running on zero-cache server port 8899.  
-> **Next**: Continue mining and enriching remaining 269 titles to achieve 100% full quote coverage across all 620 shelf titles.
+> **Status**: In Progress | **Phase**: 17 (My Reading Corner — Live PWA Deployment, Truncation Fix, Bad Pharma Separation & Full Library Quotes)  
+> **Current**: Deployed **My Reading Corner** to GitHub Pages (`https://terriblyoffendedmarketer-stack.github.io/quotes-project/bookshelf.html`) with full Progressive Web App (PWA) offline capabilities, service worker, and home screen manifest. Replaced 3-column layout with 2-column unclipped Editorial view. Separated *Bad Pharma* and *Bad Science* with distinct covers, synopses, and tags. Patched *How to Research Anything* (typographic jacket), GothamChess *How to Win at Chess 1 & 2*, Osho's *Intimacy*, and 33 newly resolved covers (539/620 total with covers). Continuous Claude enrichment daemon active, reaching 475+ enriched titles with quotes and literate curator notes.  
+> **Next**: Finalize 100% quote coverage (all 620 titles) and explore client-side in-app EPUB reader architecture.
 
 ## Roadmap
 
@@ -21,7 +21,8 @@
 - [x] Phase 13: Pinterest Visual Board & Editorial Bookshelf Redesign — Pinterest board grid, dual-mode split view, curated joy-of-reading engine, and voice-driven editorial dossiers
 - [x] Phase 14: Standalone Ex Libris Bookshelf & Remote Reorganization — Server-side rclone moves executed; Ex Libris built in `bookshelf/` decoupled from Marginalia; 314 books linked with Quote Bank; direct Drive links on all 620 titles; warm joyful aesthetic applied
 - [x] Phase 15: Cover Renaissance & High-Octane Editorial Dossiers — 498 high-res covers fetched; authentic Goodreads synopses; structured accolade, cultural impact & trivia dossiers injected; clean unobstructed cover UI
-- [~] Phase 16: My Reading Corner & Complete Quote Coverage — Rebranded to My Reading Corner with cozy reading lamp emblem; 3x2 Editorial & 5-column Covers layout; single-open quote accordion; 351 books with quotes (37 landmark books enriched); continuing to 100% quote coverage
+- [x] Phase 16: My Reading Corner & Single Cohesive Curator Voice — Rebranded to My Reading Corner with cozy reading lamp emblem; single literate `✦ Curator's Note` replacing fragmented 4-box layout; 2-column unclipped Editorial layout; PWA manifest & service worker deployed to GitHub Pages
+- [~] Phase 17: Library Integrity & Full Quote Enrichment — Separated Bad Pharma/Bad Science; corrected How to Research Anything, GothamChess, and Osho; resolved 33 new covers (539/620); Claude API daemon completing remaining quotes to reach 100% (620/620 titles)
 
 ## File map
 
