@@ -6,10 +6,10 @@
   <title>Reading Nook • My Reading Corner</title>
   <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Newsreader & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,27 +26,32 @@
       --terracotta: #c85a32;
       --terracotta-hover: #b24822;
       --terracotta-soft: rgba(200, 90, 50, 0.12);
+      --spine-color: rgba(0, 0, 0, 0.07);
     }
 
     body.theme-cream {
       --reader-bg: #fbf8f3;
       --reader-text: #2c2523;
       --reader-border: #e6dfd5;
+      --spine-color: rgba(0, 0, 0, 0.07);
     }
     body.theme-sepia {
       --reader-bg: #f4ebd9;
       --reader-text: #3c2f21;
       --reader-border: #dfd3bc;
+      --spine-color: rgba(60, 47, 33, 0.1);
     }
     body.theme-night {
       --reader-bg: #151311;
       --reader-text: #e2ded9;
       --reader-border: #2c2824;
+      --spine-color: rgba(255, 255, 255, 0.08);
     }
     body.theme-white {
       --reader-bg: #ffffff;
       --reader-text: #1a1a1a;
       --reader-border: #eaeaea;
+      --spine-color: rgba(0, 0, 0, 0.06);
     }
 
     body {
@@ -63,7 +68,7 @@
     }
 
     .font-serif {
-      font-family: 'Newsreader', Georgia, serif;
+      font-family: 'Newsreader', 'Bookerly', Georgia, serif;
     }
 
     #viewer {
@@ -72,11 +77,7 @@
       position: relative;
     }
 
-    #readerViewport {
-      display: flex;
-    }
-
-    /* Floating Highlight / Save Quote Pill */
+    /* Floating Highlight / Save Quote Toolbar */
     #highlightTooltip {
       display: none;
       position: fixed;
@@ -85,7 +86,7 @@
       transition: opacity 0.15s ease, transform 0.15s ease;
     }
 
-    /* Page Turn Hover Buttons */
+    /* Page Turn Hover Buttons in Margin */
     .turn-btn {
       opacity: 0;
       transition: opacity 0.2s ease;
@@ -112,7 +113,7 @@
         <span class="sm:hidden">Shelf</span>
       </a>
       <span class="text-[var(--reader-border)]">|</span>
-      <div class="min-w-0 max-w-[200px] sm:max-w-xs md:max-w-md">
+      <div class="min-w-0 max-w-[180px] sm:max-w-xs md:max-w-md">
         <h1 id="bookTitleDisplay" class="font-serif font-bold text-xs sm:text-sm truncate leading-tight">Reading Nook</h1>
         <p id="bookAuthorDisplay" class="text-[10px] text-stone-500 dark:text-stone-400 truncate">Select or drop an EPUB</p>
       </div>
@@ -121,7 +122,7 @@
     <!-- Right Controls -->
     <div class="flex items-center gap-1.5 sm:gap-2">
       <!-- Quotes Drawer Toggle -->
-      <button onclick="toggleQuotesDrawer()" class="px-2.5 py-1.5 rounded-lg border border-[var(--reader-border)] hover:border-[var(--terracotta)] text-xs font-semibold flex items-center gap-1.5 transition">
+      <button onclick="toggleQuotesDrawer()" class="px-2.5 py-1.5 rounded-lg border border-[var(--reader-border)] hover:border-[var(--terracotta)] text-xs font-semibold flex items-center gap-1.5 transition" title="View Saved Quotes">
         <span class="text-amber-500">✦</span>
         <span class="hidden sm:inline">Quotes</span>
         <span id="quotesCountBadge" class="bg-[var(--terracotta)] text-white text-[10px] px-1.5 py-0.2 rounded-full font-mono">0</span>
@@ -135,37 +136,53 @@
 
       <!-- Appearance Menu -->
       <div class="relative">
-        <button onclick="toggleAppearanceMenu()" class="p-1.5 sm:px-2.5 sm:py-1.5 rounded-lg border border-[var(--reader-border)] hover:border-[var(--terracotta)] text-xs font-semibold flex items-center gap-1 transition" title="Font & Theme">
+        <button onclick="toggleAppearanceMenu()" class="p-1.5 sm:px-2.5 sm:py-1.5 rounded-lg border border-[var(--reader-border)] hover:border-[var(--terracotta)] text-xs font-semibold flex items-center gap-1 transition" title="Typography & Spread">
           <span>Aa</span>
         </button>
 
         <!-- Appearance Dropdown -->
-        <div id="appearanceMenu" class="hidden absolute right-0 top-12 w-64 bg-[var(--reader-bg)] border border-[var(--reader-border)] rounded-2xl shadow-xl p-4 z-50 text-xs">
-          <div class="font-bold text-[11px] uppercase tracking-wider text-stone-500 mb-3">Themes</div>
-          <div class="grid grid-cols-4 gap-2 mb-4">
-            <button onclick="setTheme('cream')" class="p-2.5 rounded-lg border border-stone-300 bg-[#fbf8f3] text-[#2c2523] font-semibold text-[11px] shadow-sm">Cream</button>
-            <button onclick="setTheme('sepia')" class="p-2.5 rounded-lg border border-stone-300 bg-[#f4ebd9] text-[#3c2f21] font-semibold text-[11px] shadow-sm">Sepia</button>
-            <button onclick="setTheme('night')" class="p-2.5 rounded-lg border border-stone-700 bg-[#151311] text-[#e2ded9] font-semibold text-[11px] shadow-sm">Night</button>
-            <button onclick="setTheme('white')" class="p-2.5 rounded-lg border border-stone-300 bg-white text-black font-semibold text-[11px] shadow-sm">White</button>
+        <div id="appearanceMenu" class="hidden absolute right-0 top-12 w-72 bg-[var(--reader-bg)] border border-[var(--reader-border)] rounded-2xl shadow-xl p-4 z-50 text-xs">
+          <!-- Page Spread Layout -->
+          <div class="font-bold text-[11px] uppercase tracking-wider text-stone-500 mb-2">Page Spread</div>
+          <div class="grid grid-cols-2 gap-2 mb-4">
+            <button id="spreadTwoBtn" onclick="setSpreadMode('always')" class="p-2 rounded-xl border border-[var(--terracotta)] bg-[var(--terracotta-soft)] text-[var(--terracotta)] font-semibold text-[11px] flex items-center justify-center gap-1.5 transition shadow-sm">
+              <span>📖</span>
+              <span>Two Pages</span>
+            </button>
+            <button id="spreadOneBtn" onclick="setSpreadMode('none')" class="p-2 rounded-xl border border-[var(--reader-border)] text-stone-500 hover:text-[var(--reader-text)] font-semibold text-[11px] flex items-center justify-center gap-1.5 transition shadow-sm">
+              <span>📄</span>
+              <span>Single Page</span>
+            </button>
           </div>
 
+          <!-- Color Themes -->
+          <div class="font-bold text-[11px] uppercase tracking-wider text-stone-500 mb-2">Themes</div>
+          <div class="grid grid-cols-4 gap-2 mb-4">
+            <button onclick="setTheme('cream')" class="p-2 rounded-lg border border-stone-300 bg-[#fbf8f3] text-[#2c2523] font-semibold text-[10px] shadow-sm">Cream</button>
+            <button onclick="setTheme('sepia')" class="p-2 rounded-lg border border-stone-300 bg-[#f4ebd9] text-[#3c2f21] font-semibold text-[10px] shadow-sm">Sepia</button>
+            <button onclick="setTheme('night')" class="p-2 rounded-lg border border-stone-700 bg-[#151311] text-[#e2ded9] font-semibold text-[10px] shadow-sm">Night</button>
+            <button onclick="setTheme('white')" class="p-2 rounded-lg border border-stone-300 bg-white text-black font-semibold text-[10px] shadow-sm">White</button>
+          </div>
+
+          <!-- Font Size -->
           <div class="font-bold text-[11px] uppercase tracking-wider text-stone-500 mb-2">Font Size</div>
-          <div class="flex items-center justify-between border border-[var(--reader-border)] rounded-xl p-1">
+          <div class="flex items-center justify-between border border-[var(--reader-border)] rounded-xl p-1 mb-4">
             <button onclick="changeFontSize(-10)" class="flex-1 py-1 text-center font-bold text-sm hover:bg-[var(--terracotta-soft)] rounded-lg transition">A-</button>
             <span id="fontSizeDisplay" class="font-mono text-xs px-2 text-stone-500">100%</span>
             <button onclick="changeFontSize(10)" class="flex-1 py-1 text-center font-bold text-base hover:bg-[var(--terracotta-soft)] rounded-lg transition">A+</button>
           </div>
 
-          <div class="mt-4 pt-3 border-t border-[var(--reader-border)]">
+          <!-- Continuous Scroll Toggle -->
+          <div class="pt-3 border-t border-[var(--reader-border)]">
             <label class="flex items-center justify-between cursor-pointer">
-              <span class="text-[11px] text-stone-500">Continuous Scroll</span>
+              <span class="text-[11px] text-stone-500">Continuous Vertical Scroll</span>
               <input type="checkbox" id="scrollModeCheckbox" onchange="toggleScrollMode(this.checked)" class="accent-[var(--terracotta)]">
             </label>
           </div>
         </div>
       </div>
 
-      <!-- File Picker (Switch book) -->
+      <!-- File Picker -->
       <label class="p-1.5 sm:px-2.5 sm:py-1.5 rounded-lg border border-[var(--reader-border)] hover:border-[var(--terracotta)] text-xs font-semibold flex items-center gap-1 cursor-pointer transition" title="Open another EPUB">
         <span>📂</span>
         <span class="hidden lg:inline">Open EPUB</span>
@@ -175,40 +192,58 @@
   </header>
 
   <!-- Main Reader Canvas -->
-  <main class="flex-1 relative overflow-hidden flex items-center justify-center w-full">
+  <main class="flex-1 relative overflow-hidden flex flex-col items-center justify-center w-full">
 
-    <!-- 1. Drop Zone / Empty State (When book file is not yet in browser IndexedDB) -->
-    <div id="dropZone" class="flex flex-col items-center justify-center p-6 text-center max-w-md mx-auto z-20">
+    <!-- 1. Drop Zone / Empty State (Shown before a file is loaded) -->
+    <div id="dropZone" class="flex flex-col items-center justify-center p-6 text-center max-w-lg mx-auto z-20">
       <div class="w-16 h-16 rounded-2xl bg-[var(--terracotta-soft)] text-[var(--terracotta)] flex items-center justify-center text-3xl mb-4 shadow-inner">
         📖
       </div>
       <h2 id="emptyStateTitle" class="font-serif font-bold text-xl sm:text-2xl mb-1 leading-snug">Open in Reading Nook</h2>
-      <p id="emptyStateAuthor" class="text-xs text-stone-500 mb-6">Distraction-free typography with instant Quote Bank highlights.</p>
+      <p id="emptyStateAuthor" class="text-xs text-stone-500 mb-6">Kindle & Apple Books bifold typography with instant Quote Bank highlights.</p>
 
-      <div class="w-full border-2 border-dashed border-[var(--reader-border)] hover:border-[var(--terracotta)] rounded-2xl p-7 transition-colors bg-[var(--reader-bg)]/60 cursor-pointer mb-4 group" onclick="document.getElementById('filePicker').click()">
-        <p class="font-semibold text-sm mb-1 group-hover:text-[var(--terracotta)] transition">Drop your <span class="text-[var(--terracotta)] font-mono">.epub</span> file here</p>
-        <p class="text-xs text-stone-400">or click to browse from your device</p>
+      <!-- Primary Action: Open Downloaded File -->
+      <button onclick="document.getElementById('filePicker').click()" class="w-full py-3 px-5 bg-[var(--terracotta)] text-white text-sm font-bold rounded-2xl shadow-md hover:bg-[var(--terracotta-hover)] transition flex items-center justify-center gap-2 mb-3">
+        <span>📂</span>
+        <span>Open .epub File (from Downloads)</span>
+      </button>
+
+      <div class="w-full border-2 border-dashed border-[var(--reader-border)] hover:border-[var(--terracotta)] rounded-2xl p-5 transition-colors bg-[var(--reader-bg)]/60 cursor-pointer mb-4 group" onclick="document.getElementById('filePicker').click()">
+        <p class="font-semibold text-xs group-hover:text-[var(--terracotta)] transition">or drag & drop your <span class="text-[var(--terracotta)] font-mono">.epub</span> file here</p>
       </div>
 
-      <div id="driveActionRow" class="hidden w-full flex flex-col gap-2.5 pt-4 border-t border-[var(--reader-border)]">
+      <!-- Google Drive Direct Download Link -->
+      <div id="driveActionRow" class="hidden w-full flex flex-col gap-2 pt-3 border-t border-[var(--reader-border)]">
         <div class="flex items-center justify-between text-xs text-stone-500">
-          <span>EPUB file ready:</span>
-          <span class="font-mono text-[10px] bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded font-semibold">Direct Download</span>
+          <span>Google Drive Cloud File:</span>
+          <span class="font-mono text-[10px] bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded font-semibold">Ready</span>
         </div>
-        <a id="driveDownloadBtn" href="#" download class="px-4 py-2.5 bg-[var(--terracotta)] text-white text-xs font-bold rounded-xl shadow-sm hover:bg-[var(--terracotta-hover)] transition flex items-center justify-center gap-2">
+        <a id="driveDownloadBtn" href="#" download class="px-4 py-2 border border-[var(--reader-border)] hover:border-[var(--terracotta)] text-xs font-semibold rounded-xl transition flex items-center justify-center gap-2">
           <span>⬇</span>
-          <span>Download .epub File Directly</span>
+          <span>Download .epub directly from Drive</span>
         </a>
-        <p class="text-[11px] text-stone-400 leading-tight">Already started downloading? Simply drop the downloaded file above once ready.</p>
       </div>
-      <p class="text-[10px] text-stone-400 mt-5 leading-relaxed">
-        ✦ Once opened, books are saved into private offline storage for instant reading anytime.
-      </p>
+
+      <!-- PDF Notice -->
+      <div class="w-full mt-4 p-3 bg-stone-100 dark:bg-stone-800/50 rounded-xl text-left border border-[var(--reader-border)] text-[11px] text-stone-500 dark:text-stone-400 leading-relaxed">
+        <p class="font-semibold text-stone-700 dark:text-stone-300 flex items-center gap-1 mb-0.5">
+          <span>ℹ️</span><span>Reading a PDF book?</span>
+        </p>
+        <span>Nook specializes in reflowable EPUB typography. For PDF books, simply double-click the downloaded file to read in your browser or system PDF viewer.</span>
+      </div>
     </div>
 
-    <!-- 2. Centered Reading Viewport (Apple Books & Kindle Margins & Typography) -->
-    <div id="readerViewport" class="w-full h-full max-w-2xl md:max-w-3xl lg:max-w-[760px] mx-auto px-4 sm:px-8 py-2 sm:py-4 flex flex-col justify-center relative z-10">
-      <div id="viewer" class="w-full h-full relative"></div>
+    <!-- 2. Centered Reading Viewport (Kindle Bifold Spread with Center Spine & Running Header) -->
+    <div id="readerViewport" class="hidden w-full h-full max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-2 sm:py-3 flex flex-col justify-center relative z-10">
+      <!-- Running Header (Book Title Centered in Small Caps) -->
+      <div id="runningHeader" class="text-center py-1 font-serif text-[11px] tracking-widest uppercase text-stone-400 dark:text-stone-500 truncate pointer-events-none select-none shrink-0"></div>
+
+      <!-- Viewer Container -->
+      <div class="relative flex-1 w-full h-full overflow-hidden">
+        <div id="viewer" class="w-full h-full relative"></div>
+        <!-- Center Spine Crease for Bifold Two-Page Spread -->
+        <div id="centerSpine" class="absolute top-2 bottom-2 left-1/2 -translate-x-1/2 w-[1px] pointer-events-none z-10 transition-opacity" style="background-color: var(--spine-color); display: none;"></div>
+      </div>
     </div>
 
     <!-- 3. Navigation Controls in Outer Gutters (Clear of Text) -->
@@ -222,16 +257,21 @@
 
   <!-- Bottom Reader Status Bar -->
   <footer id="statusBar" class="h-9 border-t border-[var(--reader-border)] px-4 flex items-center justify-between text-[11px] z-30 shrink-0 bg-[var(--reader-bg)] text-stone-500 font-mono">
-    <div id="chapterDisplay" class="truncate max-w-[200px] sm:max-w-md font-serif italic text-xs">
-      Loading...
-    </div>
+    <div id="chapterDisplay" class="truncate max-w-[200px] sm:max-w-md font-serif italic text-xs"></div>
     <div class="flex items-center gap-3">
       <span id="pageProgressDisplay">0%</span>
     </div>
   </footer>
 
-  <!-- Floating Highlight / Save Quote Pill -->
-  <div id="highlightTooltip" class="bg-stone-900 text-white rounded-full py-1.5 px-3.5 shadow-2xl flex items-center gap-2 border border-stone-700 pointer-events-auto">
+  <!-- Floating Highlight / Save Quote Toolbar -->
+  <div id="highlightTooltip" class="bg-stone-900/95 backdrop-blur text-white rounded-2xl py-1.5 px-3 shadow-2xl flex items-center gap-2 border border-stone-700 pointer-events-auto">
+    <!-- Pastel Color Swatches -->
+    <div class="flex items-center gap-1.5 pr-2 border-r border-stone-700">
+      <button onclick="setHighlightColor('yellow')" class="w-4 h-4 rounded-full bg-amber-300 hover:scale-110 transition border border-black/20" title="Yellow Highlight"></button>
+      <button onclick="setHighlightColor('green')" class="w-4 h-4 rounded-full bg-emerald-300 hover:scale-110 transition border border-black/20" title="Green Highlight"></button>
+      <button onclick="setHighlightColor('blue')" class="w-4 h-4 rounded-full bg-sky-300 hover:scale-110 transition border border-black/20" title="Blue Highlight"></button>
+      <button onclick="setHighlightColor('purple')" class="w-4 h-4 rounded-full bg-purple-300 hover:scale-110 transition border border-black/20" title="Purple Highlight"></button>
+    </div>
     <button onclick="saveHighlightedQuote()" class="text-xs font-bold text-amber-300 hover:text-amber-200 flex items-center gap-1.5 transition">
       <span>✦</span>
       <span>Save to Quote Bank</span>
@@ -250,9 +290,7 @@
       <h3 class="font-serif font-bold text-sm">Table of Contents</h3>
       <button onclick="toggleTocDrawer()" class="text-stone-400 hover:text-stone-600 p-1">✕</button>
     </div>
-    <div id="tocList" class="flex-1 overflow-y-auto p-4 space-y-1 text-xs">
-      <!-- Populated dynamically -->
-    </div>
+    <div id="tocList" class="flex-1 overflow-y-auto p-4 space-y-1 text-xs"></div>
   </div>
 
   <!-- Saved Quotes Drawer (Slide from Right) -->
@@ -277,9 +315,7 @@
     </div>
 
     <!-- Quotes Stream -->
-    <div id="quotesList" class="flex-1 overflow-y-auto p-4 space-y-3">
-      <!-- Populated dynamically -->
-    </div>
+    <div id="quotesList" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
   </div>
 
   <!-- Backdrop overlay -->
@@ -306,11 +342,16 @@
     let currentSelection = null;
     let currentFontSize = 100;
     let isContinuousScroll = false;
+    let spreadMode = (window.innerWidth >= 1024) ? "always" : "none";
+    let activeHighlightColor = "rgba(253, 224, 71, 0.45)"; // default soft yellow
     let bookToc = [];
 
     // DOM Elements
     const viewerEl = document.getElementById('viewer');
+    const readerViewport = document.getElementById('readerViewport');
     const dropZone = document.getElementById('dropZone');
+    const centerSpine = document.getElementById('centerSpine');
+    const runningHeader = document.getElementById('runningHeader');
     const bookTitleDisplay = document.getElementById('bookTitleDisplay');
     const bookAuthorDisplay = document.getElementById('bookAuthorDisplay');
     const emptyStateTitle = document.getElementById('emptyStateTitle');
@@ -321,12 +362,16 @@
     const quotesCountBadge = document.getElementById('quotesCountBadge');
     const chapterDisplay = document.getElementById('chapterDisplay');
     const pageProgressDisplay = document.getElementById('pageProgressDisplay');
+    const spreadTwoBtn = document.getElementById('spreadTwoBtn');
+    const spreadOneBtn = document.getElementById('spreadOneBtn');
 
     // Initialize UI
+    document.title = `${bookTitle} • Reading Nook`;
     bookTitleDisplay.innerText = bookTitle;
     bookAuthorDisplay.innerText = `by ${bookAuthor}`;
     emptyStateTitle.innerText = bookTitle;
     emptyStateAuthor.innerText = `by ${bookAuthor}`;
+    runningHeader.innerText = `${bookAuthor.toUpperCase()} • ${bookTitle.toUpperCase()}`;
 
     if (directDownloadUrl) {
       driveActionRow.classList.remove('hidden');
@@ -378,68 +423,36 @@
     // Book Loader
     // -------------------------------------------------------------
     async function initReader() {
-      // 1. Check if this book is already in IndexedDB
+      chapterDisplay.innerText = "";
+      updateQuotesCount();
+
+      // Check if this book is already cached in IndexedDB
       try {
         const cachedBuffer = await loadBookFromDB(bookId);
         if (cachedBuffer) {
-          console.log("Found book in local offline storage! Loading...");
           loadEpubData(cachedBuffer);
           return;
         }
       } catch (err) {
-        console.warn("IndexedDB check failed", err);
+        console.warn("IndexedDB check:", err);
       }
 
-      // 2. If driveId is provided, attempt background auto-stream
-      if (driveId) {
-        try {
-          showToast("Attempting to auto-load book...");
-          const directUrl = `https://drive.usercontent.google.com/download?id=${driveId}&export=download`;
-          const resp = await fetch(directUrl);
-          if (resp.ok) {
-            const blob = await resp.blob();
-            if (blob.size > 2000) {
-              const buf = await blob.arrayBuffer();
-              await saveBookToDB(bookId, buf);
-              loadEpubData(buf);
-              showToast("Book loaded successfully!");
-              return;
-            }
-          }
-        } catch (e) {
-          console.log("Direct stream restricted by CORS, manual drop ready", e);
-        }
-      }
-
-      // 3. Fallback to dropZone
+      // If not in cache, show clean dropzone without blocking or hanging
       dropZone.style.display = 'flex';
-      viewerEl.style.display = 'none';
-      updateQuotesCount();
+      readerViewport.classList.add('hidden');
     }
 
     function loadEpubData(data) {
       dropZone.style.display = 'none';
-      viewerEl.style.display = 'block';
+      readerViewport.classList.remove('hidden');
 
-      // Clear previous book
       if (book) {
         try { book.destroy(); } catch (e) {}
       }
 
       book = ePub(data);
 
-      rendition = book.renderTo("viewer", {
-        width: "100%",
-        height: "100%",
-        flow: isContinuousScroll ? "scrolled-doc" : "paginated",
-        spread: "none" // Single page, Apple Books & Kindle elegance
-      });
-
-      // Restore theme and styling in epub iframe
-      applyThemeToRendition();
-
-      // Display book
-      rendition.display();
+      renderBook();
 
       // Load Navigation (TOC)
       book.loaded.navigation.then(nav => {
@@ -454,17 +467,39 @@
         updateProgress();
       });
 
-      // Hook Events
+      // Keyboard navigation
+      document.removeEventListener("keydown", handleKeyNav);
+      document.addEventListener("keydown", handleKeyNav);
+
+      // Restore saved highlights
+      restoreHighlights();
+      updateQuotesCount();
+    }
+
+    function renderBook(targetCfi) {
+      const isTwoPage = (spreadMode === "always" && !isContinuousScroll);
+      centerSpine.style.display = isTwoPage ? "block" : "none";
+      updateSpreadButtonStyles();
+
+      rendition = book.renderTo("viewer", {
+        width: "100%",
+        height: "100%",
+        flow: isContinuousScroll ? "scrolled-doc" : "paginated",
+        spread: spreadMode
+      });
+
+      applyThemeToRendition();
+      rendition.display(targetCfi || currentCfi || undefined);
+
       rendition.on("relocated", location => {
         currentCfi = location.start.cfi;
         updateProgress();
       });
 
-      // Selection Listener (Text Highlight & Quote Extraction)
       rendition.on("selected", (cfiRange, contents) => {
         book.getRange(cfiRange).then(range => {
           const text = range.toString().trim();
-          if (text.length > 5) {
+          if (text.length > 3) {
             currentSelection = {
               text: text,
               cfiRange: cfiRange,
@@ -475,17 +510,26 @@
         });
       });
 
-      // Clicking clears tooltip
       rendition.on("click", () => {
         hideHighlightTooltip();
       });
+    }
 
-      // Keyboard navigation
-      document.addEventListener("keydown", handleKeyNav);
+    function setSpreadMode(mode) {
+      spreadMode = mode;
+      if (book) {
+        renderBook(currentCfi);
+      }
+    }
 
-      // Restore saved highlights
-      restoreHighlights();
-      updateQuotesCount();
+    function updateSpreadButtonStyles() {
+      if (spreadMode === "always") {
+        spreadTwoBtn.className = "p-2 rounded-xl border border-[var(--terracotta)] bg-[var(--terracotta-soft)] text-[var(--terracotta)] font-semibold text-[11px] flex items-center justify-center gap-1.5 transition shadow-sm";
+        spreadOneBtn.className = "p-2 rounded-xl border border-[var(--reader-border)] text-stone-500 hover:text-[var(--reader-text)] font-semibold text-[11px] flex items-center justify-center gap-1.5 transition shadow-sm";
+      } else {
+        spreadOneBtn.className = "p-2 rounded-xl border border-[var(--terracotta)] bg-[var(--terracotta-soft)] text-[var(--terracotta)] font-semibold text-[11px] flex items-center justify-center gap-1.5 transition shadow-sm";
+        spreadTwoBtn.className = "p-2 rounded-xl border border-[var(--reader-border)] text-stone-500 hover:text-[var(--reader-text)] font-semibold text-[11px] flex items-center justify-center gap-1.5 transition shadow-sm";
+      }
     }
 
     // Drag and Drop support
@@ -506,7 +550,6 @@
     async function processFile(file) {
       showToast(`Loading ${file.name}...`);
       const buffer = await file.arrayBuffer();
-      // Cache in IndexedDB for instant reload next time
       try {
         await saveBookToDB(bookId, buffer);
       } catch (err) {
@@ -539,11 +582,10 @@
     function updateProgress() {
       if (!rendition || !rendition.location) return;
       const loc = rendition.location;
-      if (book.locations && book.locations.length()) {
+      if (book && book.locations && book.locations.length()) {
         const pct = Math.floor(book.locations.percentageFromCfi(loc.start.cfi) * 100);
         pageProgressDisplay.innerText = `${pct}%`;
       }
-      // Update Chapter label
       if (loc.start && loc.start.href) {
         const chapter = findChapterByHref(bookToc, loc.start.href);
         if (chapter) {
@@ -564,16 +606,27 @@
     }
 
     // -------------------------------------------------------------
-    // Quote Bank & Highlighting Logic
+    // Highlight Toolbar & Quote Bank
     // -------------------------------------------------------------
+    function setHighlightColor(colorName) {
+      const colors = {
+        yellow: "rgba(253, 224, 71, 0.45)",
+        green: "rgba(110, 231, 183, 0.45)",
+        blue: "rgba(125, 211, 252, 0.45)",
+        purple: "rgba(216, 180, 254, 0.45)"
+      };
+      activeHighlightColor = colors[colorName] || colors.yellow;
+      saveHighlightedQuote();
+    }
+
     function showHighlightTooltip(range, contents) {
       const rect = range.getBoundingClientRect();
       const iframeRect = viewerEl.querySelector('iframe')?.getBoundingClientRect() || { top: 0, left: 0 };
 
-      const top = iframeRect.top + rect.top - 10;
+      const top = iframeRect.top + rect.top - 12;
       const left = iframeRect.left + rect.left + (rect.width / 2);
 
-      highlightTooltip.style.top = `${Math.max(top, 60)}px`;
+      highlightTooltip.style.top = `${Math.max(top, 70)}px`;
       highlightTooltip.style.left = `${left}px`;
       highlightTooltip.style.display = 'flex';
       highlightTooltip.style.opacity = '1';
@@ -593,9 +646,9 @@
 
       // 1. Highlight visually inside book
       try {
-        rendition.annotations.highlight(cfiRange, {}, (e) => {}, "hl-amber", {
-          fill: "rgba(235, 175, 45, 0.35)",
-          "fill-opacity": "0.35",
+        rendition.annotations.highlight(cfiRange, {}, (e) => {}, "hl-custom", {
+          fill: activeHighlightColor,
+          "fill-opacity": "0.45",
           "mix-blend-mode": "multiply"
         });
       } catch (err) {
@@ -612,6 +665,7 @@
         bookAuthor: bookAuthor,
         chapter: chapter,
         cfi: cfiRange,
+        color: activeHighlightColor,
         date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
       };
 
@@ -620,7 +674,7 @@
 
       // 3. Save highlight range for restore on reload
       const bookHighlights = getBookHighlights();
-      bookHighlights.push(cfiRange);
+      bookHighlights.push({ cfi: cfiRange, color: activeHighlightColor });
       localStorage.setItem(`hl_${bookId}`, JSON.stringify(bookHighlights));
 
       hideHighlightTooltip();
@@ -647,11 +701,13 @@
 
     function restoreHighlights() {
       const bookHighlights = getBookHighlights();
-      bookHighlights.forEach(cfi => {
+      bookHighlights.forEach(item => {
+        const cfi = typeof item === 'string' ? item : item.cfi;
+        const color = typeof item === 'object' && item.color ? item.color : "rgba(253, 224, 71, 0.45)";
         try {
-          rendition.annotations.highlight(cfi, {}, () => {}, "hl-amber", {
-            fill: "rgba(235, 175, 45, 0.35)",
-            "fill-opacity": "0.35",
+          rendition.annotations.highlight(cfi, {}, () => {}, "hl-custom", {
+            fill: color,
+            "fill-opacity": "0.45",
             "mix-blend-mode": "multiply"
           });
         } catch (e) {}
@@ -795,7 +851,7 @@
     }
 
     // -------------------------------------------------------------
-    // Styling & Theme Customization
+    // Styling & Theme Customization (Kindle Typography)
     // -------------------------------------------------------------
     function setTheme(theme) {
       document.body.className = `theme-${theme} flex flex-col h-screen`;
@@ -824,29 +880,42 @@
         bgColor = '#ffffff';
       }
 
+      // Professional Kindle / Apple Books Typography:
+      // Justified text, paragraph indents, no paragraph margin bottoms, generous line-height
+      const baseFontSize = 18 * (currentFontSize / 100);
+
       rendition.themes.default({
         body: {
           background: `${bgColor} !important`,
           color: `${textColor} !important`,
-          "font-family": "'Newsreader', Georgia, 'Palatino Linotype', serif !important",
-          "font-size": "18.5px !important",
-          "line-height": "1.8 !important",
-          padding: "24px 6% !important",
+          "font-family": "'Bookerly', 'Newsreader', 'Literata', 'Iowan Old Style', 'Charter', 'Georgia', serif !important",
+          "font-size": `${baseFontSize}px !important`,
+          "line-height": "1.68 !important",
+          padding: "16px 5% !important",
           "-webkit-font-smoothing": "antialiased",
           "-moz-osx-font-smoothing": "grayscale"
         },
         p: {
-          "margin-bottom": "1.25em !important",
+          "text-indent": "1.5em !important",
+          "margin-top": "0 !important",
+          "margin-bottom": "0 !important",
+          "text-align": "justify !important",
+          "text-justify": "inter-word !important",
+          "hyphens": "auto !important",
+          "-webkit-hyphens": "auto !important"
+        },
+        "p:first-of-type, h1 + p, h2 + p, h3 + p, h4 + p, blockquote + p": {
           "text-indent": "0 !important"
         },
         "h1, h2, h3, h4": {
-          "font-family": "'Newsreader', Georgia, serif !important",
+          "font-family": "'Bookerly', 'Newsreader', Georgia, serif !important",
           "line-height": "1.3 !important",
-          "margin-top": "1.4em !important",
-          "margin-bottom": "0.6em !important"
+          "margin-top": "1.6em !important",
+          "margin-bottom": "0.8em !important",
+          "text-align": "left !important"
         },
         "::selection": {
-          background: "rgba(200, 90, 50, 0.25) !important"
+          background: "rgba(125, 211, 252, 0.45) !important"
         }
       });
     }
@@ -854,23 +923,13 @@
     function changeFontSize(delta) {
       currentFontSize = Math.max(70, Math.min(180, currentFontSize + delta));
       document.getElementById('fontSizeDisplay').innerText = `${currentFontSize}%`;
-      if (rendition) {
-        rendition.themes.fontSize(`${currentFontSize}%`);
-      }
+      applyThemeToRendition();
     }
 
     function toggleScrollMode(enableScroll) {
       isContinuousScroll = enableScroll;
       if (book) {
-        const cfi = currentCfi;
-        rendition = book.renderTo("viewer", {
-          width: "100%",
-          height: "100%",
-          flow: isContinuousScroll ? "scrolled-doc" : "paginated",
-          spread: "none"
-        });
-        applyThemeToRendition();
-        rendition.display(cfi);
+        renderBook(currentCfi);
       }
     }
 

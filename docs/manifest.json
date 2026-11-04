@@ -3,7 +3,7 @@
   "short_name": "Reading Corner",
   "description": "Curated personal reading shelf with high-res covers, editorial dossiers, and literary quotes.",
   "start_url": "./bookshelf.html",
-  "scope": "./",
+  "scope": "./bookshelf.html",
   "display": "standalone",
   "background_color": "#FDFBF7",
   "theme_color": "#C85A32",

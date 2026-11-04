@@ -11,3 +11,5 @@ scripts/*_gemini.json
 /marginalia.apk
 /prototype/marginalia.apk
 !docs/marginalia.apk
+CleanShot*
+*.png.bak
