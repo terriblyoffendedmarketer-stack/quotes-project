@@ -386,7 +386,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ex Libris — Personal Digital Reading Shelf</title>
+  <title>Anything That Doesn't Suck — Curated Personal Library</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -486,10 +486,26 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
   <header class="sticky top-0 z-40 bg-[var(--canvas)]/95 backdrop-blur-md border-b border-[var(--border)] px-4 md:px-8 py-3.5">
     <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
       <div class="flex items-center gap-3">
-        <span class="text-3xl drop-shadow-sm">📚</span>
+        <!-- Bespoke ATDS Crest Logo -->
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#C85A32] to-[#8A2814] p-0.5 shadow-md flex items-center justify-center shrink-0">
+          <svg class="w-7 h-7 text-white" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 29C13 27.5 16.5 27.5 20 29C23.5 27.5 27 27.5 30 29V16C27 14.5 23.5 14.5 20 16C16.5 14.5 13 14.5 10 16V29Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 16V29" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M20 6L21.8 11.2L26 9.5L23.2 13.5L25 17.5L20 14.2L15 17.5L16.8 13.5L14 9.5L18.2 11.2L20 6Z" fill="#FBBF24" stroke="#D97706" stroke-width="0.8"/>
+          </svg>
+        </div>
         <div>
-          <h1 class="font-serif font-bold text-xl md:text-2xl text-[var(--text-heading)] tracking-tight">Ex Libris</h1>
-          <p class="text-[11px] font-medium text-[var(--text-muted)] hidden sm:block">Personal Reading Shelf • {total_books} Books in Drive • {covers_count} with Covers • {quote_count} with Quotes</p>
+          <div class="flex items-center gap-2">
+            <h1 class="font-serif font-bold text-lg md:text-xl text-[var(--text-heading)] tracking-tight leading-none">
+              Anything That Doesn't Suck
+            </h1>
+            <span class="text-[9px] font-mono uppercase tracking-wider text-[var(--terracotta)] bg-[var(--amber-bg)] border border-[var(--terracotta)]/30 px-1.5 py-0.5 rounded font-bold hidden sm:inline">
+              NO CHORES
+            </span>
+          </div>
+          <p class="text-[11px] font-medium text-[var(--text-muted)] mt-1 hidden sm:block">
+            Curated Library • {total_books} in Drive • {covers_count} with Covers • {quote_count} with Quotes
+          </p>
         </div>
       </div>
 
@@ -509,19 +525,29 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
       <!-- Controls -->
       <div class="flex items-center gap-2.5">
-        <!-- View Toggle -->
+        <!-- 3-Mode View Switcher -->
         <div class="bg-[var(--card-bg)] p-1 rounded-xl border border-[var(--border)] flex items-center text-xs shadow-sm">
           <button 
             id="viewBtnBoard" 
             onclick="switchView('board')" 
-            class="px-3 py-1 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-sm flex items-center gap-1.5">
+            class="px-3 py-1 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-sm flex items-center gap-1.5"
+            title="Spacious 5-column book jackets with hover preview">
             <span>📌</span>
-            <span class="hidden md:inline">Board</span>
+            <span class="hidden md:inline">Covers</span>
+          </button>
+          <button 
+            id="viewBtnEditorial" 
+            onclick="switchView('editorial')" 
+            class="px-3 py-1 rounded-lg font-medium transition text-[var(--text-muted)] hover:text-[var(--text-heading)] flex items-center gap-1.5"
+            title="3x2 magazine cards with visible synopsis and hook">
+            <span>📰</span>
+            <span class="hidden md:inline">Editorial (3x2)</span>
           </button>
           <button 
             id="viewBtnSplit" 
             onclick="switchView('split')" 
-            class="px-3 py-1 rounded-lg font-medium transition text-[var(--text-muted)] hover:text-[var(--text-heading)] flex items-center gap-1.5">
+            class="px-3 py-1 rounded-lg font-medium transition text-[var(--text-muted)] hover:text-[var(--text-heading)] flex items-center gap-1.5"
+            title="Two-pane bookshelf split reader">
             <span>📚</span>
             <span class="hidden md:inline">Bookshelf</span>
           </button>
@@ -575,14 +601,21 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
   <!-- Content Container -->
   <main class="max-w-7xl mx-auto p-4 md:p-8">
 
-    <!-- 1. Pinterest Visual Board View (Default) -->
+    <!-- 1. Visual Jackets Board View (Default: 5 columns max on desktop, larger covers) -->
     <div id="boardView" class="block">
-      <div id="boardGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 md:gap-7">
+      <div id="boardGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-7">
         <!-- Populated dynamically -->
       </div>
     </div>
 
-    <!-- 2. Bookshelf Split View (Toggleable) -->
+    <!-- 2. Editorial 3x2 View (Wide Cards with Cover + Synopsis + Damn Factor) -->
+    <div id="editorialView" class="hidden">
+      <div id="editorialGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+
+    <!-- 3. Bookshelf Split View (Toggleable) -->
     <div id="splitView" class="hidden">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <!-- Left Pane: Library Stream (5 columns) -->
@@ -822,20 +855,26 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
     function switchView(view) {{
       activeView = view;
       const board = document.getElementById("boardView");
+      const editorial = document.getElementById("editorialView");
       const split = document.getElementById("splitView");
       const btnBoard = document.getElementById("viewBtnBoard");
+      const btnEditorial = document.getElementById("viewBtnEditorial");
       const btnSplit = document.getElementById("viewBtnSplit");
+
+      [board, editorial, split].forEach(el => el.classList.add("hidden"));
+      [btnBoard, btnEditorial, btnSplit].forEach(btn => {{
+        btn.className = "px-3 py-1 rounded-lg font-medium transition text-[var(--text-muted)] hover:text-[var(--text-heading)] flex items-center gap-1.5";
+      }});
 
       if (view === "board") {{
         board.classList.remove("hidden");
-        split.classList.add("hidden");
         btnBoard.className = "px-3 py-1 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-sm flex items-center gap-1.5";
-        btnSplit.className = "px-3 py-1 rounded-lg font-medium transition text-[var(--text-muted)] hover:text-[var(--text-heading)] flex items-center gap-1.5";
+      }} else if (view === "editorial") {{
+        editorial.classList.remove("hidden");
+        btnEditorial.className = "px-3 py-1 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-sm flex items-center gap-1.5";
       }} else {{
-        board.classList.add("hidden");
         split.classList.remove("hidden");
         btnSplit.className = "px-3 py-1 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-sm flex items-center gap-1.5";
-        btnBoard.className = "px-3 py-1 rounded-lg font-medium transition text-[var(--text-muted)] hover:text-[var(--text-heading)] flex items-center gap-1.5";
       }}
       renderCurrentView();
     }}
@@ -846,8 +885,45 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
       if (activeView === "board") {{
         renderBoard(filtered);
+      }} else if (activeView === "editorial") {{
+        renderEditorial(filtered);
       }} else {{
         renderSplit(filtered);
+      }}
+    }}
+
+    function extractFirstWhyReadHook(text) {{
+      if (!text) return "A standout work celebrated for exceptional craft and narrative resonance.";
+      const mDamn = text.match(/\\*\\*The 'Damn' Factor:\\*\\*\\s*(.*?)(?=\\n\\n|$)/s);
+      if (mDamn) return mDamn[1].trim();
+      const mAcc = text.match(/\\*\\*Accolades & Standing:\\*\\*\\s*(.*?)(?=\\n\\n|$)/s);
+      if (mAcc) return mAcc[1].trim();
+      return text.split("\\n\\n")[0].replace(/\\*\\*/g, "").trim();
+    }}
+
+    function toggleInsight(btn, targetId) {{
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      const isAlreadyOpen = !target.classList.contains("hidden");
+
+      // Close ALL open insights in the document (single open constraint)
+      document.querySelectorAll(".insight-content").forEach(el => {{
+        el.classList.add("hidden");
+      }});
+      document.querySelectorAll(".insight-toggle-btn .toggle-arrow").forEach(arr => {{
+        arr.style.transform = "rotate(0deg)";
+      }});
+      document.querySelectorAll(".insight-toggle-btn").forEach(b => {{
+        b.classList.remove("text-[var(--terracotta-hover)]", "font-bold");
+      }});
+
+      // If it was closed, open this one
+      if (!isAlreadyOpen) {{
+        target.classList.remove("hidden");
+        const arrow = btn.querySelector(".toggle-arrow");
+        if (arrow) arrow.style.transform = "rotate(90deg)";
+        btn.classList.add("text-[var(--terracotta-hover)]", "font-bold");
       }}
     }}
 
@@ -872,7 +948,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         .join("");
     }}
 
-    // Render Pinterest Board
+    // Render Pinterest Board (5-Column on Desktop with Hover Preview)
     function renderBoard(books) {{
       const grid = document.getElementById("boardGrid");
       if (books.length === 0) {{
@@ -883,11 +959,12 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       grid.innerHTML = books.map(b => {{
         const jacketCls = getJacketStyle(b.category);
         const hasCover = !!b.cover_url;
+        const hook = extractFirstWhyReadHook(b.why_love);
 
         return `
-          <div class="book-card group cursor-pointer" onclick="openBookDetail('${{b.id}}')">
+          <div class="book-card group cursor-pointer relative" onclick="openBookDetail('${{b.id}}')">
             <!-- Book Cover -->
-            <div class="book-cover ${{jacketCls}} relative overflow-hidden rounded-[6px] shadow-md transition-all duration-200 group-hover:shadow-xl group-hover:-translate-y-1">
+            <div class="book-cover ${{jacketCls}} relative overflow-hidden rounded-[8px] shadow-md transition-all duration-200 group-hover:shadow-2xl group-hover:-translate-y-1.5">
               ${{hasCover ? `
                 <img src="${{b.cover_url}}" alt="${{b.title}}" loading="lazy" class="w-full h-full object-cover z-0" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-jacket').style.display='flex';" />
                 <div class="absolute top-2 left-2 z-10 flex items-center gap-1.5">
@@ -918,6 +995,28 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
                   </div>
                 </div>
               `}}
+
+              <!-- Hover Peek Card Overlay (Context on Hover) -->
+              <div class="hover-preview opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 absolute inset-0 bg-[#151311]/95 text-white p-4 flex flex-col justify-between rounded-[8px] z-20 backdrop-blur-xs shadow-inner">
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[9px] font-mono uppercase tracking-wider text-amber-300 font-bold">${{b.format}}</span>
+                    ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-300">★ ${{b.quotes.length}} Quotes</span>` : ''}}
+                  </div>
+                  <h4 class="font-serif font-bold text-xs sm:text-sm text-white leading-snug line-clamp-2">${{b.title}}</h4>
+                  <p class="text-[10px] text-white/70 mt-0.5 line-clamp-1">by ${{b.author}}</p>
+
+                  <div class="mt-3 pt-2 border-t border-white/15">
+                    <span class="text-[9px] font-bold uppercase tracking-wider text-[var(--terracotta)] block mb-1">⚡ Why It Hits:</span>
+                    <p class="text-[10px] text-white/90 leading-relaxed line-clamp-4">${{hook}}</p>
+                  </div>
+                </div>
+
+                <div class="pt-2 border-t border-white/15 flex items-center justify-between text-[10px]">
+                  <span class="text-amber-300 font-semibold">Open Dossier →</span>
+                  ${{b.drive_url ? `<span class="text-white/60">Drive ↗</span>` : ''}}
+                </div>
+              </div>
             </div>
 
             <!-- Meta Beneath -->
@@ -931,6 +1030,69 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
               <div class="flex items-center gap-1.5 mt-1.5 text-[10px]">
                 <span class="text-[var(--terracotta)] font-semibold truncate">${{b.category}}</span>
                 ${{b.has_quote_bank ? `<span class="text-[var(--text-muted)]">• ${{b.quotes.length}} Quotes</span>` : ''}}
+              </div>
+            </div>
+          </div>
+        `;
+      }}).join("");
+    }}
+
+    // Render Editorial 3x2 View (Wide Cards with Cover + Synopsis + Damn Factor)
+    function renderEditorial(books) {{
+      const grid = document.getElementById("editorialGrid");
+      if (books.length === 0) {{
+        grid.innerHTML = `<div class="col-span-full py-20 text-center text-sm text-[var(--text-muted)]">No matching books found.</div>`;
+        return;
+      }}
+
+      grid.innerHTML = books.map(b => {{
+        const jacketCls = getJacketStyle(b.category);
+        const hasCover = !!b.cover_url;
+        const hook = extractFirstWhyReadHook(b.why_love);
+
+        return `
+          <div class="editorial-card bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--terracotta)]/40 rounded-2xl p-4 flex gap-4 hover:shadow-xl transition-all duration-200 cursor-pointer group" onclick="openBookDetail('${{b.id}}')">
+            <!-- Cover (Left) -->
+            <div class="w-24 sm:w-28 shrink-0 book-cover ${{jacketCls}} relative rounded-[6px] overflow-hidden shadow-sm">
+              ${{hasCover ? `
+                <img src="${{b.cover_url}}" alt="${{b.title}}" loading="lazy" class="w-full h-full object-cover" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-ed').style.display='flex';" />
+                <div class="fallback-ed hidden flex-col justify-between h-full p-2.5 absolute inset-0">
+                  <span class="text-[8px] font-mono uppercase text-white/80">${{b.format}}</span>
+                  <p class="font-serif text-[11px] font-bold text-white leading-tight line-clamp-3">${{b.title}}</p>
+                </div>
+              ` : `
+                <div class="flex flex-col justify-between h-full p-2.5">
+                  <span class="text-[8px] font-mono uppercase text-white/80">${{b.format}}</span>
+                  <p class="font-serif text-[11px] font-bold text-white leading-tight line-clamp-3">${{b.title}}</p>
+                </div>
+              `}}
+            </div>
+
+            <!-- Content (Right) -->
+            <div class="flex-1 min-w-0 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-1.5">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)] truncate">${{b.category}}</span>
+                  ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-950 bg-amber-300/90 px-1.5 py-0.5 rounded shrink-0">★ Quotes</span>` : ''}}
+                </div>
+                <h3 class="font-serif font-bold text-sm md:text-base text-[var(--text-heading)] group-hover:text-[var(--terracotta)] transition line-clamp-1 mt-0.5 leading-snug">
+                  ${{b.title}}
+                </h3>
+                <p class="text-xs text-[var(--text-muted)] font-medium line-clamp-1">by ${{b.author}}</p>
+
+                <!-- Back of the Book Synopsis Snippet -->
+                <p class="font-serif text-xs text-[var(--text-heading)] line-clamp-3 mt-2 leading-relaxed opacity-90">
+                  ${{b.pitch}}
+                </p>
+              </div>
+
+              <!-- Hook / Damn Factor -->
+              <div class="mt-3 pt-2.5 border-t border-[var(--border-subtle)] flex items-center justify-between text-[11px]">
+                <div class="text-[var(--terracotta)] font-semibold truncate flex items-center gap-1 min-w-0">
+                  <span>⚡</span>
+                  <span class="truncate text-[11px]">${{hook}}</span>
+                </div>
+                <span class="text-[var(--text-muted)] group-hover:text-[var(--terracotta)] text-xs font-bold shrink-0 ml-2">Read →</span>
               </div>
             </div>
           </div>
@@ -1070,19 +1232,34 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
         <!-- Excerpt Quotes & Notes from Quote Bank -->
         ${{quotes.length > 0 ? `
-          <div>
-            <h4 class="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-3 flex items-center gap-2">
-              <span>★ Passages from Quote Bank (${{quotes.length}})</span>
-            </h4>
-            <div class="space-y-4">
-              ${{quotes.map(q => `
-                <div class="p-4 bg-[var(--canvas)] border border-[var(--border)] rounded-2xl">
-                  <div class="font-serif italic text-sm text-[var(--text-heading)] leading-relaxed pl-3 border-l-2 border-[var(--terracotta)] mb-2.5">
+          <div class="mt-8">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] flex items-center gap-1.5">
+                <span>★ Key Passages (${{quotes.length}})</span>
+              </h4>
+              <span class="text-[10px] text-[var(--text-muted)] font-medium">Tap to expand scene insight (one at a time)</span>
+            </div>
+            <div class="space-y-3.5">
+              ${{quotes.map((q, idx) => `
+                <div class="p-4 bg-[var(--canvas)] border border-[var(--border)] rounded-2xl transition-all">
+                  <!-- The Quote (Always Visible) -->
+                  <div class="font-serif italic text-sm md:text-[15px] text-[var(--text-heading)] leading-relaxed pl-3.5 border-l-3 border-[var(--terracotta)]">
                     “${{q.quote}}”
                   </div>
+                  
                   ${{q.explanation ? `
-                    <div class="text-xs text-[var(--text-muted)] pt-2 border-t border-[var(--border-subtle)] leading-relaxed whitespace-pre-line">
-                      <span class="text-[var(--text-heading)] font-semibold block mb-0.5">Scene & Companion Insight:</span>
+                    <!-- Accordion Trigger Button -->
+                    <button 
+                      type="button"
+                      onclick="toggleInsight(this, 'dossier-insight-${{idx}}')" 
+                      class="insight-toggle-btn mt-3 flex items-center gap-1.5 text-[11px] font-semibold text-[var(--terracotta)] hover:text-[var(--terracotta-hover)] transition cursor-pointer select-none">
+                      <span class="toggle-arrow text-[10px] inline-block transition-transform duration-200">▸</span>
+                      <span>Companion Insight & Scene Context</span>
+                    </button>
+
+                    <!-- Collapsible Insight (Collapsed by default) -->
+                    <div id="dossier-insight-${{idx}}" class="insight-content hidden mt-3 pt-3 border-t border-[var(--border-subtle)] text-xs text-[var(--text-body)] leading-relaxed whitespace-pre-line bg-[var(--card-bg)]/60 p-3 rounded-xl">
+                      <span class="font-bold text-[var(--text-heading)] block mb-1">Scene Predicament & Psychological Mirror:</span>
                       ${{q.explanation}}
                     </div>
                   ` : ''}}
@@ -1156,14 +1333,31 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         </div>
 
         ${{quotes.length > 0 ? `
-          <div class="space-y-3">
-            <h4 class="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">Passages (${{quotes.length}})</h4>
-            ${{quotes.map(q => `
-              <div class="p-3 bg-[var(--canvas)] border border-[var(--border)] rounded-xl">
-                <div class="font-serif italic text-xs text-[var(--text-heading)] leading-relaxed mb-2 pl-2 border-l-2 border-[var(--terracotta)]">“${{q.quote}}”</div>
-                <div class="text-[11px] text-[var(--text-muted)] leading-relaxed whitespace-pre-line">${{q.explanation || ''}}</div>
-              </div>
-            `).join("")}}
+          <div class="mt-6">
+            <div class="flex items-center justify-between mb-2.5">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">Key Passages (${{quotes.length}})</h4>
+              <span class="text-[10px] text-[var(--text-muted)]">Tap to expand insight</span>
+            </div>
+            <div class="space-y-3">
+              ${{quotes.map((q, idx) => `
+                <div class="p-3 bg-[var(--canvas)] border border-[var(--border)] rounded-xl">
+                  <div class="font-serif italic text-xs text-[var(--text-heading)] leading-relaxed pl-2.5 border-l-2 border-[var(--terracotta)]">“${{q.quote}}”</div>
+                  ${{q.explanation ? `
+                    <button 
+                      type="button"
+                      onclick="toggleInsight(this, 'drawer-insight-${{idx}}')" 
+                      class="insight-toggle-btn mt-2.5 flex items-center gap-1.5 text-[10px] font-semibold text-[var(--terracotta)] hover:text-[var(--terracotta-hover)] transition cursor-pointer select-none">
+                      <span class="toggle-arrow inline-block transition-transform duration-200">▸</span>
+                      <span>Companion Insight & Scene Context</span>
+                    </button>
+                    <div id="drawer-insight-${{idx}}" class="insight-content hidden mt-2.5 pt-2.5 border-t border-[var(--border-subtle)] text-[11px] text-[var(--text-body)] leading-relaxed whitespace-pre-line bg-[var(--card-bg)]/60 p-2.5 rounded-lg">
+                      <span class="font-bold text-[var(--text-heading)] block mb-0.5">Scene Insight:</span>
+                      ${{q.explanation}}
+                    </div>
+                  ` : ''}}
+                </div>
+              `).join("")}}
+            </div>
           </div>
         ` : ''}}
       `;
