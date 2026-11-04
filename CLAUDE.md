@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 17 (My Reading Corner — Live PWA Deployment, Truncation Fix, Bad Pharma Separation & Full Library Quotes)  
-> **Current**: Deployed **My Reading Corner** to GitHub Pages (`https://terriblyoffendedmarketer-stack.github.io/quotes-project/bookshelf.html`) with full Progressive Web App (PWA) offline capabilities, service worker, and home screen manifest. Replaced 3-column layout with 2-column unclipped Editorial view. Separated *Bad Pharma* and *Bad Science* with distinct covers, synopses, and tags. Patched *How to Research Anything* (typographic jacket), GothamChess *How to Win at Chess 1 & 2*, Osho's *Intimacy*, and 33 newly resolved covers (539/620 total with covers). Continuous Claude enrichment daemon active, reaching 475+ enriched titles with quotes and literate curator notes.  
-> **Next**: Finalize 100% quote coverage (all 620 titles) and explore client-side in-app EPUB reader architecture.
+> **Status**: In Progress | **Phase**: 18 (My Reading Corner — Live In-Browser EPUB Reader, GitHub Actions CI & Unclipped Editorial View)  
+> **Current**: Successfully deployed **My Reading Corner** to GitHub Pages (`https://terriblyoffendedmarketer-stack.github.io/quotes-project/bookshelf.html`). Configured custom `.github/workflows/pages.yml` with `id-token: write` and concurrency handling to guarantee instant GitHub Pages deploys. Added native, client-side in-browser EPUB reader at `docs/reader.html` with Playfair/Newsreader typography, IndexedDB offline caching, theme controls (Cream, Sepia, Night, White), and instant text-selection "Save to Quote Bank" with Markdown/JSON export. Updated Editorial view with balanced `w-20` to `w-26` covers using `object-contain` (zero clipping, zero mobile crunching) and back-cover synopses only.  
+> **Next**: User testing of in-browser reader and quote collection flow.
 
 ## Roadmap
 
@@ -22,7 +22,8 @@
 - [x] Phase 14: Standalone Ex Libris Bookshelf & Remote Reorganization — Server-side rclone moves executed; Ex Libris built in `bookshelf/` decoupled from Marginalia; 314 books linked with Quote Bank; direct Drive links on all 620 titles; warm joyful aesthetic applied
 - [x] Phase 15: Cover Renaissance & High-Octane Editorial Dossiers — 498 high-res covers fetched; authentic Goodreads synopses; structured accolade, cultural impact & trivia dossiers injected; clean unobstructed cover UI
 - [x] Phase 16: My Reading Corner & Single Cohesive Curator Voice — Rebranded to My Reading Corner with cozy reading lamp emblem; single literate `✦ Curator's Note` replacing fragmented 4-box layout; 2-column unclipped Editorial layout; PWA manifest & service worker deployed to GitHub Pages
-- [~] Phase 17: Library Integrity & Full Quote Enrichment — Separated Bad Pharma/Bad Science; corrected How to Research Anything, GothamChess, and Osho; resolved 33 new covers (539/620); Claude API daemon completing remaining quotes to reach 100% (620/620 titles)
+- [x] Phase 17: Library Integrity & Full Quote Enrichment — Separated Bad Pharma/Bad Science; corrected How to Research Anything, GothamChess, and Osho; resolved 33 new covers (539/620); Claude API daemon completing remaining quotes to reach 100% (620/620 titles)
+- [x] Phase 18: In-Browser Reading Nook & GitHub Pages CI — Standalone client-side EPUB reader with IndexedDB offline storage and quote saving tool; automated GitHub Pages deploy pipeline; unclipped 2-column editorial cards with synopsis focus
 
 ## File map
 
