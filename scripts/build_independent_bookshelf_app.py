@@ -22,7 +22,7 @@ BOOKSHELF_DIR = ROOT / "bookshelf"
 BOOKSHELF_HTML = BOOKSHELF_DIR / "index.html"
 BOOKSHELF_DATA = BOOKSHELF_DIR / "data.json"
 DOCS_BOOKSHELF_HTML = ROOT / "docs" / "bookshelf.html"
-ARTIFACT_PATH = Path("/Users/apple/.gemini/antigravity/brain/81ccc3e6-122f-446d-b723-e563a56f7ea9/dynamic_bookshelf.html")
+ARTIFACT_PATH = Path("/Users/apple/.gemini/antigravity/brain/81ccc3e6-122f-446d-b723-e563a56f7ea9/my_reading_corner.html")
 
 def norm(s):
     if not s: return ""
@@ -386,7 +386,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anything That Doesn't Suck — Curated Personal Library</title>
+  <title>My Reading Corner — Curated Personal Library</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -486,25 +486,33 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
   <header class="sticky top-0 z-40 bg-[var(--canvas)]/95 backdrop-blur-md border-b border-[var(--border)] px-4 md:px-8 py-3.5">
     <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
       <div class="flex items-center gap-3">
-        <!-- Bespoke ATDS Crest Logo -->
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#C85A32] to-[#8A2814] p-0.5 shadow-md flex items-center justify-center shrink-0">
-          <svg class="w-7 h-7 text-white" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 29C13 27.5 16.5 27.5 20 29C23.5 27.5 27 27.5 30 29V16C27 14.5 23.5 14.5 20 16C16.5 14.5 13 14.5 10 16V29Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M20 16V29" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M20 6L21.8 11.2L26 9.5L23.2 13.5L25 17.5L20 14.2L15 17.5L16.8 13.5L14 9.5L18.2 11.2L20 6Z" fill="#FBBF24" stroke="#D97706" stroke-width="0.8"/>
+        <!-- Bespoke "My Reading Corner" Emblem Logo -->
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#8A2814] via-[#C85A32] to-[#E08736] p-0.5 shadow-md flex items-center justify-center shrink-0 border border-[#F59E0B]/25">
+          <svg class="w-7 h-7" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Floor / Corner Arc Lamp -->
+            <path d="M7 31 H12" stroke="#FEF3C7" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M9.5 31 V17 C9.5 10 14.5 7 21 8" stroke="#FEF3C7" stroke-width="1.6" stroke-linecap="round"/>
+            <!-- Lamp Shade & Ambient Glow Cone -->
+            <path d="M19.5 8 L24.5 11.5 L21.5 13.5 Z" fill="#FDE68A"/>
+            <path d="M22 13 L15 28 L29 28 Z" fill="#FDE68A" fill-opacity="0.22"/>
+            <!-- Open Book on Nook Table -->
+            <path d="M15 28 C17.5 26.8 20 26.8 22 28 C24 26.8 26.5 26.8 29 28 V23 C26.5 21.8 24 21.8 22 23 C20 21.8 17.5 21.8 15 23 Z" fill="#FFF7ED" stroke="#B45309" stroke-width="0.8"/>
+            <path d="M22 23 V28" stroke="#C85A32" stroke-width="0.8"/>
+            <!-- Warm Corner Sparkle / Reading Star -->
+            <path d="M29 7 L29.8 9.2 L32 10 L29.8 10.8 L29 13 L28.2 10.8 L26 10 L28.2 9.2 Z" fill="#FBBF24"/>
           </svg>
         </div>
         <div>
           <div class="flex items-center gap-2">
             <h1 class="font-serif font-bold text-lg md:text-xl text-[var(--text-heading)] tracking-tight leading-none">
-              Anything That Doesn't Suck
+              My Reading Corner
             </h1>
             <span class="text-[9px] font-mono uppercase tracking-wider text-[var(--terracotta)] bg-[var(--amber-bg)] border border-[var(--terracotta)]/30 px-1.5 py-0.5 rounded font-bold hidden sm:inline">
-              NO CHORES
+              CURATED NOOK
             </span>
           </div>
           <p class="text-[11px] font-medium text-[var(--text-muted)] mt-1 hidden sm:block">
-            Curated Library • {total_books} in Drive • {covers_count} with Covers • {quote_count} with Quotes
+            Personal Reading Corner • {total_books} in Drive • {covers_count} with Covers • {quote_count} with Quotes
           </p>
         </div>
       </div>

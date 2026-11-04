@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# scripts/serve_bookshelf.py — Lightweight local HTTP server for 'Anything That Doesn't Suck'
+# scripts/serve_bookshelf.py — Lightweight local HTTP server for 'My Reading Corner'
 # Usage: python3 scripts/serve_bookshelf.py [port]
 # Requires: Python 3 standard library only
 
@@ -35,7 +35,7 @@ def main():
     httpd = ThreadingHTTPServer(server_address, BookshelfHandler)
     url = f"http://localhost:{port}"
     print(f"\n=======================================================")
-    print(f"  Anything That Doesn't Suck — Live on Browser")
+    print(f"  My Reading Corner — Live on Browser")
     print(f"  URL: {url}")
     print(f"  - 3-Mode View Switcher (📌 Covers | 📰 Editorial 3x2 | 📚 Bookshelf)")
     print(f"  - 498 Verified Covers with Clean Artwork")
