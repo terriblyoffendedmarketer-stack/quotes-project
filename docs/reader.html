@@ -69,11 +69,11 @@
     #viewer {
       width: 100%;
       height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      position: relative;
+    }
+
+    #readerViewport {
+      display: flex;
     }
 
     /* Floating Highlight / Save Quote Pill */
@@ -175,41 +175,47 @@
   </header>
 
   <!-- Main Reader Canvas -->
-  <main class="flex-1 relative overflow-hidden flex items-center justify-center">
+  <main class="flex-1 relative overflow-hidden flex items-center justify-center w-full">
 
     <!-- 1. Drop Zone / Empty State (When book file is not yet in browser IndexedDB) -->
     <div id="dropZone" class="flex flex-col items-center justify-center p-6 text-center max-w-md mx-auto z-20">
       <div class="w-16 h-16 rounded-2xl bg-[var(--terracotta-soft)] text-[var(--terracotta)] flex items-center justify-center text-3xl mb-4 shadow-inner">
         📖
       </div>
-      <h2 id="emptyStateTitle" class="font-serif font-bold text-xl sm:text-2xl mb-1">Open in Reading Nook</h2>
-      <p id="emptyStateAuthor" class="text-xs text-stone-500 mb-6">Lightweight, distraction-free reader with instant quote saving.</p>
+      <h2 id="emptyStateTitle" class="font-serif font-bold text-xl sm:text-2xl mb-1 leading-snug">Open in Reading Nook</h2>
+      <p id="emptyStateAuthor" class="text-xs text-stone-500 mb-6">Distraction-free typography with instant Quote Bank highlights.</p>
 
-      <div class="w-full border-2 border-dashed border-[var(--reader-border)] hover:border-[var(--terracotta)] rounded-2xl p-8 transition-colors bg-[var(--reader-bg)]/60 cursor-pointer mb-4" onclick="document.getElementById('filePicker').click()">
-        <p class="font-semibold text-sm mb-1">Drop your <span class="text-[var(--terracotta)] font-mono">.epub</span> file here</p>
+      <div class="w-full border-2 border-dashed border-[var(--reader-border)] hover:border-[var(--terracotta)] rounded-2xl p-7 transition-colors bg-[var(--reader-bg)]/60 cursor-pointer mb-4 group" onclick="document.getElementById('filePicker').click()">
+        <p class="font-semibold text-sm mb-1 group-hover:text-[var(--terracotta)] transition">Drop your <span class="text-[var(--terracotta)] font-mono">.epub</span> file here</p>
         <p class="text-xs text-stone-400">or click to browse from your device</p>
       </div>
 
-      <div id="driveActionRow" class="hidden w-full flex flex-col gap-2 pt-2 border-t border-[var(--reader-border)]">
-        <p class="text-[11px] text-stone-500">Need the file from your Google Drive?</p>
-        <a id="driveDownloadBtn" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-[var(--terracotta)] text-white text-xs font-bold rounded-xl shadow-sm hover:bg-[var(--terracotta-hover)] transition flex items-center justify-center gap-1.5">
+      <div id="driveActionRow" class="hidden w-full flex flex-col gap-2.5 pt-4 border-t border-[var(--reader-border)]">
+        <div class="flex items-center justify-between text-xs text-stone-500">
+          <span>EPUB file ready:</span>
+          <span class="font-mono text-[10px] bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded font-semibold">Direct Download</span>
+        </div>
+        <a id="driveDownloadBtn" href="#" download class="px-4 py-2.5 bg-[var(--terracotta)] text-white text-xs font-bold rounded-xl shadow-sm hover:bg-[var(--terracotta-hover)] transition flex items-center justify-center gap-2">
           <span>⬇</span>
-          <span>Download from Google Drive</span>
+          <span>Download .epub File Directly</span>
         </a>
+        <p class="text-[11px] text-stone-400 leading-tight">Already started downloading? Simply drop the downloaded file above once ready.</p>
       </div>
-      <p class="text-[10px] text-stone-400 mt-4 leading-relaxed">
-        ✦ Books you open are saved inside your device's private browser storage for fast offline reading anytime.
+      <p class="text-[10px] text-stone-400 mt-5 leading-relaxed">
+        ✦ Once opened, books are saved into private offline storage for instant reading anytime.
       </p>
     </div>
 
-    <!-- 2. EPUB.js Viewer Container -->
-    <div id="viewer" class="z-10"></div>
+    <!-- 2. Centered Reading Viewport (Apple Books & Kindle Margins & Typography) -->
+    <div id="readerViewport" class="w-full h-full max-w-2xl md:max-w-3xl lg:max-w-[760px] mx-auto px-4 sm:px-8 py-2 sm:py-4 flex flex-col justify-center relative z-10">
+      <div id="viewer" class="w-full h-full relative"></div>
+    </div>
 
-    <!-- 3. Navigation Controls (Prev / Next Buttons) -->
-    <button id="prevBtn" onclick="prevPage()" class="turn-btn absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-14 sm:h-20 rounded-xl bg-black/10 dark:bg-white/10 hover:bg-[var(--terracotta)] hover:text-white backdrop-blur-sm z-20 flex items-center justify-center text-lg transition-all shadow-sm">
+    <!-- 3. Navigation Controls in Outer Gutters (Clear of Text) -->
+    <button id="prevBtn" onclick="prevPage()" class="turn-btn absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-16 sm:h-24 rounded-2xl bg-black/5 dark:bg-white/5 hover:bg-[var(--terracotta)] hover:text-white backdrop-blur-sm z-20 flex items-center justify-center text-xl transition-all shadow-sm" title="Previous Page (←)">
       ‹
     </button>
-    <button id="nextBtn" onclick="nextPage()" class="turn-btn absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-14 sm:h-20 rounded-xl bg-black/10 dark:bg-white/10 hover:bg-[var(--terracotta)] hover:text-white backdrop-blur-sm z-20 flex items-center justify-center text-lg transition-all shadow-sm">
+    <button id="nextBtn" onclick="nextPage()" class="turn-btn absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-16 sm:h-24 rounded-2xl bg-black/5 dark:bg-white/5 hover:bg-[var(--terracotta)] hover:text-white backdrop-blur-sm z-20 flex items-center justify-center text-xl transition-all shadow-sm" title="Next Page (→)">
       ›
     </button>
   </main>
@@ -287,6 +293,11 @@
     const bookTitle = urlParams.get('title') || 'Untitled Book';
     const bookAuthor = urlParams.get('author') || 'Unknown Author';
     const driveUrl = urlParams.get('drive') || '';
+    const driveId = urlParams.get('drive_id') || '';
+
+    const directDownloadUrl = driveId
+      ? `https://drive.usercontent.google.com/download?id=${driveId}&export=download`
+      : (driveUrl.includes('drive.usercontent.google.com') ? driveUrl : '');
 
     // Reader State
     let book = null;
@@ -317,7 +328,11 @@
     emptyStateTitle.innerText = bookTitle;
     emptyStateAuthor.innerText = `by ${bookAuthor}`;
 
-    if (driveUrl) {
+    if (directDownloadUrl) {
+      driveActionRow.classList.remove('hidden');
+      driveDownloadBtn.href = directDownloadUrl;
+      driveDownloadBtn.download = `${bookTitle}.epub`;
+    } else if (driveUrl) {
       driveActionRow.classList.remove('hidden');
       driveDownloadBtn.href = driveUrl;
     }
@@ -363,7 +378,7 @@
     // Book Loader
     // -------------------------------------------------------------
     async function initReader() {
-      // Check if this book is already in IndexedDB
+      // 1. Check if this book is already in IndexedDB
       try {
         const cachedBuffer = await loadBookFromDB(bookId);
         if (cachedBuffer) {
@@ -375,7 +390,28 @@
         console.warn("IndexedDB check failed", err);
       }
 
-      // If not cached, reveal drop zone
+      // 2. If driveId is provided, attempt background auto-stream
+      if (driveId) {
+        try {
+          showToast("Attempting to auto-load book...");
+          const directUrl = `https://drive.usercontent.google.com/download?id=${driveId}&export=download`;
+          const resp = await fetch(directUrl);
+          if (resp.ok) {
+            const blob = await resp.blob();
+            if (blob.size > 2000) {
+              const buf = await blob.arrayBuffer();
+              await saveBookToDB(bookId, buf);
+              loadEpubData(buf);
+              showToast("Book loaded successfully!");
+              return;
+            }
+          }
+        } catch (e) {
+          console.log("Direct stream restricted by CORS, manual drop ready", e);
+        }
+      }
+
+      // 3. Fallback to dropZone
       dropZone.style.display = 'flex';
       viewerEl.style.display = 'none';
       updateQuotesCount();
@@ -396,7 +432,7 @@
         width: "100%",
         height: "100%",
         flow: isContinuousScroll ? "scrolled-doc" : "paginated",
-        spread: "auto"
+        spread: "none" // Single page, Apple Books & Kindle elegance
       });
 
       // Restore theme and styling in epub iframe
@@ -792,12 +828,22 @@
         body: {
           background: `${bgColor} !important`,
           color: `${textColor} !important`,
-          "font-family": "'Newsreader', Georgia, serif !important",
-          "line-height": "1.75 !important",
-          padding: "0 5% !important"
+          "font-family": "'Newsreader', Georgia, 'Palatino Linotype', serif !important",
+          "font-size": "18.5px !important",
+          "line-height": "1.8 !important",
+          padding: "24px 6% !important",
+          "-webkit-font-smoothing": "antialiased",
+          "-moz-osx-font-smoothing": "grayscale"
         },
         p: {
-          "margin-bottom": "1.15em !important"
+          "margin-bottom": "1.25em !important",
+          "text-indent": "0 !important"
+        },
+        "h1, h2, h3, h4": {
+          "font-family": "'Newsreader', Georgia, serif !important",
+          "line-height": "1.3 !important",
+          "margin-top": "1.4em !important",
+          "margin-bottom": "0.6em !important"
         },
         "::selection": {
           background: "rgba(200, 90, 50, 0.25) !important"
@@ -820,7 +866,8 @@
         rendition = book.renderTo("viewer", {
           width: "100%",
           height: "100%",
-          flow: isContinuousScroll ? "scrolled-doc" : "paginated"
+          flow: isContinuousScroll ? "scrolled-doc" : "paginated",
+          spread: "none"
         });
         applyThemeToRendition();
         rendition.display(cfi);

@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 18 (My Reading Corner — Live In-Browser EPUB Reader, GitHub Actions CI & Unclipped Editorial View)  
-> **Current**: Successfully deployed **My Reading Corner** to GitHub Pages (`https://terriblyoffendedmarketer-stack.github.io/quotes-project/bookshelf.html`). Configured custom `.github/workflows/pages.yml` with `id-token: write` and concurrency handling to guarantee instant GitHub Pages deploys. Added native, client-side in-browser EPUB reader at `docs/reader.html` with Playfair/Newsreader typography, IndexedDB offline caching, theme controls (Cream, Sepia, Night, White), and instant text-selection "Save to Quote Bank" with Markdown/JSON export. Updated Editorial view with balanced `w-20` to `w-26` covers using `object-contain` (zero clipping, zero mobile crunching) and back-cover synopses only.  
-> **Next**: User testing of in-browser reader and quote collection flow.
+> **Status**: In Progress | **Phase**: 19 (My Reading Corner — Seamless 1-Click "Read in Nook" Flow, Apple Books/Kindle Viewport & Generous Editorial Posters)  
+> **Current**: Polished reading workflow: clicking "Read on Nook" now initiates direct background download of the EPUB file via Google Drive's direct content endpoint (`https://drive.usercontent.google.com/download?id={id}&export=download`) while opening the native in-browser reader (`reader.html`) in a separate browser tab (`target="_blank"`, `rel="noopener noreferrer"`), ensuring mobile PWA sessions stay active. Re-architected reader viewport with Apple Books and Kindle proportions: centered 760px column (`max-w-[760px]`), Newsreader 18.5px serif typography with 1.8 line-height, generous gutters, and navigation chevrons placed in outer margins. Enlarged Editorial posters (`w-28 sm:w-36 md:w-40 lg:w-44 shrink-0 aspect-[2/3]`) with `object-contain` and integrated 1-click "Read in Nook ↗" buttons on every card. Added cover fixes for *How to Win at Chess 2* and *All Tomorrows*.  
+> **Next**: Final live verification of GitHub Actions Pages deployment and offline reading experience.
 
 ## Roadmap
 
@@ -24,6 +24,7 @@
 - [x] Phase 16: My Reading Corner & Single Cohesive Curator Voice — Rebranded to My Reading Corner with cozy reading lamp emblem; single literate `✦ Curator's Note` replacing fragmented 4-box layout; 2-column unclipped Editorial layout; PWA manifest & service worker deployed to GitHub Pages
 - [x] Phase 17: Library Integrity & Full Quote Enrichment — Separated Bad Pharma/Bad Science; corrected How to Research Anything, GothamChess, and Osho; resolved 33 new covers (539/620); Claude API daemon completing remaining quotes to reach 100% (620/620 titles)
 - [x] Phase 18: In-Browser Reading Nook & GitHub Pages CI — Standalone client-side EPUB reader with IndexedDB offline storage and quote saving tool; automated GitHub Pages deploy pipeline; unclipped 2-column editorial cards with synopsis focus
+- [x] Phase 19: Streamlined "Read in Nook" Flow, Apple Books/Kindle Viewport & Generous Editorial Posters — 1-click direct download via usercontent, Apple Books centered typography, generous unclipped posters, and new tab PWA isolation
 
 ## File map
 

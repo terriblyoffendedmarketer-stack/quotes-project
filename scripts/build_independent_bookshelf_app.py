@@ -161,13 +161,19 @@ MANUAL_BOOK_FIXES = {
         "title": "How to Win at Chess 2: Next Level",
         "author": "Levy Rozman (GothamChess)",
         "category": "Fiction & Non-Fiction",
-        "cover_url": "https://covers.openlibrary.org/b/id/14135096-L.jpg",
+        "cover_url": "https://covers.openlibrary.org/b/id/15243805-L.jpg",
         "pitch": "The follow-up masterclass expanding into intermediate opening repertoires, piece sacrifice evaluations, middlegame planning, and calculation techniques.",
         "tags": ["chess", "strategy", "games", "tactics", "intermediate"],
         "why_love": (
             "Taking players beyond the beginner plateau, this second volume focuses on the murky middlegame where games are won and lost. "
             "Rozman teaches you how to form a coherent attack, spot tactical patterns under pressure, and think two moves ahead without getting paralyzed."
         )
+    },
+    "all-tomorrows-cm-kosemen-unknown": {
+        "title": "All Tomorrows: A Billion Year Chronicle of the Myriad Species and Mixed Fortunes of Man",
+        "author": "C.M. Kösemen",
+        "category": "Fiction & Non-Fiction",
+        "cover_url": "https://covers.openlibrary.org/b/id/15137394-L.jpg"
     },
     "intimacy-trusting-oneself-and-the-other-by-osho": {
         "title": "Intimacy: Trusting Oneself and the Other",
@@ -266,6 +272,17 @@ def build():
                 cache_key = f"{clean_t}|{clean_a}"
                 if cache_key in covers_cache and covers_cache[cache_key]:
                     b["cover_url"] = covers_cache[cache_key]
+
+            # Ensure drive_id and direct_download_url are present for 1-click download
+            durl = b.get("drive_url", "")
+            fid = b.get("drive_id", "")
+            if not fid and durl:
+                if "id=" in durl:
+                    fid = durl.split("id=")[-1].split("&")[0]
+                elif "/file/d/" in durl:
+                    fid = durl.split("/file/d/")[-1].split("/")[0]
+            b["drive_id"] = fid
+            b["direct_download_url"] = f"https://drive.usercontent.google.com/download?id={fid}&export=download" if fid else ""
 
         matched_quotes_books = len([b for b in shelf_books if b.get("has_quote_bank")])
         covers_count = len([b for b in shelf_books if b.get("cover_url")])
@@ -1183,8 +1200,10 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
                 </div>
 
                 <div class="pt-2 border-t border-white/15 flex items-center justify-between text-[10px]">
-                  <span class="text-amber-300 font-semibold">Open Dossier →</span>
-                  ${{b.drive_url ? `<span class="text-white/60">Drive ↗</span>` : ''}}
+                  <button onclick="openBookInNook(event, '${{b.id}}')" class="text-amber-300 font-bold hover:underline flex items-center gap-1">
+                    <span>📖 Read ↗</span>
+                  </button>
+                  <span class="text-white/80 font-semibold">Dossier →</span>
                 </div>
               </div>
             </div>
@@ -1220,47 +1239,50 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         const hasCover = !!b.cover_url;
 
         return `
-          <div class="editorial-card bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--terracotta)]/40 rounded-xl p-3.5 sm:p-4 md:p-5 flex flex-row gap-3.5 sm:gap-4 md:gap-5 hover:shadow-lg transition-all duration-200 cursor-pointer group items-stretch" onclick="openBookDetail('${{b.id}}')">
-            <!-- Cover (Left: fixed ratio, shrink-0 prevents mobile crunch, object-contain prevents clipping) -->
-            <div class="w-20 sm:w-24 md:w-26 shrink-0 aspect-[2/3] book-cover ${{jacketCls}} relative rounded-[6px] overflow-hidden shadow-sm border border-black/10 flex items-center justify-center bg-[var(--border-subtle)]/60">
+          <div class="editorial-card bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--terracotta)]/40 rounded-2xl p-4 sm:p-5 md:p-6 flex flex-row gap-4 sm:gap-5 md:gap-6 hover:shadow-lg transition-all duration-200 cursor-pointer group items-stretch" onclick="openBookDetail('${{b.id}}')">
+            <!-- Cover (Left: generous horizontal room, fixed aspect ratio, zero crunching or clipping) -->
+            <div class="w-28 sm:w-36 md:w-40 lg:w-44 shrink-0 aspect-[2/3] book-cover ${{jacketCls}} relative rounded-xl overflow-hidden shadow-sm border border-black/10 flex items-center justify-center bg-[var(--border-subtle)]/40 p-1">
               ${{hasCover ? `
-                <img src="${{b.cover_url}}" alt="${{b.title}}" loading="lazy" class="w-full h-full object-contain p-0.5" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-ed').style.display='flex';" />
-                <div class="fallback-ed hidden flex-col justify-between h-full w-full p-2 absolute inset-0">
-                  <span class="text-[8px] font-mono uppercase text-white/80">${{b.format}}</span>
-                  <p class="font-serif text-[11px] font-bold text-white leading-tight line-clamp-3">${{b.title}}</p>
+                <img src="${{b.cover_url}}" alt="${{b.title}}" loading="lazy" class="w-full h-full object-contain drop-shadow-xs rounded-lg" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-ed').style.display='flex';" />
+                <div class="fallback-ed hidden flex-col justify-between h-full w-full p-2.5 absolute inset-0">
+                  <span class="text-[9px] font-mono uppercase text-white/80">${{b.format}}</span>
+                  <p class="font-serif text-xs font-bold text-white leading-tight line-clamp-3">${{b.title}}</p>
                 </div>
               ` : `
-                <div class="flex flex-col justify-between h-full w-full p-2">
-                  <span class="text-[8px] font-mono uppercase text-white/80">${{b.format}}</span>
-                  <p class="font-serif text-[11px] font-bold text-white leading-tight line-clamp-3">${{b.title}}</p>
+                <div class="flex flex-col justify-between h-full w-full p-2.5">
+                  <span class="text-[9px] font-mono uppercase text-white/80">${{b.format}}</span>
+                  <p class="font-serif text-xs font-bold text-white leading-tight line-clamp-3">${{b.title}}</p>
                 </div>
               `}}
-              <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-r from-black/20 to-transparent pointer-events-none"></div>
+              <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-r from-black/15 to-transparent pointer-events-none"></div>
             </div>
 
-            <!-- Content (Right: Description Only, Spacious & Readable) -->
+            <!-- Content (Right: Clean back-cover synopsis & 1-click Read) -->
             <div class="flex-1 min-w-0 flex flex-col justify-between py-0.5">
               <div>
-                <div class="flex items-center justify-between gap-2 mb-1">
+                <div class="flex items-center justify-between gap-2 mb-1.5">
                   <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)] truncate">${{b.category}}</span>
                   ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-950 bg-amber-300/90 px-1.5 py-0.5 rounded shrink-0">★ ${{b.quotes.length}} Quotes</span>` : ''}}
                 </div>
-                <h3 class="font-serif font-bold text-sm sm:text-base text-[var(--text-heading)] group-hover:text-[var(--terracotta)] transition leading-snug line-clamp-2">
+                <h3 class="font-serif font-bold text-base sm:text-lg text-[var(--text-heading)] group-hover:text-[var(--terracotta)] transition leading-snug line-clamp-2">
                   ${{b.title}}
                 </h3>
                 <p class="text-xs text-[var(--text-muted)] font-medium mt-0.5 line-clamp-1">by ${{b.author}}</p>
 
-                <!-- Back of the Book Synopsis (Clean, Compelling & Balanced) -->
-                <p class="font-serif text-xs sm:text-[13px] text-[var(--text-heading)]/85 mt-2 leading-relaxed line-clamp-3 sm:line-clamp-4 md:line-clamp-5">
+                <!-- Back of the Book Synopsis (Spacious, Elegant & Readable) -->
+                <p class="font-serif text-xs sm:text-sm text-[var(--text-heading)]/85 mt-2.5 leading-relaxed line-clamp-3 sm:line-clamp-4 md:line-clamp-5">
                   ${{b.pitch}}
                 </p>
               </div>
 
               <!-- Bottom Row Action -->
-              <div class="mt-2.5 pt-2 border-t border-[var(--border-subtle)] flex items-center justify-between text-[11px]">
-                <span class="text-[10px] font-mono uppercase text-[var(--text-muted)]">${{b.format}}</span>
-                <span class="text-[var(--terracotta)] font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform text-xs">
-                  View Notes & Quotes →
+              <div class="mt-3 pt-2.5 border-t border-[var(--border-subtle)] flex items-center justify-between gap-2 text-xs">
+                <button onclick="openBookInNook(event, '${{b.id}}')" class="px-3 py-1.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-[11px] font-bold rounded-lg shadow-xs transition flex items-center gap-1.5 shrink-0">
+                  <span>📖</span>
+                  <span>Read in Nook ↗</span>
+                </button>
+                <span class="text-[var(--terracotta)] font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform text-xs ml-auto">
+                  Notes & Quotes →
                 </span>
               </div>
             </div>
@@ -1358,10 +1380,10 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
             <p class="text-sm font-medium text-[var(--text-muted)] mt-1">by ${{b.author}}</p>
 
             <div class="flex flex-wrap items-center gap-2 mt-4">
-              <a href="./reader.html?id=${{encodeURIComponent(b.id)}}&title=${{encodeURIComponent(b.title)}}&author=${{encodeURIComponent(b.author)}}&drive=${{encodeURIComponent(b.drive_url || '')}}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5">
+              <button onclick="openBookInNook(event, '${{b.id}}')" class="px-4 py-2 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5 cursor-pointer">
                 <span>📖</span>
                 <span>Read in Nook ↗</span>
-              </a>
+              </button>
               ${{b.drive_url ? `
                 <a href="${{b.drive_url}}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-heading)] rounded-xl transition flex items-center gap-1.5">
                   <span>📁</span>
@@ -1444,6 +1466,32 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       `;
     }}
 
+    function openBookInNook(event, bookId) {{
+      if (event) {{
+        event.stopPropagation();
+        event.preventDefault();
+      }}
+      const b = SHELF_DATA.find(item => item.id === bookId);
+      if (!b) return;
+
+      // 1. Direct background download from Google Drive
+      if (b.drive_id) {{
+        const directDownloadUrl = `https://drive.usercontent.google.com/download?id=${{b.drive_id}}&export=download`;
+        const a = document.createElement("a");
+        a.href = directDownloadUrl;
+        a.download = `${{b.title}}.epub`;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => a.remove(), 1000);
+      }}
+
+      // 2. Open reader in a new browser tab (keeps PWA intact, launches Chrome/Safari tab on mobile)
+      const readerUrl = `./reader.html?id=${{encodeURIComponent(b.id)}}&title=${{encodeURIComponent(b.title)}}&author=${{encodeURIComponent(b.author)}}&drive_id=${{encodeURIComponent(b.drive_id || '')}}&drive=${{encodeURIComponent(b.drive_url || '')}}`;
+      window.open(readerUrl, "_blank", "noopener,noreferrer");
+    }}
+
     function openBookDetail(bookId) {{
       const b = SHELF_DATA.find(item => item.id === bookId);
       if (!b) return;
@@ -1478,9 +1526,10 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
             <h3 class="font-serif font-bold text-lg text-[var(--text-heading)] mt-0.5 leading-snug">${{b.title}}</h3>
             <p class="text-xs text-[var(--text-muted)] font-medium">by ${{b.author}}</p>
             <div class="flex flex-wrap items-center gap-2 mt-3">
-              <a href="./reader.html?id=${{encodeURIComponent(b.id)}}&title=${{encodeURIComponent(b.title)}}&author=${{encodeURIComponent(b.author)}}&drive=${{encodeURIComponent(b.drive_url || '')}}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-[var(--terracotta)] text-white text-xs font-bold rounded-lg shadow-sm">
-                Read in Nook ↗
-              </a>
+              <button onclick="openBookInNook(event, '${{b.id}}')" class="px-3 py-1.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-bold rounded-lg shadow-sm transition flex items-center gap-1.5 cursor-pointer">
+                <span>📖</span>
+                <span>Read in Nook ↗</span>
+              </button>
               ${{b.drive_url ? `
                 <a href="${{b.drive_url}}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] text-xs font-semibold rounded-lg">
                   Drive File ↗
