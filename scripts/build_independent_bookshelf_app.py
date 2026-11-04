@@ -387,6 +387,13 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Reading Corner — Curated Personal Library</title>
+  <meta name="theme-color" content="#C85A32">
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Reading Corner">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1492,6 +1499,13 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
     // Initial render
     renderCategoryTabs();
     renderCurrentView();
+
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {{
+      window.addEventListener('load', () => {{
+        navigator.serviceWorker.register('./sw.js').catch(() => {{}});
+      }});
+    }}
   </script>
 </body>
 </html>
