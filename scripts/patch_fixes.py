@@ -822,3 +822,65 @@ for path in ['bookshelf/reader.html', 'docs/reader.html']:
     with open(path, 'w') as f:
         f.write(html)
     print(f'Successfully updated {path} dropzone and triggerDirectDownload')
+
+# 6. Unclamp editorial text and add inline toggleExpandPitch
+code = BUILD_SCRIPT.read_text(encoding='utf-8')
+
+old_editorial_pitch = """                <!-- Back of the Book Synopsis (Spacious, Elegant & Readable) -->
+                <p class="font-serif text-xs sm:text-[13.5px] md:text-sm text-[var(--text-heading)]/85 mt-2.5 leading-relaxed line-clamp-4 sm:line-clamp-5 md:line-clamp-6">
+                  ${{b.pitch}}
+                </p>"""
+
+new_editorial_pitch = """                <!-- Back of the Book Synopsis (Spacious, Elegant & Readable) -->
+                <p id="pitch-${{b.id}}" class="font-serif text-xs sm:text-[13.5px] md:text-sm text-[var(--text-heading)]/85 mt-2.5 leading-relaxed line-clamp-7 sm:line-clamp-9 md:line-clamp-11 lg:line-clamp-[13] transition-all">
+                  ${{b.pitch}}
+                </p>
+                ${{b.pitch && b.pitch.length > 360 ? `
+                  <button type="button" onclick="toggleExpandPitch(event, '${{b.id}}')" class="expand-btn-${{b.id}} text-[11px] font-bold text-[var(--terracotta)] hover:underline mt-1.5 inline-flex items-center gap-1 select-none">
+                    <span>Read full synopsis ↓</span>
+                  </button>
+                ` : ''}}"""
+
+if old_editorial_pitch in code:
+    code = code.replace(old_editorial_pitch, new_editorial_pitch)
+    print("Replaced old_editorial_pitch with generous 13-line clamp and inline expand")
+
+# Add self-start to cover container in editorial view
+old_cover_div = '<div class="w-32 sm:w-40 md:w-48 lg:w-56 shrink-0 aspect-[2/3] book-cover ${{jacketCls}} relative rounded-xl overflow-hidden shadow-sm border border-black/10 flex items-center justify-center bg-[var(--border-subtle)]/40 p-1">'
+new_cover_div = '<div class="w-32 sm:w-40 md:w-48 lg:w-56 shrink-0 aspect-[2/3] book-cover ${{jacketCls}} relative rounded-xl overflow-hidden shadow-sm border border-black/10 flex items-center justify-center bg-[var(--border-subtle)]/40 p-1 self-start">'
+
+if old_cover_div in code:
+    code = code.replace(old_cover_div, new_cover_div)
+    print("Added self-start to editorial cover container")
+
+# Add toggleExpandPitch function
+toggle_func = """    function toggleExpandPitch(event, bookId) {{
+      if (event) {{
+        event.stopPropagation();
+        event.preventDefault();
+      }}
+      const p = document.getElementById(`pitch-${{bookId}}`);
+      const btn = document.querySelector(`.expand-btn-${{bookId}}`);
+      if (!p) return;
+
+      const isExpanded = p.classList.contains("line-clamp-none");
+      if (isExpanded) {{
+        p.classList.remove("line-clamp-none");
+        p.classList.add("line-clamp-7", "sm:line-clamp-9", "md:line-clamp-11", "lg:line-clamp-[13]");
+        if (btn) btn.innerHTML = '<span>Read full synopsis ↓</span>';
+      }} else {{
+        p.classList.remove("line-clamp-7", "sm:line-clamp-9", "md:line-clamp-11", "lg:line-clamp-[13]");
+        p.classList.add("line-clamp-none");
+        if (btn) btn.innerHTML = '<span>Show less ↑</span>';
+      }}
+    }}
+"""
+
+if 'function toggleExpandPitch(' not in code:
+    marker = 'function renderSplit(books) {'
+    assert marker in code, "renderSplit marker not in code"
+    code = code.replace(marker, toggle_func + '\n    ' + marker)
+    print("Added toggleExpandPitch JS function")
+
+BUILD_SCRIPT.write_text(code, encoding='utf-8')
+print("Successfully patched build script for editorial text unclamp")

@@ -723,7 +723,7 @@
         return `
           <div class="editorial-card bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--terracotta)]/40 rounded-2xl p-4 sm:p-5 md:p-6 flex flex-row gap-4 sm:gap-6 hover:shadow-lg transition-all duration-200 cursor-pointer group items-stretch" onclick="openBookDetail('${b.id}')">
             <!-- Cover (Left: substantial horizontal real estate, perfectly proportioned, 4 cards visible on screen) -->
-            <div class="w-32 sm:w-40 md:w-48 lg:w-56 shrink-0 aspect-[2/3] book-cover ${jacketCls} relative rounded-xl overflow-hidden shadow-sm border border-black/10 flex items-center justify-center bg-[var(--border-subtle)]/40 p-1">
+            <div class="w-32 sm:w-40 md:w-48 lg:w-56 shrink-0 aspect-[2/3] book-cover ${jacketCls} relative rounded-xl overflow-hidden shadow-sm border border-black/10 flex items-center justify-center bg-[var(--border-subtle)]/40 p-1 self-start">
               ${hasCover ? `
                 <img src="${b.cover_url}" alt="${b.title}" loading="lazy" class="w-full h-full object-contain drop-shadow-xs rounded-lg" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-ed').style.display='block';" />
                 <div class="fallback-ed hidden absolute inset-0 w-full h-full">
@@ -750,9 +750,14 @@
                 <p class="text-xs sm:text-[13px] text-[var(--text-muted)] font-medium mt-0.5 line-clamp-1">by ${b.author}</p>
 
                 <!-- Back of the Book Synopsis (Spacious, Elegant & Readable) -->
-                <p class="font-serif text-xs sm:text-[13.5px] md:text-sm text-[var(--text-heading)]/85 mt-2.5 leading-relaxed line-clamp-4 sm:line-clamp-5 md:line-clamp-6">
+                <p id="pitch-${b.id}" class="font-serif text-xs sm:text-[13.5px] md:text-sm text-[var(--text-heading)]/85 mt-2.5 leading-relaxed line-clamp-7 sm:line-clamp-9 md:line-clamp-11 lg:line-clamp-[13] transition-all">
                   ${b.pitch}
                 </p>
+                ${b.pitch && b.pitch.length > 360 ? `
+                  <button type="button" onclick="toggleExpandPitch(event, '${b.id}')" class="expand-btn-${b.id} text-[11px] font-bold text-[var(--terracotta)] hover:underline mt-1.5 inline-flex items-center gap-1 select-none">
+                    <span>Read full synopsis ↓</span>
+                  </button>
+                ` : ''}
               </div>
 
               <!-- Bottom Row Action -->
@@ -772,6 +777,27 @@
     }
 
     // Render Bookshelf Split View
+        function toggleExpandPitch(event, bookId) {
+      if (event) {
+        event.stopPropagation();
+        event.preventDefault();
+      }
+      const p = document.getElementById(`pitch-${bookId}`);
+      const btn = document.querySelector(`.expand-btn-${bookId}`);
+      if (!p) return;
+
+      const isExpanded = p.classList.contains("line-clamp-none");
+      if (isExpanded) {
+        p.classList.remove("line-clamp-none");
+        p.classList.add("line-clamp-7", "sm:line-clamp-9", "md:line-clamp-11", "lg:line-clamp-[13]");
+        if (btn) btn.innerHTML = '<span>Read full synopsis ↓</span>';
+      } else {
+        p.classList.remove("line-clamp-7", "sm:line-clamp-9", "md:line-clamp-11", "lg:line-clamp-[13]");
+        p.classList.add("line-clamp-none");
+        if (btn) btn.innerHTML = '<span>Show less ↑</span>';
+      }
+    }
+
     function renderSplit(books) {
       const list = document.getElementById("splitList");
       if (books.length === 0) {

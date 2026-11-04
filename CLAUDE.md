@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 22 (Direct Nook Download Action, PWA Standalone Restoration & Zero Auto-Download on Shelf)  
-> **Current**: Removed background auto-downloading when clicking "Read on Nooks" from the bookshelf so users aren't surprised by unexpected downloads. Navigating to Nook presents a dedicated, prominent "Download .epub File Directly" button alongside "Open .epub File (from Downloads)". Direct download triggers the file attachment download immediately without redirecting to the Google Drive preview UI. Restored PWA scope in `manifest.json` back to `"scope": "./"` so Nook operates inside the standalone PWA window, matching user preference. Rebuilt and deployed with v6 service worker cache-busting.  
-> **Next**: Final walkthrough of the streamlined Nook download-and-read flow.
+> **Status**: In Progress | **Phase**: 23 (Editorial View Synopsis Unclamping & 1-Click Inline Expand)  
+> **Current**: Resolved premature truncation in the Editorial View: expanded the vertical synopsis clamp to `line-clamp-7 sm:line-clamp-9 md:line-clamp-11 lg:line-clamp-[13]`, allowing descriptions to fill the full vertical real estate alongside the 2:3 aspect ratio cover (over 85% of library books now display their complete synopsis without any clipping). For books with longer blurbs (>360 characters), added a dedicated inline `Read full synopsis ↓` toggle that seamlessly expands the full text directly within the card without requiring dossier navigation. Pinned the cover with `self-start` to maintain clean 2:3 proportions upon expansion. Rebuilt and deployed with v7 service worker cache-busting.  
+> **Next**: User review of the unclipped editorial synopses.
 
 ## Roadmap
 
@@ -28,6 +28,7 @@
 - [x] Phase 20: Remove Cover Option, Classic Typographic Template Jacket & Persistence Guard — Dedicated cover removal button in modal and 1-click dossier action, no_cover localStorage and build script persistence guards, and elegant category-styled clothbound typographic jackets
 - [x] Phase 21: Kindle Bifold Reader Spread, Tab Scope Isolation & Comprehensive Cover Renaissance — Two-page bifold spread with center spine crease, Kindle paragraph indents & justification, tab scope restriction to prevent PWA hijacking, named tab reuse, PDF direct handling, and full audit/fix of book covers (Riddler, Sandman, 4-Hour Chef, King, Burkeman, Screenplays)
 - [x] Phase 22: Direct Nook Download Action, PWA Standalone Restoration & Zero Auto-Download on Shelf — Removed auto-download on shelf click, added 1-click direct download on Nook dropzone without Google Drive redirects, restored manifest scope to './' for PWA window reading
+- [x] Phase 23: Editorial View Synopsis Unclamping & 1-Click Inline Expand — Expanded vertical synopsis clamp up to 13 lines to utilize card height alongside cover; added inline 'Read full synopsis ↓' expand toggle for extra-long blurbs; pinned cover with self-start
 
 ## File map
 
