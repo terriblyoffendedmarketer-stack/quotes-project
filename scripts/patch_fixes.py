@@ -715,3 +715,110 @@ if '"watchmen-complete":' not in code:
     print("Added Watchmen, Sandman Deluxe, and Graphic Novel fixes")
 else:
     print("Watchmen already in MANUAL_BOOK_FIXES")
+
+# 5. Update dropzone and triggerDirectDownload in reader.html and docs/reader.html
+for path in ['bookshelf/reader.html', 'docs/reader.html']:
+    with open(path) as f:
+        html = f.read()
+
+    old_drop = """    <div id="dropZone" class="flex flex-col items-center justify-center p-6 text-center max-w-lg mx-auto z-20">
+      <div class="w-16 h-16 rounded-2xl bg-[var(--terracotta-soft)] text-[var(--terracotta)] flex items-center justify-center text-3xl mb-4 shadow-inner">
+        📖
+      </div>
+      <h2 id="emptyStateTitle" class="font-serif font-bold text-xl sm:text-2xl mb-1 leading-snug">Open in Reading Nook</h2>
+      <p id="emptyStateAuthor" class="text-xs text-stone-500 mb-6">Kindle & Apple Books bifold typography with instant Quote Bank highlights.</p>
+
+      <!-- Primary Action: Open Downloaded File -->
+      <button onclick="document.getElementById('filePicker').click()" class="w-full py-3 px-5 bg-[var(--terracotta)] text-white text-sm font-bold rounded-2xl shadow-md hover:bg-[var(--terracotta-hover)] transition flex items-center justify-center gap-2 mb-3">
+        <span>📂</span>
+        <span>Open .epub File (from Downloads)</span>
+      </button>
+
+      <div class="w-full border-2 border-dashed border-[var(--reader-border)] hover:border-[var(--terracotta)] rounded-2xl p-5 transition-colors bg-[var(--reader-bg)]/60 cursor-pointer mb-4 group" onclick="document.getElementById('filePicker').click()">
+        <p class="font-semibold text-xs group-hover:text-[var(--terracotta)] transition">or drag & drop your <span class="text-[var(--terracotta)] font-mono">.epub</span> here</p>
+      </div>
+
+      <!-- Google Drive Direct Download Link -->
+      <div id="driveActionRow" class="hidden w-full flex flex-col gap-2 pt-3 border-t border-[var(--reader-border)]">
+        <div class="flex items-center justify-between text-xs text-stone-500">
+          <span>Google Drive Cloud File:</span>
+          <span class="font-mono text-[10px] bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded font-semibold">Ready</span>
+        </div>
+        <a id="driveDownloadBtn" href="#" download class="px-4 py-2 border border-[var(--reader-border)] hover:border-[var(--terracotta)] text-xs font-semibold rounded-xl transition flex items-center justify-center gap-2">
+          <span>⬇</span>
+          <span>Download .epub directly from Drive</span>
+        </a>
+      </div>
+
+      <!-- PDF Notice -->
+      <div class="w-full mt-4 p-3 bg-stone-100 dark:bg-stone-800/50 rounded-xl text-left border border-[var(--reader-border)] text-[11px] text-stone-500 dark:text-stone-400 leading-relaxed">
+        <p class="font-semibold text-stone-700 dark:text-stone-300 flex items-center gap-1 mb-0.5">
+          <span>ℹ️</span><span>Reading a PDF book?</span>
+        </p>
+        <span>Nook specializes in reflowable EPUB typography. For PDF books, simply double-click the downloaded file to read in your browser or system PDF viewer.</span>
+      </div>
+    </div>"""
+
+    new_drop = """    <div id="dropZone" class="flex flex-col items-center justify-center p-6 text-center max-w-lg mx-auto z-20">
+      <div class="w-16 h-16 rounded-2xl bg-[var(--terracotta-soft)] text-[var(--terracotta)] flex items-center justify-center text-3xl mb-4 shadow-inner">
+        📖
+      </div>
+      <h2 id="emptyStateTitle" class="font-serif font-bold text-xl sm:text-2xl mb-1 leading-snug">Open in Reading Nook</h2>
+      <p id="emptyStateAuthor" class="text-xs text-stone-500 mb-6">Kindle & Apple Books bifold typography with instant Quote Bank highlights.</p>
+
+      <!-- Direct Download & Open Actions -->
+      <div class="w-full space-y-3 mb-4">
+        <!-- 1. Direct Download Button (triggers direct download with zero Google Drive redirect) -->
+        <button id="directDownloadBtn" onclick="triggerDirectDownload()" class="w-full py-3.5 px-5 bg-[var(--terracotta)] text-white text-sm font-bold rounded-2xl shadow-md hover:bg-[var(--terracotta-hover)] transition flex items-center justify-center gap-2 cursor-pointer">
+          <span class="text-base">⬇</span>
+          <span>Download .epub File Directly</span>
+        </button>
+
+        <!-- 2. Open Downloaded File Button -->
+        <button onclick="document.getElementById('filePicker').click()" class="w-full py-3 px-5 border-2 border-[var(--terracotta)]/40 hover:border-[var(--terracotta)] bg-[var(--terracotta-soft)] text-[var(--terracotta)] text-sm font-bold rounded-2xl transition flex items-center justify-center gap-2 cursor-pointer">
+          <span class="text-base">📂</span>
+          <span>Open .epub File (from Downloads)</span>
+        </button>
+      </div>
+
+      <!-- Drag & Drop Zone -->
+      <div class="w-full border-2 border-dashed border-[var(--reader-border)] hover:border-[var(--terracotta)] rounded-2xl p-4 transition-colors bg-[var(--reader-bg)]/40 cursor-pointer mb-3 group" onclick="document.getElementById('filePicker').click()">
+        <p class="font-semibold text-xs group-hover:text-[var(--terracotta)] transition">or drag & drop your <span class="text-[var(--terracotta)] font-mono">.epub</span> here</p>
+      </div>
+
+      <!-- PDF Notice -->
+      <div class="w-full mt-2 p-3 bg-stone-100 dark:bg-stone-800/50 rounded-xl text-left border border-[var(--reader-border)] text-[11px] text-stone-500 dark:text-stone-400 leading-relaxed">
+        <p class="font-semibold text-stone-700 dark:text-stone-300 flex items-center gap-1 mb-0.5">
+          <span>ℹ️</span><span>Reading a PDF book?</span>
+        </p>
+        <span>Nook specializes in reflowable EPUB typography. For PDF books, simply double-click the downloaded file to read in your browser or system PDF viewer.</span>
+      </div>
+    </div>"""
+
+    if old_drop in html:
+        html = html.replace(old_drop, new_drop)
+
+    direct_dl_func = """    function triggerDirectDownload() {
+      if (directDownloadUrl) {
+        const a = document.createElement("a");
+        a.href = directDownloadUrl;
+        a.download = `${bookTitle}.epub`;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => a.remove(), 1000);
+        showToast(`Downloading "${bookTitle}.epub" directly...`);
+      } else if (driveUrl) {
+        window.open(driveUrl, '_blank');
+      } else {
+        showToast("No download link found for this book.");
+      }
+    }
+"""
+    if 'function triggerDirectDownload()' not in html:
+        marker = 'function initReader() {'
+        if marker in html:
+            html = html.replace(marker, direct_dl_func + '\n    ' + marker)
+
+    with open(path, 'w') as f:
+        f.write(html)
+    print(f'Successfully updated {path} dropzone and triggerDirectDownload')

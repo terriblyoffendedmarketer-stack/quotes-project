@@ -1,5 +1,5 @@
 // sw.js — Lightweight Service Worker for My Reading Corner PWA
-const CACHE_NAME = 'mrc-cache-v5';
+const CACHE_NAME = 'mrc-cache-v6';
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();

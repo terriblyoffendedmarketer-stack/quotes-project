@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 21 (Kindle Bifold Reader Spread, Tab Scope Isolation & Comprehensive Cover Renaissance)  
-> **Current**: Perfected Reading Nook into a Kindle/Apple Books-grade bifold reader: two-page spread (`spread: always`) on desktop with center spine crease, running header and progress footer, real book paragraph indentation (`text-indent: 1.5em; margin: 0; text-align: justify; hyphens: auto`), floating pastel highlight toolbar with instant Quote Bank save, and explicit PDF handling. Fixed PWA scope hijacking by scoping `manifest.json` strictly to `bookshelf.html`, and eliminated window spawning by targeting a single named tab `MyReadingNookTab`. Audited and corrected library covers: replaced mismatched comics (Riddler Year One, Sandman, Akira), resolved inverted Stephen King & Neil Gaiman titles, added verified covers for GothamChess, Oliver Burkeman, Phil Knight, etc., and applied typographic clothbound jackets to movie screenplays and research dossiers.  
-> **Next**: User review of the Kindle bifold spread and audited book covers.
+> **Status**: In Progress | **Phase**: 22 (Direct Nook Download Action, PWA Standalone Restoration & Zero Auto-Download on Shelf)  
+> **Current**: Removed background auto-downloading when clicking "Read on Nooks" from the bookshelf so users aren't surprised by unexpected downloads. Navigating to Nook presents a dedicated, prominent "Download .epub File Directly" button alongside "Open .epub File (from Downloads)". Direct download triggers the file attachment download immediately without redirecting to the Google Drive preview UI. Restored PWA scope in `manifest.json` back to `"scope": "./"` so Nook operates inside the standalone PWA window, matching user preference. Rebuilt and deployed with v6 service worker cache-busting.  
+> **Next**: Final walkthrough of the streamlined Nook download-and-read flow.
 
 ## Roadmap
 
@@ -27,6 +27,7 @@
 - [x] Phase 19: Streamlined "Read in Nook" Flow, Apple Books/Kindle Viewport & Generous Editorial Posters — 1-click direct download via usercontent, Apple Books centered typography, generous unclipped posters, and new tab PWA isolation
 - [x] Phase 20: Remove Cover Option, Classic Typographic Template Jacket & Persistence Guard — Dedicated cover removal button in modal and 1-click dossier action, no_cover localStorage and build script persistence guards, and elegant category-styled clothbound typographic jackets
 - [x] Phase 21: Kindle Bifold Reader Spread, Tab Scope Isolation & Comprehensive Cover Renaissance — Two-page bifold spread with center spine crease, Kindle paragraph indents & justification, tab scope restriction to prevent PWA hijacking, named tab reuse, PDF direct handling, and full audit/fix of book covers (Riddler, Sandman, 4-Hour Chef, King, Burkeman, Screenplays)
+- [x] Phase 22: Direct Nook Download Action, PWA Standalone Restoration & Zero Auto-Download on Shelf — Removed auto-download on shelf click, added 1-click direct download on Nook dropzone without Google Drive redirects, restored manifest scope to './' for PWA window reading
 
 ## File map
 

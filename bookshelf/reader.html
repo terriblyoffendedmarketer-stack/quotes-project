@@ -422,7 +422,23 @@
     // -------------------------------------------------------------
     // Book Loader
     // -------------------------------------------------------------
-    async function initReader() {
+    async     function triggerDirectDownload() {
+      if (directDownloadUrl) {
+        const a = document.createElement("a");
+        a.href = directDownloadUrl;
+        a.download = `${bookTitle}.epub`;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => a.remove(), 1000);
+        showToast(`Downloading "${bookTitle}.epub" directly...`);
+      } else if (driveUrl) {
+        window.open(driveUrl, '_blank');
+      } else {
+        showToast("No download link found for this book.");
+      }
+    }
+
+    function initReader() {
       chapterDisplay.innerText = "";
       updateQuotesCount();
 

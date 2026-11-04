@@ -1961,22 +1961,9 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         return;
       }}
 
-      // 1. Direct background download from Google Drive
-      if (b.drive_id) {{
-        const directDownloadUrl = `https://drive.usercontent.google.com/download?id=${{b.drive_id}}&export=download`;
-        const a = document.createElement("a");
-        a.href = directDownloadUrl;
-        a.download = `${{b.title}}.epub`;
-        a.target = "_blank";
-        a.rel = "noopener noreferrer";
-        document.body.appendChild(a);
-        a.click();
-        setTimeout(() => a.remove(), 1000);
-      }}
-
-      // 2. Open reader in a single named browser tab (reuses the exact same tab so it doesn't open multiple tabs)
+      // Open Nooks reader directly without unexpected auto-downloading
       const readerUrl = `./reader.html?id=${{encodeURIComponent(b.id)}}&title=${{encodeURIComponent(b.title)}}&author=${{encodeURIComponent(b.author)}}&drive_id=${{encodeURIComponent(b.drive_id || '')}}&drive=${{encodeURIComponent(b.drive_url || '')}}`;
-      window.open(readerUrl, "MyReadingNookTab");
+      window.open(readerUrl, "_blank");
     }}
 
     function openBookDetail(bookId) {{
