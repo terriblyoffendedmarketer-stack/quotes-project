@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Reading Nook • My Reading Corner</title>
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- EPUB.js & JSZip Dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
+
+  <style>
+    :root {
+      --reader-bg: #fbf8f3;
+      --reader-text: #2c2523;
+      --reader-border: #e6dfd5;
+      --terracotta: #c85a32;
+      --terracotta-hover: #b24822;
+      --terracotta-soft: rgba(200, 90, 50, 0.12);
+    }
+
+    body.theme-cream {
+      --reader-bg: #fbf8f3;
+      --reader-text: #2c2523;
+      --reader-border: #e6dfd5;
+    }
+    body.theme-sepia {
+      --reader-bg: #f4ebd9;
+      --reader-text: #3c2f21;
+      --reader-border: #dfd3bc;
+    }
+    body.theme-night {
+      --reader-bg: #151311;
+      --reader-text: #e2ded9;
+      --reader-border: #2c2824;
+    }
+    body.theme-white {
+      --reader-bg: #ffffff;
+      --reader-text: #1a1a1a;
+      --reader-border: #eaeaea;
+    }
+
+    body {
+      background-color: var(--reader-bg);
+      color: var(--reader-text);
+      font-family: 'Inter', -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      user-select: none;
+    }
+
+    .font-serif {
+      font-family: 'Newsreader', Georgia, serif;
+    }
+
+    #viewer {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    /* Floating Highlight / Save Quote Pill */
+    #highlightTooltip {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      transform: translate(-50%, -100%);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+
+    /* Page Turn Hover Buttons */
+    .turn-btn {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .turn-btn:hover {
+      opacity: 1;
+    }
+    @media (hover: none) {
+      .turn-btn {
+        opacity: 0.35;
+      }
+    }
+  </style>
+</head>
+<body class="theme-cream flex flex-col h-screen">
+
+  <!-- Top App Bar -->
+  <header class="h-14 border-b border-[var(--reader-border)] px-4 flex items-center justify-between z-30 shrink-0 bg-[var(--reader-bg)]/95 backdrop-blur-sm">
+    <!-- Left: Back to Shelf -->
+    <div class="flex items-center gap-3">
+      <a href="./bookshelf.html" id="backLink" class="text-xs font-semibold text-[var(--terracotta)] hover:underline flex items-center gap-1.5 py-1 px-2 rounded-lg hover:bg-[var(--terracotta-soft)] transition">
+        <span>←</span>
+        <span class="hidden sm:inline">My Reading Corner</span>
+        <span class="sm:hidden">Shelf</span>
+      </a>
+      <span class="text-[var(--reader-border)]">|</span>
+      <div class="min-w-0 max-w-[200px] sm:max-w-xs md:max-w-md">
+        <h1 id="bookTitleDisplay" class="font-serif font-bold text-xs sm:text-sm truncate leading-tight">Reading Nook</h1>
+        <p id="bookAuthorDisplay" class="text-[10px] text-stone-500 dark:text-stone-400 truncate">Select or drop an EPUB</p>
+      </div>
+    </div>
+
+    <!-- Right Controls -->
+    <div class="flex items-center gap-1.5 sm:gap-2">
+      <!-- Quotes Drawer Toggle -->
+      <button onclick="toggleQuotesDrawer()" class="px-2.5 py-1.5 rounded-lg border border-[var(--reader-border)] hover:border-[var(--terracotta)] text-xs font-semibold flex items-center gap-1.5 transition">
+        <span class="text-amber-500">✦</span>
+        <span class="hidden sm:inline">Quotes</span>
+        <span id="quotesCountBadge" class="bg-[var(--terracotta)] text-white text-[10px] px-1.5 py-0.2 rounded-full font-mono">0</span>
+      </button>
+
+      <!-- TOC Menu -->
+      <button onclick="toggleTocDrawer()" class="p-1.5 sm:px-2.5 sm:py-1.5 rounded-lg border border-[var(--reader-border)] hover:border-[var(--terracotta)] text-xs font-semibold flex items-center gap-1 transition" title="Table of Contents">
+        <span>☰</span>
+        <span class="hidden md:inline">Contents</span>
+      </button>
+
+      <!-- Appearance Menu -->
+      <div class="relative">
+        <button onclick="toggleAppearanceMenu()" class="p-1.5 sm:px-2.5 sm:py-1.5 rounded-lg border border-[var(--reader-border)] hover:border-[var(--terracotta)] text-xs font-semibold flex items-center gap-1 transition" title="Font & Theme">
+          <span>Aa</span>
+        </button>
+
+        <!-- Appearance Dropdown -->
+        <div id="appearanceMenu" class="hidden absolute right-0 top-12 w-64 bg-[var(--reader-bg)] border border-[var(--reader-border)] rounded-2xl shadow-xl p-4 z-50 text-xs">
+          <div class="font-bold text-[11px] uppercase tracking-wider text-stone-500 mb-3">Themes</div>
+          <div class="grid grid-cols-4 gap-2 mb-4">
+            <button onclick="setTheme('cream')" class="p-2.5 rounded-lg border border-stone-300 bg-[#fbf8f3] text-[#2c2523] font-semibold text-[11px] shadow-sm">Cream</button>
+            <button onclick="setTheme('sepia')" class="p-2.5 rounded-lg border border-stone-300 bg-[#f4ebd9] text-[#3c2f21] font-semibold text-[11px] shadow-sm">Sepia</button>
+            <button onclick="setTheme('night')" class="p-2.5 rounded-lg border border-stone-700 bg-[#151311] text-[#e2ded9] font-semibold text-[11px] shadow-sm">Night</button>
+            <button onclick="setTheme('white')" class="p-2.5 rounded-lg border border-stone-300 bg-white text-black font-semibold text-[11px] shadow-sm">White</button>
+          </div>
+
+          <div class="font-bold text-[11px] uppercase tracking-wider text-stone-500 mb-2">Font Size</div>
+          <div class="flex items-center justify-between border border-[var(--reader-border)] rounded-xl p-1">
+            <button onclick="changeFontSize(-10)" class="flex-1 py-1 text-center font-bold text-sm hover:bg-[var(--terracotta-soft)] rounded-lg transition">A-</button>
+            <span id="fontSizeDisplay" class="font-mono text-xs px-2 text-stone-500">100%</span>
+            <button onclick="changeFontSize(10)" class="flex-1 py-1 text-center font-bold text-base hover:bg-[var(--terracotta-soft)] rounded-lg transition">A+</button>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-[var(--reader-border)]">
+            <label class="flex items-center justify-between cursor-pointer">
+              <span class="text-[11px] text-stone-500">Continuous Scroll</span>
+              <input type="checkbox" id="scrollModeCheckbox" onchange="toggleScrollMode(this.checked)" class="accent-[var(--terracotta)]">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- File Picker (Switch book) -->
+      <label class="p-1.5 sm:px-2.5 sm:py-1.5 rounded-lg border border-[var(--reader-border)] hover:border-[var(--terracotta)] text-xs font-semibold flex items-center gap-1 cursor-pointer transition" title="Open another EPUB">
+        <span>📂</span>
+        <span class="hidden lg:inline">Open EPUB</span>
+        <input type="file" id="filePicker" accept=".epub" class="hidden" onchange="handleFileSelect(event)">
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Reader Canvas -->
+  <main class="flex-1 relative overflow-hidden flex items-center justify-center">
+
+    <!-- 1. Drop Zone / Empty State (When book file is not yet in browser IndexedDB) -->
+    <div id="dropZone" class="flex flex-col items-center justify-center p-6 text-center max-w-md mx-auto z-20">
+      <div class="w-16 h-16 rounded-2xl bg-[var(--terracotta-soft)] text-[var(--terracotta)] flex items-center justify-center text-3xl mb-4 shadow-inner">
+        📖
+      </div>
+      <h2 id="emptyStateTitle" class="font-serif font-bold text-xl sm:text-2xl mb-1">Open in Reading Nook</h2>
+      <p id="emptyStateAuthor" class="text-xs text-stone-500 mb-6">Lightweight, distraction-free reader with instant quote saving.</p>
+
+      <div class="w-full border-2 border-dashed border-[var(--reader-border)] hover:border-[var(--terracotta)] rounded-2xl p-8 transition-colors bg-[var(--reader-bg)]/60 cursor-pointer mb-4" onclick="document.getElementById('filePicker').click()">
+        <p class="font-semibold text-sm mb-1">Drop your <span class="text-[var(--terracotta)] font-mono">.epub</span> file here</p>
+        <p class="text-xs text-stone-400">or click to browse from your device</p>
+      </div>
+
+      <div id="driveActionRow" class="hidden w-full flex flex-col gap-2 pt-2 border-t border-[var(--reader-border)]">
+        <p class="text-[11px] text-stone-500">Need the file from your Google Drive?</p>
+        <a id="driveDownloadBtn" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-[var(--terracotta)] text-white text-xs font-bold rounded-xl shadow-sm hover:bg-[var(--terracotta-hover)] transition flex items-center justify-center gap-1.5">
+          <span>⬇</span>
+          <span>Download from Google Drive</span>
+        </a>
+      </div>
+      <p class="text-[10px] text-stone-400 mt-4 leading-relaxed">
+        ✦ Books you open are saved inside your device's private browser storage for fast offline reading anytime.
+      </p>
+    </div>
+
+    <!-- 2. EPUB.js Viewer Container -->
+    <div id="viewer" class="z-10"></div>
+
+    <!-- 3. Navigation Controls (Prev / Next Buttons) -->
+    <button id="prevBtn" onclick="prevPage()" class="turn-btn absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-14 sm:h-20 rounded-xl bg-black/10 dark:bg-white/10 hover:bg-[var(--terracotta)] hover:text-white backdrop-blur-sm z-20 flex items-center justify-center text-lg transition-all shadow-sm">
+      ‹
+    </button>
+    <button id="nextBtn" onclick="nextPage()" class="turn-btn absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-14 sm:h-20 rounded-xl bg-black/10 dark:bg-white/10 hover:bg-[var(--terracotta)] hover:text-white backdrop-blur-sm z-20 flex items-center justify-center text-lg transition-all shadow-sm">
+      ›
+    </button>
+  </main>
+
+  <!-- Bottom Reader Status Bar -->
+  <footer id="statusBar" class="h-9 border-t border-[var(--reader-border)] px-4 flex items-center justify-between text-[11px] z-30 shrink-0 bg-[var(--reader-bg)] text-stone-500 font-mono">
+    <div id="chapterDisplay" class="truncate max-w-[200px] sm:max-w-md font-serif italic text-xs">
+      Loading...
+    </div>
+    <div class="flex items-center gap-3">
+      <span id="pageProgressDisplay">0%</span>
+    </div>
+  </footer>
+
+  <!-- Floating Highlight / Save Quote Pill -->
+  <div id="highlightTooltip" class="bg-stone-900 text-white rounded-full py-1.5 px-3.5 shadow-2xl flex items-center gap-2 border border-stone-700 pointer-events-auto">
+    <button onclick="saveHighlightedQuote()" class="text-xs font-bold text-amber-300 hover:text-amber-200 flex items-center gap-1.5 transition">
+      <span>✦</span>
+      <span>Save to Quote Bank</span>
+    </button>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-12 left-1/2 -translate-x-1/2 bg-stone-900 text-white border border-amber-500/40 text-xs py-2 px-4 rounded-xl shadow-2xl z-50 transition-all duration-200 opacity-0 pointer-events-none flex items-center gap-2">
+    <span class="text-amber-400">✦</span>
+    <span id="toastMsg">Quote saved!</span>
+  </div>
+
+  <!-- Table of Contents Drawer (Slide from Left) -->
+  <div id="tocDrawer" class="fixed inset-y-0 left-0 w-80 bg-[var(--reader-bg)] border-r border-[var(--reader-border)] shadow-2xl z-40 transform -translate-x-full transition-transform duration-200 flex flex-col">
+    <div class="h-14 border-b border-[var(--reader-border)] px-4 flex items-center justify-between shrink-0">
+      <h3 class="font-serif font-bold text-sm">Table of Contents</h3>
+      <button onclick="toggleTocDrawer()" class="text-stone-400 hover:text-stone-600 p-1">✕</button>
+    </div>
+    <div id="tocList" class="flex-1 overflow-y-auto p-4 space-y-1 text-xs">
+      <!-- Populated dynamically -->
+    </div>
+  </div>
+
+  <!-- Saved Quotes Drawer (Slide from Right) -->
+  <div id="quotesDrawer" class="fixed inset-y-0 right-0 w-80 sm:w-96 bg-[var(--reader-bg)] border-l border-[var(--reader-border)] shadow-2xl z-40 transform translate-x-full transition-transform duration-200 flex flex-col">
+    <div class="h-14 border-b border-[var(--reader-border)] px-4 flex items-center justify-between shrink-0">
+      <div class="flex items-center gap-2">
+        <span class="text-amber-500 text-base">✦</span>
+        <h3 class="font-serif font-bold text-sm">Saved Quotes</h3>
+      </div>
+      <button onclick="toggleQuotesDrawer()" class="text-stone-400 hover:text-stone-600 p-1">✕</button>
+    </div>
+
+    <!-- Quotes Actions -->
+    <div class="p-3 border-b border-[var(--reader-border)] flex items-center justify-between gap-2 bg-[var(--reader-bg)]">
+      <button onclick="copyAllQuotesMarkdown()" class="flex-1 py-1.5 px-2 bg-[var(--terracotta)] text-white text-[11px] font-bold rounded-lg hover:bg-[var(--terracotta-hover)] transition flex items-center justify-center gap-1">
+        <span>📋</span>
+        <span>Copy All (Markdown)</span>
+      </button>
+      <button onclick="exportQuotesJson()" class="py-1.5 px-2.5 border border-[var(--reader-border)] text-[11px] font-semibold rounded-lg hover:border-[var(--terracotta)] transition" title="Export as JSON">
+        <span>⬇ JSON</span>
+      </button>
+    </div>
+
+    <!-- Quotes Stream -->
+    <div id="quotesList" class="flex-1 overflow-y-auto p-4 space-y-3">
+      <!-- Populated dynamically -->
+    </div>
+  </div>
+
+  <!-- Backdrop overlay -->
+  <div id="drawerBackdrop" class="fixed inset-0 bg-black/40 z-30 hidden" onclick="closeAllDrawers()"></div>
+
+  <!-- App Engine Logic -->
+  <script>
+    // URL Params
+    const urlParams = new URLSearchParams(window.location.search);
+    const bookId = urlParams.get('id') || 'custom-book';
+    const bookTitle = urlParams.get('title') || 'Untitled Book';
+    const bookAuthor = urlParams.get('author') || 'Unknown Author';
+    const driveUrl = urlParams.get('drive') || '';
+
+    // Reader State
+    let book = null;
+    let rendition = null;
+    let currentCfi = null;
+    let currentSelection = null;
+    let currentFontSize = 100;
+    let isContinuousScroll = false;
+    let bookToc = [];
+
+    // DOM Elements
+    const viewerEl = document.getElementById('viewer');
+    const dropZone = document.getElementById('dropZone');
+    const bookTitleDisplay = document.getElementById('bookTitleDisplay');
+    const bookAuthorDisplay = document.getElementById('bookAuthorDisplay');
+    const emptyStateTitle = document.getElementById('emptyStateTitle');
+    const emptyStateAuthor = document.getElementById('emptyStateAuthor');
+    const driveActionRow = document.getElementById('driveActionRow');
+    const driveDownloadBtn = document.getElementById('driveDownloadBtn');
+    const highlightTooltip = document.getElementById('highlightTooltip');
+    const quotesCountBadge = document.getElementById('quotesCountBadge');
+    const chapterDisplay = document.getElementById('chapterDisplay');
+    const pageProgressDisplay = document.getElementById('pageProgressDisplay');
+
+    // Initialize UI
+    bookTitleDisplay.innerText = bookTitle;
+    bookAuthorDisplay.innerText = `by ${bookAuthor}`;
+    emptyStateTitle.innerText = bookTitle;
+    emptyStateAuthor.innerText = `by ${bookAuthor}`;
+
+    if (driveUrl) {
+      driveActionRow.classList.remove('hidden');
+      driveDownloadBtn.href = driveUrl;
+    }
+
+    // -------------------------------------------------------------
+    // IndexedDB Offline Storage (Stores EPUB ArrayBuffer keyed by bookId)
+    // -------------------------------------------------------------
+    const DB_NAME = 'MyReadingCorner_EPUB_DB';
+    const STORE_NAME = 'epubs';
+
+    function openDatabase() {
+      return new Promise((resolve, reject) => {
+        const req = indexedDB.open(DB_NAME, 1);
+        req.onupgradeneeded = e => {
+          e.target.result.createObjectStore(STORE_NAME);
+        };
+        req.onsuccess = e => resolve(e.target.result);
+        req.onerror = e => reject(e);
+      });
+    }
+
+    async function saveBookToDB(id, buffer) {
+      const db = await openDatabase();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readwrite');
+        tx.objectStore(STORE_NAME).put(buffer, id);
+        tx.oncomplete = () => resolve();
+        tx.onerror = e => reject(e);
+      });
+    }
+
+    async function loadBookFromDB(id) {
+      const db = await openDatabase();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readonly');
+        const req = tx.objectStore(STORE_NAME).get(id);
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = e => reject(e);
+      });
+    }
+
+    // -------------------------------------------------------------
+    // Book Loader
+    // -------------------------------------------------------------
+    async function initReader() {
+      // Check if this book is already in IndexedDB
+      try {
+        const cachedBuffer = await loadBookFromDB(bookId);
+        if (cachedBuffer) {
+          console.log("Found book in local offline storage! Loading...");
+          loadEpubData(cachedBuffer);
+          return;
+        }
+      } catch (err) {
+        console.warn("IndexedDB check failed", err);
+      }
+
+      // If not cached, reveal drop zone
+      dropZone.style.display = 'flex';
+      viewerEl.style.display = 'none';
+      updateQuotesCount();
+    }
+
+    function loadEpubData(data) {
+      dropZone.style.display = 'none';
+      viewerEl.style.display = 'block';
+
+      // Clear previous book
+      if (book) {
+        try { book.destroy(); } catch (e) {}
+      }
+
+      book = ePub(data);
+
+      rendition = book.renderTo("viewer", {
+        width: "100%",
+        height: "100%",
+        flow: isContinuousScroll ? "scrolled-doc" : "paginated",
+        spread: "auto"
+      });
+
+      // Restore theme and styling in epub iframe
+      applyThemeToRendition();
+
+      // Display book
+      rendition.display();
+
+      // Load Navigation (TOC)
+      book.loaded.navigation.then(nav => {
+        bookToc = nav.toc;
+        renderToc(bookToc);
+      });
+
+      // Locations generation for progress %
+      book.ready.then(() => {
+        return book.locations.generate(1000);
+      }).then(() => {
+        updateProgress();
+      });
+
+      // Hook Events
+      rendition.on("relocated", location => {
+        currentCfi = location.start.cfi;
+        updateProgress();
+      });
+
+      // Selection Listener (Text Highlight & Quote Extraction)
+      rendition.on("selected", (cfiRange, contents) => {
+        book.getRange(cfiRange).then(range => {
+          const text = range.toString().trim();
+          if (text.length > 5) {
+            currentSelection = {
+              text: text,
+              cfiRange: cfiRange,
+              range: range
+            };
+            showHighlightTooltip(range, contents);
+          }
+        });
+      });
+
+      // Clicking clears tooltip
+      rendition.on("click", () => {
+        hideHighlightTooltip();
+      });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", handleKeyNav);
+
+      // Restore saved highlights
+      restoreHighlights();
+      updateQuotesCount();
+    }
+
+    // Drag and Drop support
+    window.addEventListener('dragover', e => e.preventDefault());
+    window.addEventListener('drop', e => {
+      e.preventDefault();
+      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+        processFile(e.dataTransfer.files[0]);
+      }
+    });
+
+    function handleFileSelect(e) {
+      if (e.target.files && e.target.files[0]) {
+        processFile(e.target.files[0]);
+      }
+    }
+
+    async function processFile(file) {
+      showToast(`Loading ${file.name}...`);
+      const buffer = await file.arrayBuffer();
+      // Cache in IndexedDB for instant reload next time
+      try {
+        await saveBookToDB(bookId, buffer);
+      } catch (err) {
+        console.warn("Failed to persist to IndexedDB", err);
+      }
+      loadEpubData(buffer);
+    }
+
+    // -------------------------------------------------------------
+    // Page Turning & Navigation
+    // -------------------------------------------------------------
+    function nextPage() {
+      if (rendition) rendition.next();
+      hideHighlightTooltip();
+    }
+
+    function prevPage() {
+      if (rendition) rendition.prev();
+      hideHighlightTooltip();
+    }
+
+    function handleKeyNav(e) {
+      if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") {
+        nextPage();
+      } else if (e.key === "ArrowLeft" || e.key === "PageUp") {
+        prevPage();
+      }
+    }
+
+    function updateProgress() {
+      if (!rendition || !rendition.location) return;
+      const loc = rendition.location;
+      if (book.locations && book.locations.length()) {
+        const pct = Math.floor(book.locations.percentageFromCfi(loc.start.cfi) * 100);
+        pageProgressDisplay.innerText = `${pct}%`;
+      }
+      // Update Chapter label
+      if (loc.start && loc.start.href) {
+        const chapter = findChapterByHref(bookToc, loc.start.href);
+        if (chapter) {
+          chapterDisplay.innerText = chapter.label.trim();
+        }
+      }
+    }
+
+    function findChapterByHref(toc, href) {
+      for (const item of toc) {
+        if (item.href.includes(href) || href.includes(item.href)) return item;
+        if (item.subitems && item.subitems.length) {
+          const found = findChapterByHref(item.subitems, href);
+          if (found) return found;
+        }
+      }
+      return null;
+    }
+
+    // -------------------------------------------------------------
+    // Quote Bank & Highlighting Logic
+    // -------------------------------------------------------------
+    function showHighlightTooltip(range, contents) {
+      const rect = range.getBoundingClientRect();
+      const iframeRect = viewerEl.querySelector('iframe')?.getBoundingClientRect() || { top: 0, left: 0 };
+
+      const top = iframeRect.top + rect.top - 10;
+      const left = iframeRect.left + rect.left + (rect.width / 2);
+
+      highlightTooltip.style.top = `${Math.max(top, 60)}px`;
+      highlightTooltip.style.left = `${left}px`;
+      highlightTooltip.style.display = 'flex';
+      highlightTooltip.style.opacity = '1';
+    }
+
+    function hideHighlightTooltip() {
+      highlightTooltip.style.display = 'none';
+      highlightTooltip.style.opacity = '0';
+    }
+
+    function saveHighlightedQuote() {
+      if (!currentSelection) return;
+
+      const quoteText = currentSelection.text;
+      const cfiRange = currentSelection.cfiRange;
+      const chapter = chapterDisplay.innerText || 'Chapter Note';
+
+      // 1. Highlight visually inside book
+      try {
+        rendition.annotations.highlight(cfiRange, {}, (e) => {}, "hl-amber", {
+          fill: "rgba(235, 175, 45, 0.35)",
+          "fill-opacity": "0.35",
+          "mix-blend-mode": "multiply"
+        });
+      } catch (err) {
+        console.warn(err);
+      }
+
+      // 2. Save quote entry to localStorage
+      const quotes = getStoredQuotes();
+      const newQuote = {
+        id: 'q_' + Date.now(),
+        quote: quoteText,
+        bookId: bookId,
+        bookTitle: bookTitle,
+        bookAuthor: bookAuthor,
+        chapter: chapter,
+        cfi: cfiRange,
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+      };
+
+      quotes.unshift(newQuote);
+      localStorage.setItem('my_reading_corner_quotes', JSON.stringify(quotes));
+
+      // 3. Save highlight range for restore on reload
+      const bookHighlights = getBookHighlights();
+      bookHighlights.push(cfiRange);
+      localStorage.setItem(`hl_${bookId}`, JSON.stringify(bookHighlights));
+
+      hideHighlightTooltip();
+      updateQuotesCount();
+      renderQuotesDrawer();
+      showToast("✦ Saved to Quote Bank!");
+    }
+
+    function getStoredQuotes() {
+      try {
+        return JSON.parse(localStorage.getItem('my_reading_corner_quotes')) || [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function getBookHighlights() {
+      try {
+        return JSON.parse(localStorage.getItem(`hl_${bookId}`)) || [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function restoreHighlights() {
+      const bookHighlights = getBookHighlights();
+      bookHighlights.forEach(cfi => {
+        try {
+          rendition.annotations.highlight(cfi, {}, () => {}, "hl-amber", {
+            fill: "rgba(235, 175, 45, 0.35)",
+            "fill-opacity": "0.35",
+            "mix-blend-mode": "multiply"
+          });
+        } catch (e) {}
+      });
+    }
+
+    function updateQuotesCount() {
+      const allQuotes = getStoredQuotes();
+      const thisBookQuotes = allQuotes.filter(q => q.bookId === bookId);
+      quotesCountBadge.innerText = thisBookQuotes.length;
+    }
+
+    function deleteQuote(qId) {
+      let quotes = getStoredQuotes();
+      quotes = quotes.filter(q => q.id !== qId);
+      localStorage.setItem('my_reading_corner_quotes', JSON.stringify(quotes));
+      updateQuotesCount();
+      renderQuotesDrawer();
+      showToast("Quote removed.");
+    }
+
+    function copySingleQuote(text) {
+      navigator.clipboard.writeText(text);
+      showToast("Quote copied to clipboard!");
+    }
+
+    function copyAllQuotesMarkdown() {
+      const allQuotes = getStoredQuotes().filter(q => q.bookId === bookId);
+      if (allQuotes.length === 0) {
+        showToast("No quotes saved yet.");
+        return;
+      }
+      let md = `## Quotes from ${bookTitle} by ${bookAuthor}\n\n`;
+      allQuotes.forEach((q, idx) => {
+        md += `> "${q.quote}"\n> — *${bookTitle}* (${q.chapter})\n\n`;
+      });
+      navigator.clipboard.writeText(md);
+      showToast(`Copied ${allQuotes.length} quotes as Markdown!`);
+    }
+
+    function exportQuotesJson() {
+      const allQuotes = getStoredQuotes().filter(q => q.bookId === bookId);
+      const blob = new Blob([JSON.stringify(allQuotes, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${bookTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-quotes.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // -------------------------------------------------------------
+    // Drawers & Modals
+    // -------------------------------------------------------------
+    function toggleQuotesDrawer() {
+      const drawer = document.getElementById('quotesDrawer');
+      const backdrop = document.getElementById('drawerBackdrop');
+      const isOpen = !drawer.classList.contains('translate-x-full');
+
+      closeAllDrawers();
+      if (!isOpen) {
+        renderQuotesDrawer();
+        drawer.classList.remove('translate-x-full');
+        backdrop.classList.remove('hidden');
+      }
+    }
+
+    function renderQuotesDrawer() {
+      const listEl = document.getElementById('quotesList');
+      const allQuotes = getStoredQuotes().filter(q => q.bookId === bookId);
+
+      if (allQuotes.length === 0) {
+        listEl.innerHTML = `
+          <div class="py-16 text-center text-stone-400">
+            <span class="text-3xl block mb-2 opacity-50">✦</span>
+            <p class="font-serif text-sm">No quotes collected yet.</p>
+            <p class="text-[11px] mt-1 text-stone-400">Select any text while reading and tap "Save to Quote Bank".</p>
+          </div>
+        `;
+        return;
+      }
+
+      listEl.innerHTML = allQuotes.map(q => `
+        <div class="p-3.5 bg-[var(--reader-bg)] border border-[var(--reader-border)] rounded-xl hover:border-[var(--terracotta)]/40 transition">
+          <p class="font-serif text-xs md:text-[13px] leading-relaxed italic text-[var(--reader-text)]">
+            "${q.quote}"
+          </p>
+          <div class="flex items-center justify-between mt-2.5 pt-2 border-t border-[var(--reader-border)] text-[10px] text-stone-400">
+            <span class="truncate max-w-[140px] font-mono">${q.chapter}</span>
+            <div class="flex items-center gap-2">
+              <button onclick="copySingleQuote('${q.quote.replace(/'/g, "\\'")}')" class="hover:text-[var(--terracotta)] font-semibold">Copy</button>
+              <button onclick="deleteQuote('${q.id}')" class="hover:text-red-500">Delete</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleTocDrawer() {
+      const drawer = document.getElementById('tocDrawer');
+      const backdrop = document.getElementById('drawerBackdrop');
+      const isOpen = !drawer.classList.contains('-translate-x-full');
+
+      closeAllDrawers();
+      if (!isOpen) {
+        drawer.classList.remove('-translate-x-full');
+        backdrop.classList.remove('hidden');
+      }
+    }
+
+    function renderToc(toc, level = 0) {
+      const listEl = document.getElementById('tocList');
+      if (level === 0) listEl.innerHTML = '';
+
+      toc.forEach(item => {
+        const btn = document.createElement('button');
+        btn.className = `w-full text-left py-1.5 px-2 rounded-lg hover:bg-[var(--terracotta-soft)] transition text-xs font-serif ${level > 0 ? 'pl-' + (level * 4 + 2) : ''} truncate`;
+        btn.innerText = item.label.trim();
+        btn.onclick = () => {
+          rendition.display(item.href);
+          closeAllDrawers();
+        };
+        listEl.appendChild(btn);
+
+        if (item.subitems && item.subitems.length) {
+          renderToc(item.subitems, level + 1);
+        }
+      });
+    }
+
+    function toggleAppearanceMenu() {
+      const menu = document.getElementById('appearanceMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function closeAllDrawers() {
+      document.getElementById('tocDrawer').classList.add('-translate-x-full');
+      document.getElementById('quotesDrawer').classList.add('translate-x-full');
+      document.getElementById('appearanceMenu').classList.add('hidden');
+      document.getElementById('drawerBackdrop').classList.add('hidden');
+    }
+
+    // -------------------------------------------------------------
+    // Styling & Theme Customization
+    // -------------------------------------------------------------
+    function setTheme(theme) {
+      document.body.className = `theme-${theme} flex flex-col h-screen`;
+      applyThemeToRendition();
+      toggleAppearanceMenu();
+    }
+
+    function applyThemeToRendition() {
+      if (!rendition) return;
+
+      const isNight = document.body.classList.contains('theme-night');
+      const isSepia = document.body.classList.contains('theme-sepia');
+      const isWhite = document.body.classList.contains('theme-white');
+
+      let textColor = '#2c2523';
+      let bgColor = '#fbf8f3';
+
+      if (isNight) {
+        textColor = '#e2ded9';
+        bgColor = '#151311';
+      } else if (isSepia) {
+        textColor = '#3c2f21';
+        bgColor = '#f4ebd9';
+      } else if (isWhite) {
+        textColor = '#1a1a1a';
+        bgColor = '#ffffff';
+      }
+
+      rendition.themes.default({
+        body: {
+          background: `${bgColor} !important`,
+          color: `${textColor} !important`,
+          "font-family": "'Newsreader', Georgia, serif !important",
+          "line-height": "1.75 !important",
+          padding: "0 5% !important"
+        },
+        p: {
+          "margin-bottom": "1.15em !important"
+        },
+        "::selection": {
+          background: "rgba(200, 90, 50, 0.25) !important"
+        }
+      });
+    }
+
+    function changeFontSize(delta) {
+      currentFontSize = Math.max(70, Math.min(180, currentFontSize + delta));
+      document.getElementById('fontSizeDisplay').innerText = `${currentFontSize}%`;
+      if (rendition) {
+        rendition.themes.fontSize(`${currentFontSize}%`);
+      }
+    }
+
+    function toggleScrollMode(enableScroll) {
+      isContinuousScroll = enableScroll;
+      if (book) {
+        const cfi = currentCfi;
+        rendition = book.renderTo("viewer", {
+          width: "100%",
+          height: "100%",
+          flow: isContinuousScroll ? "scrolled-doc" : "paginated"
+        });
+        applyThemeToRendition();
+        rendition.display(cfi);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // Toast Utility
+    // -------------------------------------------------------------
+    let toastTimer = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').innerText = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 2500);
+    }
+
+    // Launch
+    window.addEventListener('DOMContentLoaded', () => {
+      initReader();
+    });
+  </script>
+</body>
+</html>

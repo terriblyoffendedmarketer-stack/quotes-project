@@ -814,10 +814,14 @@
             <p class="text-sm font-medium text-[var(--text-muted)] mt-1">by ${b.author}</p>
 
             <div class="flex flex-wrap items-center gap-2 mt-4">
+              <a href="./reader.html?id=${encodeURIComponent(b.id)}&title=${encodeURIComponent(b.title)}&author=${encodeURIComponent(b.author)}&drive=${encodeURIComponent(b.drive_url || '')}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5">
+                <span>📖</span>
+                <span>Read in Nook ↗</span>
+              </a>
               ${b.drive_url ? `
-                <a href="${b.drive_url}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5">
-                  <span>📖</span>
-                  <span>Open in Drive ↗</span>
+                <a href="${b.drive_url}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-heading)] rounded-xl transition flex items-center gap-1.5">
+                  <span>📁</span>
+                  <span>Drive File ↗</span>
                 </a>
               ` : ''}
               <button onclick="copySingleTbr('${b.title.replace(/'/g, "\\\'")}', '${b.author.replace(/'/g, "\\\'")}')" class="px-3.5 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-heading)] rounded-xl transition flex items-center gap-1.5">
@@ -930,9 +934,12 @@
             <h3 class="font-serif font-bold text-lg text-[var(--text-heading)] mt-0.5 leading-snug">${b.title}</h3>
             <p class="text-xs text-[var(--text-muted)] font-medium">by ${b.author}</p>
             <div class="flex flex-wrap items-center gap-2 mt-3">
+              <a href="./reader.html?id=${encodeURIComponent(b.id)}&title=${encodeURIComponent(b.title)}&author=${encodeURIComponent(b.author)}&drive=${encodeURIComponent(b.drive_url || '')}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-[var(--terracotta)] text-white text-xs font-bold rounded-lg shadow-sm">
+                Read in Nook ↗
+              </a>
               ${b.drive_url ? `
-                <a href="${b.drive_url}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-[var(--terracotta)] text-white text-xs font-bold rounded-lg shadow-sm">
-                  Open in Drive ↗
+                <a href="${b.drive_url}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] text-xs font-semibold rounded-lg">
+                  Drive File ↗
                 </a>
               ` : ''}
               <button onclick="copySingleTbr('${b.title.replace(/'/g, "\\\'")}', '${b.author.replace(/'/g, "\\\'")}')" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] text-xs font-semibold rounded-lg">Copy TBR</button>
