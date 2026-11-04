@@ -885,13 +885,19 @@
       const baseFontSize = 18 * (currentFontSize / 100);
 
       rendition.themes.default({
+        html: {
+          "column-gap": "4rem !important",
+          "-webkit-column-gap": "4rem !important"
+        },
         body: {
           background: `${bgColor} !important`,
           color: `${textColor} !important`,
           "font-family": "'Bookerly', 'Newsreader', 'Literata', 'Iowan Old Style', 'Charter', 'Georgia', serif !important",
           "font-size": `${baseFontSize}px !important`,
           "line-height": "1.68 !important",
-          padding: "16px 5% !important",
+          padding: "20px 5% !important",
+          "column-gap": "4rem !important",
+          "-webkit-column-gap": "4rem !important",
           "-webkit-font-smoothing": "antialiased",
           "-moz-osx-font-smoothing": "grayscale"
         },

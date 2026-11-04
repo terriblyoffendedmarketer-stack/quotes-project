@@ -103,6 +103,36 @@ def is_fun_reading(book):
     return False
 
 MANUAL_BOOK_FIXES = {
+    # Graphic Novels & Comics Verified (OpenLibrary & Amazon Edition Sources)
+    "watchmen-complete": {
+        "title": "Watchmen (The Complete Series)",
+        "author": "Alan Moore & Dave Gibbons",
+        "category": "Comics & Graphic Novels",
+        "cover_url": "https://covers.openlibrary.org/b/id/7774899-L.jpg",
+        "pitch": "Alan Moore and Dave Gibbons' groundbreaking masterpiece that deconstructed the superhero mythos, set against the ticking clock of Cold War nuclear apocalypse and vigilantism.",
+        "tags": ["graphic-novel", "dc-comics", "superheroes", "cold-war", "masterpiece"]
+    },
+    "the-sandman-complete-unknown": {
+        "title": "The Sandman (The Complete Deluxe Collection)",
+        "author": "Neil Gaiman",
+        "category": "Comics & Graphic Novels",
+        "cover_url": "https://covers.openlibrary.org/b/id/10708688-L.jpg",
+        "pitch": "Neil Gaiman's magnum opus following Morpheus, the Lord of Dreams, imprisoned by an occult ritual before breaking free to rebuild his ruined kingdom of the Dreaming.",
+        "tags": ["mythology", "fantasy", "graphic-novel", "dark-fantasy"]
+    },
+    "understanding-comics-scott-mccloud-unknown": {
+        "title": "Understanding Comics: The Invisible Art",
+        "author": "Scott McCloud",
+        "category": "Comics & Graphic Novels",
+        "cover_url": "https://covers.openlibrary.org/b/id/10679940-L.jpg"
+    },
+    "aristotle-a-graphic-biography": {
+        "title": "Aristotle: A Graphic Biography",
+        "author": "Alexandre Le Mercier & Étienne Schréder",
+        "category": "Graphic Guides",
+        "cover_url": "https://covers.openlibrary.org/b/id/12593945-L.jpg"
+    },
+
     # Ben Goldacre
     "ben-goldacre-bad-pharma": {
         "title": "Bad Pharma: How Drug Companies Mislead Doctors and Harm Patients",
