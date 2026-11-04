@@ -240,9 +240,9 @@
       </div>
     </div>
 
-    <!-- 2. Editorial View (Refined 2-column cards with authentic back-cover synopsis) -->
+    <!-- 2. Editorial View (Refined 2-column cards with authentic back-cover synopsis: 4 visible on screen) -->
     <div id="editorialView" class="hidden">
-      <div id="editorialGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5">
+      <div id="editorialGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7 lg:gap-8">
         <!-- Populated dynamically -->
       </div>
     </div>
@@ -678,9 +678,9 @@
         const hasCover = !!b.cover_url;
 
         return `
-          <div class="editorial-card bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--terracotta)]/40 rounded-2xl p-4 sm:p-5 md:p-6 flex flex-row gap-4 sm:gap-5 md:gap-6 hover:shadow-lg transition-all duration-200 cursor-pointer group items-stretch" onclick="openBookDetail('${b.id}')">
-            <!-- Cover (Left: generous horizontal room, fixed aspect ratio, zero crunching or clipping) -->
-            <div class="w-28 sm:w-36 md:w-40 lg:w-44 shrink-0 aspect-[2/3] book-cover ${jacketCls} relative rounded-xl overflow-hidden shadow-sm border border-black/10 flex items-center justify-center bg-[var(--border-subtle)]/40 p-1">
+          <div class="editorial-card bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--terracotta)]/40 rounded-2xl p-4 sm:p-5 md:p-6 flex flex-row gap-4 sm:gap-6 hover:shadow-lg transition-all duration-200 cursor-pointer group items-stretch" onclick="openBookDetail('${b.id}')">
+            <!-- Cover (Left: substantial horizontal real estate, perfectly proportioned, 4 cards visible on screen) -->
+            <div class="w-32 sm:w-40 md:w-48 lg:w-56 shrink-0 aspect-[2/3] book-cover ${jacketCls} relative rounded-xl overflow-hidden shadow-sm border border-black/10 flex items-center justify-center bg-[var(--border-subtle)]/40 p-1">
               ${hasCover ? `
                 <img src="${b.cover_url}" alt="${b.title}" loading="lazy" class="w-full h-full object-contain drop-shadow-xs rounded-lg" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-ed').style.display='flex';" />
                 <div class="fallback-ed hidden flex-col justify-between h-full w-full p-2.5 absolute inset-0">
@@ -703,20 +703,20 @@
                   <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)] truncate">${b.category}</span>
                   ${b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-950 bg-amber-300/90 px-1.5 py-0.5 rounded shrink-0">★ ${b.quotes.length} Quotes</span>` : ''}
                 </div>
-                <h3 class="font-serif font-bold text-base sm:text-lg text-[var(--text-heading)] group-hover:text-[var(--terracotta)] transition leading-snug line-clamp-2">
+                <h3 class="font-serif font-bold text-base sm:text-lg md:text-xl text-[var(--text-heading)] group-hover:text-[var(--terracotta)] transition leading-snug line-clamp-2">
                   ${b.title}
                 </h3>
-                <p class="text-xs text-[var(--text-muted)] font-medium mt-0.5 line-clamp-1">by ${b.author}</p>
+                <p class="text-xs sm:text-[13px] text-[var(--text-muted)] font-medium mt-0.5 line-clamp-1">by ${b.author}</p>
 
                 <!-- Back of the Book Synopsis (Spacious, Elegant & Readable) -->
-                <p class="font-serif text-xs sm:text-sm text-[var(--text-heading)]/85 mt-2.5 leading-relaxed line-clamp-3 sm:line-clamp-4 md:line-clamp-5">
+                <p class="font-serif text-xs sm:text-[13.5px] md:text-sm text-[var(--text-heading)]/85 mt-2.5 leading-relaxed line-clamp-4 sm:line-clamp-5 md:line-clamp-6">
                   ${b.pitch}
                 </p>
               </div>
 
               <!-- Bottom Row Action -->
-              <div class="mt-3 pt-2.5 border-t border-[var(--border-subtle)] flex items-center justify-between gap-2 text-xs">
-                <button onclick="openBookInNook(event, '${b.id}')" class="px-3 py-1.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-[11px] font-bold rounded-lg shadow-xs transition flex items-center gap-1.5 shrink-0">
+              <div class="mt-3.5 pt-2.5 border-t border-[var(--border-subtle)] flex items-center justify-between gap-2 text-xs">
+                <button onclick="openBookInNook(event, '${b.id}')" class="px-3.5 py-1.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-bold rounded-lg shadow-xs transition flex items-center gap-1.5 shrink-0">
                   <span>📖</span>
                   <span>Read in Nook ↗</span>
                 </button>
