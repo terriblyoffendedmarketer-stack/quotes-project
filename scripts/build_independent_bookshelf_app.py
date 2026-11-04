@@ -901,12 +901,14 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
     }}
 
     function extractFirstWhyReadHook(text) {{
-      if (!text) return "A standout work celebrated for exceptional craft and narrative resonance.";
-      const mDamn = text.match(/\\*\\*The 'Damn' Factor:\\*\\*\\s*(.*?)(?=\\n\\n|$)/s);
-      if (mDamn) return mDamn[1].trim();
-      const mAcc = text.match(/\\*\\*Accolades & Standing:\\*\\*\\s*(.*?)(?=\\n\\n|$)/s);
-      if (mAcc) return mAcc[1].trim();
-      return text.split("\\n\\n")[0].replace(/\\*\\*/g, "").trim();
+      if (!text) return "A standout work celebrated for visionary craft and narrative resonance.";
+      const clean = text.replace(/\\*\\*(.*?)\\*\\*:?\\s*/g, "").trim();
+      const firstPara = clean.split("\\n\\n")[0].trim();
+      const sentences = firstPara.match(/[^.!?]+[.!?]+/g);
+      if (sentences && sentences.length > 0) {{
+        return sentences.slice(0, 2).join(" ").trim();
+      }}
+      return firstPara.slice(0, 180) + "...";
     }}
 
     function toggleInsight(btn, targetId) {{
@@ -937,21 +939,13 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
     function formatWhyRead(text) {{
       if (!text) return "";
-      return text
+      const clean = text.replace(/\\*\\*(.*?)\\*\\*:?\\s*/g, "").trim();
+      return clean
         .split("\\n\\n")
         .map(para => {{
           const p = para.trim();
           if (!p) return "";
-          const m = p.match(/^\\*\\*(.*?)\\*\\*:?\\s*(.*)$/s);
-          if (m) {{
-            return `
-              <div class="bg-[var(--card-bg)]/80 border border-[var(--border-subtle)] p-3 rounded-xl shadow-xs">
-                <span class="font-bold text-[var(--terracotta)] block text-xs uppercase tracking-wider mb-1">${{m[1]}}</span>
-                <span class="text-[var(--text-heading)] text-xs md:text-sm leading-relaxed">${{m[2]}}</span>
-              </div>
-            `;
-          }}
-          return `<p class="leading-relaxed text-xs md:text-sm text-[var(--text-body)]">${{p}}</p>`;
+          return `<p class="leading-relaxed font-serif text-xs md:text-[13.5px] text-[var(--text-heading)] mb-2.5 last:mb-0">${{p}}</p>`;
         }})
         .join("");
     }}
@@ -1015,7 +1009,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
                   <p class="text-[10px] text-white/70 mt-0.5 line-clamp-1">by ${{b.author}}</p>
 
                   <div class="mt-3 pt-2 border-t border-white/15">
-                    <span class="text-[9px] font-bold uppercase tracking-wider text-[var(--terracotta)] block mb-1">⚡ Why It Hits:</span>
+                    <span class="text-[9px] font-bold uppercase tracking-wider text-amber-300 block mb-1">✦ Curator's Hook:</span>
                     <p class="text-[10px] text-white/90 leading-relaxed line-clamp-4">${{hook}}</p>
                   </div>
                 </div>
@@ -1096,9 +1090,9 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
               <!-- Hook / Damn Factor -->
               <div class="mt-3 pt-2.5 border-t border-[var(--border-subtle)] flex items-center justify-between text-[11px]">
-                <div class="text-[var(--terracotta)] font-semibold truncate flex items-center gap-1 min-w-0">
-                  <span>⚡</span>
-                  <span class="truncate text-[11px]">${{hook}}</span>
+                <div class="text-[var(--terracotta)] font-medium truncate flex items-center gap-1.5 min-w-0">
+                  <span class="text-xs">✦</span>
+                  <span class="truncate text-[11px] font-serif italic">${{hook}}</span>
                 </div>
                 <span class="text-[var(--text-muted)] group-hover:text-[var(--terracotta)] text-xs font-bold shrink-0 ml-2">Read →</span>
               </div>
@@ -1227,13 +1221,13 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
           </div>
         </div>
 
-        <!-- Why You Must Read It • The Damn Factor -->
-        <div class="mb-6 p-5 md:p-6 bg-[var(--amber-bg)] border border-[var(--amber)]/35 rounded-2xl shadow-sm">
+        <!-- Curator's Note • Why It Belongs on This Shelf -->
+        <div class="mb-6 p-5 md:p-6 bg-gradient-to-br from-[var(--amber-bg)] via-[var(--canvas)] to-[var(--card-bg)] border border-[var(--terracotta)]/25 rounded-2xl shadow-sm">
           <div class="flex items-center gap-2 mb-3">
-            <span class="text-lg">🔥</span>
-            <h4 class="text-xs font-bold text-[var(--terracotta)] uppercase tracking-wider">Why You Must Read It • Accolades & Damn Factor</h4>
+            <span class="text-sm font-bold text-[var(--terracotta)]">✦</span>
+            <h4 class="text-xs font-bold text-[var(--terracotta)] uppercase tracking-wider">Curator's Note • Why It's on This Shelf</h4>
           </div>
-          <div class="text-xs md:text-sm text-[var(--text-body)] leading-relaxed space-y-2.5">
+          <div class="editorial-prose leading-relaxed space-y-2.5">
             ${{formatWhyRead(b.why_love)}}
           </div>
         </div>
@@ -1330,12 +1324,12 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
           </div>
         </div>
 
-        <div class="mb-5 p-4 bg-[var(--amber-bg)] rounded-xl border border-[var(--amber)]/35 space-y-2.5">
-          <div class="flex items-center gap-1.5 mb-1">
-            <span class="text-base">🔥</span>
-            <h4 class="text-xs font-bold text-[var(--terracotta)] uppercase tracking-wider">Why You Must Read It • Accolades & Lore</h4>
+        <div class="mb-5 p-4 bg-gradient-to-br from-[var(--amber-bg)] to-[var(--card-bg)] rounded-xl border border-[var(--terracotta)]/25 space-y-2">
+          <div class="flex items-center gap-1.5 mb-1.5">
+            <span class="text-xs text-[var(--terracotta)]">✦</span>
+            <h4 class="text-xs font-bold text-[var(--terracotta)] uppercase tracking-wider">Curator's Note</h4>
           </div>
-          <div class="space-y-2.5">
+          <div class="editorial-prose text-xs leading-relaxed space-y-2">
             ${{formatWhyRead(b.why_love)}}
           </div>
         </div>
@@ -1417,9 +1411,9 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
               <span class="block text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)] mb-1">Back of the Book:</span>
               <p class="text-xs text-[var(--text-heading)] font-serif leading-relaxed">${{chosen.pitch}}</p>
             </div>
-            <div class="mt-3 p-3 bg-[var(--amber-bg)] border border-[var(--amber)]/35 rounded-xl space-y-2">
-              <span class="block text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)]">🔥 Accolades & Lore:</span>
-              <div class="text-xs text-[var(--text-body)] leading-relaxed space-y-2">
+            <div class="mt-3 p-3.5 bg-gradient-to-br from-[var(--amber-bg)] to-[var(--card-bg)] border border-[var(--terracotta)]/25 rounded-xl space-y-1.5">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)]">✦ Curator's Note:</span>
+              <div class="editorial-prose text-xs leading-relaxed space-y-2">
                 ${{formatWhyRead(chosen.why_love)}}
               </div>
             </div>
