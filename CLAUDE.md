@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 26 (Universal EPUB/PDF Format Tagging & Surprise Me Modal Optimization)  
-> **Current**: Standardized format metadata across all 620 titles (resolving corrupted ' SUNSTEIN' and missing format values to guaranteed EPUB/PDF/CBR/CBZ/MOBI values). Implemented visible, color-coded format badges (emerald `EPUB`, rose `PDF`, purple `CBR`) across all 3 shelf views (Board View cover top-left & metadata row, Editorial View header row, and Split View list & dossier). Fully optimized the Surprise Me modal with a primary `📖 Read on Nooks ↗` (or `📄 Open PDF ↗`) action, direct named download (`⬇ Download <Format>`), TBR copy, and responsive wrapped layout for mobile and desktop. Bumped Service Worker cache to v11.  
-> **Next**: User review of format badge visibility and optimized Surprise Me flow.
+> **Status**: In Progress | **Phase**: 27 (Nook EPUB Reader Fullscreen & Bifold Spread Perfection)  
+> **Current**: Fixed 3rd column peek bug in Nook reader in fullscreen. Removed conflicting `column-gap` and body `padding` CSS overrides from `applyThemeToRendition()`, letting EPUB.js compute and set exact two-column spread geometry (`padding-left/right: gap/2`, `column-width`, `column-gap`) with zero margin overflow. Added rendition destruction and container cleanup in `renderBook()`, bound iframe `keydown` for arrow navigation, added debounced `window.resize` handler calling `rendition.resize()` with responsive spine adaptation, and bumped Service Worker cache to v12.  
+> **Next**: User review of fullscreen reader layout and bifold spread experience.
 
 ## Roadmap
 
@@ -32,6 +32,7 @@
 - [x] Phase 24: Header Button Responsive Sizing, Nooks Syntax Fix & Dropzone Hierarchy — Restored `async function initReader()` fixing drag-and-drop & file picker; re-ordered dropzone buttons (Button 1: Direct Download, Button 2: Browse); implemented adaptive header buttons ('Surprise Me' / 'Surprise', 'Copy TBR' / 'TBR') and CSS-level `-webkit-line-clamp` (6/7/7/9/11) with card `overflow-hidden` for non-fullscreen viewports
 - [x] Phase 25: Daily-Seeded & Alphabetical Multi-View Sorting, Header Nooks Reader Button & Direct Ebook Downloads — Mulberry32 PRNG daily seeded shuffle default with A-Z, Z-A, Author, Quotes, and Category sorting across all 3 views; Open Nooks Reader header action; and direct named ebook downloading replacing Google Drive links
 - [x] Phase 26: Universal EPUB/PDF Format Tagging & Surprise Me Modal Optimization — Standardized canonical format resolution across all 620 titles; added visible color-coded format badges (emerald EPUB, rose PDF, purple CBR) to Board View, Editorial View, Split View list & dossier, and drawer; and optimized Surprise Me modal with Read on Nooks primary button, named direct downloads, and responsive layout
+- [x] Phase 27: Nook EPUB Reader Fullscreen & Bifold Spread Perfection — Eliminated 3rd column peek by removing theme column-gap/padding overrides; restored true geometric bifold spread; added rendition cleanup, iframe keyboard listener & debounced window resize handler; bumped SW cache to v12.
 
 ## File map
 

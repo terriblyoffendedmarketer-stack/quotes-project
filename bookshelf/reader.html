@@ -500,7 +500,13 @@
     }
 
     function renderBook(targetCfi) {
-      const isTwoPage = (spreadMode === "always" && !isContinuousScroll);
+      if (rendition) {
+        try { rendition.destroy(); } catch (e) {}
+        rendition = null;
+      }
+      viewerEl.innerHTML = "";
+
+      const isTwoPage = (spreadMode === "always" && !isContinuousScroll && window.innerWidth >= 800);
       centerSpine.style.display = isTwoPage ? "block" : "none";
       updateSpreadButtonStyles();
 
@@ -508,7 +514,8 @@
         width: "100%",
         height: "100%",
         flow: isContinuousScroll ? "scrolled-doc" : "paginated",
-        spread: spreadMode
+        spread: spreadMode,
+        minSpreadWidth: 800
       });
 
       applyThemeToRendition();
@@ -536,6 +543,8 @@
       rendition.on("click", () => {
         hideHighlightTooltip();
       });
+
+      rendition.on("keydown", handleKeyNav);
     }
 
     function setSpreadMode(mode) {
@@ -554,6 +563,19 @@
         spreadTwoBtn.className = "p-2 rounded-xl border border-[var(--reader-border)] text-stone-500 hover:text-[var(--reader-text)] font-semibold text-[11px] flex items-center justify-center gap-1.5 transition shadow-sm";
       }
     }
+
+    // Debounced window resize handler: re-fits rendition and adapts spine
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (rendition) {
+          rendition.resize();
+          const isTwoPage = (spreadMode === "always" && !isContinuousScroll && window.innerWidth >= 800);
+          centerSpine.style.display = isTwoPage ? "block" : "none";
+        }
+      }, 150);
+    });
 
     // Drag and Drop support
     window.addEventListener('dragover', e => {
@@ -930,26 +952,29 @@
       }
 
       // Professional Kindle / Apple Books Typography:
-      // Justified text, paragraph indents, no paragraph margin bottoms, generous line-height
+      // Justified text, paragraph indents, zero paragraph margins, generous line-height
       const baseFontSize = 18 * (currentFontSize / 100);
+
+      const bodyStyles = {
+        background: `${bgColor} !important`,
+        color: `${textColor} !important`,
+        "font-family": "'Bookerly', 'Newsreader', 'Literata', 'Iowan Old Style', 'Charter', 'Georgia', serif !important",
+        "font-size": `${baseFontSize}px !important`,
+        "line-height": "1.68 !important",
+        margin: "0 !important",
+        "-webkit-font-smoothing": "antialiased",
+        "-moz-osx-font-smoothing": "grayscale"
+      };
+
+      if (isContinuousScroll) {
+        bodyStyles.padding = "24px 20px !important";
+      }
 
       rendition.themes.default({
         html: {
-          "column-gap": "4rem !important",
-          "-webkit-column-gap": "4rem !important"
+          margin: "0 !important"
         },
-        body: {
-          background: `${bgColor} !important`,
-          color: `${textColor} !important`,
-          "font-family": "'Bookerly', 'Newsreader', 'Literata', 'Iowan Old Style', 'Charter', 'Georgia', serif !important",
-          "font-size": `${baseFontSize}px !important`,
-          "line-height": "1.68 !important",
-          padding: "20px 5% !important",
-          "column-gap": "4rem !important",
-          "-webkit-column-gap": "4rem !important",
-          "-webkit-font-smoothing": "antialiased",
-          "-moz-osx-font-smoothing": "grayscale"
-        },
+        body: bodyStyles,
         p: {
           "text-indent": "1.5em !important",
           "margin-top": "0 !important",
@@ -973,6 +998,10 @@
           background: "rgba(125, 211, 252, 0.45) !important"
         }
       });
+
+      try {
+        rendition.themes.fontSize(`${baseFontSize}px`);
+      } catch (e) {}
     }
 
     function changeFontSize(delta) {
