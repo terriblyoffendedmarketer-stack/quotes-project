@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 29 (Bold Typography Distinction, Double Spread Default & Mobile Audit Strategy)  
-> **Current**: Resolved regular vs bold contrast by injecting full Newsreader/Literata webfont stylesheets (weights 400 through 800) into every chapter iframe via `rendition.hooks.content.register()` and applying explicit `font-weight: 700 !important` rules across `b`, `strong`, `.txbfb`, and `.sgc2` classes. Enforced double spread (`spreadMode = "always"`) as the active default with responsive threshold set to 640px. Prepared structured mobile optimization audit blueprint for the reading shelf and reader app. Bumped Service Worker cache to v14.  
-> **Next**: User review of bold typography distinction and double spread default; launch mobile optimization audit in new chat.
+> **Status**: In Progress | **Phase**: 30 (Reading Nook Regular Text Sturdiness & Subpixel Calibration)  
+> **Current**: Enhanced regular serif text weight from thin 400 to sturdy book weight (460) across `body` and `p`, bumped default base font size to 18.5px, applied `-webkit-font-smoothing: subpixel-antialiased` to restore full ink substance on Retina displays, and calibrated bold contrast to 750 weight. Bumped Service Worker cache to v15.  
+> **Next**: Launch comprehensive mobile optimization audit for reading shelf and reader app in new chat.
 
 ## Roadmap
 
@@ -35,6 +35,7 @@
 - [x] Phase 27: Nook EPUB Reader Fullscreen & Bifold Spread Perfection — Eliminated 3rd column peek by removing theme column-gap/padding overrides; restored true geometric bifold spread; added rendition cleanup, iframe keyboard listener & debounced window resize handler; bumped SW cache to v12.
 - [x] Phase 28: Reading Nook Kindle Bookerly Calibration & Immersive Canvas — Standardized name to 'Reading Nook' across entire app; calibrated Bookerly typography (tight 1.5 line height, 1.4em indents, 1.65em regular-weight headings); added auto-hiding top bar with mousemove sensor and reveal trigger; transformed footer to seamless Kindle indicator; preserved central spine divider; bumped SW cache to v13.
 - [x] Phase 29: Bold Typography Distinction, Double Spread Default & Mobile Audit Strategy — Injected full 400-800 weight font stylesheets into EPUB.js iframe; defined explicit font-weight: 700 rules for b, strong, and publisher classes (.txbfb, .sgc2); enforced double spread as active default with 640px threshold; drafted mobile optimization audit strategy; bumped SW cache to v14.
+- [x] Phase 30: Reading Nook Regular Text Sturdiness & Subpixel Calibration — Enhanced regular serif text weight from thin 400 to sturdy book weight (460) across body and p, bumped default base font size to 18.5px, applied -webkit-font-smoothing: subpixel-antialiased, and calibrated bold contrast to 750 weight; bumped SW cache to v15.
 
 ## File map
 

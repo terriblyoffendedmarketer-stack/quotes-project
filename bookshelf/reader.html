@@ -1055,18 +1055,18 @@
       }
 
       // Kindle Bookerly Typography Configuration:
-      // Tight 1.5 line-height, elegant regular-weight headings, 1.4em indents, full justification
-      const baseFontSize = 17.5 * (currentFontSize / 100);
+      // Substantial 18.5px size, sturdy 460 weight (no thin hairlines), 1.52 line-height, 1.4em indents
+      const baseFontSize = 18.5 * (currentFontSize / 100);
 
       const bodyStyles = {
         background: `${bgColor} !important`,
         color: `${textColor} !important`,
-        "font-family": "'Bookerly', 'Newsreader', 'Literata', 'Iowan Old Style', 'Charter', 'Georgia', serif !important",
+        "font-family": "'Bookerly', 'Newsreader', 'Literata', 'Charter', 'Georgia', serif !important",
         "font-size": `${baseFontSize}px !important`,
-        "line-height": "1.5 !important",
+        "font-weight": "460 !important",
+        "line-height": "1.52 !important",
         margin: "0 !important",
-        "-webkit-font-smoothing": "antialiased",
-        "-moz-osx-font-smoothing": "grayscale"
+        "-webkit-font-smoothing": "subpixel-antialiased"
       };
 
       if (isContinuousScroll) {
@@ -1079,6 +1079,8 @@
         },
         body: bodyStyles,
         p: {
+          "font-size": `${baseFontSize}px !important`,
+          "font-weight": "460 !important",
           "text-indent": "1.4em !important",
           "margin-top": "0 !important",
           "margin-bottom": "0 !important",
@@ -1110,7 +1112,7 @@
         },
         "b, strong, b *, strong *, [class*='bold'], [class*='txbf'], .txbfb, .txbf, .sgc2, .sgc13": {
           "font-family": "'Newsreader', 'Bookerly', 'Literata', Georgia, serif !important",
-          "font-weight": "700 !important",
+          "font-weight": "750 !important",
           "-webkit-font-smoothing": "antialiased"
         },
         "em, i, em *, i *, [class*='italic'], .sgc8": {
@@ -1118,7 +1120,7 @@
         },
         "b em, em b, strong em, em strong": {
           "font-family": "'Newsreader', 'Bookerly', 'Literata', Georgia, serif !important",
-          "font-weight": "700 !important",
+          "font-weight": "750 !important",
           "font-style": "italic !important"
         },
         "::selection": {
