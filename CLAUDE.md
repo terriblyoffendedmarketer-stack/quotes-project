@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 25 (Daily-Seeded & Alphabetical Multi-View Sorting, Header Nooks Reader Button & Direct Ebook Downloads)  
-> **Current**: Implemented full sorting engine across all 3 shelf views (Covers, Editorial, Bookshelf Split) featuring deterministic Mulberry32 PRNG daily-seeded shuffle (rotates shelf arrangement automatically every midnight while remaining unified across all views), Title A-Z, Title Z-A, Author A-Z, Most Quotes, and Category. Added prominent `📖 Open Nooks Reader` button to header navigation to open the standalone reader anytime with clean direct-open empty state. Replaced Google Drive web viewer links with direct named file downloads (`downloadBookFile()`) across Split View dossier, mobile drawer, and Surprise Me modal using `drive.usercontent.google.com` to download `{title}.{epub|pdf|cbr}` directly to local Downloads. Bumped Service Worker cache to v10.  
-> **Next**: User review of daily sorting rotation, direct ebook downloading, and global Nooks reader access.
+> **Status**: In Progress | **Phase**: 26 (Universal EPUB/PDF Format Tagging & Surprise Me Modal Optimization)  
+> **Current**: Standardized format metadata across all 620 titles (resolving corrupted ' SUNSTEIN' and missing format values to guaranteed EPUB/PDF/CBR/CBZ/MOBI values). Implemented visible, color-coded format badges (emerald `EPUB`, rose `PDF`, purple `CBR`) across all 3 shelf views (Board View cover top-left & metadata row, Editorial View header row, and Split View list & dossier). Fully optimized the Surprise Me modal with a primary `📖 Read on Nooks ↗` (or `📄 Open PDF ↗`) action, direct named download (`⬇ Download <Format>`), TBR copy, and responsive wrapped layout for mobile and desktop. Bumped Service Worker cache to v11.  
+> **Next**: User review of format badge visibility and optimized Surprise Me flow.
 
 ## Roadmap
 
@@ -31,6 +31,7 @@
 - [x] Phase 23: Editorial View Synopsis Unclamping & 1-Click Inline Expand — Expanded vertical synopsis clamp up to 13 lines to utilize card height alongside cover; added inline 'Read full synopsis ↓' expand toggle for extra-long blurbs; pinned cover with self-start
 - [x] Phase 24: Header Button Responsive Sizing, Nooks Syntax Fix & Dropzone Hierarchy — Restored `async function initReader()` fixing drag-and-drop & file picker; re-ordered dropzone buttons (Button 1: Direct Download, Button 2: Browse); implemented adaptive header buttons ('Surprise Me' / 'Surprise', 'Copy TBR' / 'TBR') and CSS-level `-webkit-line-clamp` (6/7/7/9/11) with card `overflow-hidden` for non-fullscreen viewports
 - [x] Phase 25: Daily-Seeded & Alphabetical Multi-View Sorting, Header Nooks Reader Button & Direct Ebook Downloads — Mulberry32 PRNG daily seeded shuffle default with A-Z, Z-A, Author, Quotes, and Category sorting across all 3 views; Open Nooks Reader header action; and direct named ebook downloading replacing Google Drive links
+- [x] Phase 26: Universal EPUB/PDF Format Tagging & Surprise Me Modal Optimization — Standardized canonical format resolution across all 620 titles; added visible color-coded format badges (emerald EPUB, rose PDF, purple CBR) to Board View, Editorial View, Split View list & dossier, and drawer; and optimized Surprise Me modal with Read on Nooks primary button, named direct downloads, and responsive layout
 
 ## File map
 

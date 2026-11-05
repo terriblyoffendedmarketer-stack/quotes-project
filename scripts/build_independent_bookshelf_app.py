@@ -103,6 +103,37 @@ def is_fun_reading(book):
     return False
 
 MANUAL_BOOK_FIXES = {
+    "nudge-richard-h-thaler-prof-cass-r-sunstein": {
+        "title": "Nudge: Improving Decisions About Health, Wealth, and Happiness",
+        "author": "Richard H. Thaler & Cass R. Sunstein",
+        "format": "EPUB"
+    },
+    "reading-order-unknown": {
+        "title": "Fyodor Dostoevsky: Reading Order & Chronological Guide",
+        "author": "Fyodor Dostoevsky",
+        "format": "PDF"
+    },
+    "rilke-letters-to-a-young-poet": {
+        "title": "Letters to a Young Poet",
+        "author": "Rainer Maria Rilke",
+        "format": "EPUB"
+    },
+    "hbr-on-communication-unknown": {
+        "title": "HBR's 10 Must Reads on Communication",
+        "author": "Harvard Business Review",
+        "format": "PDF"
+    },
+    "build-an-unorthodox-guide-to-making-things-worth-making-tony-fadell": {
+        "title": "Build: An Unorthodox Guide to Making Things Worth Making",
+        "author": "Tony Fadell",
+        "format": "EPUB"
+    },
+    "user-story-mapping-jeff-patton-peter-economy": {
+        "title": "User Story Mapping: Discover the Whole Story, Build the Right Product",
+        "author": "Jeff Patton & Peter Economy",
+        "format": "EPUB"
+    },
+
     # Graphic Novels & Comics Verified (OpenLibrary & Amazon Edition Sources)
     "watchmen-complete": {
         "title": "Watchmen (The Complete Series)",
@@ -685,6 +716,29 @@ MANUAL_BOOK_FIXES = {
     }
 }
 
+def get_canonical_format_py(b):
+    fmt = (b.get("format") or "").strip().upper()
+    bid = b.get("id", "")
+    t = (b.get("title") or "").lower()
+    fn = (b.get("filename") or "").lower()
+    if "sunstein" in fmt.lower() or bid == "nudge-richard-h-thaler-prof-cass-r-sunstein":
+        return "EPUB"
+    if bid in ["reading-order-unknown", "hbr-on-communication-unknown"]:
+        return "PDF"
+    if bid in ["rilke-letters-to-a-young-poet", "build-an-unorthodox-guide-to-making-things-worth-making-tony-fadell", "user-story-mapping-jeff-patton-peter-economy"]:
+        return "EPUB"
+    if fmt in ["EPUB", "PDF", "CBR", "CBZ", "MOBI"]:
+        return fmt
+    if t.endswith(".pdf") or fn.endswith(".pdf"):
+        return "PDF"
+    if t.endswith(".cbr") or fn.endswith(".cbr"):
+        return "CBR"
+    if t.endswith(".cbz") or fn.endswith(".cbz"):
+        return "CBZ"
+    if t.endswith(".mobi") or fn.endswith(".mobi"):
+        return "MOBI"
+    return "EPUB"
+
 def build():
     if BOOKSHELF_DATA.exists():
         print(f"Loading pre-enriched data from {BOOKSHELF_DATA}...")
@@ -719,6 +773,7 @@ def build():
                     fid = durl.split("id=")[-1].split("&")[0]
                 elif "/file/d/" in durl:
                     fid = durl.split("/file/d/")[-1].split("/")[0]
+            b["format"] = get_canonical_format_py(b)
             b["drive_id"] = fid
             b["direct_download_url"] = f"https://drive.usercontent.google.com/download?id={fid}&export=download" if fid else ""
 
@@ -732,6 +787,9 @@ def build():
         # Ensure output directories exist
         BOOKSHELF_DIR.mkdir(exist_ok=True)
         DOCS_BOOKSHELF_HTML.parent.mkdir(exist_ok=True)
+
+        # Persist updated clean metadata to data.json
+        BOOKSHELF_DATA.write_text(json.dumps(shelf_books, indent=2, ensure_ascii=False), encoding="utf-8")
 
         # Generate standalone web app HTML
         html = generate_app_html(shelf_books, clean_tbr_lines, matched_quotes_books)
@@ -1362,25 +1420,30 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         <!-- Populated dynamically -->
       </div>
 
-      <div class="flex items-center justify-between pt-4 border-t border-[var(--border)]">
-        <button onclick="spinSurprise()" class="px-5 py-2.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-2">
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-[var(--border)]">
+        <button onclick="spinSurprise()" class="px-4 py-2.5 bg-[var(--canvas)] hover:bg-[var(--card-hover)] border border-[var(--border)] text-[var(--text-heading)] text-xs font-bold rounded-xl shadow-2xs transition flex items-center gap-2 cursor-pointer">
           <span>🎲</span>
           <span>Spin Again</span>
         </button>
-        <div class="flex items-center gap-2">
-          <button id="surpriseDownloadBtn" onclick="" class="px-4 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] rounded-xl text-xs font-semibold text-[var(--text-heading)] flex items-center gap-1.5 cursor-pointer">
-            <span>⬇</span>
-            <span>Download Ebook</span>
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="surpriseReadBtn" onclick="" class="px-4 py-2.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-xs cursor-pointer">
+            <span>📖</span>
+            <span id="surpriseReadBtnLabel">Read on Nooks ↗</span>
           </button>
-          <button onclick="copySingleTbr(currentSurpriseBook.title, currentSurpriseBook.author)" class="px-4 py-2 bg-[var(--canvas)] border border-[var(--border)] rounded-xl text-xs font-medium text-[var(--text-muted)] hover:text-[var(--text-heading)]">
-            Copy TBR
+          <button id="surpriseDownloadBtn" onclick="" class="px-3.5 py-2.5 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] rounded-xl text-xs font-semibold text-[var(--text-heading)] flex items-center gap-1.5 cursor-pointer">
+            <span>⬇</span>
+            <span id="surpriseDownloadBtnLabel">Download Ebook</span>
+          </button>
+          <button onclick="copySingleTbr(currentSurpriseBook.title, currentSurpriseBook.author)" class="px-3.5 py-2.5 bg-[var(--canvas)] border border-[var(--border)] rounded-xl text-xs font-medium text-[var(--text-muted)] hover:text-[var(--text-heading)] transition flex items-center gap-1.5 cursor-pointer">
+            <span>📋</span>
+            <span>Copy TBR</span>
           </button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Edit Details & Cover Modal -->
+  <!-- Edit Details<!-- Edit Details & Cover Modal -->
   <div id="editModal" class="fixed inset-0 bg-black/65 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
     <div class="bg-[var(--card-bg)] border border-[var(--border)] rounded-2xl max-w-lg w-full p-6 shadow-2xl">
       <div class="flex items-center justify-between pb-3 border-b border-[var(--border)] mb-4">
@@ -1606,6 +1669,27 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       return arr;
     }}
 
+        function getCleanFormat(b) {{
+      let fmt = (b.format || '').trim().toUpperCase();
+      if (fmt.includes('SUNSTEIN') || !fmt) {{
+        if (b.title && b.title.toLowerCase().endsWith('.pdf')) return 'PDF';
+        if (b.title && b.title.toLowerCase().endsWith('.cbr')) return 'CBR';
+        return (b.id && (b.id.includes('reading-order') || b.id.includes('hbr'))) ? 'PDF' : 'EPUB';
+      }}
+      return fmt;
+    }}
+
+    function getFormatBadgeHtml(format) {{
+      const fmt = (format || 'EPUB').toUpperCase();
+      if (fmt === 'PDF') {{
+        return `<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold tracking-wider uppercase bg-rose-500/15 text-rose-700 dark:text-rose-300 border border-rose-500/30 shrink-0" title="PDF Document">PDF</span>`;
+      }} else if (fmt === 'CBR' || fmt === 'CBZ') {{
+        return `<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold tracking-wider uppercase bg-purple-500/15 text-purple-700 dark:text-purple-300 border border-purple-500/30 shrink-0" title="Comic Book Archive">${{fmt}}</span>`;
+      }} else {{
+        return `<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold tracking-wider uppercase bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 shrink-0" title="Reflowable EPUB">EPUB</span>`;
+      }}
+    }}
+
     function getFilteredBooks() {{
       const q = document.getElementById("searchInput").value.toLowerCase().trim();
       const quotesOnly = document.getElementById("filterQuotesOnly").checked;
@@ -1799,6 +1883,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         const jacketCls = getJacketStyle(b.category);
         const hasCover = !!b.cover_url && !b.no_cover;
         const hook = extractFirstWhyReadHook(b.why_love);
+        const fmt = getCleanFormat(b);
 
         return `
           <div class="book-card group cursor-pointer relative" onclick="openBookDetail('${{b.id}}')">
@@ -1806,12 +1891,6 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
             <div class="book-cover ${{jacketCls}} relative overflow-hidden rounded-[8px] shadow-md transition-all duration-200 group-hover:shadow-2xl group-hover:-translate-y-1.5 aspect-[2/3]">
               ${{hasCover ? `
                 <img src="${{b.cover_url}}" alt="${{b.title}}" loading="lazy" class="w-full h-full object-cover z-0" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-jacket').style.display='block';" />
-                <div class="absolute top-2 left-2 z-10 flex items-center gap-1.5">
-                  <span class="text-[9px] font-mono uppercase tracking-wider text-white bg-black/60 backdrop-blur-xs px-1.5 py-0.5 rounded shadow-sm">
-                    ${{b.format || 'EPUB'}}
-                  </span>
-                  ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-950 bg-amber-300/95 backdrop-blur-xs px-1.5 py-0.5 rounded shadow-sm">★ Quotes</span>` : ''}}
-                </div>
                 <div class="fallback-jacket hidden absolute inset-0 z-0 w-full h-full">
                   ${{renderTypographicJacket(b)}}
                 </div>
@@ -1819,12 +1898,20 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
                 ${{renderTypographicJacket(b)}}
               `}}
 
+              <!-- Top-Left Permanent Format Badge -->
+              <div class="absolute top-2 left-2 z-10 flex items-center gap-1.5 pointer-events-none">
+                ${{getFormatBadgeHtml(fmt)}}
+              </div>
+
               <!-- Hover Peek Card Overlay (Context on Hover) -->
               <div class="hover-preview opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 absolute inset-0 bg-[#151311]/95 text-white p-4 flex flex-col justify-between rounded-[8px] z-20 backdrop-blur-xs shadow-inner">
                 <div>
                   <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-[9px] font-mono uppercase tracking-wider text-amber-300 font-bold">${{b.format}}</span>
-                    ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-300">★ ${{b.quotes.length}} Quotes</span>` : ''}}
+                    <div class="flex items-center gap-1.5">
+                      ${{getFormatBadgeHtml(fmt)}}
+                      <span class="text-[9px] font-mono uppercase tracking-wider text-amber-300 font-bold truncate max-w-[100px]">${{b.category}}</span>
+                    </div>
+                    ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-300 shrink-0">★ ${{b.quotes.length}} Quotes</span>` : ''}}
                   </div>
                   <h4 class="font-serif font-bold text-xs sm:text-sm text-white leading-snug line-clamp-2">${{b.title}}</h4>
                   <p class="text-[10px] text-white/70 mt-0.5 line-clamp-1">by ${{b.author}}</p>
@@ -1837,7 +1924,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
                 <div class="pt-2 border-t border-white/15 flex items-center justify-between text-[10px]">
                   <button onclick="openBookInNook(event, '${{b.id}}')" class="text-amber-300 font-bold hover:underline flex items-center gap-1">
-                    <span>${{ (b.format && b.format.toLowerCase() === 'pdf') ? '📄 Open PDF ↗' : '📖 Read on Nooks ↗' }}</span>
+                    <span>${{ (fmt === 'PDF') ? '📄 Open PDF ↗' : '📖 Read on Nooks ↗' }}</span>
                   </button>
                   <span class="text-white/80 font-semibold">Dossier →</span>
                 </div>
@@ -1854,6 +1941,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
               </p>
               <div class="flex items-center gap-1.5 mt-1.5 text-[10px]">
                 <span class="text-[var(--terracotta)] font-semibold truncate">${{b.category}}</span>
+                ${{getFormatBadgeHtml(fmt)}}
                 ${{b.has_quote_bank ? `<span class="text-[var(--text-muted)]">• ${{b.quotes.length}} Quotes</span>` : ''}}
               </div>
             </div>
@@ -1895,7 +1983,10 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
             <div class="flex-1 min-w-0 flex flex-col justify-between py-0.5">
               <div>
                 <div class="flex items-center justify-between gap-2 mb-1.5">
-                  <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)] truncate">${{b.category}}</span>
+                  <div class="flex items-center gap-2 truncate">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)] truncate">${{b.category}}</span>
+                    ${{getFormatBadgeHtml(getCleanFormat(b))}}
+                  </div>
                   ${{b.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-950 bg-amber-300/90 px-1.5 py-0.5 rounded shrink-0">★ ${{b.quotes.length}} Quotes</span>` : ''}}
                 </div>
                 <h3 class="font-serif font-bold text-base sm:text-lg md:text-xl text-[var(--text-heading)] group-hover:text-[var(--terracotta)] transition leading-snug line-clamp-2">
@@ -1980,8 +2071,9 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
             <div class="flex-1 min-w-0">
               <h4 class="font-serif font-bold text-xs text-[var(--text-heading)] truncate">${{b.title}}</h4>
               <p class="text-[11px] text-[var(--text-muted)] truncate">${{b.author}}</p>
-              <div class="flex items-center gap-2 mt-1 text-[10px]">
-                <span class="text-[var(--terracotta)] font-semibold">${{b.category}}</span>
+              <div class="flex items-center gap-1.5 mt-1 text-[10px]">
+                <span class="text-[var(--terracotta)] font-semibold truncate">${{b.category}}</span>
+                ${{getFormatBadgeHtml(getCleanFormat(b))}}
                 ${{b.has_quote_bank ? `<span class="text-[var(--text-muted)]">• ${{b.quotes.length}} Quotes</span>` : ''}}
               </div>
             </div>
@@ -2179,7 +2271,10 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
             `}}
           </div>
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)]">${{b.category}}</span>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)]">${{b.category}}</span>
+              ${{getFormatBadgeHtml(getCleanFormat(b))}}
+            </div>
             <h3 class="font-serif font-bold text-lg text-[var(--text-heading)] mt-0.5 leading-snug">${{b.title}}</h3>
             <p class="text-xs text-[var(--text-muted)] font-medium">by ${{b.author}}</p>
             <div class="flex flex-wrap items-center gap-2 mt-3">
@@ -2272,21 +2367,36 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
     function spinSurprise() {{
       const pool = SHELF_DATA.filter(b => b.is_fun_pick);
-      const chosen = pool[Math.floor(Math.random() * pool.length)];
+      const chosen = pool[Math.floor(Math.random() * pool.length)] || SHELF_DATA[Math.floor(Math.random() * SHELF_DATA.length)];
       currentSurpriseBook = chosen;
 
       const res = document.getElementById("surpriseResult");
       const jacketCls = getJacketStyle(chosen.category);
+      const cleanFmt = getCleanFormat(chosen);
 
       res.innerHTML = `
         <div class="flex flex-col sm:flex-row gap-5 items-start p-4 md:p-5 bg-[var(--canvas)] border border-[var(--border)] rounded-2xl max-h-[60vh] overflow-y-auto">
           <div class="w-28 md:w-32 shrink-0 aspect-[2/3] book-cover ${{jacketCls}} shadow-md relative overflow-hidden rounded-[8px] bg-[var(--border-subtle)]/40 p-1">
-            ${{chosen.cover_url && !chosen.no_cover ? `<img src="${{chosen.cover_url}}" class="w-full h-full object-contain drop-shadow-xs rounded-lg" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-surprise').style.display='block';" /><div class="fallback-surprise hidden absolute inset-0 z-10 w-full h-full">${{renderTypographicJacket(chosen)}}</div>` : `<div class="w-full h-full">${{renderTypographicJacket(chosen)}}</div>`}}
+            ${{chosen.cover_url && !chosen.no_cover ? `
+              <img src="${{chosen.cover_url}}" alt="${{chosen.title}}" class="w-full h-full object-contain drop-shadow-xs rounded-lg" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-surprise').style.display='block';" />
+              <div class="fallback-surprise hidden absolute inset-0 z-10 w-full h-full">
+                ${{renderTypographicJacket(chosen)}}
+              </div>
+            ` : `
+              <div class="w-full h-full">
+                ${{renderTypographicJacket(chosen)}}
+              </div>
+            `}}
           </div>
           <div class="flex-1 min-w-0">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)]">${{chosen.category}}</span>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)]">${{chosen.category}}</span>
+              ${{getFormatBadgeHtml(cleanFmt)}}
+              ${{chosen.has_quote_bank ? `<span class="text-[9px] font-bold text-amber-950 bg-amber-300/90 px-1.5 py-0.5 rounded">★ ${{chosen.quotes.length}} Quotes</span>` : ''}}
+            </div>
             <h3 class="font-serif font-bold text-lg md:text-xl text-[var(--text-heading)] mt-0.5 leading-snug">${{chosen.title}}</h3>
             <p class="text-xs text-[var(--text-muted)] font-medium">by ${{chosen.author}}</p>
+
             <div class="mt-3 p-3 bg-[var(--card-bg)] border border-[var(--border-subtle)] rounded-xl">
               <span class="block text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)] mb-1">Back of the Book:</span>
               <p class="text-xs text-[var(--text-heading)] font-serif leading-relaxed">${{chosen.pitch}}</p>
@@ -2301,12 +2411,30 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         </div>
       `;
 
+      const readBtn = document.getElementById("surpriseReadBtn");
+      const readBtnLabel = document.getElementById("surpriseReadBtnLabel");
       const downloadBtn = document.getElementById("surpriseDownloadBtn");
-      if (chosen.drive_url || chosen.direct_download_url) {{
-        downloadBtn.style.display = "inline-flex";
-        downloadBtn.onclick = (e) => downloadBookFile(e, chosen.id);
-      }} else {{
-        downloadBtn.style.display = "none";
+      const downloadBtnLabel = document.getElementById("surpriseDownloadBtnLabel");
+
+      const isPdf = cleanFmt === 'PDF' || (chosen.title && chosen.title.toLowerCase().endsWith('.pdf'));
+
+      if (readBtn) {{
+        readBtn.onclick = (e) => openBookInNook(e, chosen.id);
+        if (readBtnLabel) {{
+          readBtnLabel.innerText = isPdf ? "Open PDF ↗" : "Read on Nooks ↗";
+        }}
+      }}
+
+      if (downloadBtn) {{
+        if (chosen.drive_url || chosen.direct_download_url) {{
+          downloadBtn.style.display = "inline-flex";
+          downloadBtn.onclick = (e) => downloadBookFile(e, chosen.id);
+          if (downloadBtnLabel) {{
+            downloadBtnLabel.innerText = `Download ${{cleanFmt}}`;
+          }}
+        }} else {{
+          downloadBtn.style.display = "none";
+        }}
       }}
     }}
 

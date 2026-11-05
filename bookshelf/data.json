@@ -689,20 +689,20 @@
   },
   {
     "id": "watchmen-complete",
-    "title": "Watchmen (Complete Series)",
+    "title": "Watchmen (The Complete Series)",
     "author": "Alan Moore & Dave Gibbons",
     "category": "Comics & Graphic Novels",
     "format": "CBR",
     "drive_url": "https://drive.google.com/file/d/14a02W7LJNYMJcfts2_GzYugvfrlcMjT_/view",
-    "cover_url": "https://covers.openlibrary.org/b/id/8231996-L.jpg",
-    "pitch": "The monumental superhero deconstruction set against the ticking clock of nuclear armageddon. Rorschach investigates the murder of a former masked vigilante, uncovering a cosmic conspiracy.",
+    "cover_url": "https://covers.openlibrary.org/b/id/7774899-L.jpg",
+    "pitch": "Alan Moore and Dave Gibbons' groundbreaking masterpiece that deconstructed the superhero mythos, set against the ticking clock of Cold War nuclear apocalypse and vigilantism.",
     "why_love": "Alan Moore and Dave Gibbons' nine-issue masterpiece remains the greatest graphic work of the 20th century. Named by *Time* as one of the 100 best novels since 1923, it did far more than deconstruct superheroes; it interrogated Cold War dread, fascistic vigilante psychology, and the horrifying moral mathematics of killing millions to save billions. Gibbons' strict nine-panel grid acts like an ominous mechanical clock ticking down to midnight. A monumental work that proves graphic literature can match Dostoyevsky in psychological torment and Joyce in formal intricacy.",
     "tags": [
       "graphic-novel",
-      "superhero-deconstruction",
+      "dc-comics",
+      "superheroes",
       "cold-war",
-      "classic",
-      "dark"
+      "masterpiece"
     ],
     "has_quote_bank": true,
     "quotes": [
@@ -12321,12 +12321,12 @@
   },
   {
     "id": "nudge-richard-h-thaler-prof-cass-r-sunstein",
-    "title": "Nudge",
-    "author": "Richard H. Thaler, Prof. Cass R. Sunstein",
+    "title": "Nudge: Improving Decisions About Health, Wealth, and Happiness",
+    "author": "Richard H. Thaler & Cass R. Sunstein",
     "category": "Fiction & Non-Fiction",
-    "format": " SUNSTEIN",
+    "format": "EPUB",
     "drive_url": "https://drive.google.com/file/d/1G0rB4jRrgY0WhIY-nGS8v4WfEVRdit1q/view",
-    "cover_url": "https://covers.openlibrary.org/b/id/6402116-L.jpg",
+    "cover_url": null,
     "pitch": "Thaler and Sunstein develop libertarian paternalism as a middle path between command-and-control and strict-neutrality choice architectures.  Libertarian paternalism protects humans against their damaging psychological traits (inertia, bounded rationality, undue influence) by exploiting those habits to nudge people into making better choices.",
     "why_love": "Nudge is the rare policy book that reads like a detective story about our own stupidity, and I keep it on my shelf precisely because it refuses to flatter the reader. Thaler and Sunstein write with the brisk, almost conspiratorial confidence of two men who have found a lever in the machinery of everyday life and cannot resist showing you where it is. The prose never gets lost in jargon; each chapter opens with a concrete scene, a cafeteria tray, a retirement form, a fly etched into a urinal, and only then unfolds the theory. That rhythm, anecdote to insight to implication, is what makes the book feel less like a treatise and more like a magic trick you are allowed to watch from behind the curtain. Its real obsession is the gap between what we choose and what we would choose if we were paying attention, and it is hard to finish without suspecting your own defaults are being quietly authored by someone.",
     "tags": [
@@ -12358,7 +12358,8 @@
     "is_fun_pick": true,
     "rating": "4.8",
     "drive_id": "1G0rB4jRrgY0WhIY-nGS8v4WfEVRdit1q",
-    "direct_download_url": "https://drive.usercontent.google.com/download?id=1G0rB4jRrgY0WhIY-nGS8v4WfEVRdit1q&export=download"
+    "direct_download_url": "https://drive.usercontent.google.com/download?id=1G0rB4jRrgY0WhIY-nGS8v4WfEVRdit1q&export=download",
+    "no_cover": true
   },
   {
     "id": "nuts-and-bolts-thought-verbs-litreactor-chuck-palahniuk",
@@ -14164,12 +14165,12 @@
   },
   {
     "id": "reading-order-unknown",
-    "title": "Reading Order",
-    "author": "Unknown",
+    "title": "Fyodor Dostoevsky: Reading Order & Chronological Guide",
+    "author": "Fyodor Dostoevsky",
     "category": "Fiction & Non-Fiction",
-    "format": "",
+    "format": "PDF",
     "drive_url": "https://drive.google.com/file/d/1HMmU3mY-klKxO7IZi7MklM97Sj3QxDud/view",
-    "cover_url": "https://covers.openlibrary.org/b/id/15158666-L.jpg",
+    "cover_url": null,
     "pitch": "After the Dementors’ attack on his cousin Dudley, Harry knows he is about to become Voldemort’s next target.\r\n\r\nAlthough many are denying the Dark Lord’s return, Harry is not alone, and a secret order is gathering at Grimmauld Place to fight against the Dark forces.\r\n\r\nMeanwhile, Voldemort’s savage assaults on Harry’s mind are growing stronger every day.\r\n\r\nHe must allow Professor Snape to teach him to protect himself before he runs out of time.\r\n(source)\r\n\r\n---\r\n\r\nThis work has also been published in multiple volumes. See:\r\n\r\n- Harry Potter and the Order of the Phoenix: III\r\n- Harry Potter and the Order of the Phoenix: IV",
     "why_love": "Reading Order is the unauthorized, unnamed sibling of a publishing phenomenon, and it belongs here precisely because the synopsis reads like a plot summary written by someone who only half-remembers the book. What it preserves is the bones of Harry's fifth year: the Dementor attack on Dudley, the cold machinery of the Ministry's denial, the gathering at Grimmauld Place, and Snape's grim, reluctant tutelage in the arts of mind-defense. Reading it, you feel the dread of a boy who knows the storm is coming and is being told, by everyone with authority, to sit quietly. That tension between knowing and being disbelieved is the emotional engine of the whole series, and this summary captures it cleanly. Keep it for the moment you want to remember why the story hooked you at all.",
     "tags": [
@@ -14191,7 +14192,8 @@
     "is_fun_pick": true,
     "rating": "4.8",
     "drive_id": "1HMmU3mY-klKxO7IZi7MklM97Sj3QxDud",
-    "direct_download_url": "https://drive.usercontent.google.com/download?id=1HMmU3mY-klKxO7IZi7MklM97Sj3QxDud&export=download"
+    "direct_download_url": "https://drive.usercontent.google.com/download?id=1HMmU3mY-klKxO7IZi7MklM97Sj3QxDud&export=download",
+    "no_cover": true
   },
   {
     "id": "red-rising-pierce-brown",
@@ -14549,12 +14551,12 @@
   },
   {
     "id": "rilke-letters-to-a-young-poet",
-    "title": "Rilke",
-    "author": "Letters to a Young Poet",
+    "title": "Letters to a Young Poet",
+    "author": "Rainer Maria Rilke",
     "category": "Fiction & Non-Fiction",
-    "format": "",
+    "format": "EPUB",
     "drive_url": "https://drive.google.com/file/d/1LOHo-ITMfppByUGe_PxgDNJHy0zs3xLL/view",
-    "cover_url": "https://covers.openlibrary.org/b/id/6874224-L.jpg",
+    "cover_url": null,
     "pitch": "Letters written to F.X. Kappus during the years 1903-1908. Chronicle of Rilkes's life for the years 1903-1908 (p. 81-123).",
     "why_love": "Rilke's letters to F.X. Kappus, a young cadet who had sent the poet his verses and asked for judgment, are a masterclass in how to live a creative life without flinching. Rilke does not hand down a verdict on the poems. He asks the boy to go inward, to find out whether he would die if writing were forbidden to him, and then to build his solitude into something worth inhabiting. The prose has the slow, deliberate rhythm of a man talking softly across a table at midnight, each sentence weighted as if it might be the last thing he says.\n\nWhat makes this book essential is its unembarrassed seriousness about inner life at a moment when Europe was sliding toward catastrophe. Read the 1903-1908 chronicle alongside the letters and you see the poet himself wrestling with the same solitude he prescribes: restless travel, the pull of Paris, the struggle to protect his work. It is a book that teaches patience as a discipline, and it keeps teaching long after the last page.",
     "tags": [
@@ -14586,7 +14588,8 @@
     "is_fun_pick": true,
     "rating": "4.8",
     "drive_id": "1LOHo-ITMfppByUGe_PxgDNJHy0zs3xLL",
-    "direct_download_url": "https://drive.usercontent.google.com/download?id=1LOHo-ITMfppByUGe_PxgDNJHy0zs3xLL&export=download"
+    "direct_download_url": "https://drive.usercontent.google.com/download?id=1LOHo-ITMfppByUGe_PxgDNJHy0zs3xLL&export=download",
+    "no_cover": true
   },
   {
     "id": "risk-savvy-how-to-make-good-decisions-gerd-gigerenzer",
@@ -22105,12 +22108,12 @@
   },
   {
     "id": "understanding-comics-scott-mccloud-unknown",
-    "title": "Understanding Comics-Scott McCloud",
-    "author": "Unknown",
-    "category": "Fiction & Non-Fiction",
+    "title": "Understanding Comics: The Invisible Art",
+    "author": "Scott McCloud",
+    "category": "Comics & Graphic Novels",
     "format": "CBR",
     "drive_url": "https://drive.google.com/file/d/11NE-uN_vCW3vEawrARmOntotjb5jHgKq/view",
-    "cover_url": "https://covers.openlibrary.org/b/id/10048467-L.jpg",
+    "cover_url": "https://covers.openlibrary.org/b/id/10679940-L.jpg",
     "pitch": "A signature work by Unknown, Understanding Comics-Scott McCloud navigates core human dilemmas, dramatic tension, and enduring literary craft.",
     "why_love": "Scott McCloud's Understanding Comics is the rare book that teaches you to see by making you look at the gutter, that invisible white space between panels where, as he argues, readers do most of the work of imagining time, motion, and violence. I keep my copy within arm's reach of my desk because it is equal parts manifesto, textbook, and love letter, written with the restless enthusiasm of someone who has clearly stayed up too late arguing with himself about how a drawn face can make us feel like we are the one looking back. The comic itself is the argument: McCloud draws his own theories, and the pages hum with a clarity that makes you want to re-read every chapter with a pencil in hand. Whether you make comics, love them, or have quietly dismissed them your whole life, this book will rearrange how you watch a film, scroll a page, or stare at a cartoon face. It belongs in any corner that takes storytelling seriously.",
     "tags": [
@@ -24099,8 +24102,8 @@
   },
   {
     "id": "aristotle-a-graphic-biography",
-    "title": "Aristotle",
-    "author": "A Graphic Biography",
+    "title": "Aristotle: A Graphic Biography",
+    "author": "Alexandre Le Mercier & Étienne Schréder",
     "category": "Graphic Guides",
     "format": "EPUB",
     "drive_url": "https://drive.google.com/file/d/12kuvlyNwdn2AklNmKavIpwi8MhXOsV7i/view",
@@ -24735,12 +24738,12 @@
   },
   {
     "id": "hbr-on-communication-unknown",
-    "title": "HBR On communication",
-    "author": "Unknown",
+    "title": "HBR's 10 Must Reads on Communication",
+    "author": "Harvard Business Review",
     "category": "Harvard Business Review",
-    "format": "",
+    "format": "PDF",
     "drive_url": "https://drive.google.com/file/d/1hY6bQVV-Vya7_Tm_omYSPt2XVf1OxwGF/view",
-    "cover_url": "https://covers.openlibrary.org/b/id/7072744-L.jpg",
+    "cover_url": null,
     "pitch": "A signature work by Unknown, HBR On communication navigates core human dilemmas, dramatic tension, and enduring literary craft.",
     "why_love": "Harvard Business Review anthologies have a peculiar charm for the book-hoarder: they are part manual, part argument, part confession from people who discovered that most workplace disasters begin with a sentence nobody quite meant. An 'On Communication' collection gathers the magazine's long-running obsession with a deceptively simple problem, that what we intend to say and what lands in another person's head are rarely the same thing. The pieces tend to read briskly, built on case studies and sharp framing rather than lyrical prose, which is precisely their pleasure. For a personal shelf, it sits beside the books you reach for when a meeting goes sideways or a difficult email needs rewriting. It is less a novel to lose yourself in than a field guide to the small, consequential moments where people either connect or quietly drift apart.",
     "tags": [
@@ -24762,7 +24765,8 @@
     "is_fun_pick": false,
     "rating": "4.8",
     "drive_id": "1hY6bQVV-Vya7_Tm_omYSPt2XVf1OxwGF",
-    "direct_download_url": "https://drive.usercontent.google.com/download?id=1hY6bQVV-Vya7_Tm_omYSPt2XVf1OxwGF&export=download"
+    "direct_download_url": "https://drive.usercontent.google.com/download?id=1hY6bQVV-Vya7_Tm_omYSPt2XVf1OxwGF&export=download",
+    "no_cover": true
   },
   {
     "id": "hbr-on-persuasive-presentations-unknown",
@@ -24861,9 +24865,9 @@
     "title": "Build: An Unorthodox Guide to Making Things Worth Making",
     "author": "Tony Fadell",
     "category": "Marketing & Strategy",
-    "format": "",
+    "format": "EPUB",
     "drive_url": "https://drive.google.com/file/d/1GBYLwZC95u3RRYiB6FGTYHb469qG4uJm/view",
-    "cover_url": "https://covers.openlibrary.org/b/id/12742378-L.jpg",
+    "cover_url": null,
     "pitch": "iPod creator and Nest founder Tony Fadell reveals unsanitized operational wisdom on building iconic hardware and leading world-class design teams.",
     "why_love": "Tony Fadell led the teams that created the iPod, the iPhone, and the Nest Learning Thermostat. Unlike most Silicon Valley memoirs that peddle frictionless success mythology, Fadell provides the gritty, unsanitized operational wisdom of real hardware manufacturing: firing friends, surviving executive battles with Steve Jobs, and obsessing over cardboard packaging boxes. The ultimate product builder's bible.",
     "tags": [
@@ -24885,7 +24889,8 @@
     "is_fun_pick": false,
     "rating": "4.8",
     "drive_id": "1GBYLwZC95u3RRYiB6FGTYHb469qG4uJm",
-    "direct_download_url": "https://drive.usercontent.google.com/download?id=1GBYLwZC95u3RRYiB6FGTYHb469qG4uJm&export=download"
+    "direct_download_url": "https://drive.usercontent.google.com/download?id=1GBYLwZC95u3RRYiB6FGTYHb469qG4uJm&export=download",
+    "no_cover": true
   },
   {
     "id": "building-storybrand-donald-miller",
@@ -25712,12 +25717,12 @@
   },
   {
     "id": "user-story-mapping-jeff-patton-peter-economy",
-    "title": "User Story Mapping",
-    "author": "Jeff Patton Peter Economy",
+    "title": "User Story Mapping: Discover the Whole Story, Build the Right Product",
+    "author": "Jeff Patton & Peter Economy",
     "category": "Marketing & Strategy",
-    "format": "",
+    "format": "EPUB",
     "drive_url": "https://drive.google.com/file/d/1Q81pR2aUJvLMEKyufC2Fn1I49V9vhWe4/view",
-    "cover_url": "https://covers.openlibrary.org/b/id/8206841-L.jpg",
+    "cover_url": null,
     "pitch": "A signature work by Jeff Patton Peter Economy, User Story Mapping navigates core human dilemmas, dramatic tension, and enduring literary craft.",
     "why_love": "Jeff Patton's User Story Mapping is the rare product-development book that reads like it was written by someone who has sat through a thousand dismal backlog meetings and refused to accept that the flat list of tickets was ever the whole story. Patton, working with Peter Economy, has a restless, almost evangelical love for the simple index card and the wall it lives on. Their prose moves with the brisk confidence of a practitioner who would rather show you the sticky-note jungle than explain it in the abstract, and that rhythm makes the book feel less like a manual than a field diary. Its real argument is that a story is a journey through a product, and that breaking the journey into a backbone of activities gives teams a way to see what they are actually building. Keep it on your shelf beside the books that taught you how to think about work, not just how to finish it.",
     "tags": [
@@ -25739,7 +25744,8 @@
     "is_fun_pick": false,
     "rating": "4.8",
     "drive_id": "1Q81pR2aUJvLMEKyufC2Fn1I49V9vhWe4",
-    "direct_download_url": "https://drive.usercontent.google.com/download?id=1Q81pR2aUJvLMEKyufC2Fn1I49V9vhWe4&export=download"
+    "direct_download_url": "https://drive.usercontent.google.com/download?id=1Q81pR2aUJvLMEKyufC2Fn1I49V9vhWe4&export=download",
+    "no_cover": true
   },
   {
     "id": "zero-to-one-notes-on-startups-peter-thiel",
