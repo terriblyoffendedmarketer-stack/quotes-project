@@ -202,30 +202,25 @@
       <h2 id="emptyStateTitle" class="font-serif font-bold text-xl sm:text-2xl mb-1 leading-snug">Open in Reading Nook</h2>
       <p id="emptyStateAuthor" class="text-xs text-stone-500 mb-6">Kindle & Apple Books bifold typography with instant Quote Bank highlights.</p>
 
-      <!-- Primary Action: Open Downloaded File -->
-      <button onclick="document.getElementById('filePicker').click()" class="w-full py-3 px-5 bg-[var(--terracotta)] text-white text-sm font-bold rounded-2xl shadow-md hover:bg-[var(--terracotta-hover)] transition flex items-center justify-center gap-2 mb-3">
-        <span>📂</span>
-        <span>Open .epub File (from Downloads)</span>
+      <!-- 1st Button: Direct Download -->
+      <button id="downloadDirectBtn" onclick="triggerDirectDownload()" class="w-full py-3.5 px-5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-sm font-bold rounded-2xl shadow-md transition flex items-center justify-center gap-2 mb-2.5 cursor-pointer">
+        <span class="text-base">⬇</span>
+        <span id="downloadBtnLabel">Download .epub File Directly</span>
       </button>
 
-      <div class="w-full border-2 border-dashed border-[var(--reader-border)] hover:border-[var(--terracotta)] rounded-2xl p-5 transition-colors bg-[var(--reader-bg)]/60 cursor-pointer mb-4 group" onclick="document.getElementById('filePicker').click()">
+      <!-- 2nd Button: Open / Browse (from Downloads) -->
+      <button onclick="document.getElementById('filePicker').click()" class="w-full py-3 px-5 border-2 border-[var(--terracotta)] text-[var(--terracotta)] hover:bg-[var(--terracotta-soft)] text-sm font-semibold rounded-2xl transition flex items-center justify-center gap-2 mb-3 cursor-pointer">
+        <span class="text-base">📂</span>
+        <span>Open / Browse .epub File (from Downloads)</span>
+      </button>
+
+      <!-- Drag & Drop Target Zone -->
+      <div id="dropTargetBox" class="w-full border-2 border-dashed border-[var(--reader-border)] hover:border-[var(--terracotta)] rounded-2xl p-5 transition-colors bg-[var(--reader-bg)]/60 cursor-pointer mb-4 group" onclick="document.getElementById('filePicker').click()">
         <p class="font-semibold text-xs group-hover:text-[var(--terracotta)] transition">or drag & drop your <span class="text-[var(--terracotta)] font-mono">.epub</span> file here</p>
       </div>
 
-      <!-- Google Drive Direct Download Link -->
-      <div id="driveActionRow" class="hidden w-full flex flex-col gap-2 pt-3 border-t border-[var(--reader-border)]">
-        <div class="flex items-center justify-between text-xs text-stone-500">
-          <span>Google Drive Cloud File:</span>
-          <span class="font-mono text-[10px] bg-amber-500/15 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded font-semibold">Ready</span>
-        </div>
-        <a id="driveDownloadBtn" href="#" download class="px-4 py-2 border border-[var(--reader-border)] hover:border-[var(--terracotta)] text-xs font-semibold rounded-xl transition flex items-center justify-center gap-2">
-          <span>⬇</span>
-          <span>Download .epub directly from Drive</span>
-        </a>
-      </div>
-
       <!-- PDF Notice -->
-      <div class="w-full mt-4 p-3 bg-stone-100 dark:bg-stone-800/50 rounded-xl text-left border border-[var(--reader-border)] text-[11px] text-stone-500 dark:text-stone-400 leading-relaxed">
+      <div class="w-full mt-2 p-3 bg-stone-100 dark:bg-stone-800/50 rounded-xl text-left border border-[var(--reader-border)] text-[11px] text-stone-500 dark:text-stone-400 leading-relaxed">
         <p class="font-semibold text-stone-700 dark:text-stone-300 flex items-center gap-1 mb-0.5">
           <span>ℹ️</span><span>Reading a PDF book?</span>
         </p>
@@ -356,8 +351,8 @@
     const bookAuthorDisplay = document.getElementById('bookAuthorDisplay');
     const emptyStateTitle = document.getElementById('emptyStateTitle');
     const emptyStateAuthor = document.getElementById('emptyStateAuthor');
-    const driveActionRow = document.getElementById('driveActionRow');
-    const driveDownloadBtn = document.getElementById('driveDownloadBtn');
+    const downloadDirectBtn = document.getElementById('downloadDirectBtn');
+    const downloadBtnLabel = document.getElementById('downloadBtnLabel');
     const highlightTooltip = document.getElementById('highlightTooltip');
     const quotesCountBadge = document.getElementById('quotesCountBadge');
     const chapterDisplay = document.getElementById('chapterDisplay');
@@ -373,13 +368,14 @@
     emptyStateAuthor.innerText = `by ${bookAuthor}`;
     runningHeader.innerText = `${bookAuthor.toUpperCase()} • ${bookTitle.toUpperCase()}`;
 
-    if (directDownloadUrl) {
-      driveActionRow.classList.remove('hidden');
-      driveDownloadBtn.href = directDownloadUrl;
-      driveDownloadBtn.download = `${bookTitle}.epub`;
-    } else if (driveUrl) {
-      driveActionRow.classList.remove('hidden');
-      driveDownloadBtn.href = driveUrl;
+    const hasDownloadTarget = directDownloadUrl || (driveUrl && (driveUrl.includes('/d/') || driveUrl.includes('id=')));
+    if (!hasDownloadTarget && !driveUrl) {
+      if (downloadDirectBtn) {
+        downloadDirectBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        if (downloadBtnLabel) downloadBtnLabel.innerText = "No Download Link Available";
+      }
+    } else {
+      if (downloadBtnLabel) downloadBtnLabel.innerText = `Download "${bookTitle}.epub" Directly`;
     }
 
     // -------------------------------------------------------------
@@ -422,23 +418,31 @@
     // -------------------------------------------------------------
     // Book Loader
     // -------------------------------------------------------------
-    async     function triggerDirectDownload() {
-      if (directDownloadUrl) {
+    function triggerDirectDownload() {
+      let targetUrl = directDownloadUrl;
+      if (!targetUrl && driveUrl) {
+        const m = driveUrl.match(/\/d\/([a-zA-Z0-9_-]+)/) || driveUrl.match(/id=([a-zA-Z0-9_-]+)/);
+        if (m) {
+          targetUrl = `https://drive.usercontent.google.com/download?id=${m[1]}&export=download`;
+        } else {
+          targetUrl = driveUrl;
+        }
+      }
+
+      if (targetUrl) {
         const a = document.createElement("a");
-        a.href = directDownloadUrl;
+        a.href = targetUrl;
         a.download = `${bookTitle}.epub`;
         document.body.appendChild(a);
         a.click();
         setTimeout(() => a.remove(), 1000);
         showToast(`Downloading "${bookTitle}.epub" directly...`);
-      } else if (driveUrl) {
-        window.open(driveUrl, '_blank');
       } else {
         showToast("No download link found for this book.");
       }
     }
 
-    function initReader() {
+    async function initReader() {
       chapterDisplay.innerText = "";
       updateQuotesCount();
 
@@ -549,13 +553,39 @@
     }
 
     // Drag and Drop support
-    window.addEventListener('dragover', e => e.preventDefault());
+    window.addEventListener('dragover', e => {
+      e.preventDefault();
+      e.stopPropagation();
+    });
     window.addEventListener('drop', e => {
       e.preventDefault();
-      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      e.stopPropagation();
+      if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
         processFile(e.dataTransfer.files[0]);
       }
     });
+
+    const dropTargetBox = document.getElementById('dropTargetBox');
+    if (dropTargetBox) {
+      dropTargetBox.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropTargetBox.classList.add('border-[var(--terracotta)]', 'bg-[var(--terracotta-soft)]/20');
+      });
+      dropTargetBox.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropTargetBox.classList.remove('border-[var(--terracotta)]', 'bg-[var(--terracotta-soft)]/20');
+      });
+      dropTargetBox.addEventListener('drop', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropTargetBox.classList.remove('border-[var(--terracotta)]', 'bg-[var(--terracotta-soft)]/20');
+        if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
+          processFile(e.dataTransfer.files[0]);
+        }
+      });
+    }
 
     function handleFileSelect(e) {
       if (e.target.files && e.target.files[0]) {

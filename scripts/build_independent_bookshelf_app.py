@@ -1101,6 +1101,40 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
     .line-clamp-2 {{ display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }}
     .line-clamp-3 {{ display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }}
+
+    /* Editorial Card & Responsive Synopsis Clamp */
+    .editorial-synopsis {{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 6; /* mobile default */
+    }}
+    @media (min-width: 640px) {{
+      .editorial-synopsis {{
+        -webkit-line-clamp: 7;
+      }}
+    }}
+    @media (min-width: 768px) {{
+      .editorial-synopsis {{
+        -webkit-line-clamp: 7;
+      }}
+    }}
+    @media (min-width: 1024px) {{
+      .editorial-synopsis {{
+        -webkit-line-clamp: 9;
+      }}
+    }}
+    @media (min-width: 1280px) {{
+      .editorial-synopsis {{
+        -webkit-line-clamp: 11;
+      }}
+    }}
+    .editorial-synopsis.expanded {{
+      display: block !important;
+      -webkit-line-clamp: unset !important;
+      overflow: visible !important;
+    }}
   </style>
 </head>
 <body class="min-h-screen">
@@ -1187,18 +1221,21 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         <!-- Surprise Me -->
         <button 
           onclick="openSurpriseModal()" 
-          class="px-3.5 py-2 bg-[var(--amber-bg)] text-[var(--terracotta)] border border-[var(--terracotta)]/30 hover:bg-[var(--terracotta)] hover:text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-sm">
+          title="Surprise me with a random book"
+          class="shrink-0 px-2.5 sm:px-3 py-1.5 bg-[var(--amber-bg)] text-[var(--terracotta)] border border-[var(--terracotta)]/30 hover:bg-[var(--terracotta)] hover:text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-sm">
           <span>✨</span>
-          <span class="hidden sm:inline">Surprise Me</span>
+          <span class="hidden lg:inline">Surprise Me</span>
+          <span class="hidden sm:inline lg:hidden">Surprise</span>
         </button>
 
         <!-- Copy TBR -->
         <button 
           onclick="copyAllTbr()" 
-          title="Copy clean list for TBR trackers"
-          class="px-3 py-2 bg-[var(--card-bg)] hover:bg-[var(--card-hover)] border border-[var(--border)] text-[var(--text-heading)] rounded-xl text-xs font-semibold transition flex items-center gap-1.5 shadow-sm">
+          title="Copy clean list for TBR trackers ({len(tbr_lines)} books)"
+          class="shrink-0 px-2.5 sm:px-3 py-1.5 bg-[var(--card-bg)] hover:bg-[var(--card-hover)] border border-[var(--border)] text-[var(--text-heading)] rounded-xl text-xs font-semibold transition flex items-center gap-1.5 shadow-sm">
           <span>📋</span>
-          <span class="hidden md:inline">Copy TBR ({len(tbr_lines)})</span>
+          <span class="hidden lg:inline">Copy TBR ({len(tbr_lines)})</span>
+          <span class="hidden sm:inline lg:hidden">TBR ({len(tbr_lines)})</span>
         </button>
 
         <!-- Theme Toggle -->
@@ -1720,7 +1757,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         const hasCover = !!b.cover_url && !b.no_cover;
 
         return `
-          <div class="editorial-card bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--terracotta)]/40 rounded-2xl p-4 sm:p-5 md:p-6 flex flex-row gap-4 sm:gap-6 hover:shadow-lg transition-all duration-200 cursor-pointer group items-stretch" onclick="openBookDetail('${{b.id}}')">
+          <div class="editorial-card bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--terracotta)]/40 rounded-2xl p-4 sm:p-5 md:p-6 flex flex-row gap-4 sm:gap-6 hover:shadow-lg transition-all duration-200 cursor-pointer group items-stretch overflow-hidden" onclick="openBookDetail('${{b.id}}')">
             <!-- Cover (Left: substantial horizontal real estate, perfectly proportioned, 4 cards visible on screen) -->
             <div class="w-32 sm:w-40 md:w-48 lg:w-56 shrink-0 aspect-[2/3] book-cover ${{jacketCls}} relative rounded-xl overflow-hidden shadow-sm border border-black/10 flex items-center justify-center bg-[var(--border-subtle)]/40 p-1 self-start">
               ${{hasCover ? `
@@ -1749,10 +1786,10 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
                 <p class="text-xs sm:text-[13px] text-[var(--text-muted)] font-medium mt-0.5 line-clamp-1">by ${{b.author}}</p>
 
                 <!-- Back of the Book Synopsis (Spacious, Elegant & Readable) -->
-                <p id="pitch-${{b.id}}" class="font-serif text-xs sm:text-[13.5px] md:text-sm text-[var(--text-heading)]/85 mt-2.5 leading-relaxed line-clamp-7 sm:line-clamp-9 md:line-clamp-11 lg:line-clamp-[13] transition-all">
+                <p id="pitch-${{b.id}}" class="editorial-synopsis font-serif text-xs sm:text-[13px] md:text-sm text-[var(--text-heading)]/85 mt-2.5 leading-relaxed transition-all">
                   ${{b.pitch}}
                 </p>
-                ${{b.pitch && b.pitch.length > 360 ? `
+                ${{b.pitch && b.pitch.length > 280 ? `
                   <button type="button" onclick="toggleExpandPitch(event, '${{b.id}}')" class="expand-btn-${{b.id}} text-[11px] font-bold text-[var(--terracotta)] hover:underline mt-1.5 inline-flex items-center gap-1 select-none">
                     <span>Read full synopsis ↓</span>
                   </button>
@@ -1760,7 +1797,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
               </div>
 
               <!-- Bottom Row Action -->
-              <div class="mt-3.5 pt-2.5 border-t border-[var(--border-subtle)] flex items-center justify-between gap-2 text-xs">
+              <div class="mt-auto pt-2.5 border-t border-[var(--border-subtle)] flex items-center justify-between gap-2 text-xs">
                 <button onclick="openBookInNook(event, '${{b.id}}')" class="px-3.5 py-1.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-bold rounded-lg shadow-xs transition flex items-center gap-1.5 shrink-0">
                   <span>${{ (b.format && b.format.toLowerCase() === 'pdf') ? '📄' : '📖' }}</span>
                   <span>${{ (b.format && b.format.toLowerCase() === 'pdf') ? 'Open PDF ↗' : 'Read on Nooks ↗' }}</span>
@@ -1785,14 +1822,12 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       const btn = document.querySelector(`.expand-btn-${{bookId}}`);
       if (!p) return;
 
-      const isExpanded = p.classList.contains("line-clamp-none");
+      const isExpanded = p.classList.contains("expanded");
       if (isExpanded) {{
-        p.classList.remove("line-clamp-none");
-        p.classList.add("line-clamp-7", "sm:line-clamp-9", "md:line-clamp-11", "lg:line-clamp-[13]");
+        p.classList.remove("expanded");
         if (btn) btn.innerHTML = '<span>Read full synopsis ↓</span>';
       }} else {{
-        p.classList.remove("line-clamp-7", "sm:line-clamp-9", "md:line-clamp-11", "lg:line-clamp-[13]");
-        p.classList.add("line-clamp-none");
+        p.classList.add("expanded");
         if (btn) btn.innerHTML = '<span>Show less ↑</span>';
       }}
     }}

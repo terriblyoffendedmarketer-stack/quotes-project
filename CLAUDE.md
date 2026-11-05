@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 23 (Editorial View Synopsis Unclamping & 1-Click Inline Expand)  
-> **Current**: Resolved premature truncation in the Editorial View: expanded the vertical synopsis clamp to `line-clamp-7 sm:line-clamp-9 md:line-clamp-11 lg:line-clamp-[13]`, allowing descriptions to fill the full vertical real estate alongside the 2:3 aspect ratio cover (over 85% of library books now display their complete synopsis without any clipping). For books with longer blurbs (>360 characters), added a dedicated inline `Read full synopsis ↓` toggle that seamlessly expands the full text directly within the card without requiring dossier navigation. Pinned the cover with `self-start` to maintain clean 2:3 proportions upon expansion. Rebuilt and deployed with v7 service worker cache-busting.  
-> **Next**: User review of the unclipped editorial synopses.
+> **Status**: In Progress | **Phase**: 24 (Header Button Responsive Sizing, Nooks Syntax Fix & Dropzone Hierarchy)  
+> **Current**: Fixed Nooks EPUB reader execution by restoring `async function initReader()` (resolving fatal SyntaxError: await in sync function that halted script execution and broke drag-and-drop). Re-ordered Nooks dropzone to feature Button 1 as 1-click Direct Download (`drive.usercontent.google.com/download?id=...&export=download`) and Button 2 as Browse/Open from Downloads, with stopPropagation drag listeners. Replaced arbitrary line-clamp with explicit CSS `.editorial-synopsis` responsive clamping (6/7/7/9/11) plus `overflow-hidden` to eliminate text overflow and awkward clipping on non-fullscreen laptop windows. Redesigned "Surprise Me" and "Copy TBR" header buttons with compact padding and adaptive labels (`Surprise Me` / `Surprise`, `Copy TBR` / `TBR`) for flawless fit across all viewport sizes. Bumped Service Worker cache to v9.  
+> **Next**: User verification of Nook drag-and-drop, direct download, and responsive editorial layout.
 
 ## Roadmap
 
@@ -29,6 +29,7 @@
 - [x] Phase 21: Kindle Bifold Reader Spread, Tab Scope Isolation & Comprehensive Cover Renaissance — Two-page bifold spread with center spine crease, Kindle paragraph indents & justification, tab scope restriction to prevent PWA hijacking, named tab reuse, PDF direct handling, and full audit/fix of book covers (Riddler, Sandman, 4-Hour Chef, King, Burkeman, Screenplays)
 - [x] Phase 22: Direct Nook Download Action, PWA Standalone Restoration & Zero Auto-Download on Shelf — Removed auto-download on shelf click, added 1-click direct download on Nook dropzone without Google Drive redirects, restored manifest scope to './' for PWA window reading
 - [x] Phase 23: Editorial View Synopsis Unclamping & 1-Click Inline Expand — Expanded vertical synopsis clamp up to 13 lines to utilize card height alongside cover; added inline 'Read full synopsis ↓' expand toggle for extra-long blurbs; pinned cover with self-start
+- [x] Phase 24: Header Button Responsive Sizing, Nooks Syntax Fix & Dropzone Hierarchy — Restored `async function initReader()` fixing drag-and-drop & file picker; re-ordered dropzone buttons (Button 1: Direct Download, Button 2: Browse); implemented adaptive header buttons ('Surprise Me' / 'Surprise', 'Copy TBR' / 'TBR') and CSS-level `-webkit-line-clamp` (6/7/7/9/11) with card `overflow-hidden` for non-fullscreen viewports
 
 ## File map
 
