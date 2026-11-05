@@ -131,6 +131,23 @@
         -webkit-line-clamp: 11;
       }
     }
+    /* Mobile Safe Area & Touch Ergonomics */
+    :root {
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --safe-left: env(safe-area-inset-left, 0px);
+      --safe-right: env(safe-area-inset-right, 0px);
+    }
+
+    @media (max-width: 639px) {
+      .editorial-synopsis {
+        display: -webkit-box !important;
+        -webkit-box-orient: vertical !important;
+        -webkit-line-clamp: 4 !important;
+        overflow: hidden !important;
+      }
+    }
+
     .editorial-synopsis.expanded {
       display: block !important;
       -webkit-line-clamp: unset !important;
@@ -141,8 +158,9 @@
 <body class="min-h-screen">
 
   <!-- Header -->
-  <header class="sticky top-0 z-40 bg-[var(--canvas)]/95 backdrop-blur-md border-b border-[var(--border)] px-4 md:px-8 py-3.5">
-    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+  <header class="sticky top-0 z-40 bg-[var(--canvas)]/95 backdrop-blur-md border-b border-[var(--border)] px-4 md:px-8 py-2.5 md:py-3.5">
+    <!-- Desktop Header: Exactly Solidified Layout (hidden on mobile < md) -->
+    <div class="hidden md:flex max-w-7xl mx-auto items-center justify-between gap-4">
       <div class="flex items-center gap-3">
         <!-- Bespoke "My Reading Corner" Emblem Logo -->
         <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#8A2814] via-[#C85A32] to-[#E08736] p-0.5 shadow-md flex items-center justify-center shrink-0 border border-[#F59E0B]/25">
@@ -258,15 +276,101 @@
         </button>
       </div>
     </div>
+
+    <!-- Mobile Adaptive Header (< md: 375px–430px iPhone & Android) -->
+    <div class="flex md:hidden flex-col gap-2 max-w-7xl mx-auto">
+      <!-- Row 1: Logo & Title + Fast Touch Actions -->
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-[#8A2814] via-[#C85A32] to-[#E08736] p-0.5 shadow-sm flex items-center justify-center shrink-0 border border-[#F59E0B]/25">
+            <svg class="w-5 h-5" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 31 H12" stroke="#FEF3C7" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M9.5 31 V17 C9.5 10 14.5 7 21 8" stroke="#FEF3C7" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M19.5 8 L24.5 11.5 L21.5 13.5 Z" fill="#FDE68A"/>
+              <path d="M22 13 L15 28 L29 28 Z" fill="#FDE68A" fill-opacity="0.22"/>
+              <path d="M15 28 C17.5 26.8 20 26.8 22 28 C24 26.8 26.5 26.8 29 28 V23 C26.5 21.8 24 21.8 22 23 C20 21.8 17.5 21.8 15 23 Z" fill="#FFF7ED" stroke="#B45309" stroke-width="0.8"/>
+              <path d="M22 23 V28" stroke="#C85A32" stroke-width="0.8"/>
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <h1 class="font-serif font-bold text-base text-[var(--text-heading)] tracking-tight leading-none truncate">
+              My Reading Corner
+            </h1>
+            <p class="text-[9px] font-medium text-[var(--text-muted)] truncate mt-0.5">620 Books • Reflowable EPUB</p>
+          </div>
+        </div>
+
+        <!-- Fast Touch Actions (40px touch minimum) -->
+        <div class="flex items-center gap-1.5 shrink-0">
+          <button 
+            onclick="openDirectReadingNook()" 
+            class="px-2.5 py-1.5 min-h-[38px] bg-[var(--terracotta)] text-white hover:bg-[var(--terracotta-hover)] rounded-xl text-xs font-bold transition flex items-center gap-1 shadow-2xs"
+            title="Open Reading Nook">
+            <span>📖</span>
+            <span class="text-[11px]">Nook</span>
+          </button>
+          <button 
+            onclick="openSurpriseModal()" 
+            class="p-2 min-h-[38px] min-w-[38px] flex items-center justify-center bg-[var(--amber-bg)] text-[var(--terracotta)] border border-[var(--terracotta)]/30 rounded-xl text-xs font-bold transition shadow-2xs"
+            title="Surprise Book">
+            <span>✨</span>
+          </button>
+          <button 
+            onclick="toggleDarkMode()" 
+            class="p-2 min-h-[38px] min-w-[38px] flex items-center justify-center bg-[var(--card-bg)] border border-[var(--border)] text-[var(--text-muted)] rounded-xl text-xs shadow-2xs"
+            title="Toggle Theme">
+            <span id="mobileThemeIcon">🌙</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Row 2: Search Bar -->
+      <div class="relative w-full">
+        <input 
+          type="text" 
+          id="mobileSearchInput" 
+          oninput="handleSearch(this.value)"
+          placeholder="Search 620 books, authors, quotes..." 
+          class="w-full pl-9 pr-8 py-2 bg-[var(--card-bg)] border border-[var(--border)] rounded-full text-xs text-[var(--text-heading)] placeholder-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--terracotta)]/30 focus:border-[var(--terracotta)] shadow-2xs transition min-h-[40px]"
+        />
+        <span class="absolute left-3.5 top-2.5 text-[var(--text-muted)] text-xs">🔍</span>
+        <button id="mobileSearchClearBtn" onclick="clearSearchInput()" class="absolute right-3 top-2 text-[var(--text-muted)] hover:text-[var(--text-heading)] text-xs p-1 hidden" title="Clear search">✕</button>
+      </div>
+
+      <!-- Row 3: Segmented View Switcher Pill Bar (44px Apple HIG Touch Minimum) -->
+      <div class="bg-[var(--card-bg)] p-1 rounded-xl border border-[var(--border)] flex items-center text-xs shadow-2xs w-full">
+        <button 
+          id="mobileViewBtnBoard" 
+          onclick="switchView('board')" 
+          class="flex-1 py-1.5 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-xs flex items-center justify-center gap-1 min-h-[38px]">
+          <span>📌</span>
+          <span class="text-[11px]">Covers</span>
+        </button>
+        <button 
+          id="mobileViewBtnEditorial" 
+          onclick="switchView('editorial')" 
+          class="flex-1 py-1.5 rounded-lg font-medium transition text-[var(--text-muted)] hover:text-[var(--text-heading)] flex items-center justify-center gap-1 min-h-[38px]">
+          <span>📰</span>
+          <span class="text-[11px]">Editorial</span>
+        </button>
+        <button 
+          id="mobileViewBtnSplit" 
+          onclick="switchView('split')" 
+          class="flex-1 py-1.5 rounded-lg font-medium transition text-[var(--text-muted)] hover:text-[var(--text-heading)] flex items-center justify-center gap-1 min-h-[38px]">
+          <span>📚</span>
+          <span class="text-[11px]">Bookshelf</span>
+        </button>
+      </div>
+    </div>
   </header>
 
   <!-- Filter Ribbon -->
   <div class="border-b border-[var(--border-subtle)] bg-[var(--card-bg)]/60 px-4 md:px-8 py-2">
-    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
-      <div class="flex items-center gap-1.5 overflow-x-auto py-1 no-scrollbar" id="categoryTabs">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 sm:gap-4">
+      <div class="flex items-center gap-1.5 overflow-x-auto py-1 no-scrollbar shrink min-w-0" id="categoryTabs">
         <!-- Populated dynamically -->
       </div>
-      <div class="flex items-center gap-2.5 sm:gap-3 text-xs text-[var(--text-muted)] shrink-0">
+      <div class="flex items-center justify-between sm:justify-end gap-2.5 sm:gap-3 text-xs text-[var(--text-muted)] shrink-0">
         <!-- Sort Control -->
         <div class="flex items-center gap-1.5 bg-[var(--card-bg)] border border-[var(--border)] rounded-xl px-2.5 py-1 text-xs shadow-2xs">
           <span class="text-[var(--text-muted)] text-[11px] font-medium hidden sm:inline">Sort:</span>
@@ -295,9 +399,9 @@
   <!-- Content Container -->
   <main class="max-w-7xl mx-auto p-4 md:p-8">
 
-    <!-- 1. Visual Jackets Board View (Default: 5 columns max on desktop, larger covers) -->
+    <!-- 1. Visual Jackets Board View (Default: 5 columns on desktop, 2-column Pinterest grid on mobile) -->
     <div id="boardView" class="block">
-      <div id="boardGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-7">
+      <div id="boardGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5 sm:gap-6 md:gap-7">
         <!-- Populated dynamically -->
       </div>
     </div>
@@ -331,12 +435,14 @@
 
   </main>
 
-  <!-- Slide-Out Drawer for Mobile or Board Click -->
-  <div id="drawerOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex justify-end hidden">
-    <div id="drawerPanel" class="w-full max-w-xl bg-[var(--card-bg)] border-l border-[var(--border)] h-full overflow-y-auto p-6 md:p-8 shadow-2xl transition-transform transform translate-x-full">
-      <div class="flex items-center justify-between pb-4 border-b border-[var(--border)] mb-6">
+  <!-- Slide-Out Drawer / Mobile Bottom Sheet for Board & Editorial Click -->
+  <div id="drawerOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end sm:items-stretch sm:justify-end hidden" onclick="handleDrawerOverlayClick(event)">
+    <div id="drawerPanel" class="w-full sm:max-w-xl bg-[var(--card-bg)] border-t sm:border-t-0 sm:border-l border-[var(--border)] h-[88vh] sm:h-full max-h-[92vh] sm:max-h-none rounded-t-3xl sm:rounded-t-none overflow-y-auto p-5 sm:p-6 md:p-8 shadow-2xl transition-transform duration-300 transform translate-y-full sm:translate-y-0 sm:translate-x-full">
+      <!-- Mobile Pull Bar Handle -->
+      <div class="w-12 h-1.5 bg-stone-300 dark:bg-stone-600 rounded-full mx-auto mb-3 sm:hidden"></div>
+      <div class="flex items-center justify-between pb-3 sm:pb-4 border-b border-[var(--border)] mb-4 sm:mb-6">
         <span class="text-xs font-bold uppercase tracking-widest text-[var(--terracotta)]">Reading Dossier</span>
-        <button onclick="closeDrawer()" class="text-[var(--text-muted)] hover:text-[var(--text-heading)] text-xl font-bold p-1">✕</button>
+        <button onclick="closeDrawer()" class="text-[var(--text-muted)] hover:text-[var(--text-heading)] text-xl font-bold p-2 min-w-[40px] min-h-[40px] flex items-center justify-center">✕</button>
       </div>
       <div id="drawerContent">
         <!-- Populated dynamically -->
@@ -508,7 +614,11 @@
     function toggleDarkMode() {
       isDark = !isDark;
       document.body.classList.toggle("dark-mode", isDark);
-      document.getElementById("themeIcon").innerText = isDark ? "☀️" : "🌙";
+      const icon = isDark ? "☀️" : "🌙";
+      const dIcon = document.getElementById("themeIcon");
+      const mIcon = document.getElementById("mobileThemeIcon");
+      if (dIcon) dIcon.innerText = icon;
+      if (mIcon) mIcon.innerText = icon;
     }
 
     function getJacketStyle(cat) {
@@ -634,7 +744,9 @@
     }
 
     function getFilteredBooks() {
-      const q = document.getElementById("searchInput").value.toLowerCase().trim();
+      const dInput = document.getElementById("searchInput");
+      const mInput = document.getElementById("mobileSearchInput");
+      const q = ((dInput ? dInput.value : "") || (mInput ? mInput.value : "")).toLowerCase().trim();
       const quotesOnly = document.getElementById("filterQuotesOnly").checked;
 
       let list = SHELF_DATA.filter(b => {
@@ -720,8 +832,21 @@
       renderCurrentView();
     }
 
-    function handleSearch() {
+    function handleSearch(val) {
+      const dInput = document.getElementById("searchInput");
+      const mInput = document.getElementById("mobileSearchInput");
+      const clearBtn = document.getElementById("mobileSearchClearBtn");
+      const query = (val !== undefined ? val : (dInput?.value || mInput?.value || "")).trim();
+
+      if (dInput && dInput.value !== query) dInput.value = query;
+      if (mInput && mInput.value !== query) mInput.value = query;
+      if (clearBtn) clearBtn.classList.toggle("hidden", !query);
+
       renderCurrentView();
+    }
+
+    function clearSearchInput() {
+      handleSearch("");
     }
 
     function switchView(view) {
@@ -732,21 +857,30 @@
       const btnBoard = document.getElementById("viewBtnBoard");
       const btnEditorial = document.getElementById("viewBtnEditorial");
       const btnSplit = document.getElementById("viewBtnSplit");
+      const mBtnBoard = document.getElementById("mobileViewBtnBoard");
+      const mBtnEditorial = document.getElementById("mobileViewBtnEditorial");
+      const mBtnSplit = document.getElementById("mobileViewBtnSplit");
 
       [board, editorial, split].forEach(el => el.classList.add("hidden"));
       [btnBoard, btnEditorial, btnSplit].forEach(btn => {
-        btn.className = "px-3 py-1 rounded-lg font-medium transition text-[var(--text-muted)] hover:text-[var(--text-heading)] flex items-center gap-1.5";
+        if (btn) btn.className = "px-3 py-1 rounded-lg font-medium transition text-[var(--text-muted)] hover:text-[var(--text-heading)] flex items-center gap-1.5";
+      });
+      [mBtnBoard, mBtnEditorial, mBtnSplit].forEach(btn => {
+        if (btn) btn.className = "flex-1 py-1.5 rounded-lg font-medium transition text-[var(--text-muted)] hover:text-[var(--text-heading)] flex items-center justify-center gap-1 min-h-[38px]";
       });
 
       if (view === "board") {
         board.classList.remove("hidden");
-        btnBoard.className = "px-3 py-1 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-sm flex items-center gap-1.5";
+        if (btnBoard) btnBoard.className = "px-3 py-1 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-sm flex items-center gap-1.5";
+        if (mBtnBoard) mBtnBoard.className = "flex-1 py-1.5 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-xs flex items-center justify-center gap-1 min-h-[38px]";
       } else if (view === "editorial") {
         editorial.classList.remove("hidden");
-        btnEditorial.className = "px-3 py-1 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-sm flex items-center gap-1.5";
+        if (btnEditorial) btnEditorial.className = "px-3 py-1 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-sm flex items-center gap-1.5";
+        if (mBtnEditorial) mBtnEditorial.className = "flex-1 py-1.5 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-xs flex items-center justify-center gap-1 min-h-[38px]";
       } else {
         split.classList.remove("hidden");
-        btnSplit.className = "px-3 py-1 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-sm flex items-center gap-1.5";
+        if (btnSplit) btnSplit.className = "px-3 py-1 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-sm flex items-center gap-1.5";
+        if (mBtnSplit) mBtnSplit.className = "flex-1 py-1.5 rounded-lg font-semibold transition bg-[var(--terracotta)] text-white shadow-xs flex items-center justify-center gap-1 min-h-[38px]";
       }
       renderCurrentView();
     }
@@ -906,9 +1040,9 @@
         const hasCover = !!b.cover_url && !b.no_cover;
 
         return `
-          <div class="editorial-card bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--terracotta)]/40 rounded-2xl p-4 sm:p-5 md:p-6 flex flex-row gap-4 sm:gap-6 hover:shadow-lg transition-all duration-200 cursor-pointer group items-stretch overflow-hidden" onclick="openBookDetail('${b.id}')">
-            <!-- Cover (Left: substantial horizontal real estate, perfectly proportioned, 4 cards visible on screen) -->
-            <div class="w-32 sm:w-40 md:w-48 lg:w-56 shrink-0 aspect-[2/3] book-cover ${jacketCls} relative rounded-xl overflow-hidden shadow-sm border border-black/10 flex items-center justify-center bg-[var(--border-subtle)]/40 p-1 self-start">
+          <div class="editorial-card bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--terracotta)]/40 rounded-2xl p-4 sm:p-5 md:p-6 flex flex-col sm:flex-row gap-4 sm:gap-6 hover:shadow-lg transition-all duration-200 cursor-pointer group items-stretch overflow-hidden" onclick="openBookDetail('${b.id}')">
+            <!-- Cover (Mobile: centered 2:3 card; Desktop: left-aligned proportional jacket) -->
+            <div class="w-32 sm:w-40 md:w-48 lg:w-56 shrink-0 aspect-[2/3] mx-auto sm:mx-0 book-cover ${jacketCls} relative rounded-xl overflow-hidden shadow-sm border border-black/10 flex items-center justify-center bg-[var(--border-subtle)]/40 p-1 self-center sm:self-start">
               ${hasCover ? `
                 <img src="${b.cover_url}" alt="${b.title}" loading="lazy" class="w-full h-full object-contain drop-shadow-xs rounded-lg" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-ed').style.display='block';" />
                 <div class="fallback-ed hidden absolute inset-0 w-full h-full">
@@ -1200,8 +1334,8 @@
       const quotes = b.quotes || [];
 
       content.innerHTML = `
-        <div class="flex gap-4 items-start mb-6">
-          <div class="w-28 shrink-0 aspect-[2/3] book-cover ${jacketCls} shadow-md relative overflow-hidden rounded-[8px] bg-[var(--border-subtle)]/40 p-1">
+        <div class="flex flex-col sm:flex-row gap-4 items-center sm:items-start mb-6 text-center sm:text-left">
+          <div class="w-28 shrink-0 aspect-[2/3] book-cover ${jacketCls} shadow-md relative overflow-hidden rounded-[8px] bg-[var(--border-subtle)]/40 p-1 mx-auto sm:mx-0">
             ${b.cover_url && !b.no_cover ? `
               <img src="${b.cover_url}" alt="${b.title}" class="w-full h-full object-contain drop-shadow-xs rounded-lg" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-drawer').style.display='block';" />
               <div class="fallback-drawer hidden absolute inset-0 z-10 w-full h-full">
@@ -1213,17 +1347,17 @@
               </div>
             `}
           </div>
-          <div>
-            <div class="flex items-center gap-2 mb-1">
+          <div class="flex-1 w-full">
+            <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
               <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)]">${b.category}</span>
               ${getFormatBadgeHtml(getCleanFormat(b))}
             </div>
             <h3 class="font-serif font-bold text-lg text-[var(--text-heading)] mt-0.5 leading-snug">${b.title}</h3>
             <p class="text-xs text-[var(--text-muted)] font-medium">by ${b.author}</p>
-            <div class="flex flex-wrap items-center gap-2 mt-3">
-              <button onclick="openBookInNook(event, '${b.id}')" class="px-3 py-1.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-bold rounded-lg shadow-sm transition flex items-center gap-1.5 cursor-pointer">
-                <span>📖</span>
-                <span>Read in Nook ↗</span>
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mt-3.5">
+              <button onclick="openBookInNook(event, '${b.id}')" class="flex-1 sm:flex-none px-4 py-2 min-h-[40px] bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-bold rounded-xl shadow-xs transition flex items-center justify-center gap-1.5 cursor-pointer">
+                <span>${ (b.format && b.format.toLowerCase() === 'pdf') ? '📄' : '📖' }</span>
+                <span>${ (b.format && b.format.toLowerCase() === 'pdf') ? 'Open PDF ↗' : 'Read in Nook ↗' }</span>
               </button>
               ${(b.drive_url || b.direct_download_url) ? `
                 <button onclick="downloadBookFile(event, '${b.id}')" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-heading)] rounded-lg transition flex items-center gap-1.5 cursor-pointer">
@@ -1288,14 +1422,30 @@
       `;
 
       overlay.classList.remove("hidden");
-      setTimeout(() => panel.classList.remove("translate-x-full"), 10);
+      setTimeout(() => {
+        if (window.innerWidth < 640) {
+          panel.classList.remove("translate-y-full");
+        } else {
+          panel.classList.remove("sm:translate-x-full");
+        }
+      }, 10);
     }
 
     function closeDrawer() {
       const overlay = document.getElementById("drawerOverlay");
       const panel = document.getElementById("drawerPanel");
-      panel.classList.add("translate-x-full");
+      if (window.innerWidth < 640) {
+        panel.classList.add("translate-y-full");
+      } else {
+        panel.classList.add("sm:translate-x-full");
+      }
       setTimeout(() => overlay.classList.add("hidden"), 240);
+    }
+
+    function handleDrawerOverlayClick(e) {
+      if (e.target.id === "drawerOverlay") {
+        closeDrawer();
+      }
     }
 
     // Surprise Me Logic

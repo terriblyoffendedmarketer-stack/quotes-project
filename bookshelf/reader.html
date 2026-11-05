@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Reading Nook • My Reading Corner</title>
   <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 
@@ -20,6 +20,10 @@
 
   <style>
     :root {
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --safe-left: env(safe-area-inset-left, 0px);
+      --safe-right: env(safe-area-inset-right, 0px);
       --reader-bg: #fbf8f3;
       --reader-text: #2c2523;
       --reader-border: #e6dfd5;
@@ -125,6 +129,27 @@
     #headerRevealBtn:hover {
       opacity: 1 !important;
       transform: translate(-50%, 2px) scale(1.05);
+    }
+
+    /* Mobile Touch Turn Zones & Chevron Visibility */
+    @media (max-width: 639px) {
+      .turn-btn {
+        display: none !important;
+      }
+      #readerViewport {
+        padding-left: max(0.5rem, env(safe-area-inset-left)) !important;
+        padding-right: max(0.5rem, env(safe-area-inset-right)) !important;
+        padding-top: max(0.25rem, env(safe-area-inset-top)) !important;
+        padding-bottom: max(0.25rem, env(safe-area-inset-bottom)) !important;
+      }
+      #topHeader {
+        padding-top: env(safe-area-inset-top) !important;
+        height: calc(3.5rem + env(safe-area-inset-top)) !important;
+      }
+      #statusBar {
+        padding-bottom: env(safe-area-inset-bottom) !important;
+        height: calc(2.2rem + env(safe-area-inset-bottom)) !important;
+      }
     }
   </style>
 </head>
@@ -603,7 +628,9 @@
       }
       viewerEl.innerHTML = "";
 
-      const isTwoPage = (spreadMode === "always" && !isContinuousScroll && window.innerWidth >= 640);
+      const isMobilePortrait = window.innerWidth < 640;
+      const effectiveSpread = isMobilePortrait ? "none" : spreadMode;
+      const isTwoPage = (effectiveSpread === "always" && !isContinuousScroll && window.innerWidth >= 640);
       centerSpine.style.display = isTwoPage ? "block" : "none";
       updateSpreadButtonStyles();
 
@@ -611,13 +638,78 @@
         width: "100%",
         height: "100%",
         flow: isContinuousScroll ? "scrolled-doc" : "paginated",
-        spread: spreadMode,
+        spread: effectiveSpread,
         minSpreadWidth: 640
       });
 
       // Inject webfonts into iframe so bold & serif fonts render with crisp distinction
       rendition.hooks.content.register(contents => {
-        contents.addStylesheet("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400;1,7..72,700&display=swap");
+        contents.addStylesheet("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,400;1,7..72,600;1,7..72,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,600;1,6..72,700&display=swap");
+
+        // Touch & Tap Navigation inside EPUB.js iframe (Left 25% prev, Right 25% next, Center 50% toggle chrome)
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchStartTime = 0;
+
+        contents.document.addEventListener('touchstart', (e) => {
+          if (e.touches && e.touches[0]) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            touchStartTime = Date.now();
+          }
+        }, { passive: true });
+
+        contents.document.addEventListener('touchend', (e) => {
+          if (!e.changedTouches || !e.changedTouches[0]) return;
+          const deltaX = e.changedTouches[0].clientX - touchStartX;
+          const deltaY = e.changedTouches[0].clientY - touchStartY;
+          const duration = Date.now() - touchStartTime;
+
+          // Guard: if user has active text selection, do not trigger turn
+          const sel = contents.window.getSelection();
+          if (sel && sel.toString().trim().length > 0) return;
+
+          // Swipe gesture (horizontal swipe > 45px in < 500ms)
+          if (Math.abs(deltaX) > 45 && Math.abs(deltaY) < 60 && duration < 500) {
+            if (deltaX < 0) {
+              nextPage();
+            } else {
+              prevPage();
+            }
+            return;
+          }
+
+          // Single tap detection
+          if (Math.abs(deltaX) < 15 && Math.abs(deltaY) < 15 && duration < 400) {
+            const width = contents.window.innerWidth || window.innerWidth;
+            const tapX = e.changedTouches[0].clientX;
+            if (tapX < width * 0.28) {
+              prevPage();
+            } else if (tapX > width * 0.72) {
+              nextPage();
+            } else {
+              toggleHeaderVisible();
+            }
+          }
+        }, { passive: true });
+
+        contents.document.addEventListener('click', (e) => {
+          // Guard touch-emulated clicks
+          if (e.detail === 0 || Date.now() - touchStartTime < 500) return;
+          const sel = contents.window.getSelection();
+          if (sel && sel.toString().trim().length > 0) return;
+          if (window.innerWidth < 640) {
+            const width = contents.window.innerWidth || window.innerWidth;
+            const clickX = e.clientX;
+            if (clickX < width * 0.28) {
+              prevPage();
+            } else if (clickX > width * 0.72) {
+              nextPage();
+            } else {
+              toggleHeaderVisible();
+            }
+          }
+        });
       });
 
       applyThemeToRendition();
@@ -669,13 +761,22 @@
 
     // Debounced window resize handler: re-fits rendition and adapts spine
     let resizeTimer = null;
+    let lastWindowWidth = window.innerWidth;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
         if (rendition) {
-          rendition.resize();
-          const isTwoPage = (spreadMode === "always" && !isContinuousScroll && window.innerWidth >= 640);
-          centerSpine.style.display = isTwoPage ? "block" : "none";
+          const widthChanged = (window.innerWidth < 640) !== (lastWindowWidth < 640);
+          lastWindowWidth = window.innerWidth;
+          if (widthChanged && book) {
+            renderBook(currentCfi);
+          } else {
+            rendition.resize();
+            const isMobilePortrait = window.innerWidth < 640;
+            const effectiveSpread = isMobilePortrait ? "none" : spreadMode;
+            const isTwoPage = (effectiveSpread === "always" && !isContinuousScroll && window.innerWidth >= 640);
+            centerSpine.style.display = isTwoPage ? "block" : "none";
+          }
         }
       }, 150);
     });
@@ -1054,23 +1155,28 @@
         bgColor = '#ffffff';
       }
 
-      // Kindle Bookerly Typography Configuration:
-      // Substantial 18.5px size, sturdy 460 weight (no thin hairlines), 1.52 line-height, 1.4em indents
-      const baseFontSize = 18.5 * (currentFontSize / 100);
+      // Balanced Bookerly & Literata Typography Calibration:
+      // Regular: Sturdy 430 book weight (subpixel-antialiased, opsz 18 text optical size, 1.54 line height)
+      // Bold: Calibrated 630 semi-bold (clean, unmistakable distinction without the oppressive 750 extra-bold ink blot)
+      const isMobile = window.innerWidth < 640;
+      const baseFontSize = (isMobile ? 17.5 : 18.5) * (currentFontSize / 100);
 
       const bodyStyles = {
         background: `${bgColor} !important`,
         color: `${textColor} !important`,
-        "font-family": "'Bookerly', 'Newsreader', 'Literata', 'Charter', 'Georgia', serif !important",
+        "font-family": "'Bookerly', 'Literata', 'Newsreader', 'Charter', 'Georgia', serif !important",
         "font-size": `${baseFontSize}px !important`,
-        "font-weight": "460 !important",
-        "line-height": "1.52 !important",
+        "font-weight": "430 !important",
+        "font-optical-sizing": "auto !important",
+        "font-variation-settings": "'opsz' 18, 'wght' 430 !important",
+        "line-height": "1.54 !important",
         margin: "0 !important",
-        "-webkit-font-smoothing": "subpixel-antialiased"
+        "-webkit-font-smoothing": "subpixel-antialiased",
+        "-moz-osx-font-smoothing": "auto"
       };
 
       if (isContinuousScroll) {
-        bodyStyles.padding = "24px 20px !important";
+        bodyStyles.padding = isMobile ? "16px 12px !important" : "24px 20px !important";
       }
 
       rendition.themes.default({
@@ -1080,7 +1186,9 @@
         body: bodyStyles,
         p: {
           "font-size": `${baseFontSize}px !important`,
-          "font-weight": "460 !important",
+          "font-weight": "430 !important",
+          "font-optical-sizing": "auto !important",
+          "font-variation-settings": "'opsz' 18, 'wght' 430 !important",
           "text-indent": "1.4em !important",
           "margin-top": "0 !important",
           "margin-bottom": "0 !important",
@@ -1093,8 +1201,9 @@
           "text-indent": "0 !important"
         },
         "h1, h2, h3, h4": {
-          "font-family": "'Newsreader', 'Bookerly', 'Literata', Georgia, serif !important",
-          "font-weight": "500 !important",
+          "font-family": "'Literata', 'Newsreader', 'Bookerly', Georgia, serif !important",
+          "font-weight": "550 !important",
+          "font-optical-sizing": "auto !important",
           "line-height": "1.25 !important",
           "margin-top": "2.2em !important",
           "margin-bottom": "1em !important",
@@ -1111,16 +1220,20 @@
           "font-size": "1.18em !important"
         },
         "b, strong, b *, strong *, [class*='bold'], [class*='txbf'], .txbfb, .txbf, .sgc2, .sgc13": {
-          "font-family": "'Newsreader', 'Bookerly', 'Literata', Georgia, serif !important",
-          "font-weight": "750 !important",
+          "font-family": "'Bookerly', 'Literata', 'Newsreader', Georgia, serif !important",
+          "font-weight": "630 !important",
+          "font-optical-sizing": "auto !important",
+          "font-variation-settings": "'opsz' 18, 'wght' 630 !important",
           "-webkit-font-smoothing": "antialiased"
         },
         "em, i, em *, i *, [class*='italic'], .sgc8": {
           "font-style": "italic !important"
         },
         "b em, em b, strong em, em strong": {
-          "font-family": "'Newsreader', 'Bookerly', 'Literata', Georgia, serif !important",
-          "font-weight": "750 !important",
+          "font-family": "'Bookerly', 'Literata', 'Newsreader', Georgia, serif !important",
+          "font-weight": "630 !important",
+          "font-optical-sizing": "auto !important",
+          "font-variation-settings": "'opsz' 18, 'wght' 630 !important",
           "font-style": "italic !important"
         },
         "::selection": {

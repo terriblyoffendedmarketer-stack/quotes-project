@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 30 (Reading Nook Regular Text Sturdiness & Subpixel Calibration)  
-> **Current**: Enhanced regular serif text weight from thin 400 to sturdy book weight (460) across `body` and `p`, bumped default base font size to 18.5px, applied `-webkit-font-smoothing: subpixel-antialiased` to restore full ink substance on Retina displays, and calibrated bold contrast to 750 weight. Bumped Service Worker cache to v15.  
-> **Next**: Launch comprehensive mobile optimization audit for reading shelf and reader app in new chat.
+> **Status**: In Progress | **Phase**: 31 (Mobile Viewport Optimization & Balanced Reading Typography)  
+> **Current**: Calibrated body regular weight to 430 with `opsz 18` and bold to 630 semi-bold for golden typographic contrast without ink bloat; implemented adaptive mobile app bar with 44px segmented view switcher; stacked mobile editorial cards with 4-line synopsis clamp; converted mobile dossier to native slide-up bottom sheet with drag handle; enabled EPUB.js portrait single-page fallback (< 640px) with iframe touch turn zones (25% prev, 25% next, 50% toggle chrome) & swipe navigation while preserving solidified laptop layout 100% intact; bumped SW cache to v16.  
+> **Next**: Final live verification on mobile test devices.
 
 ## Roadmap
 
@@ -36,6 +36,7 @@
 - [x] Phase 28: Reading Nook Kindle Bookerly Calibration & Immersive Canvas — Standardized name to 'Reading Nook' across entire app; calibrated Bookerly typography (tight 1.5 line height, 1.4em indents, 1.65em regular-weight headings); added auto-hiding top bar with mousemove sensor and reveal trigger; transformed footer to seamless Kindle indicator; preserved central spine divider; bumped SW cache to v13.
 - [x] Phase 29: Bold Typography Distinction, Double Spread Default & Mobile Audit Strategy — Injected full 400-800 weight font stylesheets into EPUB.js iframe; defined explicit font-weight: 700 rules for b, strong, and publisher classes (.txbfb, .sgc2); enforced double spread as active default with 640px threshold; drafted mobile optimization audit strategy; bumped SW cache to v14.
 - [x] Phase 30: Reading Nook Regular Text Sturdiness & Subpixel Calibration — Enhanced regular serif text weight from thin 400 to sturdy book weight (460) across body and p, bumped default base font size to 18.5px, applied -webkit-font-smoothing: subpixel-antialiased, and calibrated bold contrast to 750 weight; bumped SW cache to v15.
+- [x] Phase 31: Mobile Viewport Optimization & Balanced Reading Typography — Calibrated body regular weight to 430 with opsz 18 and bold to 630 semi-bold for golden contrast without ink bloat; implemented adaptive mobile app bar with 44px segmented view switcher; stacked mobile editorial cards with 4-line synopsis clamp; converted mobile dossier to native slide-up bottom sheet with drag handle; enabled EPUB.js portrait single-page fallback (< 640px) with iframe touch turn zones (25% prev, 25% next, 50% toggle chrome) & swipe navigation while preserving solidified laptop layout; bumped SW cache to v16.
 
 ## File map
 
@@ -54,6 +55,9 @@
 - `content/books_curated_shelf.json`: Audited and cleaned dynamic shelf containing 620 high-conviction works with pitches, reader notes, and tags.
 - `content/tbr_clean_list.txt`: Clean, 1-click copy-pastable `Title — Author` list of 620 books for TBR trackers.
 - `scripts/build_independent_bookshelf_app.py`: Compiles the standalone My Reading Corner reading shelf app (`bookshelf/index.html`, `bookshelf/data.json`, `docs/bookshelf.html`).
+- `scripts/tune_reading_typography_and_mobile_nook.py`: Calibrates balanced 430 regular / 630 bold Bookerly/Literata typography and mobile canvas touch navigation.
+- `scripts/patch_shelf_app_mobile_optimization.py`: Implements adaptive mobile app bar, 44px segmented view switcher, and native bottom dossier sheet.
+- `scripts/verify_mobile_and_desktop_audit.py`: Automated 22-rule verification suite for shelf and reader across mobile (375px) and laptop (1440px).
 - `scripts/move_drive_files.sh`: Shell script used to move 30 tactical lead magnets to `Books/Archive of bullshit` and HBR books to `Books/HBR`.
 - `prototype/index.html` & `docs/index.html`: Marginalia craft card web reader (untouched, independent project).
 - `android/`: Marginalia Android app and home-screen widget source code.
