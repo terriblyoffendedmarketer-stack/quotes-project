@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 27 (Nook EPUB Reader Fullscreen & Bifold Spread Perfection)  
-> **Current**: Fixed 3rd column peek bug in Nook reader in fullscreen. Removed conflicting `column-gap` and body `padding` CSS overrides from `applyThemeToRendition()`, letting EPUB.js compute and set exact two-column spread geometry (`padding-left/right: gap/2`, `column-width`, `column-gap`) with zero margin overflow. Added rendition destruction and container cleanup in `renderBook()`, bound iframe `keydown` for arrow navigation, added debounced `window.resize` handler calling `rendition.resize()` with responsive spine adaptation, and bumped Service Worker cache to v12.  
-> **Next**: User review of fullscreen reader layout and bifold spread experience.
+> **Status**: In Progress | **Phase**: 28 (Reading Nook Kindle Bookerly Calibration & Immersive Canvas)  
+> **Current**: Standardized all references across bookshelf views, cards, modals, and reader to 'Reading Nook'. Calibrated reader typography to Kindle Bookerly standard (tight 1.5 line height, 1.4em paragraph indents, elegant regular-weight headings with 1.65em h1). Converted top navigation into an auto-hiding immersive bar that slides down on mousemove near top or clicking reveal pill, maximizing vertical canvas in fullscreen and default windows. Converted bottom status bar into a seamless transparent Kindle footer without dividing border lines, while preserving the requested center spine divider. Bumped Service Worker cache to v13.  
+> **Next**: User review of immersive Reading Nook experience.
 
 ## Roadmap
 
@@ -33,6 +33,7 @@
 - [x] Phase 25: Daily-Seeded & Alphabetical Multi-View Sorting, Header Nooks Reader Button & Direct Ebook Downloads — Mulberry32 PRNG daily seeded shuffle default with A-Z, Z-A, Author, Quotes, and Category sorting across all 3 views; Open Nooks Reader header action; and direct named ebook downloading replacing Google Drive links
 - [x] Phase 26: Universal EPUB/PDF Format Tagging & Surprise Me Modal Optimization — Standardized canonical format resolution across all 620 titles; added visible color-coded format badges (emerald EPUB, rose PDF, purple CBR) to Board View, Editorial View, Split View list & dossier, and drawer; and optimized Surprise Me modal with Read on Nooks primary button, named direct downloads, and responsive layout
 - [x] Phase 27: Nook EPUB Reader Fullscreen & Bifold Spread Perfection — Eliminated 3rd column peek by removing theme column-gap/padding overrides; restored true geometric bifold spread; added rendition cleanup, iframe keyboard listener & debounced window resize handler; bumped SW cache to v12.
+- [x] Phase 28: Reading Nook Kindle Bookerly Calibration & Immersive Canvas — Standardized name to 'Reading Nook' across entire app; calibrated Bookerly typography (tight 1.5 line height, 1.4em indents, 1.65em regular-weight headings); added auto-hiding top bar with mousemove sensor and reveal trigger; transformed footer to seamless Kindle indicator; preserved central spine divider; bumped SW cache to v13.
 
 ## File map
 

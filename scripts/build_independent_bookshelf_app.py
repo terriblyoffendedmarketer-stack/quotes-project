@@ -1278,13 +1278,13 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
         <!-- Open Nooks Reader -->
         <button 
-          onclick="openDirectNookReader()" 
-          title="Open Nooks Reader in Reading Room (open any EPUB directly)"
+          onclick="openDirectReadingNook()" 
+          title="Open Reading Nook in Reading Room (open any EPUB directly)"
           class="shrink-0 px-2.5 sm:px-3 py-1.5 bg-[var(--terracotta)] text-white hover:bg-[var(--terracotta-hover)] rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-sm cursor-pointer">
           <span>📖</span>
-          <span class="hidden 2xl:inline">Open Nooks Reader</span>
-          <span class="hidden md:inline 2xl:hidden">Nooks Reader</span>
-          <span class="inline md:hidden">Nooks</span>
+          <span class="hidden 2xl:inline">Open Reading Nook</span>
+          <span class="hidden md:inline 2xl:hidden">Reading Nook</span>
+          <span class="inline md:hidden">Reading Nook</span>
         </button>
 
         <!-- Surprise Me -->
@@ -1428,7 +1428,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         <div class="flex flex-wrap items-center gap-2">
           <button id="surpriseReadBtn" onclick="" class="px-4 py-2.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-xs cursor-pointer">
             <span>📖</span>
-            <span id="surpriseReadBtnLabel">Read on Nooks ↗</span>
+            <span id="surpriseReadBtnLabel">Reading Nook ↗</span>
           </button>
           <button id="surpriseDownloadBtn" onclick="" class="px-3.5 py-2.5 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] rounded-xl text-xs font-semibold text-[var(--text-heading)] flex items-center gap-1.5 cursor-pointer">
             <span>⬇</span>
@@ -1710,7 +1710,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       return applyShelfSorting(list, activeSortMode);
     }}
 
-    function openDirectNookReader() {{
+    function openDirectReadingNook() {{
       window.open('./reader.html', '_blank');
     }}
 
@@ -1924,7 +1924,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
                 <div class="pt-2 border-t border-white/15 flex items-center justify-between text-[10px]">
                   <button onclick="openBookInNook(event, '${{b.id}}')" class="text-amber-300 font-bold hover:underline flex items-center gap-1">
-                    <span>${{ (fmt === 'PDF') ? '📄 Open PDF ↗' : '📖 Read on Nooks ↗' }}</span>
+                    <span>${{ (fmt === 'PDF') ? '📄 Open PDF ↗' : '📖 Reading Nook ↗' }}</span>
                   </button>
                   <span class="text-white/80 font-semibold">Dossier →</span>
                 </div>
@@ -2009,7 +2009,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
               <div class="mt-auto pt-2.5 border-t border-[var(--border-subtle)] flex items-center justify-between gap-2 text-xs">
                 <button onclick="openBookInNook(event, '${{b.id}}')" class="px-3.5 py-1.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-bold rounded-lg shadow-xs transition flex items-center gap-1.5 shrink-0">
                   <span>${{ (b.format && b.format.toLowerCase() === 'pdf') ? '📄' : '📖' }}</span>
-                  <span>${{ (b.format && b.format.toLowerCase() === 'pdf') ? 'Open PDF ↗' : 'Read on Nooks ↗' }}</span>
+                  <span>${{ (b.format && b.format.toLowerCase() === 'pdf') ? 'Open PDF ↗' : 'Reading Nook ↗' }}</span>
                 </button>
                 <span class="text-[var(--terracotta)] font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform text-xs ml-auto">
                   Notes & Quotes →
@@ -2421,7 +2421,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       if (readBtn) {{
         readBtn.onclick = (e) => openBookInNook(e, chosen.id);
         if (readBtnLabel) {{
-          readBtnLabel.innerText = isPdf ? "Open PDF ↗" : "Read on Nooks ↗";
+          readBtnLabel.innerText = isPdf ? "Open PDF ↗" : "Reading Nook ↗";
         }}
       }}
 

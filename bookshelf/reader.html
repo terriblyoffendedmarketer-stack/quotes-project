@@ -99,12 +99,45 @@
         opacity: 0.35;
       }
     }
+    #topHeader {
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+    }
+    .header-immersive {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .header-immersive.header-visible,
+    .header-immersive:hover,
+    .header-immersive:focus-within {
+      transform: translateY(0) !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+    #headerRevealBtn {
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    #headerRevealBtn:hover {
+      opacity: 1 !important;
+      transform: translate(-50%, 2px) scale(1.05);
+    }
   </style>
 </head>
 <body class="theme-cream flex flex-col h-screen">
 
-  <!-- Top App Bar -->
-  <header class="h-14 border-b border-[var(--reader-border)] px-4 flex items-center justify-between z-30 shrink-0 bg-[var(--reader-bg)]/95 backdrop-blur-sm">
+  <!-- Discreet Top Hover Sensor & Reveal Button for Kindle-Style Full Screen -->
+  <div id="topHoverTrigger" class="fixed top-0 left-0 right-0 h-4 z-40 pointer-events-auto" onmouseenter="showHeader()"></div>
+  <button id="headerRevealBtn" onclick="toggleHeaderVisible()" class="fixed top-1 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-black/5 dark:bg-white/10 hover:bg-[var(--terracotta)] hover:text-white text-stone-400 dark:text-stone-500 text-[10px] tracking-wider uppercase font-sans z-30 transition-all opacity-0 hover:opacity-100 pointer-events-auto cursor-pointer shadow-xs" title="Click or hover to reveal controls" style="display: none;">
+    •••
+  </button>
+
+  <!-- Top App Bar (Auto-hiding in Reading Mode) -->
+  <header id="topHeader" class="h-14 border-b border-[var(--reader-border)] px-4 flex items-center justify-between z-50 shrink-0 bg-[var(--reader-bg)]/95 backdrop-blur-md shadow-xs">
     <!-- Left: Back to Shelf -->
     <div class="flex items-center gap-3">
       <a href="./bookshelf.html" id="backLink" class="text-xs font-semibold text-[var(--terracotta)] hover:underline flex items-center gap-1.5 py-1 px-2 rounded-lg hover:bg-[var(--terracotta-soft)] transition">
@@ -224,14 +257,14 @@
         <p class="font-semibold text-stone-700 dark:text-stone-300 flex items-center gap-1 mb-0.5">
           <span>ℹ️</span><span>Reading a PDF book?</span>
         </p>
-        <span>Nook specializes in reflowable EPUB typography. For PDF books, simply double-click the downloaded file to read in your browser or system PDF viewer.</span>
+        <span>Reading Nook specializes in reflowable EPUB typography. For PDF books, simply double-click the downloaded file to read in your browser or system PDF viewer.</span>
       </div>
     </div>
 
     <!-- 2. Centered Reading Viewport (Kindle Bifold Spread with Center Spine & Running Header) -->
-    <div id="readerViewport" class="hidden w-full h-full max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-2 sm:py-3 flex flex-col justify-center relative z-10">
-      <!-- Running Header (Book Title Centered in Small Caps) -->
-      <div id="runningHeader" class="text-center py-1 font-serif text-[11px] tracking-widest uppercase text-stone-400 dark:text-stone-500 truncate pointer-events-none select-none shrink-0"></div>
+    <div id="readerViewport" class="hidden w-full h-full max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 pt-3 pb-1 flex flex-col justify-center relative z-10">
+      <!-- Running Header (Book Title Centered in Subtle Small Caps, Kindle Style) -->
+      <div id="runningHeader" class="text-center pb-2 font-serif text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-stone-400/90 dark:text-stone-500/90 truncate pointer-events-none select-none shrink-0"></div>
 
       <!-- Viewer Container -->
       <div class="relative flex-1 w-full h-full overflow-hidden">
@@ -250,11 +283,11 @@
     </button>
   </main>
 
-  <!-- Bottom Reader Status Bar -->
-  <footer id="statusBar" class="h-9 border-t border-[var(--reader-border)] px-4 flex items-center justify-between text-[11px] z-30 shrink-0 bg-[var(--reader-bg)] text-stone-500 font-mono">
-    <div id="chapterDisplay" class="truncate max-w-[200px] sm:max-w-md font-serif italic text-xs"></div>
-    <div class="flex items-center gap-3">
-      <span id="pageProgressDisplay">0%</span>
+  <!-- Bottom Reader Status Bar (Seamless Kindle Style) -->
+  <footer id="statusBar" class="h-8 px-6 sm:px-12 flex items-center justify-between text-[11px] z-20 shrink-0 bg-transparent text-stone-400 dark:text-stone-500 font-serif select-none pointer-events-none">
+    <div id="chapterDisplay" class="truncate max-w-[200px] sm:max-w-md italic text-[11px] text-stone-400 dark:text-stone-500 font-serif"></div>
+    <div class="flex items-center gap-2">
+      <span id="pageProgressDisplay" class="text-[11px] text-stone-400 dark:text-stone-500 font-serif tracking-wide">0%</span>
     </div>
   </footer>
 
@@ -445,6 +478,68 @@
       }
     }
 
+    // Immersive Header State Controls
+    let isImmersiveMode = false;
+    let headerHideTimer = null;
+
+    function setImmersiveMode(enable) {
+      isImmersiveMode = enable;
+      const topHeader = document.getElementById('topHeader');
+      const revealBtn = document.getElementById('headerRevealBtn');
+      if (enable) {
+        topHeader.classList.add('header-immersive');
+        if (revealBtn) revealBtn.style.display = 'block';
+      } else {
+        topHeader.classList.remove('header-immersive', 'header-visible');
+        if (revealBtn) revealBtn.style.display = 'none';
+      }
+    }
+
+    function showHeader() {
+      if (!isImmersiveMode) return;
+      clearTimeout(headerHideTimer);
+      const topHeader = document.getElementById('topHeader');
+      if (topHeader) topHeader.classList.add('header-visible');
+    }
+
+    function scheduleHideHeader(delay = 600) {
+      if (!isImmersiveMode) return;
+      const appearanceMenu = document.getElementById('appearanceMenu');
+      const tocDrawer = document.getElementById('tocDrawer');
+      const quotesDrawer = document.getElementById('quotesDrawer');
+      if (
+        (appearanceMenu && !appearanceMenu.classList.contains('hidden')) ||
+        (tocDrawer && !tocDrawer.classList.contains('-translate-x-full')) ||
+        (quotesDrawer && !quotesDrawer.classList.contains('translate-x-full'))
+      ) {
+        return;
+      }
+      clearTimeout(headerHideTimer);
+      headerHideTimer = setTimeout(() => {
+        const topHeader = document.getElementById('topHeader');
+        if (topHeader) topHeader.classList.remove('header-visible');
+      }, delay);
+    }
+
+    function toggleHeaderVisible() {
+      const topHeader = document.getElementById('topHeader');
+      if (topHeader && topHeader.classList.contains('header-visible')) {
+        scheduleHideHeader(0);
+      } else {
+        showHeader();
+      }
+    }
+
+    function handleGlobalMouseMove(e) {
+      if (!isImmersiveMode) return;
+      if (e.clientY < 56) {
+        showHeader();
+      } else if (e.clientY > 80) {
+        scheduleHideHeader(800);
+      }
+    }
+    window.addEventListener('mousemove', handleGlobalMouseMove);
+
     async function initReader() {
       chapterDisplay.innerText = "";
       updateQuotesCount();
@@ -460,7 +555,8 @@
         console.warn("IndexedDB check:", err);
       }
 
-      // If not in cache, show clean dropzone without blocking or hanging
+      // If not in cache, show clean dropzone with pinned header
+      setImmersiveMode(false);
       dropZone.style.display = 'flex';
       readerViewport.classList.add('hidden');
     }
@@ -468,6 +564,7 @@
     function loadEpubData(data) {
       dropZone.style.display = 'none';
       readerViewport.classList.remove('hidden');
+      setImmersiveMode(true);
 
       if (book) {
         try { book.destroy(); } catch (e) {}
@@ -545,6 +642,7 @@
       });
 
       rendition.on("keydown", handleKeyNav);
+      rendition.on("mousemove", handleGlobalMouseMove);
     }
 
     function setSpreadMode(mode) {
@@ -951,16 +1049,16 @@
         bgColor = '#ffffff';
       }
 
-      // Professional Kindle / Apple Books Typography:
-      // Justified text, paragraph indents, zero paragraph margins, generous line-height
-      const baseFontSize = 18 * (currentFontSize / 100);
+      // Kindle Bookerly Typography Configuration:
+      // Tight 1.5 line-height, elegant regular-weight headings, 1.4em indents, full justification
+      const baseFontSize = 17.5 * (currentFontSize / 100);
 
       const bodyStyles = {
         background: `${bgColor} !important`,
         color: `${textColor} !important`,
         "font-family": "'Bookerly', 'Newsreader', 'Literata', 'Iowan Old Style', 'Charter', 'Georgia', serif !important",
         "font-size": `${baseFontSize}px !important`,
-        "line-height": "1.68 !important",
+        "line-height": "1.5 !important",
         margin: "0 !important",
         "-webkit-font-smoothing": "antialiased",
         "-moz-osx-font-smoothing": "grayscale"
@@ -976,7 +1074,7 @@
         },
         body: bodyStyles,
         p: {
-          "text-indent": "1.5em !important",
+          "text-indent": "1.4em !important",
           "margin-top": "0 !important",
           "margin-bottom": "0 !important",
           "text-align": "justify !important",
@@ -989,10 +1087,21 @@
         },
         "h1, h2, h3, h4": {
           "font-family": "'Bookerly', 'Newsreader', Georgia, serif !important",
-          "line-height": "1.3 !important",
-          "margin-top": "1.6em !important",
-          "margin-bottom": "0.8em !important",
-          "text-align": "left !important"
+          "font-weight": "400 !important",
+          "line-height": "1.25 !important",
+          "margin-top": "2.2em !important",
+          "margin-bottom": "1em !important",
+          "text-align": "left !important",
+          "letter-spacing": "-0.01em !important"
+        },
+        "h1": {
+          "font-size": "1.65em !important"
+        },
+        "h2": {
+          "font-size": "1.35em !important"
+        },
+        "h3": {
+          "font-size": "1.18em !important"
         },
         "::selection": {
           background: "rgba(125, 211, 252, 0.45) !important"
