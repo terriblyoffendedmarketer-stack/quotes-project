@@ -1,7 +1,7 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 31 (Mobile Viewport Optimization & Balanced Reading Typography)  
-> **Current**: Calibrated body regular weight to 430 with `opsz 18` and bold to 630 semi-bold for golden typographic contrast without ink bloat; implemented adaptive mobile app bar with 44px segmented view switcher; stacked mobile editorial cards with 4-line synopsis clamp; converted mobile dossier to native slide-up bottom sheet with drag handle; enabled EPUB.js portrait single-page fallback (< 640px) with iframe touch turn zones (25% prev, 25% next, 50% toggle chrome) & swipe navigation while preserving solidified laptop layout 100% intact; bumped SW cache to v16.  
+> **Status**: In Progress | **Phase**: 31 (Mobile Viewport Optimization, Balanced Typography & Streamlined Nook UX)  
+> **Current**: Calibrated body regular weight to 430 with `opsz 18` and bold to 630 semi-bold; implemented adaptive mobile app bar with 44px segmented view switcher, stacked mobile editorial cards, and native bottom dossier sheet; enabled EPUB.js portrait single-page fallback (< 640px) with touch turn zones & swipe navigation; streamlined Nook empty state to a clean 2-step directional Download -> Upload funnel; bumped SW cache to v17.  
 > **Next**: Final live verification on mobile test devices.
 
 ## Roadmap
@@ -57,6 +57,7 @@
 - `scripts/build_independent_bookshelf_app.py`: Compiles the standalone My Reading Corner reading shelf app (`bookshelf/index.html`, `bookshelf/data.json`, `docs/bookshelf.html`).
 - `scripts/tune_reading_typography_and_mobile_nook.py`: Calibrates balanced 430 regular / 630 bold Bookerly/Literata typography and mobile canvas touch navigation.
 - `scripts/patch_shelf_app_mobile_optimization.py`: Implements adaptive mobile app bar, 44px segmented view switcher, and native bottom dossier sheet.
+- `scripts/patch_nook_upload_flow_ux.py`: Streamlines Reading Nook empty state to a connected Download -> Upload 2-step journey.
 - `scripts/verify_mobile_and_desktop_audit.py`: Automated 22-rule verification suite for shelf and reader across mobile (375px) and laptop (1440px).
 - `scripts/move_drive_files.sh`: Shell script used to move 30 tactical lead magnets to `Books/Archive of bullshit` and HBR books to `Books/HBR`.
 - `prototype/index.html` & `docs/index.html`: Marginalia craft card web reader (untouched, independent project).
