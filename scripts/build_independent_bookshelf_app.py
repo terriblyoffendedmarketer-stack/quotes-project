@@ -1218,9 +1218,20 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
           </button>
         </div>
 
+        <!-- Open Nooks Reader -->
+        <button 
+          onclick="openDirectNookReader()" 
+          title="Open Nooks Reader in Reading Room (open any EPUB directly)"
+          class="shrink-0 px-2.5 sm:px-3 py-1.5 bg-[var(--terracotta)] text-white hover:bg-[var(--terracotta-hover)] rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-sm cursor-pointer">
+          <span>📖</span>
+          <span class="hidden 2xl:inline">Open Nooks Reader</span>
+          <span class="hidden md:inline 2xl:hidden">Nooks Reader</span>
+          <span class="inline md:hidden">Nooks</span>
+        </button>
+
         <!-- Surprise Me -->
         <button 
-          onclick="openSurpriseModal()" 
+          onclick="openSurpriseModal()"  
           title="Surprise me with a random book"
           class="shrink-0 px-2.5 sm:px-3 py-1.5 bg-[var(--amber-bg)] text-[var(--terracotta)] border border-[var(--terracotta)]/30 hover:bg-[var(--terracotta)] hover:text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-sm">
           <span>✨</span>
@@ -1254,10 +1265,24 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       <div class="flex items-center gap-1.5 overflow-x-auto py-1 no-scrollbar" id="categoryTabs">
         <!-- Populated dynamically -->
       </div>
-      <div class="flex items-center gap-3 text-xs text-[var(--text-muted)] shrink-0">
+      <div class="flex items-center gap-2.5 sm:gap-3 text-xs text-[var(--text-muted)] shrink-0">
+        <!-- Sort Control -->
+        <div class="flex items-center gap-1.5 bg-[var(--card-bg)] border border-[var(--border)] rounded-xl px-2.5 py-1 text-xs shadow-2xs">
+          <span class="text-[var(--text-muted)] text-[11px] font-medium hidden sm:inline">Sort:</span>
+          <select id="shelfSortSelect" onchange="handleSortChange(this.value)" class="bg-transparent text-[var(--text-heading)] font-semibold text-xs focus:outline-none cursor-pointer">
+            <option value="daily">🎲 Daily Shuffle (Default)</option>
+            <option value="title-asc">🔤 Title (A → Z)</option>
+            <option value="title-desc">🔤 Title (Z → A)</option>
+            <option value="author-asc">✍️ Author (A → Z)</option>
+            <option value="quotes-desc">★ Most Quotes</option>
+            <option value="category">📁 Category</option>
+          </select>
+        </div>
+
         <label class="flex items-center gap-1.5 cursor-pointer font-medium hover:text-[var(--text-heading)] select-none">
           <input type="checkbox" id="filterQuotesOnly" onchange="renderCurrentView()" class="rounded border-[var(--border)] accent-[var(--terracotta)] w-3.5 h-3.5" />
-          <span>Quotes Only ({quote_count})</span>
+          <span class="hidden sm:inline">Quotes Only ({quote_count})</span>
+          <span class="sm:hidden">Quotes ({quote_count})</span>
         </label>
         <span id="filteredCountBadge" class="font-mono text-[11px] px-2.5 py-0.5 bg-[var(--border-subtle)] rounded-full text-[var(--text-muted)]">
           {total_books}
@@ -1343,8 +1368,9 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
           <span>Spin Again</span>
         </button>
         <div class="flex items-center gap-2">
-          <button id="surpriseDriveBtn" onclick="" class="px-4 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] rounded-xl text-xs font-semibold text-[var(--text-heading)]">
-            Open in Drive ↗
+          <button id="surpriseDownloadBtn" onclick="" class="px-4 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] rounded-xl text-xs font-semibold text-[var(--text-heading)] flex items-center gap-1.5 cursor-pointer">
+            <span>⬇</span>
+            <span>Download Ebook</span>
           </button>
           <button onclick="copySingleTbr(currentSurpriseBook.title, currentSurpriseBook.author)" class="px-4 py-2 bg-[var(--canvas)] border border-[var(--border)] rounded-xl text-xs font-medium text-[var(--text-muted)] hover:text-[var(--text-heading)]">
             Copy TBR
@@ -1531,11 +1557,60 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       `;
     }}
 
+    let activeSortMode = "daily";
+
+    function handleSortChange(sortMode) {{
+      activeSortMode = sortMode;
+      renderCurrentView();
+    }}
+
+    function getDailySeed() {{
+      const now = new Date();
+      return now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+    }}
+
+    function mulberry32(a) {{
+      return function() {{
+        let t = a += 0x6D2B79F5;
+        t = Math.imul(t ^ (t >>> 15), t | 1);
+        t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      }};
+    }}
+
+    function seededShuffle(array, seed) {{
+      const prng = mulberry32(seed);
+      const copy = array.slice();
+      for (let i = copy.length - 1; i > 0; i--) {{
+        const j = Math.floor(prng() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }}
+      return copy;
+    }}
+
+    function applyShelfSorting(books, sortMode) {{
+      const arr = books.slice();
+      if (sortMode === "daily") {{
+        return seededShuffle(arr, getDailySeed());
+      }} else if (sortMode === "title-asc") {{
+        return arr.sort((a, b) => (a.title || "").localeCompare(b.title || "", undefined, {{ numeric: true, sensitivity: 'base' }}));
+      }} else if (sortMode === "title-desc") {{
+        return arr.sort((a, b) => (b.title || "").localeCompare(a.title || "", undefined, {{ numeric: true, sensitivity: 'base' }}));
+      }} else if (sortMode === "author-asc") {{
+        return arr.sort((a, b) => (a.author || "").localeCompare(b.author || "", undefined, {{ numeric: true, sensitivity: 'base' }}));
+      }} else if (sortMode === "quotes-desc") {{
+        return arr.sort((a, b) => ((b.quotes ? b.quotes.length : 0) - (a.quotes ? a.quotes.length : 0)));
+      }} else if (sortMode === "category") {{
+        return arr.sort((a, b) => (a.category || "").localeCompare(b.category || "") || (a.title || "").localeCompare(b.title || ""));
+      }}
+      return arr;
+    }}
+
     function getFilteredBooks() {{
       const q = document.getElementById("searchInput").value.toLowerCase().trim();
       const quotesOnly = document.getElementById("filterQuotesOnly").checked;
 
-      return SHELF_DATA.filter(b => {{
+      let list = SHELF_DATA.filter(b => {{
         if (activeCategory !== "All" && b.category !== activeCategory) return false;
         if (quotesOnly && !b.has_quote_bank) return false;
         if (q) {{
@@ -1547,6 +1622,49 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         }}
         return true;
       }});
+
+      return applyShelfSorting(list, activeSortMode);
+    }}
+
+    function openDirectNookReader() {{
+      window.open('./reader.html', '_blank');
+    }}
+
+    function downloadBookFile(event, bookId) {{
+      if (event) {{
+        event.stopPropagation();
+        event.preventDefault();
+      }}
+      const b = SHELF_DATA.find(item => item.id === bookId);
+      if (!b) return;
+
+      const rawFmt = (b.format && b.format.toLowerCase()) || '';
+      const fmt = rawFmt === 'cbr' ? 'cbr' : (rawFmt === 'pdf' || (b.title && b.title.toLowerCase().endsWith('.pdf')) ? 'pdf' : 'epub');
+      const filename = `${{b.title}}.${{fmt}}`;
+
+      let targetUrl = b.direct_download_url;
+      if (!targetUrl && b.drive_id) {{
+        targetUrl = `https://drive.usercontent.google.com/download?id=${{b.drive_id}}&export=download`;
+      }} else if (!targetUrl && b.drive_url) {{
+        const m = b.drive_url.match(/\\/d\\/([a-zA-Z0-9_-]+)/) || b.drive_url.match(/id=([a-zA-Z0-9_-]+)/);
+        if (m) {{
+          targetUrl = `https://drive.usercontent.google.com/download?id=${{m[1]}}&export=download`;
+        }} else {{
+          targetUrl = b.drive_url;
+        }}
+      }}
+
+      if (targetUrl) {{
+        const a = document.createElement("a");
+        a.href = targetUrl;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => a.remove(), 1000);
+        showToast(`Downloading "${{filename}}" directly...`);
+      }} else {{
+        showToast("No download link found for this book.");
+      }}
     }}
 
     function renderCategoryTabs() {{
@@ -1916,11 +2034,11 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
                 <span>📖</span>
                 <span>Read in Nook ↗</span>
               </button>
-              ${{b.drive_url ? `
-                <a href="${{b.drive_url}}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-heading)] rounded-xl transition flex items-center gap-1.5">
-                  <span>📁</span>
-                  <span>Drive File ↗</span>
-                </a>
+              ${{(b.drive_url || b.direct_download_url) ? `
+                <button onclick="downloadBookFile(event, '${{b.id}}')" class="px-3.5 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-heading)] rounded-xl transition flex items-center gap-1.5 shadow-2xs cursor-pointer" title="Download ${{b.title}} directly">
+                  <span>⬇</span>
+                  <span>Download ${{(b.format && b.format.toUpperCase()) || 'Ebook'}}</span>
+                </button>
               ` : ''}}
               <button onclick="copySingleTbr('${{b.title.replace(/'/g, "\\\\\\'")}}', '${{b.author.replace(/'/g, "\\\\\\'")}}')" class="px-3.5 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-heading)] rounded-xl transition flex items-center gap-1.5">
                 <span>📋</span>
@@ -2069,10 +2187,11 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
                 <span>📖</span>
                 <span>Read in Nook ↗</span>
               </button>
-              ${{b.drive_url ? `
-                <a href="${{b.drive_url}}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] text-xs font-semibold rounded-lg">
-                  Drive File ↗
-                </a>
+              ${{(b.drive_url || b.direct_download_url) ? `
+                <button onclick="downloadBookFile(event, '${{b.id}}')" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-heading)] rounded-lg transition flex items-center gap-1.5 cursor-pointer">
+                  <span>⬇</span>
+                  <span>Download ${{(b.format && b.format.toUpperCase()) || 'Ebook'}}</span>
+                </button>
               ` : ''}}
               <button onclick="copySingleTbr('${{b.title.replace(/'/g, "\\\\\\'")}}', '${{b.author.replace(/'/g, "\\\\\\'")}}')" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] text-xs font-semibold rounded-lg">Copy TBR</button>
               <button onclick="openEditModal('${{b.id}}')" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] text-xs font-semibold text-[var(--text-muted)] hover:text-[var(--text-heading)] rounded-lg">Edit</button>
@@ -2182,12 +2301,12 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
         </div>
       `;
 
-      const driveBtn = document.getElementById("surpriseDriveBtn");
-      if (chosen.drive_url) {{
-        driveBtn.style.display = "inline-block";
-        driveBtn.onclick = () => window.open(chosen.drive_url, '_blank');
+      const downloadBtn = document.getElementById("surpriseDownloadBtn");
+      if (chosen.drive_url || chosen.direct_download_url) {{
+        downloadBtn.style.display = "inline-flex";
+        downloadBtn.onclick = (e) => downloadBookFile(e, chosen.id);
       }} else {{
-        driveBtn.style.display = "none";
+        downloadBtn.style.display = "none";
       }}
     }}
 

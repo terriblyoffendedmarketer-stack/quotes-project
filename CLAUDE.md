@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 24 (Header Button Responsive Sizing, Nooks Syntax Fix & Dropzone Hierarchy)  
-> **Current**: Fixed Nooks EPUB reader execution by restoring `async function initReader()` (resolving fatal SyntaxError: await in sync function that halted script execution and broke drag-and-drop). Re-ordered Nooks dropzone to feature Button 1 as 1-click Direct Download (`drive.usercontent.google.com/download?id=...&export=download`) and Button 2 as Browse/Open from Downloads, with stopPropagation drag listeners. Replaced arbitrary line-clamp with explicit CSS `.editorial-synopsis` responsive clamping (6/7/7/9/11) plus `overflow-hidden` to eliminate text overflow and awkward clipping on non-fullscreen laptop windows. Redesigned "Surprise Me" and "Copy TBR" header buttons with compact padding and adaptive labels (`Surprise Me` / `Surprise`, `Copy TBR` / `TBR`) for flawless fit across all viewport sizes. Bumped Service Worker cache to v9.  
-> **Next**: User verification of Nook drag-and-drop, direct download, and responsive editorial layout.
+> **Status**: In Progress | **Phase**: 25 (Daily-Seeded & Alphabetical Multi-View Sorting, Header Nooks Reader Button & Direct Ebook Downloads)  
+> **Current**: Implemented full sorting engine across all 3 shelf views (Covers, Editorial, Bookshelf Split) featuring deterministic Mulberry32 PRNG daily-seeded shuffle (rotates shelf arrangement automatically every midnight while remaining unified across all views), Title A-Z, Title Z-A, Author A-Z, Most Quotes, and Category. Added prominent `📖 Open Nooks Reader` button to header navigation to open the standalone reader anytime with clean direct-open empty state. Replaced Google Drive web viewer links with direct named file downloads (`downloadBookFile()`) across Split View dossier, mobile drawer, and Surprise Me modal using `drive.usercontent.google.com` to download `{title}.{epub|pdf|cbr}` directly to local Downloads. Bumped Service Worker cache to v10.  
+> **Next**: User review of daily sorting rotation, direct ebook downloading, and global Nooks reader access.
 
 ## Roadmap
 
@@ -30,6 +30,7 @@
 - [x] Phase 22: Direct Nook Download Action, PWA Standalone Restoration & Zero Auto-Download on Shelf — Removed auto-download on shelf click, added 1-click direct download on Nook dropzone without Google Drive redirects, restored manifest scope to './' for PWA window reading
 - [x] Phase 23: Editorial View Synopsis Unclamping & 1-Click Inline Expand — Expanded vertical synopsis clamp up to 13 lines to utilize card height alongside cover; added inline 'Read full synopsis ↓' expand toggle for extra-long blurbs; pinned cover with self-start
 - [x] Phase 24: Header Button Responsive Sizing, Nooks Syntax Fix & Dropzone Hierarchy — Restored `async function initReader()` fixing drag-and-drop & file picker; re-ordered dropzone buttons (Button 1: Direct Download, Button 2: Browse); implemented adaptive header buttons ('Surprise Me' / 'Surprise', 'Copy TBR' / 'TBR') and CSS-level `-webkit-line-clamp` (6/7/7/9/11) with card `overflow-hidden` for non-fullscreen viewports
+- [x] Phase 25: Daily-Seeded & Alphabetical Multi-View Sorting, Header Nooks Reader Button & Direct Ebook Downloads — Mulberry32 PRNG daily seeded shuffle default with A-Z, Z-A, Author, Quotes, and Category sorting across all 3 views; Open Nooks Reader header action; and direct named ebook downloading replacing Google Drive links
 
 ## File map
 

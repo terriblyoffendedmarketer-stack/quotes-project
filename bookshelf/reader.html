@@ -361,20 +361,23 @@
     const spreadOneBtn = document.getElementById('spreadOneBtn');
 
     // Initialize UI
-    document.title = `${bookTitle} • Reading Nook`;
-    bookTitleDisplay.innerText = bookTitle;
-    bookAuthorDisplay.innerText = `by ${bookAuthor}`;
-    emptyStateTitle.innerText = bookTitle;
-    emptyStateAuthor.innerText = `by ${bookAuthor}`;
-    runningHeader.innerText = `${bookAuthor.toUpperCase()} • ${bookTitle.toUpperCase()}`;
+    const isDirectOpen = !urlParams.get('title');
+    document.title = isDirectOpen ? 'Reading Nook • Reflowable EPUB Reader' : `${bookTitle} • Reading Nook`;
+    bookTitleDisplay.innerText = isDirectOpen ? 'Reading Nook' : bookTitle;
+    bookAuthorDisplay.innerText = isDirectOpen ? '' : `by ${bookAuthor}`;
+    emptyStateTitle.innerText = isDirectOpen ? 'Welcome to Reading Nook' : bookTitle;
+    emptyStateAuthor.innerText = isDirectOpen ? 'Reflowable typography, bifold spread & instant Quote Bank highlights.' : `by ${bookAuthor}`;
+    runningHeader.innerText = isDirectOpen ? 'READING NOOK' : `${bookAuthor.toUpperCase()} • ${bookTitle.toUpperCase()}`;
 
     const hasDownloadTarget = directDownloadUrl || (driveUrl && (driveUrl.includes('/d/') || driveUrl.includes('id=')));
     if (!hasDownloadTarget && !driveUrl) {
       if (downloadDirectBtn) {
-        downloadDirectBtn.classList.add('opacity-50', 'cursor-not-allowed');
-        if (downloadBtnLabel) downloadBtnLabel.innerText = "No Download Link Available";
+        downloadDirectBtn.style.display = 'none';
       }
     } else {
+      if (downloadDirectBtn) {
+        downloadDirectBtn.style.display = 'flex';
+      }
       if (downloadBtnLabel) downloadBtnLabel.innerText = `Download "${bookTitle}.epub" Directly`;
     }
 
