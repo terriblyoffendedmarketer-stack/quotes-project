@@ -9,7 +9,7 @@
   <!-- Google Fonts: Newsreader & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400;1,7..72,700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -370,7 +370,7 @@
     let currentSelection = null;
     let currentFontSize = 100;
     let isContinuousScroll = false;
-    let spreadMode = (window.innerWidth >= 1024) ? "always" : "none";
+    let spreadMode = "always"; // Double spread is default
     let activeHighlightColor = "rgba(253, 224, 71, 0.45)"; // default soft yellow
     let bookToc = [];
 
@@ -603,7 +603,7 @@
       }
       viewerEl.innerHTML = "";
 
-      const isTwoPage = (spreadMode === "always" && !isContinuousScroll && window.innerWidth >= 800);
+      const isTwoPage = (spreadMode === "always" && !isContinuousScroll && window.innerWidth >= 640);
       centerSpine.style.display = isTwoPage ? "block" : "none";
       updateSpreadButtonStyles();
 
@@ -612,7 +612,12 @@
         height: "100%",
         flow: isContinuousScroll ? "scrolled-doc" : "paginated",
         spread: spreadMode,
-        minSpreadWidth: 800
+        minSpreadWidth: 640
+      });
+
+      // Inject webfonts into iframe so bold & serif fonts render with crisp distinction
+      rendition.hooks.content.register(contents => {
+        contents.addStylesheet("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400;1,7..72,700&display=swap");
       });
 
       applyThemeToRendition();
@@ -669,7 +674,7 @@
       resizeTimer = setTimeout(() => {
         if (rendition) {
           rendition.resize();
-          const isTwoPage = (spreadMode === "always" && !isContinuousScroll && window.innerWidth >= 800);
+          const isTwoPage = (spreadMode === "always" && !isContinuousScroll && window.innerWidth >= 640);
           centerSpine.style.display = isTwoPage ? "block" : "none";
         }
       }, 150);
@@ -1086,8 +1091,8 @@
           "text-indent": "0 !important"
         },
         "h1, h2, h3, h4": {
-          "font-family": "'Bookerly', 'Newsreader', Georgia, serif !important",
-          "font-weight": "400 !important",
+          "font-family": "'Newsreader', 'Bookerly', 'Literata', Georgia, serif !important",
+          "font-weight": "500 !important",
           "line-height": "1.25 !important",
           "margin-top": "2.2em !important",
           "margin-bottom": "1em !important",
@@ -1102,6 +1107,19 @@
         },
         "h3": {
           "font-size": "1.18em !important"
+        },
+        "b, strong, b *, strong *, [class*='bold'], [class*='txbf'], .txbfb, .txbf, .sgc2, .sgc13": {
+          "font-family": "'Newsreader', 'Bookerly', 'Literata', Georgia, serif !important",
+          "font-weight": "700 !important",
+          "-webkit-font-smoothing": "antialiased"
+        },
+        "em, i, em *, i *, [class*='italic'], .sgc8": {
+          "font-style": "italic !important"
+        },
+        "b em, em b, strong em, em strong": {
+          "font-family": "'Newsreader', 'Bookerly', 'Literata', Georgia, serif !important",
+          "font-weight": "700 !important",
+          "font-style": "italic !important"
         },
         "::selection": {
           background: "rgba(125, 211, 252, 0.45) !important"
