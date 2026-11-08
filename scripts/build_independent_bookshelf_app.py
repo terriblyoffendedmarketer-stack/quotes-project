@@ -11,6 +11,26 @@
 import json
 import re
 from pathlib import Path
+import sys
+
+# Ensure ROOT is in sys.path so scripts.* imports cleanly
+_CURR_DIR = Path(__file__).resolve().parent
+_ROOT_DIR = _CURR_DIR.parent
+if str(_ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(_ROOT_DIR))
+
+try:
+    from scripts.audit_and_tag_categories import (
+        SWAPPED_FIXES,
+        SHORT_STORIES_IDS,
+        ESSAYS_IDS,
+        LITERARY_NON_FICTION_IDS
+    )
+except ImportError:
+    SWAPPED_FIXES = {}
+    SHORT_STORIES_IDS = set()
+    ESSAYS_IDS = set()
+    LITERARY_NON_FICTION_IDS = set()
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG_PATH = ROOT / "content" / "gdrive_books_catalog.json"
@@ -750,9 +770,24 @@ def build():
         # Apply in-memory fixes to guarantee accurate titles, authors, and covers
         for b in shelf_books:
             bid = b.get("id")
+            if bid in SWAPPED_FIXES:
+                b["title"] = SWAPPED_FIXES[bid]["title"]
+                b["author"] = SWAPPED_FIXES[bid]["author"]
+
             if bid in MANUAL_BOOK_FIXES:
                 for k, v in MANUAL_BOOK_FIXES[bid].items():
                     b[k] = v
+
+            # Multi-category tags (preserve primary category and add curated ones)
+            primary_cat = b.get("category", "Fiction & Non-Fiction")
+            cats = [primary_cat]
+            if bid in SHORT_STORIES_IDS and "Short Stories" not in cats:
+                cats.append("Short Stories")
+            if bid in ESSAYS_IDS and "Essays" not in cats:
+                cats.append("Essays")
+            if bid in LITERARY_NON_FICTION_IDS and "Literary Non-Fiction" not in cats:
+                cats.append("Literary Non-Fiction")
+            b["categories"] = cats
 
             # If explicitly marked as having no cover or set to None in manual fixes, respect that decision
             if b.get("no_cover") or (bid in MANUAL_BOOK_FIXES and MANUAL_BOOK_FIXES[bid].get("cover_url") is None):
@@ -1637,6 +1672,9 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
     const CATEGORIES = [
       "All",
+      "Short Stories",
+      "Essays",
+      "Literary Non-Fiction",
       "Fiction & Non-Fiction",
       "Cinema & Film Craft",
       "Screenplays",
@@ -1679,6 +1717,10 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
     }}
 
     function getJacketStyle(cat) {{
+      if (!cat) return "jacket-fiction";
+      if (cat.includes("Short Stories")) return "jacket-fiction";
+      if (cat.includes("Essays")) return "jacket-philosophy";
+      if (cat.includes("Literary Non-Fiction")) return "jacket-fiction";
       if (cat.includes("Fiction")) return "jacket-fiction";
       if (cat.includes("Marketing")) return "jacket-marketing";
       if (cat.includes("Philosophy")) return "jacket-philosophy";
@@ -1807,7 +1849,10 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       const quotesOnly = document.getElementById("filterQuotesOnly").checked;
 
       let list = SHELF_DATA.filter(b => {{
-        if (activeCategory !== "All" && b.category !== activeCategory) return false;
+        if (activeCategory !== "All") {{
+          const cats = b.categories || [b.category];
+          if (!cats.includes(activeCategory) && b.category !== activeCategory) return false;
+        }}
         if (quotesOnly && !b.has_quote_bank) return false;
         if (q) {{
           const matchTitle = (b.title || "").toLowerCase().includes(q);
@@ -1867,7 +1912,9 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
       const container = document.getElementById("categoryTabs");
       container.innerHTML = CATEGORIES.map(cat => {{
         const isAct = cat === activeCategory;
-        const count = cat === "All" ? SHELF_DATA.length : SHELF_DATA.filter(b => b.category === cat).length;
+        const count = cat === "All" 
+          ? SHELF_DATA.length 
+          : SHELF_DATA.filter(b => (b.categories && b.categories.includes(cat)) || b.category === cat).length;
         if (count === 0) return "";
         return `
           <button 
@@ -2249,7 +2296,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
 
           <!-- Title & Actions -->
           <div class="flex-1 min-w-0">
-            <span class="text-xs font-bold uppercase tracking-wider text-[var(--terracotta)]">${{b.category}}</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-[var(--terracotta)]">${{(b.categories && b.categories.length > 1) ? b.categories.join(' • ') : b.category}}</span>
             <h2 class="font-serif font-bold text-2xl md:text-3xl text-[var(--text-heading)] mt-1 tracking-tight leading-tight">
               ${{b.title}}
             </h2>
@@ -2406,7 +2453,7 @@ def generate_app_html(shelf_books, tbr_lines, quote_count):
           </div>
           <div class="flex-1 w-full">
             <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)]">${{b.category}}</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--terracotta)]">${{(b.categories && b.categories.length > 1) ? b.categories.join(' • ') : b.category}}</span>
               ${{getFormatBadgeHtml(getCleanFormat(b))}}
             </div>
             <h3 class="font-serif font-bold text-lg text-[var(--text-heading)] mt-0.5 leading-snug">${{b.title}}</h3>

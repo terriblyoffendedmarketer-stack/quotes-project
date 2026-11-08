@@ -148,6 +148,39 @@ def audit():
         "Docs and bookshelf files diverge"
     )
 
+    print("\n--- PILLAR 6: METADATA ACCURACY & CURATED MULTI-CATEGORIES ---")
+    import json
+    data_books = json.loads((ROOT / "bookshelf" / "data.json").read_text(encoding="utf-8"))
+    snow_crash_book = next((b for b in data_books if b.get("id") == "neal-stephenson-snow-crash"), None)
+    check(
+        "Snow Crash has title 'Snow Crash' and author 'Neal Stephenson'",
+        snow_crash_book and snow_crash_book.get("title") == "Snow Crash" and snow_crash_book.get("author") == "Neal Stephenson",
+        f"Snow crash metadata incorrect: {snow_crash_book}"
+    )
+    check(
+        "Curated categories (Short Stories, Essays, Literary Non-Fiction) present in shelf app",
+        all(c in shelf_content for c in ["Short Stories", "Essays", "Literary Non-Fiction"]),
+        "One or more curated categories missing in shelf HTML"
+    )
+    short_stories = [b for b in data_books if "Short Stories" in b.get("categories", []) or b.get("category") == "Short Stories"]
+    essays = [b for b in data_books if "Essays" in b.get("categories", []) or b.get("category") == "Essays"]
+    lit_nf = [b for b in data_books if "Literary Non-Fiction" in b.get("categories", []) or b.get("category") == "Literary Non-Fiction"]
+    check(
+        f"Short Stories category has curated books ({len(short_stories)} books)",
+        len(short_stories) >= 20,
+        f"Short stories count too low: {len(short_stories)}"
+    )
+    check(
+        f"Essays category has curated books ({len(essays)} books)",
+        len(essays) >= 25,
+        f"Essays count too low: {len(essays)}"
+    )
+    check(
+        f"Literary Non-Fiction category has curated books ({len(lit_nf)} books)",
+        len(lit_nf) >= 30,
+        f"Literary non-fiction count too low: {len(lit_nf)}"
+    )
+
     print("\n" + "=" * 70)
     print(f"AUDIT SUMMARY: {passes} PASSED | {failures} FAILED")
     print("=" * 70)

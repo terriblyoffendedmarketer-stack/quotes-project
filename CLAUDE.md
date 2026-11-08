@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 31 (Mobile Viewport Optimization, Balanced Typography & Streamlined Nook UX)  
-> **Current**: Calibrated body regular weight to 430 with `opsz 18` and bold to 630 semi-bold; implemented adaptive mobile app bar with 44px segmented view switcher, stacked mobile editorial cards, and native bottom dossier sheet; enabled EPUB.js portrait single-page fallback (< 640px) with touch turn zones & swipe navigation; streamlined Nook empty state to a clean 2-step directional Download -> Upload funnel; bumped SW cache to v17.  
-> **Next**: Final live verification on mobile test devices.
+> **Status**: In Progress | **Phase**: 32 (Swapped Author/Title Fixes & Curated Multi-Category Tagging)  
+> **Current**: Rectified 114 inverted title/author entries across the catalog (including Snow Crash by Neal Stephenson); added 3 new curated categories ("Short Stories", "Essays", "Literary Non-Fiction") with full multi-category assignment support across Board, Editorial, and Split views; updated verify_mobile_and_desktop_audit.py (27/27 PASS); bumped SW cache to v18.  
+> **Next**: User testing and verification on live GitHub Pages deployment.
 
 ## Roadmap
 
@@ -37,10 +37,12 @@
 - [x] Phase 29: Bold Typography Distinction, Double Spread Default & Mobile Audit Strategy — Injected full 400-800 weight font stylesheets into EPUB.js iframe; defined explicit font-weight: 700 rules for b, strong, and publisher classes (.txbfb, .sgc2); enforced double spread as active default with 640px threshold; drafted mobile optimization audit strategy; bumped SW cache to v14.
 - [x] Phase 30: Reading Nook Regular Text Sturdiness & Subpixel Calibration — Enhanced regular serif text weight from thin 400 to sturdy book weight (460) across body and p, bumped default base font size to 18.5px, applied -webkit-font-smoothing: subpixel-antialiased, and calibrated bold contrast to 750 weight; bumped SW cache to v15.
 - [x] Phase 31: Mobile Viewport Optimization & Balanced Reading Typography — Calibrated body regular weight to 430 with opsz 18 and bold to 630 semi-bold for golden contrast without ink bloat; implemented adaptive mobile app bar with 44px segmented view switcher; stacked mobile editorial cards with 4-line synopsis clamp; converted mobile dossier to native slide-up bottom sheet with drag handle; enabled EPUB.js portrait single-page fallback (< 640px) with iframe touch turn zones (25% prev, 25% next, 50% toggle chrome) & swipe navigation while preserving solidified laptop layout; bumped SW cache to v16.
+- [x] Phase 32: Swapped Metadata Audit & Curated Multi-Category Tagging — Rectified 114 swapped author/title books (Snow Crash, Cryptonomicon, Infinite Jest, Project Hail Mary, etc.); added multi-category support with "Short Stories", "Essays", and "Literary Non-Fiction"; bumped SW cache to v18.
 
 ## File map
 
 - `bookshelf/`: Decoupled, standalone reading shelf web app (**My Reading Corner**) ready for independent git repository (`index.html`, `data.json`).
+- `scripts/audit_and_tag_categories.py`: Audits and rectifies inverted author/title metadata across Google Drive catalogs and tags books into multi-category arrays.
 - `scripts/enrich_key_missing_quotes.py`: Curated engine injecting iconic quotes and two-tier companion insights for screenwriting, cinema craft, graphic novels, and literature classics.
 - `scripts/serve_bookshelf.py`: Lightweight zero-cache local server serving My Reading Corner on port 8899.
 - `content/book_metadata_cache.json`: Cache of Open Library works metadata, high-resolution cover IDs, and publisher descriptions.
