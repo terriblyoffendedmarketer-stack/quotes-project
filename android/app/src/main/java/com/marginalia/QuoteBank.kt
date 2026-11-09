@@ -164,12 +164,16 @@ object QuoteBank {
         if (!file.exists()) return assetQuotes
 
         val cachedQuotes = runCatching { parse(file.readText()) }.getOrNull()
-        if (cachedQuotes == null || cachedQuotes.isEmpty()) return assetQuotes
+        if (cachedQuotes.isNullOrEmpty()) return assetQuotes
 
-        val assetExpChars = assetQuotes.sumOf { it.explanation.length.toLong() }
-        val cachedExpChars = cachedQuotes.sumOf { it.explanation.length.toLong() }
+        // Compare timestamps: if cache was downloaded AFTER this APK was installed, use cache.
+        // If a new APK was installed after the cache was created, purge old cache and use new APK asset.
+        val apkTime = runCatching { File(context.applicationInfo.sourceDir).lastModified() }.getOrDefault(0L)
+        val cacheTime = file.lastModified()
 
-        return if (assetExpChars >= cachedExpChars && assetQuotes.isNotEmpty()) {
+        return if (cacheTime > apkTime) {
+            cachedQuotes
+        } else if (assetQuotes.isNotEmpty()) {
             runCatching { file.delete() }
             assetQuotes
         } else {

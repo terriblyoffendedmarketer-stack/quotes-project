@@ -117,9 +117,16 @@ object Cards {
         if (!file.exists()) return assetCards
 
         val cachedCards = runCatching { parse(file.readText()) }.getOrNull()
-        if (cachedCards == null || cachedCards.isEmpty()) return assetCards
+        if (cachedCards.isNullOrEmpty()) return assetCards
 
-        return if (assetCards.size >= cachedCards.size && assetCards.isNotEmpty()) {
+        // Compare timestamps: if cache was downloaded AFTER this APK was installed, use cache.
+        // If a new APK was installed after the cache was created, purge old cache and use new APK asset.
+        val apkTime = runCatching { File(context.applicationInfo.sourceDir).lastModified() }.getOrDefault(0L)
+        val cacheTime = file.lastModified()
+
+        return if (cacheTime > apkTime) {
+            cachedCards
+        } else if (assetCards.isNotEmpty()) {
             runCatching { file.delete() }
             assetCards
         } else {

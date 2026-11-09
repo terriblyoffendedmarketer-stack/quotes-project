@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: In Progress | **Phase**: 33 (Craft Card "Steal It" Literary Purge & Polish)  
-> **Current**: Audited all 113 craft cards in `content/cards.json` for corporate, business, SaaS, and marketing jargon; rewrote all 22 contaminated "Steal It" exercises (including Joan Didion "strategy doc", Salinger "Q3 results", Woolf "cancel Friday meetings", Cormac McCarthy "Meet Dana", and Toni Morrison sales objections) into pure literary essay, memoir, and prose craft; verified with `tools/lint_cards.py` (0 flags); updated web prototype.  
-> **Next**: User review and verification.
+> **Status**: Complete | **Phase**: 34 (Android Cache Invalidation Fix & Release APK Bundle)  
+> **Current**: Fixed Android `Cards.load` and `QuoteBank.load` cache-deletion bug where `assetCards.size >= cachedCards.size` (113 >= 113) purged downloaded cards; replaced with timestamp comparison against APK install time; reduced sync check interval to 15m; compiled signed release APK with clean cards; updated prototypes and APK bundles.  
+> **Next**: User verification on device.
 
 ## Roadmap
 
@@ -39,6 +39,7 @@
 - [x] Phase 31: Mobile Viewport Optimization & Balanced Reading Typography — Calibrated body regular weight to 430 with opsz 18 and bold to 630 semi-bold for golden contrast without ink bloat; implemented adaptive mobile app bar with 44px segmented view switcher; stacked mobile editorial cards with 4-line synopsis clamp; converted mobile dossier to native slide-up bottom sheet with drag handle; enabled EPUB.js portrait single-page fallback (< 640px) with iframe touch turn zones (25% prev, 25% next, 50% toggle chrome) & swipe navigation while preserving solidified laptop layout; bumped SW cache to v16.
 - [x] Phase 32: Swapped Metadata Audit & Curated Multi-Category Tagging — Rectified 114 swapped author/title books (Snow Crash, Cryptonomicon, Infinite Jest, Project Hail Mary, etc.); added multi-category support with "Short Stories", "Essays", and "Literary Non-Fiction"; bumped SW cache to v18.
 - [x] Phase 33: Craft Card "Steal It" Literary Purge & Polish — Audited all 113 cards in `content/cards.json` to eradicate all corporate, marketing, business, and SaaS jargon in "Steal It" sections; rewrote 22 cards to pure essay/fiction/memoir craft; verified 0 linter flags in `tools/lint_cards.py`.
+- [x] Phase 34: Android Cache Invalidation Fix & Release APK Bundle — Fixed `Cards.load` and `QuoteBank.load` cache-delete bug where `assetCards.size >= cachedCards.size` (113 >= 113) purged downloaded cards; replaced with timestamp comparison against APK install time; reduced sync check interval to 15m; compiled signed release APK.
 
 ## File map
 

@@ -18,7 +18,7 @@ object ContentSync {
 
     private const val PREFS = "content_sync"
     private const val LAST_CHECK = "last_check"
-    private const val MIN_INTERVAL_MS = 3 * 60 * 60 * 1000L
+    private const val MIN_INTERVAL_MS = 15 * 60 * 1000L
 
     /** Starts a background check if one is due. [done] runs on the background thread afterwards. */
     fun syncIfDue(context: Context, force: Boolean = false, done: (() -> Unit)? = null) {
