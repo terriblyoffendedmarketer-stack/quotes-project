@@ -74,3 +74,4 @@
 - Extracting the HTML from the old Python f-string | naive {{→{ replacement mangles backslash escapes ("\\n", "\\\\\\'") | swapped the 5 interpolations for @@TOKENS@@ and exec'd the original function; verified byte-identical output before editing
 - Open Library titles adopted verbatim came back lowercase ("A simple plan") | OL stores many titles in sentence/lower case | only adopt OL title when it normalises to ours, then re-apply smart_title()
 - "NEW" badge on 127 books | Drive modified time reflects bulk uploads, not "new to the shelf" | added first_seen (set once, the first build a book appears) and keyed the badge/"Recently Added" sort off it
+- Daily bookshelf LaunchAgent failed with "Operation not permitted" | macOS privacy (TCC) blocks /bin/bash launched by launchd from reading ~/Documents | launch via Homebrew python3 (already allowed, same as vision tool) which subprocesses the bash script

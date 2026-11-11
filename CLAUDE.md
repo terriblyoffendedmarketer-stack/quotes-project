@@ -2,7 +2,7 @@
 
 > **Status**: Active | **Phase**: 35 (Bookshelf Drive Sync, Name Cleanup & Code Audit)  
 > **Current**: My Reading Corner now rebuilds from the live Google Drive listing (keyed by Drive file id) instead of a frozen data.json; all 631 titles/authors hand-curated in `content/book_names.json`; 17 new Drive books added with covers/synopses/notes; template extracted from Python f-string and bug-fixed (HTML escaping, stale localStorage name overrides, Copy TBR quoting, pinned Tailwind CDN).  
-> **Next**: (1) push + install daily LaunchAgent (`scripts/launchd/`) once approved; (2) optionally apply Drive renames (`python3 scripts/rename_drive_files.py --apply`, plan in `content/drive_rename_plan.txt`); (3) rclone's shared client_id is being retired in 2026 — create own client id if sync starts failing.  
+> **Next**: daily LaunchAgent installed (09:15, log ~/Library/Logs/reading-corner-refresh.log); (1) optionally apply Drive renames (`python3 scripts/rename_drive_files.py --apply`, plan in `content/drive_rename_plan.txt`); (3) rclone's shared client_id is being retired in 2026 — create own client id if sync starts failing.  
 > **Known gaps**: `bookshelf/reader.html` (Reading Nook) not re-audited this phase; 103 books still use typographic jackets (no cover found).
 
 ## Roadmap
@@ -41,7 +41,7 @@
 - [x] Phase 32: Swapped Metadata Audit & Curated Multi-Category Tagging — Rectified 114 swapped author/title books (Snow Crash, Cryptonomicon, Infinite Jest, Project Hail Mary, etc.); added multi-category support with "Short Stories", "Essays", and "Literary Non-Fiction"; bumped SW cache to v18.
 - [x] Phase 33: Craft Card "Steal It" Literary Purge & Polish — Audited all 113 cards in `content/cards.json` to eradicate all corporate, marketing, business, and SaaS jargon in "Steal It" sections; rewrote 22 cards to pure essay/fiction/memoir craft; verified 0 linter flags in `tools/lint_cards.py`.
 - [x] Phase 34: Android Cache Invalidation Fix & Release APK Bundle — Fixed `Cards.load` and `QuoteBank.load` cache-delete bug where `assetCards.size >= cachedCards.size` (113 >= 113) purged downloaded cards; replaced with timestamp comparison against APK install time; reduced sync check interval to 15m; compiled signed release APK.
-- [~] Phase 35: Bookshelf Drive Sync, Name Cleanup & Code Audit — build now driven by live Drive catalog (fixes new books never appearing: old build returned early on existing data.json); `book_names.json` (Drive-id keyed) fixes all swapped/underscored/Unknown names; `book_overrides.json` replaces 600 lines of hard-coded fixes; template extracted to `scripts/templates/bookshelf.html`; `refresh_bookshelf.sh` + LaunchAgent for daily pickup; Drive rename tool (dry-run). Pending: push/LaunchAgent install, Drive rename apply.
+- [~] Phase 35: Bookshelf Drive Sync, Name Cleanup & Code Audit — build now driven by live Drive catalog (fixes new books never appearing: old build returned early on existing data.json); `book_names.json` (Drive-id keyed) fixes all swapped/underscored/Unknown names; `book_overrides.json` replaces 600 lines of hard-coded fixes; template extracted to `scripts/templates/bookshelf.html`; `refresh_bookshelf.sh` + LaunchAgent for daily pickup; Drive rename tool (dry-run). Pushed; LaunchAgent installed. Pending: Drive rename apply.
 
 ## File map
 

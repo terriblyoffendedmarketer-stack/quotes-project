@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Launched via Homebrew python3, not /bin/bash directly: macOS privacy (TCC) blocks /bin/bash started by
+     launchd from reading ~/Documents ("Operation not permitted"); python3 already has that access (vision tool). -->
 <!-- Daily My Reading Corner refresh: picks up new Google Drive books and publishes to GitHub Pages.
      Install:   cp scripts/launchd/com.local.reading-corner-refresh.plist ~/Library/LaunchAgents/ && launchctl load ~/Library/LaunchAgents/com.local.reading-corner-refresh.plist
      Uninstall: launchctl unload ~/Library/LaunchAgents/com.local.reading-corner-refresh.plist && rm ~/Library/LaunchAgents/com.local.reading-corner-refresh.plist
      Log:       ~/Library/Logs/reading-corner-refresh.log -->
 <plist version="1.0">
 <dict>
-  <key>Label</key><string>com.local.reading-corner-refresh</string>
-  <key>ProgramArguments</key>
-  <array>
-    <string>/bin/bash</string>
-    <string>/Users/apple/Documents/Claude Code/quotes-project/scripts/refresh_bookshelf.sh</string>
-    <string>--publish</string>
-  </array>
-  <key>StartCalendarInterval</key>
-  <dict><key>Hour</key><integer>9</integer><key>Minute</key><integer>15</integer></dict>
-  <key>StandardOutPath</key><string>/Users/apple/Library/Logs/reading-corner-refresh.log</string>
-  <key>StandardErrorPath</key><string>/Users/apple/Library/Logs/reading-corner-refresh.log</string>
+	<key>Label</key>
+	<string>com.local.reading-corner-refresh</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/opt/homebrew/bin/python3</string>
+		<string>-c</string>
+		<string>import subprocess,sys; sys.exit(subprocess.call(['/bin/bash', '/Users/apple/Documents/Claude Code/quotes-project/scripts/refresh_bookshelf.sh', '--publish']))</string>
+	</array>
+	<key>StandardErrorPath</key>
+	<string>/Users/apple/Library/Logs/reading-corner-refresh.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/apple/Library/Logs/reading-corner-refresh.log</string>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>9</integer>
+		<key>Minute</key>
+		<integer>15</integer>
+	</dict>
 </dict>
 </plist>
