@@ -1381,7 +1381,7 @@
 
       content.innerHTML = `
         <div class="flex flex-col sm:flex-row gap-4 items-center sm:items-start mb-6 text-center sm:text-left">
-          <div class="w-28 shrink-0 aspect-[2/3] book-cover ${jacketCls} shadow-md relative overflow-hidden rounded-[8px] bg-[var(--border-subtle)]/40 p-1 mx-auto sm:mx-0">
+          <div class="w-28 shrink-0 aspect-[2/3] ${b.cover_url && !b.no_cover ? '' : 'book-cover ' + jacketCls} shadow-md relative overflow-hidden rounded-[8px] mx-auto sm:mx-0">
             ${b.cover_url && !b.no_cover ? `
               <img src="${b.cover_url}" alt="${esc(b.title)}" class="w-full h-full object-contain drop-shadow-xs rounded-lg" onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.fallback-drawer').style.display='block';" />
               <div class="fallback-drawer hidden absolute inset-0 z-10 w-full h-full">
@@ -1400,22 +1400,26 @@
             </div>
             <h3 class="font-serif font-bold text-lg text-[var(--text-heading)] mt-0.5 leading-snug">${esc(b.title)}</h3>
             <p class="text-xs text-[var(--text-muted)] font-medium">by ${esc(b.author)}</p>
-            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mt-3.5">
-              <button onclick="openBookInNook(event, '${b.id}')" class="flex-1 sm:flex-none px-4 py-2 min-h-[40px] bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-bold rounded-xl shadow-xs transition flex items-center justify-center gap-1.5 cursor-pointer">
-                <span>${ (b.format && b.format.toLowerCase() === 'pdf') ? '📄' : '📖' }</span>
-                <span>${ (b.format && b.format.toLowerCase() === 'pdf') ? 'Open PDF ↗' : 'Read in Nook ↗' }</span>
+            <!-- Actions: one clear primary, two equal secondaries, quiet tertiary links (phone-first) -->
+            <div class="mt-4 space-y-2">
+              <button onclick="openBookInNook(event, '${b.id}')" class="w-full sm:w-auto px-5 min-h-[48px] sm:min-h-[40px] bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-sm sm:text-xs font-bold rounded-xl shadow-sm transition flex items-center justify-center gap-2 cursor-pointer">
+                <span>${ getCleanFormat(b) === 'PDF' ? '📄' : '📖' }</span>
+                <span>${ getCleanFormat(b) === 'PDF' ? 'Open PDF' : 'Read in Nook' }</span>
               </button>
-              ${(b.drive_url || b.direct_download_url) ? `
-                <button onclick="downloadBookFile(event, '${b.id}')" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-heading)] rounded-lg transition flex items-center gap-1.5 cursor-pointer">
-                  <span>⬇</span>
-                  <span>Download ${(b.format && b.format.toUpperCase()) || 'Ebook'}</span>
+              <div class="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
+                ${(b.drive_url || b.direct_download_url) ? `
+                  <button onclick="downloadBookFile(event, '${b.id}')" class="min-h-[44px] sm:min-h-[36px] px-3 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-heading)] rounded-xl transition flex items-center justify-center gap-1.5 cursor-pointer">
+                    <span>⬇</span><span>Download ${getCleanFormat(b)}</span>
+                  </button>
+                ` : ''}
+                <button onclick="copyTbrById('${b.id}')" class="min-h-[44px] sm:min-h-[36px] px-3 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-heading)] rounded-xl transition flex items-center justify-center gap-1.5">
+                  <span>📋</span><span>Copy TBR</span>
                 </button>
-              ` : ''}
-              <button onclick="copyTbrById('${b.id}')" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] text-xs font-semibold rounded-lg">Copy TBR</button>
-              <button onclick="openEditModal('${b.id}')" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] text-xs font-semibold text-[var(--text-muted)] hover:text-[var(--text-heading)] rounded-lg">Edit</button>
-              <button onclick="quickRemoveCover('${b.id}')" class="px-3 py-1.5 bg-[var(--canvas)] border border-[var(--border)] hover:border-red-400 text-xs font-semibold text-[var(--text-muted)] hover:text-red-500 rounded-lg">
-                ${b.cover_url && !b.no_cover ? 'Remove Cover' : 'Jacket Active'}
-              </button>
+              </div>
+              <div class="flex items-center justify-center sm:justify-start gap-4 pt-1 text-[11px] font-semibold text-[var(--text-muted)]">
+                <button onclick="openEditModal('${b.id}')" class="py-2 hover:text-[var(--text-heading)] underline-offset-2 hover:underline">✏️ Edit details</button>
+                <button onclick="quickRemoveCover('${b.id}')" class="py-2 hover:text-red-500 underline-offset-2 hover:underline">${b.cover_url && !b.no_cover ? '🗑️ Wrong cover? Remove' : '🖼️ Using typographic jacket'}</button>
+              </div>
             </div>
           </div>
         </div>

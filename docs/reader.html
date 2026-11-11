@@ -397,6 +397,16 @@
     const driveUrl = urlParams.get('drive') || '';
     const driveId = urlParams.get('drive_id') || '';
 
+    // Tap-to-read: Google Drive refuses cross-site browser fetches of drive.usercontent download links (403 when
+    // Sec-Fetch-Site: cross-site, even though curl gets Access-Control-Allow-Origin: *). The Drive API does allow
+    // CORS for files shared "anyone with the link", but needs an API key. Create one (Google Cloud console ->
+    // APIs & Services -> enable "Google Drive API" -> Credentials -> API key), restrict it to the Drive API and to
+    // HTTP referrers https://terriblyoffendedmarketer-stack.github.io/* and http://localhost:8899/*, paste it here.
+    const DRIVE_API_KEY = '';
+    const driveApiUrl = (driveId && DRIVE_API_KEY)
+      ? `https://www.googleapis.com/drive/v3/files/${driveId}?alt=media&key=${DRIVE_API_KEY}`
+      : '';
+
     const directDownloadUrl = driveId
       ? `https://drive.usercontent.google.com/download?id=${driveId}&export=download`
       : (driveUrl.includes('drive.usercontent.google.com') ? driveUrl : '');
@@ -594,10 +604,70 @@
         console.warn("IndexedDB check:", err);
       }
 
-      // If not in cache, show clean dropzone with pinned header
+      // Not cached yet: fetch it straight from Google Drive via the Drive API (needs DRIVE_API_KEY, see top)
+      if (driveApiUrl) {
+        const buffer = await fetchBookFromDrive(driveApiUrl);
+        if (buffer) {
+          try { await saveBookToDB(bookId, buffer); } catch (err) { console.warn("IndexedDB save:", err); }
+          loadEpubData(buffer);
+          return;
+        }
+      }
+
+      // Fallback: show clean dropzone with pinned header (manual download -> upload)
       setImmersiveMode(false);
       dropZone.style.display = 'flex';
       readerViewport.classList.add('hidden');
+    }
+
+    // Streams the EPUB from Drive with a progress overlay. Returns an ArrayBuffer, or null on any failure.
+    // Anything that isn't a ZIP (EPUBs start with "PK") is rejected; an HTML confirm page (huge files) is followed once.
+    async function fetchBookFromDrive(url, isRetry = false) {
+      const overlay = document.createElement('div');
+      overlay.id = 'driveFetchOverlay';
+      overlay.style.cssText = 'position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:var(--canvas,#faf7f2);font-family:Inter,system-ui,sans-serif;color:#57534e';
+      overlay.innerHTML = `<div style="font:600 15px Inter,system-ui">Opening <i>${bookTitle.replace(/[<>&]/g, '')}</i> from your Drive…</div>
+        <div style="width:min(320px,70vw);height:6px;border-radius:9px;background:rgba(0,0,0,.08);overflow:hidden"><div id="driveFetchBar" style="height:100%;width:3%;background:#C85A32;transition:width .2s"></div></div>
+        <div id="driveFetchPct" style="font-size:12px">Connecting…</div>`;
+      if (!isRetry) document.body.appendChild(overlay);
+      const bar = () => document.getElementById('driveFetchBar');
+      const pct = () => document.getElementById('driveFetchPct');
+      try {
+        const res = await fetch(url, { mode: 'cors', credentials: 'omit' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const total = Number(res.headers.get('content-length')) || 0;
+        const reader = res.body.getReader();
+        const chunks = [];
+        let got = 0;
+        for (;;) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          chunks.push(value);
+          got += value.length;
+          if (bar()) bar().style.width = total ? `${Math.max(3, (got / total) * 100)}%` : `${Math.min(95, 3 + got / 200000)}%`;
+          if (pct()) pct().textContent = `${(got / 1048576).toFixed(1)} MB${total ? ` of ${(total / 1048576).toFixed(1)} MB` : ''}`;
+        }
+        const bytes = new Uint8Array(got);
+        let off = 0;
+        for (const c of chunks) { bytes.set(c, off); off += c.length; }
+        if (bytes[0] === 0x50 && bytes[1] === 0x4B) {          // "PK" = ZIP = EPUB
+          document.getElementById('driveFetchOverlay')?.remove();
+          return bytes.buffer;
+        }
+        const html = new TextDecoder().decode(bytes.slice(0, 200000));
+        const form = html.match(/<form[^>]+action="([^"]+)"[\s\S]*?<\/form>/);
+        if (form && !isRetry) {                              // large-file "can't scan for viruses" page
+          const params = new URLSearchParams();
+          for (const m of form[0].matchAll(/name="([^"]+)"\s+value="([^"]*)"/g)) params.set(m[1], m[2]);
+          return await fetchBookFromDrive(`${form[1].replace(/&amp;/g, '&')}?${params}`, true);
+        }
+        throw new Error('Drive did not return an EPUB file');
+      } catch (err) {
+        console.warn('Direct Drive open failed:', err);
+        document.getElementById('driveFetchOverlay')?.remove();
+        showToast("Couldn't open it straight from Drive. Download it and drop it here instead.");
+        return null;
+      }
     }
 
     function loadEpubData(data) {
