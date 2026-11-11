@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- My Reading Corner local helper (http://localhost:8899): serves the shelf with the "Tidy Drive Names" button.
+     Bound to 127.0.0.1 only. Launched via Homebrew python3 (allowed to read ~/Documents; /bin/bash is not).
+     Install:   cp scripts/launchd/com.local.reading-corner-server.plist ~/Library/LaunchAgents/ && launchctl load ~/Library/LaunchAgents/com.local.reading-corner-server.plist
+     Uninstall: launchctl unload ~/Library/LaunchAgents/com.local.reading-corner-server.plist && rm ~/Library/LaunchAgents/com.local.reading-corner-server.plist
+     Log:       ~/Library/Logs/reading-corner-server.log -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.local.reading-corner-server</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/homebrew/bin/python3</string>
+    <string>/Users/apple/Documents/Claude Code/quotes-project/scripts/serve_bookshelf.py</string>
+    <string>8899</string>
+    <string>--no-browser</string>
+  </array>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>EnvironmentVariables</key>
+  <dict><key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string></dict>
+  <key>StandardOutPath</key><string>/Users/apple/Library/Logs/reading-corner-server.log</string>
+  <key>StandardErrorPath</key><string>/Users/apple/Library/Logs/reading-corner-server.log</string>
+</dict>
+</plist>

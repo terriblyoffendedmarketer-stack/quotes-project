@@ -120,6 +120,10 @@ def build():
     known_authors = {v["author"] for v in names.values()}
     canon_author = {norm(a): a for a in known_authors}
     works = index_quote_bank()
+    live_ids = {f["id"] for f in catalog}
+    # Entries whose Drive file vanished: if a file with the same name shows up (re-upload, duplicate copy kept
+    # instead), it inherits the old entry so its id, cover, notes and on-device edits survive.
+    orphans = {(norm(b["title"]), norm(b["author"])): b for b in previous if b.get("drive_id") not in live_ids}
     used_ids = {b["id"] for b in previous}
 
     books = []
@@ -141,6 +145,10 @@ def build():
             b["title"], b["author"] = t, canon_author.get(norm(a), a)
             b["name_source"] = "parsed"
 
+        if not prev and (norm(b["title"]), norm(b["author"])) in orphans:
+            prev = orphans.pop((norm(b["title"]), norm(b["author"])))
+            b = {**prev, "title": b["title"], "author": b["author"]}
+            b.pop("name_source", None) if main["id"] in names else None
         if not prev:
             bid = slugify(f"{b['title']}-{b['author']}")
             while bid in used_ids:
