@@ -621,6 +621,46 @@
       return String(v == null ? "" : v).replace(/[&<>"']/g, ch => ESC_MAP[ch]);
     }
 
+    // ---- Archive (hide without deleting) ----
+    // Device-level choices live in localStorage ("exlibris_archive": {id: true|false}). Books archived from the Mac
+    // helper (localhost:8899) are also written to content/book_overrides.json (archived: true), so after the next
+    // publish they're hidden on every device. A local false overrides a published true (= restored here).
+    const ARCHIVE_KEY = "exlibris_archive";
+    let localArchive = {};
+    try { localArchive = JSON.parse(localStorage.getItem(ARCHIVE_KEY) || "{}"); } catch (e) {}
+    function isArchived(b) {
+      return Object.prototype.hasOwnProperty.call(localArchive, b.id) ? !!localArchive[b.id] : !!b.archived;
+    }
+    function shelfBooks() { return SHELF_DATA.filter(b => !isArchived(b)); }
+    function archivedBooks() { return SHELF_DATA.filter(isArchived); }
+    function setArchived(bookId, flag) {
+      const b = SHELF_DATA.find(x => x.id === bookId);
+      if (!b) return;
+      localArchive[bookId] = flag;
+      try { localStorage.setItem(ARCHIVE_KEY, JSON.stringify(localArchive)); } catch (e) {}
+      fetch("/api/archive", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: bookId, archived: flag }) }).catch(() => {});   // only exists on the Mac helper
+      if (typeof closeDrawer === "function" && !document.getElementById("drawerOverlay").classList.contains("hidden")) closeDrawer();
+      if (activeCategory === "Archived" && archivedBooks().length === 0) activeCategory = "All";
+      if (selectedBookId === bookId && flag) selectedBookId = null;
+      renderCategoryTabs();
+      renderCurrentView();
+      showUndoToast(flag ? `Archived "${b.title}"` : `Restored "${b.title}" to the shelf`, () => setArchived(bookId, !flag));
+    }
+    function showUndoToast(msg, undo) {
+      const t = document.getElementById("toast");
+      t.innerHTML = `${esc(msg)} <button id="toastUndo" class="ml-2 underline font-bold pointer-events-auto">Undo</button>`;
+      t.classList.remove("translate-y-16", "opacity-0", "pointer-events-none");
+      document.getElementById("toastUndo").onclick = () => { t.classList.add("translate-y-16", "opacity-0", "pointer-events-none"); undo(); };
+      clearTimeout(window.__undoTimer);
+      window.__undoTimer = setTimeout(() => t.classList.add("translate-y-16", "opacity-0", "pointer-events-none"), 5000);
+    }
+    function archiveButtonHtml(b, cls) {
+      return isArchived(b)
+        ? `<button onclick="setArchived('${b.id}', false)" class="${cls}">↩️ Restore to shelf</button>`
+        : `<button onclick="setArchived('${b.id}', true)" class="${cls}" title="Hide from the shelf (not deleted; find it under Archived)">📦 Archive</button>`;
+    }
+
     function copyTbrById(bookId) {
       const b = SHELF_DATA.find(item => item.id === bookId);
       if (b) copySingleTbr(b.title, b.author);
@@ -791,7 +831,11 @@
       const quotesOnly = document.getElementById("filterQuotesOnly").checked;
 
       let list = SHELF_DATA.filter(b => {
-        if (activeCategory !== "All") {
+        if (activeCategory === "Archived") {
+          if (!isArchived(b)) return false;
+        } else if (isArchived(b)) {
+          return false;
+        } else if (activeCategory !== "All") {
           const cats = b.categories || [b.category];
           if (!cats.includes(activeCategory) && b.category !== activeCategory) return false;
         }
@@ -851,11 +895,13 @@
 
     function renderCategoryTabs() {
       const container = document.getElementById("categoryTabs");
-      container.innerHTML = CATEGORIES.map(cat => {
+      const visible = shelfBooks();
+      const archivedCount = SHELF_DATA.length - visible.length;
+      container.innerHTML = CATEGORIES.concat(archivedCount ? ["Archived"] : []).map(cat => {
         const isAct = cat === activeCategory;
-        const count = cat === "All" 
-          ? SHELF_DATA.length 
-          : SHELF_DATA.filter(b => (b.categories && b.categories.includes(cat)) || b.category === cat).length;
+        const count = cat === "All" ? visible.length
+          : cat === "Archived" ? archivedCount
+          : visible.filter(b => (b.categories && b.categories.includes(cat)) || b.category === cat).length;
         if (count === 0) return "";
         return `
           <button 
@@ -1267,6 +1313,7 @@
                 <span>🗑️</span>
                 <span>${b.cover_url && !b.no_cover ? 'Remove Cover' : 'Jacket Active'}</span>
               </button>
+              ${archiveButtonHtml(b, "px-3.5 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-muted)] hover:text-[var(--text-heading)] rounded-xl transition flex items-center gap-1.5")}
             </div>
           </div>
         </div>
@@ -1416,9 +1463,10 @@
                   <span>📋</span><span>Copy TBR</span>
                 </button>
               </div>
-              <div class="flex items-center justify-center sm:justify-start gap-4 pt-1 text-[11px] font-semibold text-[var(--text-muted)]">
+              <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-0 pt-1 text-[11px] font-semibold text-[var(--text-muted)]">
                 <button onclick="openEditModal('${b.id}')" class="py-2 hover:text-[var(--text-heading)] underline-offset-2 hover:underline">✏️ Edit details</button>
                 <button onclick="quickRemoveCover('${b.id}')" class="py-2 hover:text-red-500 underline-offset-2 hover:underline">${b.cover_url && !b.no_cover ? '🗑️ Wrong cover? Remove' : '🖼️ Using typographic jacket'}</button>
+                ${archiveButtonHtml(b, "py-2 hover:text-[var(--text-heading)] underline-offset-2 hover:underline")}
               </div>
             </div>
           </div>
@@ -1509,8 +1557,8 @@
     }
 
     function spinSurprise() {
-      const pool = SHELF_DATA.filter(b => b.is_fun_pick);
-      const chosen = pool[Math.floor(Math.random() * pool.length)] || SHELF_DATA[Math.floor(Math.random() * SHELF_DATA.length)];
+      const pool = shelfBooks().filter(b => b.is_fun_pick);
+      const chosen = pool[Math.floor(Math.random() * pool.length)] || shelfBooks()[Math.floor(Math.random() * shelfBooks().length)];
       currentSurpriseBook = chosen;
 
       const res = document.getElementById("surpriseResult");

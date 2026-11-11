@@ -9,6 +9,9 @@
 #   POST /api/tidy   -> starts `refresh_bookshelf.sh --tidy --publish` (sync Drive, add new books, verify + rename
 #                       Drive files, rebuild, publish). The page shows the button only when /api/status answers,
 #                       so the public GitHub Pages copy never shows it.
+#   POST /api/archive {"id": "<shelf id>", "archived": true|false}
+#                    -> records the choice in content/book_overrides.json so it applies on every device after the
+#                       next build + publish (the page also keeps it in localStorage immediately).
 #
 # Gotchas:
 # - POST is refused unless the Origin header is this server itself: otherwise any website you visit could
@@ -69,19 +72,40 @@ class BookshelfHandler(SimpleHTTPRequestHandler):
         return super().do_GET()
 
     def do_POST(self):
-        if not self.path.startswith("/api/tidy"):
-            return self._json(404, {"error": "not found"})
         origin = self.headers.get("Origin", "")
         host = self.headers.get("Host", "")
         if origin not in (f"http://{host}", f"http://localhost:{self.server.server_port}",
                           f"http://127.0.0.1:{self.server.server_port}"):
             return self._json(403, {"error": "cross-origin request refused"})
+        if self.path.startswith("/api/archive"):
+            return self._archive()
+        if not self.path.startswith("/api/tidy"):
+            return self._json(404, {"error": "not found"})
         with LOCK:
             if not JOB["running"]:
                 JOB["running"] = True
                 JOB["last_exit"] = None
                 threading.Thread(target=run_tidy, daemon=True).start()
         return self._json(202, self._status())
+
+    def _archive(self):
+        try:
+            body = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0) or 0)) or b"{}")
+            book_id, flag = str(body["id"]), bool(body["archived"])
+        except Exception:
+            return self._json(400, {"error": "expected {id, archived}"})
+        path = ROOT / "content" / "book_overrides.json"
+        with LOCK:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            entry = data["books"].setdefault(book_id, {})
+            if flag:
+                entry["archived"] = True
+            else:
+                entry.pop("archived", None)
+                if not entry:
+                    data["books"].pop(book_id)
+            path.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        return self._json(200, {"ok": True, "id": book_id, "archived": flag})
 
     def log_message(self, fmt, *args):
         if "/api/status" not in (args[0] if args else ""):

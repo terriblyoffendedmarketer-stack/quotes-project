@@ -13,6 +13,8 @@
 # - The OLD build loaded data.json and returned early, never looking at Drive again. That is why books added to
 #   Drive never showed up. The catalog is now always the source of what's on the shelf; data.json is only a cache
 #   of enrichment, matched by Drive file id.
+# - `archived` (hidden from the shelf, not deleted) is set only via book_overrides.json — the app's Archive button
+#   writes it there through the Mac helper; on other devices it's per-device until the next publish.
 # - first_seen is set once, the first build a book appears in; the NEW badge keys off it, not the Drive date.
 # - Never change an existing book's `id`: the web app stores per-device edits in localStorage keyed by id.
 # - Names come from book_names.json, not from filenames. Unlisted (new) files get a parsed guess marked
@@ -172,6 +174,7 @@ def build():
                           "tags": sorted(set(b.get("tags", [])) | w["tags"])})
 
         ov = overrides.get(b["id"], {})
+        b.pop("archived", None)                 # archive state comes only from overrides (so restores take effect)
         for k, v in ov.items():
             if k != "extra_categories":
                 b[k] = v
