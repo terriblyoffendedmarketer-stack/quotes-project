@@ -1,8 +1,8 @@
 # Marginalia
 
 > **Status**: Active | **Phase**: 36 (Drive renames, cover OCR audit, tap-to-read, archive)  
-> **Current**: Shelf rebuilds from live Drive daily (LaunchAgent installed, 09:15). 455 Drive files renamed to "Title - Author" after multi-source verification (43 held: `content/drive_rename_review.md`). OCR cover audit (`scripts/audit_covers.py`) replacing wrong/foreign covers. Reader opens books straight from Drive via a per-device Drive API key. Archive/Restore in the app.  
-> **Next**: user to install updated LaunchAgents (refresh with `--tidy`, helper server) — auto mode blocked it; command in `scripts/launchd/*.plist` headers. Audit wrong synopses (e.g. *In the Blink of an Eye* has invented text). rclone shared client_id retires in 2026.  
+> **Current**: Shelf rebuilds + tidies Drive names daily (LaunchAgent, 09:15); local helper with Tidy button always on at http://localhost:8899 (installed 2026-11-12). 455 Drive files renamed to "Title - Author" after multi-source verification (43 held: `content/drive_rename_review.md`). OCR cover audit (`scripts/audit_covers.py`) replacing wrong/foreign covers. Reader opens books straight from Drive via a per-device Drive API key. Archive/Restore in the app.  
+> **Next**: explain tap-to-read setup to user (paste Drive key once per device in Reading Nook). Audit wrong synopses (e.g. *In the Blink of an Eye* has invented text). rclone shared client_id retires in 2026.  
 > **Keys**: Google Drive API key (browser key, referrer-restricted) is NOT in the repo — macOS Keychain "Reading Corner", `~/Documents/Claude Code/API-KEYS.md`, project `.env` (`GOOGLE_DRIVE_API_KEY`). Users paste it once per device ("Turn on tap-to-read").  
 > **Incident (2026-11-11)**: a rename trashed one identical duplicate ("One Plus One Equals Three - Dave Trott .epub", in Drive trash); tool fixed.
 
