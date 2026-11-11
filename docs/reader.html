@@ -401,11 +401,21 @@
     // Sec-Fetch-Site: cross-site, even though curl gets Access-Control-Allow-Origin: *). The Drive API does allow
     // CORS for files shared "anyone with the link", but needs an API key. Create one (Google Cloud console ->
     // APIs & Services -> enable "Google Drive API" -> Credentials -> API key), restrict it to the Drive API and to
-    // HTTP referrers https://terriblyoffendedmarketer-stack.github.io/* and http://localhost:8899/*, paste it here.
-    const DRIVE_API_KEY = '';
-    const driveApiUrl = (driveId && DRIVE_API_KEY)
-      ? `https://www.googleapis.com/drive/v3/files/${driveId}?alt=media&key=${DRIVE_API_KEY}`
-      : '';
+    // HTTP referrers https://terriblyoffendedmarketer-stack.github.io/* and http://localhost:8899/*.
+    // The key is NOT stored in this file (it's published on GitHub): each device pastes it once and it lives only
+    // in that device's localStorage. Backups: macOS Keychain "Reading Corner", ~/Documents/Claude Code/API-KEYS.md.
+    const DRIVE_KEY_STORE = 'mrc_drive_api_key';
+    function getDriveKey() { try { return localStorage.getItem(DRIVE_KEY_STORE) || ''; } catch (e) { return ''; } }
+    function driveApiUrlFor(key) {
+      return (driveId && key) ? `https://www.googleapis.com/drive/v3/files/${driveId}?alt=media&key=${encodeURIComponent(key)}` : '';
+    }
+    function setupTapToRead() {
+      const key = (prompt("Paste your Google Drive API key to open books straight from Drive.\n\nIt's saved only on this device. (Backup copies: Keychain \"Reading Corner\" and API-KEYS.md on your Mac.)") || "").trim();
+      if (!key) return;
+      try { localStorage.setItem(DRIVE_KEY_STORE, key); } catch (e) {}
+      location.reload();
+    }
+    function forgetDriveKey() { try { localStorage.removeItem(DRIVE_KEY_STORE); } catch (e) {} }
 
     const directDownloadUrl = driveId
       ? `https://drive.usercontent.google.com/download?id=${driveId}&export=download`
@@ -604,7 +614,8 @@
         console.warn("IndexedDB check:", err);
       }
 
-      // Not cached yet: fetch it straight from Google Drive via the Drive API (needs DRIVE_API_KEY, see top)
+      // Not cached yet: fetch it straight from Google Drive via the Drive API (key pasted once per device)
+      const driveApiUrl = driveApiUrlFor(getDriveKey());
       if (driveApiUrl) {
         const buffer = await fetchBookFromDrive(driveApiUrl);
         if (buffer) {
@@ -618,6 +629,16 @@
       setImmersiveMode(false);
       dropZone.style.display = 'flex';
       readerViewport.classList.add('hidden');
+      if (driveId && !document.getElementById('tapToReadSetup')) {
+        const hasKey = !!getDriveKey();
+        const box = document.createElement('div');
+        box.id = 'tapToReadSetup';
+        box.style.cssText = 'margin-top:14px;text-align:center;font:500 12px Inter,system-ui,sans-serif;color:#78716c';
+        box.innerHTML = hasKey
+          ? `Couldn't open from Drive with the saved key. <button style="color:#C85A32;font-weight:700;text-decoration:underline" onclick="forgetDriveKey();setupTapToRead()">Re-enter key</button>`
+          : `<button style="color:#C85A32;font-weight:700;text-decoration:underline" onclick="setupTapToRead()">⚡ Turn on tap-to-read</button> — open books straight from Drive, no download step`;
+        (document.getElementById('downloadFlowWrapper') || dropZone).appendChild(box);
+      }
     }
 
     // Streams the EPUB from Drive with a progress overlay. Returns an ArrayBuffer, or null on any failure.
