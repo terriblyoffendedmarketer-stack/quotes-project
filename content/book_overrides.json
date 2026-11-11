@@ -164,7 +164,8 @@
   "carl-jung-the-development-of-personality": {
    "extra_categories": [
     "Literary Non-Fiction"
-   ]
+   ],
+   "cover_url": "https://covers.openlibrary.org/b/id/440271-L.jpg"
   },
   "chess-for-zebras-jonathan-rowson": {
    "category": "Fiction & Non-Fiction",
@@ -310,7 +311,8 @@
   "how-to-travel-with-a-salmon-other-essays-umberto-eco": {
    "extra_categories": [
     "Essays"
-   ]
+   ],
+   "cover_url": "https://covers.openlibrary.org/b/id/8102705-L.jpg"
   },
   "how-to-win-at-chess-1-levy-rozman": {
    "category": "Fiction & Non-Fiction",
@@ -391,7 +393,8 @@
   "joe-hill-20th-century-ghosts": {
    "extra_categories": [
     "Short Stories"
-   ]
+   ],
+   "cover_url": "https://covers.openlibrary.org/b/id/4942830-L.jpg"
   },
   "john-curran-agatha-christies-murder-in-the-making": {
    "extra_categories": [
@@ -524,7 +527,9 @@
   "no-nation-for-women-priyanka-dubey": {
    "extra_categories": [
     "Literary Non-Fiction"
-   ]
+   ],
+   "cover_url": null,
+   "no_cover": true
   },
   "notes-from-underground-the-double-fyodor-dostoevsky": {
    "extra_categories": [
@@ -558,7 +563,9 @@
   "paradise-and-other-stories-khushwant-singh": {
    "extra_categories": [
     "Short Stories"
-   ]
+   ],
+   "cover_url": null,
+   "no_cover": true
   },
   "pat-conroy-the-prince-of-tides": {
    "extra_categories": [
@@ -630,7 +637,8 @@
   "roland-barthes-image-music-text": {
    "extra_categories": [
     "Essays"
-   ]
+   ],
+   "cover_url": "https://covers.openlibrary.org/b/id/224743-L.jpg"
   },
   "rowan-williams-dostoevsky-language-faith-and-fiction": {
    "extra_categories": [
@@ -658,7 +666,8 @@
   "sculpting-in-time-andrei-tarkovsky": {
    "extra_categories": [
     "Literary Non-Fiction"
-   ]
+   ],
+   "cover_url": "https://covers.openlibrary.org/b/id/156912-L.jpg"
   },
   "scum-manifesto-valerie-solanas": {
    "extra_categories": [
@@ -673,7 +682,8 @@
   "seneca-letters-on-ethics": {
    "extra_categories": [
     "Essays"
-   ]
+   ],
+   "cover_url": "https://covers.openlibrary.org/b/id/13312261-L.jpg"
   },
   "short-storybaazi-divya-prakash-dubey": {
    "extra_categories": [
@@ -749,7 +759,8 @@
   "susan-piver-the-wisdom-of-a-broken-heart": {
    "extra_categories": [
     "Literary Non-Fiction"
-   ]
+   ],
+   "cover_url": "https://covers.openlibrary.org/b/id/10658393-L.jpg"
   },
   "t-kingfisher-what-moves-the-dead-libgen-li": {
    "category": "Fiction & Non-Fiction",
@@ -811,7 +822,9 @@
   "the-gambler-and-other-stories-fyodor-dostoyevsky": {
    "extra_categories": [
     "Short Stories"
-   ]
+   ],
+   "cover_url": null,
+   "no_cover": true
   },
   "the-genealogy-of-morals-by-friedrich-nietzsche-unknown": {
    "category": "Philosophy, Essays & Misc",
@@ -856,7 +869,8 @@
   "the-reading-room-a-short-fiction-mag": {
    "extra_categories": [
     "Short Stories"
-   ]
+   ],
+   "cover_url": "https://covers.openlibrary.org/b/id/10178911-L.jpg"
   },
   "the-riddler-year-one": {
    "category": "Comics & Graphic Novels",
@@ -896,7 +910,9 @@
   "the-stream-of-homer-on-story-heroism-and-the-river-that-runs-underneath-everything": {
    "extra_categories": [
     "Essays"
-   ]
+   ],
+   "cover_url": null,
+   "no_cover": true
   },
   "this-is-water-david-foster-wallace": {
    "extra_categories": [
@@ -921,7 +937,8 @@
   "timothy-snyder-bloodlands-europe-btwn-hitler-stalin": {
    "extra_categories": [
     "Literary Non-Fiction"
-   ]
+   ],
+   "cover_url": "https://covers.openlibrary.org/b/id/14313808-L.jpg"
   },
   "tiny-beautiful-things-cheryl-strayed": {
    "extra_categories": [
@@ -953,7 +970,8 @@
   "walter-benjamin-the-work-of-art-in-the-age-of-mechanical-reproduction": {
    "extra_categories": [
     "Essays"
-   ]
+   ],
+   "cover_url": "https://covers.openlibrary.org/b/id/10105486-L.jpg"
   },
   "watchmen-complete": {
    "category": "Comics & Graphic Novels",
@@ -987,7 +1005,9 @@
   "white-nights-fyodor-dostoyevsky": {
    "extra_categories": [
     "Short Stories"
-   ]
+   ],
+   "cover_url": null,
+   "no_cover": true
   },
   "will-storr-the-status-game": {
    "extra_categories": [
@@ -1006,7 +1026,9 @@
   "writing-craft-essays-chuck-palahniuk": {
    "extra_categories": [
     "Essays"
-   ]
+   ],
+   "cover_url": null,
+   "no_cover": true
   },
   "yann-martel-the-facts-behind-the-helsinki-roccamatios": {
    "extra_categories": [
@@ -1025,6 +1047,186 @@
   },
   "zombie-joyce-carol-oates": {
    "why_love": "Short, cold and genuinely disturbing: Oates inhabits the flat, bureaucratic voice of a killer loosely modelled on Jeffrey Dahmer. Not for everyone, but a chilling exercise in point of view."
+  },
+  "man-s-search-for-meaning-victor-frankl": {
+   "cover_url": "https://covers.openlibrary.org/b/id/12389635-L.jpg"
+  },
+  "michael-crichton-airframe": {
+   "cover_url": "https://covers.openlibrary.org/b/id/9253425-L.jpg"
+  },
+  "alice-christina-henry": {
+   "cover_url": "https://covers.openlibrary.org/b/id/15127158-L.jpg"
+  },
+  "beloved-tonimorrison": {
+   "cover_url": "https://covers.openlibrary.org/b/id/15169563-L.jpg"
+  },
+  "boom-bubbles-and-the-end-of-stagnation-byrne-hobar": {
+   "cover_url": "https://covers.openlibrary.org/b/id/15101647-L.jpg"
+  },
+  "michael-crichton-congo": {
+   "cover_url": "https://covers.openlibrary.org/b/id/15156407-L.jpg"
+  },
+  "crime-and-punishment-fyodor-dostoevsky": {
+   "cover_url": "https://covers.openlibrary.org/b/id/15183762-L.jpg"
+  },
+  "neal-stephenson-cryptonomicon": {
+   "cover_url": "https://covers.openlibrary.org/b/id/11540410-L.jpg"
+  },
+  "demian-herman-hesse": {
+   "cover_url": "https://covers.openlibrary.org/b/id/14858668-L.jpg"
+  },
+  "demons-fyodor-dostoyevsky": {
+   "cover_url": "https://covers.openlibrary.org/b/id/15220861-L.jpg"
+  },
+  "east-of-eden-john-steinbeck": {
+   "cover_url": "https://covers.openlibrary.org/b/id/15238642-L.jpg"
+  },
+  "fear-and-loathing-on-the-campaign-trail-7-hunter-s-thompson": {
+   "cover_url": "https://covers.openlibrary.org/b/id/8061775-L.jpg"
+  },
+  "flow-mihaly-csikszentmihalyi": {
+   "cover_url": "https://covers.openlibrary.org/b/id/9082625-L.jpg"
+  },
+  "richard-bandler-frogs-into-princes": {
+   "cover_url": "https://covers.openlibrary.org/b/id/8074542-L.jpg"
+  },
+  "exurb1a-geometry-for-ocelots": {
+   "cover_url": "https://covers.openlibrary.org/b/id/14841535-L.jpg"
+  },
+  "here-richard-mcguire": {
+   "cover_url": "https://covers.openlibrary.org/b/id/13438463-L.jpg"
+  },
+  "how-to-win-friends-and-influence-people-dale-carnegie": {
+   "cover_url": "https://covers.openlibrary.org/b/id/14548376-L.jpg"
+  },
+  "david-foster-wallace-infinite-jest": {
+   "cover_url": "https://covers.openlibrary.org/b/id/13186006-L.jpg"
+  },
+  "invisible-monsters-chuck-palahniuk": {
+   "cover_url": "https://covers.openlibrary.org/b/id/12207802-L.jpg"
+  },
+  "joe-hill-king-sorrow": {
+   "cover_url": "https://covers.openlibrary.org/b/id/15138472-L.jpg"
+  },
+  "the-6-rules-of-fiction-tiago-amaral": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "goodnight-punpun-complete": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "a-cup-of-zen-kai-tsukimi-115919174-libgen-li-unknown": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "nothing-lasts-forever-jerry-roderick-thorp": {
+   "cover_url": "https://covers.openlibrary.org/b/id/7147043-L.jpg"
+  },
+  "on-literature-umberto-eco": {
+   "cover_url": "https://covers.openlibrary.org/b/id/112277-L.jpg"
+  },
+  "positioning-al-ries-philip-kotler": {
+   "cover_url": "https://covers.openlibrary.org/b/id/5444687-L.jpg"
+  },
+  "predictably-irrational-dan-ariely": {
+   "cover_url": "https://covers.openlibrary.org/b/id/15189013-L.jpg"
+  },
+  "quiet-susan-cain": {
+   "cover_url": "https://covers.openlibrary.org/b/id/15238100-L.jpg"
+  },
+  "red-rising-pierce-brown": {
+   "cover_url": "https://covers.openlibrary.org/b/id/8407136-L.jpg"
+  },
+  "brandon-sanderson-shadows-of-self": {
+   "cover_url": "https://covers.openlibrary.org/b/id/14658363-L.jpg"
+  },
+  "six-walks-in-the-fictional-woods-umberto-eco": {
+   "cover_url": "https://covers.openlibrary.org/b/id/12916699-L.jpg"
+  },
+  "the-tao-te-ching-translated-by-g-unknown": {
+   "cover_url": "https://covers.openlibrary.org/b/id/12333776-L.jpg"
+  },
+  "the-annotated-critical-laozi-unknown": {
+   "cover_url": "https://covers.openlibrary.org/b/id/662232-L.jpg"
+  },
+  "marty-neumeier-the-brand-flip": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "the-brothers-karamazov-fyodor-dostoevsky": {
+   "cover_url": "https://covers.openlibrary.org/b/id/8272336-L.jpg"
+  },
+  "the-burnout-society-byung-chul-han": {
+   "cover_url": "https://covers.openlibrary.org/b/id/8972304-L.jpg"
+  },
+  "the-dream-of-a-ridiculous-man-fi-fyodor-dostoevsky": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "the-experience-machine-andy-clark": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "the-great-business-reformation-h-unknown": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "the-informers-bret-easton-ellis": {
+   "cover_url": "https://covers.openlibrary.org/b/id/12619916-L.jpg"
+  },
+  "the-life-of-chuck-stephen-king": {
+   "cover_url": "https://covers.openlibrary.org/b/id/15138572-L.jpg"
+  },
+  "the-master-and-margarita-mikhail-bulgakov": {
+   "cover_url": "https://covers.openlibrary.org/b/id/12947486-L.jpg"
+  },
+  "the-network-state-balaji-srinivasan": {
+   "cover_url": "https://covers.openlibrary.org/b/id/14569476-L.jpg"
+  },
+  "the-new-control-society-by-jon-a-unknown": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "the-paradox-of-self-knowledge-why-consciousness-must-forget-to-find-itself-unknown": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "the-science-of-logic-unknown": {
+   "cover_url": "https://covers.openlibrary.org/b/id/9522045-L.jpg"
+  },
+  "william-faulkner-unknown": {
+   "cover_url": "https://covers.openlibrary.org/b/id/8292194-L.jpg"
+  },
+  "what-is-dialectical-materialism-a-study-guide-unknown": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "dominic-o-brien-you-can-have-an-amazing-memory": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "introducing-jesus-anthony-o-hear": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "hbr-on-strategic-marketing-unknown": {
+   "cover_url": "https://covers.openlibrary.org/b/id/7742431-L.jpg"
+  },
+  "the-copywriter-s-handbook-robert-w-bly": {
+   "cover_url": "https://covers.openlibrary.org/b/id/579121-L.jpg"
+  },
+  "neil-french-collection-unknown": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "t-u-m-b-b-a-d-unknown": {
+   "cover_url": null,
+   "no_cover": true
+  },
+  "kurukshetra-dinkar": {
+   "cover_url": null,
+   "no_cover": true
   }
  }
 }

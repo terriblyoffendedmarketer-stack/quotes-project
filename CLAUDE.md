@@ -1,9 +1,10 @@
 # Marginalia
 
-> **Status**: Active | **Phase**: 35 (Bookshelf Drive Sync, Name Cleanup & Code Audit)  
-> **Current**: My Reading Corner now rebuilds from the live Google Drive listing (keyed by Drive file id) instead of a frozen data.json; all 631 titles/authors hand-curated in `content/book_names.json`; 17 new Drive books added with covers/synopses/notes; template extracted from Python f-string and bug-fixed (HTML escaping, stale localStorage name overrides, Copy TBR quoting, pinned Tailwind CDN).  
-> **Next**: daily LaunchAgent installed (09:15, log ~/Library/Logs/reading-corner-refresh.log); (1) optionally apply Drive renames (`python3 scripts/rename_drive_files.py --apply`, plan in `content/drive_rename_plan.txt`); (3) rclone's shared client_id is being retired in 2026 — create own client id if sync starts failing.  
-> **Known gaps**: `bookshelf/reader.html` (Reading Nook) not re-audited this phase; 103 books still use typographic jackets (no cover found).
+> **Status**: Active | **Phase**: 36 (Drive renames, cover OCR audit, tap-to-read, archive)  
+> **Current**: Shelf rebuilds from live Drive daily (LaunchAgent installed, 09:15). 455 Drive files renamed to "Title - Author" after multi-source verification (43 held: `content/drive_rename_review.md`). OCR cover audit (`scripts/audit_covers.py`) replacing wrong/foreign covers. Reader opens books straight from Drive via a per-device Drive API key. Archive/Restore in the app.  
+> **Next**: user to install updated LaunchAgents (refresh with `--tidy`, helper server) — auto mode blocked it; command in `scripts/launchd/*.plist` headers. Audit wrong synopses (e.g. *In the Blink of an Eye* has invented text). rclone shared client_id retires in 2026.  
+> **Keys**: Google Drive API key (browser key, referrer-restricted) is NOT in the repo — macOS Keychain "Reading Corner", `~/Documents/Claude Code/API-KEYS.md`, project `.env` (`GOOGLE_DRIVE_API_KEY`). Users paste it once per device ("Turn on tap-to-read").  
+> **Incident (2026-11-11)**: a rename trashed one identical duplicate ("One Plus One Equals Three - Dave Trott .epub", in Drive trash); tool fixed.
 
 ## Roadmap
 
@@ -41,7 +42,8 @@
 - [x] Phase 32: Swapped Metadata Audit & Curated Multi-Category Tagging — Rectified 114 swapped author/title books (Snow Crash, Cryptonomicon, Infinite Jest, Project Hail Mary, etc.); added multi-category support with "Short Stories", "Essays", and "Literary Non-Fiction"; bumped SW cache to v18.
 - [x] Phase 33: Craft Card "Steal It" Literary Purge & Polish — Audited all 113 cards in `content/cards.json` to eradicate all corporate, marketing, business, and SaaS jargon in "Steal It" sections; rewrote 22 cards to pure essay/fiction/memoir craft; verified 0 linter flags in `tools/lint_cards.py`.
 - [x] Phase 34: Android Cache Invalidation Fix & Release APK Bundle — Fixed `Cards.load` and `QuoteBank.load` cache-delete bug where `assetCards.size >= cachedCards.size` (113 >= 113) purged downloaded cards; replaced with timestamp comparison against APK install time; reduced sync check interval to 15m; compiled signed release APK.
-- [~] Phase 35: Bookshelf Drive Sync, Name Cleanup & Code Audit — build now driven by live Drive catalog (fixes new books never appearing: old build returned early on existing data.json); `book_names.json` (Drive-id keyed) fixes all swapped/underscored/Unknown names; `book_overrides.json` replaces 600 lines of hard-coded fixes; template extracted to `scripts/templates/bookshelf.html`; `refresh_bookshelf.sh` + LaunchAgent for daily pickup; Drive rename tool (dry-run). Pushed; LaunchAgent installed. Pending: Drive rename apply.
+- [x] Phase 35: Bookshelf Drive Sync, Name Cleanup & Code Audit — build now driven by live Drive catalog (fixes new books never appearing: old build returned early on existing data.json); `book_names.json` (Drive-id keyed) fixes all swapped/underscored/Unknown names; `book_overrides.json` replaces 600 lines of hard-coded fixes; template extracted to `scripts/templates/bookshelf.html`; `refresh_bookshelf.sh` + LaunchAgent for daily pickup; Drive rename tool (dry-run). Pushed; LaunchAgent installed. Pending: Drive rename apply.
+- [~] Phase 36: Verified Drive renames (455) with history/undo; OCR cover audit; phone book-sheet redesign; tap-to-read via Drive API key; Archive/Restore; local Tidy button.
 
 ## File map
 
@@ -55,13 +57,17 @@
   - `content/book_names.json`: **source of truth for every title/author**, keyed by Drive file id. Edit here to fix a name.
   - `content/book_overrides.json`: per-book fixes keyed by shelf id (cover_url, no_cover, pitch, why_love, category, extra_categories).
   - `scripts/rename_drive_files.py`: renames Drive files to "Title - Author.ext" (dry run default, `--apply`, `--undo`; log in `content/drive_rename_log.json`).
-  - `scripts/launchd/com.local.reading-corner-refresh.plist`: daily 09:15 refresh + publish (install command inside).
+  - `scripts/launchd/com.local.reading-corner-refresh.plist`: daily 09:15 refresh + tidy + publish (install command inside).
+  - `scripts/launchd/com.local.reading-corner-server.plist`: always-on local helper (http://localhost:8899).
+  - `scripts/serve_bookshelf.py`: local helper — serves the shelf, `/api/tidy` (Tidy Drive Names button), `/api/archive`.
+  - `scripts/audit_covers.py`: OCR-verifies every cover via local vision server (localhost:9090); `--fix` swaps in verified covers.
+  - `content/drive_name_history.json` / `drive_rename_log.json`: original name of every Drive file / every rename (undo trail).
+  - `content/cover_audit.md`, `content/drive_rename_review.md`: latest audit reports for manual review.
   - `scripts/migrations/`: one-time scripts that produced book_names.json and the template (history only).
   - `scripts/archive/`: retired bookshelf patch scripts — do not run.
 - `scripts/audit_steal_it_marketing.py`: Audits all 113 cards in `content/cards.json` for corporate, marketing, or business jargon.
 - `scripts/revise_cards_content.py`: Automation script replacing corporate/marketing jargon in `cards.json` with pure prose craft.
 - `scripts/enrich_key_missing_quotes.py`: Curated engine injecting iconic quotes and two-tier companion insights for screenwriting, cinema craft, graphic novels, and literature classics.
-- `scripts/serve_bookshelf.py`: Lightweight zero-cache local server serving My Reading Corner on port 8899.
 - `content/book_metadata_cache.json`: Cache of Open Library works metadata, high-resolution cover IDs, and publisher descriptions.
 - `content/covers_cache.json`: Cache of Open Library and custom resolved book cover URLs.
 - `content/gdrive_file_ids.json`: Cache of Google Drive file IDs mapping every book to its direct view link (`https://drive.google.com/file/d/{id}/view`).
