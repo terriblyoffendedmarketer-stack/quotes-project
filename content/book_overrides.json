@@ -1,0 +1,1030 @@
+{
+ "_doc": "Per-book overrides keyed by shelf id. Applied on every build after Drive data and before names. Names (title/author) live in book_names.json, keyed by Drive file id. Keys: category, extra_categories, cover_url (null = typographic jacket), no_cover, pitch, why_love, tags.",
+ "books": {
+  "40-rules-of-love-elif-shafak": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/9078986-L.jpg"
+  },
+  "500-days-of-summer-2009-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "a-self-help-guide-for-copywriters-dan-nelken": {
+   "category": "Marketing & Strategy",
+   "cover_url": "https://covers.openlibrary.org/b/id/12838741-L.jpg"
+  },
+  "a-short-stay-in-hell-steven-l-peck": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "a-simple-plan-scott-smith": {
+   "why_love": "Scott Smith builds dread out of a duffel bag of cash and three ordinary men who agree to keep it. Every chapter tightens the moral screw a little more, and Hank's calm, reasonable narration makes the slide toward catastrophe feel horribly logical. A masterclass in letting character, not coincidence, drive a thriller."
+  },
+  "a-wrinkle-in-time-unknown": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/8709146-L.jpg"
+  },
+  "ajaya-a-roll-of-the-dice-anand-neelakantan": {
+   "cover_url": "https://covers.openlibrary.org/b/id/10861298-L.jpg",
+   "pitch": "The Mahabharata retold from the side of the Kauravas. Suyodhana — the prince history remembers as Duryodhana — stands against caste privilege, divine-right politics and the Pandavas' claim to the throne of Hastinapura, while Shakuni plots revenge and the fateful game of dice approaches.",
+   "why_love": "Neelakantan's gift is moral inversion: he takes the epic's designated villains and makes you argue their case. Book one of the Ajaya duology asks who gets to be righteous when the winners write the scripture."
+  },
+  "akira-unknown": {
+   "category": "Comics & Graphic Novels",
+   "cover_url": "https://covers.openlibrary.org/b/id/814967-L.jpg"
+  },
+  "alex-verus-1-fated-benedict-jacka": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/7367355-L.jpg"
+  },
+  "all-art-is-propaganda-george-orwell": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "all-tomorrows-cm-kosemen-unknown": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/15137394-L.jpg"
+  },
+  "amusing-ourselves-to-death-neil-postman": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "apropos-of-nothing-woody-allen": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "aristotle-a-graphic-biography": {
+   "category": "Graphic Guides",
+   "cover_url": "https://covers.openlibrary.org/b/id/12593945-L.jpg"
+  },
+  "arrival-2016-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "asura-tale-of-the-vanquished-anand-neelakantan": {
+   "cover_url": "https://covers.openlibrary.org/b/id/14823714-L.jpg",
+   "pitch": "The Ramayana told by Ravana and by Bhadra, a common Asura soldier. It is the story of a defeated people: their king's rise from poverty to the throne of Lanka, his flaws and ambitions, and the war that history would record only from the victors' side.",
+   "why_love": "The book that made Neelakantan's name. Pairing a king's grand self-justification with a foot soldier's bitter, ground-level view gives the epic a double voice, and the result is a genuinely subversive piece of mythological fiction."
+  },
+  "awara-bheed-ke-khatare-harishankar-parsai": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "bahut-door-kitni-door-hota-hai-manav-kaul": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "barabara-oakley-a-mind-for-numbers": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/8352403-L.jpg"
+  },
+  "barthes-the-death-of-the-author-unknown": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "ben-goldacre-bad-pharma": {
+   "category": "Philosophy, Essays & Misc",
+   "cover_url": "https://covers.openlibrary.org/b/id/7289568-L.jpg",
+   "pitch": "We like to imagine that medicine is based on evidence and fair clinical trials. In reality, those tests are conducted by pharmaceutical companies who frequently bury negative trials, conduct flawed studies with tiny groups, and distort research to market ineffective and dangerous drugs.",
+   "tags": [
+    "medicine",
+    "investigative",
+    "science",
+    "healthcare",
+    "pharma"
+   ],
+   "why_love": "Ben Goldacre is the scourge of medical quackery and institutional deceit. In Bad Pharma, he lays bare the systemic corruption of clinical drug trials: how negative results are buried, how regulatory agencies are captured, and how doctors are misled into prescribing expensive, ineffective treatments. A furious, meticulously footnoted exposé."
+  },
+  "ben-goldacre-bad-science": {
+   "category": "Philosophy, Essays & Misc",
+   "cover_url": "https://covers.openlibrary.org/b/id/6680603-L.jpg",
+   "pitch": "Full of spleen, this is a hilarious, invigorating and informative journey through the world of bad science. When Dr. Ben Goldacre saw someone on daytime TV dipping her feet in an 'Aqua Detox' footbath and releasing brown sludge, he tested it with a Barbie doll and salt water. An essential takedown of homeopaths and tabloid scaremongers.",
+   "tags": [
+    "pseudoscience",
+    "critical-thinking",
+    "media-literacy",
+    "humor"
+   ],
+   "why_love": "Ben Goldacre opened his book with a Barbie doll sitting in a tub of brown sludge, and I have never trusted a footbath since. Reading it feels like being taken by the collar by a friend who happens to be a doctor and refuses to let you swallow a claim without checking the numbers."
+  },
+  "best-of-satyajit-ray-satyajit-ray": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "bhagat-singh-why-i-am-an-atheist-bhagat-singh": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "bird-by-bird-some-instructions-on-writing-and-life-anne-lamott": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "blind-willow-sleeping-woman-haruki-murakami": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "bong-joon-ho-parasite-script": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "burn-it-down-feminist-manifestos-breanne-fahs": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "byung-chul-han-absence-on-the-culture-and-philosophy-of-the-far-east": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "carl-jung-man-and-his-symbols": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "carl-jung-memories-dreams-reflections": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "carl-jung-the-development-of-personality": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "chess-for-zebras-jonathan-rowson": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/2144888-L.jpg"
+  },
+  "chronicles-of-a-liquid-society-umberto-eco": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "cinematography-theory-and-practice-unknown": {
+   "category": "Cinema & Film Craft",
+   "cover_url": "https://covers.openlibrary.org/b/id/11163976-L.jpg"
+  },
+  "cixin-liu-the-wandering-earth": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "commodify-your-dissent-thomas-frank": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "dangal-movie-script-film-companion-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "david-allen-getting-things-done-unknown": {
+   "category": "Marketing & Strategy",
+   "cover_url": "https://covers.openlibrary.org/b/id/109288-L.jpg"
+  },
+  "david-mcraney-you-are-not-so-smart-why-you-have-too-many-friends-on-facebook-why-your-memory-is-mostly-fiction-and-46-other-ways-you-re-deluding-yourself-penguin-group-us": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "derren-brown-confessions-of-a-conjuror": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "directing-actors-unknown": {
+   "category": "Cinema & Film Craft",
+   "cover_url": "https://covers.openlibrary.org/b/id/718358-L.jpg"
+  },
+  "ed-catmull-amy-wallace-creativity-inc-overcoming-the-unseen-forces-that-stand-in-the-way-of-true-inspiration-libgen-li": {
+   "category": "Marketing & Strategy",
+   "cover_url": "https://covers.openlibrary.org/b/id/13124793-L.jpg"
+  },
+  "ernest-hemingway-short-stories": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "etgar-keret-the-bus-driver-who-wanted-to-be-god": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "etgar-keret-the-seven-good-years": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "everybody-lies-seth-stephens-davidowitz": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/8294628-L.jpg"
+  },
+  "everything-everywhere-all-at-once-2022-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "exurb1a-the-fifth-science": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "fight-club-script-palahniuk-chuck": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "freakonomics-unknown": {
+   "category": "Fiction & Non-Fiction"
+  },
+  "gangs-of-wasseypur-part-1-movie-script-film-companion-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "geoff-mulgan-big-mind-how-collective-intelligence-can-change-our-world-libgen-li": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/8382431-L.jpg"
+  },
+  "get-out-2017-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "giovannis-room-james-baldwin": {
+   "why_love": "Baldwin wrote this short novel in prose so controlled it almost trembles. David's self-deception in 1950s Paris is rendered with merciless tenderness, and the book remains one of the great studies of shame, desire and the cost of refusing to know yourself."
+  },
+  "groundhogday-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "hannah-arendt-eichmann-in-jerusalem-a-report-on-the-banality-of-evil": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "haunted-tales-of-the-grotesque-joyce-carol-oates": {
+   "cover_url": "https://covers.openlibrary.org/b/id/4661525-L.jpg",
+   "extra_categories": [
+    "Short Stories"
+   ],
+   "pitch": "Sixteen stories of psychological horror, from haunted farmhouses and doubled selves to the quieter terrors of family, memory and the body. Oates's gothic mode, where the supernatural and the domestic bleed into each other.",
+   "why_love": "Oates treats the grotesque as a lens for ordinary life, so the scariest moments are often the most recognisable. A sharp introduction to her short-form gothic, best read one story at a time with the lights low."
+  },
+  "homage-to-catalonia-george-orwell": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "how-to-research-anything-unknown": {
+   "category": "Philosophy, Essays & Misc",
+   "cover_url": null,
+   "no_cover": true,
+   "pitch": "A curated compendium of advanced web intelligence, investigative research workflows, search heuristics, and OSINT methodologies gathered from investigative journalists and research practitioners across the web.",
+   "tags": [
+    "research",
+    "osint",
+    "investigation",
+    "methodology",
+    "web-intelligence"
+   ],
+   "why_love": "This isn't a single corporate manual; it's a battle-tested compilation of heuristics and search tools gathered across the best research communities on the web. It renders cleanly as a bespoke clothbound research jacket."
+  },
+  "how-to-travel-with-a-salmon-other-essays-umberto-eco": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "how-to-win-at-chess-1-levy-rozman": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/14135096-L.jpg",
+   "pitch": "YouTube's favorite chess educator demystifies the 64 squares with accessible, humorous, and ruthlessly practical lessons covering opening traps, positional control, and endgames.",
+   "tags": [
+    "chess",
+    "strategy",
+    "games",
+    "tactics"
+   ],
+   "why_love": "Levy Rozman made chess strategy kinetic, hilarious, and genuinely fun. Instead of burying beginners in dry algebraic notation, he breaks down the psychology of mistakes and fundamental habits that actually raise your rating."
+  },
+  "how-to-win-at-chess-2-next-level-levy-rozman": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/15243805-L.jpg",
+   "pitch": "The follow-up masterclass expanding into intermediate opening repertoires, piece sacrifice evaluations, middlegame planning, and calculation techniques.",
+   "tags": [
+    "chess",
+    "strategy",
+    "games",
+    "tactics",
+    "intermediate"
+   ],
+   "why_love": "Taking players beyond the beginner plateau, this second volume focuses on the murky middlegame where games are won and lost. Spot tactical patterns under pressure without getting paralyzed."
+  },
+  "hwp-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "in-the-blink-of-an-eye-walter-murch": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "intimacy-trusting-oneself-and-the-other-by-osho": {
+   "category": "Philosophy, Essays & Misc",
+   "cover_url": "https://covers.openlibrary.org/b/id/177935-L.jpg",
+   "pitch": "An uncompromising exploration of why human beings crave profound connection yet run in terror from genuine vulnerability, revealing how fear of exposure and self-rejection undermine our closest relationships.",
+   "tags": [
+    "philosophy",
+    "intimacy",
+    "psychology",
+    "vulnerability"
+   ],
+   "why_love": "Osho cuts through romantic sentimentalism to expose the fundamental paradox of modern relationships: we want to be loved deeply, yet we armor ourselves behind masks to keep from being seen."
+  },
+  "into-the-woods-john-yorke": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "isaac-asimov-asimov-s-mysteries": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "james-gleick-chaos-making-a-new-science": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "james-hollis-the-middle-passage-from-misery-to-meaning-in-midlife-libgen-li": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/1197996-L.jpg"
+  },
+  "jared-diamond-guns-germs-and-steel": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "jennifer-burns-goddess-of-the-market": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "joe-hill-20th-century-ghosts": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "john-curran-agatha-christies-murder-in-the-making": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "john-truby-the-anatomy-of-story": {
+   "category": "Cinema & Film Craft",
+   "cover_url": "https://covers.openlibrary.org/b/id/9698720-L.jpg"
+  },
+  "jojo-rabbit-2019-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "jonathan-sperber-a-nineteenth-century-life": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "kindred-octavia-e-butler": {
+   "why_love": "Butler uses one brutal, unexplained device — time travel without rules — to force a modern woman into antebellum Maryland and make history physical. Lean, propulsive and devastating; it reads like a thriller and lands like testimony."
+  },
+  "know-my-name-a-memoir-chanel-miller": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "leo-tolstoy-death-of-ivan-ilych": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "letters-to-milena-franz-kafka-franz-kafka": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "life-after-life-a-novel-kate-atkinson": {
+   "cover_url": "https://covers.openlibrary.org/b/id/7268319-L.jpg",
+   "pitch": "On a snowy night in 1910, Ursula Todd is born and dies before she can draw breath. On the same night she is born again, and lives. Again and again she gets another chance, through the Spanish flu, the Blitz and the long shadow of two world wars.",
+   "why_love": "Atkinson turns a structural gimmick into a profound meditation on chance, choice and the small hinges a life swings on. Funny, humane and formally daring; the Blitz chapters are some of the best war writing of the century."
+  },
+  "logan-2017-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "logic-beach-part-1-exurb1a": {
+   "pitch": "Exurb1a's self-published novel of physics, philosophy and existential comedy, the first half of a two-part story set on the strange border between the rational and the absurd.",
+   "why_love": "For readers who know Exurb1a from the videos: the same mix of cosmic dread, gallows humour and real tenderness, given room to breathe on the page."
+  },
+  "love-letters-virginia-woolf-and-vita-sackville-west": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "maangchi-s-real-korean-cooking-unknown": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/13135332-L.jpg"
+  },
+  "malcolm-gladwell-david-and-goliath": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "malcom-gladwell-blink": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "marcus-kliewer-we-used-to-live-here-a-novel-libgen-li": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/14578135-L.jpg"
+  },
+  "mark-ko-dard-nahi-hota-1-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "mary-kubica-local-woman-missing-libgen-li": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/10899011-L.jpg"
+  },
+  "masaan-movie-script-film-companion-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "master-shots-100-advanced-camera-techniques-to-get-an-expensive-look-on-your-low-budget-movie-unknown": {
+   "category": "Cinema & Film Craft",
+   "cover_url": "https://covers.openlibrary.org/b/id/7104834-L.jpg"
+  },
+  "matthew-walker-why-we-sleep": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "meditations-for-mortals-four-weeks-to-embrace-your-limitations-and-make-time-for-what-counts-oliver-burkeman-107217730-libgen-li-oliver-burkeman": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "men-without-women-haruki-murakami": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "mikhail-tal-the-life-and-games-of-mikhail-tal-libgen-li": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/7946850-L.jpg"
+  },
+  "mitch-albom-tuesdays-with-morrie": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "money-martin-amis": {
+   "why_love": "John Self's voice is the book: greedy, wrecked, hilarious and unexpectedly lyrical. Amis wrote the definitive novel of 1980s appetite, and the prose has a manic, sentence-by-sentence energy few writers have matched."
+  },
+  "myth-of-sisyphus-and-other-essays-the-albert-camus": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "neil-gaiman-american-gods": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/8233777-L.jpg"
+  },
+  "no-nation-for-women-priyanka-dubey": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "notes-from-underground-the-double-fyodor-dostoevsky": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "nuts-and-bolts-thought-verbs-litreactor-chuck-palahniuk": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "oliver-burkeman-four-thousand-weeks-time-management-for-mortals-libgen-li": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/12519129-L.jpg",
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "oliver-burkeman-help-libgen-li": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/6989481-L.jpg"
+  },
+  "oliver-burkeman-the-antidote-happiness-for-people-who-can-t-stand-positive-thinking-libgen-li": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/7318721-L.jpg"
+  },
+  "osho-freedom-the-courage-to-be-yourself-libgen-li": {
+   "category": "Philosophy, Essays & Misc",
+   "cover_url": "https://covers.openlibrary.org/b/id/185078-L.jpg"
+  },
+  "paradise-and-other-stories-khushwant-singh": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "pat-conroy-the-prince-of-tides": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "peter-frankopan-the-silk-roads": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "phil-knight-shoe-dog-a-memoir-by-the-creator-of-nike": {
+   "category": "Marketing & Strategy",
+   "cover_url": "https://covers.openlibrary.org/b/id/8354784-L.jpg",
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "picture-of-dorian-gray-unknown": {
+   "category": "Fiction & Non-Fiction"
+  },
+  "pity-the-reader-kurt-vonnegut": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "poems-for-the-lost-because-im-lost-too-exurb1a": {
+   "pitch": "A slim collection of poems about loneliness, the universe and getting through the night, written in Exurb1a's mix of cosmic perspective and plain-spoken comfort.",
+   "why_love": "Unpretentious and kind. These read like notes from a friend who has also stared at the ceiling at 3 a.m. and decided to stay anyway."
+  },
+  "pranay-lal-indica-a-deep-natural-history-of-the-indian-subcontinent": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "qntm-valuable-humans-in-transit-and-other-stories": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "ray-dalio-principles-unknown": {
+   "category": "Marketing & Strategy",
+   "cover_url": "https://covers.openlibrary.org/b/id/8315355-L.jpg"
+  },
+  "review-of-mein-kampf-by-adolf-hitler-george-orwell": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "rick-rubin-the-creative-act-a-way-of-being": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "rilke-letters-to-a-young-poet": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "robert-houdin-memoirs-of-robert-houdin": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "robert-mckee-story": {
+   "category": "Cinema & Film Craft",
+   "cover_url": "https://covers.openlibrary.org/b/id/38437-L.jpg"
+  },
+  "roland-barthes-image-music-text": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "rowan-williams-dostoevsky-language-faith-and-fiction": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "russian-short-stories-from-pushkin-to-buida-chandler-robert": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "sashi-tharoor-why-i-am-a-hindu": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "save-the-cat-the-last-book-on-screenwriting-you-ll-ever-need-by-blake-snyder-unknown": {
+   "category": "Cinema & Film Craft",
+   "cover_url": "https://covers.openlibrary.org/b/id/960754-L.jpg"
+  },
+  "save-the-cat-writes-a-novel-by-jessica-brody-unknown": {
+   "category": "Cinema & Film Craft",
+   "cover_url": "https://covers.openlibrary.org/b/id/10148215-L.jpg"
+  },
+  "sculpting-in-time-andrei-tarkovsky": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "scum-manifesto-valerie-solanas": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "selected-essays-george-orwell": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "seneca-letters-on-ethics": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "short-storybaazi-divya-prakash-dubey": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "six-pillars-of-self-esteem-nathaniel-branden-unknown": {
+   "category": "Philosophy, Essays & Misc",
+   "cover_url": "https://covers.openlibrary.org/b/id/8354780-L.jpg"
+  },
+  "socialism-utopian-and-scientific-frederick-engels": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "sophies-world-a-novel-about-the-unknown": {
+   "category": "Philosophy, Essays & Misc"
+  },
+  "stephen-king-billy-summers": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/10864389-L.jpg"
+  },
+  "stephen-king-it": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/8235086-L.jpg"
+  },
+  "stephen-king-on-writing": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/8235099-L.jpg",
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "stephen-king-pet-sematary": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/8235103-L.jpg"
+  },
+  "stephen-king-salem-s-lot": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/8235111-L.jpg"
+  },
+  "stephen-king-the-dark-tower-01-the-gunslinger": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/8235122-L.jpg"
+  },
+  "stephen-king-the-mist": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/8235136-L.jpg"
+  },
+  "stephen-king-the-stand": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/8235109-L.jpg"
+  },
+  "stories-of-your-life-and-others-ted-chiang": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "story-robert-mckee": {
+   "category": "Cinema & Film Craft",
+   "cover_url": "https://covers.openlibrary.org/b/id/38437-L.jpg"
+  },
+  "stranger-than-fiction-chuck-palahniuk": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "susan-orlean-the-library-book": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "susan-piver-the-wisdom-of-a-broken-heart": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "t-kingfisher-what-moves-the-dead-libgen-li": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/12854930-L.jpg"
+  },
+  "t-m-scanlon-what-we-owe-to-each-other": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "tali-sharot-the-influential-mind": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "ted-chiang-the-story-of-your-life": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "the-1-page-marketing-plan-unknown": {
+   "category": "Marketing & Strategy"
+  },
+  "the-anatomy-of-story-22-steps-to-becoming-a-master-storyteller-unknown": {
+   "category": "Cinema & Film Craft",
+   "cover_url": "https://covers.openlibrary.org/b/id/9698720-L.jpg"
+  },
+  "the-anthropocene-reviewed-john-green": {
+   "extra_categories": [
+    "Essays",
+    "Literary Non-Fiction"
+   ]
+  },
+  "the-argumentative-indian-amartya-unknown": {
+   "category": "Philosophy, Essays & Misc",
+   "cover_url": "https://covers.openlibrary.org/b/id/7946950-L.jpg"
+  },
+  "the-call-of-cthulhu-and-other-weird-stories-hp-lovecraft": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "the-communist-manifesto-unknown": {
+   "extra_categories": [
+    "Essays"
+   ],
+   "category": "Philosophy, Essays & Misc"
+  },
+  "the-fire-next-time-james-baldwin": {
+   "extra_categories": [
+    "Essays",
+    "Literary Non-Fiction"
+   ]
+  },
+  "the-food-lab-better-home-cooking-through-science-unknown": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/8314250-L.jpg"
+  },
+  "the-gambler-and-other-stories-fyodor-dostoyevsky": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "the-genealogy-of-morals-by-friedrich-nietzsche-unknown": {
+   "category": "Philosophy, Essays & Misc",
+   "cover_url": "https://covers.openlibrary.org/b/id/119371-L.jpg"
+  },
+  "the-great-indian-novel-shashi-tharoor": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "the-love-letters-of-abelard-and-heloise-virginia-woolf-vita-sackville-west": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "the-lunchbox-screenplay-film-companion-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "the-martian-2015-unknown": {
+   "category": "Screenplays",
+   "cover_url": null,
+   "no_cover": true
+  },
+  "the-meaning-of-hitler-sebastian-haffner": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "the-ones-who-walk-away-from-omelas-unknown": {
+   "category": "Fiction & Non-Fiction"
+  },
+  "the-paper-menagerie-and-other-stories-ken-liu": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "the-prince-of-milk-exurb1a": {
+   "why_love": "A sleepy English village, a cosmic war fought by things older than time, and a cat with opinions. Exurb1a's most playful novel, absurd on the surface and quietly philosophical underneath."
+  },
+  "the-reading-room-a-short-fiction-mag": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "the-riddler-year-one": {
+   "category": "Comics & Graphic Novels",
+   "cover_url": "https://covers.openlibrary.org/b/id/14643238-L.jpg",
+   "pitch": "A six-issue psychological crime thriller written by actor Paul Dano, exploring forensic accountant Edward Nashton's spiral into madness, systemic corruption, and the emergence of the Riddler persona in Gotham City.",
+   "tags": [
+    "batman",
+    "dc-comics",
+    "crime",
+    "psychological",
+    "noir"
+   ],
+   "why_love": "Written by Paul Dano himself to explore the interior psychology of his character from Matt Reeves' The Batman, this is one of the most viscerally unsettling, gorgeously textured Gotham noir tales ever committed to paper."
+  },
+  "the-ruins-scott-smith": {
+   "why_love": "Smith strands four tourists on a jungle hill and lets claustrophobia, bad decisions and something growing do the rest. Relentless, nearly plotless horror driven entirely by group psychology. You will not look at vines the same way."
+  },
+  "the-sandman-complete-unknown": {
+   "category": "Comics & Graphic Novels",
+   "cover_url": "https://covers.openlibrary.org/b/id/7508162-L.jpg",
+   "pitch": "Neil Gaiman's magnum opus following Morpheus, the Lord of Dreams, imprisoned for seven decades by an occult ritual before breaking free to rebuild his ruined kingdom of the Dreaming and reclaim his lost tools of power.",
+   "tags": [
+    "mythology",
+    "fantasy",
+    "graphic-novel",
+    "dark-fantasy"
+   ],
+   "why_love": "Neil Gaiman took comic books and turned them into modern mythic literature. Morpheus walking into the depths of Hell with a helm crafted from a demon's spine is one of the indelible sequences of 20th-century graphic storytelling."
+  },
+  "the-seven-deaths-of-evelyn-hardcastle-unknown": {
+   "category": "Fiction & Non-Fiction"
+  },
+  "the-silent-patient-by-alex-michaelides-pdfread-unknown": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/9407338-L.jpg"
+  },
+  "the-stream-of-homer-on-story-heroism-and-the-river-that-runs-underneath-everything": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "this-is-water-david-foster-wallace": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "tim-feriss-the-4-hour-chef": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/7256387-L.jpg",
+   "pitch": "Building on the Meta-Learning framework (DiSSS: Deconstruction, Selection, Sequencing, Stakes), Ferriss deconstructs culinary mastery as a blueprint to learn any skill in record time, from knife technique to sensory training.",
+   "tags": [
+    "learning",
+    "cooking",
+    "productivity",
+    "meta-learning"
+   ],
+   "why_love": "Don't let the cookbook format fool you: this is Ferriss's masterclass on accelerated skill acquisition masquerading as culinary instruction. If you want to understand how to dissect a complex domain into atomic drills, this is the manual."
+  },
+  "times-arrow-martin-amis": {
+   "why_love": "Told backwards, so that healing looks like wounding and atrocity looks like creation, until the reversal arrives at Auschwitz and the device becomes unbearable. A short, formally audacious novel about complicity."
+  },
+  "timothy-snyder-bloodlands-europe-btwn-hitler-stalin": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "tiny-beautiful-things-cheryl-strayed": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "trick-mirror-jia-tolentino": {
+   "extra_categories": [
+    "Essays",
+    "Literary Non-Fiction"
+   ]
+  },
+  "understanding-comics-scott-mccloud-unknown": {
+   "category": "Comics & Graphic Novels",
+   "cover_url": "https://covers.openlibrary.org/b/id/10679940-L.jpg"
+  },
+  "vaishnav-ki-phislan-harishankar-parsai": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "valmikis-women-anand-neelakantan": {
+   "extra_categories": [
+    "Short Stories"
+   ],
+   "pitch": "Five novellas that retell the Ramayana through its women — Shanta, Manthara, Shurpanakha, Tara and Sita — figures the epic sidelines, blames or silences.",
+   "why_love": "Neelakantan at his most humane: each story restores interior life to a woman the epic used as a plot device, and together they make a quiet, angry counter-history."
+  },
+  "walter-benjamin-the-work-of-art-in-the-age-of-mechanical-reproduction": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "watchmen-complete": {
+   "category": "Comics & Graphic Novels",
+   "cover_url": "https://covers.openlibrary.org/b/id/7774899-L.jpg",
+   "pitch": "Alan Moore and Dave Gibbons' groundbreaking masterpiece that deconstructed the superhero mythos, set against the ticking clock of Cold War nuclear apocalypse and vigilantism.",
+   "tags": [
+    "graphic-novel",
+    "dc-comics",
+    "superheroes",
+    "cold-war",
+    "masterpiece"
+   ]
+  },
+  "we-were-the-mulvaneys-joyce-carol-oates": {
+   "why_love": "Oates charts the slow collapse of a golden family after one night nobody will discuss. Expansive, aching and closely observed; a great American novel about what silence does to love."
+  },
+  "what-every-body-is-saying-unknown": {
+   "category": "Philosophy, Essays & Misc"
+  },
+  "what-i-talk-about-when-i-talk-about-running-haruki-murakami": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "where-are-you-going-where-have-you-been-joyce-carol-oates": {
+   "extra_categories": [
+    "Short Stories"
+   ],
+   "why_love": "The title story — Connie, a summer afternoon and the stranger called Arnold Friend — is one of the most anthologised and unsettling stories in American literature. The rest of the selection shows how wide Oates's range runs."
+  },
+  "white-nights-fyodor-dostoyevsky": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "will-storr-the-status-game": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "will-storr-the-status-game-on-social-position-and-how-we-use-it-libgen-li": {
+   "category": "Fiction & Non-Fiction",
+   "cover_url": "https://covers.openlibrary.org/b/id/12389923-L.jpg"
+  },
+  "worringer-wilhelm-abstraction-and-empathy-psychology-of-style": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "writing-craft-essays-chuck-palahniuk": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "yann-martel-the-facts-behind-the-helsinki-roccamatios": {
+   "extra_categories": [
+    "Short Stories"
+   ]
+  },
+  "yuen-ren-chao-language-and-symbolic-systems": {
+   "extra_categories": [
+    "Literary Non-Fiction"
+   ]
+  },
+  "zen-in-the-art-of-writing-ray-bradbury": {
+   "extra_categories": [
+    "Essays"
+   ]
+  },
+  "zombie-joyce-carol-oates": {
+   "why_love": "Short, cold and genuinely disturbing: Oates inhabits the flat, bureaucratic voice of a killer loosely modelled on Jeffrey Dahmer. Not for everyone, but a chilling exercise in point of view."
+  }
+ }
+}

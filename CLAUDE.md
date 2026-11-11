@@ -1,8 +1,9 @@
 # Marginalia
 
-> **Status**: Complete | **Phase**: 34 (Android Cache Invalidation Fix & Release APK Bundle)  
-> **Current**: Fixed Android `Cards.load` and `QuoteBank.load` cache-deletion bug where `assetCards.size >= cachedCards.size` (113 >= 113) purged downloaded cards; replaced with timestamp comparison against APK install time; reduced sync check interval to 15m; compiled signed release APK with clean cards; updated prototypes and APK bundles.  
-> **Next**: User verification on device.
+> **Status**: Active | **Phase**: 35 (Bookshelf Drive Sync, Name Cleanup & Code Audit)  
+> **Current**: My Reading Corner now rebuilds from the live Google Drive listing (keyed by Drive file id) instead of a frozen data.json; all 631 titles/authors hand-curated in `content/book_names.json`; 17 new Drive books added with covers/synopses/notes; template extracted from Python f-string and bug-fixed (HTML escaping, stale localStorage name overrides, Copy TBR quoting, pinned Tailwind CDN).  
+> **Next**: (1) push + install daily LaunchAgent (`scripts/launchd/`) once approved; (2) optionally apply Drive renames (`python3 scripts/rename_drive_files.py --apply`, plan in `content/drive_rename_plan.txt`); (3) rclone's shared client_id is being retired in 2026 — create own client id if sync starts failing.  
+> **Known gaps**: `bookshelf/reader.html` (Reading Nook) not re-audited this phase; 103 books still use typographic jackets (no cover found).
 
 ## Roadmap
 
@@ -40,11 +41,23 @@
 - [x] Phase 32: Swapped Metadata Audit & Curated Multi-Category Tagging — Rectified 114 swapped author/title books (Snow Crash, Cryptonomicon, Infinite Jest, Project Hail Mary, etc.); added multi-category support with "Short Stories", "Essays", and "Literary Non-Fiction"; bumped SW cache to v18.
 - [x] Phase 33: Craft Card "Steal It" Literary Purge & Polish — Audited all 113 cards in `content/cards.json` to eradicate all corporate, marketing, business, and SaaS jargon in "Steal It" sections; rewrote 22 cards to pure essay/fiction/memoir craft; verified 0 linter flags in `tools/lint_cards.py`.
 - [x] Phase 34: Android Cache Invalidation Fix & Release APK Bundle — Fixed `Cards.load` and `QuoteBank.load` cache-delete bug where `assetCards.size >= cachedCards.size` (113 >= 113) purged downloaded cards; replaced with timestamp comparison against APK install time; reduced sync check interval to 15m; compiled signed release APK.
+- [~] Phase 35: Bookshelf Drive Sync, Name Cleanup & Code Audit — build now driven by live Drive catalog (fixes new books never appearing: old build returned early on existing data.json); `book_names.json` (Drive-id keyed) fixes all swapped/underscored/Unknown names; `book_overrides.json` replaces 600 lines of hard-coded fixes; template extracted to `scripts/templates/bookshelf.html`; `refresh_bookshelf.sh` + LaunchAgent for daily pickup; Drive rename tool (dry-run). Pending: push/LaunchAgent install, Drive rename apply.
 
 ## File map
 
 - `bookshelf/`: Decoupled, standalone reading shelf web app (**My Reading Corner**) ready for independent git repository (`index.html`, `data.json`).
-- `scripts/audit_and_tag_categories.py`: Audits and rectifies inverted author/title metadata across Google Drive catalogs and tags books into multi-category arrays.
+- **Bookshelf pipeline** (run `bash scripts/refresh_bookshelf.sh [--publish]`):
+  - `scripts/sync_drive_catalog.py`: rclone listing of gdrive:Books (path, size, modified, Drive id, mime) → `content/gdrive_books_catalog.json`.
+  - `scripts/build_independent_bookshelf_app.py`: catalog + names + overrides + previous data.json → `bookshelf/data.json`, `bookshelf/index.html`, `docs/bookshelf.html`.
+  - `scripts/enrich_new_books.py`: verifies parsed names of new books on Open Library, adds cover + synopsis, pins names in book_names.json.
+  - `scripts/shelf_common.py`: shared paths, `norm()`, filename → (title, author) parser.
+  - `scripts/templates/bookshelf.html`: the web app (plain HTML/JS; `@@TOKENS@@` filled by the build).
+  - `content/book_names.json`: **source of truth for every title/author**, keyed by Drive file id. Edit here to fix a name.
+  - `content/book_overrides.json`: per-book fixes keyed by shelf id (cover_url, no_cover, pitch, why_love, category, extra_categories).
+  - `scripts/rename_drive_files.py`: renames Drive files to "Title - Author.ext" (dry run default, `--apply`, `--undo`; log in `content/drive_rename_log.json`).
+  - `scripts/launchd/com.local.reading-corner-refresh.plist`: daily 09:15 refresh + publish (install command inside).
+  - `scripts/migrations/`: one-time scripts that produced book_names.json and the template (history only).
+  - `scripts/archive/`: retired bookshelf patch scripts — do not run.
 - `scripts/audit_steal_it_marketing.py`: Audits all 113 cards in `content/cards.json` for corporate, marketing, or business jargon.
 - `scripts/revise_cards_content.py`: Automation script replacing corporate/marketing jargon in `cards.json` with pure prose craft.
 - `scripts/enrich_key_missing_quotes.py`: Curated engine injecting iconic quotes and two-tier companion insights for screenwriting, cinema craft, graphic novels, and literature classics.
@@ -57,13 +70,9 @@
 - `content/quote-bank.json`: Structured storage for the master multi-book quote bank (1,882 quotes across 423 books).
 - `content/quote-bank.md`: Human-readable quote bank catalog grouped by book.
 - `content/authors.md`: Master author library (classic, contemporary, memoir, nonfiction) and their strengths.
-- `content/gdrive_books_catalog.json`: Raw index of all 676 book files across Google Drive with paths and sizes.
+- `content/gdrive_books_catalog.json`: Live index of every file under gdrive:Books with Drive ids (regenerated by sync_drive_catalog.py).
 - `content/books_curated_shelf.json`: Audited and cleaned dynamic shelf containing 620 high-conviction works with pitches, reader notes, and tags.
 - `content/tbr_clean_list.txt`: Clean, 1-click copy-pastable `Title — Author` list of 620 books for TBR trackers.
-- `scripts/build_independent_bookshelf_app.py`: Compiles the standalone My Reading Corner reading shelf app (`bookshelf/index.html`, `bookshelf/data.json`, `docs/bookshelf.html`).
-- `scripts/tune_reading_typography_and_mobile_nook.py`: Calibrates balanced 430 regular / 630 bold Bookerly/Literata typography and mobile canvas touch navigation.
-- `scripts/patch_shelf_app_mobile_optimization.py`: Implements adaptive mobile app bar, 44px segmented view switcher, and native bottom dossier sheet.
-- `scripts/patch_nook_upload_flow_ux.py`: Streamlines Reading Nook empty state to a connected Download -> Upload 2-step journey.
 - `scripts/verify_mobile_and_desktop_audit.py`: Automated 22-rule verification suite for shelf and reader across mobile (375px) and laptop (1440px).
 - `scripts/move_drive_files.sh`: Shell script used to move 30 tactical lead magnets to `Books/Archive of bullshit` and HBR books to `Books/HBR`.
 - `prototype/index.html` & `docs/index.html`: Marginalia craft card web reader (untouched, independent project).
@@ -77,5 +86,10 @@
   - Run linter: `python3 tools/lint_cards.py`
   - Rebuild web prototype: `python3 tools/build_prototype.py`
   - Rebuild Pinterest shelf app: `python3 scripts/build_pinterest_bookshelf.py`
+- My Reading Corner bookshelf (needs `rclone` remote `gdrive:`; see `~/Documents/Claude Code/Mac Storage/MACHINE.md` before installing anything):
+  - Pick up new Drive books + rebuild: `bash scripts/refresh_bookshelf.sh` (add `--publish` to commit shelf files and push)
+  - Rebuild only (no network): `python3 scripts/build_independent_bookshelf_app.py`
+  - Preview locally: `python3 -m http.server 8899 --directory bookshelf`
+  - Fix a wrong title/author: edit `content/book_names.json`, then rebuild
 - GitHub sync:
   - Push updates: `git add . && git commit -m "..." && git push origin main`
