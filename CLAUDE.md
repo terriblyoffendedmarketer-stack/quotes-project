@@ -2,7 +2,7 @@
 
 > **Status**: Active | **Phase**: 36 (Drive renames, cover OCR audit, tap-to-read, archive)  
 > **Current**: Shelf rebuilds + tidies Drive names daily (LaunchAgent, 09:15); local helper with Tidy button always on at http://localhost:8899 (installed 2026-11-12). 455 Drive files renamed to "Title - Author" after multi-source verification (43 held: `content/drive_rename_review.md`). OCR cover audit (`scripts/audit_covers.py`) replacing wrong/foreign covers. Reader opens books straight from Drive via a per-device Drive API key. Archive/Restore in the app.  
-> **Next**: Audit wrong synopses (e.g. *In the Blink of an Eye* has invented text). rclone shared client_id retires in 2026.  
+> **Next**: Covers "once and for all" (planned 2026-11-12, user still sees many wrong): pull the cover embedded in each EPUB (495 of 631 books, the exact edition owned) / render PDF page 1 / first image of CBR → small webp in `bookshelf/covers/<drive_id>.webp`; fallback = Open Library by the ISBN inside the EPUB, never title search; else typographic jacket. Plus a "Wrong cover" button in the app. Then audit wrong synopses (e.g. *In the Blink of an Eye* has invented text). rclone shared client_id retires in 2026.  
 > **Keys**: Google Drive API key (browser key, referrer-restricted) is NOT in the repo — macOS Keychain "Reading Corner", `~/Documents/Claude Code/API-KEYS.md`, project `.env` (`GOOGLE_DRIVE_API_KEY`). Users paste it once per device ("Turn on tap-to-read").  
 > **Incident (2026-11-11)**: a rename trashed one identical duplicate ("One Plus One Equals Three - Dave Trott .epub", in Drive trash); tool fixed.
 
