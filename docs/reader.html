@@ -599,7 +599,145 @@
     }
     window.addEventListener('mousemove', handleGlobalMouseMove);
 
+    // -------------------------------------------------------------
+    // PDF mode (reader.html?format=pdf&drive_id=...)
+    // With a Drive key on this device: PDF.js renders the book here, page position remembered, file cached in
+    // IndexedDB for offline reading. Without a key (other visitors): Google Drive's own viewer, no download.
+    // Gotchas:
+    // - Chrome on Android can't show PDFs inline, so a blob/iframe approach doesn't work there; PDF.js renders to
+    //   <canvas> instead. Pinned pdf.js 3.11.174 UMD build (exposes window.pdfjsLib; 4.x is ES-module only).
+    // - Big scanned PDFs: canvas size is capped (MAX_CANVAS_PX) and devicePixelRatio limited to 2, otherwise
+    //   mobile Chrome silently drops oversized canvases and you get blank pages.
+    // - IndexedDB can refuse very large files (quota); that only disables offline caching, reading still works.
+    // -------------------------------------------------------------
+    const isPdfMode = urlParams.get('format') === 'pdf';
+    const driveViewerUrl = driveId ? `https://drive.google.com/file/d/${driveId}/view` : driveUrl;
+    const PDF_POS_KEY = `mrc_pdf_page_${bookId}`;
+    const MAX_CANVAS_PX = 4096 * 4096;
+    let pdfDoc = null, pdfPage = 1, pdfRenderToken = 0;
+
+    function loadScript(src) {
+      return new Promise((resolve, reject) => {
+        const el = document.createElement('script');
+        el.src = src; el.onload = resolve; el.onerror = reject;
+        document.head.appendChild(el);
+      });
+    }
+
+    function pdfSpread() {           // two pages side by side on wide landscape screens
+      return spreadMode !== 'none' && readerViewport.clientWidth > 900 && readerViewport.clientWidth > readerViewport.clientHeight * 1.25;
+    }
+
+    function showPdfFallback(msg) {
+      setImmersiveMode(false);
+      readerViewport.classList.add('hidden');
+      dropZone.style.display = 'flex';
+      dropZone.innerHTML = `
+        <div class="text-5xl mb-4">📄</div>
+        <h2 class="font-serif text-2xl font-bold mb-1">${bookTitle.replace(/[<>&]/g, '')}</h2>
+        <p class="text-sm text-stone-500 mb-6">by ${bookAuthor.replace(/[<>&]/g, '')}</p>
+        <p class="text-sm text-stone-500 mb-5 max-w-sm">${msg}</p>
+        <a href="${driveViewerUrl}" class="px-6 py-3 rounded-xl bg-[#C85A32] text-white font-bold shadow">Open in Google Drive viewer</a>
+        ${driveId ? `<button onclick="forgetDriveKey();setupTapToRead()" class="mt-4 text-xs text-stone-500 underline">Re-enter Drive key</button>` : ''}`;
+    }
+
+    async function initPdfReader() {
+      dropZone.style.display = 'none';             // no EPUB upload screen flashing while the PDF loads
+      ['toggleQuotesDrawer()', 'toggleTocDrawer()', 'toggleAppearanceMenu()'].forEach(fn =>
+        document.querySelectorAll(`#topHeader button[onclick="${fn}"]`).forEach(b => b.style.display = 'none'));
+      const key = getDriveKey();
+      if (!key) { location.replace(driveViewerUrl); return; }      // no key on this device: Drive's viewer
+      let data = null;
+      try { data = await loadBookFromDB(`pdf:${bookId}`); } catch (e) {}
+      if (!data) {
+        data = await fetchBookFromDrive(driveApiUrlFor(key));
+        if (!data) { showPdfFallback("Couldn't load this PDF from Drive here."); return; }
+        try { await saveBookToDB(`pdf:${bookId}`, data); } catch (e) { console.warn('PDF too big to cache offline:', e); }
+      }
+      try {
+        if (!window.pdfjsLib) await loadScript('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js');
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        pdfDoc = await pdfjsLib.getDocument({ data: new Uint8Array(data.slice(0)) }).promise;
+      } catch (e) {
+        console.warn('PDF.js failed:', e);
+        showPdfFallback("This PDF couldn't be displayed here.");
+        return;
+      }
+      dropZone.style.display = 'none';
+      readerViewport.classList.remove('hidden');
+      setImmersiveMode(true);
+      centerSpine.style.display = 'none';
+      viewerEl.innerHTML = '<div id="pdfStage" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px"></div>';
+      pdfPage = Math.min(Math.max(1, parseInt(localStorage.getItem(PDF_POS_KEY) || '1', 10)), pdfDoc.numPages);
+      bindPdfTouch();
+      await renderPdf();
+      document.removeEventListener('keydown', handleKeyNav);
+      document.addEventListener('keydown', handleKeyNav);
+      let t = null;
+      window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(renderPdf, 200); });
+    }
+
+    async function renderPdfPage(num, box, slotW, slotH, token) {
+      const page = await pdfDoc.getPage(num);
+      if (token !== pdfRenderToken) return;
+      const base = page.getViewport({ scale: 1 });
+      const fit = Math.min(slotW / base.width, slotH / base.height);
+      let dpr = Math.min(window.devicePixelRatio || 1, 2);
+      while (base.width * fit * dpr * base.height * fit * dpr > MAX_CANVAS_PX && dpr > 0.75) dpr -= 0.25;
+      const vp = page.getViewport({ scale: fit * dpr });
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.floor(vp.width); canvas.height = Math.floor(vp.height);
+      canvas.style.width = `${Math.floor(vp.width / dpr)}px`; canvas.style.height = `${Math.floor(vp.height / dpr)}px`;
+      canvas.style.boxShadow = '0 2px 14px rgba(0,0,0,.12)'; canvas.style.background = '#fff';
+      box.appendChild(canvas);
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+    }
+
+    async function renderPdf() {
+      if (!pdfDoc) return;
+      const stage = document.getElementById('pdfStage');
+      if (!stage) return;
+      const token = ++pdfRenderToken;
+      const spread = pdfSpread() && pdfPage < pdfDoc.numPages;
+      const w = viewerEl.clientWidth, h = viewerEl.clientHeight;
+      const holder = document.createElement('div');
+      holder.style.cssText = 'display:flex;align-items:center;justify-content:center;gap:12px';
+      try {
+        await renderPdfPage(pdfPage, holder, spread ? (w - 12) / 2 : w, h, token);
+        if (spread) await renderPdfPage(pdfPage + 1, holder, (w - 12) / 2, h, token);
+      } catch (e) { console.warn('render', e); }
+      if (token !== pdfRenderToken) return;
+      stage.replaceChildren(holder);
+      const last = spread ? pdfPage + 1 : pdfPage;
+      pageProgressDisplay.innerText = `Page ${pdfPage}${spread ? `–${last}` : ''} of ${pdfDoc.numPages}`;
+      chapterDisplay.innerText = '';
+      try { localStorage.setItem(PDF_POS_KEY, String(pdfPage)); } catch (e) {}
+    }
+
+    function pdfGo(dir) {
+      if (!pdfDoc) return;
+      const step = pdfSpread() ? 2 : 1;
+      const next = Math.min(Math.max(1, pdfPage + dir * step), pdfDoc.numPages);
+      if (next !== pdfPage) { pdfPage = next; renderPdf(); }
+    }
+
+    function bindPdfTouch() {     // phone: tap left/right quarter to turn, middle toggles the bar; swipe to turn
+      let x0 = null, y0 = null, t0 = 0;
+      viewerEl.addEventListener('touchstart', e => { const p = e.touches[0]; x0 = p.clientX; y0 = p.clientY; t0 = Date.now(); }, { passive: true });
+      viewerEl.addEventListener('touchend', e => {
+        if (x0 === null) return;
+        const p = e.changedTouches[0], dx = p.clientX - x0, dy = p.clientY - y0;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) pdfGo(dx < 0 ? 1 : -1);
+        else if (Math.abs(dx) < 10 && Math.abs(dy) < 10 && Date.now() - t0 < 400) {
+          const r = viewerEl.getBoundingClientRect(), fx = (p.clientX - r.left) / r.width;
+          if (fx < 0.25) pdfGo(-1); else if (fx > 0.75) pdfGo(1); else toggleHeaderVisible();
+        }
+        x0 = null;
+      }, { passive: true });
+    }
+
     async function initReader() {
+      if (isPdfMode) return initPdfReader();
       chapterDisplay.innerText = "";
       updateQuotesCount();
 
@@ -644,6 +782,7 @@
     // Streams the EPUB from Drive with a progress overlay. Returns an ArrayBuffer, or null on any failure.
     // Anything that isn't a ZIP (EPUBs start with "PK") is rejected; an HTML confirm page (huge files) is followed once.
     async function fetchBookFromDrive(url, isRetry = false) {
+      const expectPdf = isPdfMode;
       const overlay = document.createElement('div');
       overlay.id = 'driveFetchOverlay';
       overlay.style.cssText = 'position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:var(--canvas,#faf7f2);font-family:Inter,system-ui,sans-serif;color:#57534e';
@@ -671,7 +810,9 @@
         const bytes = new Uint8Array(got);
         let off = 0;
         for (const c of chunks) { bytes.set(c, off); off += c.length; }
-        if (bytes[0] === 0x50 && bytes[1] === 0x4B) {          // "PK" = ZIP = EPUB
+        const isZip = bytes[0] === 0x50 && bytes[1] === 0x4B;                                    // "PK" = EPUB
+        const isPdf = bytes[0] === 0x25 && bytes[1] === 0x50 && bytes[2] === 0x44 && bytes[3] === 0x46; // "%PDF"
+        if (expectPdf ? isPdf : isZip) {
           document.getElementById('driveFetchOverlay')?.remove();
           return bytes.buffer;
         }
@@ -682,11 +823,11 @@
           for (const m of form[0].matchAll(/name="([^"]+)"\s+value="([^"]*)"/g)) params.set(m[1], m[2]);
           return await fetchBookFromDrive(`${form[1].replace(/&amp;/g, '&')}?${params}`, true);
         }
-        throw new Error('Drive did not return an EPUB file');
+        throw new Error(`Drive did not return ${expectPdf ? 'a PDF' : 'an EPUB'} file`);
       } catch (err) {
         console.warn('Direct Drive open failed:', err);
         document.getElementById('driveFetchOverlay')?.remove();
-        showToast("Couldn't open it straight from Drive. Download it and drop it here instead.");
+        showToast(expectPdf ? "Couldn't open it straight from Drive." : "Couldn't open it straight from Drive. Download it and drop it here instead.");
         return null;
       }
     }
@@ -942,11 +1083,13 @@
     // Page Turning & Navigation
     // -------------------------------------------------------------
     function nextPage() {
+      if (pdfDoc) return pdfGo(1);
       if (rendition) rendition.next();
       hideHighlightTooltip();
     }
 
     function prevPage() {
+      if (pdfDoc) return pdfGo(-1);
       if (rendition) rendition.prev();
       hideHighlightTooltip();
     }

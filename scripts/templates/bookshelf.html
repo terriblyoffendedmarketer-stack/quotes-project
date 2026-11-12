@@ -1390,20 +1390,23 @@
       const b = SHELF_DATA.find(item => item.id === bookId);
       if (!b) return;
 
-      // If PDF, open directly or trigger direct download
-      const isPdf = (b.format && b.format.toLowerCase() === 'pdf') || (b.title && b.title.toLowerCase().endsWith('.pdf'));
-      if (isPdf) {
-        if (b.direct_download_url) {
-          window.open(b.direct_download_url, '_blank');
-          showToast(`Opening PDF download for "${b.title}"...`);
+      const readerUrl = `./reader.html?id=${encodeURIComponent(b.id)}&title=${encodeURIComponent(b.title)}&author=${encodeURIComponent(b.author)}&drive_id=${encodeURIComponent(b.drive_id || '')}&drive=${encodeURIComponent(b.drive_url || '')}`;
+
+      // PDFs: with a Drive key on this device they open inside the Reading Nook (PDF.js, page remembered,
+      // offline cache); without one (any other visitor) they open in Google Drive's viewer — no download either way.
+      if (getCleanFormat(b) === 'PDF') {
+        let hasKey = false;
+        try { hasKey = !!localStorage.getItem('mrc_drive_api_key'); } catch (e) {}
+        if (hasKey && b.drive_id) {
+          window.open(`${readerUrl}&format=pdf`, "_blank");
+        } else if (b.drive_id) {
+          window.open(`https://drive.google.com/file/d/${b.drive_id}/view`, "_blank");
         } else if (b.drive_url) {
-          window.open(b.drive_url, '_blank');
+          window.open(b.drive_url, "_blank");
         }
         return;
       }
 
-      // Open Nooks reader directly without unexpected auto-downloading
-      const readerUrl = `./reader.html?id=${encodeURIComponent(b.id)}&title=${encodeURIComponent(b.title)}&author=${encodeURIComponent(b.author)}&drive_id=${encodeURIComponent(b.drive_id || '')}&drive=${encodeURIComponent(b.drive_url || '')}`;
       window.open(readerUrl, "_blank");
     }
 

@@ -2,7 +2,7 @@
 
 > **Status**: Active | **Phase**: 36 (Drive renames, cover OCR audit, tap-to-read, archive)  
 > **Current**: Shelf rebuilds + tidies Drive names daily (LaunchAgent, 09:15); local helper with Tidy button always on at http://localhost:8899 (installed 2026-11-12). 455 Drive files renamed to "Title - Author" after multi-source verification (43 held: `content/drive_rename_review.md`). OCR cover audit (`scripts/audit_covers.py`) replacing wrong/foreign covers. Reader opens books straight from Drive via a per-device Drive API key. Archive/Restore in the app.  
-> **Next**: (1) BUILD IN-NOOK PDF READER (user chose "option 2", 2026-11-12): PDF.js inside reader.html, fetch via Drive API key like EPUBs, page turning, saved position, IndexedDB offline cache, test on Android (CMF Phone 2 Pro) incl. large scanned PDFs. ALSO option 1 as the fallback: devices without the Drive key (other visitors) open PDFs in Google Drive's viewer (drive.google.com/file/d/ID/view) instead of downloading. Wait for the user to say "ready" before starting. Tap-to-read for EPUBs already set up on phone. (2) Audit wrong synopses (e.g. *In the Blink of an Eye* has invented text). rclone shared client_id retires in 2026.  
+> **Next**: Audit wrong synopses (e.g. *In the Blink of an Eye* has invented text). rclone shared client_id retires in 2026.  
 > **Keys**: Google Drive API key (browser key, referrer-restricted) is NOT in the repo — macOS Keychain "Reading Corner", `~/Documents/Claude Code/API-KEYS.md`, project `.env` (`GOOGLE_DRIVE_API_KEY`). Users paste it once per device ("Turn on tap-to-read").  
 > **Incident (2026-11-11)**: a rename trashed one identical duplicate ("One Plus One Equals Three - Dave Trott .epub", in Drive trash); tool fixed.
 
@@ -43,7 +43,8 @@
 - [x] Phase 33: Craft Card "Steal It" Literary Purge & Polish — Audited all 113 cards in `content/cards.json` to eradicate all corporate, marketing, business, and SaaS jargon in "Steal It" sections; rewrote 22 cards to pure essay/fiction/memoir craft; verified 0 linter flags in `tools/lint_cards.py`.
 - [x] Phase 34: Android Cache Invalidation Fix & Release APK Bundle — Fixed `Cards.load` and `QuoteBank.load` cache-delete bug where `assetCards.size >= cachedCards.size` (113 >= 113) purged downloaded cards; replaced with timestamp comparison against APK install time; reduced sync check interval to 15m; compiled signed release APK.
 - [x] Phase 35: Bookshelf Drive Sync, Name Cleanup & Code Audit — build now driven by live Drive catalog (fixes new books never appearing: old build returned early on existing data.json); `book_names.json` (Drive-id keyed) fixes all swapped/underscored/Unknown names; `book_overrides.json` replaces 600 lines of hard-coded fixes; template extracted to `scripts/templates/bookshelf.html`; `refresh_bookshelf.sh` + LaunchAgent for daily pickup; Drive rename tool (dry-run). Pushed; LaunchAgent installed. Pending: Drive rename apply.
-- [~] Phase 36: Verified Drive renames (455) with history/undo; OCR cover audit; phone book-sheet redesign; tap-to-read via Drive API key; Archive/Restore; local Tidy button.
+- [x] Phase 36: Verified Drive renames (455) with history/undo; OCR cover audit; phone book-sheet redesign; tap-to-read via Drive API key; Archive/Restore; local Tidy button.
+- [x] Phase 37: PDFs — in-Nook PDF.js reader on devices with the Drive key (page remembered, offline cache, swipe/tap turns, 2-page spread on wide screens); Google Drive viewer for everyone else (no download).
 
 ## File map
 
