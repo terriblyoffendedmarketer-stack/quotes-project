@@ -892,7 +892,17 @@
       rendition.hooks.content.register(contents => {
         contents.addStylesheet("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,400;1,7..72,600;1,7..72,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,600;1,6..72,700&display=swap");
 
-        // Touch & Tap Navigation inside EPUB.js iframe (Left 25% prev, Right 25% next, Center 50% toggle chrome)
+        // Touch & Tap Navigation inside EPUB.js iframe (Left 28% prev, Right 28% next, Center toggles chrome)
+        // Gotcha: in paginated mode the iframe is as wide as the WHOLE chapter (all pages side by side) and gets
+        // slid sideways, so iframe clientX / innerWidth are useless for "which side of the screen". Convert the tap
+        // to a fraction of the visible #viewer box instead. (Swipes only use deltas, which is why they worked.)
+        function tapZone(clientX) {
+          const frame = contents.window.frameElement;
+          const fr = frame ? frame.getBoundingClientRect() : { left: 0 };
+          const vr = viewerEl.getBoundingClientRect();
+          const fx = (fr.left + clientX - vr.left) / (vr.width || window.innerWidth);
+          return fx < 0.28 ? 'prev' : fx > 0.72 ? 'next' : 'middle';
+        }
         let touchStartX = 0;
         let touchStartY = 0;
         let touchStartTime = 0;
@@ -927,15 +937,10 @@
 
           // Single tap detection
           if (Math.abs(deltaX) < 15 && Math.abs(deltaY) < 15 && duration < 400) {
-            const width = contents.window.innerWidth || window.innerWidth;
-            const tapX = e.changedTouches[0].clientX;
-            if (tapX < width * 0.28) {
-              prevPage();
-            } else if (tapX > width * 0.72) {
-              nextPage();
-            } else {
-              toggleHeaderVisible();
-            }
+            const zone = tapZone(e.changedTouches[0].clientX);
+            if (zone === 'prev') prevPage();
+            else if (zone === 'next') nextPage();
+            else toggleHeaderVisible();
           }
         }, { passive: true });
 
@@ -945,15 +950,10 @@
           const sel = contents.window.getSelection();
           if (sel && sel.toString().trim().length > 0) return;
           if (window.innerWidth < 640) {
-            const width = contents.window.innerWidth || window.innerWidth;
-            const clickX = e.clientX;
-            if (clickX < width * 0.28) {
-              prevPage();
-            } else if (clickX > width * 0.72) {
-              nextPage();
-            } else {
-              toggleHeaderVisible();
-            }
+            const zone = tapZone(e.clientX);
+            if (zone === 'prev') prevPage();
+            else if (zone === 'next') nextPage();
+            else toggleHeaderVisible();
           }
         });
       });
