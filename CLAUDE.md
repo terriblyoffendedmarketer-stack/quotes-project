@@ -61,7 +61,9 @@
   - `scripts/launchd/com.local.reading-corner-refresh.plist`: daily 09:15 refresh + tidy + publish (install command inside).
   - `scripts/launchd/com.local.reading-corner-server.plist`: always-on local helper (http://localhost:8899).
   - `scripts/serve_bookshelf.py`: local helper — serves the shelf, `/api/tidy` (Tidy Drive Names button), `/api/archive`.
-  - `scripts/audit_covers.py`: OCR-verifies every cover via local vision server (localhost:9090); `--fix` swaps in verified covers.
+  - `scripts/source_covers.py`: picks each cover — Apple Books edition matching the book file's own cover, else same-title English Apple cover, else the file's cover (`bookshelf/covers/<drive_id>.jpg`), else jacket. `--apply`. Report `content/cover_sourcing.md`.
+  - `scripts/check_synopses.py`: Claude (API key in .env) flags wrong-book / filler synopses and swaps in a verified one. `--apply`. Report `content/synopsis_check.md`.
+  - `scripts/audit_covers.py`: (older) OCR-verifies every cover via local vision server (localhost:9090); `--fix` swaps in verified covers.
   - `content/drive_name_history.json` / `drive_rename_log.json`: original name of every Drive file / every rename (undo trail).
   - `content/cover_audit.md`, `content/drive_rename_review.md`: latest audit reports for manual review.
   - `scripts/migrations/`: one-time scripts that produced book_names.json and the template (history only).
