@@ -13,14 +13,15 @@
 #   have other files staged by hand at 09:15 they'd ride along — unlikely, but commit or unstage your own work.
 # - --tidy never renames a file whose new name isn't verified (see rename_drive_files.py); held ones are listed
 #   in content/drive_rename_review.md.
-# - If the push is rejected (remote ahead), it leaves the local commit in place and exits non-zero; run
-#   `git pull --rebase && git push` by hand.
+# - Fixes saved from the app on any device are commits on GitHub (content/book_overrides.json), so the remote
+#   is often ahead: it pulls (rebase, autostash) BEFORE building, so those fixes are in this build too.
 
 set -euo pipefail
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 cd "$(dirname "$0")/.."
 
 echo "=== Reading Corner refresh $(date '+%Y-%m-%d %H:%M') ==="
+if [[ " $* " == *" --publish "* ]]; then git pull --rebase --autostash origin main || echo "WARN: git pull failed"; fi
 python3 scripts/sync_drive_catalog.py 2>&1 | grep -v "NOTICE: gdrive: This remote uses rclone's shared"
 python3 scripts/build_independent_bookshelf_app.py
 python3 scripts/enrich_new_books.py
@@ -35,7 +36,8 @@ fi
 
 if [[ " $* " == *" --publish "* ]]; then
   FILES=(bookshelf/data.json bookshelf/index.html docs/bookshelf.html content/gdrive_books_catalog.json content/book_names.json
-         content/drive_name_history.json content/drive_rename_log.json content/drive_rename_review.md content/name_verification_cache.json)
+         content/drive_name_history.json content/drive_rename_log.json content/drive_rename_review.md content/name_verification_cache.json
+         content/book_overrides.json bookshelf/covers docs/covers)
   for f in "${FILES[@]}"; do if [[ -e "$f" ]]; then git add -- "$f"; fi; done
   if git diff --cached --quiet; then
     echo "No shelf changes to publish."
@@ -43,6 +45,6 @@ if [[ " $* " == *" --publish "* ]]; then
   fi
   COUNT=$(python3 -c "import json;print(len(json.load(open('bookshelf/data.json'))))")
   git commit -m "chore(bookshelf): auto-refresh from Google Drive ($COUNT books)"
-  git push origin HEAD
+  git push origin HEAD || { git pull --rebase --autostash origin main && git push origin HEAD; }
   echo "Published."
 fi

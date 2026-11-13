@@ -24,6 +24,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Fixes saved from the app (covers, details, archive) are commits to content/book_overrides.json;
+      # rebuilding here (offline, ~1 s) puts them on the live shelf without waiting for the Mac's daily run.
+      - name: Rebuild the bookshelf
+        run: python3 scripts/build_independent_bookshelf_app.py
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

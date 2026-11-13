@@ -549,8 +549,34 @@
       </div>
 
       <div class="flex items-center justify-end gap-3 mt-5 pt-3 border-t border-[var(--border)]">
+        <button onclick="setupSync()" class="sync-link mr-auto text-[11px] font-semibold text-[var(--terracotta)]">☁️ Save fixes to all devices</button>
         <button onclick="closeEditModal()" class="px-4 py-2 border border-[var(--border)] rounded-lg text-xs text-[var(--text-muted)]">Cancel</button>
         <button onclick="saveEdit()" class="px-5 py-2 bg-[var(--terracotta)] text-white text-xs font-bold rounded-lg shadow-sm">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wrong cover? picker -->
+  <div id="coverPicker" class="fixed inset-0 bg-black/65 backdrop-blur-sm z-50 flex items-end sm:items-center justify-center sm:p-4 hidden" onclick="if(event.target===this)closeCoverPicker()">
+    <div class="bg-[var(--card-bg)] border border-[var(--border)] rounded-t-2xl sm:rounded-2xl max-w-2xl w-full p-4 sm:p-6 shadow-2xl max-h-[88vh] flex flex-col">
+      <div class="flex items-start justify-between gap-3 pb-3 border-b border-[var(--border)] mb-3">
+        <div class="min-w-0">
+          <h3 class="font-serif font-bold text-lg text-[var(--text-heading)]">Pick the right cover</h3>
+          <p id="coverPickerTitle" class="text-xs text-[var(--text-muted)] truncate"></p>
+        </div>
+        <button onclick="closeCoverPicker()" class="text-[var(--text-muted)] hover:text-[var(--text-heading)] font-bold text-lg px-2 -mr-2">✕</button>
+      </div>
+      <input type="hidden" id="coverPickerBookId" />
+      <div id="coverPickerGrid" class="grid grid-cols-3 sm:grid-cols-5 gap-2.5 content-start auto-rows-min overflow-y-auto min-h-[140px] text-center"></div>
+      <div class="mt-3 pt-3 border-t border-[var(--border)] space-y-2.5 text-xs">
+        <div class="flex gap-2">
+          <input id="coverPickerUrl" type="url" inputmode="url" placeholder="…or paste an image link (https://…)" class="flex-1 min-w-0 px-3 py-2.5 bg-[var(--canvas)] border border-[var(--border)] rounded-lg text-[var(--text-heading)] focus:border-[var(--terracotta)] focus:outline-none" />
+          <button onclick="pickCoverFromUrl()" class="px-4 bg-[var(--terracotta)] text-white font-bold rounded-lg">Use</button>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <button onclick="applyCover(document.getElementById('coverPickerBookId').value, null)" class="py-2 font-semibold text-[var(--text-muted)] hover:text-[var(--text-heading)]">🔤 Use the lettered cover</button>
+          <button onclick="setupSync()" class="sync-link py-2 font-semibold text-[var(--terracotta)]">☁️ Save fixes to all devices</button>
+        </div>
       </div>
     </div>
   </div>
@@ -577,29 +603,142 @@
     let currentSurpriseBook = null;
     let isDark = false;
 
-    // Load any user overrides from localStorage
+    // ---- Your edits (cover / details / archive) ----
+    // Saved on this device in localStorage ("exlibris_shelf_edits": {id: {changed fields only}}). If this device
+    // has a GitHub key ("Save fixes to all devices"), each edit is also committed to content/book_overrides.json,
+    // and GitHub Pages rebuilds the shelf with it, so it shows on every device. Unsent edits wait in
+    // "mrc_sync_queue" and are retried on the next visit.
+    const EDITS_KEY = "exlibris_shelf_edits";
+    const PUBLISHED = {};                      // as shipped, before this device's edits: used to keep only real changes
+    SHELF_DATA.forEach(b => { PUBLISHED[b.id] = { title: b.title, author: b.author, cover_url: b.cover_url || null,
+      no_cover: !!b.no_cover, pitch: b.pitch || "", why_love: b.why_love || "" }; });
+    function loadEdits() { try { return JSON.parse(localStorage.getItem(EDITS_KEY) || "{}"); } catch (e) { return {}; } }
+    function storeEdits(e) { try { localStorage.setItem(EDITS_KEY, JSON.stringify(e)); } catch (err) {} }
     try {
-      const saved = localStorage.getItem("exlibris_shelf_edits");
-      if (saved) {
-        const overrides = JSON.parse(saved);
-        if (!localStorage.getItem("exlibris_edits_v2")) {
-          Object.values(overrides).forEach(ov => { delete ov.title; delete ov.author; });
-          localStorage.setItem("exlibris_shelf_edits", JSON.stringify(overrides));
-          localStorage.setItem("exlibris_edits_v2", "1");
-        }
-        SHELF_DATA = SHELF_DATA.map(b => {
-          if (overrides[b.id]) {
-            const ov = overrides[b.id];
-            b = Object.assign(b, ov);
-            if (ov.no_cover) {
-              b.cover_url = null;
-              b.no_cover = true;
-            }
-          }
-          return b;
+      let edits = loadEdits();
+      if (!localStorage.getItem("exlibris_edits_v3")) {
+        // Old saves copied EVERY field (incl. whatever synopsis was showing then, e.g. a wrong one), which would
+        // pin stale text over later fixes. Only the cover was ever deliberately changed, so keep just that.
+        Object.keys(edits).forEach(id => {
+          const ov = edits[id], keep = {};
+          if ("cover_url" in ov) keep.cover_url = ov.cover_url;
+          if (ov.no_cover) keep.no_cover = true;
+          if (keep.cover_url === PUBLISHED[id]?.cover_url && !!keep.no_cover === PUBLISHED[id]?.no_cover) delete edits[id];
+          else edits[id] = keep;
         });
+        storeEdits(edits);
+        localStorage.setItem("exlibris_edits_v2", "1");
+        localStorage.setItem("exlibris_edits_v3", "1");
       }
+      SHELF_DATA = SHELF_DATA.map(b => {
+        const ov = edits[b.id];
+        if (!ov) return b;
+        b = Object.assign(b, ov);
+        if (ov.no_cover) { b.cover_url = null; b.no_cover = true; }
+        return b;
+      });
     } catch (e) {}
+
+    // ---- Sync edits to the source (GitHub) ----
+    const GH_REPO = "terriblyoffendedmarketer-stack/quotes-project";
+    const GH_FILE = "content/book_overrides.json";
+    const GH_TOKEN_KEY = "mrc_github_token";
+    const SYNC_QUEUE_KEY = "mrc_sync_queue";
+    function ghToken() { try { return localStorage.getItem(GH_TOKEN_KEY) || ""; } catch (e) { return ""; } }
+    function syncQueue() { try { return JSON.parse(localStorage.getItem(SYNC_QUEUE_KEY) || "{}"); } catch (e) { return {}; } }
+    function setSyncQueue(q) { try { localStorage.setItem(SYNC_QUEUE_KEY, JSON.stringify(q)); } catch (e) {} }
+    function b64ToText(b64) { return new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\s/g, "")), c => c.charCodeAt(0))); }
+    function textToB64(text) {
+      const bytes = new TextEncoder().encode(text); let bin = "";
+      for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+      return btoa(bin);
+    }
+    let syncing = null;
+    async function flushSync() {
+      const token = ghToken();
+      const queue = syncQueue();
+      const ids = Object.keys(queue);
+      if (!token || !ids.length) return null;
+      if (syncing) return syncing;
+      syncing = (async () => {
+        const api = `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`;
+        const headers = { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" };
+        for (let attempt = 0; attempt < 3; attempt++) {
+          const r = await fetch(`${api}?ref=main&t=${Date.now()}`, { headers, cache: "no-store" });
+          if (r.status === 401 || r.status === 403 || r.status === 404) throw new Error("key");
+          if (!r.ok) throw new Error("net");
+          const file = await r.json();
+          const data = JSON.parse(b64ToText(file.content));
+          data.books = data.books || {};
+          const titles = [];
+          ids.forEach(id => {
+            const cur = Object.assign(data.books[id] || {}, queue[id]);
+            Object.keys(cur).forEach(k => { if (cur[k] === undefined) delete cur[k]; });
+            data.books[id] = cur;
+            const b = SHELF_DATA.find(x => x.id === id);
+            titles.push(b ? b.title : id);
+          });
+          const sorted = { _doc: data._doc, books: Object.fromEntries(Object.keys(data.books).sort().map(k => [k, data.books[k]])) };
+          const put = await fetch(api, { method: "PUT", headers, body: JSON.stringify({
+            message: `fix(shelf): ${titles.slice(0, 3).join(", ")}${titles.length > 3 ? ` +${titles.length - 3} more` : ""} (edited in the app)`,
+            content: textToB64(JSON.stringify(sorted, null, 1) + "\n"), sha: file.sha, branch: "main" }) });
+          if (put.status === 409 || put.status === 422) continue;     // someone else committed in between: re-read
+          if (!put.ok) throw new Error(put.status === 401 || put.status === 403 ? "key" : "net");
+          const left = syncQueue(); ids.forEach(id => { if (JSON.stringify(left[id]) === JSON.stringify(queue[id])) delete left[id]; });
+          setSyncQueue(left);
+          return ids.length;
+        }
+        throw new Error("net");
+      })();
+      try { return await syncing; } finally { syncing = null; }
+    }
+    // Save an edit everywhere it can go. fields: {cover_url, no_cover, cover_source, title, author, pitch, why_love, archived}
+    async function saveShelfEdit(bookId, fields, label) {
+      const b = SHELF_DATA.find(x => x.id === bookId);
+      if (!b) return;
+      if (!("archived" in fields)) {
+        const edits = loadEdits();
+        edits[bookId] = Object.assign(edits[bookId] || {}, fields);
+        delete edits[bookId].cover_source;
+        storeEdits(edits);
+      }
+      const q = syncQueue(); q[bookId] = Object.assign(q[bookId] || {}, fields); setSyncQueue(q);
+      if (!ghToken()) { showToast(`${label} — saved on this device. Turn on “Save fixes to all devices” to fix it at the source.`); return; }
+      showToast(`${label} — saving for all devices…`);
+      try { await flushSync(); showToast(`${label} — saved for all devices ✓ (live in ~2 min)`); }
+      catch (e) { showToast(e.message === "key" ? "GitHub key was refused — check it under “Save fixes to all devices”." : `${label} — saved here; will send to all devices when online.`); }
+    }
+    function setupSync() {
+      const cur = ghToken();
+      const msg = (cur ? "This device already saves fixes for all devices. Paste a new key to replace it, or clear the box to turn it off.\n\n" : "") +
+        "Paste a GitHub key so your cover/details fixes are saved at the source and show on every device.\n\n" +
+        "Get one (2 min, on any device): github.com → Settings → Developer settings → Fine-grained tokens → Generate new token.\n" +
+        "• Repository access: Only select repositories → quotes-project\n• Permissions → Contents: Read and write\n• Expiration: up to a year\n\n" +
+        "It stays only on this device.";
+      const v = prompt(msg, cur);
+      if (v === null) return;
+      try {
+        if (!v.trim()) { localStorage.removeItem(GH_TOKEN_KEY); showToast("Fixes now save on this device only."); updateSyncLinks(); return; }
+        localStorage.setItem(GH_TOKEN_KEY, v.trim());
+      } catch (e) { return; }
+      // first time: send everything already fixed on this device (covers + archive choices)
+      const q = syncQueue();
+      const edits = loadEdits();
+      Object.keys(edits).forEach(id => { q[id] = Object.assign({}, edits[id], q[id] || {});
+        if ("cover_url" in edits[id] || edits[id].no_cover) q[id].cover_source = "user"; });
+      try { const arch = JSON.parse(localStorage.getItem("exlibris_archive") || "{}");
+        Object.keys(arch).forEach(id => { q[id] = Object.assign(q[id] || {}, { archived: !!arch[id] }); }); } catch (e) {}
+      setSyncQueue(q);
+      showToast("Checking the key…");
+      flushSync().then(n => showToast(n ? `Key works ✓ — sent ${n} earlier fix${n > 1 ? "es" : ""} to all devices.` : "Key saved ✓ — fixes will now show on every device."))
+        .catch(e => showToast(e.message === "key" ? "GitHub refused that key — check repo access + Contents: Read and write." : "Saved the key; couldn't reach GitHub right now, will retry."));
+      updateSyncLinks();
+    }
+    function updateSyncLinks() {
+      document.querySelectorAll(".sync-link").forEach(el => { el.textContent = ghToken() ? "☁️ Fixes save to all devices ✓" : "☁️ Save fixes to all devices"; });
+    }
+    window.addEventListener("online", () => flushSync().catch(() => {}));
+    setTimeout(() => flushSync().catch(() => {}), 3000);
 
     const CATEGORIES = [
       "All",
@@ -640,6 +779,7 @@
       try { localStorage.setItem(ARCHIVE_KEY, JSON.stringify(localArchive)); } catch (e) {}
       fetch("/api/archive", { method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: bookId, archived: flag }) }).catch(() => {});   // only exists on the Mac helper
+      if (ghToken()) { const q = syncQueue(); q[bookId] = Object.assign(q[bookId] || {}, { archived: flag }); setSyncQueue(q); flushSync().catch(() => {}); }
       if (typeof closeDrawer === "function" && !document.getElementById("drawerOverlay").classList.contains("hidden")) closeDrawer();
       if (activeCategory === "Archived" && archivedBooks().length === 0) activeCategory = "All";
       if (selectedBookId === bookId && flag) selectedBookId = null;
@@ -675,7 +815,8 @@
       const t = document.getElementById("toast");
       t.innerText = msg;
       t.classList.remove("translate-y-16", "opacity-0");
-      setTimeout(() => t.classList.add("translate-y-16", "opacity-0"), 2400);
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => t.classList.add("translate-y-16", "opacity-0"), msg.length > 60 ? 4500 : 2600);
     }
 
     function copyToClipboard(text, msg) {
@@ -1309,9 +1450,9 @@
                 <span>✏️</span>
                 <span>Edit / Cover</span>
               </button>
-              <button onclick="quickRemoveCover('${b.id}')" class="px-3.5 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-red-400 text-xs font-semibold text-[var(--text-muted)] hover:text-red-500 rounded-xl transition flex items-center gap-1.5" title="Remove cover and use classic typographic template">
-                <span>🗑️</span>
-                <span>${b.cover_url && !b.no_cover ? 'Remove Cover' : 'Jacket Active'}</span>
+              <button onclick="quickRemoveCover('${b.id}')" class="px-3.5 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-muted)] hover:text-[var(--text-heading)] rounded-xl transition flex items-center gap-1.5" title="Pick another cover, paste your own, or use the lettered cover">
+                <span>🖼️</span>
+                <span>Wrong cover?</span>
               </button>
               ${archiveButtonHtml(b, "px-3.5 py-2 bg-[var(--canvas)] border border-[var(--border)] hover:border-[var(--terracotta)] text-xs font-semibold text-[var(--text-muted)] hover:text-[var(--text-heading)] rounded-xl transition flex items-center gap-1.5")}
             </div>
@@ -1468,7 +1609,7 @@
               </div>
               <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-0 pt-1 text-[11px] font-semibold text-[var(--text-muted)]">
                 <button onclick="openEditModal('${b.id}')" class="py-2 hover:text-[var(--text-heading)] underline-offset-2 hover:underline">✏️ Edit details</button>
-                <button onclick="quickRemoveCover('${b.id}')" class="py-2 hover:text-red-500 underline-offset-2 hover:underline">${b.cover_url && !b.no_cover ? '🗑️ Wrong cover? Remove' : '🖼️ Using typographic jacket'}</button>
+                <button onclick="quickRemoveCover('${b.id}')" class="py-2 hover:text-red-500 underline-offset-2 hover:underline">🖼️ Wrong cover?</button>
                 ${archiveButtonHtml(b, "py-2 hover:text-[var(--text-heading)] underline-offset-2 hover:underline")}
               </div>
             </div>
@@ -1645,6 +1786,7 @@
       document.getElementById("editWhyLove").value = b.why_love || "";
 
       document.getElementById("editModal").classList.remove("hidden");
+      updateSyncLinks();
     }
 
     function closeEditModal() {
@@ -1656,73 +1798,106 @@
       showToast("Cover cleared. Tap 'Save Changes' to apply the typographic template jacket!");
     }
 
-    function quickRemoveCover(bookId) {
-      const b = SHELF_DATA.find(item => item.id === bookId);
-      if (!b) return;
-
-      if (!b.no_cover && b.cover_url) {
-        b.cover_url = null;
-        b.no_cover = true;
-        showToast(`Cover removed for "${b.title}"! Applied typographic template jacket.`);
-      } else {
-        b.no_cover = false;
-        showToast(`Template jacket active for "${b.title}". Use Edit to paste a cover URL if desired.`);
-      }
-
-      // Persist to localStorage
-      let saved = {};
-      try { saved = JSON.parse(localStorage.getItem("exlibris_shelf_edits") || "{}"); } catch (e) {}
-      saved[b.id] = Object.assign(saved[b.id] || {}, {
-        cover_url: b.cover_url,
-        no_cover: b.no_cover
-      });
-      localStorage.setItem("exlibris_shelf_edits", JSON.stringify(saved));
-
-      renderCurrentView();
-      if (activeView === "split" && selectedBookId === b.id) {
-        selectBookForSplit(b.id);
-      }
-    }
+    function quickRemoveCover(bookId) { openCoverPicker(bookId); }   // old name kept for existing buttons
 
     function saveEdit() {
       const bookId = document.getElementById("editBookId").value;
       const b = SHELF_DATA.find(item => item.id === bookId);
       if (!b) return;
-
-      b.title = document.getElementById("editTitle").value.trim() || b.title;
-      b.author = document.getElementById("editAuthor").value.trim() || "Unknown Author";
       const newCover = document.getElementById("editCoverUrl").value.trim();
-
-      if (!newCover) {
-        b.cover_url = null;
-        b.no_cover = true;
-      } else {
-        b.cover_url = newCover;
-        b.no_cover = false;
-      }
-
-      b.pitch = document.getElementById("editPitch").value.trim();
-      b.why_love = document.getElementById("editWhyLove").value.trim();
-
-      // Persist to localStorage
-      let saved = {};
-      try { saved = JSON.parse(localStorage.getItem("exlibris_shelf_edits") || "{}"); } catch (e) {}
-      saved[b.id] = {
-        title: b.title,
-        author: b.author,
-        cover_url: b.cover_url,
-        no_cover: b.no_cover,
-        pitch: b.pitch,
-        why_love: b.why_love
+      const next = {
+        title: document.getElementById("editTitle").value.trim() || b.title,
+        author: document.getElementById("editAuthor").value.trim() || b.author || "Unknown Author",
+        pitch: document.getElementById("editPitch").value.trim(),
+        why_love: document.getElementById("editWhyLove").value.trim(),
+        cover_url: newCover || null,
+        no_cover: !newCover
       };
-      localStorage.setItem("exlibris_shelf_edits", JSON.stringify(saved));
-
-      closeEditModal();
-      renderCurrentView();
-      if (activeView === "split" && selectedBookId === b.id) {
-        selectBookForSplit(b.id);
+      const fields = {};
+      ["title", "author", "pitch", "why_love"].forEach(k => { if (next[k] !== (b[k] || "")) fields[k] = next[k]; });
+      if (next.cover_url !== (b.no_cover ? null : (b.cover_url || null))) {
+        fields.cover_url = next.cover_url; fields.no_cover = next.no_cover; fields.cover_source = "user";
       }
-      showToast(b.cover_url ? `Updated "${b.title}" and saved changes!` : `Saved "${b.title}" with typographic template jacket!`);
+      closeEditModal();
+      if (!Object.keys(fields).length) { showToast("No changes."); return; }
+      Object.assign(b, fields);
+      if (b.no_cover) b.cover_url = null;
+      refreshAfterEdit(b);
+      saveShelfEdit(b.id, fields, `Updated “${b.title}”`);
+    }
+
+    function refreshAfterEdit(b) {
+      renderCurrentView();
+      if (activeView === "split" && selectedBookId === b.id) selectBookForSplit(b.id);
+      const drawer = document.getElementById("drawerOverlay");
+      if (drawer && !drawer.classList.contains("hidden") && typeof openDrawer === "function") openDrawer(b);
+    }
+
+    // ---- Wrong cover? picker: other covers for the same book, or your own link, or the lettered jacket ----
+    function appleSearch(term) {
+      return new Promise(res => {
+        const cb = "__apple" + Date.now() + Math.floor(Math.random() * 1e5);
+        const s = document.createElement("script");
+        const done = d => { clearTimeout(t); delete window[cb]; s.remove(); res(d); };
+        const t = setTimeout(() => done([]), 9000);
+        window[cb] = d => done((d && d.results) || []);
+        s.onerror = () => done([]);
+        s.src = `https://itunes.apple.com/search?term=${encodeURIComponent(term)}&media=ebook&entity=ebook&limit=20&country=us&callback=${cb}`;
+        document.head.appendChild(s);
+      });
+    }
+    function coverKey(t) { return String(t || "").toLowerCase().split(/[:(]/)[0].replace(/[^a-z0-9]+/g, " ").trim(); }
+    async function openCoverPicker(bookId) {
+      const b = SHELF_DATA.find(x => x.id === bookId);
+      if (!b) return;
+      document.getElementById("coverPickerBookId").value = b.id;
+      document.getElementById("coverPickerTitle").textContent = `${b.title} — ${b.author || ""}`;
+      document.getElementById("coverPickerUrl").value = "";
+      const grid = document.getElementById("coverPickerGrid");
+      grid.innerHTML = `<div class="col-span-full text-center text-xs text-[var(--text-muted)] py-8">Looking for covers…</div>`;
+      document.getElementById("coverPicker").classList.remove("hidden");
+      updateSyncLinks();
+      const want = coverKey(b.title);
+      const surname = (b.author || "").toLowerCase().split(/\s+/).filter(w => w.length > 2).pop() || "";
+      const opts = [];
+      const seen = new Set();
+      const add = (url, thumb, label) => { if (url && !seen.has(url)) { seen.add(url); opts.push({ url, thumb: thumb || url, label }); } };
+      if (b.drive_id) add(`covers/${b.drive_id}.jpg`, null, "From the book file");
+      const [apple, ol] = await Promise.all([
+        appleSearch(`${coverKey(b.title)} ${/unknown/i.test(b.author || "") ? "" : b.author}`),
+        fetch(`https://openlibrary.org/search.json?${new URLSearchParams({ title: coverKey(b.title), author: /unknown/i.test(b.author || "") ? "" : (b.author || ""), fields: "cover_i,title,editions,editions.cover_i,editions.language", limit: "6" })}`)
+          .then(r => r.json()).then(d => d.docs || []).catch(() => [])
+      ]);
+      apple.filter(r => coverKey(r.trackName).includes(want) || want.includes(coverKey(r.trackName)))
+        .filter(r => !surname || (r.artistName || "").toLowerCase().includes(surname))
+        .forEach(r => r.artworkUrl100 && add(r.artworkUrl100.replace("100x100bb", "1000x1000bb"), r.artworkUrl100.replace("100x100bb", "300x300bb"), "Apple Books"));
+      ol.forEach(d => {
+        if (d.cover_i) add(`https://covers.openlibrary.org/b/id/${d.cover_i}-L.jpg`, `https://covers.openlibrary.org/b/id/${d.cover_i}-M.jpg`, "Open Library");
+        ((d.editions && d.editions.docs) || []).forEach(e => e.cover_i && add(`https://covers.openlibrary.org/b/id/${e.cover_i}-L.jpg`, `https://covers.openlibrary.org/b/id/${e.cover_i}-M.jpg`, "Open Library"));
+      });
+      const cur = b.no_cover ? null : b.cover_url;
+      grid.innerHTML = opts.map((o, i) => `
+        <button onclick="pickCover('${b.id}', ${i})" data-i="${i}" class="cover-opt group relative rounded-lg overflow-hidden border-2 ${o.url === cur ? "border-[var(--terracotta)]" : "border-transparent"} hover:border-[var(--terracotta)] bg-[var(--canvas)] aspect-[2/3]">
+          <img src="${esc(o.thumb)}" class="w-full h-full object-cover" onerror="this.closest('.cover-opt').remove()" onload="if(this.naturalWidth<40)this.closest('.cover-opt').remove()">
+          <span class="absolute bottom-0 inset-x-0 bg-black/60 text-white text-[9px] font-semibold py-0.5">${o.url === cur ? "Current · " : ""}${esc(o.label)}</span>
+        </button>`).join("") || `<div class="col-span-full text-center text-xs text-[var(--text-muted)] py-8">No other covers found — paste a link below or use the lettered cover.</div>`;
+      window.__coverOpts = opts;
+    }
+    function closeCoverPicker() { document.getElementById("coverPicker").classList.add("hidden"); }
+    function applyCover(bookId, url) {
+      const b = SHELF_DATA.find(x => x.id === bookId);
+      if (!b) return;
+      const fields = url ? { cover_url: url, no_cover: false, cover_source: "user" } : { cover_url: null, no_cover: true, cover_source: "user" };
+      Object.assign(b, fields);
+      closeCoverPicker();
+      refreshAfterEdit(b);
+      saveShelfEdit(bookId, fields, url ? `New cover for “${b.title}”` : `Lettered cover for “${b.title}”`);
+    }
+    function pickCover(bookId, i) { applyCover(bookId, (window.__coverOpts || [])[i].url); }
+    function pickCoverFromUrl() {
+      const url = document.getElementById("coverPickerUrl").value.trim();
+      if (!/^https?:\/\/\S+$/.test(url)) { showToast("Paste an image link starting with https://"); return; }
+      applyCover(document.getElementById("coverPickerBookId").value, url);
     }
 
     function searchGoodreads() {
