@@ -638,7 +638,8 @@
         <p class="text-sm text-stone-500 mb-6">by ${bookAuthor.replace(/[<>&]/g, '')}</p>
         <p class="text-sm text-stone-500 mb-5 max-w-sm">${msg}</p>
         <a href="${driveViewerUrl}" class="px-6 py-3 rounded-xl bg-[#C85A32] text-white font-bold shadow">Open in Google Drive viewer</a>
-        ${driveId ? `<button onclick="forgetDriveKey();setupTapToRead()" class="mt-4 text-xs text-stone-500 underline">Re-enter Drive key</button>` : ''}`;
+        ${window.__driveFail && window.__driveFail !== 'key' ? `<button onclick="location.reload()" class="mt-4 text-sm font-bold text-[#C85A32] underline">Try again</button>` : ''}
+        ${driveId && window.__driveFail === 'key' ? `<button onclick="forgetDriveKey();setupTapToRead()" class="mt-4 text-xs text-stone-500 underline">Re-enter Drive key</button>` : ''}`;
     }
 
     async function initPdfReader() {
@@ -651,7 +652,7 @@
       try { data = await loadBookFromDB(`pdf:${bookId}`); } catch (e) {}
       if (!data) {
         data = await fetchBookFromDrive(driveApiUrlFor(key));
-        if (!data) { showPdfFallback("Couldn't load this PDF from Drive here."); return; }
+        if (!data) { showPdfFallback(driveFailMessage()); return; }
         try { await saveBookToDB(`pdf:${bookId}`, data); } catch (e) { console.warn('PDF too big to cache offline:', e); }
       }
       try {
@@ -773,7 +774,9 @@
         box.id = 'tapToReadSetup';
         box.style.cssText = 'margin-top:14px;text-align:center;font:500 12px Inter,system-ui,sans-serif;color:#78716c';
         box.innerHTML = hasKey
-          ? `Couldn't open from Drive with the saved key. <button style="color:#C85A32;font-weight:700;text-decoration:underline" onclick="forgetDriveKey();setupTapToRead()">Re-enter key</button>`
+          ? (window.__driveFail === 'key'
+              ? `Google refused the saved Drive key. <button style="color:#C85A32;font-weight:700;text-decoration:underline" onclick="forgetDriveKey();setupTapToRead()">Re-enter key</button>`
+              : `<div style="max-width:340px;margin:0 auto 8px;line-height:1.5">${driveFailMessage()}</div><button style="color:#C85A32;font-weight:700;text-decoration:underline" onclick="location.reload()">Try again</button>`)
           : `<button style="color:#C85A32;font-weight:700;text-decoration:underline" onclick="setupTapToRead()">⚡ Turn on tap-to-read</button> — open books straight from Drive, no download step`;
         (document.getElementById('downloadFlowWrapper') || dropZone).appendChild(box);
       }
@@ -781,6 +784,14 @@
 
     // Streams the EPUB from Drive with a progress overlay. Returns an ArrayBuffer, or null on any failure.
     // Anything that isn't a ZIP (EPUBs start with "PK") is rejected; an HTML confirm page (huge files) is followed once.
+    // Why the last Drive open failed, in words (window.__driveFail: offline | blocked | key | other)
+    function driveFailMessage() {
+      if (window.__driveFail === 'offline') return "You're offline. Books you've opened before still work; this one needs a connection the first time.";
+      if (window.__driveFail === 'blocked') return "Google is refusing downloads from this network right now. It does this for a few hours after a burst of requests from the same connection. Your key is fine. Try again later, or on mobile data.";
+      if (window.__driveFail === 'key') return "Google refused the saved Drive key.";
+      return "Couldn't open it straight from Drive.";
+    }
+
     async function fetchBookFromDrive(url, isRetry = false) {
       const expectPdf = isPdfMode;
       const overlay = document.createElement('div');
@@ -793,8 +804,21 @@
       const bar = () => document.getElementById('driveFetchBar');
       const pct = () => document.getElementById('driveFetchPct');
       try {
-        const res = await fetch(url, { mode: 'cors', credentials: 'omit' });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        window.__driveFail = '';
+        let res;
+        try { res = await fetch(url, { mode: 'cors', credentials: 'omit' }); }
+        catch (netErr) {
+          // No response at all: offline, or Google's "unusual traffic" block page (sent without CORS headers)
+          window.__driveFail = navigator.onLine === false ? 'offline' : 'blocked';
+          throw netErr;
+        }
+        if (!res.ok) {
+          let why = '';
+          try { why = await res.text(); } catch (e) {}
+          window.__driveFail = /API[_ ]key|API_KEY|keyInvalid|referer/i.test(why) ? 'key'
+            : (res.status === 403 || res.status === 429) ? 'blocked' : 'other';
+          throw new Error(`HTTP ${res.status}`);
+        }
         const total = Number(res.headers.get('content-length')) || 0;
         const reader = res.body.getReader();
         const chunks = [];
@@ -827,7 +851,8 @@
       } catch (err) {
         console.warn('Direct Drive open failed:', err);
         document.getElementById('driveFetchOverlay')?.remove();
-        showToast(expectPdf ? "Couldn't open it straight from Drive." : "Couldn't open it straight from Drive. Download it and drop it here instead.");
+        if (!window.__driveFail) window.__driveFail = 'other';
+        if (window.__driveFail === 'other') showToast(expectPdf ? "Couldn't open it straight from Drive." : "Couldn't open it straight from Drive. Download it and drop it here instead.");
         return null;
       }
     }
