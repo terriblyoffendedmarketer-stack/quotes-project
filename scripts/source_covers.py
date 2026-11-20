@@ -28,6 +28,8 @@
 #   on Apple's description). Most user files are odd editions, so an exact visual match is the exception.
 # - A read can hang for days after the Mac sleeps: a watchdog exits (code 3) after 15 min without progress;
 #   rerun (or loop: `until python3 scripts/source_covers.py; do sleep 60; done`) and it resumes from the cache.
+# - Apple throttling once made 38 books look coverless (-> jacket). Now: retries with back-off, and a failed
+#   lookup never replaces an existing cover ("lookup failed: kept current").
 # - Results are cached per Drive id in .cache/covers/state.json — delete an entry to re-check a book.
 
 import io
@@ -298,9 +300,13 @@ def apple(title, author):
         time.sleep(wait)
     q = urllib.parse.urlencode({"term": f"{main_t(title)} {author if 'Unknown' not in author else ''}".strip(),
                                 "media": "ebook", "entity": "ebook", "limit": 10, "country": "us"})
-    try:
-        res = json.loads(http(f"https://itunes.apple.com/search?{q}"))["results"]
-    except Exception:
+    for attempt in range(3):
+        try:
+            res = json.loads(http(f"https://itunes.apple.com/search?{q}"))["results"]
+            break
+        except Exception:
+            time.sleep(20 * (attempt + 1))       # Apple throttles bursts (403/429): back off, don't record "no results"
+    else:
         return []
     out = []
     for r in res:
@@ -447,6 +453,9 @@ def decide(r, book, user_set):
     cur = next((c for c in r["candidates"] if c["src"] == "current"), None)
     if cur:
         return "no file cover: kept current (unverified)", cur["url"], ""
+    if book.get("cover_url") and not book.get("no_cover"):
+        # current cover couldn't even be fetched (rate limit / hotlink block) — never downgrade on a failed lookup
+        return "lookup failed: kept current", book["cover_url"], ""
     return "jacket", None, ""
 
 
