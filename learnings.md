@@ -91,3 +91,5 @@ Range-reading ~60 EPUBs in parallel through the Drive API key | Google answered 
 Visual "same cover" matching vs the cover inside the book file | most of the user's files are odd editions, so store covers rarely match exactly; file covers are often low quality | prefer a visual match, else the first Apple Books result that is the same title+author, English, not a summary/graphic novel/translation; file cover only as fallback
 Old phone edits pinned wrong synopses | saveEdit copied every field (pitch included) into localStorage, overriding later fixes | save only changed fields; v3 migration keeps only cover choices from old edits
 Google Books API without a key | 429 almost immediately | dropped; Apple Search API (~20 req/min, spaced 3.2 s) + Open Library
+Daily refresh failed Nov 18-20 | launchd ran it right after wake, before Wi-Fi (DNS 'no such host') | refresh_bookshelf.sh waits up to 30 min for DNS first
+Cover scan hung for days at 520/556 | a read stalled after Mac sleep, no overall timeout | watchdog: no progress 15 min -> save state, exit 3, rerun resumes
