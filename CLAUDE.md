@@ -1,8 +1,8 @@
 # Marginalia
 
-> **Status**: Active | **Phase**: 36 (Drive renames, cover OCR audit, tap-to-read, archive)  
-> **Current**: Shelf rebuilds + tidies Drive names daily (LaunchAgent, 09:15); local helper with Tidy button always on at http://localhost:8899 (installed 2026-11-12). 455 Drive files renamed to "Title - Author" after multi-source verification (43 held: `content/drive_rename_review.md`). OCR cover audit (`scripts/audit_covers.py`) replacing wrong/foreign covers. Reader opens books straight from Drive via a per-device Drive API key. Archive/Restore in the app.  
-> **Next** (agreed 2026-11-12): (1) Covers: high-res from a store source (Apple Books search API / Google Books), accepted only if it visually matches the cover inside the book file; fallback = embedded EPUB cover → first page → typographic jacket. (2) "Wrong cover" button + manual replace in the app. (3) Phone edits only live in that phone's localStorage today: sync them to `content/book_overrides.json` via a per-device GitHub token (like the Drive key, never in the repo). (4) Synopses: wrong-book text (War and Peace shows Anna Karenina): re-source and verify per book, same way. rclone shared client_id retires in 2026.
+> **Status**: Active | **Phase**: 38 (verified covers + synopses, phone-edit sync, watermark cleanup)  
+> **Current**: Covers re-sourced against each book file's own cover (`scripts/source_covers.py`, 564 changed); wrong-book synopses fixed by Claude check (`scripts/check_synopses.py`, 148 replaced / 81 blanked). App: "Wrong cover?" picker + "Save fixes to all devices" (per-device GitHub key → commits `content/book_overrides.json`; Pages workflow rebuilds). All Drive names done (last 43 hand-checked, `content/name_confirmed.json`). Daily refresh waits for network after wake.  
+> **Next**: OceanofPDF watermark cleanup of EPUBs on Drive (`scripts/clean_watermarks.py`: scan → 3-book test → all), then PDFs. User hasn't pasted a GitHub key yet (phone fixes still local). rclone shared client_id retires in 2026.  
 > **Keys**: Google Drive API key (browser key, referrer-restricted) is NOT in the repo — macOS Keychain "Reading Corner", `~/Documents/Claude Code/API-KEYS.md`, project `.env` (`GOOGLE_DRIVE_API_KEY`). Users paste it once per device ("Turn on tap-to-read").  
 > **Incident (2026-11-11)**: a rename trashed one identical duplicate ("One Plus One Equals Three - Dave Trott .epub", in Drive trash); tool fixed.
 
@@ -44,6 +44,8 @@
 - [x] Phase 34: Android Cache Invalidation Fix & Release APK Bundle — Fixed `Cards.load` and `QuoteBank.load` cache-delete bug where `assetCards.size >= cachedCards.size` (113 >= 113) purged downloaded cards; replaced with timestamp comparison against APK install time; reduced sync check interval to 15m; compiled signed release APK.
 - [x] Phase 35: Bookshelf Drive Sync, Name Cleanup & Code Audit — build now driven by live Drive catalog (fixes new books never appearing: old build returned early on existing data.json); `book_names.json` (Drive-id keyed) fixes all swapped/underscored/Unknown names; `book_overrides.json` replaces 600 lines of hard-coded fixes; template extracted to `scripts/templates/bookshelf.html`; `refresh_bookshelf.sh` + LaunchAgent for daily pickup; Drive rename tool (dry-run). Pushed; LaunchAgent installed. Pending: Drive rename apply.
 - [x] Phase 36: Verified Drive renames (455) with history/undo; OCR cover audit; phone book-sheet redesign; tap-to-read via Drive API key; Archive/Restore; local Tidy button.
+- [x] Phase 38: Covers verified against book files; synopsis check; Wrong-cover picker; phone edits sync via GitHub; last 43 Drive renames.
+- [~] Phase 39: OceanofPDF watermark removal (EPUB first, then PDF).
 - [x] Phase 37: PDFs — in-Nook PDF.js reader on devices with the Drive key (page remembered, offline cache, swipe/tap turns, 2-page spread on wide screens); Google Drive viewer for everyone else (no download).
 
 ## File map
@@ -63,6 +65,9 @@
   - `scripts/serve_bookshelf.py`: local helper — serves the shelf, `/api/tidy` (Tidy Drive Names button), `/api/archive`.
   - `scripts/source_covers.py`: picks each cover — Apple Books edition matching the book file's own cover, else same-title English Apple cover, else the file's cover (`bookshelf/covers/<drive_id>.jpg`), else jacket. `--apply`. Report `content/cover_sourcing.md`.
   - `scripts/check_synopses.py`: Claude (API key in .env) flags wrong-book / filler synopses and swaps in a verified one. `--apply`. Report `content/synopsis_check.md`.
+  - `scripts/clean_watermarks.py`: finds/removes the OceanofPDF watermark inside EPUBs on Drive; word-level proof checks before each upload. Report `content/watermark_scan.md`, log `content/watermark_log.json`.
+  - `scripts/test_parse_filename.py`: test cases for messy download filenames.
+  - `content/name_confirmed.json`: hand-checked Drive names (trusted only while title+author unchanged).
   - `scripts/audit_covers.py`: (older) OCR-verifies every cover via local vision server (localhost:9090); `--fix` swaps in verified covers.
   - `content/drive_name_history.json` / `drive_rename_log.json`: original name of every Drive file / every rename (undo trail).
   - `content/cover_audit.md`, `content/drive_rename_review.md`: latest audit reports for manual review.

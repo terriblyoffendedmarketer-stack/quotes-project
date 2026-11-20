@@ -93,3 +93,4 @@ Old phone edits pinned wrong synopses | saveEdit copied every field (pitch inclu
 Google Books API without a key | 429 almost immediately | dropped; Apple Search API (~20 req/min, spaced 3.2 s) + Open Library
 Daily refresh failed Nov 18-20 | launchd ran it right after wake, before Wi-Fi (DNS 'no such host') | refresh_bookshelf.sh waits up to 30 min for DNS first
 Cover scan hung for days at 520/556 | a read stalled after Mac sleep, no overall timeout | watchdog: no progress 15 min -> save state, exit 3, rerun resumes
+Junk-prefixed names ('OceanofPDF.com_Title_-_Author') kept the site in the title | parser only knew libgen/z-library | generic word.tld watermark strip + (Author) + whole-name OL lookup; tests in scripts/test_parse_filename.py
