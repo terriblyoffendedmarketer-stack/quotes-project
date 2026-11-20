@@ -26,6 +26,8 @@
 # - Google Books answers 429 to keyless requests and the Drive key isn't enabled for it, so google() is unused.
 # - Store results are full of foreign / graphic-novel / summary editions: is_clean() drops them (English check
 #   on Apple's description). Most user files are odd editions, so an exact visual match is the exception.
+# - A read can hang for days after the Mac sleeps: a watchdog exits (code 3) after 15 min without progress;
+#   rerun (or loop: `until python3 scripts/source_covers.py; do sleep 60; done`) and it resumes from the cache.
 # - Results are cached per Drive id in .cache/covers/state.json — delete an entry to re-check a book.
 
 import io
@@ -470,6 +472,18 @@ def main():
     print(f"{len(books)} books, {len(todo)} to scan ({len(books) - len(todo)} cached)")
 
     done = [0]
+    last = [time.time()]
+
+    def watchdog():      # a read can hang forever after the Mac sleeps / Wi-Fi drops: save and exit, rerun resumes
+        while True:
+            time.sleep(60)
+            if time.time() - last[0] > 900:
+                with _lock:
+                    save_json(STATE_PATH, state)
+                print("No progress for 15 min (stalled read) - saved, exiting; run again to resume.", flush=True)
+                subprocess.run(["pkill", "-f", "rclone serve http gdrive:Books"])
+                os._exit(3)
+    threading.Thread(target=watchdog, daemon=True).start()
 
     def work(b):
         try:
@@ -479,6 +493,7 @@ def main():
         with _lock:
             state[b["drive_id"]] = r
             done[0] += 1
+            last[0] = time.time()
             if done[0] % 10 == 0:
                 save_json(STATE_PATH, state)
                 print(f"  {done[0]}/{len(todo)}", flush=True)
@@ -486,7 +501,7 @@ def main():
 
     proc = start_rclone_serve() if todo else None
     try:
-        with ThreadPoolExecutor(4) as ex:
+        with ThreadPoolExecutor(2) as ex:
             list(ex.map(work, todo))
     finally:
         if proc:

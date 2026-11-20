@@ -15,12 +15,20 @@
 #   in content/drive_rename_review.md.
 # - Fixes saved from the app on any device are commits on GitHub (content/book_overrides.json), so the remote
 #   is often ahead: it pulls (rebase, autostash) BEFORE building, so those fixes are in this build too.
+# - Waits up to 30 min for the network first: launchd fires it right after wake, often before Wi-Fi is up.
 
 set -euo pipefail
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 cd "$(dirname "$0")/.."
 
 echo "=== Reading Corner refresh $(date '+%Y-%m-%d %H:%M') ==="
+# The Mac often runs this right after waking, before Wi-Fi is back (Nov 18-20: "Could not resolve host").
+# Wait up to 30 min for DNS instead of failing the whole day.
+for i in $(seq 1 60); do
+  if /usr/bin/host -W 3 www.googleapis.com >/dev/null 2>&1; then break; fi
+  [[ $i == 1 ]] && echo "Waiting for the internet..."
+  sleep 30
+done
 if [[ " $* " == *" --publish "* ]]; then git pull --rebase --autostash origin main || echo "WARN: git pull failed"; fi
 python3 scripts/sync_drive_catalog.py 2>&1 | grep -v "NOTICE: gdrive: This remote uses rclone's shared"
 python3 scripts/build_independent_bookshelf_app.py
