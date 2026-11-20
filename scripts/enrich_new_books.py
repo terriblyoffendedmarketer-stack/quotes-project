@@ -81,6 +81,23 @@ def description(work_key):
     return clean_description(d.get("value", "") if isinstance(d, dict) else d or "")
 
 
+def whole_name_match(text):
+    """Title and author run together. Ask Open Library with the whole string; accept a hit only if its title AND
+    its author's surname are both inside the string (so a random search result can't rename a book)."""
+    words = set(norm(text).split())
+    try:
+        docs = get_json("https://openlibrary.org/search.json?" + urllib.parse.urlencode(
+            {"q": text, "limit": 5, "fields": "key,title,author_name,cover_i"})).get("docs", [])
+    except Exception:
+        return None, text, "Unknown"
+    for d in docs:
+        t = set(main_title(d.get("title", "")).split())
+        authors = d.get("author_name") or []
+        if t and t <= words and authors and norm(authors[0]).split()[-1:] and norm(authors[0]).split()[-1] in words:
+            return d, d["title"], authors[0]
+    return None, text, "Unknown"
+
+
 def enrich(b):
     title, author = b["title"], b["author"]
     doc = best_match(search(title, author), title, author)
@@ -89,6 +106,8 @@ def enrich(b):
         doc = best_match(search(author, title), author, title)       # maybe it was "Author - Title"
         swapped = bool(doc)
         time.sleep(0.4)
+    if not doc and author == "Unknown":
+        doc, title, author = whole_name_match(title)        # "The Midnight Library Matt Haig": no separator at all
     if not doc:
         return False
     if swapped:

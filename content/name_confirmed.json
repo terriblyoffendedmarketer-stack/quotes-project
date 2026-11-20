@@ -1,0 +1,261 @@
+{
+ "_doc": "Names checked by hand (Claude, with the user's go-ahead). rename_drive_files.py treats an entry as verified only while book_names.json still has exactly this title + author.",
+ "12kuvlyNwdn2AklNmKavIpwi8MhXOsV7i": {
+  "title": "Aristotle: A Graphic Biography",
+  "author": "Tassos Apostolidis & Alecos Papadatos",
+  "checked": "2026-11-21",
+  "note": "authors from the EPUB dc:creator (proposal had the wrong authors)"
+ },
+ "1gA6DByYXyYDcR8NMxCvFzGAD1f59EbxV": {
+  "title": "Akira (Complete Series)",
+  "author": "Katsuhiro Otomo",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1DxAkxTe91wugtmrszi8pJkWZJJDZ5Wvu": {
+  "title": "The Riddler: Year One",
+  "author": "Paul Dano & Stevan Subić",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1deMBrpom9qJOm5VdauTE7QIb7UTfm-HC": {
+  "title": "The Sandman (Complete)",
+  "author": "Neil Gaiman",
+  "checked": "2026-11-21",
+  "note": "file is the complete series, not vol. 1"
+ },
+ "1xHOO_EDgX3tv8LUmCCMQuhS_W72ghkqL": {
+  "title": "The Book of Ramen",
+  "author": "Mike Satinover",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1U_Yfs4uyLw8UMihRgGBgjI3AinuEbQQg": {
+  "title": "Kitchen",
+  "author": "Banana Yoshimoto",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1anflD7HTG0tO90nr7fPJ1tlpk5dTBrF4": {
+  "title": "Good Stories (Future Science Fiction Digest)",
+  "author": "Ken Liu",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1vsE1O680RKu6ieFHqYyAHMAz8xOg2rKm": {
+  "title": "Hitler's Table Talk, 1941–1944",
+  "author": "Adolf Hitler (trans. Norman Cameron & R. H. Stevens)",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1E9mhu8X_TdNh_YZ2cnKjBSub3P_lBp1-": {
+  "title": "How to Research Anything: Smart Research Habits for Curious Adults",
+  "author": "Polymath Investor",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1bE8rC8ikYrYG1W0nbqU0IgmqlYcq3J_b": {
+  "title": "Logicomix: An Epic Search for Truth",
+  "author": "Apostolos Doxiadis & Christos Papadimitriou",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1lfeXXRLUCOeY-uNi4Tl0pIad816Xa6iI": {
+  "title": "Monkey: A Folk Novel of China (Journey to the West, abridged)",
+  "author": "Wu Cheng'en (trans. Arthur Waley)",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1bcVsfWiAj-Lhm84-8Z7PZQaqnv3j00iY": {
+  "title": "The Freud/Jung Letters",
+  "author": "Sigmund Freud & C. G. Jung",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1p7dgABRflGO6miMoMRRGxUBI8iOC_jkI": {
+  "title": "The New Control Society",
+  "author": "Jon Askonas",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1z0UjYpxIztqee3-2-VjmwZlrJ0wY9Fvp": {
+  "title": "Tao Te Ching (trans. Gia-Fu Feng)",
+  "author": "Lao Tzu",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1cnof2opLHma_9ywRJ_0ma9V82YY26KyI": {
+  "title": "Verissimus: The Stoic Philosophy of Marcus Aurelius",
+  "author": "Donald J. Robertson & Zé Nuno Fraga",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1oUaJ5dhIjs0W7mVZFiPzwC3tmL-8NwNJ": {
+  "title": "What Is Dialectical Materialism? A Study Guide",
+  "author": "Rob Sewell",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1MnmvA3wa0lbmJGDGL487Y-KtElvEMVUK": {
+  "title": "HBR on Strategic Marketing",
+  "author": "Harvard Business Review",
+  "checked": "2026-11-21",
+  "note": "kept the original wording; edition not confirmed"
+ },
+ "1hY6bQVV-Vya7_Tm_omYSPt2XVf1OxwGF": {
+  "title": "HBR on Communication",
+  "author": "Harvard Business Review",
+  "checked": "2026-11-21",
+  "note": "kept the original wording; was a PDF without .pdf"
+ },
+ "1iCoyVWtrIbn-W2Ew3eOqU3xwODNmk9SU": {
+  "title": "HBR on Persuasive Presentations",
+  "author": "Harvard Business Review",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1LGfUGpbIWrCzUVPra-wF70nD71BKQfS9": {
+  "title": "Product-Market Fit",
+  "author": "Harvard Innovation Labs",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1gg5KcJRjNgEYsHoIuv2wLwRrilzcYMg8": {
+  "title": "The 6 Rules of Fiction",
+  "author": "Tiago Amaral",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1Y-fFGZlfPjK_ewPmir0JpWjnOQPsj9XW": {
+  "title": "Ann Handley on Newsletters",
+  "author": "Ann Handley",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "12QXcKQe8H2KQOccN3VOA_g6b78plyxCt": {
+  "title": "A Byte of Python",
+  "author": "Swaroop C H",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1JMxXrL4Vtwd2BTy_RMK6ixADMPAvTl6e": {
+  "title": "(500) Days of Summer (Screenplay)",
+  "author": "Scott Neustadter & Michael H. Weber",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1KLsBijR86WAQt-g9rnrLL1Jtibd0ubu_": {
+  "title": "Aligarh (Screenplay)",
+  "author": "Apurva Asrani (dir. Hansal Mehta)",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1KOIZ7aABCsAT1df98K1t4-HGSbHVjnuo": {
+  "title": "Parasite (기생충 Screenplay)",
+  "author": "Bong Joon-ho & Han Jin-won",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1KWMB1V1XyKe2IkjOBt9mw3vieujAEl3A": {
+  "title": "Dev.D (Screenplay)",
+  "author": "Anurag Kashyap & Vikramaditya Motwane",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1KZ4t5l8R6pQeo2ZRPVggQS8CKQ6gfm0N": {
+  "title": "Fight Club (Screenplay)",
+  "author": "Jim Uhls (dir. David Fincher)",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1KagQQoAiZDo14XbAgmJaXVLjSJ0GFSnV": {
+  "title": "Gangs of Wasseypur: Part 1 (Screenplay)",
+  "author": "Anurag Kashyap, Zeishan Quadri, Akhilesh Jaiswal & Sachin Ladia",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1KpGe0wPiHvwF_oZEVpSchNntpm6uBM8b": {
+  "title": "Mard Ko Dard Nahi Hota (Screenplay)",
+  "author": "Vasan Bala",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1L6wXz9Dr1MGTypXbCMnuqaPk81ljzlmA": {
+  "title": "Masaan (Screenplay)",
+  "author": "Varun Grover (dir. Neeraj Ghaywan)",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1LBQqNJdm4dGjsV_dkZKrI4eL3-8UehEB": {
+  "title": "Tumbbad (Screenplay)",
+  "author": "Mitesh Shah, Adesh Prasad, Rahi Anil Barve & Anand Gandhi",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1LBih2y6qt9h68tRug9kCMnQanjJzbxTr": {
+  "title": "The Lunchbox (Screenplay)",
+  "author": "Ritesh Batra",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1E4-J5PKsTT51LmXWl4QkO2mFeJRZ3BP3": {
+  "title": "American Fiction (Screenplay)",
+  "author": "Cord Jefferson",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1Hu-ArggKR85GVkfCV_0GGK1Ax4H0v2A5": {
+  "title": "Arrival (Screenplay)",
+  "author": "Eric Heisserer (based on Ted Chiang)",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "178aXuZbbK78Aw-sWDkZ2dbswAjbTn7FL": {
+  "title": "Everything Everywhere All at Once (Screenplay)",
+  "author": "Daniel Kwan & Daniel Scheinert (Daniels)",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1Wy4t3WcUbiTT5Ef2Lk1zbWsC6v53m8ek": {
+  "title": "Groundhog Day (Screenplay)",
+  "author": "Danny Rubin & Harold Ramis",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1YfWrolwxERLhV4WDlqdXBtqbhOOm5enW": {
+  "title": "Jojo Rabbit (Screenplay)",
+  "author": "Taika Waititi",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1PMcbA1-11bzE9pgd_fGk4V8X0cT5U-U0": {
+  "title": "Logan (Screenplay)",
+  "author": "James Mangold, Scott Frank & Michael Green",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1gLWs5EvIIRRWo7FuwPPNILbxXGg2rdPD": {
+  "title": "Memories of Murder (살인의 추억 Screenplay)",
+  "author": "Bong Joon-ho & Shim Sung-bo",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "17sFXDSuzL5my7kJceWm86DCLgLPBSe6j": {
+  "title": "Snowpiercer (설국열차 Screenplay)",
+  "author": "Bong Joon-ho & Kelly Masterson",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "1lLLtkups8UcvRdN6Ic_GXhlg5phBZlQW": {
+  "title": "The Martian (Screenplay)",
+  "author": "Drew Goddard (dir. Ridley Scott)",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ },
+ "13OAq3CbA6dtJlvoA3pFMlaZyQ-5wUXtP": {
+  "title": "Oldboy (올드보이 Screenplay)",
+  "author": "Park Chan-wook, Hwang Jo-yun & Lim Joon-hyung",
+  "checked": "2026-11-21",
+  "note": "known book/screenplay credits; filename evidence"
+ }
+}

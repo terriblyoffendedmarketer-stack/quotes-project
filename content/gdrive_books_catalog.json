@@ -1,8 +1,8 @@
 [
  {
   "id": "12kuvlyNwdn2AklNmKavIpwi8MhXOsV7i",
-  "path": "A graphic guide series/Aristotle - A Graphic Biography.epub",
-  "filename": "Aristotle - A Graphic Biography.epub",
+  "path": "A graphic guide series/Aristotle – A Graphic Biography - Tassos Apostolidis & Alecos Papadatos.epub",
+  "filename": "Aristotle – A Graphic Biography - Tassos Apostolidis & Alecos Papadatos.epub",
   "folder": "A graphic guide series",
   "ext": "epub",
   "mime": "application/epub+zip",
@@ -491,8 +491,8 @@
  },
  {
   "id": "1gA6DByYXyYDcR8NMxCvFzGAD1f59EbxV",
-  "path": "Comics and stuff/Akira (Complete).cbz",
-  "filename": "Akira (Complete).cbz",
+  "path": "Comics and stuff/Akira (Complete Series) - Katsuhiro Otomo.cbz",
+  "filename": "Akira (Complete Series) - Katsuhiro Otomo.cbz",
   "folder": "Comics and stuff",
   "ext": "cbz",
   "mime": "application/x-cbz",
@@ -501,8 +501,8 @@
  },
  {
   "id": "1DxAkxTe91wugtmrszi8pJkWZJJDZ5Wvu",
-  "path": "Comics and stuff/The Riddler - Year One (2023) (digital) (Son of Ultron-Empire).cbr",
-  "filename": "The Riddler - Year One (2023) (digital) (Son of Ultron-Empire).cbr",
+  "path": "Comics and stuff/The Riddler – Year One - Paul Dano & Stevan Subić.cbr",
+  "filename": "The Riddler – Year One - Paul Dano & Stevan Subić.cbr",
   "folder": "Comics and stuff",
   "ext": "cbr",
   "mime": "application/x-rar",
@@ -511,8 +511,8 @@
  },
  {
   "id": "1deMBrpom9qJOm5VdauTE7QIb7UTfm-HC",
-  "path": "Comics and stuff/The Sandman Complete.cbr",
-  "filename": "The Sandman Complete.cbr",
+  "path": "Comics and stuff/The Sandman (Complete) - Neil Gaiman.cbr",
+  "filename": "The Sandman (Complete) - Neil Gaiman.cbr",
   "folder": "Comics and stuff",
   "ext": "cbr",
   "mime": "application/x-rar",
@@ -661,8 +661,8 @@
  },
  {
   "id": "1xHOO_EDgX3tv8LUmCCMQuhS_W72ghkqL",
-  "path": "Cooking and food/The Book of Ramen.epub",
-  "filename": "The Book of Ramen.epub",
+  "path": "Cooking and food/The Book of Ramen - Mike Satinover.epub",
+  "filename": "The Book of Ramen - Mike Satinover.epub",
   "folder": "Cooking and food",
   "ext": "epub",
   "mime": "application/epub+zip",
@@ -808,6 +808,16 @@
   "mime": "application/epub+zip",
   "size_bytes": 1230444,
   "modified": "2026-08-04T20:36:16"
+ },
+ {
+  "id": "15lMOl6caUHa85aKLRKdda9EKP-ppRKLn",
+  "path": "Fiction ／ non fiction/A_Man_of_Means_by_P_G_Wodehouse.epub",
+  "filename": "A_Man_of_Means_by_P_G_Wodehouse.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 103691,
+  "modified": "2026-11-18T08:45:40"
  },
  {
   "id": "1zL79mVAA73ruiNhKt3KC5CmPfLfMkUQA",
@@ -1088,16 +1098,6 @@
   "mime": "application/epub+zip",
   "size_bytes": 1542365,
   "modified": "2026-11-01T23:28:55"
- },
- {
-  "id": "1U_Yfs4uyLw8UMihRgGBgjI3AinuEbQQg",
-  "path": "Fiction ／ non fiction/Banana Yoshimoto - Kitchen .pdf",
-  "filename": "Banana Yoshimoto - Kitchen .pdf",
-  "folder": "Fiction ／ non fiction",
-  "ext": "pdf",
-  "mime": "application/pdf",
-  "size_bytes": 967533,
-  "modified": "2020-11-06T07:00:54"
  },
  {
   "id": "1H4305miElRY2pkX9ogNQ9tep2ahqCTqa",
@@ -2031,8 +2031,8 @@
  },
  {
   "id": "1anflD7HTG0tO90nr7fPJ1tlpk5dTBrF4",
-  "path": "Fiction ／ non fiction/Good-Stories-On-AI-and-Future-Ke.epub",
-  "filename": "Good-Stories-On-AI-and-Future-Ke.epub",
+  "path": "Fiction ／ non fiction/Good Stories (Future Science Fiction Digest) - Ken Liu.epub",
+  "filename": "Good Stories (Future Science Fiction Digest) - Ken Liu.epub",
   "folder": "Fiction ／ non fiction",
   "ext": "epub",
   "mime": "application/epub+zip",
@@ -2251,8 +2251,8 @@
  },
  {
   "id": "1vsE1O680RKu6ieFHqYyAHMAz8xOg2rKm",
-  "path": "Fiction ／ non fiction/Hitlers_Table_Talk_1941-1944_-_Norman_Cameron.pdf",
-  "filename": "Hitlers_Table_Talk_1941-1944_-_Norman_Cameron.pdf",
+  "path": "Fiction ／ non fiction/Hitler's Table Talk, 1941–1944 - Adolf Hitler (trans. Norman Cameron & R. H. Stevens).pdf",
+  "filename": "Hitler's Table Talk, 1941–1944 - Adolf Hitler (trans. Norman Cameron & R. H. Stevens).pdf",
   "folder": "Fiction ／ non fiction",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -2320,6 +2320,16 @@
   "modified": "2026-08-24T17:42:03"
  },
  {
+  "id": "1E9mhu8X_TdNh_YZ2cnKjBSub3P_lBp1-",
+  "path": "Fiction ／ non fiction/How to Research Anything – Smart Research Habits for Curious Adults - Polymath Investor.epub",
+  "filename": "How to Research Anything – Smart Research Habits for Curious Adults - Polymath Investor.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 12079,
+  "modified": "2026-02-21T23:31:54"
+ },
+ {
   "id": "19ve3dLZfxB_7nh-2OZxrGLVFoCDA3W-C",
   "path": "Fiction ／ non fiction/How to Solve Your Own Murder - Kristen Perrin.epub",
   "filename": "How to Solve Your Own Murder - Kristen Perrin.epub",
@@ -2358,16 +2368,6 @@
   "mime": "application/epub+zip",
   "size_bytes": 120865275,
   "modified": "2026-10-30T23:24:43"
- },
- {
-  "id": "1E9mhu8X_TdNh_YZ2cnKjBSub3P_lBp1-",
-  "path": "Fiction ／ non fiction/How to research anything.epub",
-  "filename": "How to research anything.epub",
-  "folder": "Fiction ／ non fiction",
-  "ext": "epub",
-  "mime": "application/epub+zip",
-  "size_bytes": 12079,
-  "modified": "2026-02-21T23:31:54"
  },
  {
   "id": "1DMsK0iLoAPfy7ZPi44B46VgwiiCClGMQ",
@@ -2600,6 +2600,16 @@
   "modified": "2026-07-08T21:47:39"
  },
  {
+  "id": "1U_Yfs4uyLw8UMihRgGBgjI3AinuEbQQg",
+  "path": "Fiction ／ non fiction/Kitchen - Banana Yoshimoto.pdf",
+  "filename": "Kitchen - Banana Yoshimoto.pdf",
+  "folder": "Fiction ／ non fiction",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 967533,
+  "modified": "2020-11-06T07:00:54"
+ },
+ {
   "id": "1Jru07cwuLmT0seWGEckrIL64luNd9mmm",
   "path": "Fiction ／ non fiction/Know My Name – A Memoir - Chanel Miller.epub",
   "filename": "Know My Name – A Memoir - Chanel Miller.epub",
@@ -2711,8 +2721,8 @@
  },
  {
   "id": "1bE8rC8ikYrYG1W0nbqU0IgmqlYcq3J_b",
-  "path": "Fiction ／ non fiction/Logicomix - A search for truth (Graphic Novel.).cbr",
-  "filename": "Logicomix - A search for truth (Graphic Novel.).cbr",
+  "path": "Fiction ／ non fiction/Logicomix – An Epic Search for Truth - Apostolos Doxiadis & Christos Papadimitriou.cbr",
+  "filename": "Logicomix – An Epic Search for Truth - Apostolos Doxiadis & Christos Papadimitriou.cbr",
   "folder": "Fiction ／ non fiction",
   "ext": "cbr",
   "mime": "application/x-rar",
@@ -2941,8 +2951,8 @@
  },
  {
   "id": "1lfeXXRLUCOeY-uNi4Tl0pIad816Xa6iI",
-  "path": "Fiction ／ non fiction/Monkey - Folk Tale of China - Journey to the west abridged.epub",
-  "filename": "Monkey - Folk Tale of China - Journey to the west abridged.epub",
+  "path": "Fiction ／ non fiction/Monkey – A Folk Novel of China (Journey to the West, abridged) - Wu Cheng'en (trans. Arthur Waley).epub",
+  "filename": "Monkey – A Folk Novel of China (Journey to the West, abridged) - Wu Cheng'en (trans. Arthur Waley).epub",
   "folder": "Fiction ／ non fiction",
   "ext": "epub",
   "mime": "application/epub+zip",
@@ -3160,6 +3170,16 @@
   "modified": "2021-03-14T03:31:20"
  },
  {
+  "id": "1Pdrx2XeJHhMyuAu07EbT0qHabzQGatjv",
+  "path": "Fiction ／ non fiction/Nehru - an invention of India_-_Shashi_Tharoor.epub",
+  "filename": "Nehru - an invention of India_-_Shashi_Tharoor.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 1319457,
+  "modified": "2026-11-18T08:46:33"
+ },
+ {
   "id": "1mUBp_ELulyG9GReV9PXhHFOZd1anJolg",
   "path": "Fiction ／ non fiction/Never Split the Difference - Chris Voss.epub",
   "filename": "Never Split the Difference - Chris Voss.epub",
@@ -3348,6 +3368,16 @@
   "mime": "application/epub+zip",
   "size_bytes": 2226462,
   "modified": "2021-11-15T22:38:00"
+ },
+ {
+  "id": "1vWGX-NtvOAj9TJi6EIV56Cu2bbgyIam-",
+  "path": "Fiction ／ non fiction/One_Hundred_Years_of_Solitude_-_Gabriel_Garcia_Marquez.epub",
+  "filename": "One_Hundred_Years_of_Solitude_-_Gabriel_Garcia_Marquez.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 896052,
+  "modified": "2026-11-18T08:46:48"
  },
  {
   "id": "1B_ReSfMopNo6lpJQS8KNzKDvZAplrK_h",
@@ -4130,6 +4160,16 @@
   "modified": "2025-02-13T15:33:46"
  },
  {
+  "id": "1z0UjYpxIztqee3-2-VjmwZlrJ0wY9Fvp",
+  "path": "Fiction ／ non fiction/Tao Te Ching (trans. Gia-Fu Feng) - Lao Tzu.epub",
+  "filename": "Tao Te Ching (trans. Gia-Fu Feng) - Lao Tzu.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 450414,
+  "modified": "2025-12-23T16:25:52"
+ },
+ {
   "id": "1gtjy5bRP5fn1j4HifzvMOeVl6OkPkdEz",
   "path": "Fiction ／ non fiction/Thank You for Arguing - Jay Heinrichs.epub",
   "filename": "Thank You for Arguing - Jay Heinrichs.epub",
@@ -4631,8 +4671,8 @@
  },
  {
   "id": "1bcVsfWiAj-Lhm84-8Z7PZQaqnv3j00iY",
-  "path": "Fiction ／ non fiction/The Freud:Jung Letters.pdf",
-  "filename": "The Freud:Jung Letters.pdf",
+  "path": "Fiction ／ non fiction/The Freud-Jung Letters - Sigmund Freud & C. G. Jung.pdf",
+  "filename": "The Freud-Jung Letters - Sigmund Freud & C. G. Jung.pdf",
   "folder": "Fiction ／ non fiction",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -4978,6 +5018,16 @@
   "mime": "application/pdf",
   "size_bytes": 6271087,
   "modified": "2023-06-12T01:21:20"
+ },
+ {
+  "id": "1p7dgABRflGO6miMoMRRGxUBI8iOC_jkI",
+  "path": "Fiction ／ non fiction/The New Control Society - Jon Askonas.epub",
+  "filename": "The New Control Society - Jon Askonas.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 12942415,
+  "modified": "2025-03-31T14:53:54"
  },
  {
   "id": "18wMFxzOcyyCiP-RtU9kTgwFYOd1ya3fo",
@@ -5450,24 +5500,34 @@
   "modified": "2026-08-22T19:25:47"
  },
  {
-  "id": "1p7dgABRflGO6miMoMRRGxUBI8iOC_jkI",
-  "path": "Fiction ／ non fiction/The-New-Control-Society-By-Jon-A.epub",
-  "filename": "The-New-Control-Society-By-Jon-A.epub",
+  "id": "1yk-BV-rkT1OZNEJau9Dr6tLZ0l2cMOmb",
+  "path": "Fiction ／ non fiction/The_Book_of_Laughter_and_Forgetting_-_Milan_Kundera.epub",
+  "filename": "The_Book_of_Laughter_and_Forgetting_-_Milan_Kundera.epub",
   "folder": "Fiction ／ non fiction",
   "ext": "epub",
   "mime": "application/epub+zip",
-  "size_bytes": 12942415,
-  "modified": "2025-03-31T14:53:54"
+  "size_bytes": 559630,
+  "modified": "2026-11-18T08:47:05"
  },
  {
-  "id": "1z0UjYpxIztqee3-2-VjmwZlrJ0wY9Fvp",
-  "path": "Fiction ／ non fiction/The-Tao-Te-Ching-Translated-by-G.epub",
-  "filename": "The-Tao-Te-Ching-Translated-by-G.epub",
+  "id": "1kNposs6hkgy9mWcr_BH7o208yQELkaoX",
+  "path": "Fiction ／ non fiction/The_Legends_of_Khasak_-_Vijayan_O_V.epub",
+  "filename": "The_Legends_of_Khasak_-_Vijayan_O_V.epub",
   "folder": "Fiction ／ non fiction",
   "ext": "epub",
   "mime": "application/epub+zip",
-  "size_bytes": 450414,
-  "modified": "2025-12-23T16:25:52"
+  "size_bytes": 1165943,
+  "modified": "2026-11-18T09:10:04"
+ },
+ {
+  "id": "1mz58w-vyIcoceeXL-NFa4boDi8ZMQ3U0",
+  "path": "Fiction ／ non fiction/The_discovery_of_India_-_Jawaharlal_Nehru.epub",
+  "filename": "The_discovery_of_India_-_Jawaharlal_Nehru.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 854064,
+  "modified": "2026-11-18T09:09:52"
  },
  {
   "id": "1bXa3xh7G54inwPeJ-pKEnFz1iDg5bhcE",
@@ -5711,8 +5771,8 @@
  },
  {
   "id": "1cnof2opLHma_9ywRJ_0ma9V82YY26KyI",
-  "path": "Fiction ／ non fiction/Verissimus The Stoic philosophy of Marcus Aurelius (Graphic novel).pdf",
-  "filename": "Verissimus The Stoic philosophy of Marcus Aurelius (Graphic novel).pdf",
+  "path": "Fiction ／ non fiction/Verissimus – The Stoic Philosophy of Marcus Aurelius - Donald J. Robertson & Zé Nuno Fraga.pdf",
+  "filename": "Verissimus – The Stoic Philosophy of Marcus Aurelius - Donald J. Robertson & Zé Nuno Fraga.pdf",
   "folder": "Fiction ／ non fiction",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -5838,6 +5898,16 @@
   "mime": "application/epub+zip",
   "size_bytes": 13683511,
   "modified": "2025-02-08T23:57:03"
+ },
+ {
+  "id": "1oUaJ5dhIjs0W7mVZFiPzwC3tmL-8NwNJ",
+  "path": "Fiction ／ non fiction/What Is Dialectical Materialism A Study Guide - Rob Sewell.mobi",
+  "filename": "What Is Dialectical Materialism A Study Guide - Rob Sewell.mobi",
+  "folder": "Fiction ／ non fiction",
+  "ext": "mobi",
+  "mime": "application/x-mobipocket-ebook",
+  "size_bytes": 65290,
+  "modified": "2026-06-12T12:56:56"
  },
  {
   "id": "18lMHcejUNSocPEAKznvnijfw_D2MPvoT",
@@ -6030,16 +6100,6 @@
   "modified": "2026-11-06T00:09:11"
  },
  {
-  "id": "1oUaJ5dhIjs0W7mVZFiPzwC3tmL-8NwNJ",
-  "path": "Fiction ／ non fiction/what-is-dialectical-materialism-a-study-guide-[rob-sewell].mobi",
-  "filename": "what-is-dialectical-materialism-a-study-guide-[rob-sewell].mobi",
-  "folder": "Fiction ／ non fiction",
-  "ext": "mobi",
-  "mime": "application/x-mobipocket-ebook",
-  "size_bytes": 65290,
-  "modified": "2026-06-12T12:56:56"
- },
- {
   "id": "11UhbAkf0aU0_VcacmC2RXb3vEL7bq3UE",
   "path": "Fiction ／ non fiction/Žižek's Jokes - Slavoj Žižek.epub",
   "filename": "Žižek's Jokes - Slavoj Žižek.epub",
@@ -6050,29 +6110,19 @@
   "modified": "2026-06-12T12:56:55"
  },
  {
-  "id": "1MnmvA3wa0lbmJGDGL487Y-KtElvEMVUK",
-  "path": "HBR/HBR On Strategic Marketing.pdf",
-  "filename": "HBR On Strategic Marketing.pdf",
+  "id": "1hY6bQVV-Vya7_Tm_omYSPt2XVf1OxwGF",
+  "path": "HBR/HBR on Communication - Harvard Business Review.pdf",
+  "filename": "HBR on Communication - Harvard Business Review.pdf",
   "folder": "HBR",
   "ext": "pdf",
-  "mime": "application/pdf",
-  "size_bytes": 2046498,
-  "modified": "2023-08-20T12:21:53"
- },
- {
-  "id": "1hY6bQVV-Vya7_Tm_omYSPt2XVf1OxwGF",
-  "path": "HBR/HBR On communication",
-  "filename": "HBR On communication",
-  "folder": "HBR",
-  "ext": "",
   "mime": "application/pdf",
   "size_bytes": 1393911,
   "modified": "2023-01-16T01:48:05"
  },
  {
   "id": "1iCoyVWtrIbn-W2Ew3eOqU3xwODNmk9SU",
-  "path": "HBR/HBR on Persuasive Presentations.pdf",
-  "filename": "HBR on Persuasive Presentations.pdf",
+  "path": "HBR/HBR on Persuasive Presentations - Harvard Business Review.pdf",
+  "filename": "HBR on Persuasive Presentations - Harvard Business Review.pdf",
   "folder": "HBR",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6080,9 +6130,19 @@
   "modified": "2023-01-19T15:42:08"
  },
  {
+  "id": "1MnmvA3wa0lbmJGDGL487Y-KtElvEMVUK",
+  "path": "HBR/HBR on Strategic Marketing - Harvard Business Review.pdf",
+  "filename": "HBR on Strategic Marketing - Harvard Business Review.pdf",
+  "folder": "HBR",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 2046498,
+  "modified": "2023-08-20T12:21:53"
+ },
+ {
   "id": "1LGfUGpbIWrCzUVPra-wF70nD71BKQfS9",
-  "path": "HBR/Harvard Innovation Labs_ Product-Market Fit.pdf",
-  "filename": "Harvard Innovation Labs_ Product-Market Fit.pdf",
+  "path": "HBR/Product-Market Fit - Harvard Innovation Labs.pdf",
+  "filename": "Product-Market Fit - Harvard Innovation Labs.pdf",
   "folder": "HBR",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6210,6 +6270,16 @@
   "modified": "2021-11-15T22:38:03"
  },
  {
+  "id": "1gg5KcJRjNgEYsHoIuv2wLwRrilzcYMg8",
+  "path": "On Films/The 6 Rules of Fiction - Tiago Amaral.pdf",
+  "filename": "The 6 Rules of Fiction - Tiago Amaral.pdf",
+  "folder": "On Films",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 27402793,
+  "modified": "2021-11-15T22:38:06"
+ },
+ {
   "id": "1gT5BhDJPfzToz4GOKVNzMKfk4hWplEXc",
   "path": "On Films/The Anatomy of Story – 22 Steps to Becoming a Master Storyteller - John Truby.epub",
   "filename": "The Anatomy of Story – 22 Steps to Becoming a Master Storyteller - John Truby.epub",
@@ -6240,14 +6310,14 @@
   "modified": "2021-11-15T22:38:02"
  },
  {
-  "id": "1gg5KcJRjNgEYsHoIuv2wLwRrilzcYMg8",
-  "path": "On Films/Tiago Amaral - The 6 Rules Of Fiction.pdf",
-  "filename": "Tiago Amaral - The 6 Rules Of Fiction.pdf",
+  "id": "1xWM67rST14vz1UwZveW-v7rbauLSgSX7",
+  "path": "On Films/the-9-shots-guide-created-by-tim-runia.pdf",
+  "filename": "the-9-shots-guide-created-by-tim-runia.pdf",
   "folder": "On Films",
   "ext": "pdf",
   "mime": "application/pdf",
-  "size_bytes": 27402793,
-  "modified": "2021-11-15T22:38:06"
+  "size_bytes": 51223471,
+  "modified": "2026-11-19T14:45:03"
  },
  {
   "id": "1QuIvOb-1P2uPYQfXujSP4NpnHHxHCZuC",
@@ -6258,6 +6328,16 @@
   "mime": "application/pdf",
   "size_bytes": 2074730,
   "modified": "2023-01-19T14:43:39"
+ },
+ {
+  "id": "12QXcKQe8H2KQOccN3VOA_g6b78plyxCt",
+  "path": "Others/A Byte of Python - Swaroop C H.epub",
+  "filename": "A Byte of Python - Swaroop C H.epub",
+  "folder": "Others",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 1173536,
+  "modified": "2021-05-14T22:59:18"
  },
  {
   "id": "1RpsxaVguJw8BdvgkeUsuWsyw8vvoDEr1",
@@ -6271,23 +6351,13 @@
  },
  {
   "id": "1Y-fFGZlfPjK_ewPmir0JpWjnOQPsj9XW",
-  "path": "Others/Ann Handley on newsletter.pdf",
-  "filename": "Ann Handley on newsletter.pdf",
+  "path": "Others/Ann Handley on Newsletters - Ann Handley.pdf",
+  "filename": "Ann Handley on Newsletters - Ann Handley.pdf",
   "folder": "Others",
   "ext": "pdf",
   "mime": "application/pdf",
   "size_bytes": 426928,
   "modified": "2021-11-24T10:57:48"
- },
- {
-  "id": "12QXcKQe8H2KQOccN3VOA_g6b78plyxCt",
-  "path": "Others/Byte of Python - Swaroop Ch.epub",
-  "filename": "Byte of Python - Swaroop Ch.epub",
-  "folder": "Others",
-  "ext": "epub",
-  "mime": "application/epub+zip",
-  "size_bytes": 1173536,
-  "modified": "2021-05-14T22:59:18"
  },
  {
   "id": "1QDeg1fRbaX_MWqWD8khLfQTdbLuo9rZE",
@@ -6391,8 +6461,8 @@
  },
  {
   "id": "1JMxXrL4Vtwd2BTy_RMK6ixADMPAvTl6e",
-  "path": "Screenplays/500-days-of-summer-2009.pdf",
-  "filename": "500-days-of-summer-2009.pdf",
+  "path": "Screenplays/(500) Days of Summer (Screenplay) - Scott Neustadter & Michael H. Weber.pdf",
+  "filename": "(500) Days of Summer (Screenplay) - Scott Neustadter & Michael H. Weber.pdf",
   "folder": "Screenplays",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6401,8 +6471,8 @@
  },
  {
   "id": "1KLsBijR86WAQt-g9rnrLL1Jtibd0ubu_",
-  "path": "Screenplays/ALIGARH-EDITED-Shooting-Draft-9-March-1st-2015.pdf",
-  "filename": "ALIGARH-EDITED-Shooting-Draft-9-March-1st-2015.pdf",
+  "path": "Screenplays/Aligarh (Screenplay) - Apurva Asrani (dir. Hansal Mehta).pdf",
+  "filename": "Aligarh (Screenplay) - Apurva Asrani (dir. Hansal Mehta).pdf",
   "folder": "Screenplays",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6410,14 +6480,24 @@
   "modified": "2024-09-23T20:12:13"
  },
  {
-  "id": "1KOIZ7aABCsAT1df98K1t4-HGSbHVjnuo",
-  "path": "Screenplays/BONG JOON HO - Parasite-script.pdf",
-  "filename": "BONG JOON HO - Parasite-script.pdf",
+  "id": "1E4-J5PKsTT51LmXWl4QkO2mFeJRZ3BP3",
+  "path": "Screenplays/American Fiction (Screenplay) - Cord Jefferson.pdf",
+  "filename": "American Fiction (Screenplay) - Cord Jefferson.pdf",
   "folder": "Screenplays",
   "ext": "pdf",
   "mime": "application/pdf",
-  "size_bytes": 473431,
-  "modified": "2024-09-23T20:12:13"
+  "size_bytes": 275842,
+  "modified": "2025-11-02T10:02:03"
+ },
+ {
+  "id": "1Hu-ArggKR85GVkfCV_0GGK1Ax4H0v2A5",
+  "path": "Screenplays/Arrival (Screenplay) - Eric Heisserer (based on Ted Chiang).pdf",
+  "filename": "Arrival (Screenplay) - Eric Heisserer (based on Ted Chiang).pdf",
+  "folder": "Screenplays",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 1398901,
+  "modified": "2025-11-02T10:02:04"
  },
  {
   "id": "1KRt_-zIxAFKFqlgIY4tdCJAAvBshCZlR",
@@ -6431,8 +6511,8 @@
  },
  {
   "id": "1KWMB1V1XyKe2IkjOBt9mw3vieujAEl3A",
-  "path": "Screenplays/Dev.D_(screenplay)pdf.pdf",
-  "filename": "Dev.D_(screenplay)pdf.pdf",
+  "path": "Screenplays/Dev.D (Screenplay) - Anurag Kashyap & Vikramaditya Motwane.pdf",
+  "filename": "Dev.D (Screenplay) - Anurag Kashyap & Vikramaditya Motwane.pdf",
   "folder": "Screenplays",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6440,9 +6520,19 @@
   "modified": "2024-09-23T20:12:13"
  },
  {
+  "id": "178aXuZbbK78Aw-sWDkZ2dbswAjbTn7FL",
+  "path": "Screenplays/Everything Everywhere All at Once (Screenplay) - Daniel Kwan & Daniel Scheinert (Daniels).pdf",
+  "filename": "Everything Everywhere All at Once (Screenplay) - Daniel Kwan & Daniel Scheinert (Daniels).pdf",
+  "folder": "Screenplays",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 1196198,
+  "modified": "2025-11-02T10:02:03"
+ },
+ {
   "id": "1KZ4t5l8R6pQeo2ZRPVggQS8CKQ6gfm0N",
-  "path": "Screenplays/FIGHT CLUB script.pdf",
-  "filename": "FIGHT CLUB script.pdf",
+  "path": "Screenplays/Fight Club (Screenplay) - Jim Uhls (dir. David Fincher).pdf",
+  "filename": "Fight Club (Screenplay) - Jim Uhls (dir. David Fincher).pdf",
   "folder": "Screenplays",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6451,8 +6541,8 @@
  },
  {
   "id": "1KagQQoAiZDo14XbAgmJaXVLjSJ0GFSnV",
-  "path": "Screenplays/Gangs_Of_Wasseypur_Part_1_Movie_Script_Film_Companion.pdf",
-  "filename": "Gangs_Of_Wasseypur_Part_1_Movie_Script_Film_Companion.pdf",
+  "path": "Screenplays/Gangs of Wasseypur – Part 1 (Screenplay) - Anurag Kashyap, Zeishan Quadri, Akhilesh Jaiswal & Sachin Ladia.pdf",
+  "filename": "Gangs of Wasseypur – Part 1 (Screenplay) - Anurag Kashyap, Zeishan Quadri, Akhilesh Jaiswal & Sachin Ladia.pdf",
   "folder": "Screenplays",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6470,79 +6560,9 @@
   "modified": "2025-11-02T10:02:03"
  },
  {
-  "id": "1KpGe0wPiHvwF_oZEVpSchNntpm6uBM8b",
-  "path": "Screenplays/Mark_Ko_Dard_Nahi_Hota_1.pdf",
-  "filename": "Mark_Ko_Dard_Nahi_Hota_1.pdf",
-  "folder": "Screenplays",
-  "ext": "pdf",
-  "mime": "application/pdf",
-  "size_bytes": 3094839,
-  "modified": "2024-09-23T20:12:14"
- },
- {
-  "id": "1L6wXz9Dr1MGTypXbCMnuqaPk81ljzlmA",
-  "path": "Screenplays/Masaan_Movie_Script_Film_Companion.pdf",
-  "filename": "Masaan_Movie_Script_Film_Companion.pdf",
-  "folder": "Screenplays",
-  "ext": "pdf",
-  "mime": "application/pdf",
-  "size_bytes": 240401,
-  "modified": "2024-09-23T20:12:14"
- },
- {
-  "id": "1LBQqNJdm4dGjsV_dkZKrI4eL3-8UehEB",
-  "path": "Screenplays/T_U_M_B_B_A_D.pdf",
-  "filename": "T_U_M_B_B_A_D.pdf",
-  "folder": "Screenplays",
-  "ext": "pdf",
-  "mime": "application/pdf",
-  "size_bytes": 944465,
-  "modified": "2024-09-23T20:12:14"
- },
- {
-  "id": "1LBih2y6qt9h68tRug9kCMnQanjJzbxTr",
-  "path": "Screenplays/The_Lunchbox_Screenplay_Film_Companion.pdf",
-  "filename": "The_Lunchbox_Screenplay_Film_Companion.pdf",
-  "folder": "Screenplays",
-  "ext": "pdf",
-  "mime": "application/pdf",
-  "size_bytes": 178913,
-  "modified": "2024-09-23T20:12:14"
- },
- {
-  "id": "1E4-J5PKsTT51LmXWl4QkO2mFeJRZ3BP3",
-  "path": "Screenplays/american-fiction-2023.pdf",
-  "filename": "american-fiction-2023.pdf",
-  "folder": "Screenplays",
-  "ext": "pdf",
-  "mime": "application/pdf",
-  "size_bytes": 275842,
-  "modified": "2025-11-02T10:02:03"
- },
- {
-  "id": "1Hu-ArggKR85GVkfCV_0GGK1Ax4H0v2A5",
-  "path": "Screenplays/arrival-2016.pdf",
-  "filename": "arrival-2016.pdf",
-  "folder": "Screenplays",
-  "ext": "pdf",
-  "mime": "application/pdf",
-  "size_bytes": 1398901,
-  "modified": "2025-11-02T10:02:04"
- },
- {
-  "id": "178aXuZbbK78Aw-sWDkZ2dbswAjbTn7FL",
-  "path": "Screenplays/everything-everywhere-all-at-once-2022.pdf",
-  "filename": "everything-everywhere-all-at-once-2022.pdf",
-  "folder": "Screenplays",
-  "ext": "pdf",
-  "mime": "application/pdf",
-  "size_bytes": 1196198,
-  "modified": "2025-11-02T10:02:03"
- },
- {
   "id": "1Wy4t3WcUbiTT5Ef2Lk1zbWsC6v53m8ek",
-  "path": "Screenplays/groundhogday.pdf",
-  "filename": "groundhogday.pdf",
+  "path": "Screenplays/Groundhog Day (Screenplay) - Danny Rubin & Harold Ramis.pdf",
+  "filename": "Groundhog Day (Screenplay) - Danny Rubin & Harold Ramis.pdf",
   "folder": "Screenplays",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6551,8 +6571,8 @@
  },
  {
   "id": "1YfWrolwxERLhV4WDlqdXBtqbhOOm5enW",
-  "path": "Screenplays/jojo-rabbit-2019.pdf",
-  "filename": "jojo-rabbit-2019.pdf",
+  "path": "Screenplays/Jojo Rabbit (Screenplay) - Taika Waititi.pdf",
+  "filename": "Jojo Rabbit (Screenplay) - Taika Waititi.pdf",
   "folder": "Screenplays",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6561,8 +6581,8 @@
  },
  {
   "id": "1PMcbA1-11bzE9pgd_fGk4V8X0cT5U-U0",
-  "path": "Screenplays/logan-2017.pdf",
-  "filename": "logan-2017.pdf",
+  "path": "Screenplays/Logan (Screenplay) - James Mangold, Scott Frank & Michael Green.pdf",
+  "filename": "Logan (Screenplay) - James Mangold, Scott Frank & Michael Green.pdf",
   "folder": "Screenplays",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6570,9 +6590,29 @@
   "modified": "2025-11-02T10:02:03"
  },
  {
+  "id": "1KpGe0wPiHvwF_oZEVpSchNntpm6uBM8b",
+  "path": "Screenplays/Mard Ko Dard Nahi Hota (Screenplay) - Vasan Bala.pdf",
+  "filename": "Mard Ko Dard Nahi Hota (Screenplay) - Vasan Bala.pdf",
+  "folder": "Screenplays",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 3094839,
+  "modified": "2024-09-23T20:12:14"
+ },
+ {
+  "id": "1L6wXz9Dr1MGTypXbCMnuqaPk81ljzlmA",
+  "path": "Screenplays/Masaan (Screenplay) - Varun Grover (dir. Neeraj Ghaywan).pdf",
+  "filename": "Masaan (Screenplay) - Varun Grover (dir. Neeraj Ghaywan).pdf",
+  "folder": "Screenplays",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 240401,
+  "modified": "2024-09-23T20:12:14"
+ },
+ {
   "id": "1gLWs5EvIIRRWo7FuwPPNILbxXGg2rdPD",
-  "path": "Screenplays/memories-of-murder-2003.pdf",
-  "filename": "memories-of-murder-2003.pdf",
+  "path": "Screenplays/Memories of Murder (살인의 추억 Screenplay) - Bong Joon-ho & Shim Sung-bo.pdf",
+  "filename": "Memories of Murder (살인의 추억 Screenplay) - Bong Joon-ho & Shim Sung-bo.pdf",
   "folder": "Screenplays",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6580,9 +6620,29 @@
   "modified": "2025-11-02T10:02:03"
  },
  {
+  "id": "13OAq3CbA6dtJlvoA3pFMlaZyQ-5wUXtP",
+  "path": "Screenplays/Oldboy (올드보이 Screenplay) - Park Chan-wook, Hwang Jo-yun & Lim Joon-hyung.pdf",
+  "filename": "Oldboy (올드보이 Screenplay) - Park Chan-wook, Hwang Jo-yun & Lim Joon-hyung.pdf",
+  "folder": "Screenplays",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 1268958,
+  "modified": "2025-11-02T10:02:04"
+ },
+ {
+  "id": "1KOIZ7aABCsAT1df98K1t4-HGSbHVjnuo",
+  "path": "Screenplays/Parasite (기생충 Screenplay) - Bong Joon-ho & Han Jin-won.pdf",
+  "filename": "Parasite (기생충 Screenplay) - Bong Joon-ho & Han Jin-won.pdf",
+  "folder": "Screenplays",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 473431,
+  "modified": "2024-09-23T20:12:13"
+ },
+ {
   "id": "17sFXDSuzL5my7kJceWm86DCLgLPBSe6j",
-  "path": "Screenplays/snowpiercer-2013.pdf",
-  "filename": "snowpiercer-2013.pdf",
+  "path": "Screenplays/Snowpiercer (설국열차 Screenplay) - Bong Joon-ho & Kelly Masterson.pdf",
+  "filename": "Snowpiercer (설국열차 Screenplay) - Bong Joon-ho & Kelly Masterson.pdf",
   "folder": "Screenplays",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6590,9 +6650,19 @@
   "modified": "2025-11-02T10:02:03"
  },
  {
+  "id": "1LBih2y6qt9h68tRug9kCMnQanjJzbxTr",
+  "path": "Screenplays/The Lunchbox (Screenplay) - Ritesh Batra.pdf",
+  "filename": "The Lunchbox (Screenplay) - Ritesh Batra.pdf",
+  "folder": "Screenplays",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 178913,
+  "modified": "2024-09-23T20:12:14"
+ },
+ {
   "id": "1lLLtkups8UcvRdN6Ic_GXhlg5phBZlQW",
-  "path": "Screenplays/the-martian-2015.pdf",
-  "filename": "the-martian-2015.pdf",
+  "path": "Screenplays/The Martian (Screenplay) - Drew Goddard (dir. Ridley Scott).pdf",
+  "filename": "The Martian (Screenplay) - Drew Goddard (dir. Ridley Scott).pdf",
   "folder": "Screenplays",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6600,14 +6670,14 @@
   "modified": "2025-11-04T09:12:26"
  },
  {
-  "id": "13OAq3CbA6dtJlvoA3pFMlaZyQ-5wUXtP",
-  "path": "Screenplays/올드보이.hwp.pdf",
-  "filename": "올드보이.hwp.pdf",
+  "id": "1LBQqNJdm4dGjsV_dkZKrI4eL3-8UehEB",
+  "path": "Screenplays/Tumbbad (Screenplay) - Mitesh Shah, Adesh Prasad, Rahi Anil Barve & Anand Gandhi.pdf",
+  "filename": "Tumbbad (Screenplay) - Mitesh Shah, Adesh Prasad, Rahi Anil Barve & Anand Gandhi.pdf",
   "folder": "Screenplays",
   "ext": "pdf",
   "mime": "application/pdf",
-  "size_bytes": 1268958,
-  "modified": "2025-11-02T10:02:04"
+  "size_bytes": 944465,
+  "modified": "2024-09-23T20:12:14"
  },
  {
   "id": "1XrUsuRxxw44SYLuH0AZ-lrDjpvFlo6On",

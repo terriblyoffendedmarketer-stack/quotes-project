@@ -16,6 +16,7 @@
 #   3. Quote bank — the book's quotes were attributed to the same title and author.
 #   4. Embedded metadata — for EPUBs still unverified, the file's own dc:title / dc:creator (downloaded to a
 #      temp dir, small files only).
+#   5. Hand-checked — content/name_confirmed.json, only while the title + author are unchanged.
 #   Anything unproven is HELD: not renamed, written to content/drive_rename_review.md with the reason.
 #
 # Gotchas:
@@ -53,6 +54,7 @@ LOG_PATH = CONTENT / "drive_rename_log.json"
 HISTORY_PATH = CONTENT / "drive_name_history.json"
 REVIEW_PATH = CONTENT / "drive_rename_review.md"
 CACHE_PATH = CONTENT / "name_verification_cache.json"
+CONFIRMED_PATH = CONTENT / "name_confirmed.json"     # names checked by hand: {drive_id: {title, author, note}}
 REMOTE = "gdrive:Books"
 SKIP_FOLDERS = {"Archive of bullshit"}
 NO_AUTHOR = {"Anonymous", "Various Authors", "Unknown", ""}
@@ -98,6 +100,8 @@ def plan():
         n = names[f["id"]]
         folder = f["path"].rsplit("/", 1)[0] if "/" in f["path"] else ""
         ext = f["ext"] if f["ext"] in {"epub", "pdf", "cbr", "cbz", "mobi"} else ""
+        if not f["ext"] and f.get("mime") == "application/pdf":
+            ext = "pdf"                       # e.g. "HBR On communication" was a PDF saved without .pdf
         wanted.append((f, n, folder, ext, clean_filename(n["title"], n["author"], ext)))
 
     def variants(base, ext):
@@ -190,6 +194,7 @@ def verify(moves, use_network=True):
     cache = load_json(CACHE_PATH, {})
     qb = quote_bank_index()
     qb_authors = set().union(*qb.values()) if qb else set()
+    confirmed = load_json(CONFIRMED_PATH, {})
     for m in moves:
         original = history.get(m["id"], {}).get("original", m["from"]).rsplit("/", 1)[-1]
         evidence_words = words(original) | words(m["from"].rsplit("/", 1)[-1])
@@ -232,6 +237,10 @@ def verify(moves, use_network=True):
                     author_ok = True
                 if title_ok and author_ok:
                     ev.append("embedded metadata")
+        c = confirmed.get(m["id"])
+        if not (title_ok and author_ok) and c and c.get("title") == m["title"] and c.get("author") == m["author"]:
+            title_ok = author_ok = True
+            ev.append("hand-checked")
         m["verified"] = title_ok and author_ok
         m["evidence"] = ev
         m["reason"] = "" if m["verified"] else (

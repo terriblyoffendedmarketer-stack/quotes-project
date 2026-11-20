@@ -79,10 +79,19 @@ def looks_like_person(s):
 def clean_base(filename):
     base = re.sub(r"\.(epub|pdf|cbr|cbz|mobi|docx|pptx)$", "", filename, flags=re.I)
     base = re.sub(r"\.(pdf|epub)$", "", base, flags=re.I)                      # double extensions
-    base = re.sub(r"libgen\.li|z-library|pdfdrive|-pdfread|\bpdfread\b", " ", base, flags=re.I)
+    # download-site watermarks: "OceanofPDF.com_", "(z-library.sk, 1lib.sk, z-lib.sk)", "dokumen.pub_", "[Anna's Archive]"
+    base = re.sub(r"(?:www\.)?[a-z0-9-]+\.(?:com|org|net|pub|sk|li|se|io|to|ru|ws|cc|me|lol|is|gs|rs|ec)(?![a-z])",
+                  " ", base, flags=re.I)
+    base = re.sub(r"libgen|z-library|z-lib|\b1lib\b|pdfdrive|-pdfread|\bpdfread\b|anna[’']?s archive|ebook-hunter|"
+                  r"oceanofpdf|\bwww\b", " ", base, flags=re.I)
+    base = re.sub(r"[(\[]\s*[,;\s]*[)\]]", " ", base)                         # brackets left empty by the above
+    core = base.strip(" _-")
+    if " " not in core and "_" not in core and core.count("-") >= 2:
+        base = core.replace("-", " ")                                            # "atomic-habits-james-clear"
+    base = re.sub(r"\)?\s*(?:pdf|epub)\s*$", lambda m: ")" if m.group(0).startswith(")") else "", base, flags=re.I)
     base = re.sub(r"\(\s*\d+\s*\)\s*$", "", base)                               # "(1)" copies
     base = base.replace("_-_", " - ").replace("__", ": ").replace("_ ", ": ").replace("_", " ")
-    return base
+    return re.sub(r"\s+", " ", base).strip(" :.-")
 
 
 def parse_filename(filename, known_authors=()):
@@ -90,6 +99,10 @@ def parse_filename(filename, known_authors=()):
     base = clean_base(filename)
     m = re.search(r"\{([^}]+)\}", base) or re.search(r"\[([a-z][a-z\- ]+)\]", base)   # "{Author}" / "[author-name]"
     tag_author = m.group(1).replace("-", " ").title() if m and not m.group(1).isdigit() else None
+    if not tag_author:                                       # "Klara and the Sun (Kazuo Ishiguro)"
+        tag_author = next((p.strip() for p in re.findall(r"\(([^)]+)\)", base) if looks_like_person(p.strip())
+                           and len(p.split()) >= 2 and not re.search(r"(?i)\b(issue|vol|volume|part|edition|book|series|"
+                                                                      r"complete|collection|digital|omnibus)\b", p)), None)
     base = re.sub(r"\[.*?\]|\(.*?\)|\{.*?\}", " ", base)
     base = re.sub(r"\s+", " ", base).strip(" -:")
     known = {norm(a) for a in known_authors}
@@ -107,7 +120,9 @@ def parse_filename(filename, known_authors=()):
         title = title.replace(" - ", ": ", 1) if title.count(" - ") == 1 else title
     elif " by " in base.lower():
         idx = base.lower().rindex(" by ")
-        title, author = base[:idx], base[idx + 4:]
+        if len(base[idx + 4:].strip()) >= 3:                 # not "...Translated by G" (truncated names)
+            title, author = base[:idx], base[idx + 4:]
+            author = author.title() if author.islower() else author
     if tag_author and author == "Unknown":
         author = tag_author
     title = smart_title(re.sub(r"\s+", " ", title).strip(" -:"))
