@@ -69,9 +69,10 @@
   - `scripts/check_synopses.py`: Claude (API key in .env) flags wrong-book / filler synopses and swaps in a verified one. `--apply`. Report `content/synopsis_check.md`.
   - `scripts/clean_watermarks.py`: finds/removes the OceanofPDF watermark inside EPUBs on Drive; word-level proof checks before each upload. Report `content/watermark_scan.md`, log `content/watermark_log.json`.
   - `scripts/fix_epub_metadata.py`: fixes junk hidden titles/authors inside EPUBs (PDFDrive/libgen/Z-Library) + missing mimetype. Log `content/epub_metadata_log.json`.
-  - `scripts/pdf_watermarks_daily.py`: daily step — checks only new/changed PDFs (cache `.cache/pdf_watermarks.json`, seeded 2026-11-22) and cleans affected ones.
+  - `scripts/pdf_watermarks_daily.py`: daily step — checks only new/changed PDFs (record `content/state/pdf_watermarks.json`, seeded 2026-11-22) and cleans affected ones.
   - `scripts/scan_pdf_watermarks.py` / `scripts/clean_pdf_watermarks.py`: find / remove OceanofPDF in PDFs (clean needs pypdf: `uv venv .cache/pdfenv && uv pip install --python .cache/pdfenv/bin/python pypdf`).
   - `scripts/test_parse_filename.py`: test cases for messy download filenames.
+  - `content/state/`: what the daily run already checked (EPUB/PDF watermarks, covers, synopsis verdicts), keyed by Drive id; committed every run so a new Mac skips done work. See its README.
   - `content/name_confirmed.json`: hand-checked Drive names (trusted only while title+author unchanged).
   - `scripts/audit_covers.py`: (older) OCR-verifies every cover via local vision server (localhost:9090); `--fix` swaps in verified covers.
   - `content/drive_name_history.json` / `drive_rename_log.json`: original name of every Drive file / every rename (undo trail).

@@ -44,7 +44,7 @@ from xml.etree import ElementTree as ET
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from shelf_common import CATALOG_PATH, CONTENT, ROOT, load_json, save_json  # noqa: E402
 
-STATE = ROOT / ".cache" / "watermarks.json"
+STATE = CONTENT / "state" / "epub_watermarks.json"   # in git: survives a new Mac
 REPORT = CONTENT / "watermark_scan.md"
 LOG = CONTENT / "watermark_log.json"
 MARK = re.compile(r"(?:https?://)?(?:www\.)?oceanofpdf(?:\.com)?/?", re.I)   # no spaces: "an ocean of pdfs" is prose
@@ -284,7 +284,8 @@ def main():
     issues = [e for e in cat if state.get(e["id"], {}).get("issues")]
     if issues:
         lines += ["", "Other problems:"] + [f"- {e['filename']} — {'; '.join(state[e['id']]['issues'])}" for e in issues]
-    REPORT.write_text("\n".join(lines) + "\n")
+    if not only:                         # a one-book test run must not overwrite the full report
+        REPORT.write_text("\n".join(lines) + "\n")
     print(f"{len(affected)} of {len(cat)} EPUBs have the watermark -> {REPORT.name}")
     if not apply:
         return

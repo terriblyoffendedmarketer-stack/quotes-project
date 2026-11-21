@@ -14,7 +14,7 @@
 #
 # Gotchas:
 # - Synopses the user typed in the app (pitch_source "user" in book_overrides.json) are never touched.
-# - Verdicts are cached per text in .cache/synopsis_verdicts.json (sha1 of title|author|text), so re-runs
+# - Verdicts are cached per text in content/state/synopsis_verdicts.json (sha1 of title|author|text), so re-runs
 #   only pay for new or changed synopses.
 # - Claude Opus 5.5 can't disable thinking; effort "low" keeps it quick and cheap for this yes/no job.
 
@@ -33,7 +33,7 @@ import anthropic
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from shelf_common import CONTENT, DATA_PATH, OVERRIDES_PATH, ROOT, load_json, save_json  # noqa: E402
 
-CACHE_PATH = ROOT / ".cache" / "synopsis_verdicts.json"
+CACHE_PATH = CONTENT / "state" / "synopsis_verdicts.json"   # in git
 SOURCING = CONTENT / "cover_sourcing.json"
 REPORT = CONTENT / "synopsis_check.md"
 MODEL = "claude-opus-5-5"
@@ -188,7 +188,8 @@ def main():
     unsure = [b for b in books if cache.get(key(b, clean(b.get("pitch"))), {}).get("verdict") == "unsure"]
     if unsure:
         lines += ["", "Unsure (left as is): " + "; ".join(b["title"] for b in unsure)]
-    REPORT.write_text("\n".join(lines) + "\n")
+    if not only:
+        REPORT.write_text("\n".join(lines) + "\n")
     print("\n".join(lines[2:3]))
     if apply:
         save_json(OVERRIDES_PATH, overrides)

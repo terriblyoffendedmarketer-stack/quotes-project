@@ -9,7 +9,7 @@
 # Each checked PDF is downloaded to a temp file and deleted afterwards. A cleaned PDF is uploaded over the same
 # Drive file (same id; Drive keeps the old version 30 days) only if clean_pdf_watermarks.py's checks pass
 # (same pages, same words apart from the watermark, same images, no reference left); otherwise it's listed as
-# skipped. Cache: .cache/pdf_watermarks.json (Drive id -> modified time). Log: content/pdf_watermark_log.json.
+# skipped. Record: content/state/pdf_watermarks.json (Drive id -> modified time). Log: content/pdf_watermark_log.json.
 #
 # Gotchas:
 # - Seeded on 2026-11-22 from a full scan (167 PDFs, only A Cup of Zen affected and cleaned), so the first
@@ -28,7 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from shelf_common import CATALOG_PATH, CONTENT, ROOT, load_json, save_json  # noqa: E402
 from scan_pdf_watermarks import scan  # noqa: E402
 
-STATE = ROOT / ".cache" / "pdf_watermarks.json"
+STATE = CONTENT / "state" / "pdf_watermarks.json"   # in git: survives a new Mac
 LOG = CONTENT / "pdf_watermark_log.json"
 VENV = ROOT / ".cache" / "pdfenv"
 UV = "/opt/homebrew/bin/uv"

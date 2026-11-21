@@ -74,7 +74,8 @@ if [[ " $* " == *" --publish "* ]]; then
   FILES=(bookshelf/data.json bookshelf/index.html docs/bookshelf.html content/gdrive_books_catalog.json content/book_names.json
          content/drive_name_history.json content/drive_rename_log.json content/drive_rename_review.md content/name_verification_cache.json
          content/book_overrides.json bookshelf/covers docs/covers content/watermark_scan.md content/watermark_log.json content/pdf_watermark_log.json
-         content/cover_sourcing.json content/cover_sourcing.md content/synopsis_check.md content/name_confirmed.json)
+         content/cover_sourcing.json content/cover_sourcing.md content/synopsis_check.md content/name_confirmed.json
+         content/state content/epub_metadata_log.json)
   for f in "${FILES[@]}"; do if [[ -e "$f" ]]; then git add -- "$f"; fi; done
   if git diff --cached --quiet; then
     echo "No shelf changes to publish."

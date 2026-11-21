@@ -30,7 +30,7 @@
 #   rerun (or loop: `until python3 scripts/source_covers.py; do sleep 60; done`) and it resumes from the cache.
 # - Apple throttling once made 38 books look coverless (-> jacket). Now: retries with back-off, and a failed
 #   lookup never replaces an existing cover ("lookup failed: kept current").
-# - Results are cached per Drive id in .cache/covers/state.json — delete an entry to re-check a book.
+# - Results are cached per Drive id in content/state/covers.json — delete an entry to re-check a book.
 
 import io
 import json
@@ -55,7 +55,7 @@ from shelf_common import CONTENT, DATA_PATH, OVERRIDES_PATH, ROOT, load_json, no
 
 CACHE = ROOT / ".cache" / "covers"
 REF_DIR = CACHE / "ref"
-STATE_PATH = CACHE / "state.json"
+STATE_PATH = CONTENT / "state" / "covers.json"   # in git; the cover images in .cache are not needed again
 OUT_JSON = CONTENT / "cover_sourcing.json"
 OUT_MD = CONTENT / "cover_sourcing.md"
 COVER_DIRS = [ROOT / "bookshelf" / "covers", ROOT / "docs" / "covers"]
@@ -546,11 +546,13 @@ def main():
                 o.pop("no_cover", None)
             else:
                 o["cover_url"], o["no_cover"], o["cover_source"] = None, True, "verified"
-    save_json(OUT_JSON, rows)
+    if not only and not limit:           # partial runs must not overwrite the full report
+        save_json(OUT_JSON, rows)
     lines = [f"# Cover sourcing — {time.strftime('%Y-%m-%d')}", "", "Counts: " + ", ".join(f"{k}: {v}" for k, v in sorted(counts.items())), "",
              "| Book | Decision | best sim | changed |", "|---|---|---|---|"]
     lines += [f"| {r['title']} — {r['author']} | {r['decision']} | {r['best_sim']} | {'yes' if r['changed'] else ''} |" for r in rows]
-    OUT_MD.write_text("\n".join(lines) + "\n")
+    if not only and not limit:
+        OUT_MD.write_text("\n".join(lines) + "\n")
     print("Counts:", counts, f"| changed: {sum(r['changed'] for r in rows)}")
     if apply:
         save_json(OVERRIDES_PATH, overrides)

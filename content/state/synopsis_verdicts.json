@@ -1,0 +1,3370 @@
+{
+ "12c28493fe4957ecdc5efc875f983233ad9ce58f": {
+  "verdict": "wrong_book",
+  "actually_about": "Anna Karenina by Leo Tolstoy"
+ },
+ "bbc39cefc1b575d3dfd17b5a2eaf3fbd73f25712": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "50f138e1512c438976f8d3d356d0a1fec63e713c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3b49006b81170c7268b693ade5d8235c602437d7": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d1f92d846a88567c73d2c0d1f982692077e4805f": {
+  "verdict": "wrong_book",
+  "actually_about": "unrelated text about an archive researcher and facsimiles, not Murch's book on film editing"
+ },
+ "f33f12fd1eb92a0637cfca9e614a9a927c6be149": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "f5232d62c5a446b3686c50194a5fac88571f405d": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "585351b3fc620693532af1482a9762e804497447": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "a1906646a25f77e5e76d9f45d08be0937fbb3511": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c426777de8004f6fd01cc5a6612c7a1fc947b32c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5c4da8224a8f91c77d866cd6554913392f56e231": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "96824d32187306b331d717b065fa1bbbbe939fdc": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "b851f84943087e60dccdfbc25a8c49c876986d6d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6c3142618715d485a807b5a295b07663cd56c0b2": {
+  "verdict": "wrong_book",
+  "actually_about": "Wizard's First Rule by Terry Goodkind"
+ },
+ "9fb69ce634d0c724257b88e2a2189ed23c280be9": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c1b7bb59934df35848ee59bdb0a665627fd828f8": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "eec077b98636208cf62c3ea6bfb4bfb06142f9cf": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1a140b9217cb48261b4eaf268b9a56cb406bd783": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7e571e9398737621dd77a67d4e814ad20ed58da0": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5a8e2aa14015b5b589411508de49f826743bde2d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1760d37b60b56c9b0061f0baee2c61df7929eb76": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "2df125b4e3b5b03465c11be5ec62b7da9a8e5f64": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "625a493c7d6b9f1c804f98380ef4180ca3078456": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "a77217c407bcbe052af1dd38f085d386eb9545b6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0aeee427ba70fcc320d951eee086428383cc1de9": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "759fe231d94fd274d3598c32dcaa68516ead25bb": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "16386e267ee5e8ca72fa8121b08d1044664dabf3": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "3bc724fb859f6a6e6a9bed8ce29a589dad15ac84": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4b4ac0a97e6158f0b8e1f48faa09cbf41706d226": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "2ffb61a8ee74477e180868bace10e608d650f744": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "391ae9cbe5beb551de2aea31a621399e5580244d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4987af660d3e9991d1ec0505f1d828a323d68798": {
+  "verdict": "wrong_book",
+  "actually_about": "Influence by Robert Cialdini"
+ },
+ "fc698ca6fd1426e76c84ded4b6e6479b7b785279": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5c52d5e0f80f1fc78f8197d874843d3244ccc3b0": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "54a3f248806df5b205165b2f6697bcd828b24f04": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "dbaa1ec68b455a0b87635af006385517385d5686": {
+  "verdict": "wrong_book",
+  "actually_about": "a different Byung-Chul Han book on burnout/exhaustion (e.g. The Burnout Society)"
+ },
+ "0883a7b2c0bf1c3c34a726d52eb06a86689e0074": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "6e01688d50934f3c9a1122ce21836c6cb4123bf8": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b2e2d60b78b8881c46a9ba342915d6f52c1232fc": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "bbdfc6ed8139df099fa432acf1f0e6bcf0d59dca": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "2a010476d4b0ef2b5d24d5194f82307116577e70": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d04f92b38fce6b767fff9f377faa422c5ffa9c86": {
+  "verdict": "wrong_book",
+  "actually_about": "Alice's Adventures in Wonderland by Lewis Carroll"
+ },
+ "caef65f81a9e0220e5d4ca6963afb6fd7d186151": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "729a9617f64f2950d8e4aad85466605045f8d6b0": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1bfdf3b84a32103cb534acc77af0b3afea567ef2": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "40a4d799faa2ff521dc8ebb3d7d7480c944cc696": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "001a53211d9a61366a229e87a025567b2e534b1b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "439d31184cd26c619960158887667baf8e45668f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "076e5518ff5ed63aabcf9aa04484ab7a9bdf2f94": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b878ea7438ef0da67a3fe79b1d09353b7f7599a1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0b1b6b3a29a4ff4e4f358ce9a39d38f28db5d87a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "bbcf41ce80aa563cd7d1b921c6dc498e46ab723f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7cd51f35daccab3698e059fe49986fb10e4fd036": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "26027e03336343bb8f54b9fec3b1c8f1f918c5ef": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "bf83fa1dc84bff2c5daef55f0c7bb3a8ff48f398": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6062e42362b98ff9af2505f1dd31c365fc3919b7": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "41869d581c7543c9a198b27803ed658ef535718f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "005a029abc6f0cc3b61ca94e31f62e6139315200": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7188f69deea702746dc6c12d9d1c344695a2dbb5": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "ab4e8f46bb6e2919b8a832d55761d34b4eb58289": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "68dc622f27425ef57383f6ae79633b2bdf22dfc0": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "e005f7e5074df299212fe854611d86e997ee03bd": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "0acc0f03ff976356501121406ff92bd0f0a2ccc6": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "0d54c61b5e02324cd4b886ac405a99abd8d6a4d6": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "18d0bc5aa479a4e29607178ffd2ceb70261c0006": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a98f9c51465f2709f57c0d11d9a8f29162052abd": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d0520f247d30b3a17050448fb75473a37f88f869": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "661e289c9b3ada62b2d3b0ae9658d4f5086519f5": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "636dfeddada2ab9746de8c93e035b9fb443944c6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ae6c45b4c8ab046422c10eddfb0f5f6588a1fd7c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "2d5d9e6013996096e79159d813c68c4249cd4bd3": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "26e3f1fdef4caf1b2228808dbf32d8582dc04c4f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "84eb6cdd2b3917345fc4aeea829c508bb63c1f1f": {
+  "verdict": "wrong_book",
+  "actually_about": "On Tyranny: Twenty Lessons from the Twentieth Century by Timothy Snyder"
+ },
+ "b3812925acd8d1a1025b58e55e4cdc037b89eb0d": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "c5bc235e49acf81c401f491fcf67ea4efe3d32c3": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "e32f4f36adc25c746b4bb42dab2cd4859190fa7d": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "68b5193746c8b53ed42fbd9d3111125f07ed44e5": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "d51e41e90d2b6f4304f5b3ef4c28688da1581b3f": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "a01bf6f806e3bae264d54b01aa2a4c6e711591b6": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "0873c4798545795b1f4669ccd5361c5f1ec89d3f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3303ef6788998785f78789feff5522f81a34b535": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "1995a82afc423b6632fc85507834a6d0be811f77": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "12384d0b2599122fe0fa97fdca8884c8d7f31b6f": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "574a3fe1a70b6bad2ad0380f4ab7129ff1b53ea5": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b62808665bb42766e096e187294dde785a0ea3d1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0eaa447a21046c80901bf0e0d16f0f1b07502331": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "7c5f9c0015d8c8c652c0f8b63a22ac3ad666864c": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "3222b7296a08afe4a447272f05a101820914173f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1a81fd62a74e3936b437755601c6d1860d5f57a0": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "09ab34711a44100ff80081a68ebedec20366de50": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "bf248c9645d4f75630c052c726f0fb7034155632": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "349f99e8c11252b0f6524011beaaefdd1cd2fbae": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "f8d233c4299bd1866c1bd7bad328a366be28682b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d9707824b3613638b4231486c4a3058bac12ec7e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "df65eee504f3d64e1b3e74ca42ab250c9ede1562": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d03d5586518d9798a3a0fb6c071c0035992d6282": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c3aafdde08ac82d35f1f78e3378c30860f4dae6b": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "dce042257cd4963bb161541fc4be1dfc7b1ddb5f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d6ace758f293bfef02548a23a911473a63533723": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "99d0a7be41517708ab6c29d1900b3312623b34ac": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "81bab125941780b7eeb065d4ca9aad2f751e415d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8a1a5b92475c2f591bbf991f25984f1874332dc1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9ef5e5732d8f93b3ddc805d38c82b486fd64c6fb": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e060a858b1dcaf3b0608647d4598b87e0558beed": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "47af8357bb23bbb73665a041dcdea65d5a3f986c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d8df2285f6bf47e43fa3d7003d2d6badd66b512e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ef838d18b3b1efbcc1868d673c95d0a68fbe2278": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e14b17692253f12bda06b417ebf217b7f4484790": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8d5ae1bac4c1c4a3696ac865e2ff00d624018fd1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "2cc77b7ad59955059c0032575507df79e5fcf20b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6757510b411742c1d6b73fe4b7b630478d26b556": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c8c5450df21229c43c9fea62ea7af23b8f77776b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "64c0d855760a9bbe504b129d771c43a7ad09150d": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "e1bbc41db1d904a9b7654c7292c1a56bccebfb77": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "395b21f32d070488a10550fd8b35a21233830199": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9cae398ac260aca6f5c6bd6401fd240228d60a0f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4324bc72c6ae7b478456b8361d6d8a1b7243f9c1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e1581fde9d1b4f9cb51f5b42a3e830df2a24b81f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c4e092548348a67d506ef5a15af97ca89ed6ae07": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "efc38a85dce9606b40a6cb0970ca677cd8ef1351": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "6df23cb7a79e78707e98e69df0093e742af9631d": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "e3cdd5785ec827b19664681e89dbe3a60351b1b6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "77d4b6301753fd7657af010d6301979568456d72": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "72d2383bf359e755ef7d5327675b82e15cdee766": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "620fda7d029d7a0384217670ffe6a5bf522e8ff8": {
+  "verdict": "wrong_book",
+  "actually_about": "American Film magazine (AFI)"
+ },
+ "009ada13ca58cee2368ccfc4e70091d2b6148eed": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "15663470430243f53745c0408431d55b26998453": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6ad2c40508fab76ebe8fd8bed82bb7b7f84d5391": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "746c4ef5d53e2e57ba53129d81ddb4323652c0c9": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "eaf2f07d293c7c5d6f017f3618cdbd36d75b3cb6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "23df3310b5191e8bd7598df5ba7fcfa746079b37": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "1434b40f0ee0daf81b44a64035e3be013c2df484": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9833522c7efd0589b3781b26077714e574751491": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "12772d224fc8b1f03d7d21f1668db8cdcd2c0068": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "7c4a2834120749143a7a0cb19d7cceb7cff151c6": {
+  "verdict": "wrong_book",
+  "actually_about": "Harry Potter and the Order of the Phoenix by J.K. Rowling"
+ },
+ "39ba56d7ef246b840a1c65f76da5607af8a6d13c": {
+  "verdict": "wrong_book",
+  "actually_about": "The Prince of Milk by Exurb1a"
+ },
+ "972f3c4beeb0aae22c93be509e66c0e686ad718a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6b00bd1dcef7789beaa80ffd4eaaa71c04d4980d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c8775e32f8fff63aefdeb702312e8e7ae5d62ac6": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "9f08d667d09766bef0f5580385aacd124528062b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c6aed1bb4f0028a7ab4395640e95c4123b611e4c": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "f43e4f18c610c06b609bfe7d22efab99729fb3b8": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "3a5ccefc846b061e3ab575cc630484f525056c3d": {
+  "verdict": "not_english",
+  "actually_about": ""
+ },
+ "6481db11890a9ce06f00916d5d0040f3f46ee1f1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4d5d7855bd7ce34a795e1ef68d3b3ce8f9c5798e": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "672d71f1e3b4dbc169d0cb0b05a606330215daec": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0a0232d55a0c95cfd382f709081fab7db9c9e31b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6cd6b01bb16724600566e8cb1068a5730e0d65e4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4024fa1a9e5dd1e4cfdba78746cc31e526207e02": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "09872c97ad88c0218f78dac3f7d283099c49a2ce": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "00c8950eda69883ad7af11ab55d847daeca5eb17": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "84a2591ddae48731b8e99fc5dd108b8ed46c545c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "26b3e57eb0d69450b8ceeae0d2dda3b23629646c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "54c421517b717bf0cf09d4c05b8a714024d4df7f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6ed1d7e8862409d949eb5f1872d61deb66749505": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "354c67df3f8e92a8fefb9766246c3cf2d2e5f69c": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "98104a32701720e3ac7e01001ff9c6f03fa4306d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "fbfc53b22d497863c1057396f1b62f4270ab2d2f": {
+  "verdict": "not_english",
+  "actually_about": ""
+ },
+ "9e86ad0704aaf35ec189a2bb0ffda0e889cbb66b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "31c7f3424c4f81f521a8fc9b4a504b20b58f2694": {
+  "verdict": "wrong_book",
+  "actually_about": "a book critiquing 'follow your passion' career advice (possibly Cal Newport's So Good They Can't Ignore You)"
+ },
+ "1171479d06a5739329b84082f1c1f91fa9721f7a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "990fcbe9bc8c159f66bc3be8b6448d64f8a51618": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "46ddd862affac87127c277d736ef1d3c5c856b06": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "8e8c475386650fda50efd7b95c01fba7e14bb314": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "eeb8a4e4869c82a843cde0100bda1cbf02c452ba": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4e0e3ccd9e77f8b5bd1c9a4c923d778ec0017f61": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "23be4d16a1277e88cc7834737e5410f577baf599": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ddf97bb814719263df77ccee112ae1952ea2e145": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "71ad7d9020944a278597a995117c6dbad0c781c8": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "516d6e7ce7c22ea428d783df83fcdafe36b0f78d": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "58a05bdf6def20059ed24e2e2509d4eebf2aee8e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "065df14685abfaf9f848c150f1d8796b1024e3b4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f6cb03b8a36676610dfd2a774a3008a29f9c149a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9fe196df8eb7a8dd5251a7632b70100759ba1f9e": {
+  "verdict": "wrong_book",
+  "actually_about": "The Hunger Games by Suzanne Collins"
+ },
+ "39c2d031e94e28f03e7665b8aa9d5f0cc3b5f212": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8108eaf3ed1528e44119632b30e660f5cf32cc29": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "6ca3db99ed05b56340dde6e38f14194ab3fdc73e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8d347e830996698694e079c17769cbff843b265b": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "21ac4ed82d4d38bd3fd558b25acd59807ef2ed1e": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "ccdf6c28e4f2d179ddc4486642e752994697a8fc": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4cdd65c7327abae78ece8ed735a6ce0fc739695b": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "e1086542d6b1077e45c99db3b57891bfbec5f462": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "278c9e262542cc95cb07270d42ecbcb2f93afbd0": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "2dcbf81eafb3027d0f3155f115c44924f6ec3c9c": {
+  "verdict": "not_english",
+  "actually_about": ""
+ },
+ "cdcd167d8245a25d3bbf84bd672363300c10b2b3": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7b07982575acd74ac80035d56b68c8574bcccba8": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d2a8759bbfe43b917a26bda2ec46f96e827a51cb": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "23d9a2f71b92c0072beb9e837ac255f224bcb07a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e82e4ee71c96aaf69e3b443ddfe471dbf0e7f219": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d44147e4c8b9f15cd8de176ed757e05dea3dd169": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5dafd1a2105502d0619ab0675ce546ecc9cf704a": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "c83a5aa6300512d3d2cbe1b11a663c5e8eb90c48": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "fce262c514dd024a9449176176f5bfc358a1431b": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "640f263b3698a684ca74b208f2575330b78d745f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "13b3e6a0c82ad2399aa741e67ba8b788e4c98442": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d4e88d60badcd7899f7ec8bdca555364c7323cd2": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6784c4924b3384e00b4c3b2f35d1d3e4aa37e48f": {
+  "verdict": "wrong_book",
+  "actually_about": "Absurd Person Singular by Alan Ayckbourn"
+ },
+ "aebdea94e6e58d090efbe65f2eaaec01150b9b05": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "48ba32e82a7f9c54ee9932684622d073728843f9": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "67e20a0e1c2f51755f6502a0793f1b5d6441acce": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "e29536c1fb86ecb6bcb374e59ab7271f9a162359": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "33ea0349f19489a15a89f43e85439c37dc0af5cf": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "8e0a30cf5c9fead617b664a93059e7930f09a062": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "14591eb845ab142a574bafd282ca41c1ac5793f9": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9408d32e7fab42091e7f196e1aacd2ce1cbc64dd": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "229901100520387d839ea6f8b70a607c0e6810a4": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "993158727ac4b5fcb9f741c1d9121ee8238a7fdb": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8af80f2b1bbc57e19e38c2b20b97d927067d46c6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d4a8ee32ad5b76fb9ad6343feb517fed1795d6e6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3a72500ffb109d2cd862d3dcac207ef613a6b369": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "621558da8e7ebec9cd0d4fb18d6a9fc53e1c7255": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "ef0412d8e6e227bf2be76f913338570cfa3ac75b": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "4834eb26873c01031f077272dadf538da4205f9c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "af6ef275cf3a33fb7766a6845503a72b931b2a89": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5dcd174bf2f4ec30b1bb3797a3b65e45f8791d06": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f1575fec68910ba3223627575cb1a7f03284082e": {
+  "verdict": "not_a_synopsis",
+  "actually_about": "author biography only"
+ },
+ "932aa34beb351dcc02c3697215de8d7a78499f58": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9b4c700887099804ecfbb28e4f3d1766b6cbbb70": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "563bfe4b11cd696006840cd10847c47a76c4036a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a046f8b8ac84e3f3d890860a7f3f5de902782993": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f5132031bd74f58d7e71738ddca003e31414a135": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "2d162ce4f87f6e511143e639298860c37c005a09": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f63fedf7492f6119f548da6fc161c220bb4ab5cc": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8b0bed960dcca753bea973b4eec46cfeccd8bdd5": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "05798e31ba79a892318df5ffd96374d168c55049": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b783c2009ecba66ae7d88cf7dbc699c595d54c45": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "5ada4f8e83004c67fd154f0b354e0524d18ec757": {
+  "verdict": "wrong_book",
+  "actually_about": "a novel about a woman named Lillian losing her memory"
+ },
+ "0de41cb046b636c03788264f34452bbf35539180": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9cfa4944256e54ccfba7846d9d81c521c176a54f": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "05fce0e5f67894d315042c143c759f6149ce7c36": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b2ce03a752b976fc872b610492c233973d465f4a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5d8aeebe3c9bb08816474a416896e0f701618b22": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c5fa887ef7c62a85743d45255fff0db842b0b897": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "b375f03dc209610a84fcb3e0ddc6a7f2bd5ecdaa": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e360130324382b7631af156e5a4cf4e5f94c2680": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d7e0304696ed74c61c15ddaeade29beff3f19044": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "eed939cef53716dd6a4de80e62f05c00b58a15e7": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "f0211283bbd05ef5b3d76404ee761112cbf7e24e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "fdef7e9fe4f724779cb75dc72fb9b1c467e0ddd5": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "681d05b1a3d6442f7794d661bf8ee856313a4fc9": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ba70670948bfd9676e5582e16dc8728b7efbb332": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "b98a4577589bcf1cf36f0febf3a8e1d370e93524": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "437ff1e6b07fc228440e412b6fdee1701915f5d0": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b17da86b992bced61bfe7e67bfd8ff9d45344435": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3726a89eb655902f99204ccba7fae2974b1ae3a9": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "1e6d783d7de55cfe03f29c2b490f9f51d1e28557": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "bd359b9c5e6ce9763430a21277a193f9976dc7ab": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "4b4c2303fcb6617a2936a52a476148c3ef2c6ac1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6bc76b96c21a2d3a0707a93e44dd85b0c14ba180": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "25870b39d8dfa1b4384dd5fcc7b6abceade4ce2c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "203f199dab51eb5c7a90ee17d0e804d352d11a43": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "68d25cf059710e782e5f4ca9616d8afc2f149b92": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b7db879bd8feb59e71011243801ddb37e5396737": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "77d309c0d26a1aafa9ac6519e921ce6a6c942dab": {
+  "verdict": "wrong_book",
+  "actually_about": "a book on explaining tacit expertise/teaching skills, not product positioning"
+ },
+ "a6dc16bd52efdb8b560a5c2eea577e477b55f1be": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ed4fe1bd4abdd085c2a6c7c4cbf603f9d38666e2": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "80ca3b89c70de3d505ee4ecab2e0e7e9a08111fc": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "0397cb5a5df5c235488371808a8916588671c9cf": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "427c9ae61cefa34d1b0365289d6e137261c0ba21": {
+  "verdict": "not_english",
+  "actually_about": "Foucault's Pendulum by Umberto Eco"
+ },
+ "af6a2509a0df9a4cf9c266b0d107ddbfefed0e9c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "81779c6662adba9e1b9ee72b55f4b4226be72209": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9772dca534ffc6ef4d8e81e1ebb9c932eb5466c6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "049cdc0727de676274bad6c81af2e6e6a3e91355": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9f12e6e66d809d40e27ad7420a2b886e7e63a427": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c5b61d47014dec0e216be016505d5c8d4292591f": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "8ba70c8bfc448c9ee716e802121e09de10a8df32": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "2245ad51bfd7c2e1d93f2c5e6087dcb47f1442f2": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "df9950877f9f9fd36a889f2c045ed105a3b7be3b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e78cbe4eb7ac0e9aadf89a539ba633a2a2adda31": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "9544c2cd0183a7fce2cce570dbb0c07349ba0bcb": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "43138029f081b9e6952bbcfd027a38c7e19cc840": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "ff42f0947c0f0bbfa61a6d66cde39fbbb9643ac7": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "cd703bc1acdbc77bf19cc225ebf86adb7b95ebdc": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "1e3d0a2f25a8fe176e1b462533527eadb3c0a2c8": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "31c65086673938bbc4da9f288cc72b74febed920": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "530b842103de2beaa0e54b61a09decb39595c26f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "24e9b3c3d24a3b302f90f5292cbfd4eb0944070e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9849d0c4050c8e919649dcde53609c4849cd624e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "870682d36a3524e7c54bfbff0d8180051935b46c": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "f2a97753e4728c87693ccb63a77e39d2a95550a0": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "74b57a73975a4b1ac8b8f373157b206fa36cc137": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "570edfba34bc51726de0e76257974d3799422d9a": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "32ed173644cd57d7629ca80883341375b45880af": {
+  "verdict": "wrong_book",
+  "actually_about": "The Power of Positive Thinking by Norman Vincent Peale"
+ },
+ "c4f734841307a49283eb88fb74227e28d05ea178": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "3dbd80eb0dd87178c39f313ef5766dc12bcf31a8": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "13138285efefb65e2b4992e5a0435321eaa6fefa": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "40aa03cead49c4f579cb6890c3a80e3e8c7e60c1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7abe6f38b9868b78139edecae59c6ed7b9f93388": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a7e4f6c9abcb48ae38eaed47897b1f9c99bb20cf": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b7b8828ead805be4b2d6268c38575d27f933921f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4b5144d046a4a3d0e313444523b337c3cb6cb065": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "69f2994a5a12e29dd3158a799fe278c5fc24c7e1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "cf342b6bc4c580f6ab3f4780c3b29079d6c0922c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "69100b0da7bc2c05f62925fc86aa3e9e30dcfae2": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "bb2ca36115bfcb66d83b541a53ca67e6433af9c9": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d9065bf950ab1fdb8df753270562dc4a6801a7de": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "18f24907b1435c41afd53a4e2725d6f6e7d6d33a": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "c62dad53a95bd444c07eb53931e59d704ae283ca": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ab1b83843838e15d1b41ab78739497358a53d18b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "84363f2225cede01683d917c9c75930decb1fc2b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6f3e33893b6221a1bed51df71fe9e86e792fecda": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "affb0cbc00be7c489553b5756bfaf8e115aea267": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "aa620d93a7bb533ab234edca624b46316bc7a9ca": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3c1b76f1c1d9b952e90e8bc2d65d721cdf4c20a8": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "2a6268938fc7f2e4dac5e33aec2348b554d16bdf": {
+  "verdict": "wrong_book",
+  "actually_about": "In Front of Your Nose (Collected Essays vol. 4) by George Orwell"
+ },
+ "c4b6e235d605145177706fc9044bf951d72d4d56": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c3f0c849d444a4a5cb3d0d7f818efeb2ae056143": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3d4947dc9f5c240f2b79fb823793b4813715e75a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6292a9a94c34855546ab48a1efcc80255b542b49": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "6d80d8d60d8f17f062da2b4442090a7c21c0192a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "665a1ff72b801e6d2ff6d2b07e80ac559d195c5c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "661858f55a3f06ca391603b44403f85804c4203f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e1d95c3932f632786e6c69ffe29104e1cfa0bb5e": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "8b5beb1053479e08a42252b39dbc46da3e6e24bc": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "fb3045ed2c81387a076fa0079e0df6498fb056b3": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5f32704ce2d6ce41dbb1adc0e182f9c8769839a4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "cdad4e03907304818feccdcc6384618630aaa22e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "26611224d613a27078e63dd9a117d59ebee6e971": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "13735e21e249866a0fe6a16becad15bf75b7180b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "221e993e3cae86f51f8714e1330b506a922cfeaf": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5ab7bd608853b326c4aebfb7626d16afecc28f7d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "13f8c8396a3de0908e8a0e00063a1b291d047818": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "43de187102b285c7eba079b1530d2e1c8355af51": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4cbf2946571c61b8552cddbf3bf81788d9651de6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "83bdf10afccf5a94c39cb6a31dfedb502a6f98a7": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5c69887556da9c45b1ff1c2e2a646969920c2244": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "23252288a423397fc8b0531d696e57b34ab58117": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f6c1d98766f983cbb650d70e88cce7d47a043eac": {
+  "verdict": "not_a_synopsis",
+  "actually_about": "analysis of a poem/speaker, not this book"
+ },
+ "7cfe7f610ec889f0caa62f9f48233a3b34008bd8": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "8e2eb9d4e4325261ce8854e8f0b79fc328ef243e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9df6043292f848d8e765664fe29c86d17e26b4e2": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "96f152e4f82b23dc82e67a5a694d010b5c3d5ffd": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e2d89a11a6db7c05892f1eaac8cdcb0eaddd6672": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "85137db6ee5d4338ee6f5cbb32b7ec1d48dd98b3": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8c07e6b73f64cb8b6303b30081a4f1322d3d1ab6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "65299a646f945e2d5732f71fe919f2b4e572f7f9": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ca8ef93586aa52fb481a236e8ea848f0b4e147dc": {
+  "verdict": "not_english",
+  "actually_about": ""
+ },
+ "2c372d44e89c24e2228fdb21e3aee4049908c0dc": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ad337269adeecc7a0295cd2602d8f6e4d0aaae62": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6288c35341aee688ef7d9b1e1f3e73238b4ca696": {
+  "verdict": "wrong_book",
+  "actually_about": "Tao Te Ching: The Definitive Edition by Jonathan Star"
+ },
+ "a41b1a61c297826bda562ec3386f6e5dab464db1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c4bbea796434f73a055236244c7f4f1d57792386": {
+  "verdict": "wrong_book",
+  "actually_about": "A book on creativity and waiting for the muse, not The Antidote"
+ },
+ "50bba52d295f3f197a2e061596d9a6c93486e440": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "02b26b2a7ecfc08bb9b638437a58cd9a6421b02f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ad590f4c8a827bf235cbc246be99d9f52b63b82a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "243fb6efa09fb71dcf89ee42fcf6048eddbb14df": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c5d1911e60cf2055d0a5ace393787c85de00b6a2": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7b7c49c42b28b4bfe8843c40709398204d7b10ff": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "30ed5f5e14449c8439b28b668f973a85607e9d46": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "9430f4a0ce27d3048569ad8c69c031ef80f58757": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3894ca5732f8746060f58cf08615c0ad9ea36b9b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "eb8e6419098df00afbfbb685486470423df6cdd9": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d587b765f214e8639434b6bf3f3c2b661e4f3fc8": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "2c4937f03eeb59438ec30cb5e7c940b24f556450": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "b0114d87a9c5ed69c51fab32e67fea5c882f561b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8bb4bca94b7dcb94170c5bbc583668c1cc04277b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "cf9b90dc7a3bc9edc8f78b940c1a56f44ae3a597": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "905a7baa89c5039661d05ea3491e209655261ab3": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "fce6c0512a8003c8fe9b12cfed6e2638e4684bd6": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "8cc8ac434ebb10878c4d840549632ff2dc7154dd": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "1e1daf5c94768e255c26cccb7dd058ee65ff8399": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "aa3e96738d7ce7a595b594ca38990378ba64e0b0": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "ceaed9a247cf5364315984b7efc56d1a663a398e": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "33c7be37fb1f4ec1303beadca471643936a9ebec": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "12327ab84094baea429e811cc08d67a331daf5e2": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7412809bbe25553d076d931ee01dfb2153f57537": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6232ef1e7d4c58360c43d7160b68e69b07633024": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0851cc9d09cda70d1fa67b6da2ce6594d5580558": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4d99565b8173a9fd28fda631c3d7b65a8aee01a1": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "c8dd40f3129ca0c36462de2f7c7641a43779de06": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "922f37b836ccafa8bdcc1e8c055bae319b148858": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "e59a2e0775683bc8f33216c69c7668a3047d54a5": {
+  "verdict": "not_english",
+  "actually_about": ""
+ },
+ "51da9b8485190bead46cc040b1c00a1ba41cd172": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0bb430827fd1210c17da4d0017dac96614a47a56": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d1f440204e8ffa32e755dfdf30aaa754c92839fd": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c0681a5f6a5d41c03c7e57fc2a600661c0d2b015": {
+  "verdict": "wrong_book",
+  "actually_about": "American Film magazine (AFI)"
+ },
+ "45c8c4d2917f693e883b2a3d7db3911a70bdf5cb": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "61112f49dd5a054f724310068f0d0e5b4001b4c3": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ccbd4d1c2f96d17f33b5b30afe4090291022c49b": {
+  "verdict": "wrong_book",
+  "actually_about": "An Internet of Things (IoT) technical textbook"
+ },
+ "90f586ad801a9c577624f7b7a7300c3ee3cb1eea": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "58499481adc008e08f921137a1c5407ffeab5bf3": {
+  "verdict": "wrong_book",
+  "actually_about": "The Prince of Milk by Exurb1a"
+ },
+ "eaab79d50ed2ca86c94a9820d1289da6686da0fc": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "b2c2812f8528445c349354a06c5ea7ea66e526fb": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "bd732979afc116386fb24e1aae24af139b2002fa": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "067509ae4856552c838c0e509cb4bfdf1b186b85": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f05848513840ac2c26e6feacdb54b40ff4af9c64": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "b03079f3f8b1d0aca0cd7144a740d3b4e78a19f8": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "4cc8065bc7422da7e292374625bd84d58197bf6a": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "97aa1bd6e9f6591fc16d90bd1cb4b92f5ae0a6ac": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "26da3c264bf819a59c15153fc703c3f0a718fc49": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "51d0b11b732526c913d58708bda5d360e1db70f4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "93da099bc38578192cc169a3c931b646d4562eb6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "59a8efc3f953d2216bf810523f9809361291c804": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ecb2a3b10458f8346a1d9447e43f2f7cb989acb6": {
+  "verdict": "wrong_book",
+  "actually_about": "Guide to Hubbard's Little Journeys to the Homes of the Great"
+ },
+ "2f22a26cc0cc87c5ca25f0cebbad261e9db800cf": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "a4938a81c9969ee7d2b70324f8b803bddb90b043": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3575b0d6c55da73215a4cae5ff7faf6cae78ecb3": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "73ede22c49d31afa1651d2c1ee0b082a291baa95": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "453f09e50b8a920092174767f832c4e440b0e49b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "dc5e62ceba4c468db7c1aa39fcbc3c0ec21e4880": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "b081c0b2ce61aa4aa8a8049d80de45856739112c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a2919b3655a08198abaaa0347f9b6102df6ec6c0": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "95c31a3589707b50bd2f132df7fe107ca905a1f6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0a35fe3041b9f49972093a28a3a8c659fb8bce0e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "300b7807044b41aaab44b5f1d835729ce260f812": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e2ff521a2c4b2f85f506249d9d6d4878785726ce": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "32f9b4090e28d713ffd8452827ef1bc7400a837c": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "2cd38f66816219b0e47f98d797345f48b83ba6d4": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "f89eb093f49af542efef0dd3dd0e601368e5b5c4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ad57b1d8563ab237c1feab358789748655b45f8e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "137041b6ac6844c04dc6f4014688ece3716925e6": {
+  "verdict": "wrong_book",
+  "actually_about": "an article collection, not The Left Hand of Darkness"
+ },
+ "d33459e53f8a46b8a71f8bc3cf8480ed2fed7561": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "65240485535db5a7c6655ae649afae3fc7468bf2": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "13040c96f95cd75a23ba23d2a53f8386260c8152": {
+  "verdict": "wrong_book",
+  "actually_about": "The Girl Who Loved Tom Gordon by Stephen King"
+ },
+ "3246fe0d03a32e7cec9835a10e040b9059b6272f": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "1c10fa669535b1cb714c7f43f7688c56e95f0a18": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "87d108837c06adf7192ff7d31453d09eef27a39a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "37c83c8bfa1ce7c0ed3e1ca080f3be5c82c9ff5d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "622a9d0cddd7ae0102d5bfd51f7ae65b97b4dc34": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "dc075bfb46c1e41f7c640be8d711e6972c35ba7e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "839279d395ae2951bf3b6869f7dd70b27655c177": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7d58ecd8e3f8377491726dd8c404fd147f615457": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f5a0a4c08cd1aa392eafffd14e5ab7431915eb31": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "84f3d08c964b32fb87e81044255bd463cf18e48e": {
+  "verdict": "wrong_book",
+  "actually_about": "The Complete Short Stories of Natalia Ginzburg"
+ },
+ "b7d74ad476b22f29998da360d27ea72b135de3f7": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "90e60caa45c752f70960d8d5c7ea4899c0a01cd3": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "879a409f27957b0354769671dc457836933ba157": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "65a6ca72274a83695d0f961233813d8c79f1ad3b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4a635713ecf9f8349ca6dae6b2b39050ee37e8a2": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "be1de7e14f32b49292ac7ae00cd958fc661192a2": {
+  "verdict": "wrong_book",
+  "actually_about": "American Film magazine (AFI)"
+ },
+ "4ee2ffeae61067978bcf12c839383b81022aec58": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1fb8991b049832a1ecbaa59929408924f0c8b8f2": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4f3aefd3dd2f5713db856898c8446b72abb986fd": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5ac1d1037f3cee19d58f1617f7d0456f665dc30b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0c0c7be06be86ab44c080ee227de4cd741fe8ed0": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "944b26438d8951d281d90c21d77e67d3eb114804": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f56a5226750cf2dd52dab191659f243b42d75f6e": {
+  "verdict": "wrong_book",
+  "actually_about": "The Art of Thinking Clearly by Rolf Dobelli"
+ },
+ "37cd68300dae0e91c2d9a2e8fb50d91be351b628": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "79c4c24617e383ffc6d9b538c3645ce8008d9055": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "602de9e6fab204eeb640b4da5bb41417f9906a1e": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "bf6625b5cade23f2413bc8a2048f6b64a961d0bd": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "14f1dc31a7ab5e70ab0db669b818a53fb0ab995a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "893083ab5236d45c179f57d371d1b07d3818ca1a": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "bf0ac7c813bd24a59dcfc49416a394fce7fe7aa4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3bfa6e51279d939ecea0966f54f4847dd397de3d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "752e6aa3b591ddeb4f8abf4cdba825b7c0a2a6c5": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f68b2f38a84593855ca823c8a78db05a2fb0ed73": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "bb84934d36dead38cbae692fe44646ef8b410e2b": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "f4efc35a023315c7ce026110ca418b6c45a33508": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "633166b6203696de97bb773b2f48b7c5756e0af8": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f76c0bea13d92058c6e9fe77f0825a7f30f54f00": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7174628c1e8653f8c6bd5974335a982c1aea09f5": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f623bea2aec30a71b25ceebc555499fa751befa1": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "2831ef95d2dcbd5651bc3dd4522698db47735d56": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "b253c1a576bb71c49f58151909dde86d65ed554d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "342f9ef93b6b831beb4dd58ac80f607f283fda05": {
+  "verdict": "not_english",
+  "actually_about": ""
+ },
+ "f2ff069644b73d89c194947853d8b9fb50044353": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "7e57a1dd86154648cfc6a955f30d855f77fbe5cb": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "182270392cf404105bd3df4eb7ee218f55940e4b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a6854a1cc6ca9ed23250bd450a85b500e7068d7b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "111239ec1313a54e4dc380e47e63d3a3b8d3d534": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0e6de6b897c1ac4dd8456e5c2e0be236ebaba996": {
+  "verdict": "wrong_book",
+  "actually_about": "As I Lay Dying by William Faulkner"
+ },
+ "6e06266281eafb1034dc2453837e61c3cad58590": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9109579a56e15037f39aa4116ec9312d2ad0930f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "44a56a519f184e2c4a07715f1822e41a2a0e3954": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "af133def509dbd59e322972dcd1cc11a5e5d857d": {
+  "verdict": "wrong_book",
+  "actually_about": "A side-by-side modern Shakespeare study edition"
+ },
+ "0d3e13885c2a13f5bb782ffd60549d4d08ffbe77": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "2ed93bd1dc81cabf8292993aecccb10dda11b6b8": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b6872f288431f1f3e4b109e230dfdc6e4bfe8050": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "51696d9604c9c0f38925d5f95e6e66f32debc50a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7b8349df52ea73e2a4bed7c4397c44204f806de4": {
+  "verdict": "wrong_book",
+  "actually_about": "James by Percival Everett"
+ },
+ "176f078b1ac3380fae6edd4281cf145bfc11b022": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "cc60a8112e6a08437e5db804ecf066002ccf714a": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "420e6f32be26489d084c3dd316049ca16715998b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3fad036daf3511fe5a7cf893230682d0f89ee832": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "3b80aec7b65af8771026c87d3154c0ca106ac7a1": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "6a4aa4b297f9eb48d0191c34069c0ca3d172e021": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "c317717722851f6c36e56478cec25c6b5c0cd587": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7b0e148f23413b5c1788e2d669390b152f735ed4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "452f43df715e7a3b78566b3d7e07d390adb6c4ea": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f910f960616f119496e814203ae5847a60c7f014": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b9a605fda09c2abeef6557103ad8e2577db94a79": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "445c8eea57d9310d92ae4f550e3016379e3b8091": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "40e4b067b1f46a2397443e8562383256fa594892": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "506417972fca794387c143160f071923e5e65603": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "31ec4499e8733ad1ff1a386c0892a752b62b5977": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7034bda1c3faf958a985e9681e4bd606798c1f10": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "04b24722e90d3c515ae1f36cba7d1d43003e2caa": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "657b32974604a3eb5b7134e9b2423ccf18ff1f18": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0a3332aaca61ea1c002eb1d4ceed67f3a5bd3daa": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "157f0e836194796adb57d0c66524754c78e99b86": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8c4e69fbb990a48bb6988a58dc6f5160d13785d3": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a142b5364d2e318e14d68fbc4200bebd76612aee": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "4e9050e532acae4a7f5d0bc556e19f17337f0464": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "7051d28acb32be0d53e06cf8fa055c3e0dbbe162": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ff68c15229fe8aa66b535a5460b290084d8666a3": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "787430786262183343dc2635d100ca12cb6e8aea": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3664e9097c4264274135e12408f72ed22d1f549b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "cae5b846c3adc593c5fedd56732d9e83040fe2cc": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "da91b58caab6a2d5d7e59fa6ac6014d87ad508f1": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "bb6fc520e2e69adaa0e59d4defc8551905e3a5c4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f2bc79e5c9347f670eaed1b1b4317f8301f09639": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "2fe177cc999f2fc9d5793cb4ea338423825b0afe": {
+  "verdict": "not_english",
+  "actually_about": ""
+ },
+ "be8760d8ccda96c34a01d74a56ea6e938d63cb66": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0b5d8313df6e14eea2e8da414ba4b5282805642f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "20bc3372dc29d8c1e6f346e664c88d0301e13994": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "32f37f426936c10f428dcfe1d5892863ddd0f13d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7dea9c9a92f7f4663f706285fb2eb8a5278de43d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "81edc37570eade701f3a50236f3cba1e21cdf47c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7f7ec32d620de74b8b447bff71090193a6c57fbf": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c055a2d0f13a61259ff32ee106a2e93c9e856bda": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "ebd383289f7e572f8477bcb86dab507ca47ed02a": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "6d39a437287a7a462915c22004f6b4d047575e96": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "3fb7e8b9ba65861315e296a900665aaad989bb0b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0ed6c13ca20964899d8889b4d005ad4f19ba2ed2": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "11d1ea61f8c22398fa85409cefbb62b6b8472007": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9a7d68463bc6da599662269b171a9c023f56f04a": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "cb8eb12860b8818111f3d99a4289095c290e563b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b0c50170b9f7ba5c06034e557d4ddbcff04e3156": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "68322010c9ca6a96533348e6ec882d36d2fa0895": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0e2ce1154cec746fe59224d27931fa9e949f16da": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "37825b332c123ef02296b2889fa4f709c7d44a01": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "22761ab4fa7b43f8338ad706a13d4ad8089bae7a": {
+  "verdict": "wrong_book",
+  "actually_about": "Running a Thousand Miles for Freedom by William and Ellen Craft"
+ },
+ "3f20994624fde5972fb4b550b66ac69cbd099526": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1ed8221b9c95dc51df23eb988ca042d1bb4c51f6": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "1fdf51b83142528d7e28f17af7e14bde962699f5": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "8d59a487a46007d4a5968987d2a56cc629e66060": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b17d79774874b19c3eee232c2d43b03929d71328": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "9496b824dd71cd3aa24b4fa38089b2b30fd19833": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4adf88f8cc32032b6e681f26eb2a1e0da5b97e84": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "76bdb4fc2b2e5d21b0c90d82025c9d22b18a55dc": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "80f7144e205f8e74d8b0e2a307b73fa3ff6a7000": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "85176150bfd769a63a251d12fbd6ec5cd976e83f": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "2a856f5f8918822d7e4918ec0578f6583d9bd58c": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "991151b1d12f8425429d3f3f3ee7d09a903505fa": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "910c5f961005c3369e73ef5327f74d32ead49a4a": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "8029b3b3aa977e6df3feab690cba9131b250e354": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "7ae93c946776f958926badf64d11905652b7499c": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "a87db268ca9b3aade0837f13699d8c5efa5d61f6": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "c0a6d5bac98b103973011ccf07990dcf9d7decee": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "da81d88056c9b74ff4eb99be1ee482cf4f7799b5": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "f5ef4e960a9480407e072482af8a2193408c2c54": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "f5d34c2932cbf26f4ca0484767ed63a13b3317f7": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "9a54c4ae473c9e253eabf02a920d288416c278ee": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "df9796d69d5fa6b32ef42c9c36cad7c8d17960b1": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "9142bec3e1841441004ef5028393c8cca27e3676": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "8592f05efe84dd22045d92090c402319cde3d2af": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "8e3c59e98930c81db31538ebacbe079f69954c96": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "5f4b417ace39fc0ec8f5d0b85b0a1320c4b58b71": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "77e0331ad77a3563dcd898e2c79fe50c8538b104": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "aee180f85522fc0feaaa3f0c262f8e6f6b57c8aa": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "350cd1c31bed0d6c3f1812e68aeb2bd3952c8b46": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b56897d5882c7f48ec4792cd4845a9140f8b691b": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "3e509250a7ea85b1bd961c6c6df6578bf1900e99": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "e04bcaf9905f1f56ed8c7c271146dc192b6a97e1": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "f56c8edb513f741f5959284b73a897006b8f61e5": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "60680214160c4a1b0ebed5bae85a8105083a9095": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "dbf241a6869cb23e1ae7a1613208427f2d892425": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a5eea58a11c0c64d58d8f474d5982dc028b56b06": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "6a77394d33e5387913d5a8759a6afeeb46851a99": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "758e69e8ac03c9edb1cac385c021340156bc4f74": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "ef2b7859ea8286da18cf432beb8b5bbd8046fc75": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "c7a95b587c573fe6154437fd28c4a3e8eccf05e2": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5b73f5a80b73a44424a6885362642c50f742480a": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "0e3861d0ae2c165f05dbe0044edb203f92a69b71": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "aa8a2dac0844970f9961586b1d212704743073ae": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "ff14da35e24054787b90afab3c9af6ad2d9a9945": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1fea7dccb3eec78122c578ca41fd4a51ed3c5873": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1c8f223997142264adb76e5a45e31374cf1f1293": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "3353b390b34edc5f64e43c5a8119051833dd87ae": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1ad58dc2f39a5a719fb7d332b0edc6ef46b3f485": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "9a84e1115d4b0a6b9dd6f326bab7a6b64f8701c4": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "d36a17bde908380d53c0bda3c8c4344d4e6a916e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6aaacfa4fd5849b8b459febd5e17cd95e426ea93": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "45948d1e178c4ce1c2e24f8de2a525fe0227dcac": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "98c865eaff4e39c74cb022cc53a03d2ba68bc4a2": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "0d5526a57edf1ee62d5edcf633f1acd74e30807b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8d8a27e6353c539f362aaaabafd7a68c08672984": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "9f39d959ead7069de3487eae3bc6e44aaf276833": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a9e4de08404fa1d785a7efb656822814d61e06e5": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "fbd0773e89e926658b94e3f09a169e02235698fb": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "5a9602e29535f595dddcdee5ad30835e90c9364b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c6b037d39c64231d655bcc4f5070e25ccec17e61": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "44ea29913f6dd790cfbfb9f2f9aa4dc94b67860a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f25054f8c158787a1fc006155e157c604ad6e4cf": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8dcf084f2a5f2155b108467b119313d6be87455f": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "b405a2f9ef6459d9bfd777b9537fe6e0f847a0fc": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "344354e2a64d34fa04d95534dec659e0f3fc3532": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1c8911d8b0f8ba04b45e90394b80eea2e83684a2": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "b8ab3c784473a398828df3bf63ddac0b9102f96e": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "138897f97f1bc832b37911a90d9cae253be03af1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "416ac97d5d8a81247eb977a108d39e90a255abfb": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "5fd9e4d68c4a58ef15d9fdb6f705952661c597a1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0f9b6bcd8ae0b2aeade92287fd375f42bd263b39": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c61679c0a3117906c3fa5895fed0fa3ff45ef19c": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "0bf928b916847e3c14cada96580714a554473278": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "dad6681b25ae11305ffca5ebd97a1b9d87f8b131": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "f478b581adc4141f51f08141c116e0d5db9371da": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "d1b65dbf06b07ae3614de51793074e182cc018f3": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3a7963f516fe7eb1586818bd4054ff8363551c54": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d2f186d52111eec9b95b0e1a7d4212ec3a1c3848": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "a9476e6cb670a0b58ba53492a34e10719523b641": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "17345332e7574332c10967cb6ace516f04d52224": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0d33860adefa6840162a8ab49a3c2017b1b21bc7": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "0998008f3f8be26ac7a359d54b87401d767191d0": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7d541ff2a0f1b1f7ab39945f5770bc017b82b708": {
+  "verdict": "wrong_book",
+  "actually_about": "How to Write Successful Fundraising Letters by Mal Warwick"
+ },
+ "6917929421333d250693d6092ea0e44437f99c40": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "b5504dc2eba95aacee6955c5f3d5611c9a3396ca": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "b1e7247488c02446d893b73118adddfb5c363cbc": {
+  "verdict": "wrong_book",
+  "actually_about": "Collected short stories of W. Somerset Maugham"
+ },
+ "340edf171268269ad175cc3ba5fc4d01d2c2916d": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "b69dcabccc49da4d307b9da13479dd87dacb4855": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "8b04fb2dd7261e648e2058261e0b2586166c9c05": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "fc289d2af69c95a3ac0fc55f4340102490c1bfc5": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "fef3b0002dd86775b374c71461198a34bcf60e64": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "00d8299ce21980f89e62c68b608bd08033493e0f": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "6b64fae52b04ef664910c3884bac2519e6b76853": {
+  "verdict": "wrong_book",
+  "actually_about": "Shatter the Nations by Mike Giglio"
+ },
+ "fe874a6f150536b3318b9089fb6003dab73621cf": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "a61918dafd121a5dfcbf22d92c25f0bb8bec9c10": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "23c1fec624a9084acaac6e693cf221a217d5cc2f": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "e99afc794e4b4192801c4ce7e5507cc464a15f4d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6023cadba5263955abab552cf1dd6f236fffb093": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "0d9af23f2514cb39b64d69b4e5dcb1bf93367008": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7982f3c1ca16dfe2693ac7ce5f3ccea2b8dc3152": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "ef89923cd5762d8c58f7091f4638680fa34a6391": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "8a840be879b3bdf098c6b032da4532665c5c5ac2": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "bda0ba0c73db688a5ba627db5036c0bc0483d883": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "23b2b3e454946f3b0d7c5f27053252e910433cc2": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "f365d931d8161c2857685cf9537013ba8c44c3ac": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ecf0d12d0726898dfe14f4b207d6a21f3b38feed": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "2f492e06b3e233a1197bc3fb58f477dc4133d0c0": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "f9b8a019ca938ba679c6fe56ff980942cf4d8207": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e1b4630889be9eda37ecb6d31313c91f17f0869e": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "db92fde7aa1b431ad4b5e269feb0db3d10d16bdd": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "ba4a9df683f3be6a13b7788c337154cfc1c3878f": {
+  "verdict": "wrong_book",
+  "actually_about": "The Souls of Black Folk by W. E. B. Du Bois"
+ },
+ "27382d9de30eebf110b4aa92794234034095fce1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5874eca09a2975abec877057a8721f9ce9e1bc69": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e0c0e9b8d937c8522f046f96d754d7d4d3393e6c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c7e0c2f31354092b61292accd13a1384eb2596e2": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "052c7c0700551b7a9400a668f0139fcdb5298dfa": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0c8f11238e728d3388566fcb190b321a745020ce": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0211de499c38838c44a5b72db7992fd77c02730a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "62bd1149006737c74025326071fe40933909a2a7": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "65f0fa163f250f341dc163bb8dce6a7cd2cf0154": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "2a0729845573755d300bfcf79e6faf053f08ed82": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "668111523a338d561f7e8aa503b4611472a06dc2": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "2e375b964b33696ad20f1e9ee41f4b59449664ec": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "cba886a4cc89e1a628d31a4fd1b90f9750b5497e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7bd458f2f5a7f38bce27cd0cd06afbcf74f6b69b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8bc24cf65520786deb9666dbfb50cdc47b8dfc25": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7a4bb4bbc1c43a3c1e1f5013bd8ff855486196d4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "bf832d14b72ae24fb9b4d8492a35d04f572ccbd8": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f489d8786ff3f0b5cdbba2db8edfce3e53d3e418": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0864db2f877dc45ce22a8f786a49397cf55e4504": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5d342d43eb60bc0cd40f1ca73fbf4aa6820a4fc9": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a48c32d1f724b593e8e0f5c259b0219966e8c782": {
+  "verdict": "wrong_book",
+  "actually_about": "Boogiepop in the Mirror: Pandora by Kouhei Kadono"
+ },
+ "34aff3ba50ef4fb8c809e6395b7f720131ecce78": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3e0bec57a924e2fe0c801914a691f14c46757e81": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ed24785b98192702d5a6d6f122aec9ea24eb29e6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "43932be0e4d49d0ebe903822705b275fb221b9f6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e434960d309404679112f217e32e6e7e37d4d8c4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "45bf2f0fec4131c04ef3e0f3ab513714afe2b2ee": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "59f36442d15414d75b451008d467ea7b94d13686": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "13517199a02940bbac15e24b3d93a945fa3499fa": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "f35ca5f66b198e8f7152e68ba3458d5787feb2b6": {
+  "verdict": "not_english",
+  "actually_about": ""
+ },
+ "88f6ec5b75ef12dfc6860e8c3381f0f02a4bfb46": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3878c9793c3c6b6fa095a708034dded561a2e21e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e4a08b78161d05c660f955b8f85de7e3434295df": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "fca2d7dae3d4c77efdad2fa725ec456d59a18b0c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f08e3b2eff0f0121fbb9d56212378144509c4418": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "29fadfc67e6ea3d5ea82449945edfe6f52c4fbf7": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "eb0fe02310853f4ea51917ade3c86ab82130cc1b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "54534dc7c1da51756ba61c1ef74c132debd518ed": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "57825774a92593550cd25a9a34a2b3fc505793fd": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1fdff4fd8999e90926a8c5dd1b4ac95dbae94f72": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1ba9afd2350516836c714dcad571207b174e77a3": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c1da921ee33849dc32dcc06eec6d68c076c06a76": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7fb17310b414ca382ebc5a2ef5421c39ad9f507d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "bf79b819a785a0c80d9bf9a106cc2c4f8c5e328d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "06c1748c2a86213188c1d74a4e68d880292b0a98": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f7f83e8f034b582ac28ac28540e122be4cc04b50": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a74c9514e0271535ef9e4ba16390a99b155ffd47": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "19dc9b3bf82722c8bf06fd0bc5c0a29dade92f9f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "459c644f5f7c534f31c03dd248639f22bf475879": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "21530da04c374441271c0f3b43187ddba7fb3006": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "033aea12ba25be930ad2d36f78225f9b7d326ec2": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "cb4c3fc1e20b5b387d6f594ae2a1a6b182d848d7": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6ae3afa2a3afbcd604e5af04bad7371b5eac71a8": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "49601acc8594fcc29837098073092bc9952ce81d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "740de40e3f14a8d94547bab124ca008031f00fac": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "da46719535c26e709e5f005331dcc89a78f8e069": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3afa468a0fe086944337389cc27788eece6c6293": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e9f2d73657ad21291f37b19ef56b829136b821c6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "33c9c0c04b1fa6ffbac749e602834218a1a69ac9": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8dfd74a3a821b210ac382e8f66398861ae5d36d5": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c162fddff8302bdeb0c870e0321bf8ff11fe6dfb": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a376c322d09dfcbfbd9651198d444a51e79557d3": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "29aea18b948b9152d216c5ad3955488af6128465": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9e1839c2e7af49fac95db2f4a768678047a00cf8": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b28eb7c8e30678efcc3d9aca8927128734e9fd58": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "50cca5fe17cfa727f4594fab4a49d9a400445760": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9b0084d967ebb4f34b46cbb6f741e3f74979c236": {
+  "verdict": "wrong_book",
+  "actually_about": "Owarimonogatari Part 1 (Ougi meeting, hidden room) by NisiOisin"
+ },
+ "4cdbac7598edfa947e7b14ebc68a8c80cba59438": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "894f2c3ea9c06f08545bf1a09d5776210409ffa6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4555c7bedeaf0a10de6b999d93e7580e3b38df14": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a47b0ab68674a907b27d788db2097a5586ac0b41": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3f133affefa86338ddd447c7a57bf45a70bf777b": {
+  "verdict": "not_english",
+  "actually_about": ""
+ },
+ "6aaecdbb27ab5eaa789dfaf828889aa68e2937e3": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "bfad6ce95a9bcc67bdb96b7299a3bc4535c51f98": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "80ff1615a4b063ae72197dc7c52ccad91df21731": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c96df64ca6c766c7fb3fa921ab1ec0c2c2221e0a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c644ca3ebd290f91140b7e95019744767be2783d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5380eb033cf765156b349c314cd75cdaac973fa7": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c715f4995b6ef859dad9335eba772576a82825da": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5ba9991b8e6c5b779e251e8e69b4882417e48f80": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3444133b1ae4db6d30cf48bb924cc191de384af5": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7996240d4527727ea46d70a753118ea237f5f6a5": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4b3821e45b8ebbf2f0ee70d59ad27c5a3ff408ad": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "eb1a0f73631203d2dec8b79da217c4c1ed05d353": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "49f704bceb78c020c3f864f3238379c99a3e45a4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9b1fe31bdef08815a0d792c1de1b8099784c557d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9ec85723b3fb02b5c88b32f592af55dc88829923": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "62fc6b111043bdcdb9f6b04df436a3ba37cf82bb": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "07388e80b67eb0e91b80af589f8f77c0f253c5bd": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "af45c16e8d68a67dd3108baf15b4644c1ce9f097": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6f8191ef47d4d79b60fa25002af081108f9ad523": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "a0c10aabe3149c588013785926fa0c414afe3d80": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "17e1a3afa540cc5a7c35200d1e54dfb50404f35a": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "3752cd74b60f803b3cd7df57f59cc41376a4ea21": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "aa4673a415e39bff1847e59f0269fc136f478f50": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ef1dd9f86b164232f0afb42c71f41688a6fcba1f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9221d1b8d694669f140dd4271476452c80476b91": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c94a8cbdcbe6871cd248e6a404000c641b616f7c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ac781a178e8c9353522fc36383bf906ee5b0bf0d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7e4a6789797c3fbd97d94aacd909c68bfea56989": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f141244153b3b89d57ee161a33fbefcaa0ca5651": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5b61b84175e05807a83d85c9090e0324a8aef605": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b034e908d07e3da327066cd5f38ab6fad379199c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b46d22f337c47c8cbfa03108b0131e92ff8322ff": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d325d3a77d647d52126d8c8f2647b7d7f99aceef": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5bb6b7f164821e22b35093cbcab3a0530b017107": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4af61a817d180f62a38e84765e3b917b3dfb26cc": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "fbb7dbc32c30d08015e55d9da54b1eb9ee30db8e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "fd1833c21a93a28656c55b63f30031a10b74d0b0": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "70acd517749f6f680f3701df8e72a7f74e496e45": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7e34b52bb8f9207624e58d8af587f83f29922833": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ac548d9a3188950cd929b41d62892d3f89d7ff8e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "881ed260b3fa3642cf1d3643f0be1e14905e41ee": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c4da1a130716f53b2e854cc55599c51d7e95a12b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "be480e813dedb8fdfda4f032c1f8cdcc4b56be28": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9f584a6432f0ddc297714c2484776f48ebf09e36": {
+  "verdict": "wrong_book",
+  "actually_about": "As I Lay Dying by William Faulkner"
+ },
+ "b1110ed7473e646806779902c725443a08780484": {
+  "verdict": "unsure",
+  "actually_about": ""
+ },
+ "88661a2c5548f085e0bcfff42a80ceca9b0cff61": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0b179724ec453d87eaf799ba89309155ba8aee77": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a22a27f8bb5aae6ec0f35887cf6f404e6b307a2b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "264eaed2dc3f4ce8d55c65193c5694b354df6a7b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "dba94590015166dd5f88658c0e204ac9aa46eaab": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0ca2b0ab830e63ef914c757998c2c96a813c212c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "60518c267cbca0426398468aebf3626a397ebc74": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ae12bfe4667d07265887ef4714aced10b82e6482": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "44410f207e3aa48851b398d49e3c91782f192982": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "645297947ce7537a74fa519c77d9a4021d626b26": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "80f6253f092614decead3c2f1746f82a8a2aacf9": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c76b32f7c3b5f1a7e80f407e02f7cda9b14483e9": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4004754dbb1c623853c90ee9c9aad4fa8b86df75": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "903529237c37c92ce1a7df97fbb3d1249458627f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4e4d897334c06c805fcd0257db3f13b5caf0f99e": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "04f11668e8e02347dc4b06996ee039c03b62fa10": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "35e9a233886cd6b1634770b58104bc5d6da6df06": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d8e8fbbad7fbfb8187debe76a270e5934e9df63c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4a81b32e75275e962fbe623c9585958fb476e81f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "10ac206108a2074bbe3c145d22e63b47173f1a4c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "03a78acbcb142f3f737e369f98ffda34798d4e1f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5253583446f7527c528a45eedcce6f64acdd718d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "49273456a9120ef5f9d1afa76aa6485b3a49785b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7431277f65b8a580a139d3b92b4695889bf9a7c1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1edc57e149553bc1d4df6b60e8bb491dda7d5b19": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c45c0a06e933421ba4bd6be4fddaa85d7de0805c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ce3afeb3b6fbe7b6ef6589e4de79cc670e84a4aa": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4f813535b171d6d7476ea4929a6b743053bff24f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ed7e6f54b67852b5e85914b05e63b9909b51d841": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "dc3af7f0334b89426332c42b2ea597f3c4834901": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7b9afaa5dc72be12a5ea1a74dedc8db8e81899db": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7a3a375e20cd7d88f66e4838976da8461439267f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5e96c0e38228fa42ef019240ec526547aa4a2253": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "7485b571f4b609cd86e9d6a4d44264bbb221aebf": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ffa0a2298425bcb48000debf11d2a9467b5e4f1b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "0800dc0b48cf792d54064bb0513fff49f5d5c4bd": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "606999a831764d86aa9310f4a74bc8d439cc7b00": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "838c0be9445e65733236888cce4b4d9e7a42e78f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3668402733f8d84e5ac5f0b542de4266974d21b5": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "6fe6592dcc586f9d2d05de3a1ac01a88c28d7197": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d2d0d1c2be911d640f43a6b2215da1d358d83c23": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5767bce5665ec2c8cfbceb4282313c4d9ec76a07": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ce666144fa0fdffa0129a184a53b0ff18ac4eaf8": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4a98025ab24eba43f46e92e5e20e6fedc52b9293": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "758549475a07f4d697263f0e04325537c494fe60": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "51b09aa1ee35a66214f06e84e772090cd86627ed": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d0fb73a7fe1740f42c1f51471cde78af69ff9024": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "486aa10a23cef7d5466b838445f06945ff1b9182": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "629fab39ba962c92d2abfac839a0e5296b21c177": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "61c40be89e56047bb4a8b569973fe16a1389532c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "c15f61672506723af2a3fdeaa523b9fd3d340609": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "ac99777ce268cf0591890d7cadcb4e4138bdc8d2": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "5a8caecf291260d09b2c23281edf289d3e3f3b9a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "fb768799b0f596afcd51c937bc0c739d9e2dd85c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4a10694688f1b37902dea344f00da4e8cd211b8b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3b909b01bcc64f4fea12ed9c30d4204758b9888c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "f4871e623eeff4d1822a760042a33dabfda20da5": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "65f4f7c7c1a84088f65f746596b5de1b746389f1": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "2c3a5c9f15c1fcae7f62e4c2a804a978c9741145": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b721efa10600126b66489aa7abc9e970c6576098": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "64a65c189567e85c56b6dbb857a78eb657499bf6": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "913d86c7d83c6d4a93a283d1ffd1b93fe5ac3ed0": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1bdd9e5f4a32e48ce4922c103da9b2beddee4fe6": {
+  "verdict": "wrong_book",
+  "actually_about": "Parasite: A Graphic Novel in Storyboards by Bong Joon Ho"
+ },
+ "7a30fe0af60fa5f6b3adde117f916d01944bf0f7": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b35027aeda2c580737470f3b51594d611ac7b7e5": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1eb2083dcb5809de83226a992c5bd5ddd0146723": {
+  "verdict": "wrong_book",
+  "actually_about": "Letters of Fyodor Michailovitch Dostoevsky (letters collection)"
+ },
+ "1e43ea42ae3c6813096cd06dff6a756d9a9ae35b": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "dca9c51de7f40f7f89860022df8fa7974cdad239": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9c97aa041c5860d3073cae1480b1197ffb7cbb60": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "22644c2d8bbe6a663615625f9b99a1b80ddcdea2": {
+  "verdict": "not_a_synopsis",
+  "actually_about": ""
+ },
+ "eea5a18e89a96f3b347af49ef20c9febd20ca053": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "3db25dacefa4c8cce7b28aeeac5968379a637c85": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "bf5ea9793868341450f00f47311b44d60a343bd4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "71b888816bad0b9453b7fb2286903d019c22875a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "9553031375c42ab31c78b79bc25f812e2a57b1ff": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "e49c8914ec828bc6553d54732ee2491693c1637f": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "d320abaf3cc26be60bde031c2db1b5188e65b028": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8dca51395075d792b54ecf35f56d9ff3322ed517": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "8e82203f821b55b962e95b89750a05105f3b2116": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "89c4dcb666bc23c4744b0bfada9a4e4a10f9cdc4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "001c01309ded9a16c0cce77f37460a07bcdc6512": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "bdd3713e22324e6b5df04ad99445bf3f53403aba": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "800b29dac3bdefbcd1e79c8dbc38d8fcfc58e9c0": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "4e1d7a28962558ae34f5e2fcaec337c5e21d528c": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "09531728f57bff0e627c822a186637ac06d16daf": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "a75ae361cd77c1693c2f95d14491b306960d3e44": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "b12791021ff9ee7451d80d321bfc88237eda6c83": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1d58525c6556265411949762786bf3785f6b016a": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "1a14c03fd0e8efa0dfea480d373bd52ea7daecc4": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "03f670b682a25990ed015d86f2ee69b60052fd3d": {
+  "verdict": "right",
+  "actually_about": ""
+ },
+ "76a33457e2d7401d8ae536847f9b7983d1ecdc3f": {
+  "verdict": "right",
+  "actually_about": ""
+ }
+}
