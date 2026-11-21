@@ -23,6 +23,10 @@
 # - The mimetype entry must stay first and STORED (uncompressed) or readers reject the EPUB.
 # - Don't regex-strip whole tags across the file: books nest <span>s; only innermost elements whose text is
 #   watermark-only are removed (repeated until nothing changes).
+# - Books are downloaded whole with `rclone cat` (all EPUBs = ~3 GB). Range reads through `rclone serve http`
+#   took 15-20 s per piece and returned wrong bytes for some files (false "not a zip file").
+# - Don't run it while source_covers.py runs: whichever started `rclone serve` stops it when done, and the
+#   other's reads then fail (368 BadZipFile errors once). Failed reads are retried on the next run.
 # - No local backups of originals: this Mac must keep >20 GB free. Drive's version history is the undo.
 
 import io
@@ -39,7 +43,6 @@ from xml.etree import ElementTree as ET
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from shelf_common import CATALOG_PATH, CONTENT, ROOT, load_json, save_json  # noqa: E402
-import source_covers as S  # noqa: E402  (DriveRangeFile + rclone serve helpers)
 
 STATE = ROOT / ".cache" / "watermarks.json"
 REPORT = CONTENT / "watermark_scan.md"
@@ -181,8 +184,15 @@ def clean_epub(data):
     return (None if problems else out), info
 
 
+def download(e):
+    r = subprocess.run(["rclone", "cat", f"gdrive:Books/{e['path']}"], capture_output=True, timeout=900)
+    if r.returncode or len(r.stdout) != int(e["size_bytes"]):
+        raise IOError(f"download failed/short ({len(r.stdout)} of {e['size_bytes']} bytes)")
+    return r.stdout
+
+
 def scan_one(e):
-    z = zipfile.ZipFile(io.BufferedReader(S.DriveRangeFile(e["path"], int(e["size_bytes"])), buffer_size=256 * 1024))
+    z = zipfile.ZipFile(io.BytesIO(download(e)))
     n = 0
     sample = ""
     for name in z.namelist():
@@ -212,22 +222,27 @@ def main():
     if only:
         cat = [e for e in cat if only in e["filename"].lower()]
     state = load_json(STATE, {})
-    todo = [e for e in cat if e["id"] not in state or state[e["id"]].get("modified") != e["modified"]]
-    proc = S.start_rclone_serve() if todo else None
-    try:
-        for i, e in enumerate(todo, 1):
-            try:
-                r = scan_one(e)
-            except Exception as ex:
-                r = {"hits": -1, "error": f"{type(ex).__name__}: {ex}"[:200]}
-            r["modified"], r["path"] = e["modified"], e["path"]
+    todo = [e for e in cat if e["id"] not in state or state[e["id"]].get("modified") != e["modified"]
+            or state[e["id"]].get("hits") == -1]                       # failed reads are retried
+    from concurrent.futures import ThreadPoolExecutor
+    import threading
+    lock, count = threading.Lock(), [0]
+
+    def work(e):
+        try:
+            r = scan_one(e)
+        except Exception as ex:
+            r = {"hits": -1, "error": f"{type(ex).__name__}: {ex}"[:200]}
+        r["modified"], r["path"] = e["modified"], e["path"]
+        with lock:
             state[e["id"]] = r
-            if i % 10 == 0 or i == len(todo):
+            count[0] += 1
+            if count[0] % 10 == 0 or count[0] == len(todo):
                 save_json(STATE, state)
-                print(f"  scanned {i}/{len(todo)}", flush=True)
-    finally:
-        if proc:
-            proc.terminate()
+                print(f"  scanned {count[0]}/{len(todo)}", flush=True)
+
+    with ThreadPoolExecutor(4) as ex:      # whole-file downloads (rclone cat), 4 at a time, nothing kept on disk
+        list(ex.map(work, todo))
     affected = [e for e in cat if state.get(e["id"], {}).get("hits", 0) > 0]
     errors = [e for e in cat if state.get(e["id"], {}).get("hits") == -1]
     lines = [f"# OceanofPDF watermark scan — {time.strftime('%Y-%m-%d')}", "",
@@ -245,8 +260,7 @@ def main():
         with tempfile.TemporaryDirectory() as td:
             local = Path(td) / "book.epub"
             src = f"gdrive:Books/{e['path']}"
-            subprocess.run(["rclone", "copyto", src, str(local)], check=True, capture_output=True)
-            out, info = clean_epub(local.read_bytes())
+            out, info = clean_epub(download(e))
             if out and not info["removed"]:
                 print(f"--   {e['filename']}: nothing to remove")
                 continue
