@@ -35,6 +35,11 @@ python3 scripts/sync_drive_catalog.py 2>&1 | grep -v "NOTICE: gdrive: This remot
 python3 scripts/build_independent_bookshelf_app.py
 python3 scripts/enrich_new_books.py
 python3 scripts/build_independent_bookshelf_app.py
+# Covers checked against each new book file's own cover, and synopses checked for wrong-book text.
+# Both cache per book, so only new books cost time (synopsis check: a few cents of Claude API per run).
+python3 scripts/source_covers.py --apply >/dev/null 2>&1 || echo "WARN: cover sourcing failed"
+python3 scripts/check_synopses.py --apply 2>&1 | tail -1 || echo "WARN: synopsis check failed"
+python3 scripts/build_independent_bookshelf_app.py
 
 if [[ " $* " == *" --tidy "* ]]; then
   echo "--- Tidying Drive file names (verified renames only) ---"
@@ -48,7 +53,8 @@ fi
 if [[ " $* " == *" --publish "* ]]; then
   FILES=(bookshelf/data.json bookshelf/index.html docs/bookshelf.html content/gdrive_books_catalog.json content/book_names.json
          content/drive_name_history.json content/drive_rename_log.json content/drive_rename_review.md content/name_verification_cache.json
-         content/book_overrides.json bookshelf/covers docs/covers content/watermark_scan.md content/watermark_log.json)
+         content/book_overrides.json bookshelf/covers docs/covers content/watermark_scan.md content/watermark_log.json
+         content/cover_sourcing.json content/cover_sourcing.md content/synopsis_check.md content/name_confirmed.json)
   for f in "${FILES[@]}"; do if [[ -e "$f" ]]; then git add -- "$f"; fi; done
   if git diff --cached --quiet; then
     echo "No shelf changes to publish."

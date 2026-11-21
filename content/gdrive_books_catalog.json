@@ -770,6 +770,16 @@
   "modified": "2026-10-14T14:43:14"
  },
  {
+  "id": "1vP5yaYFQwZdgWrZAjWv11S5U6rE5An-Q",
+  "path": "Fiction ／ non fiction/A New Hamlet - Osamu Dazai.epub",
+  "filename": "A New Hamlet - Osamu Dazai.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 670182,
+  "modified": "2026-11-21T21:16:02"
+ },
+ {
   "id": "1eoyNYF9XBgy7g3DoyPtTciNVssnQ8OeV",
   "path": "Fiction ／ non fiction/A Reader's Companion to Infinite Jest - William Dowling & Robert Bell.pdf",
   "filename": "A Reader's Companion to Infinite Jest - William Dowling & Robert Bell.pdf",
@@ -1590,16 +1600,6 @@
   "modified": "2026-11-21T12:36:50"
  },
  {
-  "id": "1vP5yaYFQwZdgWrZAjWv11S5U6rE5An-Q",
-  "path": "Fiction ／ non fiction/Dazai's A New Hamlet - Osamu Dazai.epub",
-  "filename": "Dazai's A New Hamlet - Osamu Dazai.epub",
-  "folder": "Fiction ／ non fiction",
-  "ext": "epub",
-  "mime": "application/epub+zip",
-  "size_bytes": 670182,
-  "modified": "2026-11-21T21:16:02"
- },
- {
   "id": "1HlNv12zkOsvrnuyJJCH8SNh3X4nxicc3",
   "path": "Fiction ／ non fiction/Dead Souls - Nikolai Gogol.epub",
   "filename": "Dead Souls - Nikolai Gogol.epub",
@@ -2071,8 +2071,8 @@
  },
  {
   "id": "1suTxBcesEcVpI4T1yoohiTX9t5NAiiWd",
-  "path": "Fiction ／ non fiction/Hamlet - William Shakespeare Ann Thompson Neil Taylor.epub",
-  "filename": "Hamlet - William Shakespeare Ann Thompson Neil Taylor.epub",
+  "path": "Fiction ／ non fiction/Hamlet - William Shakespeare (ed. Ann Thompson & Neil Taylor).epub",
+  "filename": "Hamlet - William Shakespeare (ed. Ann Thompson & Neil Taylor).epub",
   "folder": "Fiction ／ non fiction",
   "ext": "epub",
   "mime": "application/epub+zip",
@@ -2781,8 +2781,8 @@
  },
  {
   "id": "1nsnPPOWmC8fG3nF2Hi2sGDmRQpftshcW",
-  "path": "Fiction ／ non fiction/Macbeth A Norton Critical Edition - William Shakespeare.pdf",
-  "filename": "Macbeth A Norton Critical Edition - William Shakespeare.pdf",
+  "path": "Fiction ／ non fiction/Macbeth (Norton Critical Edition) - William Shakespeare.pdf",
+  "filename": "Macbeth (Norton Critical Edition) - William Shakespeare.pdf",
   "folder": "Fiction ／ non fiction",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -3271,8 +3271,8 @@
  },
  {
   "id": "1KN7iGEOZCo-DU0FHYf0YvtK3s_0Mudyj",
-  "path": "Fiction ／ non fiction/No One Knows Stories - Osamu Dazai.epub",
-  "filename": "No One Knows Stories - Osamu Dazai.epub",
+  "path": "Fiction ／ non fiction/No One Knows – Stories - Osamu Dazai.epub",
+  "filename": "No One Knows – Stories - Osamu Dazai.epub",
   "folder": "Fiction ／ non fiction",
   "ext": "epub",
   "mime": "application/epub+zip",
@@ -4241,8 +4241,8 @@
  },
  {
   "id": "1vew5roEyCHUcG_9jjCet35nhoiVTx8wI",
-  "path": "Fiction ／ non fiction/Tezuka's Crime_and_Punishment_-_Osamu_Tezuka.epub",
-  "filename": "Tezuka's Crime_and_Punishment_-_Osamu_Tezuka.epub",
+  "path": "Fiction ／ non fiction/Tezuka's Crime and Punishment - Osamu Tezuka.epub",
+  "filename": "Tezuka's Crime and Punishment - Osamu Tezuka.epub",
   "folder": "Fiction ／ non fiction",
   "ext": "epub",
   "mime": "application/epub+zip",
@@ -5321,8 +5321,8 @@
  },
  {
   "id": "1z4i7lyWUt9GTR7sW3zilMvng4kUI8uhx",
-  "path": "Fiction ／ non fiction/The Real Osamu Dazai A Life in Twenty Stories - Osamu Dazai.epub",
-  "filename": "The Real Osamu Dazai A Life in Twenty Stories - Osamu Dazai.epub",
+  "path": "Fiction ／ non fiction/The Real Osamu Dazai – A Life in Twenty Stories - Osamu Dazai.epub",
+  "filename": "The Real Osamu Dazai – A Life in Twenty Stories - Osamu Dazai.epub",
   "folder": "Fiction ／ non fiction",
   "ext": "epub",
   "mime": "application/epub+zip",
@@ -6370,6 +6370,16 @@
   "modified": "2021-11-15T22:38:06"
  },
  {
+  "id": "1xWM67rST14vz1UwZveW-v7rbauLSgSX7",
+  "path": "On Films/The 9 Shots Guide - Tim Runia.pdf",
+  "filename": "The 9 Shots Guide - Tim Runia.pdf",
+  "folder": "On Films",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 51223471,
+  "modified": "2026-11-19T14:45:03"
+ },
+ {
   "id": "1gT5BhDJPfzToz4GOKVNzMKfk4hWplEXc",
   "path": "On Films/The Anatomy of Story – 22 Steps to Becoming a Master Storyteller - John Truby.epub",
   "filename": "The Anatomy of Story – 22 Steps to Becoming a Master Storyteller - John Truby.epub",
@@ -6398,16 +6408,6 @@
   "mime": "application/pdf",
   "size_bytes": 1292251,
   "modified": "2021-11-15T22:38:02"
- },
- {
-  "id": "1xWM67rST14vz1UwZveW-v7rbauLSgSX7",
-  "path": "On Films/the-9-shots-guide-created-by-tim-runia.pdf",
-  "filename": "the-9-shots-guide-created-by-tim-runia.pdf",
-  "folder": "On Films",
-  "ext": "pdf",
-  "mime": "application/pdf",
-  "size_bytes": 51223471,
-  "modified": "2026-11-19T14:45:03"
  },
  {
   "id": "1QuIvOb-1P2uPYQfXujSP4NpnHHxHCZuC",
