@@ -3,7 +3,8 @@
 > **Status**: Active | **Phase**: 38 (verified covers + synopses, phone-edit sync, watermark cleanup)  
 > **Current**: Covers re-sourced against each book file's own cover (`scripts/source_covers.py`, 564 changed); wrong-book synopses fixed by Claude check (`scripts/check_synopses.py`, 148 replaced / 81 blanked). App: "Wrong cover?" picker + "Save fixes to all devices" (per-device GitHub key → commits `content/book_overrides.json`; Pages workflow rebuilds). All Drive names done (last 43 hand-checked, `content/name_confirmed.json`). Daily refresh waits for network after wake.  
 > **Watermarks (2026-11-21)**: all 54 OceanofPDF-watermarked EPUBs cleaned on Drive (0 of 500 left); 42 EPUBs had junk hidden titles/"Unknown" authors fixed (`scripts/fix_epub_metadata.py`); Dead Souls got its mimetype; Boogiepop vol 4+5 (unreadable) moved to Drive trash. Daily refresh cleans new EPUBs.  
-> **Next**: PDFs with the watermark (not started). User hasn't pasted a GitHub key yet (phone fixes still local). rclone shared client_id retires in 2026 (own client_id needed).  
+> **PDFs**: only 1 of 167 had it (A Cup of Zen) — cleaned with `scripts/clean_pdf_watermarks.py` (pypdf in throwaway `.cache/pdfenv`); rescan 0.  
+> **Next**: User hasn't pasted a GitHub key yet (phone fixes still local). rclone shared client_id retires in 2026 (own client_id needed).  
 > **Keys**: Google Drive API key (browser key, referrer-restricted) is NOT in the repo — macOS Keychain "Reading Corner", `~/Documents/Claude Code/API-KEYS.md`, project `.env` (`GOOGLE_DRIVE_API_KEY`). Users paste it once per device ("Turn on tap-to-read").  
 > **Incident (2026-11-11)**: a rename trashed one identical duplicate ("One Plus One Equals Three - Dave Trott .epub", in Drive trash); tool fixed.
 
@@ -46,7 +47,7 @@
 - [x] Phase 35: Bookshelf Drive Sync, Name Cleanup & Code Audit — build now driven by live Drive catalog (fixes new books never appearing: old build returned early on existing data.json); `book_names.json` (Drive-id keyed) fixes all swapped/underscored/Unknown names; `book_overrides.json` replaces 600 lines of hard-coded fixes; template extracted to `scripts/templates/bookshelf.html`; `refresh_bookshelf.sh` + LaunchAgent for daily pickup; Drive rename tool (dry-run). Pushed; LaunchAgent installed. Pending: Drive rename apply.
 - [x] Phase 36: Verified Drive renames (455) with history/undo; OCR cover audit; phone book-sheet redesign; tap-to-read via Drive API key; Archive/Restore; local Tidy button.
 - [x] Phase 38: Covers verified against book files; synopsis check; Wrong-cover picker; phone edits sync via GitHub; last 43 Drive renames.
-- [~] Phase 39: OceanofPDF watermark removal — EPUBs done (54 cleaned, 42 metadata fixes); PDFs pending.
+- [x] Phase 39: OceanofPDF watermark removal — 54 EPUBs + 1 PDF cleaned, 42 EPUB metadata fixes, Dead Souls repaired.
 - [x] Phase 37: PDFs — in-Nook PDF.js reader on devices with the Drive key (page remembered, offline cache, swipe/tap turns, 2-page spread on wide screens); Google Drive viewer for everyone else (no download).
 
 ## File map
@@ -68,6 +69,7 @@
   - `scripts/check_synopses.py`: Claude (API key in .env) flags wrong-book / filler synopses and swaps in a verified one. `--apply`. Report `content/synopsis_check.md`.
   - `scripts/clean_watermarks.py`: finds/removes the OceanofPDF watermark inside EPUBs on Drive; word-level proof checks before each upload. Report `content/watermark_scan.md`, log `content/watermark_log.json`.
   - `scripts/fix_epub_metadata.py`: fixes junk hidden titles/authors inside EPUBs (PDFDrive/libgen/Z-Library) + missing mimetype. Log `content/epub_metadata_log.json`.
+  - `scripts/scan_pdf_watermarks.py` / `scripts/clean_pdf_watermarks.py`: find / remove OceanofPDF in PDFs (clean needs pypdf: `uv venv .cache/pdfenv && uv pip install --python .cache/pdfenv/bin/python pypdf`).
   - `scripts/test_parse_filename.py`: test cases for messy download filenames.
   - `content/name_confirmed.json`: hand-checked Drive names (trusted only while title+author unchanged).
   - `scripts/audit_covers.py`: (older) OCR-verifies every cover via local vision server (localhost:9090); `--fix` swaps in verified covers.
