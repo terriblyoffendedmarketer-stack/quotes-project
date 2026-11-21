@@ -16,6 +16,8 @@
 #   in content/drive_rename_review.md.
 # - Fixes saved from the app on any device are commits on GitHub (content/book_overrides.json), so the remote
 #   is often ahead: it pulls (rebase, autostash) BEFORE building, so those fixes are in this build too.
+# - Only one run at a time (lock in .cache/refresh.lock); a second start exits quietly.
+# - The Drive list is re-read after renames, before the watermark cleaners download files by path.
 # - Waits up to 30 min for the network first: launchd fires it right after wake, often before Wi-Fi is up.
 
 set -euo pipefail
@@ -23,6 +25,21 @@ export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 cd "$(dirname "$0")/.."
 
 echo "=== Reading Corner refresh $(date '+%Y-%m-%d %H:%M') ==="
+# One run at a time: the 09:15 job, the in-app Tidy button and manual runs all use this script.
+# mkdir is atomic; a lock left by a crashed run (its process gone) is taken over.
+LOCK=".cache/refresh.lock"
+mkdir -p .cache
+if ! mkdir "$LOCK" 2>/dev/null; then
+  OLD=$(cat "$LOCK/pid" 2>/dev/null || echo "")
+  if [[ -n "$OLD" ]] && kill -0 "$OLD" 2>/dev/null; then
+    echo "Another refresh is already running (pid $OLD) - not starting a second one."
+    exit 0
+  fi
+  echo "Removing a stale lock from a run that didn't finish."
+  rm -rf "$LOCK"; mkdir "$LOCK"
+fi
+echo $$ > "$LOCK/pid"
+trap 'rm -rf "$LOCK"' EXIT
 # The Mac often runs this right after waking, before Wi-Fi is back (Nov 18-20: "Could not resolve host").
 # Wait up to 30 min for DNS instead of failing the whole day.
 for i in $(seq 1 60); do
@@ -44,6 +61,8 @@ python3 scripts/build_independent_bookshelf_app.py
 if [[ " $* " == *" --tidy "* ]]; then
   echo "--- Tidying Drive file names (verified renames only) ---"
   python3 scripts/rename_drive_files.py --apply
+  # Renames change file paths: re-read Drive BEFORE the cleaners download by path.
+  python3 scripts/sync_drive_catalog.py 2>&1 | grep -v "NOTICE: gdrive: This remote uses rclone's shared"
   echo "--- Removing OceanofPDF watermarks from new/changed EPUBs ---"
   python3 scripts/clean_watermarks.py --apply || echo "WARN: watermark cleanup failed"
   python3 scripts/pdf_watermarks_daily.py || echo "WARN: PDF watermark check failed"

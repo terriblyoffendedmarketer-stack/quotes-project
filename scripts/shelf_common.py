@@ -128,3 +128,16 @@ def parse_filename(filename, known_authors=()):
     title = smart_title(re.sub(r"\s+", " ", title).strip(" -:"))
     author = re.sub(r"\s+", " ", author).strip(" -:") or "Unknown"
     return title, author
+
+
+def drive_unchanged(path, data_md5):
+    """True if the Drive file at gdrive:Books/<path> still has exactly the bytes we downloaded (same md5).
+    Called right before uploading a cleaned file, so a book you replaced or edited mid-run is never overwritten."""
+    import subprocess
+    r = subprocess.run(["rclone", "lsjson", "--hash", "--hash-type", "md5", f"gdrive:Books/{path}"],
+                       capture_output=True, text=True)
+    try:
+        info = json.loads(r.stdout)[0]
+    except Exception:
+        return False
+    return info.get("Hashes", {}).get("md5") == data_md5

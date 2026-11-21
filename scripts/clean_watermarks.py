@@ -295,8 +295,11 @@ def main():
     import shutil
     shutil.rmtree(staging, ignore_errors=True)
     ready, skipped = [], 0
+    import hashlib
     for e in affected[:limit] if limit else affected:
-        out, info = clean_epub(download(e))
+        data = download(e)
+        out, info = clean_epub(data)
+        info["src_md5"] = hashlib.md5(data).hexdigest()
         if out and not info["removed"]:
             print(f"--   {e['filename']}: nothing to remove")
             continue
@@ -309,6 +312,18 @@ def main():
         dst.parent.mkdir(parents=True, exist_ok=True)
         dst.write_bytes(out)
         ready.append((e, info))
+    # Last-moment guard: if a book changed on Drive since we downloaded it (you replaced or edited it mid-run),
+    # don't overwrite it; it's re-checked on the next run.
+    from shelf_common import drive_unchanged
+    still = []
+    for e, info in ready:
+        if drive_unchanged(e["path"], info["src_md5"]):
+            still.append((e, info))
+        else:
+            print(f"LATER {e['filename']}: changed on Drive during this run, left alone")
+            (staging / e["path"]).unlink(missing_ok=True)
+            state[e["id"]]["modified"] = "(changed mid-run; re-check)"
+    ready = still
     print(f"{len(ready)} cleaned and checked, {skipped} skipped. Uploading…", flush=True)
     if ready:
         r = subprocess.run(["rclone", "copy", str(staging), "gdrive:Books", "--transfers", "16", "--checkers", "16",

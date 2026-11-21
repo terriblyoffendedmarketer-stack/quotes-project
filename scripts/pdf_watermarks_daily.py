@@ -79,6 +79,11 @@ def main():
                 print(f"  SKIP {e['filename']}: cleaner couldn't prove it safe\n    " + c.stdout.strip()[-400:])
                 state[e["id"]] = {"modified": e["modified"], "hits": hits, "skipped": True}
                 continue
+            import hashlib
+            from shelf_common import drive_unchanged
+            if not drive_unchanged(e["path"], hashlib.md5(local.read_bytes()).hexdigest()):
+                print(f"  LATER {e['filename']}: changed on Drive during this run, left alone")
+                continue
             u = subprocess.run(["rclone", "copyto", str(out), src], capture_output=True, text=True)
             if u.returncode:
                 print(f"  FAIL upload {e['filename']}: {u.stderr.strip()[-200:]}")

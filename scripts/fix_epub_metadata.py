@@ -11,6 +11,7 @@
 # Every other file is copied byte for byte (checked), and both XML files must still parse. Drive keeps the
 # previous version 30 days; uploads update the same file (same id). Log: content/epub_metadata_log.json.
 #
+# - Local-mirror tool for one-off fixes: re-download the mirror right before using it (it doesn't re-check Drive).
 # Gotchas:
 # - `mimetype` must be the FIRST zip entry and STORED (uncompressed), content "application/epub+zip".
 # - Escape & < > when writing titles into XML ("Simon & Schuster" style names broke a parse once in testing).
