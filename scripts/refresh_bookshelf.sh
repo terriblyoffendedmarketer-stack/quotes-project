@@ -2,7 +2,7 @@
 # scripts/refresh_bookshelf.sh — One command to pick up new Google Drive books and (optionally) publish the shelf
 # Usage: bash scripts/refresh_bookshelf.sh                    # sync + build + enrich, local only
 #        bash scripts/refresh_bookshelf.sh --tidy             # ...also rename VERIFIED Drive files to "Title - Author"
-#                                                             #    and strip OceanofPDF watermarks from new EPUBs
+#                                                             #    and strip OceanofPDF watermarks from new EPUBs + PDFs
 #        bash scripts/refresh_bookshelf.sh --tidy --publish   # ...then commit the shelf files and push (GitHub Pages)
 #        (flags in any order; the daily LaunchAgent and the in-app "Tidy Drive names" button use --tidy --publish)
 # Requires: rclone remote `gdrive:`, python3, git with push credentials (osxkeychain). Runs daily via
@@ -46,6 +46,7 @@ if [[ " $* " == *" --tidy "* ]]; then
   python3 scripts/rename_drive_files.py --apply
   echo "--- Removing OceanofPDF watermarks from new/changed EPUBs ---"
   python3 scripts/clean_watermarks.py --apply || echo "WARN: watermark cleanup failed"
+  python3 scripts/pdf_watermarks_daily.py || echo "WARN: PDF watermark check failed"
   python3 scripts/sync_drive_catalog.py 2>&1 | grep -v "NOTICE: gdrive: This remote uses rclone's shared"
   python3 scripts/build_independent_bookshelf_app.py
 fi
@@ -53,7 +54,7 @@ fi
 if [[ " $* " == *" --publish "* ]]; then
   FILES=(bookshelf/data.json bookshelf/index.html docs/bookshelf.html content/gdrive_books_catalog.json content/book_names.json
          content/drive_name_history.json content/drive_rename_log.json content/drive_rename_review.md content/name_verification_cache.json
-         content/book_overrides.json bookshelf/covers docs/covers content/watermark_scan.md content/watermark_log.json
+         content/book_overrides.json bookshelf/covers docs/covers content/watermark_scan.md content/watermark_log.json content/pdf_watermark_log.json
          content/cover_sourcing.json content/cover_sourcing.md content/synopsis_check.md content/name_confirmed.json)
   for f in "${FILES[@]}"; do if [[ -e "$f" ]]; then git add -- "$f"; fi; done
   if git diff --cached --quiet; then
