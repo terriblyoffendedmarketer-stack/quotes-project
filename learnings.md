@@ -94,3 +94,5 @@ Google Books API without a key | 429 almost immediately | dropped; Apple Search 
 Daily refresh failed Nov 18-20 | launchd ran it right after wake, before Wi-Fi (DNS 'no such host') | refresh_bookshelf.sh waits up to 30 min for DNS first
 Cover scan hung for days at 520/556 | a read stalled after Mac sleep, no overall timeout | watchdog: no progress 15 min -> save state, exit 3, rerun resumes
 Junk-prefixed names ('OceanofPDF.com_Title_-_Author') kept the site in the title | parser only knew libgen/z-library | generic word.tld watermark strip + (Author) + whole-name OL lookup; tests in scripts/test_parse_filename.py
+Watermark scan crawled at 1 book/min with 333 false BadZipFile | range reads via rclone serve http are slow (15-20 s each) and sometimes return wrong bytes | download whole EPUBs with rclone cat, 4 in parallel (~3 GB total)
+Watermark upload check took 10 min for 3 books | rclone lsjson -R over all of Books without --fast-list makes one call per folder (throttled shared client_id) | --fast-list

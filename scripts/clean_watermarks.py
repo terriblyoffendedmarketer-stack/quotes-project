@@ -184,7 +184,17 @@ def clean_epub(data):
     return (None if problems else out), info
 
 
+LOCAL = None      # --local DIR: books already downloaded there (rclone copy gdrive:Books DIR --include "*.epub")
+OTHER_MARKS = re.compile(r"z-?library|z-lib\.|1lib\.|libgen|dokumen\.pub|ebook3000|it-ebooks|vk\.com/|pdfdrive|"
+                         r"freebookspot|epubpub|bookfrom\.net|ebooksclub|wowebook|allitebooks|anna[’']?s archive", re.I)
+
+
 def download(e):
+    if LOCAL:
+        data = (Path(LOCAL) / e["path"]).read_bytes()
+        if len(data) != int(e["size_bytes"]):
+            raise IOError("local copy differs from Drive (re-download)")
+        return data
     r = subprocess.run(["rclone", "cat", f"gdrive:Books/{e['path']}"], capture_output=True, timeout=900)
     if r.returncode or len(r.stdout) != int(e["size_bytes"]):
         raise IOError(f"download failed/short ({len(r.stdout)} of {e['size_bytes']} bytes)")
@@ -195,13 +205,28 @@ def scan_one(e):
     z = zipfile.ZipFile(io.BytesIO(download(e)))
     n = 0
     sample = ""
-    for name in z.namelist():
+    other = {}
+    extra = []
+    if z.testzip() is not None:
+        extra.append("damaged zip entry")
+    names = z.namelist()
+    if "mimetype" not in names:
+        extra.append("no mimetype (some readers refuse it)")
+    if "META-INF/encryption.xml" in names:
+        enc = z.read("META-INF/encryption.xml").decode("utf-8", "ignore")
+        if re.search(r"EncryptionMethod[^>]+Algorithm=\"(?!http://www\.idpf\.org/2008/embedding|"
+                     r"http://ns\.adobe\.com/pdf/enc#RC)", enc):
+            extra.append("copy-protected (DRM): can't be cleaned or read in the Nook")
+    for name in names:
         if TEXT_EXT.search(name):
             t = z.read(name).decode("utf-8", "ignore")
             for m in MARK.finditer(t):
                 n += 1
                 sample = sample or t[max(0, m.start() - 160):m.end() + 80].replace("\n", " ")
-    return {"hits": n, "sample": sample}
+            for m in OTHER_MARKS.finditer(t):
+                k = m.group(0).lower()
+                other[k] = other.get(k, 0) + 1
+    return {"hits": n, "sample": sample, "other_marks": other, "issues": extra}
 
 
 def main():
@@ -215,6 +240,8 @@ def main():
             dst.write_bytes(out)
             print("cleaned copy:", dst)
         return
+    global LOCAL
+    LOCAL = args[args.index("--local") + 1] if "--local" in args else None
     apply = "--apply" in args
     limit = int(args[args.index("--limit") + 1]) if "--limit" in args else None
     only = args[args.index("--only") + 1].lower() if "--only" in args else None
@@ -241,7 +268,7 @@ def main():
                 save_json(STATE, state)
                 print(f"  scanned {count[0]}/{len(todo)}", flush=True)
 
-    with ThreadPoolExecutor(4) as ex:      # whole-file downloads (rclone cat), 4 at a time, nothing kept on disk
+    with ThreadPoolExecutor(10 if LOCAL else 4) as ex:   # rclone cat downloads 4 at a time; local copies 10
         list(ex.map(work, todo))
     affected = [e for e in cat if state.get(e["id"], {}).get("hits", 0) > 0]
     errors = [e for e in cat if state.get(e["id"], {}).get("hits") == -1]
@@ -250,39 +277,64 @@ def main():
     lines += [f"- {e['filename']} — {state[e['id']]['hits']}x" for e in affected]
     if errors:
         lines += ["", "Couldn't read:"] + [f"- {e['filename']} — {state[e['id']].get('error')}" for e in errors]
+    others = [e for e in cat if state.get(e["id"], {}).get("other_marks")]
+    if others:
+        lines += ["", "Other download-site marks found (not removed; tell Claude if they should be):"]
+        lines += [f"- {e['filename']} — {state[e['id']]['other_marks']}" for e in others]
+    issues = [e for e in cat if state.get(e["id"], {}).get("issues")]
+    if issues:
+        lines += ["", "Other problems:"] + [f"- {e['filename']} — {'; '.join(state[e['id']]['issues'])}" for e in issues]
     REPORT.write_text("\n".join(lines) + "\n")
     print(f"{len(affected)} of {len(cat)} EPUBs have the watermark -> {REPORT.name}")
     if not apply:
         return
+    # Clean everything locally first (all checks), then upload the passing books in ONE rclone run: it updates
+    # each Drive file in place (same id, Drive keeps the old version 30 days), 16 uploads at a time.
     log = load_json(LOG, [])
-    done = skipped = 0
+    staging = ROOT / ".cache" / "watermark_clean"
+    import shutil
+    shutil.rmtree(staging, ignore_errors=True)
+    ready, skipped = [], 0
     for e in affected[:limit] if limit else affected:
-        with tempfile.TemporaryDirectory() as td:
-            local = Path(td) / "book.epub"
-            src = f"gdrive:Books/{e['path']}"
-            out, info = clean_epub(download(e))
-            if out and not info["removed"]:
-                print(f"--   {e['filename']}: nothing to remove")
-                continue
-            if not out:
-                skipped += 1
-                print(f"SKIP {e['filename']}: {'; '.join(info['problems'])}")
-                state[e["id"]]["skipped"] = info["problems"]
-                continue
-            local.write_bytes(out)
-            r = subprocess.run(["rclone", "copyto", str(local), src], capture_output=True, text=True)
-            if r.returncode:
-                skipped += 1
-                print(f"FAIL upload {e['filename']}: {r.stderr.strip()[-200:]}")
-                continue
-            done += 1
-            print(f"ok   {e['filename']}: removed {info['removed']} in {info['files']} file(s)")
-            log.append({"id": e["id"], "path": e["path"], "removed": info["removed"], "at": datetime.now().isoformat(timespec="seconds")})
-            save_json(LOG, log)
-            state[e["id"]]["hits"] = 0
-            state[e["id"]]["cleaned"] = True
-            save_json(STATE, state)
-    print(f"Cleaned {done}, skipped {skipped}. Re-sync the catalog: python3 scripts/sync_drive_catalog.py")
+        out, info = clean_epub(download(e))
+        if out and not info["removed"]:
+            print(f"--   {e['filename']}: nothing to remove")
+            continue
+        if not out:
+            skipped += 1
+            print(f"SKIP {e['filename']}: {'; '.join(info['problems'])[:300]}")
+            state[e["id"]]["skipped"] = info["problems"]
+            continue
+        dst = staging / e["path"]
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        dst.write_bytes(out)
+        ready.append((e, info))
+    print(f"{len(ready)} cleaned and checked, {skipped} skipped. Uploading…", flush=True)
+    if ready:
+        r = subprocess.run(["rclone", "copy", str(staging), "gdrive:Books", "--transfers", "16", "--checkers", "16",
+                            "--no-update-modtime"], capture_output=True, text=True)
+        if r.returncode:
+            print("Upload problems:", r.stderr.strip()[-600:])
+        sizes = {}
+        ls = subprocess.run(["rclone", "lsjson", "-R", "--files-only", str(staging)], capture_output=True, text=True)
+        local_sizes = {x["Path"]: x["Size"] for x in json.loads(ls.stdout or "[]")}
+        remote = subprocess.run(["rclone", "lsjson", "-R", "--fast-list", "--files-only", "--include", "*.epub", "gdrive:Books"],
+                                capture_output=True, text=True)
+        sizes = {x["Path"]: x["Size"] for x in json.loads(remote.stdout or "[]")}
+        for e, info in ready:
+            ok = sizes.get(e["path"]) == local_sizes.get(e["path"])
+            print(("ok   " if ok else "FAIL ") + f"{e['filename']}: removed {info['removed']}")
+            if ok:
+                log.append({"id": e["id"], "path": e["path"], "removed": info["removed"],
+                            "at": datetime.now().isoformat(timespec="seconds")})
+                state[e["id"]].update(hits=0, cleaned=True)
+        save_json(LOG, log)
+        save_json(STATE, state)
+        if LOCAL:      # keep the local mirror in step with Drive
+            for e, _ in ready:
+                shutil.copyfile(staging / e["path"], Path(LOCAL) / e["path"])
+    shutil.rmtree(staging, ignore_errors=True)
+    print(f"Done. Re-sync the catalog: python3 scripts/sync_drive_catalog.py")
 
 
 if __name__ == "__main__":
