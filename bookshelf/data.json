@@ -1210,7 +1210,7 @@
   "categories": [
    "Fiction & Non-Fiction"
   ],
-  "added": "2026-06-03",
+  "added": "2026-11-21",
   "first_seen": "",
   "no_cover": true,
   "cover_source": "verified",
@@ -5277,6 +5277,31 @@
   "cover_source": "verified"
  },
  {
+  "title": "Dazai's A New Hamlet",
+  "author": "Osamu Dazai",
+  "id": "dazai-s-a-new-hamlet-osamu-dazai",
+  "category": "Fiction & Non-Fiction",
+  "cover_url": "",
+  "pitch": "",
+  "why_love": "",
+  "quotes": [],
+  "has_quote_bank": false,
+  "tags": [
+   "fiction-non-fiction"
+  ],
+  "drive_id": "1vP5yaYFQwZdgWrZAjWv11S5U6rE5An-Q",
+  "drive_url": "https://drive.google.com/file/d/1vP5yaYFQwZdgWrZAjWv11S5U6rE5An-Q/view",
+  "direct_download_url": "https://drive.usercontent.google.com/download?id=1vP5yaYFQwZdgWrZAjWv11S5U6rE5An-Q&export=download",
+  "format": "EPUB",
+  "added": "2026-11-21",
+  "first_seen": "2026-11-21",
+  "categories": [
+   "Fiction & Non-Fiction"
+  ],
+  "is_fun_pick": true,
+  "enriched": "2026-11-21"
+ },
+ {
   "id": "dead-souls-nikolai-gogol",
   "title": "Dead Souls",
   "author": "Nikolai Gogol",
@@ -5596,6 +5621,31 @@
   "added": "2026-06-12",
   "first_seen": "",
   "cover_source": "verified"
+ },
+ {
+  "title": "Do Androids Dream of Electric Sheep?",
+  "author": "Philip K. Dick",
+  "id": "do-androids-dream-of-electric-sheep-philip-k-dick",
+  "category": "Fiction & Non-Fiction",
+  "cover_url": "https://covers.openlibrary.org/b/id/207515-L.jpg",
+  "pitch": "It was January 2021, and Rick Deckard had a license to kill.\nSomewhere among the hordes of humans out there, lurked several rogue androids. Deckard's assignment--find them and then...\"retire\" them. Trouble was, the androids all looked exactly like humans, and they didn't want to be found!",
+  "why_love": "",
+  "quotes": [],
+  "has_quote_bank": false,
+  "tags": [
+   "fiction-non-fiction"
+  ],
+  "drive_id": "1CMyi-xJk6usAvYPJd8IQ0S3JTemSeJck",
+  "drive_url": "https://drive.google.com/file/d/1CMyi-xJk6usAvYPJd8IQ0S3JTemSeJck/view",
+  "direct_download_url": "https://drive.usercontent.google.com/download?id=1CMyi-xJk6usAvYPJd8IQ0S3JTemSeJck&export=download",
+  "format": "EPUB",
+  "added": "2026-11-21",
+  "first_seen": "2026-11-21",
+  "categories": [
+   "Fiction & Non-Fiction"
+  ],
+  "is_fun_pick": true,
+  "enriched": "2026-11-21"
  },
  {
   "id": "rowan-williams-dostoevsky-language-faith-and-fiction",
@@ -7285,6 +7335,31 @@
   "cover_source": "verified"
  },
  {
+  "title": "Hamlet",
+  "author": "William Shakespeare Ann Thompson Neil Taylor",
+  "id": "william-shakespeare-ann-thompson-neil-taylor-hamlet",
+  "category": "Fiction & Non-Fiction",
+  "cover_url": "",
+  "pitch": "",
+  "why_love": "",
+  "quotes": [],
+  "has_quote_bank": false,
+  "tags": [
+   "fiction-non-fiction"
+  ],
+  "drive_id": "1suTxBcesEcVpI4T1yoohiTX9t5NAiiWd",
+  "drive_url": "https://drive.google.com/file/d/1suTxBcesEcVpI4T1yoohiTX9t5NAiiWd/view",
+  "direct_download_url": "https://drive.usercontent.google.com/download?id=1suTxBcesEcVpI4T1yoohiTX9t5NAiiWd&export=download",
+  "format": "EPUB",
+  "added": "2026-11-21",
+  "first_seen": "2026-11-21",
+  "categories": [
+   "Fiction & Non-Fiction"
+  ],
+  "is_fun_pick": true,
+  "enriched": "2026-11-21"
+ },
+ {
   "id": "monogatari-series-volume-09-hanamonogatari",
   "title": "Hanamonogatari (Monogatari, Vol. 9)",
   "author": "NisiOisin",
@@ -8017,6 +8092,31 @@
   "first_seen": "",
   "cover_source": "verified",
   "pitch_source": "verified (book file)"
+ },
+ {
+  "title": "Henry V",
+  "author": "William Shakespeare",
+  "id": "henry-v-william-shakespeare",
+  "category": "Fiction & Non-Fiction",
+  "cover_url": "https://covers.openlibrary.org/b/id/7420215-L.jpg",
+  "pitch": "Introducing this edition, Gary Taylor shows how Shakespeare shaped his historical material, examines controversial critical interpretations, discusses the play's fluctuating fortunes in performance, and analyses the range and variety of Shakespeare's characterization. The first Folio text is radically rethought, making original use of the First Quarto (1600).",
+  "why_love": "",
+  "quotes": [],
+  "has_quote_bank": false,
+  "tags": [
+   "fiction-non-fiction"
+  ],
+  "drive_id": "1gWbIeaC-Oj6tDCNDBO645Eso7eOzrAYa",
+  "drive_url": "https://drive.google.com/file/d/1gWbIeaC-Oj6tDCNDBO645Eso7eOzrAYa/view",
+  "direct_download_url": "https://drive.usercontent.google.com/download?id=1gWbIeaC-Oj6tDCNDBO645Eso7eOzrAYa&export=download",
+  "format": "EPUB",
+  "added": "2026-11-21",
+  "first_seen": "2026-11-21",
+  "categories": [
+   "Fiction & Non-Fiction"
+  ],
+  "is_fun_pick": true,
+  "enriched": "2026-11-21"
  },
  {
   "id": "here-richard-mcguire",
@@ -10772,6 +10872,31 @@
   "cover_source": "verified"
  },
  {
+  "title": "Macbeth A Norton Critical Edition",
+  "author": "William Shakespeare",
+  "id": "macbeth-a-norton-critical-edition-william-shakespeare",
+  "category": "Fiction & Non-Fiction",
+  "cover_url": "",
+  "pitch": "",
+  "why_love": "",
+  "quotes": [],
+  "has_quote_bank": false,
+  "tags": [
+   "fiction-non-fiction"
+  ],
+  "drive_id": "1nsnPPOWmC8fG3nF2Hi2sGDmRQpftshcW",
+  "drive_url": "https://drive.google.com/file/d/1nsnPPOWmC8fG3nF2Hi2sGDmRQpftshcW/view",
+  "direct_download_url": "https://drive.usercontent.google.com/download?id=1nsnPPOWmC8fG3nF2Hi2sGDmRQpftshcW&export=download",
+  "format": "PDF",
+  "added": "2026-11-21",
+  "first_seen": "2026-11-21",
+  "categories": [
+   "Fiction & Non-Fiction"
+  ],
+  "is_fun_pick": true,
+  "enriched": "2026-11-21"
+ },
+ {
   "id": "made-to-stick-chip-and-dan-heath",
   "title": "Made to Stick",
   "author": "Chip Heath & Dan Heath",
@@ -12258,6 +12383,31 @@
   "cover_source": "verified"
  },
  {
+  "title": "No Longer Human",
+  "author": "Osamu Dazai",
+  "id": "no-longer-human-osamu-dazai",
+  "category": "Fiction & Non-Fiction",
+  "cover_url": "https://covers.openlibrary.org/b/id/15272206-L.jpg",
+  "pitch": "",
+  "why_love": "",
+  "quotes": [],
+  "has_quote_bank": false,
+  "tags": [
+   "fiction-non-fiction"
+  ],
+  "drive_id": "1T-o8lfOm8Snx__lVC_rGI411wvmG_t9j",
+  "drive_url": "https://drive.google.com/file/d/1T-o8lfOm8Snx__lVC_rGI411wvmG_t9j/view",
+  "direct_download_url": "https://drive.usercontent.google.com/download?id=1T-o8lfOm8Snx__lVC_rGI411wvmG_t9j&export=download",
+  "format": "EPUB",
+  "added": "2026-11-21",
+  "first_seen": "2026-11-21",
+  "categories": [
+   "Fiction & Non-Fiction"
+  ],
+  "is_fun_pick": true,
+  "enriched": "2026-11-21"
+ },
+ {
   "id": "no-more-mr-nice-guy-robert-glove-dr-robert-a-glover",
   "title": "No More Mr. Nice Guy",
   "author": "Robert A. Glover",
@@ -12334,6 +12484,31 @@
   "no_cover": true,
   "cover_source": "verified",
   "pitch_source": "verified (Apple Books)"
+ },
+ {
+  "title": "No One Knows Stories",
+  "author": "Osamu Dazai",
+  "id": "no-one-knows-stories-osamu-dazai",
+  "category": "Fiction & Non-Fiction",
+  "cover_url": "",
+  "pitch": "",
+  "why_love": "",
+  "quotes": [],
+  "has_quote_bank": false,
+  "tags": [
+   "fiction-non-fiction"
+  ],
+  "drive_id": "1KN7iGEOZCo-DU0FHYf0YvtK3s_0Mudyj",
+  "drive_url": "https://drive.google.com/file/d/1KN7iGEOZCo-DU0FHYf0YvtK3s_0Mudyj/view",
+  "direct_download_url": "https://drive.usercontent.google.com/download?id=1KN7iGEOZCo-DU0FHYf0YvtK3s_0Mudyj&export=download",
+  "format": "EPUB",
+  "added": "2026-11-21",
+  "first_seen": "2026-11-21",
+  "categories": [
+   "Fiction & Non-Fiction"
+  ],
+  "is_fun_pick": true,
+  "enriched": "2026-11-21"
  },
  {
   "id": "notes-from-underground-the-double-fyodor-dostoevsky",
@@ -13194,6 +13369,31 @@
   "added": "2024-12-09",
   "first_seen": "",
   "cover_source": "verified"
+ },
+ {
+  "title": "Othello",
+  "author": "William Shakespeare",
+  "id": "othello-william-shakespeare",
+  "category": "Fiction & Non-Fiction",
+  "cover_url": "https://covers.openlibrary.org/b/id/7165018-L.jpg",
+  "pitch": "",
+  "why_love": "",
+  "quotes": [],
+  "has_quote_bank": false,
+  "tags": [
+   "fiction-non-fiction"
+  ],
+  "drive_id": "1Pa-WGDQ5KVxUaGvrTSAAsR1TSC7SxYIw",
+  "drive_url": "https://drive.google.com/file/d/1Pa-WGDQ5KVxUaGvrTSAAsR1TSC7SxYIw/view",
+  "direct_download_url": "https://drive.usercontent.google.com/download?id=1Pa-WGDQ5KVxUaGvrTSAAsR1TSC7SxYIw&export=download",
+  "format": "EPUB",
+  "added": "2026-11-21",
+  "first_seen": "2026-11-21",
+  "categories": [
+   "Fiction & Non-Fiction"
+  ],
+  "is_fun_pick": true,
+  "enriched": "2026-11-21"
  },
  {
   "id": "monogatari-series-volume-10-otorimonogatari",
@@ -14765,6 +14965,31 @@
   "added": "2026-08-31",
   "first_seen": "",
   "cover_source": "verified"
+ },
+ {
+  "title": "Romeo and Juliet",
+  "author": "William Shakespeare",
+  "id": "romeo-and-juliet-william-shakespeare",
+  "category": "Fiction & Non-Fiction",
+  "cover_url": "https://covers.openlibrary.org/b/id/8257991-L.jpg",
+  "pitch": "Romeo and Juliet is a tragedy written by William Shakespeare early in his career about two young Italian star-crossed lovers whose deaths ultimately reconcile their feuding families. It was among Shakespeare's most popular plays during his lifetime and, along with Hamlet, is one of his most frequently performed plays. Today, the title characters are regarded as archetypal young lovers.",
+  "why_love": "",
+  "quotes": [],
+  "has_quote_bank": false,
+  "tags": [
+   "fiction-non-fiction"
+  ],
+  "drive_id": "1QxDFQU3ieJhDUjg9pPi_k1yJcXWkUqa7",
+  "drive_url": "https://drive.google.com/file/d/1QxDFQU3ieJhDUjg9pPi_k1yJcXWkUqa7/view",
+  "direct_download_url": "https://drive.usercontent.google.com/download?id=1QxDFQU3ieJhDUjg9pPi_k1yJcXWkUqa7&export=download",
+  "format": "EPUB",
+  "added": "2026-11-21",
+  "first_seen": "2026-11-21",
+  "categories": [
+   "Fiction & Non-Fiction"
+  ],
+  "is_fun_pick": true,
+  "enriched": "2026-11-21"
  },
  {
   "id": "russian-short-stories-from-pushkin-to-buida-chandler-robert",
@@ -16611,6 +16836,31 @@
   "first_seen": "",
   "cover_source": "verified",
   "pitch_source": "verified (Apple Books)"
+ },
+ {
+  "title": "Tezuka's Crime and Punishment",
+  "author": "Osamu Tezuka",
+  "id": "tezuka-s-crime-and-punishment-osamu-tezuka",
+  "category": "Fiction & Non-Fiction",
+  "cover_url": "",
+  "pitch": "",
+  "why_love": "",
+  "quotes": [],
+  "has_quote_bank": false,
+  "tags": [
+   "fiction-non-fiction"
+  ],
+  "drive_id": "1vew5roEyCHUcG_9jjCet35nhoiVTx8wI",
+  "drive_url": "https://drive.google.com/file/d/1vew5roEyCHUcG_9jjCet35nhoiVTx8wI/view",
+  "direct_download_url": "https://drive.usercontent.google.com/download?id=1vew5roEyCHUcG_9jjCet35nhoiVTx8wI&export=download",
+  "format": "EPUB",
+  "added": "2026-11-21",
+  "first_seen": "2026-11-21",
+  "categories": [
+   "Fiction & Non-Fiction"
+  ],
+  "is_fun_pick": true,
+  "enriched": "2026-11-21"
  },
  {
   "id": "jay-heinrichs-thank-you-for-arguing",
@@ -22571,6 +22821,31 @@
   "first_seen": "",
   "cover_source": "verified",
   "pitch_source": "blanked (no verified synopsis found)"
+ },
+ {
+  "title": "The Real Osamu Dazai A Life in Twenty Stories",
+  "author": "Osamu Dazai",
+  "id": "the-real-osamu-dazai-a-life-in-twenty-stories-osamu-dazai",
+  "category": "Fiction & Non-Fiction",
+  "cover_url": "",
+  "pitch": "",
+  "why_love": "",
+  "quotes": [],
+  "has_quote_bank": false,
+  "tags": [
+   "fiction-non-fiction"
+  ],
+  "drive_id": "1z4i7lyWUt9GTR7sW3zilMvng4kUI8uhx",
+  "drive_url": "https://drive.google.com/file/d/1z4i7lyWUt9GTR7sW3zilMvng4kUI8uhx/view",
+  "direct_download_url": "https://drive.usercontent.google.com/download?id=1z4i7lyWUt9GTR7sW3zilMvng4kUI8uhx&export=download",
+  "format": "EPUB",
+  "added": "2026-11-21",
+  "first_seen": "2026-11-21",
+  "categories": [
+   "Fiction & Non-Fiction"
+  ],
+  "is_fun_pick": true,
+  "enriched": "2026-11-21"
  },
  {
   "id": "the-revolt-of-the-public-and-the-crisis-of-authority-in-the-new-millennium-martin-gurri",

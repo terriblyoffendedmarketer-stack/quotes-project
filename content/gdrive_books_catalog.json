@@ -736,8 +736,8 @@
   "folder": "Fiction ／ non fiction",
   "ext": "pdf",
   "mime": "application/pdf",
-  "size_bytes": 7018560,
-  "modified": "2026-06-03T12:47:32"
+  "size_bytes": 7327598,
+  "modified": "2026-11-21T23:35:58"
  },
  {
   "id": "15lMOl6caUHa85aKLRKdda9EKP-ppRKLn",
@@ -1590,6 +1590,16 @@
   "modified": "2026-11-21T12:36:50"
  },
  {
+  "id": "1vP5yaYFQwZdgWrZAjWv11S5U6rE5An-Q",
+  "path": "Fiction ／ non fiction/Dazai's A New Hamlet - Osamu Dazai.epub",
+  "filename": "Dazai's A New Hamlet - Osamu Dazai.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 670182,
+  "modified": "2026-11-21T21:16:02"
+ },
+ {
   "id": "1HlNv12zkOsvrnuyJJCH8SNh3X4nxicc3",
   "path": "Fiction ／ non fiction/Dead Souls - Nikolai Gogol.epub",
   "filename": "Dead Souls - Nikolai Gogol.epub",
@@ -1628,6 +1638,16 @@
   "mime": "application/epub+zip",
   "size_bytes": 2142528,
   "modified": "2026-06-12T12:56:55"
+ },
+ {
+  "id": "1CMyi-xJk6usAvYPJd8IQ0S3JTemSeJck",
+  "path": "Fiction ／ non fiction/Do Androids Dream of Electric Sheep - Philip K. Dick.epub",
+  "filename": "Do Androids Dream of Electric Sheep - Philip K. Dick.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 631384,
+  "modified": "2026-11-21T21:16:02"
  },
  {
   "id": "1AbRWBbEQ1eCgl3SgiGIaVUrT5-2ecxtK",
@@ -2050,6 +2070,16 @@
   "modified": "2025-01-15T17:44:29"
  },
  {
+  "id": "1suTxBcesEcVpI4T1yoohiTX9t5NAiiWd",
+  "path": "Fiction ／ non fiction/Hamlet - William Shakespeare Ann Thompson Neil Taylor.epub",
+  "filename": "Hamlet - William Shakespeare Ann Thompson Neil Taylor.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 9371620,
+  "modified": "2026-11-21T21:16:01"
+ },
+ {
   "id": "1BdLMtxIANunazHa0IAmbFl5Ogs-AWrMQ",
   "path": "Fiction ／ non fiction/Haroun and the Sea of Stories - Salman Rushdie.pdf",
   "filename": "Haroun and the Sea of Stories - Salman Rushdie.pdf",
@@ -2208,6 +2238,16 @@
   "mime": "application/epub+zip",
   "size_bytes": 470304,
   "modified": "2026-07-10T22:44:36"
+ },
+ {
+  "id": "1gWbIeaC-Oj6tDCNDBO645Eso7eOzrAYa",
+  "path": "Fiction ／ non fiction/Henry V - William Shakespeare.epub",
+  "filename": "Henry V - William Shakespeare.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 10386894,
+  "modified": "2026-11-21T21:16:01"
  },
  {
   "id": "1OUlY9UJlxulY68F63XEyE2s8Kjt_StQt",
@@ -2740,6 +2780,16 @@
   "modified": "2026-11-21T12:25:14"
  },
  {
+  "id": "1nsnPPOWmC8fG3nF2Hi2sGDmRQpftshcW",
+  "path": "Fiction ／ non fiction/Macbeth A Norton Critical Edition - William Shakespeare.pdf",
+  "filename": "Macbeth A Norton Critical Edition - William Shakespeare.pdf",
+  "folder": "Fiction ／ non fiction",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 15378029,
+  "modified": "2026-11-21T21:16:02"
+ },
+ {
   "id": "1H5z2mTvWczAkD1SJJ7fZBy24dCp17nzV",
   "path": "Fiction ／ non fiction/Made to Stick - Chip Heath & Dan Heath.epub",
   "filename": "Made to Stick - Chip Heath & Dan Heath.epub",
@@ -3190,6 +3240,16 @@
   "modified": "2026-09-01T08:12:30"
  },
  {
+  "id": "1T-o8lfOm8Snx__lVC_rGI411wvmG_t9j",
+  "path": "Fiction ／ non fiction/No Longer Human - Osamu Dazai.epub",
+  "filename": "No Longer Human - Osamu Dazai.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 1936507,
+  "modified": "2026-11-21T21:16:02"
+ },
+ {
   "id": "1dLExZ7FbKTfBrul5iyl-vlrtBV-M3yrz",
   "path": "Fiction ／ non fiction/No More Mr. Nice Guy - Robert A. Glover.epub",
   "filename": "No More Mr. Nice Guy - Robert A. Glover.epub",
@@ -3208,6 +3268,16 @@
   "mime": "application/epub+zip",
   "size_bytes": 1301364,
   "modified": "2026-10-11T20:11:16"
+ },
+ {
+  "id": "1KN7iGEOZCo-DU0FHYf0YvtK3s_0Mudyj",
+  "path": "Fiction ／ non fiction/No One Knows Stories - Osamu Dazai.epub",
+  "filename": "No One Knows Stories - Osamu Dazai.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 1198192,
+  "modified": "2026-11-21T21:16:01"
  },
  {
   "id": "1FnQirNMSB3Nk7RfLEJjAB-Ip9TUv_wZ5",
@@ -3368,6 +3438,16 @@
   "mime": "application/epub+zip",
   "size_bytes": 511193,
   "modified": "2024-12-09T03:31:45"
+ },
+ {
+  "id": "1Pa-WGDQ5KVxUaGvrTSAAsR1TSC7SxYIw",
+  "path": "Fiction ／ non fiction/Othello - William Shakespeare.epub",
+  "filename": "Othello - William Shakespeare.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 2853818,
+  "modified": "2026-11-21T21:16:01"
  },
  {
   "id": "1T40Fxx5iS3Pz0W_WaKUMvazVhWnEB5_e",
@@ -3790,6 +3870,16 @@
   "modified": "2026-08-31T07:24:46"
  },
  {
+  "id": "1QxDFQU3ieJhDUjg9pPi_k1yJcXWkUqa7",
+  "path": "Fiction ／ non fiction/Romeo and Juliet - William Shakespeare.epub",
+  "filename": "Romeo and Juliet - William Shakespeare.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 1799531,
+  "modified": "2026-11-21T21:16:02"
+ },
+ {
   "id": "1S-UEDQG3HG3tBrhRmDpbdrhdkR87u1CN",
   "path": "Fiction ／ non fiction/SCUM Manifesto - Valerie Solanas.epub",
   "filename": "SCUM Manifesto - Valerie Solanas.epub",
@@ -4148,6 +4238,16 @@
   "mime": "application/epub+zip",
   "size_bytes": 450414,
   "modified": "2026-11-21T12:36:53"
+ },
+ {
+  "id": "1vew5roEyCHUcG_9jjCet35nhoiVTx8wI",
+  "path": "Fiction ／ non fiction/Tezuka's Crime_and_Punishment_-_Osamu_Tezuka.epub",
+  "filename": "Tezuka's Crime_and_Punishment_-_Osamu_Tezuka.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 12129944,
+  "modified": "2026-11-21T23:46:38"
  },
  {
   "id": "1gtjy5bRP5fn1j4HifzvMOeVl6OkPkdEz",
@@ -5218,6 +5318,16 @@
   "mime": "application/epub+zip",
   "size_bytes": 373015,
   "modified": "2026-07-23T13:12:52"
+ },
+ {
+  "id": "1z4i7lyWUt9GTR7sW3zilMvng4kUI8uhx",
+  "path": "Fiction ／ non fiction/The Real Osamu Dazai A Life in Twenty Stories - Osamu Dazai.epub",
+  "filename": "The Real Osamu Dazai A Life in Twenty Stories - Osamu Dazai.epub",
+  "folder": "Fiction ／ non fiction",
+  "ext": "epub",
+  "mime": "application/epub+zip",
+  "size_bytes": 2021889,
+  "modified": "2026-11-21T21:16:01"
  },
  {
   "id": "1JJAxE7hhYWw8MWVVrHwDkK1gD0bqGNcc",

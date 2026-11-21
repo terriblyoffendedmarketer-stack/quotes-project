@@ -257,5 +257,13 @@
  "author|O. V. Vijayan": true,
  "author|Jawaharlal Nehru": true,
  "author|Tim Runia": false,
- "ol|The 9 Shots Guide Created|Tim Runia": false
+ "ol|The 9 Shots Guide Created|Tim Runia": false,
+ "author|Osamu Dazai": true,
+ "author|Philip K. Dick": true,
+ "author|William Shakespeare": true,
+ "ol|Tezuka's Crime and Punishment|Osamu Tezuka": false,
+ "epub|1vew5roEyCHUcG_9jjCet35nhoiVTx8wI": [
+  "Crime And Punishment",
+  "Osamu Tezuka"
+ ]
 }
