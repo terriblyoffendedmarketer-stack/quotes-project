@@ -1,4 +1,4 @@
-# Cover sourcing — 2026-11-21
+# Cover sourcing — 2026-11-22
 
 Counts: apple right book: 290, file cover: 104, jacket: 23, lookup failed: 4, matched apple: 160, matched current: 35, matched openlibrary-isbn: 18, no file cover: 13
 
@@ -35,7 +35,7 @@ Counts: apple right book: 290, file cover: 104, jacket: 23, lookup failed: 4, ma
 | A Man of Means — P. G. Wodehouse | apple right book | 0.089 |  |
 | A Mind for Numbers: How to Excel at Math and Science — Barbara Oakley | apple right book | 0.05 |  |
 | A Monster Calls — Patrick Ness | matched apple (sim 0.848) | 0.848 |  |
-| A New Hamlet — Osamu Dazai | matched apple (sim 0.968) | 0.968 | yes |
+| A New Hamlet — Osamu Dazai | matched apple (sim 0.968) | 0.968 |  |
 | A Reader's Companion to Infinite Jest — William Dowling & Robert Bell | file cover | 0.123 |  |
 | A Short Stay in Hell — Steven L. Peck | matched apple (sim 0.999) | 0.999 |  |
 | A Simple Plan — Scott Smith | apple right book | 0.182 |  |
@@ -116,7 +116,7 @@ Counts: apple right book: 290, file cover: 104, jacket: 23, lookup failed: 4, ma
 | Demian — Hermann Hesse | apple right book | 0.213 |  |
 | Demons — Fyodor Dostoevsky | apple right book | 0.36 |  |
 | Did Somebody Say Totalitarianism? — Slavoj Žižek | matched apple (sim 0.899) | 0.899 |  |
-| Do Androids Dream of Electric Sheep? — Philip K. Dick | apple right book | 0.122 | yes |
+| Do Androids Dream of Electric Sheep? — Philip K. Dick | apple right book | 0.122 |  |
 | Dostoevsky: Language, Faith and Fiction — Rowan Williams | file cover | 0.126 |  |
 | Dungeon Crawler Carl — Matt Dinniman | file cover | 0.73 |  |
 | East of Eden — John Steinbeck | apple right book | 0.247 |  |
@@ -148,7 +148,7 @@ Counts: apple right book: 290, file cover: 104, jacket: 23, lookup failed: 4, ma
 | Greenlights — Matthew McConaughey | matched apple (sim 0.856) | 0.856 |  |
 | Gunahon Ka Devta — Dharmaveer Bharti | file cover | -0.596 |  |
 | Guns, Germs, and Steel — Jared Diamond | apple right book | 0.648 |  |
-| Hamlet — William Shakespeare (ed. Ann Thompson & Neil Taylor) | matched apple (sim 1.0) | 1.0 | yes |
+| Hamlet — William Shakespeare (ed. Ann Thompson & Neil Taylor) | matched apple (sim 1.0) | 1.0 |  |
 | Hanamonogatari (Monogatari, Vol. 9) — NisiOisin | matched apple (sim 1.0) | 1.0 |  |
 | Haroun and the Sea of Stories — Salman Rushdie | apple right book | 0.042 |  |
 | Harry Potter and the Chamber of Secrets — J. K. Rowling | apple right book | 0.244 |  |
@@ -165,7 +165,7 @@ Counts: apple right book: 290, file cover: 104, jacket: 23, lookup failed: 4, ma
 | Heaven — Mieko Kawakami | matched current (sim 0.995) | 0.995 |  |
 | Hell's Angels — Hunter S. Thompson | apple right book | 0.139 |  |
 | Help! How to Become Slightly Happier and Get a Bit More Done — Oliver Burkeman | file cover | 0.18 |  |
-| Henry V — William Shakespeare | matched apple (sim 0.999) | 0.999 | yes |
+| Henry V — William Shakespeare | matched apple (sim 0.999) | 0.999 |  |
 | Here — Richard McGuire | apple right book | -1 |  |
 | Hey, Whipple, Squeeze This: The Classic Guide to Creating Great Ads — Luke Sullivan | matched current (sim 0.926) | 0.926 |  |
 | Hitler's Table Talk, 1941–1944 — Adolf Hitler (trans. Norman Cameron & R. H. Stevens) | matched current (sim 0.95) | 0.95 |  |
@@ -224,7 +224,7 @@ Counts: apple right book: 290, file cover: 104, jacket: 23, lookup failed: 4, ma
 | Love Is a Dog from Hell — Charles Bukowski | apple right book | 0.063 |  |
 | Love Letters: Vita and Virginia — Virginia Woolf & Vita Sackville-West | apple right book | 0.253 |  |
 | Maangchi's Real Korean Cooking — Maangchi | matched apple (sim 0.999) | 0.999 |  |
-| Macbeth (Norton Critical Edition) — William Shakespeare | apple right book | 0.085 | yes |
+| Macbeth (Norton Critical Edition) — William Shakespeare | apple right book | 0.085 |  |
 | Made to Stick — Chip Heath & Dan Heath | apple right book | 0.059 |  |
 | Make Time — Jake Knapp & John Zeratsky | matched apple (sim 0.891) | 0.991 |  |
 | Man and His Symbols — Carl Jung | apple right book | 0.169 |  |
@@ -255,10 +255,10 @@ Counts: apple right book: 290, file cover: 104, jacket: 23, lookup failed: 4, ma
 | Nisemonogatari (Part 1) (Monogatari, Vol. 4) — NisiOisin | jacket | -1 |  |
 | Nisemonogatari (Part 2) (Monogatari, Vol. 5) — NisiOisin | jacket | -1 |  |
 | Nithalle Ki Diary — Harishankar Parsai | file cover | -1 |  |
-| No Longer Human — Osamu Dazai | matched apple (sim 0.935) | 0.935 | yes |
+| No Longer Human — Osamu Dazai | matched apple (sim 0.935) | 0.935 |  |
 | No More Mr. Nice Guy — Robert A. Glover | apple right book | 0.202 |  |
 | No Nation for Women — Priyanka Dubey | apple right book | 0.682 | yes |
-| No One Knows: Stories — Osamu Dazai | matched apple (sim 0.993) | 0.993 | yes |
+| No One Knows: Stories — Osamu Dazai | matched apple (sim 0.993) | 0.993 |  |
 | Notes from Underground & The Double — Fyodor Dostoevsky | file cover | 0.321 |  |
 | Nothing Lasts Forever — Roderick Thorp | apple right book | -0.216 |  |
 | Nudge: Improving Decisions About Health, Wealth, and Happiness — Richard H. Thaler & Cass R. Sunstein | apple right book | -1 | yes |
@@ -276,7 +276,7 @@ Counts: apple right book: 290, file cover: 104, jacket: 23, lookup failed: 4, ma
 | One Plus One Equals Three — Dave Trott | matched apple (sim 0.993) | 0.993 |  |
 | Onimonogatari (Monogatari, Vol. 11) — NisiOisin | matched apple (sim 0.995) | 0.995 |  |
 | Only Dull People Are Brilliant at Breakfast — Oscar Wilde | matched apple (sim 0.999) | 0.999 |  |
-| Othello — William Shakespeare | matched apple (sim 1.0) | 1.0 | yes |
+| Othello — William Shakespeare | matched apple (sim 1.0) | 1.0 |  |
 | Otorimonogatari (Monogatari, Vol. 10) — NisiOisin | matched apple (sim 0.999) | 0.999 |  |
 | Outliers — Malcolm Gladwell | file cover | 0.345 |  |
 | Owarimonogatari (Part 1) (Monogatari, Vol. 15) — NisiOisin | matched apple (sim 0.999) | 0.999 |  |
@@ -309,7 +309,7 @@ Counts: apple right book: 290, file cover: 104, jacket: 23, lookup failed: 4, ma
 | Risk Savvy: How to Make Good Decisions — Gerd Gigerenzer | matched current (sim 0.989) | 0.989 |  |
 | Rivers of London — Ben Aaronovitch | matched apple (sim 0.931) | 0.931 |  |
 | Roadside Picnic — Arkady & Boris Strugatsky | apple right book | 0.374 |  |
-| Romeo and Juliet — William Shakespeare | apple right book | 0.452 | yes |
+| Romeo and Juliet — William Shakespeare | apple right book | 0.452 |  |
 | Russian Short Stories from Pushkin to Buida — Robert Chandler (ed.) | apple right book | -1 |  |
 | Salt, Fat, Acid, Heat — Samin Nosrat | apple right book | 0.519 |  |
 | Say Nothing — Patrick Radden Keefe | apple right book | 0.124 |  |
@@ -345,7 +345,7 @@ Counts: apple right book: 290, file cover: 104, jacket: 23, lookup failed: 4, ma
 | Systemantics: How Systems Work and Especially How They Fail — John Gall | jacket | -1 |  |
 | Talking to My Daughter About the Economy: How Capitalism Works—and How It Fails — Yanis Varoufakis | apple right book | 0.123 |  |
 | Tao Te Ching (trans. Gia-Fu Feng) — Lao Tzu | matched apple (sim 0.911) | 0.911 |  |
-| Tezuka's Crime and Punishment — Osamu Tezuka | file cover | -1 | yes |
+| Tezuka's Crime and Punishment — Osamu Tezuka | file cover | -1 |  |
 | Thank You for Arguing — Jay Heinrichs | file cover | 0.003 |  |
 | The 4-Hour Chef: The Simple Path to Cooking Like a Pro, Learning Anything, and Living the Good Life — Timothy Ferriss | matched openlibrary-isbn (sim 0.973) | 0.973 |  |
 | The Acid House — Irvine Welsh | matched apple (sim 0.887) | 0.887 |  |

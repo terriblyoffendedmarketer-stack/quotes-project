@@ -1,6 +1,6 @@
-# Synopsis check — 2026-11-21
+# Synopsis check — 2026-11-22
 
-647 checked, 89 wrong/unusable. Replaced: 7, blanked: 82.
+647 checked, 82 wrong/unusable. Replaced: 0, blanked: 82.
 
 | Book | Problem | Actually about | New synopsis from |
 |---|---|---|---|
@@ -11,7 +11,6 @@
 | The Book of Ramen — Mike Satinover | empty |  | — (blank) |
 | 99 Ways to Tell a Story: Exercises in Style — Matt Madden | empty |  | — (blank) |
 | A Man of Means — P. G. Wodehouse | empty |  | — (blank) |
-| A New Hamlet — Osamu Dazai | empty |  | Apple Books |
 | A Reader's Companion to Infinite Jest — William Dowling & Robert Bell | empty |  | — (blank) |
 | All Tomorrows: A Billion Year Chronicle of the Myriad Species and Mixed Fortunes of Man — C.M. Kösemen | empty |  | — (blank) |
 | Bahut Door Kitni Door Hota Hai — Manav Kaul | empty |  | — (blank) |
@@ -24,28 +23,22 @@
 | Fyodor Dostoevsky: Reading Order & Chronological Guide — Fyodor Dostoevsky | empty |  | — (blank) |
 | Good Stories (Future Science Fiction Digest) — Ken Liu | empty |  | — (blank) |
 | Gunahon Ka Devta — Dharmaveer Bharti | empty |  | — (blank) |
-| Hamlet — William Shakespeare (ed. Ann Thompson & Neil Taylor) | empty |  | Apple Books |
 | Hitler's Table Talk, 1941–1944 — Adolf Hitler (trans. Norman Cameron & R. H. Stevens) | empty |  | — (blank) |
 | Indica: A Deep Natural History of the Indian Subcontinent — Pranay Lal | empty |  | — (blank) |
 | Japan's Historical Arc: From Feudalism to War to Rebirth — Anonymous | empty |  | — (blank) |
 | Koyomimonogatari (Part 1) (Monogatari, Vol. 14) — NisiOisin | empty |  | — (blank) |
 | Kubitsuri High School (Zaregoto, Vol. 3) — NisiOisin | empty |  | — (blank) |
 | Language and Symbolic Systems — Yuen Ren Chao | empty |  | — (blank) |
-| Macbeth (Norton Critical Edition) — William Shakespeare | empty |  | Apple Books |
 | Memoirs of Robert-Houdin — Jean-Eugène Robert-Houdin | empty |  | — (blank) |
 | Nisemonogatari (Part 1) (Monogatari, Vol. 4) — NisiOisin | empty |  | — (blank) |
 | Nisemonogatari (Part 2) (Monogatari, Vol. 5) — NisiOisin | empty |  | — (blank) |
-| No Longer Human — Osamu Dazai | empty |  | Apple Books |
-| No One Knows: Stories — Osamu Dazai | empty |  | Apple Books |
 | Nuts and Bolts: “Thought” Verbs — Chuck Palahniuk | empty |  | — (blank) |
-| Othello — William Shakespeare | empty |  | Apple Books |
 | Owarimonogatari (Part 3) (Monogatari, Vol. 17) — NisiOisin | empty |  | — (blank) |
 | Second Look: A Magazine of Stories, Essays & Ideas (Issue One) — Various Authors | empty |  | — (blank) |
 | Selected Essays — George Orwell | empty |  | — (blank) |
 | Short Storybaazi — Divya Prakash Dubey | empty |  | — (blank) |
 | Super Power Memory — Harry Lorayne | empty |  | — (blank) |
 | Systemantics: How Systems Work and Especially How They Fail — John Gall | empty |  | — (blank) |
-| Tezuka's Crime and Punishment — Osamu Tezuka | empty |  | book file |
 | The Annotated Critical Laozi (Tao Te Ching) — Laozi | empty |  | — (blank) |
 | The Complete Adventures of Feluda — Satyajit Ray | empty |  | — (blank) |
 | The Complete Sherlock Holmes — Arthur Conan Doyle | empty |  | — (blank) |
