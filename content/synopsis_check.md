@@ -1,6 +1,6 @@
-# Synopsis check — 2026-11-22
+# Synopsis check — 2026-11-24
 
-647 checked, 82 wrong/unusable. Replaced: 0, blanked: 82.
+656 checked, 86 wrong/unusable. Replaced: 2, blanked: 84.
 
 | Book | Problem | Actually about | New synopsis from |
 |---|---|---|---|
@@ -10,6 +10,7 @@
 | The 9 Shots Guide — Tim Runia | empty |  | — (blank) |
 | The Book of Ramen — Mike Satinover | empty |  | — (blank) |
 | 99 Ways to Tell a Story: Exercises in Style — Matt Madden | empty |  | — (blank) |
+| A Handmaids Tale — Margaret Atwood | empty |  | — (blank) |
 | A Man of Means — P. G. Wodehouse | empty |  | — (blank) |
 | A Reader's Companion to Infinite Jest — William Dowling & Robert Bell | empty |  | — (blank) |
 | All Tomorrows: A Billion Year Chronicle of the Myriad Species and Mixed Fortunes of Man — C.M. Kösemen | empty |  | — (blank) |
@@ -19,6 +20,7 @@
 | Chess for Zebras: Thinking Differently About Black and White — Jonathan Rowson | empty |  | — (blank) |
 | Confessions of a Conjuror — Derren Brown | empty |  | — (blank) |
 | Dostoevsky: Language, Faith and Fiction — Rowan Williams | empty |  | — (blank) |
+| Fourteen Days — John Grisham | empty |  | book file |
 | Frogs into Princes — Richard Bandler & John Grinder | empty |  | — (blank) |
 | Fyodor Dostoevsky: Reading Order & Chronological Guide — Fyodor Dostoevsky | empty |  | — (blank) |
 | Good Stories (Future Science Fiction Digest) — Ken Liu | empty |  | — (blank) |
@@ -34,6 +36,7 @@
 | Nisemonogatari (Part 2) (Monogatari, Vol. 5) — NisiOisin | empty |  | — (blank) |
 | Nuts and Bolts: “Thought” Verbs — Chuck Palahniuk | empty |  | — (blank) |
 | Owarimonogatari (Part 3) (Monogatari, Vol. 17) — NisiOisin | empty |  | — (blank) |
+| Ready To Fire — Nambi Narayanan | empty |  | book file |
 | Second Look: A Magazine of Stories, Essays & Ideas (Issue One) — Various Authors | empty |  | — (blank) |
 | Selected Essays — George Orwell | empty |  | — (blank) |
 | Short Storybaazi — Divya Prakash Dubey | empty |  | — (blank) |
@@ -43,6 +46,7 @@
 | The Complete Adventures of Feluda — Satyajit Ray | empty |  | — (blank) |
 | The Complete Sherlock Holmes — Arthur Conan Doyle | empty |  | — (blank) |
 | The Development of Personality — Carl Jung | empty |  | — (blank) |
+| The Disappears — Marlon James | empty |  | — (blank) |
 | The Great Business Reformation: How AI Agents Are Rewriting the Rules of Enterprise — Anonymous | empty |  | — (blank) |
 | The Great Indian Novel — Shashi Tharoor | empty |  | — (blank) |
 | The Kubikiri Cycle (Zaregoto, Vol. 1) — NisiOisin | empty |  | — (blank) |

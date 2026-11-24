@@ -312,6 +312,18 @@
   "best_sim": -1
  },
  {
+  "id": "a-brief-history-of-seven-killings-marlon-james",
+  "title": "A Brief History of Seven Killings",
+  "author": "Marlon James",
+  "decision": "apple right book",
+  "old": "https://covers.openlibrary.org/b/id/7359856-L.jpg",
+  "new": "https://is1-ssl.mzstatic.com/image/thumb/Publication22/v4/46/01/59/46015953-9f6f-112b-b810-1fb40c6061d8/mzm.wrbgymzc.jpg/1000x1000bb.jpg",
+  "changed": true,
+  "trusted_desc": "Winner of the Booker Prize  One of the  New York Times ’s 100 Best Books of the 21st Century     One of  Entertainment Weekly ’s Top 10 Books of the Decade   One of  The Atlantic ’s Great American Novels of the Past 100 Years      A “thrilling, ambitious . . . intense” ( Los Angeles Times ) novel that explores the attempted assassination of Bob Marley in the late 1970s, from the author of  The Disappearers,  a finalist for the 2026 Booker Prize   In  A Brief History of Seven Killings , Marlon James combines brilliant storytelling with his unrivaled skills of characterization and meticulous eye for detail to forge an enthralling novel of dazzling ambition and scope.   On December 3, 1976, just before the Jamaican general election and two days before Bob Marley was to play the Smile Jamaica Concert to ease political tensions in Kingston, seven gunmen stormed the singer’s house, machine guns blazing. The attack wounded Marley, his wife, and his manager, and injured several others. Little was officially released about the gunmen, but much has been whispered, gossiped and sung about in the streets of West Kingston. Rumors abound regarding the assassins’ fates, and there are suspicions that the attack was politically motivated.    A Brief History of Seven Killings  delves deep into that dangerous and unstable time in Jamaica’s history and beyond. James deftly chronicles the lives of a host of unforgettable characters – gunmen, drug dealers, one-night stands, CIA agents, even ghosts – over the course of thirty years as they roam the streets of 1970s Kingston, dominate the crack houses of 1980s New York, and ultimately reemerge into the radically altered Jamaica of the 1990s. Along the way, they learn that evil does indeed cast long shadows, that justice and retribution are inextricably linked, and that no one can truly escape his fate.   Gripping and inventive, shocking and irresistible,  A Brief History of Seven Killings  is a mesmerizing modern classic of power, mystery, and insight.",
+  "epub_desc": "<span class=\"Apple-style-span\" style=\"font-family: 'MS Shell Dlg 2'; \"><p>In <em>A Brief History of Seven Killings</em>, Marlon James combines brilliant storytelling with his unrivaled skills of characterization and meticulous eye for detail to forge an enthralling novel of dazzling ambition and scope.</p><p>On December 3, 1976, just before the Jamaican general election and two days before Bob Marley was to play the Smile Jamaica Concert to ease political tensions in Kingston, seven gunmen stormed the singer’s house, machine guns blazing. The attack wounded Marley, his wife, and his manager, and injured several others. Little was officially released about the gunmen, but much has been whispered, gossiped and sung about in the streets of West Kingston. Rumors abound regarding the assassins’ fates, and there are suspicions  that the attack was politically motivated.</p><p><em>A Brief History of Seven Killings</em> delves deep into that dangerous and unstable time in Jamaica’s history and beyond. James deftly chronicles the lives of a host of unforgettable characters  gunmen, drug dealers, one-night stands, CIA agents,  even ghosts  over the course of thirty years as they roam the streets of 1970s Kingston, dominate the crack houses of 1980s New York, and ultimately reemerge into the radically altered Jamaica of the 1990s. Along the way, they learn that evil does indeed cast long shadows, that justice and retribution are inextricably linked, and that no one can truly escape his fate.</p><p>Gripping and inventive, shocking and irresistible,<em>A Brief History of Seven Killings</em> is a mesmerizing modern classic of power, mystery, and insight.</p></span>",
+  "best_sim": -0.118
+ },
+ {
   "id": "a-canticle-for-leibowitz-walter-m-miller-jr",
   "title": "A Canticle For Leibowitz",
   "author": "Walter M. Miller Jr.",
@@ -334,6 +346,18 @@
   "trusted_desc": "",
   "epub_desc": "",
   "best_sim": -1
+ },
+ {
+  "id": "a-handmaids-tale-margaret-atwood",
+  "title": "A Handmaids Tale",
+  "author": "Margaret Atwood",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/1xlaPCXN6CtNkhlMWDMFFe7EcQgcjyWms.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": -0.228
  },
  {
   "id": "a-man-of-means-p-g-wodehouse",
@@ -502,6 +526,18 @@
   "trusted_desc": "",
   "epub_desc": "",
   "best_sim": 0.985
+ },
+ {
+  "id": "alias-grace-margaret-atwood",
+  "title": "Alias Grace",
+  "author": "Margaret Atwood",
+  "decision": "apple right book",
+  "old": "https://covers.openlibrary.org/b/id/6642671-L.jpg",
+  "new": "https://is1-ssl.mzstatic.com/image/thumb/Publication113/v4/c6/da/df/c6dadf70-5978-1af0-493c-508f861f4680/9780307797957.d.jpg/1000x1000bb.jpg",
+  "changed": true,
+  "trusted_desc": "The bestselling author of  The Handmaid's Tale  and  The Testaments  reveals the life of one of the most notorious women of the nineteenth century in this \"shadowy, fascinating novel\" ( Time ). •&#xa0;A Netflix original miniseries.   It's 1843, and Grace Marks has been convicted for her involvement in the vicious murders of her employer and his housekeeper and mistress.   Some believe Grace is innocent; others think her evil or insane. Now serving a life sentence, Grace claims to have no memory of the murders. An up-and-coming expert in the burgeoning field of mental illness is engaged by a group of reformers and spiritualists who seek a pardon for Grace. He listens to her story while bringing her closer and closer to the day she cannot remember. What will he find in attempting to unlock her memories?   Captivating and disturbing,  Alias Grace  showcases bestselling, Booker Prize-winning author Margaret Atwood at the peak of her powers.",
+  "epub_desc": "",
+  "best_sim": 0.236
  },
  {
   "id": "alice-christina-henry",
@@ -1570,6 +1606,18 @@
   "trusted_desc": "AN INSTANT  NEW YORK TIMES  BESTSELLER    \"Provocative and appealing . . . well worth your extremely limited time.\" —Barbara Spindel,  The Wall Street Journal    The average human lifespan is absurdly, insultingly brief. Assuming you live to be eighty, you have just over four thousand weeks.  Nobody needs telling there isn’t enough time. We’re obsessed with our lengthening to-do lists, our overfilled inboxes, work-life balance, and the ceaseless battle against distraction; and we’re deluged with advice on becoming more productive and efficient, and “life hacks” to optimize our days. But such techniques often end up making things worse. The sense of anxious hurry grows more intense, and still the most meaningful parts of life seem to lie just beyond the horizon. Still, we rarely make the connection between our daily struggles with time and the ultimate time management problem: the challenge of how best to use our four thousand weeks.  Drawing on the insights of both ancient and contemporary philosophers, psychologists, and spiritual teachers, Oliver Burkeman delivers an entertaining, humorous, practical, and ultimately profound guide to time and time management. Rejecting the futile modern fixation on “getting everything done,”  Four Thousand Weeks  introduces readers to tools for constructing a meaningful life by embracing finitude, showing how many of the unhelpful ways we’ve come to think about time aren’t inescapable, unchanging truths, but choices we’ve made as individuals and as a society—and that we could do things differently.",
   "epub_desc": "<b>&ldquo;This is the most important book ever written about time management. Oliver Burkeman offers a searing indictment of productivity hacking and profound insights on how to make the best use of our scarcest, most precious resource. His writing will challenge you to rethink many of your beliefs about getting things done-and you&rsquo;ll be wiser because of it.&rdquo;&nbsp;<br><b>-Adam Grant, #1&nbsp;</b><b><i>New York Times&nbsp;</i></b><b>bestselling author of&nbsp;</b><b><i>Think Again</i></b><b>&nbsp;and host of&nbsp;</b><b><i>WorkLife</i></b><br>&nbsp;<br>&nbsp;<br>Time is our biggest worry: there is too little of it. The award-winning, renowned <i>Guardian</i> columnist Oliver Burkeman offers a lively, entertaining philosophical guide to time and time management, setting aside superficial efficiency solutions in favour of reckoning with and finding joy in the finitude of human life.</b><br>The average human lifespan is absurdly, insultingly brief. Assuming you live to be...",
   "best_sim": 0.104
+ },
+ {
+  "id": "fourteen-days-john-grisham",
+  "title": "Fourteen Days",
+  "author": "John Grisham",
+  "decision": "file cover",
+  "old": "https://covers.openlibrary.org/b/id/12521946-L.jpg",
+  "new": "covers/1nILImzJhy9RxBnpkfnQrLSP-uT85Mr74.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "<strong>Set in a Lower East Side tenement in the early days of the COVID-19 lockdowns, Fourteen Days is a surprising and irresistibly propulsive novel with an unusual twist: each character in this diverse, eccentric cast of New York neighbors has been secretly written by a different, major literary voice&#8212;from Margaret Atwood and Douglas Preston to Tommy Orange and Celeste Ng.</strong><br/>One week into the COVID-19 shutdown, tenants of a Lower East Side apartment building in Manhattan have begun to gather on the rooftop and tell stories. With each passing night, more and more neighbors gather, bringing chairs and milk crates and overturned pails. Gradually the tenants&#8212;some of whom have barely spoken to each other&#8212;become real neighbors. In this Decameron-like serial novel, general editor Margaret Atwood, Authors Guild president Douglas Preston, and a star-studded list of contributors create a beautiful ode to the people who couldn't get away from the city when the...",
+  "best_sim": -0.093
  },
  {
   "id": "frankenstein-mary-shelley",
@@ -3264,6 +3312,18 @@
   "best_sim": 0.999
  },
  {
+  "id": "oryx-and-crake-margaret-atwood",
+  "title": "Oryx and Crake",
+  "author": "Margaret Atwood",
+  "decision": "apple right book",
+  "old": "https://covers.openlibrary.org/b/id/12507658-L.jpg",
+  "new": "https://is1-ssl.mzstatic.com/image/thumb/Publication115/v4/67/1a/e6/671ae61c-41cc-797e-bb19-86265893897b/9781400078981.jpg/1000x1000bb.jpg",
+  "changed": true,
+  "trusted_desc": "NATIONAL BESTSELLER  •  The first volume in the internationally acclaimed MaddAddam trilogy is at once an unforgettable love story and a compelling vision of the future   —   f rom the bestselling author of  The Handmaid's Tale  and  The Testaments      A  Kirkus Reviews  Best Fiction Book of the Century   Snowman, known as Jimmy before mankind was overwhelmed by a plague, is struggling to survive in a world where he may be the last human, and mourning the loss of his best friend, Crake, and the beautiful and elusive Oryx whom they both loved. In search of answers, Snowman embarks on a journey  —  with the help of the green-eyed Children of Crake  —  through the lush wilderness that was so recently a great city, until powerful corporations took mankind on an uncontrolled genetic engineering ride. Margaret Atwood projects us into a near future that is both all too familiar and beyond our imagining.",
+  "epub_desc": "",
+  "best_sim": 0.061
+ },
+ {
   "id": "othello-william-shakespeare",
   "title": "Othello",
   "author": "William Shakespeare",
@@ -3346,6 +3406,18 @@
   "trusted_desc": "One of the original primers on shadow work— A spiritual guide to fully understanding your psyche and unconscious mind to achieve transformative self-acceptance    In this mind—and life—altering volume, Jungian expert and renowned author Robert A. Johnson describes how we all have shadows—the unlit, undesirable, part of our ego that is hidden deep within us that merely—and often painfully—turns up in unexpected places. As we leave these shadows dormant, we veer further away from our true selves. But when we begin to explore and embrace these shadows, we begin to find balance and finally heal the parts of ourselves we thought were broken.  Johnson illuminates that by accepting and honoring the shadow within us, we can:  ·      Live beyond judgement and shame through healthy emotional regulation  ·      Strengthen our relationships and develop healthier behavioral and communication patterns  ·      Stop comparing ourselves to others and learn to live with authentic gratitude for what we have and who we are  ·      Move beyond self-sabotaging to radically improve our self-esteem and self-worth  Both radical and piercing yet compassionate and gentle,  Owning Your Shadow  allows us to clasp the painful parts of ourselves—our anger, jealousy, addictions, fears—and use them to discover our most authentic selves. A must-read for anyone who struggles with a lack of self-confidence, trouble setting boundaries, anxiety in relationships, doomscrolling, or simply finding the happiness they know they deserve.  Indeed, the light at the end of the tunnel begins when we choose to venture into the darkness first.",
   "epub_desc": "<p>A bestselling author shows how we can reclaim and make peace with the &#34;shadow&#34; side of our personality. </p>",
   "best_sim": 0.179
+ },
+ {
+  "id": "parable-of-the-sower-octavia-e-butler",
+  "title": "Parable of the Sower",
+  "author": "Octavia E. Butler",
+  "decision": "matched apple (sim 0.999)",
+  "old": "https://covers.openlibrary.org/b/id/10466266-L.jpg",
+  "new": "https://is1-ssl.mzstatic.com/image/thumb/Publication221/v4/18/75/23/187523d7-1164-77df-1a5f-5de9b4e6c12b/9781538765494.jpg/1000x1000bb.jpg",
+  "changed": true,
+  "trusted_desc": "From a celebrated, award-winning author, a modern classic about a young girl fighting for survival in a post-apocalyptic world, perfect for fans of N.K. Jemisin and Margaret Atwood.    Fifteen-year-old Lauren Olamina lives inside a gated community with her preacher father, family, and neighbors, sheltered from the surrounding social chaos&#xa0;and&#xa0;anarchy caused by climate change and economic crisis. In a society where any vulnerability is a risk, she suffers from hyperempathy—a debilitating sensitivity to others' emotions.   Precocious and clear-eyed, Lauren must make her voice heard in order to protect her loved ones from the imminent disasters her small community stubbornly ignores. But what begins as a fight for survival soon leads to something much more: the birth of a new faith . . . and a startling vision of human destiny.    Includes a foreword by LeVar Burton and an afterword by N. K.&#xa0;Jemisin    Lauren's story continues in  The Parable of the Talents.&#xa0;    \"In the ongoing contest over which dystopian classic is most applicable to our time, Octavia Butler's 'Parable' books may be unmatched.\"— The New Yorker    &#xa0;",
+  "epub_desc": "",
+  "best_sim": 0.999
  },
  {
   "id": "paradise-and-other-stories-khushwant-singh",
@@ -3562,6 +3634,18 @@
   "trusted_desc": "Buster “Rant” Casey just may be the most efficient serial killer of our time. A high  school rebel, Rant Casey escapes from his small town home for the big city where  he becomes the leader of an urban demolition derby called Party Crashing. Rant Casey  will die a spectacular highway death, after which his friends gather the testimony  needed to build an oral history of his short, violent life. With hilarity, horror,  and blazing insight,  Rant  is a mind-bending vision of the future, as only Chuck Palahniuk  could ever imagine.",
   "epub_desc": "",
   "best_sim": 0.198
+ },
+ {
+  "id": "ready-to-fire-nambi-narayanan",
+  "title": "Ready To Fire",
+  "author": "Nambi Narayanan",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/1sB2P80awPlcrcP8EQSPo0gRjGkz4PC9k.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "<p>A top scientist is falsely accused of selling space technology secrets. A police inspector's misadventure with a Maldivian woman results in a fabricated espionage case. A faction within a political party capitalises on the case to bring down a government. An intelligence agency obligingly plays into the hands of vested interests to slow down India's space programme. And a complex investigation finally proves the allegations untrue.<br/> <br/> In this riveting book, Isro scientist S Nambi Narayanan - who was falsely accused of espionage in ISRO spy case of the 1990s - and senior journalist Arun Ram meticulously unpick the ISRO spy case, revisit old material and discover new details to expose the international plot that delayed India's development of a cryogenic engine by at least a decade.<br/> <br/> It took four years for the CBI to exonerate Nambi, but his fight for justice to ensure action against the officers who faked the case and tortured him in custody...",
+  "best_sim": -1
  },
  {
   "id": "red-rising-pierce-brown",
@@ -4308,6 +4392,18 @@
   "best_sim": 0.848
  },
  {
+  "id": "the-blind-assassin-margaret-atwood",
+  "title": "The Blind Assassin",
+  "author": "Margaret Atwood",
+  "decision": "apple right book",
+  "old": "https://covers.openlibrary.org/b/id/11041760-L.jpg",
+  "new": "https://is1-ssl.mzstatic.com/image/thumb/Publication113/v4/6a/f0/c7/6af0c72a-f8b8-b783-4177-4a0f4be0e944/9780307428172.d.jpg/1000x1000bb.jpg",
+  "changed": true,
+  "trusted_desc": "WINNER OF THE BOOKER PRIZE • T he bestselling author of  The Handmaid's Tale  and  The Testaments      weaves together strands of gothic suspense, romance, and science fiction into one utterly spellbinding narrative, beginning with the mysterious death of a young woman named Laura Chase in 1945.    Decades later, Laura’s sister Iris recounts her memories of their childhood, and of the dramatic deaths that have punctuated their wealthy, eccentric family’s history. Intertwined with Iris’s account are chapters from the scandalous novel that made Laura famous, in which two illicit lovers amuse each other by spinning a tale of a blind killer on a distant planet.   These richly layered stories-within-stories gradually illuminate the secrets that have long haunted the Chase family, coming together in a brilliant and astonishing final twist.",
+  "epub_desc": "",
+  "best_sim": 0.715
+ },
+ {
   "id": "the-body-keeps-the-score-van-der-kolk-bessel-a",
   "title": "The Body Keeps the Score",
   "author": "Bessel van der Kolk",
@@ -4594,6 +4690,18 @@
   "trusted_desc": "A  New York Times ,  USA Today , and  Wall Street Journal  bestseller     In this iconic bestseller, popular business blogger and bestselling author Seth Godin proves that winners are really just the best quitters. Godin shows that winners quit fast, quit often, and quit without guilt—until they commit to beating the right Dip.   Every new project (or job, or hobby, or company) starts out fun…then gets really hard, and not much fun at all. You might be in a Dip—a temporary setback that will get better if you keep pushing. But maybe it’s really a Cul-de-Sac—a total dead end. What really sets superstars apart is the ability to tell the two apart.   Winners seek out the Dip. They realize that the bigger the barrier, the bigger the reward for getting past it. If you can beat the Dip to be the best, you’ll earn profits, glory, and long-term security.   Whether you’re an intern or a CEO, this fun little book will help you figure out if you’re in a Dip that’s worthy of your time, effort, and talents. The old saying is wrong—winners do quit, and quitters do win.",
   "epub_desc": "",
   "best_sim": 0.998
+ },
+ {
+  "id": "the-disappears-marlon-james",
+  "title": "The Disappears",
+  "author": "Marlon James",
+  "decision": "apple right book",
+  "old": "",
+  "new": "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/d5/62/85/d562854f-0640-438d-98f7-45c31aecd253/9780593717226.d.jpg/1000x1000bb.jpg",
+  "changed": true,
+  "trusted_desc": "AN INSTANT  NEW YORK TIMES  BESTSELLER  SHORTLISTED FOR THE 2026 BOOKER PRIZE  LONGLISTED FOR THE 2026 NATIONAL BOOK AWARD FOR FICTION  ONE OF  TIME's  100 BEST BOOKS OF 2026  “This masterpiece is the novel of the decade, if not the century...  The Disappearers  places [James] near the front of the line, a decade or two from now, for the Nobel Prize.” – The New York Times   “Harrowing, hilarious, magnificent …this novel will be read decades from now, pored over in seminars and bookmarked on subway commutes … [James’] defiant queer epic belongs to us all.” – The Boston Globe   “Among Marlon James’s most ambitious and history-making works… James is a singular literary talent.” –Booker Prize judge's citation  From Marlon James, author of the Booker Prize–winning  A Brief History of Seven Killings : the electrifying story of the murder of a gay man in 1980s Jamaica and its far-reaching consequences   In 1988, eight men in Kingston, Jamaica, begin rehearsals for a play. Though strangers to one another, they share an inescapable truth: All of them are gay. And they live in a world that refuses to accept them.  One night the men are savagely beaten and one of them is killed. As their bodies heal, the survivors begin to face the hatred and contempt that the violence laid bare. Some try to ignore what happened. Others double down on retribution. Some disappear completely.  In this spellbinding novel, Marlon James has written a propulsive crime story that is also a deeply human account of connection and acceptance. Full of fascinating characters, biting humor, and unapologetic sex,  The Disappearers  is both a thrilling page-turner and a finely etched portrait of queer life.",
+  "epub_desc": "",
+  "best_sim": 0.003
  },
  {
   "id": "the-discovery-of-india-jawaharlal-nehru",
