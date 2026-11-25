@@ -1,6 +1,6 @@
-# Synopsis check — 2026-11-24
+# Synopsis check — 2026-11-25
 
-656 checked, 86 wrong/unusable. Replaced: 2, blanked: 84.
+656 checked, 84 wrong/unusable. Replaced: 1, blanked: 83.
 
 | Book | Problem | Actually about | New synopsis from |
 |---|---|---|---|
@@ -20,7 +20,6 @@
 | Chess for Zebras: Thinking Differently About Black and White — Jonathan Rowson | empty |  | — (blank) |
 | Confessions of a Conjuror — Derren Brown | empty |  | — (blank) |
 | Dostoevsky: Language, Faith and Fiction — Rowan Williams | empty |  | — (blank) |
-| Fourteen Days — John Grisham | empty |  | book file |
 | Frogs into Princes — Richard Bandler & John Grinder | empty |  | — (blank) |
 | Fyodor Dostoevsky: Reading Order & Chronological Guide — Fyodor Dostoevsky | empty |  | — (blank) |
 | Good Stories (Future Science Fiction Digest) — Ken Liu | empty |  | — (blank) |
@@ -36,7 +35,6 @@
 | Nisemonogatari (Part 2) (Monogatari, Vol. 5) — NisiOisin | empty |  | — (blank) |
 | Nuts and Bolts: “Thought” Verbs — Chuck Palahniuk | empty |  | — (blank) |
 | Owarimonogatari (Part 3) (Monogatari, Vol. 17) — NisiOisin | empty |  | — (blank) |
-| Ready To Fire — Nambi Narayanan | empty |  | book file |
 | Second Look: A Magazine of Stories, Essays & Ideas (Issue One) — Various Authors | empty |  | — (blank) |
 | Selected Essays — George Orwell | empty |  | — (blank) |
 | Short Storybaazi — Divya Prakash Dubey | empty |  | — (blank) |
@@ -75,7 +73,7 @@
 | The Death of the Author — Roland Barthes | empty |  | — (blank) |
 | The Neil French Collection — Neil French | empty |  | — (blank) |
 | Ultimate Guide to Street Photography — Anonymous | empty |  | — (blank) |
-| (500) Days of Summer (Screenplay) — Scott Neustadter & Michael H. Weber | empty |  | — (blank) |
+| (500) Days of Summer (Screenplay) — Scott Neustadter & Michael H. Weber | empty |  | Open Library |
 | American Fiction (Screenplay) — Cord Jefferson | empty |  | — (blank) |
 | Arrival (Screenplay) — Eric Heisserer (based on Ted Chiang) | empty |  | — (blank) |
 | Everything Everywhere All at Once (Screenplay) — Daniel Kwan & Daniel Scheinert (Daniels) | empty |  | — (blank) |

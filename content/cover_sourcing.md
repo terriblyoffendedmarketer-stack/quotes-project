@@ -1,4 +1,4 @@
-# Cover sourcing — 2026-11-24
+# Cover sourcing — 2026-11-25
 
 Counts: apple right book: 295, file cover: 107, jacket: 23, lookup failed: 4, matched apple: 161, matched current: 35, matched openlibrary-isbn: 18, no file cover: 13
 
@@ -30,10 +30,10 @@ Counts: apple right book: 295, file cover: 107, jacket: 23, lookup failed: 4, ma
 | 1984 — George Orwell | apple right book | 0.332 |  |
 | 20th Century Ghosts — Joe Hill | matched apple (sim 0.999) | 0.999 |  |
 | 99 Ways to Tell a Story: Exercises in Style — Matt Madden | no file cover: kept current (unverified) | -1 |  |
-| A Brief History of Seven Killings — Marlon James | apple right book | -0.118 | yes |
+| A Brief History of Seven Killings — Marlon James | apple right book | -0.118 |  |
 | A Canticle For Leibowitz — Walter M. Miller Jr. | apple right book | 0.218 |  |
 | A Cup of Zen — Kai Tsukimi | file cover | -1 | yes |
-| A Handmaids Tale — Margaret Atwood | file cover | -0.228 | yes |
+| A Handmaids Tale — Margaret Atwood | file cover | -0.228 |  |
 | A Man of Means — P. G. Wodehouse | apple right book | 0.089 |  |
 | A Mind for Numbers: How to Excel at Math and Science — Barbara Oakley | apple right book | 0.05 |  |
 | A Monster Calls — Patrick Ness | matched apple (sim 0.848) | 0.848 |  |
@@ -48,7 +48,7 @@ Counts: apple right book: 295, file cover: 107, jacket: 23, lookup failed: 4, ma
 | Airframe — Michael Crichton | apple right book | 0.314 |  |
 | Ajaya: Roll of the Dice — Anand Neelakantan | apple right book | 0.234 |  |
 | Alchemy — Rory Sutherland | matched current (sim 0.985) | 0.985 |  |
-| Alias Grace — Margaret Atwood | apple right book | 0.236 | yes |
+| Alias Grace — Margaret Atwood | apple right book | 0.236 |  |
 | Alice — Christina Henry | matched current (sim 0.997) | 0.997 |  |
 | All Art Is Propaganda — George Orwell | matched apple (sim 0.953) | 0.953 |  |
 | All Marketers Are Liars — Seth Godin | file cover | 0.147 |  |
@@ -138,7 +138,7 @@ Counts: apple right book: 295, file cover: 107, jacket: 23, lookup failed: 4, ma
 | Flow — Mihaly Csikszentmihalyi | file cover | 0.166 |  |
 | Foundation — Isaac Asimov | apple right book | 0.133 |  |
 | Four Thousand Weeks: Time Management for Mortals — Oliver Burkeman | apple right book | 0.104 |  |
-| Fourteen Days — John Grisham | file cover | -0.093 | yes |
+| Fourteen Days — John Grisham | file cover | -0.093 |  |
 | Frankenstein — Mary Shelley | apple right book | 0.42 |  |
 | Freakonomics — Steven D. Levitt & Stephen J. Dubner | apple right book | -0.045 |  |
 | Frogs into Princes — Richard Bandler & John Grinder | file cover | -0.039 |  |
@@ -280,7 +280,7 @@ Counts: apple right book: 295, file cover: 107, jacket: 23, lookup failed: 4, ma
 | One Plus One Equals Three — Dave Trott | matched apple (sim 0.993) | 0.993 |  |
 | Onimonogatari (Monogatari, Vol. 11) — NisiOisin | matched apple (sim 0.995) | 0.995 |  |
 | Only Dull People Are Brilliant at Breakfast — Oscar Wilde | matched apple (sim 0.999) | 0.999 |  |
-| Oryx and Crake — Margaret Atwood | apple right book | 0.061 | yes |
+| Oryx and Crake — Margaret Atwood | apple right book | 0.061 |  |
 | Othello — William Shakespeare | matched apple (sim 1.0) | 1.0 |  |
 | Otorimonogatari (Monogatari, Vol. 10) — NisiOisin | matched apple (sim 0.999) | 0.999 |  |
 | Outliers — Malcolm Gladwell | file cover | 0.345 |  |
@@ -288,7 +288,7 @@ Counts: apple right book: 295, file cover: 107, jacket: 23, lookup failed: 4, ma
 | Owarimonogatari (Part 2) (Monogatari, Vol. 16) — NisiOisin | matched apple (sim 0.995) | 0.995 |  |
 | Owarimonogatari (Part 3) (Monogatari, Vol. 17) — NisiOisin | matched apple (sim 1.0) | 1.0 |  |
 | Owning Your Own Shadow — Robert A. Johnson | apple right book | 0.179 |  |
-| Parable of the Sower — Octavia E. Butler | matched apple (sim 0.999) | 0.999 | yes |
+| Parable of the Sower — Octavia E. Butler | matched apple (sim 0.999) | 0.999 |  |
 | Paradise and Other Stories — Khushwant Singh | file cover | -1 | yes |
 | Persuader (Jack Reacher #7) — Lee Child | apple right book | -0.049 |  |
 | Pet Sematary — Stephen King | apple right book | 0.37 |  |
@@ -307,7 +307,7 @@ Counts: apple right book: 295, file cover: 107, jacket: 23, lookup failed: 4, ma
 | Propaganda — Jacques Ellul | matched apple (sim 1.0) | 1.0 |  |
 | Quiet — Susan Cain | apple right book | 0.68 |  |
 | Rant: An Oral Biography of Buster Casey — Chuck Palahniuk | apple right book | 0.198 |  |
-| Ready To Fire — Nambi Narayanan | file cover | -1 | yes |
+| Ready To Fire — Nambi Narayanan | file cover | -1 |  |
 | Red Rising — Pierce Brown | matched apple (sim 0.866) | 0.866 |  |
 | Replay — Ken Grimwood | apple right book | 0.091 |  |
 | Rest: Why You Get More Done When You Work Less — Alex Soojung-Kim Pang | apple right book | 0.224 |  |
@@ -370,7 +370,7 @@ Counts: apple right book: 295, file cover: 107, jacket: 23, lookup failed: 4, ma
 | The Bell Jar — Sylvia Plath | apple right book | 0.054 |  |
 | The Big Fat Joke Book — Khushwant Singh | file cover | 0.196 |  |
 | The Blade Itself — Joe Abercrombie | matched current (sim 0.848) | 0.848 |  |
-| The Blind Assassin — Margaret Atwood | apple right book | 0.715 | yes |
+| The Blind Assassin — Margaret Atwood | apple right book | 0.715 |  |
 | The Body Keeps the Score — Bessel van der Kolk | apple right book | 0.095 |  |
 | The Book of Laughter and Forgetting — Milan Kundera | apple right book | 0.268 |  |
 | The Book Thief — Markus Zusak | apple right book | 0.164 |  |
@@ -395,7 +395,7 @@ Counts: apple right book: 295, file cover: 107, jacket: 23, lookup failed: 4, ma
 | The Development of Personality — Carl Jung | file cover | 0.123 |  |
 | The Diary of a Young Girl — Anne Frank | apple right book | -1 |  |
 | The Dip — Seth Godin | matched apple (sim 0.998) | 0.998 |  |
-| The Disappears — Marlon James | apple right book | 0.003 | yes |
+| The Disappears — Marlon James | apple right book | 0.003 |  |
 | The Discovery of India — Jawaharlal Nehru | apple right book | -0.26 |  |
 | The Dispossessed — Ursula K. Le Guin | file cover | 0.012 |  |
 | The Dream of a Ridiculous Man — Fyodor Dostoevsky | apple right book | 0.259 | yes |
