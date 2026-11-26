@@ -1,6 +1,6 @@
-# Cover sourcing — 2026-11-25
+# Cover sourcing — 2026-11-26
 
-Counts: apple right book: 295, file cover: 107, jacket: 23, lookup failed: 4, matched apple: 161, matched current: 35, matched openlibrary-isbn: 18, no file cover: 13
+Counts: apple right book: 296, file cover: 109, jacket: 23, lookup failed: 4, matched apple: 161, matched current: 35, matched openlibrary-isbn: 18, no file cover: 13
 
 | Book | Decision | best sim | changed |
 |---|---|---|---|
@@ -347,6 +347,7 @@ Counts: apple right book: 295, file cover: 107, jacket: 23, lookup failed: 4, ma
 | Strange Pictures — Uketsu | matched apple (sim 0.945) | 0.945 |  |
 | Stranger than Fiction — Chuck Palahniuk | apple right book | 0.744 |  |
 | Style: An Anti-Textbook — Richard A. Lanham | matched apple (sim 0.999) | 0.999 |  |
+| Sun and Steel — Yukio Mishima | apple right book | 0.355 | yes |
 | Super Power Memory — Harry Lorayne | file cover | -0.231 |  |
 | Survivor — Chuck Palahniuk | apple right book | 0.082 |  |
 | Systemantics: How Systems Work and Especially How They Fail — John Gall | jacket | -1 |  |
@@ -476,6 +477,7 @@ Counts: apple right book: 295, file cover: 107, jacket: 23, lookup failed: 4, ma
 | The Revolt of the Public and the Crisis of Authority in the New Millennium — Martin Gurri | matched apple (sim 0.997) | 0.997 |  |
 | The Richest Man in Babylon — George S. Clason | apple right book | 0.335 |  |
 | The Ruins — Scott Smith | apple right book | 0.001 |  |
+| The Sailor Who Fell from Grace with the Se — YUKIO MISHIMA | file cover | -1 | yes |
 | The Satanic Verses — Salman Rushdie | apple right book | -1 |  |
 | The School of Life — Alain de Botton | matched current (sim 0.922) | 0.922 |  |
 | The Science of Logic — G. W. F. Hegel | apple right book | 0.034 |  |
@@ -492,6 +494,7 @@ Counts: apple right book: 295, file cover: 107, jacket: 23, lookup failed: 4, ma
 | The Status Game: On Social Position and How We Use It — Will Storr | apple right book | 0.045 |  |
 | The Stream of Homer: On Story, Heroism, and the River That Runs Underneath Everything — Anonymous | file cover | -1 | yes |
 | The Structure of Scientific Revolutions — Thomas S. Kuhn | matched apple (sim 0.999) | 0.999 |  |
+| The Temple of the Golden Pavilion — Yukio Mishima | file cover | -1 | yes |
 | The Ten Loves of Nishino — Hiromi Kawakami | apple right book | 0.471 |  |
 | The Thought War: Japanese Imperial Propaganda — Barak Kushner | no file cover: kept current (unverified) | -1 |  |
 | The Tipping Point — Malcolm Gladwell | matched openlibrary-isbn (sim 0.998) | 0.998 |  |

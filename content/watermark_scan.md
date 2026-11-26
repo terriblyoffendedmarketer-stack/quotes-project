@@ -1,4 +1,4 @@
-# OceanofPDF watermark scan — 2026-11-25
+# OceanofPDF watermark scan — 2026-11-26
 
-519 EPUBs scanned: 0 have the watermark, 0 couldn't be read.
+522 EPUBs scanned: 0 have the watermark, 0 couldn't be read.
 

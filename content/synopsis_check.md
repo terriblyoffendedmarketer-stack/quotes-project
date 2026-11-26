@@ -1,6 +1,6 @@
-# Synopsis check — 2026-11-25
+# Synopsis check — 2026-11-26
 
-656 checked, 84 wrong/unusable. Replaced: 1, blanked: 83.
+659 checked, 86 wrong/unusable. Replaced: 2, blanked: 84.
 
 | Book | Problem | Actually about | New synopsis from |
 |---|---|---|---|
@@ -38,6 +38,7 @@
 | Second Look: A Magazine of Stories, Essays & Ideas (Issue One) — Various Authors | empty |  | — (blank) |
 | Selected Essays — George Orwell | empty |  | — (blank) |
 | Short Storybaazi — Divya Prakash Dubey | empty |  | — (blank) |
+| Sun and Steel — Yukio Mishima | empty |  | Apple Books |
 | Super Power Memory — Harry Lorayne | empty |  | — (blank) |
 | Systemantics: How Systems Work and Especially How They Fail — John Gall | empty |  | — (blank) |
 | The Annotated Critical Laozi (Tao Te Ching) — Laozi | empty |  | — (blank) |
@@ -55,7 +56,9 @@
 | The Political Symphony: Why Nations Choose Different Paths — Anonymous | empty |  | — (blank) |
 | The Reading Room: A Short Fiction Mag — Various Authors | empty |  | — (blank) |
 | The Real Osamu Dazai: A Life in Twenty Stories — Osamu Dazai | empty |  | — (blank) |
+| The Sailor Who Fell from Grace with the Se — YUKIO MISHIMA | empty |  | — (blank) |
 | The Stream of Homer: On Story, Heroism, and the River That Runs Underneath Everything — Anonymous | empty |  | — (blank) |
+| The Temple of the Golden Pavilion — Yukio Mishima | empty |  | book file |
 | The Work of Art in the Age of Mechanical Reproduction — Walter Benjamin | empty |  | — (blank) |
 | What Is Dialectical Materialism? A Study Guide — Rob Sewell | empty |  | — (blank) |
 | Writing Craft Essays — Chuck Palahniuk | empty |  | — (blank) |
@@ -73,7 +76,6 @@
 | The Death of the Author — Roland Barthes | empty |  | — (blank) |
 | The Neil French Collection — Neil French | empty |  | — (blank) |
 | Ultimate Guide to Street Photography — Anonymous | empty |  | — (blank) |
-| (500) Days of Summer (Screenplay) — Scott Neustadter & Michael H. Weber | empty |  | Open Library |
 | American Fiction (Screenplay) — Cord Jefferson | empty |  | — (blank) |
 | Arrival (Screenplay) — Eric Heisserer (based on Ted Chiang) | empty |  | — (blank) |
 | Everything Everywhere All at Once (Screenplay) — Daniel Kwan & Daniel Scheinert (Daniels) | empty |  | — (blank) |
