@@ -2712,6 +2712,18 @@
   "best_sim": 0.059
  },
  {
+  "id": "magic-is-dead-ian-frisch",
+  "title": "Magic Is Dead",
+  "author": "Ian Frisch",
+  "decision": "matched current (sim 0.949)",
+  "old": "https://covers.openlibrary.org/b/id/8797542-L.jpg",
+  "new": "https://covers.openlibrary.org/b/id/8797542-L.jpg",
+  "changed": false,
+  "trusted_desc": "",
+  "epub_desc": "<p><strong>In the vein of Neil Strauss' The Game and Joshua Foer's Moonwalking with Einstein comes the fascinating story of one man's colorful, mysterious, and personal journey into the world of magic, and his unlikely invitation into an underground secret society of revolutionary magicians from around the world.</strong></p><p>Magic Is Dead is Ian Frisch's head-first dive into a hidden world full of extraordinary characters and highly guarded secrets. It is a story of imagination, deception, and art that spotlights today's most brilliant young magicians&#8212;a mysterious club known as the52, who are revolutionizing an ancient artform under the mantra Magic Is Dead.</p><p>Ian brings us with him as he not only gets to know this fascinating world, but also becomes an integral part of it. We meet the52's founding members&#8212;Laura London, Daniel Madison, and Chris Ramsay&#8212;and explore their personal demons, professional aspirations, and what drew them to their craft. We join...",
+  "best_sim": 0.949
+ },
+ {
   "id": "make-time-jake-knapp-john-zeratsky",
   "title": "Make Time",
   "author": "Jake Knapp & John Zeratsky",
@@ -4120,9 +4132,9 @@
   "title": "Sun and Steel",
   "author": "Yukio Mishima",
   "decision": "apple right book",
-  "old": "",
+  "old": "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/ed/44/c9/ed44c9b1-3d6f-526d-c8ed-4bbee87ba547/9780811241724.jpg/1000x1000bb.jpg",
   "new": "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/ed/44/c9/ed44c9b1-3d6f-526d-c8ed-4bbee87ba547/9780811241724.jpg/1000x1000bb.jpg",
-  "changed": true,
+  "changed": false,
   "trusted_desc": "Mishima’s essential text on the aesthetics of the body \nIn this endlessly fascinating essay—part bildungsroman, part treatise—from one of Japanese’s most celebrated and controversial modern writers, we witness the transformation of Yukio Mishima from a bookish teenager who avoided fighting in WWII, to a bodybuilder, a warrior, and a writer soaring at the heights of fame in postwar Japan, who ultimately became a leader of a military group who tried to overthrow the Japanese government. Mishima, with measured and poetic self-interrogation, sifts through his own memories, piecing together the complex relations between thought and action, art and the physical body, individualism and nationalism, literature and revolution. He argues that only through the body—conditioning it with weightlifting—can one reach their highest ambitions as an individual; and only within a group can the individual transcend their place in the world and become almost a sort of divinity.",
   "epub_desc": "",
   "best_sim": 0.355
@@ -5680,9 +5692,9 @@
   "title": "The Sailor Who Fell from Grace with the Se",
   "author": "YUKIO MISHIMA",
   "decision": "file cover",
-  "old": "",
+  "old": "covers/185QSmLIO77-xXhuE1pdT5ic92sJOaht_.jpg",
   "new": "covers/185QSmLIO77-xXhuE1pdT5ic92sJOaht_.jpg",
-  "changed": true,
+  "changed": false,
   "trusted_desc": "",
   "epub_desc": "",
   "best_sim": -1
@@ -5884,9 +5896,9 @@
   "title": "The Temple of the Golden Pavilion",
   "author": "Yukio Mishima",
   "decision": "file cover",
-  "old": "",
+  "old": "covers/1foHnWOREv1dFra4pXaVh8-cVzagwsHw8.jpg",
   "new": "covers/1foHnWOREv1dFra4pXaVh8-cVzagwsHw8.jpg",
-  "changed": true,
+  "changed": false,
   "trusted_desc": "",
   "epub_desc": "<p>Mizoguchi has been mentally troubled since he witnessed his mother's infidelity in the presence of his dying father. Mizoguchi feels utterly abandoned and alone until he becomes a pdest at Kinka-kuji, a famous Buddhist temple in Kyoto. Failing in his quest to find the warmth of human companionship in the temple, the young man, tormented by the temple's exquisite beauty, decides to destroy himself and all he loves. He feels he cannot live in peace as long as the temple exists. Mizoguchi, like many other troubled Mishima heroes, becomes obsessed with unattainable ideals.<p><i>The Temple of the Golden Pavilion </i> reflects Mishima's preoccupations with beauty and death in a clear and unmistakable manner. It is also an excellent example of a theme that frequently arises in Mishima's work: the resentment of the obj ect of desire. Because this novel, arguably Mishima's best, reflects the author's suicidal tendencies, it also offers us insight into one of the twentieth century's...",
   "best_sim": -1
@@ -7404,6 +7416,18 @@
   "best_sim": -1
  },
  {
+  "id": "aunt-mary-s-terrible-secret-a-professional-card-routine-david-williamson",
+  "title": "Aunt Mary's Terrible Secret : A Professional Card Routine",
+  "author": "David Williamson",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/1THU8IVEhyFfNeHL9pSdPTbranPUfRPt8.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": -1
+ },
+ {
   "id": "ben-goldacre-bad-pharma",
   "title": "Bad Pharma: How Drug Companies Mislead Doctors and Harm Patients",
   "author": "Ben Goldacre",
@@ -7428,6 +7452,18 @@
   "best_sim": 0.982
  },
  {
+  "id": "david-williamson-story-unknown",
+  "title": "David Williamson Story",
+  "author": "Unknown",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/1puPzjvSlwnECPSKxiJ7FQHpgVUEYM4Lr.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": 0.016
+ },
+ {
   "id": "dave-gerhardt-ds-unknown",
   "title": "DS",
   "author": "Dave Gerhardt",
@@ -7440,6 +7476,18 @@
   "best_sim": -1
  },
  {
+  "id": "expert-card-technique-jean-hugard",
+  "title": "Expert Card Technique",
+  "author": "Jean Hugard",
+  "decision": "apple right book",
+  "old": "https://covers.openlibrary.org/b/id/13191073-L.jpg",
+  "new": "https://is1-ssl.mzstatic.com/image/thumb/Publication114/v4/06/ec/57/06ec57e1-6a63-aec7-c97a-c9e55f688dcb/9781420971668.jpg/1000x1000bb.jpg",
+  "changed": true,
+  "trusted_desc": "“Expert Card Technique” by Jean Hugard and Frederick Braue is a detailed and instructive guide on how to master the manipulation of cards. Jean Hugard, born John Gerard Rodney Boyce in Queensland, Australia in 1872, began his professional career as a magician in 1896 and eventually moved to America in 1915 where he worked in vaudeville and as a stage magician. He retired from performing professionally around 1930 and began a prolific and successful career writing books on magic. As he became older and lost his eyesight, the magician Frederick Braue began co-writing several books with Hugard on the art of card magic. Braue was a journalist and semi-professional magician who specialized in card tricks and was viewed as a master at this skill. In their book “Expert Card Technique”, these magical geniuses show even the most novice beginner how to learn to manipulate cards in basic ways and then moves on to teach more advanced flourishes, such as forces, fans, and prearranged decks. This guide is indispensable to anyone who wishes to handle cards with impressive dexterity and for those studying magic, as these are skills that must be mastered before complicated card tricks can be performed with ease.",
+  "epub_desc": "<P>If you have ever tried to do a card trick and failed, you know what it is to be embarrassed. You may try to cover up by doing a more difficult trick and fail again. The way out of this dilemma, however, is not immediate, but it is reliable: a surer mastery of technique. This means the proper instruction book, and practice.<BR>In this definitive work on card technique, step-by-step instructions teach you the correct methods for the basic manipulations and the more advanced flourishes, and only then allow you to learn tricks. Offering the most foolproof methods available, Jean Hugard and Fredrick Braue explain such basic manipulations as the palm, the shuffle, the lift, the side slip, the pass, the glimpse, the jog, and the reverse. They detail various false deals, crimps, and changes and the more advanced execution needed for forces, fans, and the use of the prearranged deck. Also presented is a wide variety of tricks, including discoveries, self-working tricks, one-handed...",
+  "best_sim": 0.683
+ },
+ {
   "id": "osho-freedom-the-courage-to-be-yourself-libgen-li",
   "title": "Freedom: The Courage to Be Yourself",
   "author": "Osho",
@@ -7450,6 +7498,30 @@
   "trusted_desc": "Learn how to set yourself free with the philosophies of one of the twentieth century’s greatest spiritual teachers in  Freedom: The Courage to Be Yourself .    In  Freedom , Osho outlines three stages of freedom. The first is “freedom from,” which is a freedom that comes from breaking out of what he calls the “psychological slavery” imposed by outside forces such as parents, society, or religion. The next stage is “freedom for,” a positive freedom that comes from embracing and creating something—a fulfilling relationship, for example, or an artistic or humanitarian vision. And lastly there is “just freedom,” the highest and ultimate freedom. This last freedom is more than being for or against something; it is the freedom of simply being oneself and responding truthfully to each moment.  This book helps readers to identify the obstacles to their freedom, both circumstantial and self-imposed, to choose their battles wisely, and to find the courage to be true to themselves.   Osho challenges readers to examine and break free of the conditioned belief systems and prejudices that limit their capacity to enjoy life in all its richness. He has been described by the  Sunday Times  of London as one of the “1000 Makers of the 20th Century” and by  Sunday Mid-Day  (India) as one of the ten people—along with Gandhi, Nehru, and Buddha—who have changed the destiny of India. Since his death in 1990, the influence of his teachings continues to expand, reaching seekers of all ages in virtually every country of the world.",
   "epub_desc": "",
   "best_sim": -0.004
+ },
+ {
+  "id": "harlan-tarbell-tarbell-course",
+  "title": "Harlan Tarbell",
+  "author": "Tarbell Course",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/1MwH56dTEITzKYl6kuEz65wApGG0MMUHs.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": -1
+ },
+ {
+  "id": "how-magic-works-david-williamson",
+  "title": "How Magic Works",
+  "author": "David Williamson",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/1UbBvJeMqwzzI43HTbNdC_SQm0aXYrITb.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": -1
  },
  {
   "id": "how-to-research-anything-unknown",
@@ -7488,6 +7560,30 @@
   "best_sim": 0.606
  },
  {
+  "id": "juan-tamariz-mnemonica",
+  "title": "Mnemonica",
+  "author": "Juan Tamariz",
+  "decision": "file cover",
+  "old": "https://covers.openlibrary.org/b/id/7256138-L.jpg",
+  "new": "covers/1LWW4UoabKwaQJXPb9FbClpxItFzQmtop.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": -0.094
+ },
+ {
+  "id": "modern-coin-magic-j-b-bobo",
+  "title": "Modern Coin Magic",
+  "author": "J. B. Bobo",
+  "decision": "apple right book",
+  "old": "https://covers.openlibrary.org/b/id/309724-L.jpg",
+  "new": "https://is1-ssl.mzstatic.com/image/thumb/Publication3/v4/f8/35/00/f83500b7-31fd-1e1d-5a23-63c28bdbeda4/9781447499022.jpg/1000x1000bb.jpg",
+  "changed": true,
+  "trusted_desc": "Originally published in 1952, this classic guidebook provides a complete treatise on sleight of hand coin conjuring, making an excellent companion for those who want to impress and entertain with some classic magic tricks. Complete with instructional diagrams, it explains a variety of coin act techniques, including vanishing, sleeving and cuffing. The final chapter helps you to prepare the routine for your coin magic performance. Contents include: Preface; J. B. Bobo; Acknowledgments; Prologue - of Coins and Conjuring; 1 Coin Concealments; 2 Basic Technique; 3 Coin Vanishes; 4 Complete Coin Vanishes; 5 Quick Tricks; 6 Cuffing; 7 The Art of Sleeving; 8 Coins Across; 9 Coin Classics; 10 Coin Boxes; 11 Trick Coin Trickery; 12 Shell and Folding Half; 13 Stage Coin Magic; 14 The Miser’s Dream; 15 The Stanley Collins Section, 16 Routines. We are republishing this rare work in a modern, high quality, and affordable edition, complete with a newly written introduction and reproductions of the original illustrations.",
+  "epub_desc": "<P>When party guests request a few tricks, be prepared. Ask for a coin, and perform some of the tricks in this book. Because you will not have been aided by special stage apparatus, the results will be all the more astonishing. As tricks with coins are so readily improvised, they are among the most impressive forms of legerdemain.<BR>This book is the most complete treatise ever written on sleight-of-hand coin conjuring. Celebrated magician J. B. Bobo has gathered here the best and most useful of all coin tricks &#8212; not only his own, but those of some four dozen notable prestidigitators, including such greats as Robert-Houdin, Professer Hoffman, and &#8212; the greatest of all coin conjurers &#8212; T. Nelson Downs.<BR>All the tested, traditional methods of coin magic are here. Bobo has added to these the best of the modern innovations, while eliminating all of the out-of-date and impractical sleights of his sources. You will learn all about palms, holds, flips, switches,...",
+  "best_sim": 0.566
+ },
+ {
   "id": "the-genealogy-of-morals-by-friedrich-nietzsche-unknown",
   "title": "On the Genealogy of Morals",
   "author": "Friedrich Nietzsche",
@@ -7498,6 +7594,42 @@
   "trusted_desc": "First published in German in 1887,  The Genealogy of Morals  was intended by Nietzsche as a clarification and supplement to his 1882 treatise  Beyond Good and Evil . In his last published work,  Ecce Homo , Nietzsche described the essays constituting  The Genealogy of Morals  as “three decisive overtures on the part of a psychologist to a revaluation of all values” and claimed that they were “as regards expression, aspiration, and the art of the unexpected, perhaps the most curious things that have ever been written.”  While this self-assessment is probably an overstatement,  The Genealogy of Morals  is widely acknowledged to be a unique contribution to philosophy in both content and style. The style is intentionally difficult, contrived by turns to embolden, to repel, and to mislead. “In each case,” he wrote, “the beginning is calculated to mystify; it is cool, scientific, even ironical, intentionally thrust to the fore, intentionally reticent. … At the end, in each case, amid fearful thunderclaps, a new truth shines out between thick clouds.”  In the first essay, Nietzsche introduces the idea of  ressentiment , the source and basis (he contends) of the Christian and Jewish religions and the fundamental psychological mechanism of the associated “slave revolt” in morality, an evaluative inversion performed by the oppressed to compensate for, and to enable themselves to endure, their powerlessness and its attendant frustration. Nietzsche contrasts “noble” values, the central opposition of which is that of “good” and “bad” as applied to human beings themselves, with “slavish” values, the central opposition of which is “good” and “evil” as applied to actions. The vaunting of the latter opposition in Christianity represents, according to Nietzsche, “the great insurrection against the dominion of noble values” common to pagan Rome and ancient Greece.  The second essay begins with a discussion of promising and the value of forgetfulness, then traces the origins of guilt and bad conscience to self-directed cruelty, the inward application of a naturally brutal animal instinct that has been prevented from finding outward expression. Nietzsche goes on to supply an analysis of the origin and purpose of punishment in human societies. “Cruelty,” Nietzsche asserts controversially in  Ecce Homo , “is here exposed, for the first time, as one of the oldest and most indispensable elements in the foundation of culture.”  “Ascetic ideals,” whose “three great pomp words are poverty, humility, and chastity,” are the subject of the third essay, the longest of the work and perhaps its rhetorical high point. Nietzsche here considers the ascetic ideal as instantiated by artists, scholars, and priests, noting differences between the three groups in the ideal’s expression and effects. He asks why ascetic ideals are so powerful, given that they are, as he believes, generally detrimental to human health and well-being, concluding that the ascetic ideal’s power arose from a historical dearth of competing ideals and that “man will wish Nothingness rather than not wish at all.” Contending with the popular perception that a scientific outlook is in principle opposed to religiosity, the latter being the natural home of ascetic ideals, Nietzsche deduces from his analysis of the “will to truth” that the relation of science to ascetic ideals themselves is not at all antagonistic. In fact, “science represents the progressive force in the inner evolution of that ideal”; even further, “valuation of ascetic ideals inevitably entails valuation of science.” Nietzsche also interestingly implicates himself and his own  Genealogy  in the preservation of ascetic ideals, identifying the bond between such ideals and philosophy itself as very strong.  The third essay is notable for having been singled out by Nietzsche as an exercise in exposition of an aphorism. Scholars, notably Christopher Janaway, have disputed whether the aphorism on which the essay is supposedly a commentary is the epigraph from his previous work  Thus Spake Zarathustra , or instead the first of the essay’s numbered paragraphs.  Nietzsche’s turbulent, haphazardly erudite style has contributed to his mixed reception in philosophy and the broader culture, and to the understanding that he was just as concerned with literary virtuosity as philosophical clarity. Nevertheless, despite the literary complexity of his work, it’s still possible to ask of its content—as Bertrand Russell did in his  History of Western Philosophy —“What are we to think of Nietzsche’s doctrines? How far are they true? Are they in any degree useful? Is there in them anything objective, or are they the mere power-fantasies of an invalid?”  “There is no escaping Nietzsche,” wrote H. L. Mencken in 1908. “You may hold him a hissing and a mocking and lift your virtuous skirts as you pass him by, but his roar is in your ears and his blasphemies sink into your mind.” Whether its blasphemous sympathies attract or repel us, and whether its analysis ultimately unsettles or only reinforces our initial ethical presuppositions, the  Genealogy of Morals  remains an essential work in the history of ideas whose moral and political relevance shows little sign of diminishing.",
   "epub_desc": "",
   "best_sim": 0.13
+ },
+ {
+  "id": "paul-cummings-tapalack-unknown",
+  "title": "Paul Cummings -Tapalack",
+  "author": "Unknown",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/18tuU-_XzYjInP7t-Dryd0RaFyYqIworZ.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": -1
+ },
+ {
+  "id": "paul-cummings-fasdiu-1-unknown",
+  "title": "Paul Cummings FASDIU 1",
+  "author": "Unknown",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/1aGN912yoNgfWyis_sLkzjB3czoFksxVi.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": -1
+ },
+ {
+  "id": "paul-cummings-fasdiu-2-unknown",
+  "title": "Paul Cummings FASDIU 2",
+  "author": "Unknown",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/1rBULq-m2h_E1nQtTSHIpeGACzQ4IFMh6.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": -1
  },
  {
   "id": "daviant-ollam-practical-lock-picking",
@@ -7522,6 +7654,30 @@
   "trusted_desc": "“Product-Led Growth is about helping your customers experience the ongoing value your product provides...and this book shows you how it’s done.” - Nir Eyal, Author of “Hooked” and “Indistractible”  “As captivating as a good novel, Product-Led Growth is an absolute must-read for SaaS business owners.” - Omar Zenhom, CEO, WebinarNinja  “Why did I just blow $300K promoting a whitepaper?”  That’s the hard question I asked myself but couldn’t answer—after all, we were just following the same old SaaS playbook. Sure, sales cycles were long and acquisition was expensive, but that’s how everybody grew their companies.  But after I helped launch a freemium product that went from 0-100K users in less than 12 months, I realized the traditional way of selling software was deeply flawed.  Hi, I’m Wes Bush, founder of the Product-Led Institute. And in Product-Led Growth, I show you how you can cut your acquisition costs and scale further than you ever thought possible...by making your product the tool that helps you acquire, convert, and retain customers.  But what does it mean to be “product-led”? How do you know if a product-led growth strategy makes sense for your business? And most importantly, how do you execute it?  You’ll find answers to all of these questions inside this book. In addition, I’ll also show you: \n\t How to save 3-6 months of development and hundreds of thousands of dollars by launching a free trial in 24 hours—and why you should do it (Ch. 10)  Which HUGE mistake ProfitWell's Patrick Campbell says can \"kill your growth and set you up for long-term failure\"...and how to avoid making it (Ch. 8)  Which of the 4 most common SaaS pricing strategies is the ONLY one with long-term viability (Ch. 9)  What the \"Triple-A\" sprint cycle is and how to use it to build a sustainable growth process—in just 1 month (Ch. 12)  How to stop paying customers from slipping away (Ch. 15)  The 3 apocalyptic \"tidal waves\" that are coming for SaaS companies—and what you MUST do to survive them (Ch. 1)  How to make free trial and freemium users hunger to upgrade to paid (Ch. 9)  The single biggest cause of leaky funnels and how to fix it, fast (Ch. 10)  Which 7 people you need in your “tiger team” to run a successful product-led growth team (Ch. 11)  The #1 thing to improve right now to maximize your customer lifetime value (Ch. 14) \n\n Product-Led Growth also comes packed with “do this, not that” real-life examples from the industry’s biggest brands—as well as a collection of high-converting email scripts you can customize and send out immediately to turn more users into customers.  So if you are a SaaS founder, key decision-maker, or marketer wondering what your next strategic step should be, order your copy of Product-Led Growth today.  “This is one of my favorite books of 2019.” - Zeno Roch, Chief Product Office, Liferay Cloud  “A must-read book for SaaS founders, especially if you have a self-serve SaaS.” - Kaloyan Yankulov, Encharge  “This book is epic. If you want to know more about how to build a product-led business, you need to read this. Go. Buy. It. Now.” - James Gill, CEO, GoSquared",
   "epub_desc": "",
   "best_sim": -0.183
+ },
+ {
+  "id": "dai-vernon-revelations",
+  "title": "Revelations",
+  "author": "Dai Vernon",
+  "decision": "file cover",
+  "old": "https://covers.openlibrary.org/b/id/11285864-L.jpg",
+  "new": "covers/1vFr4GRHwlAtTG7TcUMxVZrZfa25rM5lp.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": 0.056
+ },
+ {
+  "id": "scarne-on-cards-john-scarne",
+  "title": "Scarne On Cards",
+  "author": "John Scarne",
+  "decision": "matched current (sim 0.83)",
+  "old": "https://covers.openlibrary.org/b/id/291642-L.jpg",
+  "new": "https://covers.openlibrary.org/b/id/291642-L.jpg",
+  "changed": false,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": 0.83
  },
  {
   "id": "sophies-world-a-novel-about-the-unknown",
@@ -7608,6 +7764,42 @@
   "best_sim": -1
  },
  {
+  "id": "the-original-course-in-magic-of-harlan-tarbell-harlan-tarbell",
+  "title": "The Original Course in Magic of Harlan Tarbell",
+  "author": "Harlan Tarbell",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/1Jsa6OuRmLFnX9K9iKyPRSz84DzQDbCX-.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": -1
+ },
+ {
+  "id": "the-royal-road-to-card-magic-jean-hugard",
+  "title": "The Royal Road to Card Magic",
+  "author": "Jean Hugard",
+  "decision": "apple right book",
+  "old": "https://covers.openlibrary.org/b/id/312798-L.jpg",
+  "new": "https://is1-ssl.mzstatic.com/image/thumb/Publication128/v4/80/0e/5c/800e5cd9-3b23-0f6f-efc6-e2614983506b/9780486156682.jpg/1000x1000bb.jpg",
+  "changed": true,
+  "trusted_desc": "Would you like to confound your friends, amaze your acquaintances, amuse and dazzle crowds at parties and gatherings? Mastering a few card tricks will allow you to do all that and more. With the help of this book, anyone can develop a versatile repertoire of first-rate card tricks. In fact, mastery of just the first chapter will enable you to perform a half-dozen astounding and entertaining sleights of hand.  The authors, both noted authorities on magic, present complete, easy-to-understand explanations of shuffles, flourishes, the glide, the glimpse, false shuffles and cuts, the pass, the classic force, and many other techniques. These will enable card handlers to perform over 100 mind-boggling feats of card magic, including Thought Stealer, Gray's Spelling Trick, Do as I Do, Now You See It, Obliging Aces, Rapid Transit, Kangaroo Card, A Tipsy Trick, and dozens of others. Illustrated with more than 120 clear line cuts that make the explanations easy to follow, this exciting introduction to card conjuring will enable even beginners to develop professional-level skill and the ability to perform tricks guaranteed to astound family and friends.",
+  "epub_desc": "",
+  "best_sim": 0.071
+ },
+ {
+  "id": "the-secrets-of-brother-john-hamman-scan-richard-kaufman",
+  "title": "The Secrets of Brother John Hamman: Scan",
+  "author": "Richard Kaufman",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/1uYMk6lTluKIn6pGnt2ETmh9XynlO4Emy.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": -1
+ },
+ {
   "id": "six-pillars-of-self-esteem-nathaniel-branden-unknown",
   "title": "The Six Pillars of Self-Esteem",
   "author": "Nathaniel Branden",
@@ -7632,6 +7824,30 @@
   "best_sim": 0.071
  },
  {
+  "id": "ultimate-secrets-of-card-magic-dai-vernon",
+  "title": "Ultimate Secrets of Card Magic",
+  "author": "Dai Vernon",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/1wTUJmVBd8kT6xslGz6aOjBhQVQxXkbMT.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": -1
+ },
+ {
+  "id": "vintage-newspaper-substack-cover-unknown",
+  "title": "Vintage Newspaper Substack Cover",
+  "author": "Unknown",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/1KtuG66U_q6zf-YJXIEy6jJGSIbBXeRq2.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": -1
+ },
+ {
   "id": "what-every-body-is-saying-unknown",
   "title": "What Every BODY Is Saying",
   "author": "Joe Navarro",
@@ -7642,6 +7858,18 @@
   "trusted_desc": "OVER 1 MILLION COPIES SOLD    Joe Navarro, a former FBI counterintelligence officer and a recognized expert on nonverbal behavior, explains how to \"speed-read\" people and master the science of understanding human behavior: decode sentiments and behaviors, avoid hidden pitfalls, and look for deceptive behaviors. You'll also learn how your body language can influence what your boss, family, friends, and strangers think of you.&#xa0;   Read this book and send your nonverbal intelligence soaring.&#xa0;You will discover: The ancient survival instincts that drive body languageWhy the face is the&#xa0; least &#xa0;likely place to gauge a person's true feelingsWhat thumbs, feet, and eyelids reveal about moods and motivesThe most powerful behaviors that reveal our confidence and true sentimentsSimple nonverbals that instantly establish trust and communicate authority Filled with examples from Navarro's professional experience, this definitive book offers a powerful new way to navigate your world.",
   "epub_desc": "",
   "best_sim": 0.679
+ },
+ {
+  "id": "williamsons-wonders-richard-kaufman",
+  "title": "Williamsons Wonders",
+  "author": "Richard Kaufman",
+  "decision": "file cover",
+  "old": "",
+  "new": "covers/1Y5D888ZiUalJ1kXNQvYNTR8TBckCUe_X.jpg",
+  "changed": true,
+  "trusted_desc": "",
+  "epub_desc": "",
+  "best_sim": -1
  },
  {
   "id": "500-days-of-summer-2009-unknown",

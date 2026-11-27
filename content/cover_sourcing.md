@@ -1,6 +1,6 @@
-# Cover sourcing — 2026-11-26
+# Cover sourcing — 2026-11-27
 
-Counts: apple right book: 296, file cover: 109, jacket: 23, lookup failed: 4, matched apple: 161, matched current: 35, matched openlibrary-isbn: 18, no file cover: 13
+Counts: apple right book: 299, file cover: 123, jacket: 23, lookup failed: 4, matched apple: 161, matched current: 37, matched openlibrary-isbn: 18, no file cover: 13
 
 | Book | Decision | best sim | changed |
 |---|---|---|---|
@@ -230,6 +230,7 @@ Counts: apple right book: 296, file cover: 109, jacket: 23, lookup failed: 4, ma
 | Maangchi's Real Korean Cooking — Maangchi | matched apple (sim 0.999) | 0.999 |  |
 | Macbeth (Norton Critical Edition) — William Shakespeare | apple right book | 0.085 |  |
 | Made to Stick — Chip Heath & Dan Heath | apple right book | 0.059 |  |
+| Magic Is Dead — Ian Frisch | matched current (sim 0.949) | 0.949 |  |
 | Make Time — Jake Knapp & John Zeratsky | matched apple (sim 0.891) | 0.991 |  |
 | Man and His Symbols — Carl Jung | apple right book | 0.169 |  |
 | Man's Search for Meaning — Viktor E. Frankl | matched apple (sim 0.851) | 0.851 |  |
@@ -347,7 +348,7 @@ Counts: apple right book: 296, file cover: 109, jacket: 23, lookup failed: 4, ma
 | Strange Pictures — Uketsu | matched apple (sim 0.945) | 0.945 |  |
 | Stranger than Fiction — Chuck Palahniuk | apple right book | 0.744 |  |
 | Style: An Anti-Textbook — Richard A. Lanham | matched apple (sim 0.999) | 0.999 |  |
-| Sun and Steel — Yukio Mishima | apple right book | 0.355 | yes |
+| Sun and Steel — Yukio Mishima | apple right book | 0.355 |  |
 | Super Power Memory — Harry Lorayne | file cover | -0.231 |  |
 | Survivor — Chuck Palahniuk | apple right book | 0.082 |  |
 | Systemantics: How Systems Work and Especially How They Fail — John Gall | jacket | -1 |  |
@@ -477,7 +478,7 @@ Counts: apple right book: 296, file cover: 109, jacket: 23, lookup failed: 4, ma
 | The Revolt of the Public and the Crisis of Authority in the New Millennium — Martin Gurri | matched apple (sim 0.997) | 0.997 |  |
 | The Richest Man in Babylon — George S. Clason | apple right book | 0.335 |  |
 | The Ruins — Scott Smith | apple right book | 0.001 |  |
-| The Sailor Who Fell from Grace with the Se — YUKIO MISHIMA | file cover | -1 | yes |
+| The Sailor Who Fell from Grace with the Se — YUKIO MISHIMA | file cover | -1 |  |
 | The Satanic Verses — Salman Rushdie | apple right book | -1 |  |
 | The School of Life — Alain de Botton | matched current (sim 0.922) | 0.922 |  |
 | The Science of Logic — G. W. F. Hegel | apple right book | 0.034 |  |
@@ -494,7 +495,7 @@ Counts: apple right book: 296, file cover: 109, jacket: 23, lookup failed: 4, ma
 | The Status Game: On Social Position and How We Use It — Will Storr | apple right book | 0.045 |  |
 | The Stream of Homer: On Story, Heroism, and the River That Runs Underneath Everything — Anonymous | file cover | -1 | yes |
 | The Structure of Scientific Revolutions — Thomas S. Kuhn | matched apple (sim 0.999) | 0.999 |  |
-| The Temple of the Golden Pavilion — Yukio Mishima | file cover | -1 | yes |
+| The Temple of the Golden Pavilion — Yukio Mishima | file cover | -1 |  |
 | The Ten Loves of Nishino — Hiromi Kawakami | apple right book | 0.471 |  |
 | The Thought War: Japanese Imperial Propaganda — Barak Kushner | no file cover: kept current (unverified) | -1 |  |
 | The Tipping Point — Malcolm Gladwell | matched openlibrary-isbn (sim 0.998) | 0.998 |  |
@@ -621,16 +622,28 @@ Counts: apple right book: 296, file cover: 109, jacket: 23, lookup failed: 4, ma
 | A Byte of Python — Swaroop C H | file cover | -1 |  |
 | Adweek Copywriting Handbook — Joseph Sugarman | matched apple (sim 0.981) | 0.985 |  |
 | Ann Handley on Newsletters — Ann Handley | file cover | -1 |  |
+| Aunt Mary's Terrible Secret : A Professional Card Routine — David Williamson | file cover | -1 | yes |
 | Bad Pharma: How Drug Companies Mislead Doctors and Harm Patients — Ben Goldacre | apple right book | 0.047 |  |
 | Bad Science: Quacks, Hacks, and Big Pharma Flacks — Ben Goldacre | matched openlibrary-isbn (sim 0.982) | 0.982 |  |
+| David Williamson Story — Unknown | file cover | 0.016 | yes |
 | DS — Dave Gerhardt | file cover | -1 |  |
+| Expert Card Technique — Jean Hugard | apple right book | 0.683 | yes |
 | Freedom: The Courage to Be Yourself — Osho | apple right book | -0.004 |  |
+| Harlan Tarbell — Tarbell Course | file cover | -1 | yes |
+| How Magic Works — David Williamson | file cover | -1 | yes |
 | How to Research Anything: Smart Research Habits for Curious Adults — Polymath Investor | jacket | -1 |  |
 | Intercom on Jobs-to-be-Done — Intercom | file cover | -1 |  |
 | Intimacy: Trusting Oneself and the Other — Osho | apple right book | 0.606 |  |
+| Mnemonica — Juan Tamariz | file cover | -0.094 | yes |
+| Modern Coin Magic — J. B. Bobo | apple right book | 0.566 | yes |
 | On the Genealogy of Morals — Friedrich Nietzsche | apple right book | 0.13 |  |
+| Paul Cummings -Tapalack — Unknown | file cover | -1 | yes |
+| Paul Cummings FASDIU 1 — Unknown | file cover | -1 | yes |
+| Paul Cummings FASDIU 2 — Unknown | file cover | -1 | yes |
 | Practical Lock Picking — Deviant Ollam | matched apple (sim 0.996) | 0.996 |  |
 | Product-Led Growth — Wes Bush | apple right book | -0.183 |  |
+| Revelations — Dai Vernon | file cover | 0.056 | yes |
+| Scarne On Cards — John Scarne | matched current (sim 0.83) | 0.83 |  |
 | Sophie's World — Jostein Gaarder | apple right book | -0.007 |  |
 | The Argumentative Indian — Amartya Sen | apple right book | 0.774 |  |
 | The Communist Manifesto — Karl Marx & Friedrich Engels | apple right book | 0.276 |  |
@@ -638,9 +651,15 @@ Counts: apple right book: 296, file cover: 109, jacket: 23, lookup failed: 4, ma
 | The Copywriting Sourcebook — Andy Maslen | file cover | 0.105 |  |
 | The Death of the Author — Roland Barthes | file cover | 0.006 |  |
 | The Neil French Collection — Neil French | file cover | -1 | yes |
+| The Original Course in Magic of Harlan Tarbell — Harlan Tarbell | file cover | -1 | yes |
+| The Royal Road to Card Magic — Jean Hugard | apple right book | 0.071 | yes |
+| The Secrets of Brother John Hamman: Scan — Richard Kaufman | file cover | -1 | yes |
 | The Six Pillars of Self-Esteem — Nathaniel Branden | apple right book | 0.261 |  |
 | Ultimate Guide to Street Photography — Anonymous | file cover | 0.071 |  |
+| Ultimate Secrets of Card Magic — Dai Vernon | file cover | -1 | yes |
+| Vintage Newspaper Substack Cover — Unknown | file cover | -1 | yes |
 | What Every BODY Is Saying — Joe Navarro | apple right book | 0.679 |  |
+| Williamsons Wonders — Richard Kaufman | file cover | -1 | yes |
 | (500) Days of Summer (Screenplay) — Scott Neustadter & Michael H. Weber | jacket | -1 |  |
 | Aligarh (Screenplay) — Apurva Asrani (dir. Hansal Mehta) | lookup failed: kept current | -1 |  |
 | American Fiction (Screenplay) — Cord Jefferson | no file cover: kept current (unverified) | -1 |  |

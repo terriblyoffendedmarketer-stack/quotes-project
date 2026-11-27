@@ -1,6 +1,6 @@
-# Synopsis check — 2026-11-26
+# Synopsis check — 2026-11-27
 
-659 checked, 86 wrong/unusable. Replaced: 2, blanked: 84.
+678 checked, 103 wrong/unusable. Replaced: 4, blanked: 99.
 
 | Book | Problem | Actually about | New synopsis from |
 |---|---|---|---|
@@ -30,6 +30,7 @@
 | Koyomimonogatari (Part 1) (Monogatari, Vol. 14) — NisiOisin | empty |  | — (blank) |
 | Kubitsuri High School (Zaregoto, Vol. 3) — NisiOisin | empty |  | — (blank) |
 | Language and Symbolic Systems — Yuen Ren Chao | empty |  | — (blank) |
+| Magic Is Dead — Ian Frisch | empty |  | book file |
 | Memoirs of Robert-Houdin — Jean-Eugène Robert-Houdin | empty |  | — (blank) |
 | Nisemonogatari (Part 1) (Monogatari, Vol. 4) — NisiOisin | empty |  | — (blank) |
 | Nisemonogatari (Part 2) (Monogatari, Vol. 5) — NisiOisin | empty |  | — (blank) |
@@ -38,7 +39,6 @@
 | Second Look: A Magazine of Stories, Essays & Ideas (Issue One) — Various Authors | empty |  | — (blank) |
 | Selected Essays — George Orwell | empty |  | — (blank) |
 | Short Storybaazi — Divya Prakash Dubey | empty |  | — (blank) |
-| Sun and Steel — Yukio Mishima | empty |  | Apple Books |
 | Super Power Memory — Harry Lorayne | empty |  | — (blank) |
 | Systemantics: How Systems Work and Especially How They Fail — John Gall | empty |  | — (blank) |
 | The Annotated Critical Laozi (Tao Te Ching) — Laozi | empty |  | — (blank) |
@@ -58,7 +58,6 @@
 | The Real Osamu Dazai: A Life in Twenty Stories — Osamu Dazai | empty |  | — (blank) |
 | The Sailor Who Fell from Grace with the Se — YUKIO MISHIMA | empty |  | — (blank) |
 | The Stream of Homer: On Story, Heroism, and the River That Runs Underneath Everything — Anonymous | empty |  | — (blank) |
-| The Temple of the Golden Pavilion — Yukio Mishima | empty |  | book file |
 | The Work of Art in the Age of Mechanical Reproduction — Walter Benjamin | empty |  | — (blank) |
 | What Is Dialectical Materialism? A Study Guide — Rob Sewell | empty |  | — (blank) |
 | Writing Craft Essays — Chuck Palahniuk | empty |  | — (blank) |
@@ -70,12 +69,30 @@
 | 5 Dead Copywriters to Bring Your Copy Back to Life — Anonymous | empty |  | — (blank) |
 | A Byte of Python — Swaroop C H | empty |  | — (blank) |
 | Ann Handley on Newsletters — Ann Handley | empty |  | — (blank) |
+| Aunt Mary's Terrible Secret : A Professional Card Routine — David Williamson | empty |  | — (blank) |
+| David Williamson Story — Unknown | empty |  | — (blank) |
 | DS — Dave Gerhardt | empty |  | — (blank) |
+| Expert Card Technique — Jean Hugard | empty |  | Apple Books |
+| Harlan Tarbell — Tarbell Course | empty |  | — (blank) |
+| How Magic Works — David Williamson | empty |  | — (blank) |
 | Intercom on Jobs-to-be-Done — Intercom | empty |  | — (blank) |
+| Mnemonica — Juan Tamariz | empty |  | — (blank) |
+| Modern Coin Magic — J. B. Bobo | empty |  | Apple Books |
+| Paul Cummings -Tapalack — Unknown | empty |  | — (blank) |
+| Paul Cummings FASDIU 1 — Unknown | empty |  | — (blank) |
+| Paul Cummings FASDIU 2 — Unknown | empty |  | — (blank) |
+| Revelations — Dai Vernon | empty |  | — (blank) |
+| Scarne On Cards — John Scarne | empty |  | — (blank) |
 | The Copywriting Sourcebook — Andy Maslen | empty |  | — (blank) |
 | The Death of the Author — Roland Barthes | empty |  | — (blank) |
 | The Neil French Collection — Neil French | empty |  | — (blank) |
+| The Original Course in Magic of Harlan Tarbell — Harlan Tarbell | empty |  | — (blank) |
+| The Royal Road to Card Magic — Jean Hugard | empty |  | Apple Books |
+| The Secrets of Brother John Hamman: Scan — Richard Kaufman | empty |  | — (blank) |
 | Ultimate Guide to Street Photography — Anonymous | empty |  | — (blank) |
+| Ultimate Secrets of Card Magic — Dai Vernon | empty |  | — (blank) |
+| Vintage Newspaper Substack Cover — Unknown | empty |  | — (blank) |
+| Williamsons Wonders — Richard Kaufman | empty |  | — (blank) |
 | American Fiction (Screenplay) — Cord Jefferson | empty |  | — (blank) |
 | Arrival (Screenplay) — Eric Heisserer (based on Ted Chiang) | empty |  | — (blank) |
 | Everything Everywhere All at Once (Screenplay) — Daniel Kwan & Daniel Scheinert (Daniels) | empty |  | — (blank) |
