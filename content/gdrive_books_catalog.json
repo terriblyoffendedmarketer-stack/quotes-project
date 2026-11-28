@@ -6370,6 +6370,16 @@
   "modified": "2024-09-23T20:28:30"
  },
  {
+  "id": "1Sqru32BRFdhn-rY4Cjv8mKi1EAIdo2gK",
+  "path": "Magic books/5 Points in Magic - Juan Tamariz.pdf",
+  "filename": "5 Points in Magic - Juan Tamariz.pdf",
+  "folder": "Magic books",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 15860024,
+  "modified": "2018-01-27T08:59:32"
+ },
+ {
   "id": "1THU8IVEhyFfNeHL9pSdPTbranPUfRPt8",
   "path": "Magic books/Aunt Mary's Terrible Secret – A Professional Card Routine - David Williamson.pdf",
   "filename": "Aunt Mary's Terrible Secret – A Professional Card Routine - David Williamson.pdf",
@@ -6378,6 +6388,16 @@
   "mime": "application/pdf",
   "size_bytes": 6515603,
   "modified": "2026-11-27T05:29:22"
+ },
+ {
+  "id": "1Sl178lB1psvH2LAoGEcIzqrZ0AJJ517A",
+  "path": "Magic books/Cardmagic - Richard Kaufman.pdf",
+  "filename": "Cardmagic - Richard Kaufman.pdf",
+  "folder": "Magic books",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 14507204,
+  "modified": "2017-05-26T11:14:24"
  },
  {
   "id": "1puPzjvSlwnECPSKxiJ7FQHpgVUEYM4Lr",
@@ -6410,19 +6430,9 @@
   "modified": "2017-05-26T10:06:48"
  },
  {
-  "id": "1Sqru32BRFdhn-rY4Cjv8mKi1EAIdo2gK",
-  "path": "Magic books/Juan Tamariz - 5 Points in Magic.pdf",
-  "filename": "Juan Tamariz - 5 Points in Magic.pdf",
-  "folder": "Magic books",
-  "ext": "pdf",
-  "mime": "application/pdf",
-  "size_bytes": 15860024,
-  "modified": "2018-01-27T08:59:32"
- },
- {
   "id": "1FVs9S4P2RP_SDEfsGXsMJ5W8D5JZXdCQ",
-  "path": "Magic books/Kostya Kimlat - Magic Experiments With The Art _ Thoughts On The Artistry.pdf",
-  "filename": "Kostya Kimlat - Magic Experiments With The Art _ Thoughts On The Artistry.pdf",
+  "path": "Magic books/Magic Experiments With The Art – Thoughts On The Artistry - Kostya Kimlat.pdf",
+  "filename": "Magic Experiments With The Art – Thoughts On The Artistry - Kostya Kimlat.pdf",
   "folder": "Magic books",
   "ext": "pdf",
   "mime": "application/pdf",
@@ -6490,26 +6500,6 @@
   "modified": "2017-05-26T10:33:42"
  },
  {
-  "id": "1Sl178lB1psvH2LAoGEcIzqrZ0AJJ517A",
-  "path": "Magic books/Richard Kaufman - Cardmagic.pdf",
-  "filename": "Richard Kaufman - Cardmagic.pdf",
-  "folder": "Magic books",
-  "ext": "pdf",
-  "mime": "application/pdf",
-  "size_bytes": 14507204,
-  "modified": "2017-05-26T11:14:24"
- },
- {
-  "id": "1wdIsE94UKwQS9ibU5zrNMnd8PZrWtZEq",
-  "path": "Magic books/Richard Kaufman - The Complete Works of Derek Dingle.pdf",
-  "filename": "Richard Kaufman - The Complete Works of Derek Dingle.pdf",
-  "folder": "Magic books",
-  "ext": "pdf",
-  "mime": "application/pdf",
-  "size_bytes": 11463436,
-  "modified": "2017-05-26T11:16:34"
- },
- {
   "id": "1WMrafZS8SKDinecrd-ClIqmpwq369jIf",
   "path": "Magic books/Scarne On Cards - John Scarne.pdf",
   "filename": "Scarne On Cards - John Scarne.pdf",
@@ -6518,6 +6508,16 @@
   "mime": "application/pdf",
   "size_bytes": 72834857,
   "modified": "2026-11-27T05:38:52"
+ },
+ {
+  "id": "1wdIsE94UKwQS9ibU5zrNMnd8PZrWtZEq",
+  "path": "Magic books/The Complete Works of Derek Dingle - Richard Kaufman.pdf",
+  "filename": "The Complete Works of Derek Dingle - Richard Kaufman.pdf",
+  "folder": "Magic books",
+  "ext": "pdf",
+  "mime": "application/pdf",
+  "size_bytes": 11463436,
+  "modified": "2017-05-26T11:16:34"
  },
  {
   "id": "1Jsa6OuRmLFnX9K9iKyPRSz84DzQDbCX-",

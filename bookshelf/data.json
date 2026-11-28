@@ -29690,7 +29690,6 @@
  {
   "title": "5 Points in Magic",
   "author": "Juan Tamariz",
-  "name_source": "parsed",
   "id": "5-points-in-magic-juan-tamariz",
   "category": "Philosophy, Essays & Misc",
   "cover_url": "",
@@ -29701,7 +29700,6 @@
   "tags": [
    "philosophy-essays-misc"
   ],
-  "needs_enrichment": true,
   "drive_id": "1Sqru32BRFdhn-rY4Cjv8mKi1EAIdo2gK",
   "drive_url": "https://drive.google.com/file/d/1Sqru32BRFdhn-rY4Cjv8mKi1EAIdo2gK/view",
   "direct_download_url": "https://drive.usercontent.google.com/download?id=1Sqru32BRFdhn-rY4Cjv8mKi1EAIdo2gK&export=download",
@@ -29711,7 +29709,9 @@
   "categories": [
    "Philosophy, Essays & Misc"
   ],
-  "is_fun_pick": false
+  "is_fun_pick": false,
+  "enriched": "2026-11-28",
+  "pitch_source": "blanked (no verified synopsis found)"
  },
  {
   "id": "byte-of-python-swaroop-ch",
@@ -29937,7 +29937,6 @@
  {
   "title": "Cardmagic",
   "author": "Richard Kaufman",
-  "name_source": "parsed",
   "id": "cardmagic-richard-kaufman",
   "category": "Philosophy, Essays & Misc",
   "cover_url": "",
@@ -29948,7 +29947,6 @@
   "tags": [
    "philosophy-essays-misc"
   ],
-  "needs_enrichment": true,
   "drive_id": "1Sl178lB1psvH2LAoGEcIzqrZ0AJJ517A",
   "drive_url": "https://drive.google.com/file/d/1Sl178lB1psvH2LAoGEcIzqrZ0AJJ517A/view",
   "direct_download_url": "https://drive.usercontent.google.com/download?id=1Sl178lB1psvH2LAoGEcIzqrZ0AJJ517A&export=download",
@@ -29958,7 +29956,9 @@
   "categories": [
    "Philosophy, Essays & Misc"
   ],
-  "is_fun_pick": false
+  "is_fun_pick": false,
+  "enriched": "2026-11-28",
+  "pitch_source": "blanked (no verified synopsis found)"
  },
  {
   "title": "David Williamson Story",
@@ -30220,7 +30220,6 @@
  {
   "title": "Magic Experiments With The Art : Thoughts On The Artistry",
   "author": "Kostya Kimlat",
-  "name_source": "parsed",
   "id": "magic-experiments-with-the-art-thoughts-on-the-artistry-kostya-kimlat",
   "category": "Philosophy, Essays & Misc",
   "cover_url": "",
@@ -30231,7 +30230,6 @@
   "tags": [
    "philosophy-essays-misc"
   ],
-  "needs_enrichment": true,
   "drive_id": "1FVs9S4P2RP_SDEfsGXsMJ5W8D5JZXdCQ",
   "drive_url": "https://drive.google.com/file/d/1FVs9S4P2RP_SDEfsGXsMJ5W8D5JZXdCQ/view",
   "direct_download_url": "https://drive.usercontent.google.com/download?id=1FVs9S4P2RP_SDEfsGXsMJ5W8D5JZXdCQ&export=download",
@@ -30241,7 +30239,9 @@
   "categories": [
    "Philosophy, Essays & Misc"
   ],
-  "is_fun_pick": false
+  "is_fun_pick": false,
+  "enriched": "2026-11-28",
+  "pitch_source": "blanked (no verified synopsis found)"
  },
  {
   "title": "Mnemonica",
@@ -30662,7 +30662,6 @@
  {
   "title": "The Complete Works of Derek Dingle",
   "author": "Richard Kaufman",
-  "name_source": "parsed",
   "id": "the-complete-works-of-derek-dingle-richard-kaufman",
   "category": "Philosophy, Essays & Misc",
   "cover_url": "",
@@ -30673,7 +30672,6 @@
   "tags": [
    "philosophy-essays-misc"
   ],
-  "needs_enrichment": true,
   "drive_id": "1wdIsE94UKwQS9ibU5zrNMnd8PZrWtZEq",
   "drive_url": "https://drive.google.com/file/d/1wdIsE94UKwQS9ibU5zrNMnd8PZrWtZEq/view",
   "direct_download_url": "https://drive.usercontent.google.com/download?id=1wdIsE94UKwQS9ibU5zrNMnd8PZrWtZEq&export=download",
@@ -30683,7 +30681,9 @@
   "categories": [
    "Philosophy, Essays & Misc"
   ],
-  "is_fun_pick": false
+  "is_fun_pick": false,
+  "enriched": "2026-11-28",
+  "pitch_source": "blanked (no verified synopsis found)"
  },
  {
   "id": "the-copywriter-s-handbook-robert-w-bly",

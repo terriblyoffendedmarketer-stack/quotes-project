@@ -1,6 +1,6 @@
-# Synopsis check — 2026-11-27
+# Synopsis check — 2026-11-28
 
-678 checked, 103 wrong/unusable. Replaced: 4, blanked: 99.
+681 checked, 102 wrong/unusable. Replaced: 0, blanked: 102.
 
 | Book | Problem | Actually about | New synopsis from |
 |---|---|---|---|
@@ -30,7 +30,6 @@
 | Koyomimonogatari (Part 1) (Monogatari, Vol. 14) — NisiOisin | empty |  | — (blank) |
 | Kubitsuri High School (Zaregoto, Vol. 3) — NisiOisin | empty |  | — (blank) |
 | Language and Symbolic Systems — Yuen Ren Chao | empty |  | — (blank) |
-| Magic Is Dead — Ian Frisch | empty |  | book file |
 | Memoirs of Robert-Houdin — Jean-Eugène Robert-Houdin | empty |  | — (blank) |
 | Nisemonogatari (Part 1) (Monogatari, Vol. 4) — NisiOisin | empty |  | — (blank) |
 | Nisemonogatari (Part 2) (Monogatari, Vol. 5) — NisiOisin | empty |  | — (blank) |
@@ -67,27 +66,27 @@
 | Product-Led SEO — Eli Schwartz | empty |  | — (blank) |
 | The Content Code — Mark Schaefer | empty |  | — (blank) |
 | 5 Dead Copywriters to Bring Your Copy Back to Life — Anonymous | empty |  | — (blank) |
+| 5 Points in Magic — Juan Tamariz | empty |  | — (blank) |
 | A Byte of Python — Swaroop C H | empty |  | — (blank) |
 | Ann Handley on Newsletters — Ann Handley | empty |  | — (blank) |
 | Aunt Mary's Terrible Secret : A Professional Card Routine — David Williamson | empty |  | — (blank) |
+| Cardmagic — Richard Kaufman | empty |  | — (blank) |
 | David Williamson Story — Unknown | empty |  | — (blank) |
 | DS — Dave Gerhardt | empty |  | — (blank) |
-| Expert Card Technique — Jean Hugard | empty |  | Apple Books |
-| Harlan Tarbell — Tarbell Course | empty |  | — (blank) |
 | How Magic Works — David Williamson | empty |  | — (blank) |
 | Intercom on Jobs-to-be-Done — Intercom | empty |  | — (blank) |
+| Magic Experiments With The Art : Thoughts On The Artistry — Kostya Kimlat | empty |  | — (blank) |
 | Mnemonica — Juan Tamariz | empty |  | — (blank) |
-| Modern Coin Magic — J. B. Bobo | empty |  | Apple Books |
 | Paul Cummings -Tapalack — Unknown | empty |  | — (blank) |
 | Paul Cummings FASDIU 1 — Unknown | empty |  | — (blank) |
 | Paul Cummings FASDIU 2 — Unknown | empty |  | — (blank) |
 | Revelations — Dai Vernon | empty |  | — (blank) |
 | Scarne On Cards — John Scarne | empty |  | — (blank) |
+| The Complete Works of Derek Dingle — Richard Kaufman | empty |  | — (blank) |
 | The Copywriting Sourcebook — Andy Maslen | empty |  | — (blank) |
 | The Death of the Author — Roland Barthes | empty |  | — (blank) |
 | The Neil French Collection — Neil French | empty |  | — (blank) |
 | The Original Course in Magic of Harlan Tarbell — Harlan Tarbell | empty |  | — (blank) |
-| The Royal Road to Card Magic — Jean Hugard | empty |  | Apple Books |
 | The Secrets of Brother John Hamman: Scan — Richard Kaufman | empty |  | — (blank) |
 | Ultimate Guide to Street Photography — Anonymous | empty |  | — (blank) |
 | Ultimate Secrets of Card Magic — Dai Vernon | empty |  | — (blank) |
